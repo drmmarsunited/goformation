@@ -13,12 +13,12 @@ type Integration_ObjectTypeMapping[T any] struct {
 	// Key AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-objecttypemapping.html#cfn-customerprofiles-integration-objecttypemapping-key
-	Key string `json:"Key"`
+	Key T `json:"Key"`
 
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-objecttypemapping.html#cfn-customerprofiles-integration-objecttypemapping-value
-	Value string `json:"Value"`
+	Value T `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

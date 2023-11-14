@@ -22,12 +22,12 @@ type Group[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourcegroups-group.html#cfn-resourcegroups-group-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourcegroups-group.html#cfn-resourcegroups-group-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ResourceQuery AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Group[T any] struct {
 	// Resources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourcegroups-group.html#cfn-resourcegroups-group-resources
-	Resources []string `json:"Resources,omitempty"`
+	Resources []T `json:"Resources,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

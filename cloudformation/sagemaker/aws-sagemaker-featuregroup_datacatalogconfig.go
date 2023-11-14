@@ -13,17 +13,17 @@ type FeatureGroup_DataCatalogConfig[T any] struct {
 	// Catalog AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-datacatalogconfig.html#cfn-sagemaker-featuregroup-datacatalogconfig-catalog
-	Catalog string `json:"Catalog"`
+	Catalog T `json:"Catalog"`
 
 	// Database AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-datacatalogconfig.html#cfn-sagemaker-featuregroup-datacatalogconfig-database
-	Database string `json:"Database"`
+	Database T `json:"Database"`
 
 	// TableName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-datacatalogconfig.html#cfn-sagemaker-featuregroup-datacatalogconfig-tablename
-	TableName string `json:"TableName"`
+	TableName T `json:"TableName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

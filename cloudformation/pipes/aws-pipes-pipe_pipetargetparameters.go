@@ -38,7 +38,7 @@ type Pipe_PipeTargetParameters[T any] struct {
 	// InputTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-inputtemplate
-	InputTemplate *string `json:"InputTemplate,omitempty"`
+	InputTemplate *T `json:"InputTemplate,omitempty"`
 
 	// KinesisStreamParameters AWS CloudFormation Property
 	// Required: false

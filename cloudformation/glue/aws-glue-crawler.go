@@ -16,32 +16,32 @@ type Crawler[T any] struct {
 	// Classifiers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-classifiers
-	Classifiers []string `json:"Classifiers,omitempty"`
+	Classifiers []T `json:"Classifiers,omitempty"`
 
 	// Configuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-configuration
-	Configuration *string `json:"Configuration,omitempty"`
+	Configuration *T `json:"Configuration,omitempty"`
 
 	// CrawlerSecurityConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-crawlersecurityconfiguration
-	CrawlerSecurityConfiguration *string `json:"CrawlerSecurityConfiguration,omitempty"`
+	CrawlerSecurityConfiguration *T `json:"CrawlerSecurityConfiguration,omitempty"`
 
 	// DatabaseName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-databasename
-	DatabaseName *string `json:"DatabaseName,omitempty"`
+	DatabaseName *T `json:"DatabaseName,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// RecrawlPolicy AWS CloudFormation Property
 	// Required: false
@@ -51,7 +51,7 @@ type Crawler[T any] struct {
 	// Role AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-role
-	Role string `json:"Role"`
+	Role T `json:"Role"`
 
 	// Schedule AWS CloudFormation Property
 	// Required: false
@@ -66,7 +66,7 @@ type Crawler[T any] struct {
 	// TablePrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-tableprefix
-	TablePrefix *string `json:"TablePrefix,omitempty"`
+	TablePrefix *T `json:"TablePrefix,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -16,17 +16,17 @@ type SimulationApplication[T any] struct {
 	// CurrentRevisionId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-currentrevisionid
-	CurrentRevisionId *string `json:"CurrentRevisionId,omitempty"`
+	CurrentRevisionId *T `json:"CurrentRevisionId,omitempty"`
 
 	// Environment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-environment
-	Environment *string `json:"Environment,omitempty"`
+	Environment *T `json:"Environment,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// RenderingEngine AWS CloudFormation Property
 	// Required: false
@@ -51,7 +51,7 @@ type SimulationApplication[T any] struct {
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-tags
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

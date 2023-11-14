@@ -17,7 +17,7 @@ type DataSet[T any] struct {
 	// AwsAccountId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-awsaccountid
-	AwsAccountId *string `json:"AwsAccountId,omitempty"`
+	AwsAccountId *T `json:"AwsAccountId,omitempty"`
 
 	// ColumnGroups AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type DataSet[T any] struct {
 	// DataSetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-datasetid
-	DataSetId *string `json:"DataSetId,omitempty"`
+	DataSetId *T `json:"DataSetId,omitempty"`
 
 	// DataSetRefreshProperties AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type DataSet[T any] struct {
 	// ImportMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-importmode
-	ImportMode *string `json:"ImportMode,omitempty"`
+	ImportMode *T `json:"ImportMode,omitempty"`
 
 	// IngestionWaitPolicy AWS CloudFormation Property
 	// Required: false
@@ -72,7 +72,7 @@ type DataSet[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Permissions AWS CloudFormation Property
 	// Required: false

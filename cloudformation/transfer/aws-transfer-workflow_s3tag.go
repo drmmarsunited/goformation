@@ -13,12 +13,12 @@ type Workflow_S3Tag[T any] struct {
 	// Key AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-s3tag.html#cfn-transfer-workflow-s3tag-key
-	Key string `json:"Key"`
+	Key T `json:"Key"`
 
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-s3tag.html#cfn-transfer-workflow-s3tag-value
-	Value string `json:"Value"`
+	Value T `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

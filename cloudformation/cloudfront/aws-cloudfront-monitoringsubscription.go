@@ -16,7 +16,7 @@ type MonitoringSubscription[T any] struct {
 	// DistributionId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-monitoringsubscription.html#cfn-cloudfront-monitoringsubscription-distributionid
-	DistributionId string `json:"DistributionId"`
+	DistributionId T `json:"DistributionId"`
 
 	// MonitoringSubscription AWS CloudFormation Property
 	// Required: true

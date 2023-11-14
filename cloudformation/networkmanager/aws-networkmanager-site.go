@@ -17,12 +17,12 @@ type Site[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-site.html#cfn-networkmanager-site-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// GlobalNetworkId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-site.html#cfn-networkmanager-site-globalnetworkid
-	GlobalNetworkId string `json:"GlobalNetworkId"`
+	GlobalNetworkId T `json:"GlobalNetworkId"`
 
 	// Location AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type Instance_Volume[T any] struct {
 	// Device AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-mount-point.html#cfn-ec2-mountpoint-device
-	Device string `json:"Device"`
+	Device T `json:"Device"`
 
 	// VolumeId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-mount-point.html#cfn-ec2-mountpoint-volumeid
-	VolumeId string `json:"VolumeId"`
+	VolumeId T `json:"VolumeId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

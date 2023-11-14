@@ -21,7 +21,7 @@ type RemediationConfiguration[T any] struct {
 	// ConfigRuleName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-configrulename
-	ConfigRuleName string `json:"ConfigRuleName"`
+	ConfigRuleName T `json:"ConfigRuleName"`
 
 	// ExecutionControls AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type RemediationConfiguration[T any] struct {
 	// ResourceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-resourcetype
-	ResourceType *string `json:"ResourceType,omitempty"`
+	ResourceType *T `json:"ResourceType,omitempty"`
 
 	// RetryAttemptSeconds AWS CloudFormation Property
 	// Required: false
@@ -51,17 +51,17 @@ type RemediationConfiguration[T any] struct {
 	// TargetId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targetid
-	TargetId string `json:"TargetId"`
+	TargetId T `json:"TargetId"`
 
 	// TargetType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targettype
-	TargetType string `json:"TargetType"`
+	TargetType T `json:"TargetType"`
 
 	// TargetVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targetversion
-	TargetVersion *string `json:"TargetVersion,omitempty"`
+	TargetVersion *T `json:"TargetVersion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

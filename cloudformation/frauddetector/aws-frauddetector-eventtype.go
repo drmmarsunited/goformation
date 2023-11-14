@@ -17,7 +17,7 @@ type EventType[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-eventtype.html#cfn-frauddetector-eventtype-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EntityTypes AWS CloudFormation Property
 	// Required: true
@@ -37,7 +37,7 @@ type EventType[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-eventtype.html#cfn-frauddetector-eventtype-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

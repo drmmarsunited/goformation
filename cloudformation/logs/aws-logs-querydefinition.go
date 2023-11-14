@@ -16,17 +16,17 @@ type QueryDefinition[T any] struct {
 	// LogGroupNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-querydefinition.html#cfn-logs-querydefinition-loggroupnames
-	LogGroupNames []string `json:"LogGroupNames,omitempty"`
+	LogGroupNames []T `json:"LogGroupNames,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-querydefinition.html#cfn-logs-querydefinition-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// QueryString AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-querydefinition.html#cfn-logs-querydefinition-querystring
-	QueryString string `json:"QueryString"`
+	QueryString T `json:"QueryString"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

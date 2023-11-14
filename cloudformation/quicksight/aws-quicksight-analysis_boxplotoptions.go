@@ -13,12 +13,12 @@ type Analysis_BoxPlotOptions[T any] struct {
 	// AllDataPointsVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-boxplotoptions.html#cfn-quicksight-analysis-boxplotoptions-alldatapointsvisibility
-	AllDataPointsVisibility *string `json:"AllDataPointsVisibility,omitempty"`
+	AllDataPointsVisibility *T `json:"AllDataPointsVisibility,omitempty"`
 
 	// OutlierVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-boxplotoptions.html#cfn-quicksight-analysis-boxplotoptions-outliervisibility
-	OutlierVisibility *string `json:"OutlierVisibility,omitempty"`
+	OutlierVisibility *T `json:"OutlierVisibility,omitempty"`
 
 	// StyleOptions AWS CloudFormation Property
 	// Required: false

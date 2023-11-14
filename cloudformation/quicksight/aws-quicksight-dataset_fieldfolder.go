@@ -13,12 +13,12 @@ type DataSet_FieldFolder[T any] struct {
 	// Columns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-fieldfolder.html#cfn-quicksight-dataset-fieldfolder-columns
-	Columns []string `json:"Columns,omitempty"`
+	Columns []T `json:"Columns,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-fieldfolder.html#cfn-quicksight-dataset-fieldfolder-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

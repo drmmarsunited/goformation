@@ -13,17 +13,17 @@ type Recipe_ConditionExpression[T any] struct {
 	// Condition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html#cfn-databrew-recipe-conditionexpression-condition
-	Condition string `json:"Condition"`
+	Condition T `json:"Condition"`
 
 	// TargetColumn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html#cfn-databrew-recipe-conditionexpression-targetcolumn
-	TargetColumn string `json:"TargetColumn"`
+	TargetColumn T `json:"TargetColumn"`
 
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html#cfn-databrew-recipe-conditionexpression-value
-	Value *string `json:"Value,omitempty"`
+	Value *T `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

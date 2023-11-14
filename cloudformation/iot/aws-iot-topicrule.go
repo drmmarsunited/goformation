@@ -17,7 +17,7 @@ type TopicRule[T any] struct {
 	// RuleName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html#cfn-iot-topicrule-rulename
-	RuleName *string `json:"RuleName,omitempty"`
+	RuleName *T `json:"RuleName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

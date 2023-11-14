@@ -13,12 +13,12 @@ type AppBlockBuilder_AccessEndpoint[T any] struct {
 	// EndpointType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-appblockbuilder-accessendpoint.html#cfn-appstream-appblockbuilder-accessendpoint-endpointtype
-	EndpointType string `json:"EndpointType"`
+	EndpointType T `json:"EndpointType"`
 
 	// VpceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-appblockbuilder-accessendpoint.html#cfn-appstream-appblockbuilder-accessendpoint-vpceid
-	VpceId string `json:"VpceId"`
+	VpceId T `json:"VpceId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

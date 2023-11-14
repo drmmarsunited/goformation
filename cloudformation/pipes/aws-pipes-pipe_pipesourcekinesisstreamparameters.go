@@ -38,7 +38,7 @@ type Pipe_PipeSourceKinesisStreamParameters[T any] struct {
 	// OnPartialBatchItemFailure AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcekinesisstreamparameters.html#cfn-pipes-pipe-pipesourcekinesisstreamparameters-onpartialbatchitemfailure
-	OnPartialBatchItemFailure *string `json:"OnPartialBatchItemFailure,omitempty"`
+	OnPartialBatchItemFailure *T `json:"OnPartialBatchItemFailure,omitempty"`
 
 	// ParallelizationFactor AWS CloudFormation Property
 	// Required: false
@@ -48,12 +48,12 @@ type Pipe_PipeSourceKinesisStreamParameters[T any] struct {
 	// StartingPosition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcekinesisstreamparameters.html#cfn-pipes-pipe-pipesourcekinesisstreamparameters-startingposition
-	StartingPosition string `json:"StartingPosition"`
+	StartingPosition T `json:"StartingPosition"`
 
 	// StartingPositionTimestamp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcekinesisstreamparameters.html#cfn-pipes-pipe-pipesourcekinesisstreamparameters-startingpositiontimestamp
-	StartingPositionTimestamp *string `json:"StartingPositionTimestamp,omitempty"`
+	StartingPositionTimestamp *T `json:"StartingPositionTimestamp,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

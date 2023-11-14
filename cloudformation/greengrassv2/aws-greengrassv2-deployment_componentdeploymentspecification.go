@@ -13,7 +13,7 @@ type Deployment_ComponentDeploymentSpecification[T any] struct {
 	// ComponentVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-componentdeploymentspecification.html#cfn-greengrassv2-deployment-componentdeploymentspecification-componentversion
-	ComponentVersion *string `json:"ComponentVersion,omitempty"`
+	ComponentVersion *T `json:"ComponentVersion,omitempty"`
 
 	// ConfigurationUpdate AWS CloudFormation Property
 	// Required: false

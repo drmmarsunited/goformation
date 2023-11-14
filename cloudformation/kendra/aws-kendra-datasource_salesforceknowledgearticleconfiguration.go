@@ -18,7 +18,7 @@ type DataSource_SalesforceKnowledgeArticleConfiguration[T any] struct {
 	// IncludedStates AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceknowledgearticleconfiguration.html#cfn-kendra-datasource-salesforceknowledgearticleconfiguration-includedstates
-	IncludedStates []string `json:"IncludedStates"`
+	IncludedStates []T `json:"IncludedStates"`
 
 	// StandardKnowledgeArticleTypeConfiguration AWS CloudFormation Property
 	// Required: false

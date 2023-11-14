@@ -13,32 +13,32 @@ type UserPool_VerificationMessageTemplate[T any] struct {
 	// DefaultEmailOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-verificationmessagetemplate.html#cfn-cognito-userpool-verificationmessagetemplate-defaultemailoption
-	DefaultEmailOption *string `json:"DefaultEmailOption,omitempty"`
+	DefaultEmailOption *T `json:"DefaultEmailOption,omitempty"`
 
 	// EmailMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-verificationmessagetemplate.html#cfn-cognito-userpool-verificationmessagetemplate-emailmessage
-	EmailMessage *string `json:"EmailMessage,omitempty"`
+	EmailMessage *T `json:"EmailMessage,omitempty"`
 
 	// EmailMessageByLink AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-verificationmessagetemplate.html#cfn-cognito-userpool-verificationmessagetemplate-emailmessagebylink
-	EmailMessageByLink *string `json:"EmailMessageByLink,omitempty"`
+	EmailMessageByLink *T `json:"EmailMessageByLink,omitempty"`
 
 	// EmailSubject AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-verificationmessagetemplate.html#cfn-cognito-userpool-verificationmessagetemplate-emailsubject
-	EmailSubject *string `json:"EmailSubject,omitempty"`
+	EmailSubject *T `json:"EmailSubject,omitempty"`
 
 	// EmailSubjectByLink AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-verificationmessagetemplate.html#cfn-cognito-userpool-verificationmessagetemplate-emailsubjectbylink
-	EmailSubjectByLink *string `json:"EmailSubjectByLink,omitempty"`
+	EmailSubjectByLink *T `json:"EmailSubjectByLink,omitempty"`
 
 	// SmsMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-verificationmessagetemplate.html#cfn-cognito-userpool-verificationmessagetemplate-smsmessage
-	SmsMessage *string `json:"SmsMessage,omitempty"`
+	SmsMessage *T `json:"SmsMessage,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

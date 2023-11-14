@@ -18,12 +18,12 @@ type Channel_Scte35TimeSignalApos[T any] struct {
 	// NoRegionalBlackoutFlag AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte35timesignalapos.html#cfn-medialive-channel-scte35timesignalapos-noregionalblackoutflag
-	NoRegionalBlackoutFlag *string `json:"NoRegionalBlackoutFlag,omitempty"`
+	NoRegionalBlackoutFlag *T `json:"NoRegionalBlackoutFlag,omitempty"`
 
 	// WebDeliveryAllowedFlag AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte35timesignalapos.html#cfn-medialive-channel-scte35timesignalapos-webdeliveryallowedflag
-	WebDeliveryAllowedFlag *string `json:"WebDeliveryAllowedFlag,omitempty"`
+	WebDeliveryAllowedFlag *T `json:"WebDeliveryAllowedFlag,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

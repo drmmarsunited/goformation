@@ -13,22 +13,22 @@ type ModelCard_EvaluationDetail[T any] struct {
 	// Datasets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html#cfn-sagemaker-modelcard-evaluationdetail-datasets
-	Datasets []string `json:"Datasets,omitempty"`
+	Datasets []T `json:"Datasets,omitempty"`
 
 	// EvaluationJobArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html#cfn-sagemaker-modelcard-evaluationdetail-evaluationjobarn
-	EvaluationJobArn *string `json:"EvaluationJobArn,omitempty"`
+	EvaluationJobArn *T `json:"EvaluationJobArn,omitempty"`
 
 	// EvaluationObservation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html#cfn-sagemaker-modelcard-evaluationdetail-evaluationobservation
-	EvaluationObservation *string `json:"EvaluationObservation,omitempty"`
+	EvaluationObservation *T `json:"EvaluationObservation,omitempty"`
 
 	// Metadata AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html#cfn-sagemaker-modelcard-evaluationdetail-metadata
-	Metadata map[string]string `json:"Metadata,omitempty"`
+	Metadata map[string]T `json:"Metadata,omitempty"`
 
 	// MetricGroups AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type ModelCard_EvaluationDetail[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html#cfn-sagemaker-modelcard-evaluationdetail-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

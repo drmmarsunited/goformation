@@ -21,7 +21,7 @@ type ClientVpnEndpoint[T any] struct {
 	// ClientCidrBlock AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-clientcidrblock
-	ClientCidrBlock string `json:"ClientCidrBlock"`
+	ClientCidrBlock T `json:"ClientCidrBlock"`
 
 	// ClientConnectOptions AWS CloudFormation Property
 	// Required: false
@@ -41,27 +41,27 @@ type ClientVpnEndpoint[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DnsServers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-dnsservers
-	DnsServers []string `json:"DnsServers,omitempty"`
+	DnsServers []T `json:"DnsServers,omitempty"`
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-securitygroupids
-	SecurityGroupIds []string `json:"SecurityGroupIds,omitempty"`
+	SecurityGroupIds []T `json:"SecurityGroupIds,omitempty"`
 
 	// SelfServicePortal AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-selfserviceportal
-	SelfServicePortal *string `json:"SelfServicePortal,omitempty"`
+	SelfServicePortal *T `json:"SelfServicePortal,omitempty"`
 
 	// ServerCertificateArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-servercertificatearn
-	ServerCertificateArn string `json:"ServerCertificateArn"`
+	ServerCertificateArn T `json:"ServerCertificateArn"`
 
 	// SessionTimeoutHours AWS CloudFormation Property
 	// Required: false
@@ -81,12 +81,12 @@ type ClientVpnEndpoint[T any] struct {
 	// TransportProtocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-transportprotocol
-	TransportProtocol *string `json:"TransportProtocol,omitempty"`
+	TransportProtocol *T `json:"TransportProtocol,omitempty"`
 
 	// VpcId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-vpcid
-	VpcId *string `json:"VpcId,omitempty"`
+	VpcId *T `json:"VpcId,omitempty"`
 
 	// VpnPort AWS CloudFormation Property
 	// Required: false

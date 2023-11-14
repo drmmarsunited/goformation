@@ -31,7 +31,7 @@ type DataLakeSettings[T any] struct {
 	// AuthorizedSessionTagValueList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-authorizedsessiontagvaluelist
-	AuthorizedSessionTagValueList []string `json:"AuthorizedSessionTagValueList,omitempty"`
+	AuthorizedSessionTagValueList []T `json:"AuthorizedSessionTagValueList,omitempty"`
 
 	// CreateDatabaseDefaultPermissions AWS CloudFormation Property
 	// Required: false
@@ -51,7 +51,7 @@ type DataLakeSettings[T any] struct {
 	// MutationType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-mutationtype
-	MutationType *string `json:"MutationType,omitempty"`
+	MutationType *T `json:"MutationType,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
@@ -61,7 +61,7 @@ type DataLakeSettings[T any] struct {
 	// TrustedResourceOwners AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-trustedresourceowners
-	TrustedResourceOwners []string `json:"TrustedResourceOwners,omitempty"`
+	TrustedResourceOwners []T `json:"TrustedResourceOwners,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

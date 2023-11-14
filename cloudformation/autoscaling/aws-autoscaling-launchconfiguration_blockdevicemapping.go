@@ -13,7 +13,7 @@ type LaunchConfiguration_BlockDeviceMapping[T any] struct {
 	// DeviceName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfiguration-blockdevicemapping.html#cfn-autoscaling-launchconfiguration-blockdevicemapping-devicename
-	DeviceName string `json:"DeviceName"`
+	DeviceName T `json:"DeviceName"`
 
 	// Ebs AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type LaunchConfiguration_BlockDeviceMapping[T any] struct {
 	// VirtualName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfiguration-blockdevicemapping.html#cfn-autoscaling-launchconfiguration-blockdevicemapping-virtualname
-	VirtualName *string `json:"VirtualName,omitempty"`
+	VirtualName *T `json:"VirtualName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

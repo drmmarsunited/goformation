@@ -17,12 +17,12 @@ type WirelessGateway[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html#cfn-iotwireless-wirelessgateway-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// LastUplinkReceivedAt AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html#cfn-iotwireless-wirelessgateway-lastuplinkreceivedat
-	LastUplinkReceivedAt *string `json:"LastUplinkReceivedAt,omitempty"`
+	LastUplinkReceivedAt *T `json:"LastUplinkReceivedAt,omitempty"`
 
 	// LoRaWAN AWS CloudFormation Property
 	// Required: true
@@ -32,7 +32,7 @@ type WirelessGateway[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html#cfn-iotwireless-wirelessgateway-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -42,12 +42,12 @@ type WirelessGateway[T any] struct {
 	// ThingArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html#cfn-iotwireless-wirelessgateway-thingarn
-	ThingArn *string `json:"ThingArn,omitempty"`
+	ThingArn *T `json:"ThingArn,omitempty"`
 
 	// ThingName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html#cfn-iotwireless-wirelessgateway-thingname
-	ThingName *string `json:"ThingName,omitempty"`
+	ThingName *T `json:"ThingName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

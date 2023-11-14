@@ -22,7 +22,7 @@ type OriginEndpoint[T any] struct {
 	// ChannelId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-channelid
-	ChannelId string `json:"ChannelId"`
+	ChannelId T `json:"ChannelId"`
 
 	// CmafPackage AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type OriginEndpoint[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// HlsPackage AWS CloudFormation Property
 	// Required: false
@@ -47,12 +47,12 @@ type OriginEndpoint[T any] struct {
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-id
-	Id string `json:"Id"`
+	Id T `json:"Id"`
 
 	// ManifestName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-manifestname
-	ManifestName *string `json:"ManifestName,omitempty"`
+	ManifestName *T `json:"ManifestName,omitempty"`
 
 	// MssPackage AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,7 @@ type OriginEndpoint[T any] struct {
 	// Origination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-origination
-	Origination *string `json:"Origination,omitempty"`
+	Origination *T `json:"Origination,omitempty"`
 
 	// StartoverWindowSeconds AWS CloudFormation Property
 	// Required: false
@@ -82,7 +82,7 @@ type OriginEndpoint[T any] struct {
 	// Whitelist AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-whitelist
-	Whitelist []string `json:"Whitelist,omitempty"`
+	Whitelist []T `json:"Whitelist,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

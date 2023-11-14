@@ -18,7 +18,7 @@ type ConnectorProfile_CustomConnectorProfileProperties[T any] struct {
 	// ProfileProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-customconnectorprofileproperties.html#cfn-appflow-connectorprofile-customconnectorprofileproperties-profileproperties
-	ProfileProperties map[string]string `json:"ProfileProperties,omitempty"`
+	ProfileProperties map[string]T `json:"ProfileProperties,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

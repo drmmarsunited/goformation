@@ -13,17 +13,17 @@ type Application_MonitoringConfiguration[T any] struct {
 	// ConfigurationType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-monitoringconfiguration.html#cfn-kinesisanalyticsv2-application-monitoringconfiguration-configurationtype
-	ConfigurationType string `json:"ConfigurationType"`
+	ConfigurationType T `json:"ConfigurationType"`
 
 	// LogLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-monitoringconfiguration.html#cfn-kinesisanalyticsv2-application-monitoringconfiguration-loglevel
-	LogLevel *string `json:"LogLevel,omitempty"`
+	LogLevel *T `json:"LogLevel,omitempty"`
 
 	// MetricsLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-monitoringconfiguration.html#cfn-kinesisanalyticsv2-application-monitoringconfiguration-metricslevel
-	MetricsLevel *string `json:"MetricsLevel,omitempty"`
+	MetricsLevel *T `json:"MetricsLevel,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

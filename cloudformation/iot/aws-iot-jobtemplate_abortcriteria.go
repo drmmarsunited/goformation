@@ -13,12 +13,12 @@ type JobTemplate_AbortCriteria[T any] struct {
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortcriteria.html#cfn-iot-jobtemplate-abortcriteria-action
-	Action string `json:"Action"`
+	Action T `json:"Action"`
 
 	// FailureType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortcriteria.html#cfn-iot-jobtemplate-abortcriteria-failuretype
-	FailureType string `json:"FailureType"`
+	FailureType T `json:"FailureType"`
 
 	// MinNumberOfExecutedThings AWS CloudFormation Property
 	// Required: true

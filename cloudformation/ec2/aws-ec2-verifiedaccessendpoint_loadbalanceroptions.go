@@ -13,7 +13,7 @@ type VerifiedAccessEndpoint_LoadBalancerOptions[T any] struct {
 	// LoadBalancerArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessendpoint-loadbalanceroptions.html#cfn-ec2-verifiedaccessendpoint-loadbalanceroptions-loadbalancerarn
-	LoadBalancerArn *string `json:"LoadBalancerArn,omitempty"`
+	LoadBalancerArn *T `json:"LoadBalancerArn,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type VerifiedAccessEndpoint_LoadBalancerOptions[T any] struct {
 	// Protocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessendpoint-loadbalanceroptions.html#cfn-ec2-verifiedaccessendpoint-loadbalanceroptions-protocol
-	Protocol *string `json:"Protocol,omitempty"`
+	Protocol *T `json:"Protocol,omitempty"`
 
 	// SubnetIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessendpoint-loadbalanceroptions.html#cfn-ec2-verifiedaccessendpoint-loadbalanceroptions-subnetids
-	SubnetIds []string `json:"SubnetIds,omitempty"`
+	SubnetIds []T `json:"SubnetIds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

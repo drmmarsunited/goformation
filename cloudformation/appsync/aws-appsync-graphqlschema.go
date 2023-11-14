@@ -16,17 +16,17 @@ type GraphQLSchema[T any] struct {
 	// ApiId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-apiid
-	ApiId string `json:"ApiId"`
+	ApiId T `json:"ApiId"`
 
 	// Definition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definition
-	Definition *string `json:"Definition,omitempty"`
+	Definition *T `json:"Definition,omitempty"`
 
 	// DefinitionS3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definitions3location
-	DefinitionS3Location *string `json:"DefinitionS3Location,omitempty"`
+	DefinitionS3Location *T `json:"DefinitionS3Location,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

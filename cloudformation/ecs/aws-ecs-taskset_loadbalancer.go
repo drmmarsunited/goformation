@@ -13,7 +13,7 @@ type TaskSet_LoadBalancer[T any] struct {
 	// ContainerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-loadbalancer.html#cfn-ecs-taskset-loadbalancer-containername
-	ContainerName *string `json:"ContainerName,omitempty"`
+	ContainerName *T `json:"ContainerName,omitempty"`
 
 	// ContainerPort AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type TaskSet_LoadBalancer[T any] struct {
 	// TargetGroupArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-loadbalancer.html#cfn-ecs-taskset-loadbalancer-targetgrouparn
-	TargetGroupArn *string `json:"TargetGroupArn,omitempty"`
+	TargetGroupArn *T `json:"TargetGroupArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -17,7 +17,7 @@ type Flow[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DestinationFlowConfigList AWS CloudFormation Property
 	// Required: true
@@ -27,17 +27,17 @@ type Flow[T any] struct {
 	// FlowName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-flowname
-	FlowName string `json:"FlowName"`
+	FlowName T `json:"FlowName"`
 
 	// FlowStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-flowstatus
-	FlowStatus *string `json:"FlowStatus,omitempty"`
+	FlowStatus *T `json:"FlowStatus,omitempty"`
 
 	// KMSArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-kmsarn
-	KMSArn *string `json:"KMSArn,omitempty"`
+	KMSArn *T `json:"KMSArn,omitempty"`
 
 	// MetadataCatalogConfig AWS CloudFormation Property
 	// Required: false

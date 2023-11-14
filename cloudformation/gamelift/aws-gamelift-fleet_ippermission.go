@@ -18,12 +18,12 @@ type Fleet_IpPermission[T any] struct {
 	// IpRange AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ippermission.html#cfn-gamelift-fleet-ippermission-iprange
-	IpRange string `json:"IpRange"`
+	IpRange T `json:"IpRange"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ippermission.html#cfn-gamelift-fleet-ippermission-protocol
-	Protocol string `json:"Protocol"`
+	Protocol T `json:"Protocol"`
 
 	// ToPort AWS CloudFormation Property
 	// Required: true

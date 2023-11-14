@@ -17,7 +17,7 @@ type VPC[T any] struct {
 	// CidrBlock AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-cidrblock
-	CidrBlock *string `json:"CidrBlock,omitempty"`
+	CidrBlock *T `json:"CidrBlock,omitempty"`
 
 	// EnableDnsHostnames AWS CloudFormation Property
 	// Required: false
@@ -32,12 +32,12 @@ type VPC[T any] struct {
 	// InstanceTenancy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-instancetenancy
-	InstanceTenancy *string `json:"InstanceTenancy,omitempty"`
+	InstanceTenancy *T `json:"InstanceTenancy,omitempty"`
 
 	// Ipv4IpamPoolId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-ipv4ipampoolid
-	Ipv4IpamPoolId *string `json:"Ipv4IpamPoolId,omitempty"`
+	Ipv4IpamPoolId *T `json:"Ipv4IpamPoolId,omitempty"`
 
 	// Ipv4NetmaskLength AWS CloudFormation Property
 	// Required: false

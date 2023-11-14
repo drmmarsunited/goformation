@@ -13,17 +13,17 @@ type Rule_AwsVpcConfiguration[T any] struct {
 	// AssignPublicIp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-awsvpcconfiguration.html#cfn-events-rule-awsvpcconfiguration-assignpublicip
-	AssignPublicIp *string `json:"AssignPublicIp,omitempty"`
+	AssignPublicIp *T `json:"AssignPublicIp,omitempty"`
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-awsvpcconfiguration.html#cfn-events-rule-awsvpcconfiguration-securitygroups
-	SecurityGroups []string `json:"SecurityGroups,omitempty"`
+	SecurityGroups []T `json:"SecurityGroups,omitempty"`
 
 	// Subnets AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-awsvpcconfiguration.html#cfn-events-rule-awsvpcconfiguration-subnets
-	Subnets []string `json:"Subnets"`
+	Subnets []T `json:"Subnets"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

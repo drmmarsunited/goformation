@@ -16,27 +16,27 @@ type ResourceUpdateConstraint[T any] struct {
 	// AcceptLanguage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html#cfn-servicecatalog-resourceupdateconstraint-acceptlanguage
-	AcceptLanguage *string `json:"AcceptLanguage,omitempty"`
+	AcceptLanguage *T `json:"AcceptLanguage,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html#cfn-servicecatalog-resourceupdateconstraint-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// PortfolioId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html#cfn-servicecatalog-resourceupdateconstraint-portfolioid
-	PortfolioId string `json:"PortfolioId"`
+	PortfolioId T `json:"PortfolioId"`
 
 	// ProductId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html#cfn-servicecatalog-resourceupdateconstraint-productid
-	ProductId string `json:"ProductId"`
+	ProductId T `json:"ProductId"`
 
 	// TagUpdateOnProvisionedProduct AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html#cfn-servicecatalog-resourceupdateconstraint-tagupdateonprovisionedproduct
-	TagUpdateOnProvisionedProduct string `json:"TagUpdateOnProvisionedProduct"`
+	TagUpdateOnProvisionedProduct T `json:"TagUpdateOnProvisionedProduct"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

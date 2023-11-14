@@ -23,7 +23,7 @@ type Bot_SlotValueSelectionSetting[T any] struct {
 	// ResolutionStrategy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueselectionsetting.html#cfn-lex-bot-slotvalueselectionsetting-resolutionstrategy
-	ResolutionStrategy string `json:"ResolutionStrategy"`
+	ResolutionStrategy T `json:"ResolutionStrategy"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

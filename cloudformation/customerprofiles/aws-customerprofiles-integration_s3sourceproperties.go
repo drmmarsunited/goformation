@@ -13,12 +13,12 @@ type Integration_S3SourceProperties[T any] struct {
 	// BucketName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-s3sourceproperties.html#cfn-customerprofiles-integration-s3sourceproperties-bucketname
-	BucketName string `json:"BucketName"`
+	BucketName T `json:"BucketName"`
 
 	// BucketPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-s3sourceproperties.html#cfn-customerprofiles-integration-s3sourceproperties-bucketprefix
-	BucketPrefix *string `json:"BucketPrefix,omitempty"`
+	BucketPrefix *T `json:"BucketPrefix,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -27,22 +27,22 @@ type Pipeline[T any] struct {
 	// PipelineDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-pipelinedescription
-	PipelineDescription *string `json:"PipelineDescription,omitempty"`
+	PipelineDescription *T `json:"PipelineDescription,omitempty"`
 
 	// PipelineDisplayName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-pipelinedisplayname
-	PipelineDisplayName *string `json:"PipelineDisplayName,omitempty"`
+	PipelineDisplayName *T `json:"PipelineDisplayName,omitempty"`
 
 	// PipelineName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-pipelinename
-	PipelineName string `json:"PipelineName"`
+	PipelineName T `json:"PipelineName"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

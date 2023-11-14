@@ -17,7 +17,7 @@ type VerifiedAccessTrustProvider[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccesstrustprovider.html#cfn-ec2-verifiedaccesstrustprovider-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DeviceOptions AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type VerifiedAccessTrustProvider[T any] struct {
 	// DeviceTrustProviderType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccesstrustprovider.html#cfn-ec2-verifiedaccesstrustprovider-devicetrustprovidertype
-	DeviceTrustProviderType *string `json:"DeviceTrustProviderType,omitempty"`
+	DeviceTrustProviderType *T `json:"DeviceTrustProviderType,omitempty"`
 
 	// OidcOptions AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,12 @@ type VerifiedAccessTrustProvider[T any] struct {
 	// PolicyReferenceName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccesstrustprovider.html#cfn-ec2-verifiedaccesstrustprovider-policyreferencename
-	PolicyReferenceName string `json:"PolicyReferenceName"`
+	PolicyReferenceName T `json:"PolicyReferenceName"`
+
+	// SseSpecification AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccesstrustprovider.html#cfn-ec2-verifiedaccesstrustprovider-ssespecification
+	SseSpecification *VerifiedAccessTrustProvider_SseSpecification[any] `json:"SseSpecification,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -47,12 +52,12 @@ type VerifiedAccessTrustProvider[T any] struct {
 	// TrustProviderType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccesstrustprovider.html#cfn-ec2-verifiedaccesstrustprovider-trustprovidertype
-	TrustProviderType string `json:"TrustProviderType"`
+	TrustProviderType T `json:"TrustProviderType"`
 
 	// UserTrustProviderType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccesstrustprovider.html#cfn-ec2-verifiedaccesstrustprovider-usertrustprovidertype
-	UserTrustProviderType *string `json:"UserTrustProviderType,omitempty"`
+	UserTrustProviderType *T `json:"UserTrustProviderType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

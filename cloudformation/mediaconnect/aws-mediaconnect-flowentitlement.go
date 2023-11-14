@@ -21,7 +21,7 @@ type FlowEntitlement[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html#cfn-mediaconnect-flowentitlement-description
-	Description string `json:"Description"`
+	Description T `json:"Description"`
 
 	// Encryption AWS CloudFormation Property
 	// Required: false
@@ -31,22 +31,22 @@ type FlowEntitlement[T any] struct {
 	// EntitlementStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html#cfn-mediaconnect-flowentitlement-entitlementstatus
-	EntitlementStatus *string `json:"EntitlementStatus,omitempty"`
+	EntitlementStatus *T `json:"EntitlementStatus,omitempty"`
 
 	// FlowArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html#cfn-mediaconnect-flowentitlement-flowarn
-	FlowArn string `json:"FlowArn"`
+	FlowArn T `json:"FlowArn"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html#cfn-mediaconnect-flowentitlement-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Subscribers AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html#cfn-mediaconnect-flowentitlement-subscribers
-	Subscribers []string `json:"Subscribers"`
+	Subscribers []T `json:"Subscribers"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

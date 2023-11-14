@@ -18,12 +18,12 @@ type ModelCard_TrainingJobDetails[T any] struct {
 	// TrainingArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingjobdetails.html#cfn-sagemaker-modelcard-trainingjobdetails-trainingarn
-	TrainingArn *string `json:"TrainingArn,omitempty"`
+	TrainingArn *T `json:"TrainingArn,omitempty"`
 
 	// TrainingDatasets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingjobdetails.html#cfn-sagemaker-modelcard-trainingjobdetails-trainingdatasets
-	TrainingDatasets []string `json:"TrainingDatasets,omitempty"`
+	TrainingDatasets []T `json:"TrainingDatasets,omitempty"`
 
 	// TrainingEnvironment AWS CloudFormation Property
 	// Required: false

@@ -27,7 +27,7 @@ type Stack[T any] struct {
 	// AttributesToDelete AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-attributestodelete
-	AttributesToDelete []string `json:"AttributesToDelete,omitempty"`
+	AttributesToDelete []T `json:"AttributesToDelete,omitempty"`
 
 	// DeleteStorageConnectors AWS CloudFormation Property
 	// Required: false
@@ -37,32 +37,32 @@ type Stack[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DisplayName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-displayname
-	DisplayName *string `json:"DisplayName,omitempty"`
+	DisplayName *T `json:"DisplayName,omitempty"`
 
 	// EmbedHostDomains AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-embedhostdomains
-	EmbedHostDomains []string `json:"EmbedHostDomains,omitempty"`
+	EmbedHostDomains []T `json:"EmbedHostDomains,omitempty"`
 
 	// FeedbackURL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-feedbackurl
-	FeedbackURL *string `json:"FeedbackURL,omitempty"`
+	FeedbackURL *T `json:"FeedbackURL,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// RedirectURL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-redirecturl
-	RedirectURL *string `json:"RedirectURL,omitempty"`
+	RedirectURL *T `json:"RedirectURL,omitempty"`
 
 	// StorageConnectors AWS CloudFormation Property
 	// Required: false

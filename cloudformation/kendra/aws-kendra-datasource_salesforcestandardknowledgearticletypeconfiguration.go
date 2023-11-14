@@ -13,12 +13,12 @@ type DataSource_SalesforceStandardKnowledgeArticleTypeConfiguration[T any] struc
 	// DocumentDataFieldName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcestandardknowledgearticletypeconfiguration.html#cfn-kendra-datasource-salesforcestandardknowledgearticletypeconfiguration-documentdatafieldname
-	DocumentDataFieldName string `json:"DocumentDataFieldName"`
+	DocumentDataFieldName T `json:"DocumentDataFieldName"`
 
 	// DocumentTitleFieldName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcestandardknowledgearticletypeconfiguration.html#cfn-kendra-datasource-salesforcestandardknowledgearticletypeconfiguration-documenttitlefieldname
-	DocumentTitleFieldName *string `json:"DocumentTitleFieldName,omitempty"`
+	DocumentTitleFieldName *T `json:"DocumentTitleFieldName,omitempty"`
 
 	// FieldMappings AWS CloudFormation Property
 	// Required: false

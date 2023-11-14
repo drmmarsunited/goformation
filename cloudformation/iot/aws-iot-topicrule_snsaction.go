@@ -13,17 +13,17 @@ type TopicRule_SnsAction[T any] struct {
 	// MessageFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-snsaction.html#cfn-iot-topicrule-snsaction-messageformat
-	MessageFormat *string `json:"MessageFormat,omitempty"`
+	MessageFormat *T `json:"MessageFormat,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-snsaction.html#cfn-iot-topicrule-snsaction-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// TargetArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-snsaction.html#cfn-iot-topicrule-snsaction-targetarn
-	TargetArn string `json:"TargetArn"`
+	TargetArn T `json:"TargetArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

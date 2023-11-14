@@ -28,7 +28,7 @@ type MLTransform_FindMatchesParameters[T any] struct {
 	// PrimaryKeyColumnName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters-primarykeycolumnname
-	PrimaryKeyColumnName string `json:"PrimaryKeyColumnName"`
+	PrimaryKeyColumnName T `json:"PrimaryKeyColumnName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

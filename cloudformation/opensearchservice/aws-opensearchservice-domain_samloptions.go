@@ -23,17 +23,17 @@ type Domain_SAMLOptions[T any] struct {
 	// MasterBackendRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-samloptions.html#cfn-opensearchservice-domain-samloptions-masterbackendrole
-	MasterBackendRole *string `json:"MasterBackendRole,omitempty"`
+	MasterBackendRole *T `json:"MasterBackendRole,omitempty"`
 
 	// MasterUserName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-samloptions.html#cfn-opensearchservice-domain-samloptions-masterusername
-	MasterUserName *string `json:"MasterUserName,omitempty"`
+	MasterUserName *T `json:"MasterUserName,omitempty"`
 
 	// RolesKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-samloptions.html#cfn-opensearchservice-domain-samloptions-roleskey
-	RolesKey *string `json:"RolesKey,omitempty"`
+	RolesKey *T `json:"RolesKey,omitempty"`
 
 	// SessionTimeoutMinutes AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Domain_SAMLOptions[T any] struct {
 	// SubjectKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-samloptions.html#cfn-opensearchservice-domain-samloptions-subjectkey
-	SubjectKey *string `json:"SubjectKey,omitempty"`
+	SubjectKey *T `json:"SubjectKey,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

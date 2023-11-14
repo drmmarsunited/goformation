@@ -13,12 +13,12 @@ type ModelPackage_TransformJobDefinition[T any] struct {
 	// BatchStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transformjobdefinition.html#cfn-sagemaker-modelpackage-transformjobdefinition-batchstrategy
-	BatchStrategy *string `json:"BatchStrategy,omitempty"`
+	BatchStrategy *T `json:"BatchStrategy,omitempty"`
 
 	// Environment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transformjobdefinition.html#cfn-sagemaker-modelpackage-transformjobdefinition-environment
-	Environment map[string]string `json:"Environment,omitempty"`
+	Environment map[string]T `json:"Environment,omitempty"`
 
 	// MaxConcurrentTransforms AWS CloudFormation Property
 	// Required: false

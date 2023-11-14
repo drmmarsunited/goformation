@@ -13,7 +13,7 @@ type ConnectorProfile_SalesforceConnectorProfileProperties[T any] struct {
 	// InstanceUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofileproperties.html#cfn-appflow-connectorprofile-salesforceconnectorprofileproperties-instanceurl
-	InstanceUrl *string `json:"InstanceUrl,omitempty"`
+	InstanceUrl *T `json:"InstanceUrl,omitempty"`
 
 	// isSandboxEnvironment AWS CloudFormation Property
 	// Required: false

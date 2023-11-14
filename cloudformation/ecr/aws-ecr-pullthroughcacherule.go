@@ -16,12 +16,12 @@ type PullThroughCacheRule[T any] struct {
 	// EcrRepositoryPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-pullthroughcacherule.html#cfn-ecr-pullthroughcacherule-ecrrepositoryprefix
-	EcrRepositoryPrefix *string `json:"EcrRepositoryPrefix,omitempty"`
+	EcrRepositoryPrefix *T `json:"EcrRepositoryPrefix,omitempty"`
 
 	// UpstreamRegistryUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-pullthroughcacherule.html#cfn-ecr-pullthroughcacherule-upstreamregistryurl
-	UpstreamRegistryUrl *string `json:"UpstreamRegistryUrl,omitempty"`
+	UpstreamRegistryUrl *T `json:"UpstreamRegistryUrl,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

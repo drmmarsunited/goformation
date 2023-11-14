@@ -13,12 +13,12 @@ type Dashboard_SheetDefinition[T any] struct {
 	// ContentType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetdefinition.html#cfn-quicksight-dashboard-sheetdefinition-contenttype
-	ContentType *string `json:"ContentType,omitempty"`
+	ContentType *T `json:"ContentType,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetdefinition.html#cfn-quicksight-dashboard-sheetdefinition-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// FilterControls AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Dashboard_SheetDefinition[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetdefinition.html#cfn-quicksight-dashboard-sheetdefinition-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// ParameterControls AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Dashboard_SheetDefinition[T any] struct {
 	// SheetId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetdefinition.html#cfn-quicksight-dashboard-sheetdefinition-sheetid
-	SheetId string `json:"SheetId"`
+	SheetId T `json:"SheetId"`
 
 	// TextBoxes AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type Dashboard_SheetDefinition[T any] struct {
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetdefinition.html#cfn-quicksight-dashboard-sheetdefinition-title
-	Title *string `json:"Title,omitempty"`
+	Title *T `json:"Title,omitempty"`
 
 	// Visuals AWS CloudFormation Property
 	// Required: false

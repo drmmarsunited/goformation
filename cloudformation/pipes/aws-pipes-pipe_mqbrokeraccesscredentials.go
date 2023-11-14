@@ -13,7 +13,7 @@ type Pipe_MQBrokerAccessCredentials[T any] struct {
 	// BasicAuth AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-mqbrokeraccesscredentials.html#cfn-pipes-pipe-mqbrokeraccesscredentials-basicauth
-	BasicAuth string `json:"BasicAuth"`
+	BasicAuth T `json:"BasicAuth"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

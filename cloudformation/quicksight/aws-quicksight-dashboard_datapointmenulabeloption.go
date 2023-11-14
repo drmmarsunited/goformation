@@ -13,7 +13,7 @@ type Dashboard_DataPointMenuLabelOption[T any] struct {
 	// AvailabilityStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datapointmenulabeloption.html#cfn-quicksight-dashboard-datapointmenulabeloption-availabilitystatus
-	AvailabilityStatus *string `json:"AvailabilityStatus,omitempty"`
+	AvailabilityStatus *T `json:"AvailabilityStatus,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

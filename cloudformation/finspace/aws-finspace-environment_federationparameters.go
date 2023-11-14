@@ -13,7 +13,7 @@ type Environment_FederationParameters[T any] struct {
 	// ApplicationCallBackURL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-finspace-environment-federationparameters.html#cfn-finspace-environment-federationparameters-applicationcallbackurl
-	ApplicationCallBackURL *string `json:"ApplicationCallBackURL,omitempty"`
+	ApplicationCallBackURL *T `json:"ApplicationCallBackURL,omitempty"`
 
 	// AttributeMap AWS CloudFormation Property
 	// Required: false
@@ -23,22 +23,22 @@ type Environment_FederationParameters[T any] struct {
 	// FederationProviderName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-finspace-environment-federationparameters.html#cfn-finspace-environment-federationparameters-federationprovidername
-	FederationProviderName *string `json:"FederationProviderName,omitempty"`
+	FederationProviderName *T `json:"FederationProviderName,omitempty"`
 
 	// FederationURN AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-finspace-environment-federationparameters.html#cfn-finspace-environment-federationparameters-federationurn
-	FederationURN *string `json:"FederationURN,omitempty"`
+	FederationURN *T `json:"FederationURN,omitempty"`
 
 	// SamlMetadataDocument AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-finspace-environment-federationparameters.html#cfn-finspace-environment-federationparameters-samlmetadatadocument
-	SamlMetadataDocument *string `json:"SamlMetadataDocument,omitempty"`
+	SamlMetadataDocument *T `json:"SamlMetadataDocument,omitempty"`
 
 	// SamlMetadataURL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-finspace-environment-federationparameters.html#cfn-finspace-environment-federationparameters-samlmetadataurl
-	SamlMetadataURL *string `json:"SamlMetadataURL,omitempty"`
+	SamlMetadataURL *T `json:"SamlMetadataURL,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

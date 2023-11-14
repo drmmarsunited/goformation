@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 
 	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/tags"
 )
 
 // UserHierarchyGroup AWS CloudFormation Resource (AWS::Connect::UserHierarchyGroup)
@@ -16,17 +17,22 @@ type UserHierarchyGroup[T any] struct {
 	// InstanceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-userhierarchygroup.html#cfn-connect-userhierarchygroup-instancearn
-	InstanceArn string `json:"InstanceArn"`
+	InstanceArn T `json:"InstanceArn"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-userhierarchygroup.html#cfn-connect-userhierarchygroup-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ParentGroupArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-userhierarchygroup.html#cfn-connect-userhierarchygroup-parentgrouparn
-	ParentGroupArn *string `json:"ParentGroupArn,omitempty"`
+	ParentGroupArn *T `json:"ParentGroupArn,omitempty"`
+
+	// Tags AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-userhierarchygroup.html#cfn-connect-userhierarchygroup-tags
+	Tags []tags.Tag `json:"Tags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

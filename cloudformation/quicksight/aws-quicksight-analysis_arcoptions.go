@@ -13,7 +13,7 @@ type Analysis_ArcOptions[T any] struct {
 	// ArcThickness AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-arcoptions.html#cfn-quicksight-analysis-arcoptions-arcthickness
-	ArcThickness *string `json:"ArcThickness,omitempty"`
+	ArcThickness *T `json:"ArcThickness,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

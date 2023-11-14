@@ -13,17 +13,17 @@ type Template_DataBarsOptions[T any] struct {
 	// FieldId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-databarsoptions.html#cfn-quicksight-template-databarsoptions-fieldid
-	FieldId string `json:"FieldId"`
+	FieldId T `json:"FieldId"`
 
 	// NegativeColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-databarsoptions.html#cfn-quicksight-template-databarsoptions-negativecolor
-	NegativeColor *string `json:"NegativeColor,omitempty"`
+	NegativeColor *T `json:"NegativeColor,omitempty"`
 
 	// PositiveColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-databarsoptions.html#cfn-quicksight-template-databarsoptions-positivecolor
-	PositiveColor *string `json:"PositiveColor,omitempty"`
+	PositiveColor *T `json:"PositiveColor,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

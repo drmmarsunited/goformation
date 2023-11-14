@@ -13,12 +13,12 @@ type Dashboard_CustomActionURLOperation[T any] struct {
 	// URLTarget AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customactionurloperation.html#cfn-quicksight-dashboard-customactionurloperation-urltarget
-	URLTarget string `json:"URLTarget"`
+	URLTarget T `json:"URLTarget"`
 
 	// URLTemplate AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customactionurloperation.html#cfn-quicksight-dashboard-customactionurloperation-urltemplate
-	URLTemplate string `json:"URLTemplate"`
+	URLTemplate T `json:"URLTemplate"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

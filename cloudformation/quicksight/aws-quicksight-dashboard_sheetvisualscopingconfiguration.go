@@ -13,17 +13,17 @@ type Dashboard_SheetVisualScopingConfiguration[T any] struct {
 	// Scope AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetvisualscopingconfiguration.html#cfn-quicksight-dashboard-sheetvisualscopingconfiguration-scope
-	Scope string `json:"Scope"`
+	Scope T `json:"Scope"`
 
 	// SheetId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetvisualscopingconfiguration.html#cfn-quicksight-dashboard-sheetvisualscopingconfiguration-sheetid
-	SheetId string `json:"SheetId"`
+	SheetId T `json:"SheetId"`
 
 	// VisualIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetvisualscopingconfiguration.html#cfn-quicksight-dashboard-sheetvisualscopingconfiguration-visualids
-	VisualIds []string `json:"VisualIds,omitempty"`
+	VisualIds []T `json:"VisualIds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

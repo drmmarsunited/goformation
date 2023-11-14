@@ -13,7 +13,7 @@ type Alias_VersionWeight[T any] struct {
 	// FunctionVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html#cfn-lambda-alias-versionweight-functionversion
-	FunctionVersion string `json:"FunctionVersion"`
+	FunctionVersion T `json:"FunctionVersion"`
 
 	// FunctionWeight AWS CloudFormation Property
 	// Required: true

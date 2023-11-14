@@ -18,7 +18,7 @@ type AutomationRule_RelatedFinding[T any] struct {
 	// ProductArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-automationrule-relatedfinding.html#cfn-securityhub-automationrule-relatedfinding-productarn
-	ProductArn string `json:"ProductArn"`
+	ProductArn T `json:"ProductArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

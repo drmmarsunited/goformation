@@ -17,7 +17,7 @@ type Membership[T any] struct {
 	// CollaborationIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-membership.html#cfn-cleanrooms-membership-collaborationidentifier
-	CollaborationIdentifier string `json:"CollaborationIdentifier"`
+	CollaborationIdentifier T `json:"CollaborationIdentifier"`
 
 	// DefaultResultConfiguration AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Membership[T any] struct {
 	// QueryLogStatus AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-membership.html#cfn-cleanrooms-membership-querylogstatus
-	QueryLogStatus string `json:"QueryLogStatus"`
+	QueryLogStatus T `json:"QueryLogStatus"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

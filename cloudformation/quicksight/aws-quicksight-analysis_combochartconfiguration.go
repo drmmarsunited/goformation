@@ -18,7 +18,7 @@ type Analysis_ComboChartConfiguration[T any] struct {
 	// BarsArrangement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-barsarrangement
-	BarsArrangement *string `json:"BarsArrangement,omitempty"`
+	BarsArrangement *T `json:"BarsArrangement,omitempty"`
 
 	// CategoryAxis AWS CloudFormation Property
 	// Required: false

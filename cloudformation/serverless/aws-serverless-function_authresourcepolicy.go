@@ -13,12 +13,12 @@ type Function_AuthResourcePolicy[T any] struct {
 	// AwsAccountBlacklist AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
-	AwsAccountBlacklist []string `json:"AwsAccountBlacklist,omitempty"`
+	AwsAccountBlacklist []T `json:"AwsAccountBlacklist,omitempty"`
 
 	// AwsAccountWhitelist AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
-	AwsAccountWhitelist []string `json:"AwsAccountWhitelist,omitempty"`
+	AwsAccountWhitelist []T `json:"AwsAccountWhitelist,omitempty"`
 
 	// CustomStatements AWS CloudFormation Property
 	// Required: false
@@ -28,42 +28,42 @@ type Function_AuthResourcePolicy[T any] struct {
 	// IntrinsicVpcBlacklist AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
-	IntrinsicVpcBlacklist []string `json:"IntrinsicVpcBlacklist,omitempty"`
+	IntrinsicVpcBlacklist []T `json:"IntrinsicVpcBlacklist,omitempty"`
 
 	// IntrinsicVpcWhitelist AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
-	IntrinsicVpcWhitelist []string `json:"IntrinsicVpcWhitelist,omitempty"`
+	IntrinsicVpcWhitelist []T `json:"IntrinsicVpcWhitelist,omitempty"`
 
 	// IntrinsicVpceBlacklist AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
-	IntrinsicVpceBlacklist []string `json:"IntrinsicVpceBlacklist,omitempty"`
+	IntrinsicVpceBlacklist []T `json:"IntrinsicVpceBlacklist,omitempty"`
 
 	// IntrinsicVpceWhitelist AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
-	IntrinsicVpceWhitelist []string `json:"IntrinsicVpceWhitelist,omitempty"`
+	IntrinsicVpceWhitelist []T `json:"IntrinsicVpceWhitelist,omitempty"`
 
 	// IpRangeBlacklist AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
-	IpRangeBlacklist []string `json:"IpRangeBlacklist,omitempty"`
+	IpRangeBlacklist []T `json:"IpRangeBlacklist,omitempty"`
 
 	// IpRangeWhitelist AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
-	IpRangeWhitelist []string `json:"IpRangeWhitelist,omitempty"`
+	IpRangeWhitelist []T `json:"IpRangeWhitelist,omitempty"`
 
 	// SourceVpcBlacklist AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
-	SourceVpcBlacklist []string `json:"SourceVpcBlacklist,omitempty"`
+	SourceVpcBlacklist []T `json:"SourceVpcBlacklist,omitempty"`
 
 	// SourceVpcWhitelist AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
-	SourceVpcWhitelist []string `json:"SourceVpcWhitelist,omitempty"`
+	SourceVpcWhitelist []T `json:"SourceVpcWhitelist,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

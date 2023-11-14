@@ -13,7 +13,7 @@ type Template_PrivateKeyFlagsV3[T any] struct {
 	// ClientVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-template-privatekeyflagsv3.html#cfn-pcaconnectorad-template-privatekeyflagsv3-clientversion
-	ClientVersion string `json:"ClientVersion"`
+	ClientVersion T `json:"ClientVersion"`
 
 	// ExportableKey AWS CloudFormation Property
 	// Required: false

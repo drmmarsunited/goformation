@@ -13,7 +13,7 @@ type HttpApi_MutualTlsAuthentication[T any] struct {
 	// TruststoreUri AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-mutualtlsauthentication.html#cfn-apigatewayv2-domainname-mutualtlsauthentication-truststoreuri
-	TruststoreUri *string `json:"TruststoreUri,omitempty"`
+	TruststoreUri *T `json:"TruststoreUri,omitempty"`
 
 	// TruststoreVersion AWS CloudFormation Property
 	// Required: false

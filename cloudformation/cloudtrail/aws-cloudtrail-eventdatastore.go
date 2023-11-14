@@ -27,7 +27,7 @@ type EventDataStore[T any] struct {
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-eventdatastore.html#cfn-cloudtrail-eventdatastore-kmskeyid
-	KmsKeyId *string `json:"KmsKeyId,omitempty"`
+	KmsKeyId *T `json:"KmsKeyId,omitempty"`
 
 	// MultiRegionEnabled AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type EventDataStore[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-eventdatastore.html#cfn-cloudtrail-eventdatastore-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// OrganizationEnabled AWS CloudFormation Property
 	// Required: false

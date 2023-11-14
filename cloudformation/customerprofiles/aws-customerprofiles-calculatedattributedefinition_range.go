@@ -13,7 +13,7 @@ type CalculatedAttributeDefinition_Range[T any] struct {
 	// Unit AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-range.html#cfn-customerprofiles-calculatedattributedefinition-range-unit
-	Unit string `json:"Unit"`
+	Unit T `json:"Unit"`
 
 	// Value AWS CloudFormation Property
 	// Required: true

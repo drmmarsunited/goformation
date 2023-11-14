@@ -18,7 +18,7 @@ type Channel_FecOutputSettings[T any] struct {
 	// IncludeFec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-fecoutputsettings.html#cfn-medialive-channel-fecoutputsettings-includefec
-	IncludeFec *string `json:"IncludeFec,omitempty"`
+	IncludeFec *T `json:"IncludeFec,omitempty"`
 
 	// RowLength AWS CloudFormation Property
 	// Required: false

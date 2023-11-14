@@ -13,7 +13,7 @@ type Dashboard_DashboardSourceTemplate[T any] struct {
 	// Arn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardsourcetemplate.html#cfn-quicksight-dashboard-dashboardsourcetemplate-arn
-	Arn string `json:"Arn"`
+	Arn T `json:"Arn"`
 
 	// DataSetReferences AWS CloudFormation Property
 	// Required: true

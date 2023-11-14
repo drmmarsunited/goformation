@@ -23,17 +23,17 @@ type Analysis_FreeFormLayoutElement[T any] struct {
 	// ElementId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-elementid
-	ElementId string `json:"ElementId"`
+	ElementId T `json:"ElementId"`
 
 	// ElementType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-elementtype
-	ElementType string `json:"ElementType"`
+	ElementType T `json:"ElementType"`
 
 	// Height AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-height
-	Height string `json:"Height"`
+	Height T `json:"Height"`
 
 	// LoadingAnimation AWS CloudFormation Property
 	// Required: false
@@ -53,22 +53,22 @@ type Analysis_FreeFormLayoutElement[T any] struct {
 	// Visibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-visibility
-	Visibility *string `json:"Visibility,omitempty"`
+	Visibility *T `json:"Visibility,omitempty"`
 
 	// Width AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-width
-	Width string `json:"Width"`
+	Width T `json:"Width"`
 
 	// XAxisLocation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-xaxislocation
-	XAxisLocation string `json:"XAxisLocation"`
+	XAxisLocation T `json:"XAxisLocation"`
 
 	// YAxisLocation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-yaxislocation
-	YAxisLocation string `json:"YAxisLocation"`
+	YAxisLocation T `json:"YAxisLocation"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

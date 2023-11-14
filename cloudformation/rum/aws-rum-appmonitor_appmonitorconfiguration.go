@@ -23,27 +23,27 @@ type AppMonitor_AppMonitorConfiguration[T any] struct {
 	// ExcludedPages AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-appmonitorconfiguration.html#cfn-rum-appmonitor-appmonitorconfiguration-excludedpages
-	ExcludedPages []string `json:"ExcludedPages,omitempty"`
+	ExcludedPages []T `json:"ExcludedPages,omitempty"`
 
 	// FavoritePages AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-appmonitorconfiguration.html#cfn-rum-appmonitor-appmonitorconfiguration-favoritepages
-	FavoritePages []string `json:"FavoritePages,omitempty"`
+	FavoritePages []T `json:"FavoritePages,omitempty"`
 
 	// GuestRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-appmonitorconfiguration.html#cfn-rum-appmonitor-appmonitorconfiguration-guestrolearn
-	GuestRoleArn *string `json:"GuestRoleArn,omitempty"`
+	GuestRoleArn *T `json:"GuestRoleArn,omitempty"`
 
 	// IdentityPoolId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-appmonitorconfiguration.html#cfn-rum-appmonitor-appmonitorconfiguration-identitypoolid
-	IdentityPoolId *string `json:"IdentityPoolId,omitempty"`
+	IdentityPoolId *T `json:"IdentityPoolId,omitempty"`
 
 	// IncludedPages AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-appmonitorconfiguration.html#cfn-rum-appmonitor-appmonitorconfiguration-includedpages
-	IncludedPages []string `json:"IncludedPages,omitempty"`
+	IncludedPages []T `json:"IncludedPages,omitempty"`
 
 	// MetricDestinations AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type AppMonitor_AppMonitorConfiguration[T any] struct {
 	// Telemetries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-appmonitorconfiguration.html#cfn-rum-appmonitor-appmonitorconfiguration-telemetries
-	Telemetries []string `json:"Telemetries,omitempty"`
+	Telemetries []T `json:"Telemetries,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

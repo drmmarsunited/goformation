@@ -17,7 +17,7 @@ type Campaign[T any] struct {
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-action
-	Action string `json:"Action"`
+	Action T `json:"Action"`
 
 	// CollectionScheme AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type Campaign[T any] struct {
 	// Compression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-compression
-	Compression *string `json:"Compression,omitempty"`
+	Compression *T `json:"Compression,omitempty"`
 
 	// DataDestinationConfigs AWS CloudFormation Property
 	// Required: false
@@ -37,27 +37,27 @@ type Campaign[T any] struct {
 	// DataExtraDimensions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-dataextradimensions
-	DataExtraDimensions []string `json:"DataExtraDimensions,omitempty"`
+	DataExtraDimensions []T `json:"DataExtraDimensions,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DiagnosticsMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-diagnosticsmode
-	DiagnosticsMode *string `json:"DiagnosticsMode,omitempty"`
+	DiagnosticsMode *T `json:"DiagnosticsMode,omitempty"`
 
 	// ExpiryTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-expirytime
-	ExpiryTime *string `json:"ExpiryTime,omitempty"`
+	ExpiryTime *T `json:"ExpiryTime,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// PostTriggerCollectionDuration AWS CloudFormation Property
 	// Required: false
@@ -72,7 +72,7 @@ type Campaign[T any] struct {
 	// SignalCatalogArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-signalcatalogarn
-	SignalCatalogArn string `json:"SignalCatalogArn"`
+	SignalCatalogArn T `json:"SignalCatalogArn"`
 
 	// SignalsToCollect AWS CloudFormation Property
 	// Required: false
@@ -82,12 +82,12 @@ type Campaign[T any] struct {
 	// SpoolingMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-spoolingmode
-	SpoolingMode *string `json:"SpoolingMode,omitempty"`
+	SpoolingMode *T `json:"SpoolingMode,omitempty"`
 
 	// StartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-starttime
-	StartTime *string `json:"StartTime,omitempty"`
+	StartTime *T `json:"StartTime,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -97,7 +97,7 @@ type Campaign[T any] struct {
 	// TargetArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-targetarn
-	TargetArn string `json:"TargetArn"`
+	TargetArn T `json:"TargetArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

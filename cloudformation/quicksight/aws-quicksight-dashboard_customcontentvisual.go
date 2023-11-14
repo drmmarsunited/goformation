@@ -23,7 +23,7 @@ type Dashboard_CustomContentVisual[T any] struct {
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customcontentvisual.html#cfn-quicksight-dashboard-customcontentvisual-datasetidentifier
-	DataSetIdentifier string `json:"DataSetIdentifier"`
+	DataSetIdentifier T `json:"DataSetIdentifier"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Dashboard_CustomContentVisual[T any] struct {
 	// VisualId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customcontentvisual.html#cfn-quicksight-dashboard-customcontentvisual-visualid
-	VisualId string `json:"VisualId"`
+	VisualId T `json:"VisualId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -18,7 +18,7 @@ type FHIRDatastore_CreatedAt[T any] struct {
 	// Seconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-createdat.html#cfn-healthlake-fhirdatastore-createdat-seconds
-	Seconds string `json:"Seconds"`
+	Seconds T `json:"Seconds"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -18,7 +18,7 @@ type CertificateAuthority_OcspConfiguration[T any] struct {
 	// OcspCustomCname AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-ocspconfiguration.html#cfn-acmpca-certificateauthority-ocspconfiguration-ocspcustomcname
-	OcspCustomCname *string `json:"OcspCustomCname,omitempty"`
+	OcspCustomCname *T `json:"OcspCustomCname,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

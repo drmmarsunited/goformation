@@ -18,7 +18,7 @@ type Application_ApplicationCodeConfiguration[T any] struct {
 	// CodeContentType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationcodeconfiguration.html#cfn-kinesisanalyticsv2-application-applicationcodeconfiguration-codecontenttype
-	CodeContentType string `json:"CodeContentType"`
+	CodeContentType T `json:"CodeContentType"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

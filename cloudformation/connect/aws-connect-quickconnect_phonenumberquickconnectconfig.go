@@ -13,7 +13,7 @@ type QuickConnect_PhoneNumberQuickConnectConfig[T any] struct {
 	// PhoneNumber AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-phonenumberquickconnectconfig.html#cfn-connect-quickconnect-phonenumberquickconnectconfig-phonenumber
-	PhoneNumber string `json:"PhoneNumber"`
+	PhoneNumber T `json:"PhoneNumber"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

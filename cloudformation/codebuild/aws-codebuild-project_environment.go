@@ -13,12 +13,12 @@ type Project_Environment[T any] struct {
 	// Certificate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-certificate
-	Certificate *string `json:"Certificate,omitempty"`
+	Certificate *T `json:"Certificate,omitempty"`
 
 	// ComputeType AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-computetype
-	ComputeType string `json:"ComputeType"`
+	ComputeType *T `json:"ComputeType,omitempty"`
 
 	// EnvironmentVariables AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Project_Environment[T any] struct {
 	// Image AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-image
-	Image string `json:"Image"`
+	Image T `json:"Image"`
 
 	// ImagePullCredentialsType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-imagepullcredentialstype
-	ImagePullCredentialsType *string `json:"ImagePullCredentialsType,omitempty"`
+	ImagePullCredentialsType *T `json:"ImagePullCredentialsType,omitempty"`
 
 	// PrivilegedMode AWS CloudFormation Property
 	// Required: false
@@ -46,9 +46,9 @@ type Project_Environment[T any] struct {
 	RegistryCredential *Project_RegistryCredential[any] `json:"RegistryCredential,omitempty"`
 
 	// Type AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-type
-	Type string `json:"Type"`
+	Type *T `json:"Type,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

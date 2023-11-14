@@ -13,7 +13,7 @@ type LoggingConfiguration_CloudWatchLogsDestinationConfiguration[T any] struct {
 	// LogGroupName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivschat-loggingconfiguration-cloudwatchlogsdestinationconfiguration.html#cfn-ivschat-loggingconfiguration-cloudwatchlogsdestinationconfiguration-loggroupname
-	LogGroupName string `json:"LogGroupName"`
+	LogGroupName T `json:"LogGroupName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

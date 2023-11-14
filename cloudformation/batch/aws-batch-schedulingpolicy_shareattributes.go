@@ -13,7 +13,7 @@ type SchedulingPolicy_ShareAttributes[T any] struct {
 	// ShareIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-schedulingpolicy-shareattributes.html#cfn-batch-schedulingpolicy-shareattributes-shareidentifier
-	ShareIdentifier *string `json:"ShareIdentifier,omitempty"`
+	ShareIdentifier *T `json:"ShareIdentifier,omitempty"`
 
 	// WeightFactor AWS CloudFormation Property
 	// Required: false

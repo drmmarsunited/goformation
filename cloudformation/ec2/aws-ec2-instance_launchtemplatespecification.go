@@ -13,17 +13,17 @@ type Instance_LaunchTemplateSpecification[T any] struct {
 	// LaunchTemplateId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-launchtemplatespecification.html#cfn-ec2-instance-launchtemplatespecification-launchtemplateid
-	LaunchTemplateId *string `json:"LaunchTemplateId,omitempty"`
+	LaunchTemplateId *T `json:"LaunchTemplateId,omitempty"`
 
 	// LaunchTemplateName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-launchtemplatespecification.html#cfn-ec2-instance-launchtemplatespecification-launchtemplatename
-	LaunchTemplateName *string `json:"LaunchTemplateName,omitempty"`
+	LaunchTemplateName *T `json:"LaunchTemplateName,omitempty"`
 
 	// Version AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-launchtemplatespecification.html#cfn-ec2-instance-launchtemplatespecification-version
-	Version string `json:"Version"`
+	Version T `json:"Version"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

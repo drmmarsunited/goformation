@@ -18,7 +18,7 @@ type MatchingWorkflow_OutputSource[T any] struct {
 	// KMSArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-matchingworkflow-outputsource.html#cfn-entityresolution-matchingworkflow-outputsource-kmsarn
-	KMSArn *string `json:"KMSArn,omitempty"`
+	KMSArn *T `json:"KMSArn,omitempty"`
 
 	// Output AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type MatchingWorkflow_OutputSource[T any] struct {
 	// OutputS3Path AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-matchingworkflow-outputsource.html#cfn-entityresolution-matchingworkflow-outputsource-outputs3path
-	OutputS3Path string `json:"OutputS3Path"`
+	OutputS3Path T `json:"OutputS3Path"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

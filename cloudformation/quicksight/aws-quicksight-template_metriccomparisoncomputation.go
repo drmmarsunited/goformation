@@ -13,7 +13,7 @@ type Template_MetricComparisonComputation[T any] struct {
 	// ComputationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-metriccomparisoncomputation.html#cfn-quicksight-template-metriccomparisoncomputation-computationid
-	ComputationId string `json:"ComputationId"`
+	ComputationId T `json:"ComputationId"`
 
 	// FromValue AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Template_MetricComparisonComputation[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-metriccomparisoncomputation.html#cfn-quicksight-template-metriccomparisoncomputation-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// TargetValue AWS CloudFormation Property
 	// Required: false

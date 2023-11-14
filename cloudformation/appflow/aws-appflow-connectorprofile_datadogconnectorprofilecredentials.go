@@ -13,12 +13,12 @@ type ConnectorProfile_DatadogConnectorProfileCredentials[T any] struct {
 	// ApiKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-datadogconnectorprofilecredentials.html#cfn-appflow-connectorprofile-datadogconnectorprofilecredentials-apikey
-	ApiKey string `json:"ApiKey"`
+	ApiKey T `json:"ApiKey"`
 
 	// ApplicationKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-datadogconnectorprofilecredentials.html#cfn-appflow-connectorprofile-datadogconnectorprofilecredentials-applicationkey
-	ApplicationKey string `json:"ApplicationKey"`
+	ApplicationKey T `json:"ApplicationKey"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

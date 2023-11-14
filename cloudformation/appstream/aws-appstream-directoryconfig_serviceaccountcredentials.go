@@ -13,12 +13,12 @@ type DirectoryConfig_ServiceAccountCredentials[T any] struct {
 	// AccountName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-directoryconfig-serviceaccountcredentials.html#cfn-appstream-directoryconfig-serviceaccountcredentials-accountname
-	AccountName string `json:"AccountName"`
+	AccountName T `json:"AccountName"`
 
 	// AccountPassword AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-directoryconfig-serviceaccountcredentials.html#cfn-appstream-directoryconfig-serviceaccountcredentials-accountpassword
-	AccountPassword string `json:"AccountPassword"`
+	AccountPassword T `json:"AccountPassword"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

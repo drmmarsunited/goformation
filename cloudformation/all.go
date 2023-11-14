@@ -103,6 +103,7 @@ import (
 	"github.com/drmmarsunited/goformation/v7/cloudformation/greengrassv2"
 	"github.com/drmmarsunited/goformation/v7/cloudformation/groundstation"
 	"github.com/drmmarsunited/goformation/v7/cloudformation/guardduty"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/healthimaging"
 	"github.com/drmmarsunited/goformation/v7/cloudformation/healthlake"
 	"github.com/drmmarsunited/goformation/v7/cloudformation/iam"
 	"github.com/drmmarsunited/goformation/v7/cloudformation/identitystore"
@@ -441,6 +442,7 @@ func AllResources() map[string]Resource {
 		"AWS::Cognito::IdentityPool":                                       &cognito.IdentityPool[any]{},
 		"AWS::Cognito::IdentityPoolPrincipalTag":                           &cognito.IdentityPoolPrincipalTag[any]{},
 		"AWS::Cognito::IdentityPoolRoleAttachment":                         &cognito.IdentityPoolRoleAttachment[any]{},
+		"AWS::Cognito::LogDeliveryConfiguration":                           &cognito.LogDeliveryConfiguration[any]{},
 		"AWS::Cognito::UserPool":                                           &cognito.UserPool[any]{},
 		"AWS::Cognito::UserPoolClient":                                     &cognito.UserPoolClient[any]{},
 		"AWS::Cognito::UserPoolDomain":                                     &cognito.UserPoolDomain[any]{},
@@ -478,6 +480,7 @@ func AllResources() map[string]Resource {
 		"AWS::Connect::RoutingProfile":                                     &connect.RoutingProfile[any]{},
 		"AWS::Connect::Rule":                                               &connect.Rule[any]{},
 		"AWS::Connect::SecurityKey":                                        &connect.SecurityKey[any]{},
+		"AWS::Connect::SecurityProfile":                                    &connect.SecurityProfile[any]{},
 		"AWS::Connect::TaskTemplate":                                       &connect.TaskTemplate[any]{},
 		"AWS::Connect::TrafficDistributionGroup":                           &connect.TrafficDistributionGroup[any]{},
 		"AWS::Connect::User":                                               &connect.User[any]{},
@@ -680,6 +683,7 @@ func AllResources() map[string]Resource {
 		"AWS::ElasticLoadBalancingV2::LoadBalancer":                        &elasticloadbalancingv2.LoadBalancer[any]{},
 		"AWS::ElasticLoadBalancingV2::TargetGroup":                         &elasticloadbalancingv2.TargetGroup[any]{},
 		"AWS::Elasticsearch::Domain":                                       &elasticsearch.Domain[any]{},
+		"AWS::EntityResolution::IdMappingWorkflow":                         &entityresolution.IdMappingWorkflow[any]{},
 		"AWS::EntityResolution::MatchingWorkflow":                          &entityresolution.MatchingWorkflow[any]{},
 		"AWS::EntityResolution::SchemaMapping":                             &entityresolution.SchemaMapping[any]{},
 		"AWS::EventSchemas::Discoverer":                                    &eventschemas.Discoverer[any]{},
@@ -775,6 +779,7 @@ func AllResources() map[string]Resource {
 		"AWS::GuardDuty::Master":                                           &guardduty.Master[any]{},
 		"AWS::GuardDuty::Member":                                           &guardduty.Member[any]{},
 		"AWS::GuardDuty::ThreatIntelSet":                                   &guardduty.ThreatIntelSet[any]{},
+		"AWS::HealthImaging::Datastore":                                    &healthimaging.Datastore[any]{},
 		"AWS::HealthLake::FHIRDatastore":                                   &healthlake.FHIRDatastore[any]{},
 		"AWS::IAM::AccessKey":                                              &iam.AccessKey[any]{},
 		"AWS::IAM::Group":                                                  &iam.Group[any]{},
@@ -834,6 +839,8 @@ func AllResources() map[string]Resource {
 		"AWS::IoT::RoleAlias":                                              &iot.RoleAlias[any]{},
 		"AWS::IoT::ScheduledAudit":                                         &iot.ScheduledAudit[any]{},
 		"AWS::IoT::SecurityProfile":                                        &iot.SecurityProfile[any]{},
+		"AWS::IoT::SoftwarePackage":                                        &iot.SoftwarePackage[any]{},
+		"AWS::IoT::SoftwarePackageVersion":                                 &iot.SoftwarePackageVersion[any]{},
 		"AWS::IoT::Thing":                                                  &iot.Thing[any]{},
 		"AWS::IoT::ThingGroup":                                             &iot.ThingGroup[any]{},
 		"AWS::IoT::ThingPrincipalAttachment":                               &iot.ThingPrincipalAttachment[any]{},
@@ -957,6 +964,7 @@ func AllResources() map[string]Resource {
 		"AWS::MSK::Cluster":                                                &msk.Cluster[any]{},
 		"AWS::MSK::ClusterPolicy":                                          &msk.ClusterPolicy[any]{},
 		"AWS::MSK::Configuration":                                          &msk.Configuration[any]{},
+		"AWS::MSK::Replicator":                                             &msk.Replicator[any]{},
 		"AWS::MSK::ServerlessCluster":                                      &msk.ServerlessCluster[any]{},
 		"AWS::MSK::VpcConnection":                                          &msk.VpcConnection[any]{},
 		"AWS::MWAA::Environment":                                           &mwaa.Environment[any]{},
@@ -982,6 +990,8 @@ func AllResources() map[string]Resource {
 		"AWS::MediaLive::Channel":                                          &medialive.Channel[any]{},
 		"AWS::MediaLive::Input":                                            &medialive.Input[any]{},
 		"AWS::MediaLive::InputSecurityGroup":                               &medialive.InputSecurityGroup[any]{},
+		"AWS::MediaLive::Multiplex":                                        &medialive.Multiplex[any]{},
+		"AWS::MediaLive::Multiplexprogram":                                 &medialive.Multiplexprogram[any]{},
 		"AWS::MediaPackage::Asset":                                         &mediapackage.Asset[any]{},
 		"AWS::MediaPackage::Channel":                                       &mediapackage.Channel[any]{},
 		"AWS::MediaPackage::OriginEndpoint":                                &mediapackage.OriginEndpoint[any]{},
@@ -6288,6 +6298,30 @@ func (t *Template) GetCognitoIdentityPoolRoleAttachmentWithName(name string) (*c
 	return nil, fmt.Errorf("resource %q of type cognito.IdentityPoolRoleAttachment not found", name)
 }
 
+// GetAllCognitoLogDeliveryConfigurationResources retrieves all cognito.LogDeliveryConfiguration items from an AWS CloudFormation template
+func (t *Template) GetAllCognitoLogDeliveryConfigurationResources() map[string]*cognito.LogDeliveryConfiguration[any] {
+	results := map[string]*cognito.LogDeliveryConfiguration[any]{}
+	for name, untyped := range t.Resources {
+		switch resource := untyped.(type) {
+		case *cognito.LogDeliveryConfiguration[any]:
+			results[name] = resource
+		}
+	}
+	return results
+}
+
+// GetCognitoLogDeliveryConfigurationWithName retrieves all cognito.LogDeliveryConfiguration items from an AWS CloudFormation template
+// whose logical ID matches the provided name. Returns an error if not found.
+func (t *Template) GetCognitoLogDeliveryConfigurationWithName(name string) (*cognito.LogDeliveryConfiguration[any], error) {
+	if untyped, ok := t.Resources[name]; ok {
+		switch resource := untyped.(type) {
+		case *cognito.LogDeliveryConfiguration[any]:
+			return resource, nil
+		}
+	}
+	return nil, fmt.Errorf("resource %q of type cognito.LogDeliveryConfiguration not found", name)
+}
+
 // GetAllCognitoUserPoolResources retrieves all cognito.UserPool items from an AWS CloudFormation template
 func (t *Template) GetAllCognitoUserPoolResources() map[string]*cognito.UserPool[any] {
 	results := map[string]*cognito.UserPool[any]{}
@@ -7174,6 +7208,30 @@ func (t *Template) GetConnectSecurityKeyWithName(name string) (*connect.Security
 		}
 	}
 	return nil, fmt.Errorf("resource %q of type connect.SecurityKey not found", name)
+}
+
+// GetAllConnectSecurityProfileResources retrieves all connect.SecurityProfile items from an AWS CloudFormation template
+func (t *Template) GetAllConnectSecurityProfileResources() map[string]*connect.SecurityProfile[any] {
+	results := map[string]*connect.SecurityProfile[any]{}
+	for name, untyped := range t.Resources {
+		switch resource := untyped.(type) {
+		case *connect.SecurityProfile[any]:
+			results[name] = resource
+		}
+	}
+	return results
+}
+
+// GetConnectSecurityProfileWithName retrieves all connect.SecurityProfile items from an AWS CloudFormation template
+// whose logical ID matches the provided name. Returns an error if not found.
+func (t *Template) GetConnectSecurityProfileWithName(name string) (*connect.SecurityProfile[any], error) {
+	if untyped, ok := t.Resources[name]; ok {
+		switch resource := untyped.(type) {
+		case *connect.SecurityProfile[any]:
+			return resource, nil
+		}
+	}
+	return nil, fmt.Errorf("resource %q of type connect.SecurityProfile not found", name)
 }
 
 // GetAllConnectTaskTemplateResources retrieves all connect.TaskTemplate items from an AWS CloudFormation template
@@ -12024,6 +12082,30 @@ func (t *Template) GetElasticsearchDomainWithName(name string) (*elasticsearch.D
 	return nil, fmt.Errorf("resource %q of type elasticsearch.Domain not found", name)
 }
 
+// GetAllEntityResolutionIdMappingWorkflowResources retrieves all entityresolution.IdMappingWorkflow items from an AWS CloudFormation template
+func (t *Template) GetAllEntityResolutionIdMappingWorkflowResources() map[string]*entityresolution.IdMappingWorkflow[any] {
+	results := map[string]*entityresolution.IdMappingWorkflow[any]{}
+	for name, untyped := range t.Resources {
+		switch resource := untyped.(type) {
+		case *entityresolution.IdMappingWorkflow[any]:
+			results[name] = resource
+		}
+	}
+	return results
+}
+
+// GetEntityResolutionIdMappingWorkflowWithName retrieves all entityresolution.IdMappingWorkflow items from an AWS CloudFormation template
+// whose logical ID matches the provided name. Returns an error if not found.
+func (t *Template) GetEntityResolutionIdMappingWorkflowWithName(name string) (*entityresolution.IdMappingWorkflow[any], error) {
+	if untyped, ok := t.Resources[name]; ok {
+		switch resource := untyped.(type) {
+		case *entityresolution.IdMappingWorkflow[any]:
+			return resource, nil
+		}
+	}
+	return nil, fmt.Errorf("resource %q of type entityresolution.IdMappingWorkflow not found", name)
+}
+
 // GetAllEntityResolutionMatchingWorkflowResources retrieves all entityresolution.MatchingWorkflow items from an AWS CloudFormation template
 func (t *Template) GetAllEntityResolutionMatchingWorkflowResources() map[string]*entityresolution.MatchingWorkflow[any] {
 	results := map[string]*entityresolution.MatchingWorkflow[any]{}
@@ -14304,6 +14386,30 @@ func (t *Template) GetGuardDutyThreatIntelSetWithName(name string) (*guardduty.T
 	return nil, fmt.Errorf("resource %q of type guardduty.ThreatIntelSet not found", name)
 }
 
+// GetAllHealthImagingDatastoreResources retrieves all healthimaging.Datastore items from an AWS CloudFormation template
+func (t *Template) GetAllHealthImagingDatastoreResources() map[string]*healthimaging.Datastore[any] {
+	results := map[string]*healthimaging.Datastore[any]{}
+	for name, untyped := range t.Resources {
+		switch resource := untyped.(type) {
+		case *healthimaging.Datastore[any]:
+			results[name] = resource
+		}
+	}
+	return results
+}
+
+// GetHealthImagingDatastoreWithName retrieves all healthimaging.Datastore items from an AWS CloudFormation template
+// whose logical ID matches the provided name. Returns an error if not found.
+func (t *Template) GetHealthImagingDatastoreWithName(name string) (*healthimaging.Datastore[any], error) {
+	if untyped, ok := t.Resources[name]; ok {
+		switch resource := untyped.(type) {
+		case *healthimaging.Datastore[any]:
+			return resource, nil
+		}
+	}
+	return nil, fmt.Errorf("resource %q of type healthimaging.Datastore not found", name)
+}
+
 // GetAllHealthLakeFHIRDatastoreResources retrieves all healthlake.FHIRDatastore items from an AWS CloudFormation template
 func (t *Template) GetAllHealthLakeFHIRDatastoreResources() map[string]*healthlake.FHIRDatastore[any] {
 	results := map[string]*healthlake.FHIRDatastore[any]{}
@@ -15718,6 +15824,54 @@ func (t *Template) GetIoTSecurityProfileWithName(name string) (*iot.SecurityProf
 		}
 	}
 	return nil, fmt.Errorf("resource %q of type iot.SecurityProfile not found", name)
+}
+
+// GetAllIoTSoftwarePackageResources retrieves all iot.SoftwarePackage items from an AWS CloudFormation template
+func (t *Template) GetAllIoTSoftwarePackageResources() map[string]*iot.SoftwarePackage[any] {
+	results := map[string]*iot.SoftwarePackage[any]{}
+	for name, untyped := range t.Resources {
+		switch resource := untyped.(type) {
+		case *iot.SoftwarePackage[any]:
+			results[name] = resource
+		}
+	}
+	return results
+}
+
+// GetIoTSoftwarePackageWithName retrieves all iot.SoftwarePackage items from an AWS CloudFormation template
+// whose logical ID matches the provided name. Returns an error if not found.
+func (t *Template) GetIoTSoftwarePackageWithName(name string) (*iot.SoftwarePackage[any], error) {
+	if untyped, ok := t.Resources[name]; ok {
+		switch resource := untyped.(type) {
+		case *iot.SoftwarePackage[any]:
+			return resource, nil
+		}
+	}
+	return nil, fmt.Errorf("resource %q of type iot.SoftwarePackage not found", name)
+}
+
+// GetAllIoTSoftwarePackageVersionResources retrieves all iot.SoftwarePackageVersion items from an AWS CloudFormation template
+func (t *Template) GetAllIoTSoftwarePackageVersionResources() map[string]*iot.SoftwarePackageVersion[any] {
+	results := map[string]*iot.SoftwarePackageVersion[any]{}
+	for name, untyped := range t.Resources {
+		switch resource := untyped.(type) {
+		case *iot.SoftwarePackageVersion[any]:
+			results[name] = resource
+		}
+	}
+	return results
+}
+
+// GetIoTSoftwarePackageVersionWithName retrieves all iot.SoftwarePackageVersion items from an AWS CloudFormation template
+// whose logical ID matches the provided name. Returns an error if not found.
+func (t *Template) GetIoTSoftwarePackageVersionWithName(name string) (*iot.SoftwarePackageVersion[any], error) {
+	if untyped, ok := t.Resources[name]; ok {
+		switch resource := untyped.(type) {
+		case *iot.SoftwarePackageVersion[any]:
+			return resource, nil
+		}
+	}
+	return nil, fmt.Errorf("resource %q of type iot.SoftwarePackageVersion not found", name)
 }
 
 // GetAllIoTThingResources retrieves all iot.Thing items from an AWS CloudFormation template
@@ -18672,6 +18826,30 @@ func (t *Template) GetMSKConfigurationWithName(name string) (*msk.Configuration[
 	return nil, fmt.Errorf("resource %q of type msk.Configuration not found", name)
 }
 
+// GetAllMSKReplicatorResources retrieves all msk.Replicator items from an AWS CloudFormation template
+func (t *Template) GetAllMSKReplicatorResources() map[string]*msk.Replicator[any] {
+	results := map[string]*msk.Replicator[any]{}
+	for name, untyped := range t.Resources {
+		switch resource := untyped.(type) {
+		case *msk.Replicator[any]:
+			results[name] = resource
+		}
+	}
+	return results
+}
+
+// GetMSKReplicatorWithName retrieves all msk.Replicator items from an AWS CloudFormation template
+// whose logical ID matches the provided name. Returns an error if not found.
+func (t *Template) GetMSKReplicatorWithName(name string) (*msk.Replicator[any], error) {
+	if untyped, ok := t.Resources[name]; ok {
+		switch resource := untyped.(type) {
+		case *msk.Replicator[any]:
+			return resource, nil
+		}
+	}
+	return nil, fmt.Errorf("resource %q of type msk.Replicator not found", name)
+}
+
 // GetAllMSKServerlessClusterResources retrieves all msk.ServerlessCluster items from an AWS CloudFormation template
 func (t *Template) GetAllMSKServerlessClusterResources() map[string]*msk.ServerlessCluster[any] {
 	results := map[string]*msk.ServerlessCluster[any]{}
@@ -19270,6 +19448,54 @@ func (t *Template) GetMediaLiveInputSecurityGroupWithName(name string) (*mediali
 		}
 	}
 	return nil, fmt.Errorf("resource %q of type medialive.InputSecurityGroup not found", name)
+}
+
+// GetAllMediaLiveMultiplexResources retrieves all medialive.Multiplex items from an AWS CloudFormation template
+func (t *Template) GetAllMediaLiveMultiplexResources() map[string]*medialive.Multiplex[any] {
+	results := map[string]*medialive.Multiplex[any]{}
+	for name, untyped := range t.Resources {
+		switch resource := untyped.(type) {
+		case *medialive.Multiplex[any]:
+			results[name] = resource
+		}
+	}
+	return results
+}
+
+// GetMediaLiveMultiplexWithName retrieves all medialive.Multiplex items from an AWS CloudFormation template
+// whose logical ID matches the provided name. Returns an error if not found.
+func (t *Template) GetMediaLiveMultiplexWithName(name string) (*medialive.Multiplex[any], error) {
+	if untyped, ok := t.Resources[name]; ok {
+		switch resource := untyped.(type) {
+		case *medialive.Multiplex[any]:
+			return resource, nil
+		}
+	}
+	return nil, fmt.Errorf("resource %q of type medialive.Multiplex not found", name)
+}
+
+// GetAllMediaLiveMultiplexprogramResources retrieves all medialive.Multiplexprogram items from an AWS CloudFormation template
+func (t *Template) GetAllMediaLiveMultiplexprogramResources() map[string]*medialive.Multiplexprogram[any] {
+	results := map[string]*medialive.Multiplexprogram[any]{}
+	for name, untyped := range t.Resources {
+		switch resource := untyped.(type) {
+		case *medialive.Multiplexprogram[any]:
+			results[name] = resource
+		}
+	}
+	return results
+}
+
+// GetMediaLiveMultiplexprogramWithName retrieves all medialive.Multiplexprogram items from an AWS CloudFormation template
+// whose logical ID matches the provided name. Returns an error if not found.
+func (t *Template) GetMediaLiveMultiplexprogramWithName(name string) (*medialive.Multiplexprogram[any], error) {
+	if untyped, ok := t.Resources[name]; ok {
+		switch resource := untyped.(type) {
+		case *medialive.Multiplexprogram[any]:
+			return resource, nil
+		}
+	}
+	return nil, fmt.Errorf("resource %q of type medialive.Multiplexprogram not found", name)
 }
 
 // GetAllMediaPackageAssetResources retrieves all mediapackage.Asset items from an AWS CloudFormation template

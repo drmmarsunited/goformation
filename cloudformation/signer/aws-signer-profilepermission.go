@@ -16,27 +16,27 @@ type ProfilePermission[T any] struct {
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-profilepermission.html#cfn-signer-profilepermission-action
-	Action string `json:"Action"`
+	Action T `json:"Action"`
 
 	// Principal AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-profilepermission.html#cfn-signer-profilepermission-principal
-	Principal string `json:"Principal"`
+	Principal T `json:"Principal"`
 
 	// ProfileName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-profilepermission.html#cfn-signer-profilepermission-profilename
-	ProfileName string `json:"ProfileName"`
+	ProfileName T `json:"ProfileName"`
 
 	// ProfileVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-profilepermission.html#cfn-signer-profilepermission-profileversion
-	ProfileVersion *string `json:"ProfileVersion,omitempty"`
+	ProfileVersion *T `json:"ProfileVersion,omitempty"`
 
 	// StatementId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-profilepermission.html#cfn-signer-profilepermission-statementid
-	StatementId string `json:"StatementId"`
+	StatementId T `json:"StatementId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

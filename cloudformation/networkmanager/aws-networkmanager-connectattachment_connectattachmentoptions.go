@@ -13,7 +13,7 @@ type ConnectAttachment_ConnectAttachmentOptions[T any] struct {
 	// Protocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectattachment-connectattachmentoptions.html#cfn-networkmanager-connectattachment-connectattachmentoptions-protocol
-	Protocol *string `json:"Protocol,omitempty"`
+	Protocol *T `json:"Protocol,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

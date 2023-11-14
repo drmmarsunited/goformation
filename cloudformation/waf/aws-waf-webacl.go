@@ -21,12 +21,12 @@ type WebACL[T any] struct {
 	// MetricName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-metricname
-	MetricName string `json:"MetricName"`
+	MetricName T `json:"MetricName"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Rules AWS CloudFormation Property
 	// Required: false

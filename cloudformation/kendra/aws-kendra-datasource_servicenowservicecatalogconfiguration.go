@@ -18,17 +18,17 @@ type DataSource_ServiceNowServiceCatalogConfiguration[T any] struct {
 	// DocumentDataFieldName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowservicecatalogconfiguration.html#cfn-kendra-datasource-servicenowservicecatalogconfiguration-documentdatafieldname
-	DocumentDataFieldName string `json:"DocumentDataFieldName"`
+	DocumentDataFieldName T `json:"DocumentDataFieldName"`
 
 	// DocumentTitleFieldName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowservicecatalogconfiguration.html#cfn-kendra-datasource-servicenowservicecatalogconfiguration-documenttitlefieldname
-	DocumentTitleFieldName *string `json:"DocumentTitleFieldName,omitempty"`
+	DocumentTitleFieldName *T `json:"DocumentTitleFieldName,omitempty"`
 
 	// ExcludeAttachmentFilePatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowservicecatalogconfiguration.html#cfn-kendra-datasource-servicenowservicecatalogconfiguration-excludeattachmentfilepatterns
-	ExcludeAttachmentFilePatterns []string `json:"ExcludeAttachmentFilePatterns,omitempty"`
+	ExcludeAttachmentFilePatterns []T `json:"ExcludeAttachmentFilePatterns,omitempty"`
 
 	// FieldMappings AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type DataSource_ServiceNowServiceCatalogConfiguration[T any] struct {
 	// IncludeAttachmentFilePatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowservicecatalogconfiguration.html#cfn-kendra-datasource-servicenowservicecatalogconfiguration-includeattachmentfilepatterns
-	IncludeAttachmentFilePatterns []string `json:"IncludeAttachmentFilePatterns,omitempty"`
+	IncludeAttachmentFilePatterns []T `json:"IncludeAttachmentFilePatterns,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -23,7 +23,7 @@ type Analysis_NumericRangeFilter[T any] struct {
 	// FilterId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericrangefilter.html#cfn-quicksight-analysis-numericrangefilter-filterid
-	FilterId string `json:"FilterId"`
+	FilterId T `json:"FilterId"`
 
 	// IncludeMaximum AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Analysis_NumericRangeFilter[T any] struct {
 	// NullOption AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericrangefilter.html#cfn-quicksight-analysis-numericrangefilter-nulloption
-	NullOption string `json:"NullOption"`
+	NullOption T `json:"NullOption"`
 
 	// RangeMaximum AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Analysis_NumericRangeFilter[T any] struct {
 	// SelectAllOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericrangefilter.html#cfn-quicksight-analysis-numericrangefilter-selectalloptions
-	SelectAllOptions *string `json:"SelectAllOptions,omitempty"`
+	SelectAllOptions *T `json:"SelectAllOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

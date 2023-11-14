@@ -23,12 +23,12 @@ type Service_HealthCheckConfiguration[T any] struct {
 	// Path AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-healthcheckconfiguration.html#cfn-apprunner-service-healthcheckconfiguration-path
-	Path *string `json:"Path,omitempty"`
+	Path *T `json:"Path,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-healthcheckconfiguration.html#cfn-apprunner-service-healthcheckconfiguration-protocol
-	Protocol *string `json:"Protocol,omitempty"`
+	Protocol *T `json:"Protocol,omitempty"`
 
 	// Timeout AWS CloudFormation Property
 	// Required: false

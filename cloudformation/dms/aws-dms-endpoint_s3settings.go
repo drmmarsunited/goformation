@@ -18,17 +18,17 @@ type Endpoint_S3Settings[T any] struct {
 	// BucketFolder AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-bucketfolder
-	BucketFolder *string `json:"BucketFolder,omitempty"`
+	BucketFolder *T `json:"BucketFolder,omitempty"`
 
 	// BucketName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-bucketname
-	BucketName *string `json:"BucketName,omitempty"`
+	BucketName *T `json:"BucketName,omitempty"`
 
 	// CannedAclForObjects AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-cannedaclforobjects
-	CannedAclForObjects *string `json:"CannedAclForObjects,omitempty"`
+	CannedAclForObjects *T `json:"CannedAclForObjects,omitempty"`
 
 	// CdcInsertsAndUpdates AWS CloudFormation Property
 	// Required: false
@@ -53,37 +53,37 @@ type Endpoint_S3Settings[T any] struct {
 	// CdcPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-cdcpath
-	CdcPath *string `json:"CdcPath,omitempty"`
+	CdcPath *T `json:"CdcPath,omitempty"`
 
 	// CompressionType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-compressiontype
-	CompressionType *string `json:"CompressionType,omitempty"`
+	CompressionType *T `json:"CompressionType,omitempty"`
 
 	// CsvDelimiter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-csvdelimiter
-	CsvDelimiter *string `json:"CsvDelimiter,omitempty"`
+	CsvDelimiter *T `json:"CsvDelimiter,omitempty"`
 
 	// CsvNoSupValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-csvnosupvalue
-	CsvNoSupValue *string `json:"CsvNoSupValue,omitempty"`
+	CsvNoSupValue *T `json:"CsvNoSupValue,omitempty"`
 
 	// CsvNullValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-csvnullvalue
-	CsvNullValue *string `json:"CsvNullValue,omitempty"`
+	CsvNullValue *T `json:"CsvNullValue,omitempty"`
 
 	// CsvRowDelimiter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-csvrowdelimiter
-	CsvRowDelimiter *string `json:"CsvRowDelimiter,omitempty"`
+	CsvRowDelimiter *T `json:"CsvRowDelimiter,omitempty"`
 
 	// DataFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-dataformat
-	DataFormat *string `json:"DataFormat,omitempty"`
+	DataFormat *T `json:"DataFormat,omitempty"`
 
 	// DataPageSize AWS CloudFormation Property
 	// Required: false
@@ -93,7 +93,7 @@ type Endpoint_S3Settings[T any] struct {
 	// DatePartitionDelimiter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-datepartitiondelimiter
-	DatePartitionDelimiter *string `json:"DatePartitionDelimiter,omitempty"`
+	DatePartitionDelimiter *T `json:"DatePartitionDelimiter,omitempty"`
 
 	// DatePartitionEnabled AWS CloudFormation Property
 	// Required: false
@@ -103,12 +103,12 @@ type Endpoint_S3Settings[T any] struct {
 	// DatePartitionSequence AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-datepartitionsequence
-	DatePartitionSequence *string `json:"DatePartitionSequence,omitempty"`
+	DatePartitionSequence *T `json:"DatePartitionSequence,omitempty"`
 
 	// DatePartitionTimezone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-datepartitiontimezone
-	DatePartitionTimezone *string `json:"DatePartitionTimezone,omitempty"`
+	DatePartitionTimezone *T `json:"DatePartitionTimezone,omitempty"`
 
 	// DictPageSizeLimit AWS CloudFormation Property
 	// Required: false
@@ -123,17 +123,17 @@ type Endpoint_S3Settings[T any] struct {
 	// EncodingType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-encodingtype
-	EncodingType *string `json:"EncodingType,omitempty"`
+	EncodingType *T `json:"EncodingType,omitempty"`
 
 	// EncryptionMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-encryptionmode
-	EncryptionMode *string `json:"EncryptionMode,omitempty"`
+	EncryptionMode *T `json:"EncryptionMode,omitempty"`
 
 	// ExternalTableDefinition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-externaltabledefinition
-	ExternalTableDefinition *string `json:"ExternalTableDefinition,omitempty"`
+	ExternalTableDefinition *T `json:"ExternalTableDefinition,omitempty"`
 
 	// IgnoreHeaderRows AWS CloudFormation Property
 	// Required: false
@@ -158,7 +158,7 @@ type Endpoint_S3Settings[T any] struct {
 	// ParquetVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-parquetversion
-	ParquetVersion *string `json:"ParquetVersion,omitempty"`
+	ParquetVersion *T `json:"ParquetVersion,omitempty"`
 
 	// PreserveTransactions AWS CloudFormation Property
 	// Required: false
@@ -178,17 +178,17 @@ type Endpoint_S3Settings[T any] struct {
 	// ServerSideEncryptionKmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-serversideencryptionkmskeyid
-	ServerSideEncryptionKmsKeyId *string `json:"ServerSideEncryptionKmsKeyId,omitempty"`
+	ServerSideEncryptionKmsKeyId *T `json:"ServerSideEncryptionKmsKeyId,omitempty"`
 
 	// ServiceAccessRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-serviceaccessrolearn
-	ServiceAccessRoleArn *string `json:"ServiceAccessRoleArn,omitempty"`
+	ServiceAccessRoleArn *T `json:"ServiceAccessRoleArn,omitempty"`
 
 	// TimestampColumnName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-timestampcolumnname
-	TimestampColumnName *string `json:"TimestampColumnName,omitempty"`
+	TimestampColumnName *T `json:"TimestampColumnName,omitempty"`
 
 	// UseCsvNoSupValue AWS CloudFormation Property
 	// Required: false

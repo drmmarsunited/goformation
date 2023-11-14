@@ -13,7 +13,7 @@ type AccessPoint_ObjectLambdaConfiguration[T any] struct {
 	// AllowedFeatures AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-objectlambdaconfiguration.html#cfn-s3objectlambda-accesspoint-objectlambdaconfiguration-allowedfeatures
-	AllowedFeatures []string `json:"AllowedFeatures,omitempty"`
+	AllowedFeatures []T `json:"AllowedFeatures,omitempty"`
 
 	// CloudWatchMetricsEnabled AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type AccessPoint_ObjectLambdaConfiguration[T any] struct {
 	// SupportingAccessPoint AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-objectlambdaconfiguration.html#cfn-s3objectlambda-accesspoint-objectlambdaconfiguration-supportingaccesspoint
-	SupportingAccessPoint string `json:"SupportingAccessPoint"`
+	SupportingAccessPoint T `json:"SupportingAccessPoint"`
 
 	// TransformationConfigurations AWS CloudFormation Property
 	// Required: true

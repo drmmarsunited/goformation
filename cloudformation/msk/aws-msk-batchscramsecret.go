@@ -16,12 +16,12 @@ type BatchScramSecret[T any] struct {
 	// ClusterArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-batchscramsecret.html#cfn-msk-batchscramsecret-clusterarn
-	ClusterArn string `json:"ClusterArn"`
+	ClusterArn T `json:"ClusterArn"`
 
 	// SecretArnList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-batchscramsecret.html#cfn-msk-batchscramsecret-secretarnlist
-	SecretArnList []string `json:"SecretArnList,omitempty"`
+	SecretArnList []T `json:"SecretArnList,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

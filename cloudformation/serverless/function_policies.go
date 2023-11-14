@@ -13,9 +13,9 @@ import (
 
 // Function_Policies is a helper struct that can hold either a String, String, IAMPolicyDocument, SAMPolicyTemplate, or IAMPolicyDocument value
 type Function_Policies[T any] struct {
-	String *string
+	String *T
 
-	StringArray *[]string
+	StringArray *[]T
 
 	IAMPolicyDocument *Function_IAMPolicyDocument[any]
 
@@ -69,10 +69,10 @@ func (r *Function_Policies[any]) UnmarshalJSON(b []byte) error {
 
 	switch val := typecheck.(type) {
 
-	case string:
+	case any:
 		r.String = &val
 
-	case []string:
+	case []any:
 		r.StringArray = &val
 
 	case map[string]interface{}:

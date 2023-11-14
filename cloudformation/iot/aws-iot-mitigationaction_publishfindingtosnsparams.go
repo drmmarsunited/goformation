@@ -13,7 +13,7 @@ type MitigationAction_PublishFindingToSnsParams[T any] struct {
 	// TopicArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-publishfindingtosnsparams.html#cfn-iot-mitigationaction-publishfindingtosnsparams-topicarn
-	TopicArn string `json:"TopicArn"`
+	TopicArn T `json:"TopicArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

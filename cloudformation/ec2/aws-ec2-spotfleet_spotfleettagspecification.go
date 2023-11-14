@@ -14,7 +14,7 @@ type SpotFleet_SpotFleetTagSpecification[T any] struct {
 	// ResourceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleettagspecification.html#cfn-ec2-spotfleet-spotfleettagspecification-resourcetype
-	ResourceType *string `json:"ResourceType,omitempty"`
+	ResourceType *T `json:"ResourceType,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

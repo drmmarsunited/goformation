@@ -13,12 +13,12 @@ type FileSystem_WindowsConfiguration[T any] struct {
 	// ActiveDirectoryId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-activedirectoryid
-	ActiveDirectoryId *string `json:"ActiveDirectoryId,omitempty"`
+	ActiveDirectoryId *T `json:"ActiveDirectoryId,omitempty"`
 
 	// Aliases AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-aliases
-	Aliases []string `json:"Aliases,omitempty"`
+	Aliases []T `json:"Aliases,omitempty"`
 
 	// AuditLogConfiguration AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type FileSystem_WindowsConfiguration[T any] struct {
 	// DailyAutomaticBackupStartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-dailyautomaticbackupstarttime
-	DailyAutomaticBackupStartTime *string `json:"DailyAutomaticBackupStartTime,omitempty"`
+	DailyAutomaticBackupStartTime *T `json:"DailyAutomaticBackupStartTime,omitempty"`
 
 	// DeploymentType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-deploymenttype
-	DeploymentType *string `json:"DeploymentType,omitempty"`
+	DeploymentType *T `json:"DeploymentType,omitempty"`
 
 	// DiskIopsConfiguration AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type FileSystem_WindowsConfiguration[T any] struct {
 	// PreferredSubnetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-preferredsubnetid
-	PreferredSubnetId *string `json:"PreferredSubnetId,omitempty"`
+	PreferredSubnetId *T `json:"PreferredSubnetId,omitempty"`
 
 	// SelfManagedActiveDirectoryConfiguration AWS CloudFormation Property
 	// Required: false
@@ -68,7 +68,7 @@ type FileSystem_WindowsConfiguration[T any] struct {
 	// WeeklyMaintenanceStartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-weeklymaintenancestarttime
-	WeeklyMaintenanceStartTime *string `json:"WeeklyMaintenanceStartTime,omitempty"`
+	WeeklyMaintenanceStartTime *T `json:"WeeklyMaintenanceStartTime,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

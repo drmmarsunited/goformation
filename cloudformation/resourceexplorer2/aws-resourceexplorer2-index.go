@@ -16,12 +16,12 @@ type Index[T any] struct {
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourceexplorer2-index.html#cfn-resourceexplorer2-index-tags
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourceexplorer2-index.html#cfn-resourceexplorer2-index-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

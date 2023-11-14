@@ -16,12 +16,12 @@ type ApprovedOrigin[T any] struct {
 	// InstanceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-approvedorigin.html#cfn-connect-approvedorigin-instanceid
-	InstanceId string `json:"InstanceId"`
+	InstanceId T `json:"InstanceId"`
 
 	// Origin AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-approvedorigin.html#cfn-connect-approvedorigin-origin
-	Origin string `json:"Origin"`
+	Origin T `json:"Origin"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

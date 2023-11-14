@@ -13,12 +13,12 @@ type DeliveryStream_ProcessorParameter[T any] struct {
 	// ParameterName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processorparameter.html#cfn-kinesisfirehose-deliverystream-processorparameter-parametername
-	ParameterName string `json:"ParameterName"`
+	ParameterName T `json:"ParameterName"`
 
 	// ParameterValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processorparameter.html#cfn-kinesisfirehose-deliverystream-processorparameter-parametervalue
-	ParameterValue string `json:"ParameterValue"`
+	ParameterValue T `json:"ParameterValue"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

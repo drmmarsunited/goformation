@@ -23,7 +23,7 @@ type Dashboard_TopBottomFilter[T any] struct {
 	// FilterId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottomfilter.html#cfn-quicksight-dashboard-topbottomfilter-filterid
-	FilterId string `json:"FilterId"`
+	FilterId T `json:"FilterId"`
 
 	// Limit AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type Dashboard_TopBottomFilter[T any] struct {
 	// ParameterName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottomfilter.html#cfn-quicksight-dashboard-topbottomfilter-parametername
-	ParameterName *string `json:"ParameterName,omitempty"`
+	ParameterName *T `json:"ParameterName,omitempty"`
 
 	// TimeGranularity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottomfilter.html#cfn-quicksight-dashboard-topbottomfilter-timegranularity
-	TimeGranularity *string `json:"TimeGranularity,omitempty"`
+	TimeGranularity *T `json:"TimeGranularity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

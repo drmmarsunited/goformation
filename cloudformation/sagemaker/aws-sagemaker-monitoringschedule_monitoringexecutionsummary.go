@@ -13,42 +13,42 @@ type MonitoringSchedule_MonitoringExecutionSummary[T any] struct {
 	// CreationTime AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringexecutionsummary.html#cfn-sagemaker-monitoringschedule-monitoringexecutionsummary-creationtime
-	CreationTime string `json:"CreationTime"`
+	CreationTime T `json:"CreationTime"`
 
 	// EndpointName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringexecutionsummary.html#cfn-sagemaker-monitoringschedule-monitoringexecutionsummary-endpointname
-	EndpointName *string `json:"EndpointName,omitempty"`
+	EndpointName *T `json:"EndpointName,omitempty"`
 
 	// FailureReason AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringexecutionsummary.html#cfn-sagemaker-monitoringschedule-monitoringexecutionsummary-failurereason
-	FailureReason *string `json:"FailureReason,omitempty"`
+	FailureReason *T `json:"FailureReason,omitempty"`
 
 	// LastModifiedTime AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringexecutionsummary.html#cfn-sagemaker-monitoringschedule-monitoringexecutionsummary-lastmodifiedtime
-	LastModifiedTime string `json:"LastModifiedTime"`
+	LastModifiedTime T `json:"LastModifiedTime"`
 
 	// MonitoringExecutionStatus AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringexecutionsummary.html#cfn-sagemaker-monitoringschedule-monitoringexecutionsummary-monitoringexecutionstatus
-	MonitoringExecutionStatus string `json:"MonitoringExecutionStatus"`
+	MonitoringExecutionStatus T `json:"MonitoringExecutionStatus"`
 
 	// MonitoringScheduleName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringexecutionsummary.html#cfn-sagemaker-monitoringschedule-monitoringexecutionsummary-monitoringschedulename
-	MonitoringScheduleName string `json:"MonitoringScheduleName"`
+	MonitoringScheduleName T `json:"MonitoringScheduleName"`
 
 	// ProcessingJobArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringexecutionsummary.html#cfn-sagemaker-monitoringschedule-monitoringexecutionsummary-processingjobarn
-	ProcessingJobArn *string `json:"ProcessingJobArn,omitempty"`
+	ProcessingJobArn *T `json:"ProcessingJobArn,omitempty"`
 
 	// ScheduledTime AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringexecutionsummary.html#cfn-sagemaker-monitoringschedule-monitoringexecutionsummary-scheduledtime
-	ScheduledTime string `json:"ScheduledTime"`
+	ScheduledTime T `json:"ScheduledTime"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

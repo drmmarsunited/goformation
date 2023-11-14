@@ -23,7 +23,7 @@ type Channel_HlsMediaStoreSettings[T any] struct {
 	// MediaStoreStorageClass AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsmediastoresettings.html#cfn-medialive-channel-hlsmediastoresettings-mediastorestorageclass
-	MediaStoreStorageClass *string `json:"MediaStoreStorageClass,omitempty"`
+	MediaStoreStorageClass *T `json:"MediaStoreStorageClass,omitempty"`
 
 	// NumRetries AWS CloudFormation Property
 	// Required: false

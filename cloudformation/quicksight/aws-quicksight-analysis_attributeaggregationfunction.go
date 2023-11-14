@@ -13,12 +13,12 @@ type Analysis_AttributeAggregationFunction[T any] struct {
 	// SimpleAttributeAggregation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-attributeaggregationfunction.html#cfn-quicksight-analysis-attributeaggregationfunction-simpleattributeaggregation
-	SimpleAttributeAggregation *string `json:"SimpleAttributeAggregation,omitempty"`
+	SimpleAttributeAggregation *T `json:"SimpleAttributeAggregation,omitempty"`
 
 	// ValueForMultipleValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-attributeaggregationfunction.html#cfn-quicksight-analysis-attributeaggregationfunction-valueformultiplevalues
-	ValueForMultipleValues *string `json:"ValueForMultipleValues,omitempty"`
+	ValueForMultipleValues *T `json:"ValueForMultipleValues,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

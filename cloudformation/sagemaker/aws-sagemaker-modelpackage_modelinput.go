@@ -13,7 +13,7 @@ type ModelPackage_ModelInput[T any] struct {
 	// DataInputConfig AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelinput.html#cfn-sagemaker-modelpackage-modelinput-datainputconfig
-	DataInputConfig string `json:"DataInputConfig"`
+	DataInputConfig T `json:"DataInputConfig"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

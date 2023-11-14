@@ -18,7 +18,7 @@ type Dashboard_ContributionAnalysisDefault[T any] struct {
 	// MeasureFieldId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-contributionanalysisdefault.html#cfn-quicksight-dashboard-contributionanalysisdefault-measurefieldid
-	MeasureFieldId string `json:"MeasureFieldId"`
+	MeasureFieldId T `json:"MeasureFieldId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

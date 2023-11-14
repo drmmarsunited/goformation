@@ -13,7 +13,7 @@ type ConfigurationSet_DashboardOptions[T any] struct {
 	// EngagementMetrics AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-dashboardoptions.html#cfn-ses-configurationset-dashboardoptions-engagementmetrics
-	EngagementMetrics string `json:"EngagementMetrics"`
+	EngagementMetrics T `json:"EngagementMetrics"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

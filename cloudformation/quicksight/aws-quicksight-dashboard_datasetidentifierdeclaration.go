@@ -13,12 +13,12 @@ type Dashboard_DataSetIdentifierDeclaration[T any] struct {
 	// DataSetArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datasetidentifierdeclaration.html#cfn-quicksight-dashboard-datasetidentifierdeclaration-datasetarn
-	DataSetArn string `json:"DataSetArn"`
+	DataSetArn T `json:"DataSetArn"`
 
 	// Identifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datasetidentifierdeclaration.html#cfn-quicksight-dashboard-datasetidentifierdeclaration-identifier
-	Identifier string `json:"Identifier"`
+	Identifier T `json:"Identifier"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -21,7 +21,7 @@ type TopicRuleDestination[T any] struct {
 	// Status AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicruledestination.html#cfn-iot-topicruledestination-status
-	Status *string `json:"Status,omitempty"`
+	Status *T `json:"Status,omitempty"`
 
 	// VpcProperties AWS CloudFormation Property
 	// Required: false

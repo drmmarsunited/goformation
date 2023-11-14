@@ -13,7 +13,7 @@ type Dashboard_WordCloudOptions[T any] struct {
 	// CloudLayout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-wordcloudoptions.html#cfn-quicksight-dashboard-wordcloudoptions-cloudlayout
-	CloudLayout *string `json:"CloudLayout,omitempty"`
+	CloudLayout *T `json:"CloudLayout,omitempty"`
 
 	// MaximumStringLength AWS CloudFormation Property
 	// Required: false
@@ -23,22 +23,22 @@ type Dashboard_WordCloudOptions[T any] struct {
 	// WordCasing AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-wordcloudoptions.html#cfn-quicksight-dashboard-wordcloudoptions-wordcasing
-	WordCasing *string `json:"WordCasing,omitempty"`
+	WordCasing *T `json:"WordCasing,omitempty"`
 
 	// WordOrientation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-wordcloudoptions.html#cfn-quicksight-dashboard-wordcloudoptions-wordorientation
-	WordOrientation *string `json:"WordOrientation,omitempty"`
+	WordOrientation *T `json:"WordOrientation,omitempty"`
 
 	// WordPadding AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-wordcloudoptions.html#cfn-quicksight-dashboard-wordcloudoptions-wordpadding
-	WordPadding *string `json:"WordPadding,omitempty"`
+	WordPadding *T `json:"WordPadding,omitempty"`
 
 	// WordScaling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-wordcloudoptions.html#cfn-quicksight-dashboard-wordcloudoptions-wordscaling
-	WordScaling *string `json:"WordScaling,omitempty"`
+	WordScaling *T `json:"WordScaling,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

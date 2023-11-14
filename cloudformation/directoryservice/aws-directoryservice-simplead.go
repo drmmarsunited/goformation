@@ -21,7 +21,7 @@ type SimpleAD[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EnableSso AWS CloudFormation Property
 	// Required: false
@@ -31,22 +31,22 @@ type SimpleAD[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Password AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-password
-	Password *string `json:"Password,omitempty"`
+	Password *T `json:"Password,omitempty"`
 
 	// ShortName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-shortname
-	ShortName *string `json:"ShortName,omitempty"`
+	ShortName *T `json:"ShortName,omitempty"`
 
 	// Size AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-size
-	Size string `json:"Size"`
+	Size T `json:"Size"`
 
 	// VpcSettings AWS CloudFormation Property
 	// Required: true

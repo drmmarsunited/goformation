@@ -13,7 +13,7 @@ type Cluster_StepConfig[T any] struct {
 	// ActionOnFailure AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html#cfn-elasticmapreduce-cluster-stepconfig-actiononfailure
-	ActionOnFailure *string `json:"ActionOnFailure,omitempty"`
+	ActionOnFailure *T `json:"ActionOnFailure,omitempty"`
 
 	// HadoopJarStep AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Cluster_StepConfig[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html#cfn-elasticmapreduce-cluster-stepconfig-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

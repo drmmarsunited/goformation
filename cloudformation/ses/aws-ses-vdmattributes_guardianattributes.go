@@ -13,7 +13,7 @@ type VdmAttributes_GuardianAttributes[T any] struct {
 	// OptimizedSharedDelivery AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-vdmattributes-guardianattributes.html#cfn-ses-vdmattributes-guardianattributes-optimizedshareddelivery
-	OptimizedSharedDelivery *string `json:"OptimizedSharedDelivery,omitempty"`
+	OptimizedSharedDelivery *T `json:"OptimizedSharedDelivery,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

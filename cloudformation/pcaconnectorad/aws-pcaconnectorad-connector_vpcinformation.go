@@ -13,7 +13,7 @@ type Connector_VpcInformation[T any] struct {
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-connector-vpcinformation.html#cfn-pcaconnectorad-connector-vpcinformation-securitygroupids
-	SecurityGroupIds []string `json:"SecurityGroupIds"`
+	SecurityGroupIds []T `json:"SecurityGroupIds"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

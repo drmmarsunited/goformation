@@ -22,7 +22,7 @@ type DeploymentGroup[T any] struct {
 	// ApplicationName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-applicationname
-	ApplicationName string `json:"ApplicationName"`
+	ApplicationName T `json:"ApplicationName"`
 
 	// AutoRollbackConfiguration AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type DeploymentGroup[T any] struct {
 	// AutoScalingGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autoscalinggroups
-	AutoScalingGroups []string `json:"AutoScalingGroups,omitempty"`
+	AutoScalingGroups []T `json:"AutoScalingGroups,omitempty"`
 
 	// BlueGreenDeploymentConfiguration AWS CloudFormation Property
 	// Required: false
@@ -47,12 +47,12 @@ type DeploymentGroup[T any] struct {
 	// DeploymentConfigName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentconfigname
-	DeploymentConfigName *string `json:"DeploymentConfigName,omitempty"`
+	DeploymentConfigName *T `json:"DeploymentConfigName,omitempty"`
 
 	// DeploymentGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentgroupname
-	DeploymentGroupName *string `json:"DeploymentGroupName,omitempty"`
+	DeploymentGroupName *T `json:"DeploymentGroupName,omitempty"`
 
 	// DeploymentStyle AWS CloudFormation Property
 	// Required: false
@@ -92,12 +92,12 @@ type DeploymentGroup[T any] struct {
 	// OutdatedInstancesStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-outdatedinstancesstrategy
-	OutdatedInstancesStrategy *string `json:"OutdatedInstancesStrategy,omitempty"`
+	OutdatedInstancesStrategy *T `json:"OutdatedInstancesStrategy,omitempty"`
 
 	// ServiceRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-servicerolearn
-	ServiceRoleArn string `json:"ServiceRoleArn"`
+	ServiceRoleArn T `json:"ServiceRoleArn"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

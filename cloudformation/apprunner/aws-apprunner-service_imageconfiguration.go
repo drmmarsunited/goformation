@@ -13,7 +13,7 @@ type Service_ImageConfiguration[T any] struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imageconfiguration.html#cfn-apprunner-service-imageconfiguration-port
-	Port *string `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// RuntimeEnvironmentSecrets AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Service_ImageConfiguration[T any] struct {
 	// StartCommand AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imageconfiguration.html#cfn-apprunner-service-imageconfiguration-startcommand
-	StartCommand *string `json:"StartCommand,omitempty"`
+	StartCommand *T `json:"StartCommand,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

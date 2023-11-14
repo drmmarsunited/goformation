@@ -18,12 +18,12 @@ type Topic_TopicCategoryFilterConstant[T any] struct {
 	// ConstantType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccategoryfilterconstant.html#cfn-quicksight-topic-topiccategoryfilterconstant-constanttype
-	ConstantType *string `json:"ConstantType,omitempty"`
+	ConstantType *T `json:"ConstantType,omitempty"`
 
 	// SingularConstant AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccategoryfilterconstant.html#cfn-quicksight-topic-topiccategoryfilterconstant-singularconstant
-	SingularConstant *string `json:"SingularConstant,omitempty"`
+	SingularConstant *T `json:"SingularConstant,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

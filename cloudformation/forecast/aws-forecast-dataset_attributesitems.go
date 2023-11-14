@@ -13,12 +13,12 @@ type Dataset_AttributesItems[T any] struct {
 	// AttributeName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-attributesitems.html#cfn-forecast-dataset-attributesitems-attributename
-	AttributeName *string `json:"AttributeName,omitempty"`
+	AttributeName *T `json:"AttributeName,omitempty"`
 
 	// AttributeType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-attributesitems.html#cfn-forecast-dataset-attributesitems-attributetype
-	AttributeType *string `json:"AttributeType,omitempty"`
+	AttributeType *T `json:"AttributeType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

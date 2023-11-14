@@ -18,17 +18,17 @@ type DataSource_ServiceNowKnowledgeArticleConfiguration[T any] struct {
 	// DocumentDataFieldName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowknowledgearticleconfiguration.html#cfn-kendra-datasource-servicenowknowledgearticleconfiguration-documentdatafieldname
-	DocumentDataFieldName string `json:"DocumentDataFieldName"`
+	DocumentDataFieldName T `json:"DocumentDataFieldName"`
 
 	// DocumentTitleFieldName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowknowledgearticleconfiguration.html#cfn-kendra-datasource-servicenowknowledgearticleconfiguration-documenttitlefieldname
-	DocumentTitleFieldName *string `json:"DocumentTitleFieldName,omitempty"`
+	DocumentTitleFieldName *T `json:"DocumentTitleFieldName,omitempty"`
 
 	// ExcludeAttachmentFilePatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowknowledgearticleconfiguration.html#cfn-kendra-datasource-servicenowknowledgearticleconfiguration-excludeattachmentfilepatterns
-	ExcludeAttachmentFilePatterns []string `json:"ExcludeAttachmentFilePatterns,omitempty"`
+	ExcludeAttachmentFilePatterns []T `json:"ExcludeAttachmentFilePatterns,omitempty"`
 
 	// FieldMappings AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type DataSource_ServiceNowKnowledgeArticleConfiguration[T any] struct {
 	// FilterQuery AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowknowledgearticleconfiguration.html#cfn-kendra-datasource-servicenowknowledgearticleconfiguration-filterquery
-	FilterQuery *string `json:"FilterQuery,omitempty"`
+	FilterQuery *T `json:"FilterQuery,omitempty"`
 
 	// IncludeAttachmentFilePatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowknowledgearticleconfiguration.html#cfn-kendra-datasource-servicenowknowledgearticleconfiguration-includeattachmentfilepatterns
-	IncludeAttachmentFilePatterns []string `json:"IncludeAttachmentFilePatterns,omitempty"`
+	IncludeAttachmentFilePatterns []T `json:"IncludeAttachmentFilePatterns,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

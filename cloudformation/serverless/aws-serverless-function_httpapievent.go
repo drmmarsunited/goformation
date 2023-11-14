@@ -13,7 +13,7 @@ type Function_HttpApiEvent[T any] struct {
 	// ApiId AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#httpapi
-	ApiId *string `json:"ApiId,omitempty"`
+	ApiId *T `json:"ApiId,omitempty"`
 
 	// Auth AWS CloudFormation Property
 	// Required: false
@@ -23,17 +23,17 @@ type Function_HttpApiEvent[T any] struct {
 	// Method AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#httpapi
-	Method *string `json:"Method,omitempty"`
+	Method *T `json:"Method,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#httpapi
-	Path *string `json:"Path,omitempty"`
+	Path *T `json:"Path,omitempty"`
 
 	// PayloadFormatVersion AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#httpapi
-	PayloadFormatVersion *string `json:"PayloadFormatVersion,omitempty"`
+	PayloadFormatVersion *T `json:"PayloadFormatVersion,omitempty"`
 
 	// RouteSettings AWS CloudFormation Property
 	// Required: false

@@ -21,17 +21,17 @@ type AnomalyDetector[T any] struct {
 	// AnomalyDetectorDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-anomalydetector.html#cfn-lookoutmetrics-anomalydetector-anomalydetectordescription
-	AnomalyDetectorDescription *string `json:"AnomalyDetectorDescription,omitempty"`
+	AnomalyDetectorDescription *T `json:"AnomalyDetectorDescription,omitempty"`
 
 	// AnomalyDetectorName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-anomalydetector.html#cfn-lookoutmetrics-anomalydetector-anomalydetectorname
-	AnomalyDetectorName *string `json:"AnomalyDetectorName,omitempty"`
+	AnomalyDetectorName *T `json:"AnomalyDetectorName,omitempty"`
 
 	// KmsKeyArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-anomalydetector.html#cfn-lookoutmetrics-anomalydetector-kmskeyarn
-	KmsKeyArn *string `json:"KmsKeyArn,omitempty"`
+	KmsKeyArn *T `json:"KmsKeyArn,omitempty"`
 
 	// MetricSetList AWS CloudFormation Property
 	// Required: true

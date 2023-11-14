@@ -13,7 +13,7 @@ type Channel_RtmpOutputSettings[T any] struct {
 	// CertificateMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpoutputsettings.html#cfn-medialive-channel-rtmpoutputsettings-certificatemode
-	CertificateMode *string `json:"CertificateMode,omitempty"`
+	CertificateMode *T `json:"CertificateMode,omitempty"`
 
 	// ConnectionRetryInterval AWS CloudFormation Property
 	// Required: false

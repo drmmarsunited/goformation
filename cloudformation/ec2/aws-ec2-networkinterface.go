@@ -17,17 +17,17 @@ type NetworkInterface[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// GroupSet AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-groupset
-	GroupSet []string `json:"GroupSet,omitempty"`
+	GroupSet []T `json:"GroupSet,omitempty"`
 
 	// InterfaceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-interfacetype
-	InterfaceType *string `json:"InterfaceType,omitempty"`
+	InterfaceType *T `json:"InterfaceType,omitempty"`
 
 	// Ipv4PrefixCount AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,7 @@ type NetworkInterface[T any] struct {
 	// PrivateIpAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-privateipaddress
-	PrivateIpAddress *string `json:"PrivateIpAddress,omitempty"`
+	PrivateIpAddress *T `json:"PrivateIpAddress,omitempty"`
 
 	// PrivateIpAddresses AWS CloudFormation Property
 	// Required: false
@@ -82,7 +82,7 @@ type NetworkInterface[T any] struct {
 	// SubnetId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-subnetid
-	SubnetId string `json:"SubnetId"`
+	SubnetId T `json:"SubnetId"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

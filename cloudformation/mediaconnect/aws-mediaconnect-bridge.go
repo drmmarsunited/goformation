@@ -26,7 +26,7 @@ type Bridge[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-bridge.html#cfn-mediaconnect-bridge-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Outputs AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type Bridge[T any] struct {
 	// PlacementArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-bridge.html#cfn-mediaconnect-bridge-placementarn
-	PlacementArn string `json:"PlacementArn"`
+	PlacementArn T `json:"PlacementArn"`
 
 	// SourceFailoverConfig AWS CloudFormation Property
 	// Required: false

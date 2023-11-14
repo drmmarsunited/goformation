@@ -13,17 +13,17 @@ type Form_FieldPosition[T any] struct {
 	// Below AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldposition.html#cfn-amplifyuibuilder-form-fieldposition-below
-	Below *string `json:"Below,omitempty"`
+	Below *T `json:"Below,omitempty"`
 
 	// Fixed AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldposition.html#cfn-amplifyuibuilder-form-fieldposition-fixed
-	Fixed *string `json:"Fixed,omitempty"`
+	Fixed *T `json:"Fixed,omitempty"`
 
 	// RightOf AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldposition.html#cfn-amplifyuibuilder-form-fieldposition-rightof
-	RightOf *string `json:"RightOf,omitempty"`
+	RightOf *T `json:"RightOf,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

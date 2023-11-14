@@ -28,12 +28,12 @@ type Schedule_EcsParameters[T any] struct {
 	// Group AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-ecsparameters.html#cfn-scheduler-schedule-ecsparameters-group
-	Group *string `json:"Group,omitempty"`
+	Group *T `json:"Group,omitempty"`
 
 	// LaunchType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-ecsparameters.html#cfn-scheduler-schedule-ecsparameters-launchtype
-	LaunchType *string `json:"LaunchType,omitempty"`
+	LaunchType *T `json:"LaunchType,omitempty"`
 
 	// NetworkConfiguration AWS CloudFormation Property
 	// Required: false
@@ -53,17 +53,17 @@ type Schedule_EcsParameters[T any] struct {
 	// PlatformVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-ecsparameters.html#cfn-scheduler-schedule-ecsparameters-platformversion
-	PlatformVersion *string `json:"PlatformVersion,omitempty"`
+	PlatformVersion *T `json:"PlatformVersion,omitempty"`
 
 	// PropagateTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-ecsparameters.html#cfn-scheduler-schedule-ecsparameters-propagatetags
-	PropagateTags *string `json:"PropagateTags,omitempty"`
+	PropagateTags *T `json:"PropagateTags,omitempty"`
 
 	// ReferenceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-ecsparameters.html#cfn-scheduler-schedule-ecsparameters-referenceid
-	ReferenceId *string `json:"ReferenceId,omitempty"`
+	ReferenceId *T `json:"ReferenceId,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -78,7 +78,7 @@ type Schedule_EcsParameters[T any] struct {
 	// TaskDefinitionArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-ecsparameters.html#cfn-scheduler-schedule-ecsparameters-taskdefinitionarn
-	TaskDefinitionArn string `json:"TaskDefinitionArn"`
+	TaskDefinitionArn T `json:"TaskDefinitionArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

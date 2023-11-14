@@ -17,7 +17,7 @@ type User[T any] struct {
 	// AccessString AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-user.html#cfn-memorydb-user-accessstring
-	AccessString *string `json:"AccessString,omitempty"`
+	AccessString *T `json:"AccessString,omitempty"`
 
 	// AuthenticationMode AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type User[T any] struct {
 	// UserName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-user.html#cfn-memorydb-user-username
-	UserName string `json:"UserName"`
+	UserName T `json:"UserName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

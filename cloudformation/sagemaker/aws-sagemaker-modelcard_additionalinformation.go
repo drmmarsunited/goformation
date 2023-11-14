@@ -13,17 +13,17 @@ type ModelCard_AdditionalInformation[T any] struct {
 	// CaveatsAndRecommendations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-additionalinformation.html#cfn-sagemaker-modelcard-additionalinformation-caveatsandrecommendations
-	CaveatsAndRecommendations *string `json:"CaveatsAndRecommendations,omitempty"`
+	CaveatsAndRecommendations *T `json:"CaveatsAndRecommendations,omitempty"`
 
 	// CustomDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-additionalinformation.html#cfn-sagemaker-modelcard-additionalinformation-customdetails
-	CustomDetails map[string]string `json:"CustomDetails,omitempty"`
+	CustomDetails map[string]T `json:"CustomDetails,omitempty"`
 
 	// EthicalConsiderations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-additionalinformation.html#cfn-sagemaker-modelcard-additionalinformation-ethicalconsiderations
-	EthicalConsiderations *string `json:"EthicalConsiderations,omitempty"`
+	EthicalConsiderations *T `json:"EthicalConsiderations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

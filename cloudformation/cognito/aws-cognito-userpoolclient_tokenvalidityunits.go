@@ -13,17 +13,17 @@ type UserPoolClient_TokenValidityUnits[T any] struct {
 	// AccessToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-tokenvalidityunits.html#cfn-cognito-userpoolclient-tokenvalidityunits-accesstoken
-	AccessToken *string `json:"AccessToken,omitempty"`
+	AccessToken *T `json:"AccessToken,omitempty"`
 
 	// IdToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-tokenvalidityunits.html#cfn-cognito-userpoolclient-tokenvalidityunits-idtoken
-	IdToken *string `json:"IdToken,omitempty"`
+	IdToken *T `json:"IdToken,omitempty"`
 
 	// RefreshToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-tokenvalidityunits.html#cfn-cognito-userpoolclient-tokenvalidityunits-refreshtoken
-	RefreshToken *string `json:"RefreshToken,omitempty"`
+	RefreshToken *T `json:"RefreshToken,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

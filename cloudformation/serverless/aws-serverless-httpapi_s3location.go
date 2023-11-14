@@ -13,12 +13,12 @@ type HttpApi_S3Location[T any] struct {
 	// Bucket AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#s3-location-object
-	Bucket string `json:"Bucket"`
+	Bucket T `json:"Bucket"`
 
 	// Key AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#s3-location-object
-	Key string `json:"Key"`
+	Key T `json:"Key"`
 
 	// Version AWS CloudFormation Property
 	// Required: true

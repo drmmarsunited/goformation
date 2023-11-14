@@ -22,7 +22,7 @@ type PermissionSet[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// InlinePolicy AWS CloudFormation Property
 	// Required: false
@@ -32,17 +32,17 @@ type PermissionSet[T any] struct {
 	// InstanceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-instancearn
-	InstanceArn string `json:"InstanceArn"`
+	InstanceArn T `json:"InstanceArn"`
 
 	// ManagedPolicies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-managedpolicies
-	ManagedPolicies []string `json:"ManagedPolicies,omitempty"`
+	ManagedPolicies []T `json:"ManagedPolicies,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// PermissionsBoundary AWS CloudFormation Property
 	// Required: false
@@ -52,12 +52,12 @@ type PermissionSet[T any] struct {
 	// RelayStateType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-relaystatetype
-	RelayStateType *string `json:"RelayStateType,omitempty"`
+	RelayStateType *T `json:"RelayStateType,omitempty"`
 
 	// SessionDuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-sessionduration
-	SessionDuration *string `json:"SessionDuration,omitempty"`
+	SessionDuration *T `json:"SessionDuration,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

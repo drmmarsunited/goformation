@@ -17,7 +17,7 @@ type Permission[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-permission.html#cfn-ram-permission-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// PolicyTemplate AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type Permission[T any] struct {
 	// ResourceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-permission.html#cfn-ram-permission-resourcetype
-	ResourceType string `json:"ResourceType"`
+	ResourceType T `json:"ResourceType"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

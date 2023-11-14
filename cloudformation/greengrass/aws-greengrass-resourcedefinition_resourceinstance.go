@@ -13,12 +13,12 @@ type ResourceDefinition_ResourceInstance[T any] struct {
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html#cfn-greengrass-resourcedefinition-resourceinstance-id
-	Id string `json:"Id"`
+	Id T `json:"Id"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html#cfn-greengrass-resourcedefinition-resourceinstance-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ResourceDataContainer AWS CloudFormation Property
 	// Required: true

@@ -23,7 +23,7 @@ type TaskDefinition_LoRaWANUpdateGatewayTaskCreate[T any] struct {
 	// UpdateSignature AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate.html#cfn-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate-updatesignature
-	UpdateSignature *string `json:"UpdateSignature,omitempty"`
+	UpdateSignature *T `json:"UpdateSignature,omitempty"`
 
 	// UpdateVersion AWS CloudFormation Property
 	// Required: false

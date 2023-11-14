@@ -13,7 +13,7 @@ type Analysis_IntegerParameter[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-integerparameter.html#cfn-quicksight-analysis-integerparameter-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Values AWS CloudFormation Property
 	// Required: true

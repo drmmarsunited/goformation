@@ -17,7 +17,12 @@ type Branch[T any] struct {
 	// AppId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-appid
-	AppId string `json:"AppId"`
+	AppId T `json:"AppId"`
+
+	// Backend AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-backend
+	Backend *Branch_Backend[any] `json:"Backend,omitempty"`
 
 	// BasicAuthConfig AWS CloudFormation Property
 	// Required: false
@@ -27,17 +32,17 @@ type Branch[T any] struct {
 	// BranchName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-branchname
-	BranchName string `json:"BranchName"`
+	BranchName T `json:"BranchName"`
 
 	// BuildSpec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-buildspec
-	BuildSpec *string `json:"BuildSpec,omitempty"`
+	BuildSpec *T `json:"BuildSpec,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EnableAutoBuild AWS CloudFormation Property
 	// Required: false
@@ -62,17 +67,17 @@ type Branch[T any] struct {
 	// Framework AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-framework
-	Framework *string `json:"Framework,omitempty"`
+	Framework *T `json:"Framework,omitempty"`
 
 	// PullRequestEnvironmentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-pullrequestenvironmentname
-	PullRequestEnvironmentName *string `json:"PullRequestEnvironmentName,omitempty"`
+	PullRequestEnvironmentName *T `json:"PullRequestEnvironmentName,omitempty"`
 
 	// Stage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-stage
-	Stage *string `json:"Stage,omitempty"`
+	Stage *T `json:"Stage,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

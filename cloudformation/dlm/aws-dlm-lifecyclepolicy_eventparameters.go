@@ -13,17 +13,17 @@ type LifecyclePolicy_EventParameters[T any] struct {
 	// DescriptionRegex AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-eventparameters.html#cfn-dlm-lifecyclepolicy-eventparameters-descriptionregex
-	DescriptionRegex *string `json:"DescriptionRegex,omitempty"`
+	DescriptionRegex *T `json:"DescriptionRegex,omitempty"`
 
 	// EventType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-eventparameters.html#cfn-dlm-lifecyclepolicy-eventparameters-eventtype
-	EventType string `json:"EventType"`
+	EventType T `json:"EventType"`
 
 	// SnapshotOwner AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-eventparameters.html#cfn-dlm-lifecyclepolicy-eventparameters-snapshotowner
-	SnapshotOwner []string `json:"SnapshotOwner"`
+	SnapshotOwner []T `json:"SnapshotOwner"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

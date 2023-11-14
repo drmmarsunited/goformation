@@ -23,7 +23,7 @@ type LifecyclePolicy_RetainRule[T any] struct {
 	// IntervalUnit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retainrule.html#cfn-dlm-lifecyclepolicy-retainrule-intervalunit
-	IntervalUnit *string `json:"IntervalUnit,omitempty"`
+	IntervalUnit *T `json:"IntervalUnit,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

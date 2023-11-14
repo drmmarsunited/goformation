@@ -18,7 +18,7 @@ type InferenceScheduler_DataInputConfiguration[T any] struct {
 	// InputTimeZoneOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-datainputconfiguration.html#cfn-lookoutequipment-inferencescheduler-datainputconfiguration-inputtimezoneoffset
-	InputTimeZoneOffset *string `json:"InputTimeZoneOffset,omitempty"`
+	InputTimeZoneOffset *T `json:"InputTimeZoneOffset,omitempty"`
 
 	// S3InputConfiguration AWS CloudFormation Property
 	// Required: true

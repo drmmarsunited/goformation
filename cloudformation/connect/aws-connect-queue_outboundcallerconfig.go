@@ -13,17 +13,17 @@ type Queue_OutboundCallerConfig[T any] struct {
 	// OutboundCallerIdName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-queue-outboundcallerconfig.html#cfn-connect-queue-outboundcallerconfig-outboundcalleridname
-	OutboundCallerIdName *string `json:"OutboundCallerIdName,omitempty"`
+	OutboundCallerIdName *T `json:"OutboundCallerIdName,omitempty"`
 
 	// OutboundCallerIdNumberArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-queue-outboundcallerconfig.html#cfn-connect-queue-outboundcallerconfig-outboundcalleridnumberarn
-	OutboundCallerIdNumberArn *string `json:"OutboundCallerIdNumberArn,omitempty"`
+	OutboundCallerIdNumberArn *T `json:"OutboundCallerIdNumberArn,omitempty"`
 
 	// OutboundFlowArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-queue-outboundcallerconfig.html#cfn-connect-queue-outboundcallerconfig-outboundflowarn
-	OutboundFlowArn *string `json:"OutboundFlowArn,omitempty"`
+	OutboundFlowArn *T `json:"OutboundFlowArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

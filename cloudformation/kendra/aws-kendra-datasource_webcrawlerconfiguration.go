@@ -43,12 +43,12 @@ type DataSource_WebCrawlerConfiguration[T any] struct {
 	// UrlExclusionPatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerconfiguration.html#cfn-kendra-datasource-webcrawlerconfiguration-urlexclusionpatterns
-	UrlExclusionPatterns []string `json:"UrlExclusionPatterns,omitempty"`
+	UrlExclusionPatterns []T `json:"UrlExclusionPatterns,omitempty"`
 
 	// UrlInclusionPatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerconfiguration.html#cfn-kendra-datasource-webcrawlerconfiguration-urlinclusionpatterns
-	UrlInclusionPatterns []string `json:"UrlInclusionPatterns,omitempty"`
+	UrlInclusionPatterns []T `json:"UrlInclusionPatterns,omitempty"`
 
 	// Urls AWS CloudFormation Property
 	// Required: true

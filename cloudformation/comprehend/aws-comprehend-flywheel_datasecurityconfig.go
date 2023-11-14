@@ -13,17 +13,17 @@ type Flywheel_DataSecurityConfig[T any] struct {
 	// DataLakeKmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-flywheel-datasecurityconfig.html#cfn-comprehend-flywheel-datasecurityconfig-datalakekmskeyid
-	DataLakeKmsKeyId *string `json:"DataLakeKmsKeyId,omitempty"`
+	DataLakeKmsKeyId *T `json:"DataLakeKmsKeyId,omitempty"`
 
 	// ModelKmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-flywheel-datasecurityconfig.html#cfn-comprehend-flywheel-datasecurityconfig-modelkmskeyid
-	ModelKmsKeyId *string `json:"ModelKmsKeyId,omitempty"`
+	ModelKmsKeyId *T `json:"ModelKmsKeyId,omitempty"`
 
 	// VolumeKmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-flywheel-datasecurityconfig.html#cfn-comprehend-flywheel-datasecurityconfig-volumekmskeyid
-	VolumeKmsKeyId *string `json:"VolumeKmsKeyId,omitempty"`
+	VolumeKmsKeyId *T `json:"VolumeKmsKeyId,omitempty"`
 
 	// VpcConfig AWS CloudFormation Property
 	// Required: false

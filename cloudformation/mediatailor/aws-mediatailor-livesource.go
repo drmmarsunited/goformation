@@ -22,12 +22,12 @@ type LiveSource[T any] struct {
 	// LiveSourceName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-livesource.html#cfn-mediatailor-livesource-livesourcename
-	LiveSourceName string `json:"LiveSourceName"`
+	LiveSourceName T `json:"LiveSourceName"`
 
 	// SourceLocationName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-livesource.html#cfn-mediatailor-livesource-sourcelocationname
-	SourceLocationName string `json:"SourceLocationName"`
+	SourceLocationName T `json:"SourceLocationName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

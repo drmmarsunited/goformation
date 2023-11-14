@@ -13,57 +13,57 @@ type Namespace_Namespace[T any] struct {
 	// AdminUsername AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-namespace-namespace.html#cfn-redshiftserverless-namespace-namespace-adminusername
-	AdminUsername *string `json:"AdminUsername,omitempty"`
+	AdminUsername *T `json:"AdminUsername,omitempty"`
 
 	// CreationDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-namespace-namespace.html#cfn-redshiftserverless-namespace-namespace-creationdate
-	CreationDate *string `json:"CreationDate,omitempty"`
+	CreationDate *T `json:"CreationDate,omitempty"`
 
 	// DbName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-namespace-namespace.html#cfn-redshiftserverless-namespace-namespace-dbname
-	DbName *string `json:"DbName,omitempty"`
+	DbName *T `json:"DbName,omitempty"`
 
 	// DefaultIamRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-namespace-namespace.html#cfn-redshiftserverless-namespace-namespace-defaultiamrolearn
-	DefaultIamRoleArn *string `json:"DefaultIamRoleArn,omitempty"`
+	DefaultIamRoleArn *T `json:"DefaultIamRoleArn,omitempty"`
 
 	// IamRoles AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-namespace-namespace.html#cfn-redshiftserverless-namespace-namespace-iamroles
-	IamRoles []string `json:"IamRoles,omitempty"`
+	IamRoles []T `json:"IamRoles,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-namespace-namespace.html#cfn-redshiftserverless-namespace-namespace-kmskeyid
-	KmsKeyId *string `json:"KmsKeyId,omitempty"`
+	KmsKeyId *T `json:"KmsKeyId,omitempty"`
 
 	// LogExports AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-namespace-namespace.html#cfn-redshiftserverless-namespace-namespace-logexports
-	LogExports []string `json:"LogExports,omitempty"`
+	LogExports []T `json:"LogExports,omitempty"`
 
 	// NamespaceArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-namespace-namespace.html#cfn-redshiftserverless-namespace-namespace-namespacearn
-	NamespaceArn *string `json:"NamespaceArn,omitempty"`
+	NamespaceArn *T `json:"NamespaceArn,omitempty"`
 
 	// NamespaceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-namespace-namespace.html#cfn-redshiftserverless-namespace-namespace-namespaceid
-	NamespaceId *string `json:"NamespaceId,omitempty"`
+	NamespaceId *T `json:"NamespaceId,omitempty"`
 
 	// NamespaceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-namespace-namespace.html#cfn-redshiftserverless-namespace-namespace-namespacename
-	NamespaceName *string `json:"NamespaceName,omitempty"`
+	NamespaceName *T `json:"NamespaceName,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-namespace-namespace.html#cfn-redshiftserverless-namespace-namespace-status
-	Status *string `json:"Status,omitempty"`
+	Status *T `json:"Status,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

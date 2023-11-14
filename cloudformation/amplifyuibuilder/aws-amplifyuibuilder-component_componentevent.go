@@ -13,7 +13,7 @@ type Component_ComponentEvent[T any] struct {
 	// Action AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentevent.html#cfn-amplifyuibuilder-component-componentevent-action
-	Action *string `json:"Action,omitempty"`
+	Action *T `json:"Action,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false

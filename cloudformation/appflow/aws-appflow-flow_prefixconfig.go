@@ -13,17 +13,17 @@ type Flow_PrefixConfig[T any] struct {
 	// PathPrefixHierarchy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-prefixconfig.html#cfn-appflow-flow-prefixconfig-pathprefixhierarchy
-	PathPrefixHierarchy []string `json:"PathPrefixHierarchy,omitempty"`
+	PathPrefixHierarchy []T `json:"PathPrefixHierarchy,omitempty"`
 
 	// PrefixFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-prefixconfig.html#cfn-appflow-flow-prefixconfig-prefixformat
-	PrefixFormat *string `json:"PrefixFormat,omitempty"`
+	PrefixFormat *T `json:"PrefixFormat,omitempty"`
 
 	// PrefixType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-prefixconfig.html#cfn-appflow-flow-prefixconfig-prefixtype
-	PrefixType *string `json:"PrefixType,omitempty"`
+	PrefixType *T `json:"PrefixType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

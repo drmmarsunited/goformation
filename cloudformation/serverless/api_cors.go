@@ -13,7 +13,7 @@ import (
 
 // Api_Cors is a helper struct that can hold either a String or CorsConfiguration value
 type Api_Cors[T any] struct {
-	String *string
+	String *T
 
 	CorsConfiguration *Api_CorsConfiguration[any]
 }
@@ -52,7 +52,7 @@ func (r *Api_Cors[any]) UnmarshalJSON(b []byte) error {
 
 	switch val := typecheck.(type) {
 
-	case string:
+	case any:
 		r.String = &val
 
 	case map[string]interface{}:

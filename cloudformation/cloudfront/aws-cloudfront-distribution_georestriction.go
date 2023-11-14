@@ -13,12 +13,12 @@ type Distribution_GeoRestriction[T any] struct {
 	// Locations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-georestriction.html#cfn-cloudfront-distribution-georestriction-locations
-	Locations []string `json:"Locations,omitempty"`
+	Locations []T `json:"Locations,omitempty"`
 
 	// RestrictionType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-georestriction.html#cfn-cloudfront-distribution-georestriction-restrictiontype
-	RestrictionType string `json:"RestrictionType"`
+	RestrictionType T `json:"RestrictionType"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

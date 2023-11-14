@@ -28,12 +28,12 @@ type Template_NumberDisplayFormatConfiguration[T any] struct {
 	// NumberScale AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numberdisplayformatconfiguration.html#cfn-quicksight-template-numberdisplayformatconfiguration-numberscale
-	NumberScale *string `json:"NumberScale,omitempty"`
+	NumberScale *T `json:"NumberScale,omitempty"`
 
 	// Prefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numberdisplayformatconfiguration.html#cfn-quicksight-template-numberdisplayformatconfiguration-prefix
-	Prefix *string `json:"Prefix,omitempty"`
+	Prefix *T `json:"Prefix,omitempty"`
 
 	// SeparatorConfiguration AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Template_NumberDisplayFormatConfiguration[T any] struct {
 	// Suffix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numberdisplayformatconfiguration.html#cfn-quicksight-template-numberdisplayformatconfiguration-suffix
-	Suffix *string `json:"Suffix,omitempty"`
+	Suffix *T `json:"Suffix,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

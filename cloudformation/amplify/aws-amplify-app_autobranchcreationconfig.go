@@ -13,7 +13,7 @@ type App_AutoBranchCreationConfig[T any] struct {
 	// AutoBranchCreationPatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-autobranchcreationpatterns
-	AutoBranchCreationPatterns []string `json:"AutoBranchCreationPatterns,omitempty"`
+	AutoBranchCreationPatterns []T `json:"AutoBranchCreationPatterns,omitempty"`
 
 	// BasicAuthConfig AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type App_AutoBranchCreationConfig[T any] struct {
 	// BuildSpec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-buildspec
-	BuildSpec *string `json:"BuildSpec,omitempty"`
+	BuildSpec *T `json:"BuildSpec,omitempty"`
 
 	// EnableAutoBranchCreation AWS CloudFormation Property
 	// Required: false
@@ -53,17 +53,17 @@ type App_AutoBranchCreationConfig[T any] struct {
 	// Framework AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-framework
-	Framework *string `json:"Framework,omitempty"`
+	Framework *T `json:"Framework,omitempty"`
 
 	// PullRequestEnvironmentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-pullrequestenvironmentname
-	PullRequestEnvironmentName *string `json:"PullRequestEnvironmentName,omitempty"`
+	PullRequestEnvironmentName *T `json:"PullRequestEnvironmentName,omitempty"`
 
 	// Stage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-stage
-	Stage *string `json:"Stage,omitempty"`
+	Stage *T `json:"Stage,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

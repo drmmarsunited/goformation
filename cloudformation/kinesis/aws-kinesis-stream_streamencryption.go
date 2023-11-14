@@ -13,12 +13,12 @@ type Stream_StreamEncryption[T any] struct {
 	// EncryptionType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-streamencryption.html#cfn-kinesis-stream-streamencryption-encryptiontype
-	EncryptionType string `json:"EncryptionType"`
+	EncryptionType T `json:"EncryptionType"`
 
 	// KeyId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-streamencryption.html#cfn-kinesis-stream-streamencryption-keyid
-	KeyId string `json:"KeyId"`
+	KeyId T `json:"KeyId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

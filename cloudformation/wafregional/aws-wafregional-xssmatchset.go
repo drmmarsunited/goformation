@@ -16,7 +16,7 @@ type XssMatchSet[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-xssmatchset.html#cfn-wafregional-xssmatchset-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// XssMatchTuples AWS CloudFormation Property
 	// Required: false

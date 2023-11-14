@@ -13,12 +13,12 @@ type Component_MutationActionSetStateParameter[T any] struct {
 	// ComponentName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-mutationactionsetstateparameter.html#cfn-amplifyuibuilder-component-mutationactionsetstateparameter-componentname
-	ComponentName string `json:"ComponentName"`
+	ComponentName T `json:"ComponentName"`
 
 	// Property AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-mutationactionsetstateparameter.html#cfn-amplifyuibuilder-component-mutationactionsetstateparameter-property
-	Property string `json:"Property"`
+	Property T `json:"Property"`
 
 	// Set AWS CloudFormation Property
 	// Required: true

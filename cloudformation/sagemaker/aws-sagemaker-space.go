@@ -17,12 +17,12 @@ type Space[T any] struct {
 	// DomainId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-space.html#cfn-sagemaker-space-domainid
-	DomainId string `json:"DomainId"`
+	DomainId T `json:"DomainId"`
 
 	// SpaceName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-space.html#cfn-sagemaker-space-spacename
-	SpaceName string `json:"SpaceName"`
+	SpaceName T `json:"SpaceName"`
 
 	// SpaceSettings AWS CloudFormation Property
 	// Required: false

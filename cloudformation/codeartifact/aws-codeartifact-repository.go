@@ -17,22 +17,22 @@ type Repository[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-repository.html#cfn-codeartifact-repository-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DomainName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-repository.html#cfn-codeartifact-repository-domainname
-	DomainName string `json:"DomainName"`
+	DomainName T `json:"DomainName"`
 
 	// DomainOwner AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-repository.html#cfn-codeartifact-repository-domainowner
-	DomainOwner *string `json:"DomainOwner,omitempty"`
+	DomainOwner *T `json:"DomainOwner,omitempty"`
 
 	// ExternalConnections AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-repository.html#cfn-codeartifact-repository-externalconnections
-	ExternalConnections []string `json:"ExternalConnections,omitempty"`
+	ExternalConnections []T `json:"ExternalConnections,omitempty"`
 
 	// PermissionsPolicyDocument AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type Repository[T any] struct {
 	// RepositoryName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-repository.html#cfn-codeartifact-repository-repositoryname
-	RepositoryName string `json:"RepositoryName"`
+	RepositoryName T `json:"RepositoryName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type Repository[T any] struct {
 	// Upstreams AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-repository.html#cfn-codeartifact-repository-upstreams
-	Upstreams []string `json:"Upstreams,omitempty"`
+	Upstreams []T `json:"Upstreams,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

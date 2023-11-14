@@ -13,17 +13,17 @@ type SecurityGroup_Ingress[T any] struct {
 	// CidrIp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidrip
-	CidrIp *string `json:"CidrIp,omitempty"`
+	CidrIp *T `json:"CidrIp,omitempty"`
 
 	// CidrIpv6 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidripv6
-	CidrIpv6 *string `json:"CidrIpv6,omitempty"`
+	CidrIpv6 *T `json:"CidrIpv6,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// FromPort AWS CloudFormation Property
 	// Required: false
@@ -33,27 +33,27 @@ type SecurityGroup_Ingress[T any] struct {
 	// IpProtocol AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-ipprotocol
-	IpProtocol string `json:"IpProtocol"`
+	IpProtocol T `json:"IpProtocol"`
 
 	// SourcePrefixListId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-securitygroup-ingress-sourceprefixlistid
-	SourcePrefixListId *string `json:"SourcePrefixListId,omitempty"`
+	SourcePrefixListId *T `json:"SourcePrefixListId,omitempty"`
 
 	// SourceSecurityGroupId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-sourcesecuritygroupid
-	SourceSecurityGroupId *string `json:"SourceSecurityGroupId,omitempty"`
+	SourceSecurityGroupId *T `json:"SourceSecurityGroupId,omitempty"`
 
 	// SourceSecurityGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-sourcesecuritygroupname
-	SourceSecurityGroupName *string `json:"SourceSecurityGroupName,omitempty"`
+	SourceSecurityGroupName *T `json:"SourceSecurityGroupName,omitempty"`
 
 	// SourceSecurityGroupOwnerId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-sourcesecuritygroupownerid
-	SourceSecurityGroupOwnerId *string `json:"SourceSecurityGroupOwnerId,omitempty"`
+	SourceSecurityGroupOwnerId *T `json:"SourceSecurityGroupOwnerId,omitempty"`
 
 	// ToPort AWS CloudFormation Property
 	// Required: false

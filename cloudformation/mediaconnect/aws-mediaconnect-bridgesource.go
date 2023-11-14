@@ -16,7 +16,7 @@ type BridgeSource[T any] struct {
 	// BridgeArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-bridgesource.html#cfn-mediaconnect-bridgesource-bridgearn
-	BridgeArn string `json:"BridgeArn"`
+	BridgeArn T `json:"BridgeArn"`
 
 	// FlowSource AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type BridgeSource[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-bridgesource.html#cfn-mediaconnect-bridgesource-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// NetworkSource AWS CloudFormation Property
 	// Required: false

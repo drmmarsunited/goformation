@@ -13,7 +13,7 @@ type Domain_AdvancedSecurityOptionsInput[T any] struct {
 	// AnonymousAuthDisableDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-advancedsecurityoptionsinput.html#cfn-opensearchservice-domain-advancedsecurityoptionsinput-anonymousauthdisabledate
-	AnonymousAuthDisableDate *string `json:"AnonymousAuthDisableDate,omitempty"`
+	AnonymousAuthDisableDate *T `json:"AnonymousAuthDisableDate,omitempty"`
 
 	// AnonymousAuthEnabled AWS CloudFormation Property
 	// Required: false

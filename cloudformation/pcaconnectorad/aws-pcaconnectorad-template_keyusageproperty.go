@@ -18,7 +18,7 @@ type Template_KeyUsageProperty[T any] struct {
 	// PropertyType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-template-keyusageproperty.html#cfn-pcaconnectorad-template-keyusageproperty-propertytype
-	PropertyType *string `json:"PropertyType,omitempty"`
+	PropertyType *T `json:"PropertyType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

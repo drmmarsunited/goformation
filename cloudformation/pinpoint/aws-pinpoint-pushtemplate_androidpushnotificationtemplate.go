@@ -13,42 +13,42 @@ type PushTemplate_AndroidPushNotificationTemplate[T any] struct {
 	// Action AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-androidpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-androidpushnotificationtemplate-action
-	Action *string `json:"Action,omitempty"`
+	Action *T `json:"Action,omitempty"`
 
 	// Body AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-androidpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-androidpushnotificationtemplate-body
-	Body *string `json:"Body,omitempty"`
+	Body *T `json:"Body,omitempty"`
 
 	// ImageIconUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-androidpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-androidpushnotificationtemplate-imageiconurl
-	ImageIconUrl *string `json:"ImageIconUrl,omitempty"`
+	ImageIconUrl *T `json:"ImageIconUrl,omitempty"`
 
 	// ImageUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-androidpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-androidpushnotificationtemplate-imageurl
-	ImageUrl *string `json:"ImageUrl,omitempty"`
+	ImageUrl *T `json:"ImageUrl,omitempty"`
 
 	// SmallImageIconUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-androidpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-androidpushnotificationtemplate-smallimageiconurl
-	SmallImageIconUrl *string `json:"SmallImageIconUrl,omitempty"`
+	SmallImageIconUrl *T `json:"SmallImageIconUrl,omitempty"`
 
 	// Sound AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-androidpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-androidpushnotificationtemplate-sound
-	Sound *string `json:"Sound,omitempty"`
+	Sound *T `json:"Sound,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-androidpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-androidpushnotificationtemplate-title
-	Title *string `json:"Title,omitempty"`
+	Title *T `json:"Title,omitempty"`
 
 	// Url AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-androidpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-androidpushnotificationtemplate-url
-	Url *string `json:"Url,omitempty"`
+	Url *T `json:"Url,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -17,7 +17,7 @@ type AutoScalingConfiguration[T any] struct {
 	// AutoScalingConfigurationName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-autoscalingconfiguration.html#cfn-apprunner-autoscalingconfiguration-autoscalingconfigurationname
-	AutoScalingConfigurationName *string `json:"AutoScalingConfigurationName,omitempty"`
+	AutoScalingConfigurationName *T `json:"AutoScalingConfigurationName,omitempty"`
 
 	// MaxConcurrency AWS CloudFormation Property
 	// Required: false

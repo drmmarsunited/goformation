@@ -13,12 +13,12 @@ type ComputeEnvironment_EksConfiguration[T any] struct {
 	// EksClusterArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-eksconfiguration.html#cfn-batch-computeenvironment-eksconfiguration-eksclusterarn
-	EksClusterArn string `json:"EksClusterArn"`
+	EksClusterArn T `json:"EksClusterArn"`
 
 	// KubernetesNamespace AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-eksconfiguration.html#cfn-batch-computeenvironment-eksconfiguration-kubernetesnamespace
-	KubernetesNamespace string `json:"KubernetesNamespace"`
+	KubernetesNamespace T `json:"KubernetesNamespace"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

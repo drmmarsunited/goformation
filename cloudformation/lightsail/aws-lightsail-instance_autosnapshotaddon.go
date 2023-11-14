@@ -13,7 +13,7 @@ type Instance_AutoSnapshotAddOn[T any] struct {
 	// SnapshotTimeOfDay AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-autosnapshotaddon.html#cfn-lightsail-instance-autosnapshotaddon-snapshottimeofday
-	SnapshotTimeOfDay *string `json:"SnapshotTimeOfDay,omitempty"`
+	SnapshotTimeOfDay *T `json:"SnapshotTimeOfDay,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,12 +13,12 @@ type Datastore_CustomerManagedS3Storage[T any] struct {
 	// Bucket AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-customermanageds3storage.html#cfn-iotanalytics-datastore-customermanageds3storage-bucket
-	Bucket string `json:"Bucket"`
+	Bucket T `json:"Bucket"`
 
 	// KeyPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-customermanageds3storage.html#cfn-iotanalytics-datastore-customermanageds3storage-keyprefix
-	KeyPrefix *string `json:"KeyPrefix,omitempty"`
+	KeyPrefix *T `json:"KeyPrefix,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -18,7 +18,7 @@ type Analysis_PivotTableOptions[T any] struct {
 	// CollapsedRowDimensionsVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableoptions.html#cfn-quicksight-analysis-pivottableoptions-collapsedrowdimensionsvisibility
-	CollapsedRowDimensionsVisibility *string `json:"CollapsedRowDimensionsVisibility,omitempty"`
+	CollapsedRowDimensionsVisibility *T `json:"CollapsedRowDimensionsVisibility,omitempty"`
 
 	// ColumnHeaderStyle AWS CloudFormation Property
 	// Required: false
@@ -28,17 +28,17 @@ type Analysis_PivotTableOptions[T any] struct {
 	// ColumnNamesVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableoptions.html#cfn-quicksight-analysis-pivottableoptions-columnnamesvisibility
-	ColumnNamesVisibility *string `json:"ColumnNamesVisibility,omitempty"`
+	ColumnNamesVisibility *T `json:"ColumnNamesVisibility,omitempty"`
 
 	// DefaultCellWidth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableoptions.html#cfn-quicksight-analysis-pivottableoptions-defaultcellwidth
-	DefaultCellWidth *string `json:"DefaultCellWidth,omitempty"`
+	DefaultCellWidth *T `json:"DefaultCellWidth,omitempty"`
 
 	// MetricPlacement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableoptions.html#cfn-quicksight-analysis-pivottableoptions-metricplacement
-	MetricPlacement *string `json:"MetricPlacement,omitempty"`
+	MetricPlacement *T `json:"MetricPlacement,omitempty"`
 
 	// RowAlternateColorOptions AWS CloudFormation Property
 	// Required: false
@@ -63,17 +63,17 @@ type Analysis_PivotTableOptions[T any] struct {
 	// RowsLayout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableoptions.html#cfn-quicksight-analysis-pivottableoptions-rowslayout
-	RowsLayout *string `json:"RowsLayout,omitempty"`
+	RowsLayout *T `json:"RowsLayout,omitempty"`
 
 	// SingleMetricVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableoptions.html#cfn-quicksight-analysis-pivottableoptions-singlemetricvisibility
-	SingleMetricVisibility *string `json:"SingleMetricVisibility,omitempty"`
+	SingleMetricVisibility *T `json:"SingleMetricVisibility,omitempty"`
 
 	// ToggleButtonsVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableoptions.html#cfn-quicksight-analysis-pivottableoptions-togglebuttonsvisibility
-	ToggleButtonsVisibility *string `json:"ToggleButtonsVisibility,omitempty"`
+	ToggleButtonsVisibility *T `json:"ToggleButtonsVisibility,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

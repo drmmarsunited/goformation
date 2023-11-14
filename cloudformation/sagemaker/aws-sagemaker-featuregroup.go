@@ -17,12 +17,12 @@ type FeatureGroup[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EventTimeFeatureName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-eventtimefeaturename
-	EventTimeFeatureName string `json:"EventTimeFeatureName"`
+	EventTimeFeatureName T `json:"EventTimeFeatureName"`
 
 	// FeatureDefinitions AWS CloudFormation Property
 	// Required: true
@@ -32,7 +32,7 @@ type FeatureGroup[T any] struct {
 	// FeatureGroupName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-featuregroupname
-	FeatureGroupName string `json:"FeatureGroupName"`
+	FeatureGroupName T `json:"FeatureGroupName"`
 
 	// OfflineStoreConfig AWS CloudFormation Property
 	// Required: false
@@ -47,12 +47,12 @@ type FeatureGroup[T any] struct {
 	// RecordIdentifierFeatureName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-recordidentifierfeaturename
-	RecordIdentifierFeatureName string `json:"RecordIdentifierFeatureName"`
+	RecordIdentifierFeatureName T `json:"RecordIdentifierFeatureName"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-rolearn
-	RoleArn *string `json:"RoleArn,omitempty"`
+	RoleArn *T `json:"RoleArn,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

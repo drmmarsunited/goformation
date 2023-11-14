@@ -23,27 +23,27 @@ type Dashboard_NumericEqualityFilter[T any] struct {
 	// FilterId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericequalityfilter.html#cfn-quicksight-dashboard-numericequalityfilter-filterid
-	FilterId string `json:"FilterId"`
+	FilterId T `json:"FilterId"`
 
 	// MatchOperator AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericequalityfilter.html#cfn-quicksight-dashboard-numericequalityfilter-matchoperator
-	MatchOperator string `json:"MatchOperator"`
+	MatchOperator T `json:"MatchOperator"`
 
 	// NullOption AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericequalityfilter.html#cfn-quicksight-dashboard-numericequalityfilter-nulloption
-	NullOption string `json:"NullOption"`
+	NullOption T `json:"NullOption"`
 
 	// ParameterName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericequalityfilter.html#cfn-quicksight-dashboard-numericequalityfilter-parametername
-	ParameterName *string `json:"ParameterName,omitempty"`
+	ParameterName *T `json:"ParameterName,omitempty"`
 
 	// SelectAllOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericequalityfilter.html#cfn-quicksight-dashboard-numericequalityfilter-selectalloptions
-	SelectAllOptions *string `json:"SelectAllOptions,omitempty"`
+	SelectAllOptions *T `json:"SelectAllOptions,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: false

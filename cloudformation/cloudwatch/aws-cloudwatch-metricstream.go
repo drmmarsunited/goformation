@@ -22,7 +22,7 @@ type MetricStream[T any] struct {
 	// FirehoseArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-metricstream.html#cfn-cloudwatch-metricstream-firehosearn
-	FirehoseArn string `json:"FirehoseArn"`
+	FirehoseArn T `json:"FirehoseArn"`
 
 	// IncludeFilters AWS CloudFormation Property
 	// Required: false
@@ -37,17 +37,17 @@ type MetricStream[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-metricstream.html#cfn-cloudwatch-metricstream-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// OutputFormat AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-metricstream.html#cfn-cloudwatch-metricstream-outputformat
-	OutputFormat string `json:"OutputFormat"`
+	OutputFormat T `json:"OutputFormat"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-metricstream.html#cfn-cloudwatch-metricstream-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// StatisticsConfigurations AWS CloudFormation Property
 	// Required: false

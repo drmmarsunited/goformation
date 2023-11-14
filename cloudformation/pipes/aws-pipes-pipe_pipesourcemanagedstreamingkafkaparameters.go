@@ -18,7 +18,7 @@ type Pipe_PipeSourceManagedStreamingKafkaParameters[T any] struct {
 	// ConsumerGroupID AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcemanagedstreamingkafkaparameters.html#cfn-pipes-pipe-pipesourcemanagedstreamingkafkaparameters-consumergroupid
-	ConsumerGroupID *string `json:"ConsumerGroupID,omitempty"`
+	ConsumerGroupID *T `json:"ConsumerGroupID,omitempty"`
 
 	// Credentials AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type Pipe_PipeSourceManagedStreamingKafkaParameters[T any] struct {
 	// StartingPosition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcemanagedstreamingkafkaparameters.html#cfn-pipes-pipe-pipesourcemanagedstreamingkafkaparameters-startingposition
-	StartingPosition *string `json:"StartingPosition,omitempty"`
+	StartingPosition *T `json:"StartingPosition,omitempty"`
 
 	// TopicName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcemanagedstreamingkafkaparameters.html#cfn-pipes-pipe-pipesourcemanagedstreamingkafkaparameters-topicname
-	TopicName string `json:"TopicName"`
+	TopicName T `json:"TopicName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

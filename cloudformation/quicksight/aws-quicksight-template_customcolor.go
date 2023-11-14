@@ -13,17 +13,17 @@ type Template_CustomColor[T any] struct {
 	// Color AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-customcolor.html#cfn-quicksight-template-customcolor-color
-	Color string `json:"Color"`
+	Color T `json:"Color"`
 
 	// FieldValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-customcolor.html#cfn-quicksight-template-customcolor-fieldvalue
-	FieldValue *string `json:"FieldValue,omitempty"`
+	FieldValue *T `json:"FieldValue,omitempty"`
 
 	// SpecialValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-customcolor.html#cfn-quicksight-template-customcolor-specialvalue
-	SpecialValue *string `json:"SpecialValue,omitempty"`
+	SpecialValue *T `json:"SpecialValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

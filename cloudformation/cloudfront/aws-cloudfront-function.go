@@ -21,7 +21,7 @@ type Function[T any] struct {
 	// FunctionCode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functioncode
-	FunctionCode string `json:"FunctionCode"`
+	FunctionCode T `json:"FunctionCode"`
 
 	// FunctionConfig AWS CloudFormation Property
 	// Required: true
@@ -36,7 +36,7 @@ type Function[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,22 +13,22 @@ type Campaign_S3Config[T any] struct {
 	// BucketArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-s3config.html#cfn-iotfleetwise-campaign-s3config-bucketarn
-	BucketArn string `json:"BucketArn"`
+	BucketArn T `json:"BucketArn"`
 
 	// DataFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-s3config.html#cfn-iotfleetwise-campaign-s3config-dataformat
-	DataFormat *string `json:"DataFormat,omitempty"`
+	DataFormat *T `json:"DataFormat,omitempty"`
 
 	// Prefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-s3config.html#cfn-iotfleetwise-campaign-s3config-prefix
-	Prefix *string `json:"Prefix,omitempty"`
+	Prefix *T `json:"Prefix,omitempty"`
 
 	// StorageCompressionFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-s3config.html#cfn-iotfleetwise-campaign-s3config-storagecompressionformat
-	StorageCompressionFormat *string `json:"StorageCompressionFormat,omitempty"`
+	StorageCompressionFormat *T `json:"StorageCompressionFormat,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

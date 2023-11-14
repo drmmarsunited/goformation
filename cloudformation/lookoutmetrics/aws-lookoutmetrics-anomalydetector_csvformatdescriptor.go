@@ -13,7 +13,7 @@ type AnomalyDetector_CsvFormatDescriptor[T any] struct {
 	// Charset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-csvformatdescriptor.html#cfn-lookoutmetrics-anomalydetector-csvformatdescriptor-charset
-	Charset *string `json:"Charset,omitempty"`
+	Charset *T `json:"Charset,omitempty"`
 
 	// ContainsHeader AWS CloudFormation Property
 	// Required: false
@@ -23,22 +23,22 @@ type AnomalyDetector_CsvFormatDescriptor[T any] struct {
 	// Delimiter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-csvformatdescriptor.html#cfn-lookoutmetrics-anomalydetector-csvformatdescriptor-delimiter
-	Delimiter *string `json:"Delimiter,omitempty"`
+	Delimiter *T `json:"Delimiter,omitempty"`
 
 	// FileCompression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-csvformatdescriptor.html#cfn-lookoutmetrics-anomalydetector-csvformatdescriptor-filecompression
-	FileCompression *string `json:"FileCompression,omitempty"`
+	FileCompression *T `json:"FileCompression,omitempty"`
 
 	// HeaderList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-csvformatdescriptor.html#cfn-lookoutmetrics-anomalydetector-csvformatdescriptor-headerlist
-	HeaderList []string `json:"HeaderList,omitempty"`
+	HeaderList []T `json:"HeaderList,omitempty"`
 
 	// QuoteSymbol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-csvformatdescriptor.html#cfn-lookoutmetrics-anomalydetector-csvformatdescriptor-quotesymbol
-	QuoteSymbol *string `json:"QuoteSymbol,omitempty"`
+	QuoteSymbol *T `json:"QuoteSymbol,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

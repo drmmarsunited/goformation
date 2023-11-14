@@ -18,7 +18,7 @@ type FileSystem_RootVolumeConfiguration[T any] struct {
 	// DataCompressionType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-datacompressiontype
-	DataCompressionType *string `json:"DataCompressionType,omitempty"`
+	DataCompressionType *T `json:"DataCompressionType,omitempty"`
 
 	// NfsExports AWS CloudFormation Property
 	// Required: false

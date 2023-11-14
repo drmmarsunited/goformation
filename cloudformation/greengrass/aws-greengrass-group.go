@@ -21,12 +21,12 @@ type Group[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html#cfn-greengrass-group-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html#cfn-greengrass-group-rolearn
-	RoleArn *string `json:"RoleArn,omitempty"`
+	RoleArn *T `json:"RoleArn,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -13,7 +13,7 @@ type Model_ImageConfig[T any] struct {
 	// RepositoryAccessMode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-imageconfig.html#cfn-sagemaker-model-containerdefinition-imageconfig-repositoryaccessmode
-	RepositoryAccessMode string `json:"RepositoryAccessMode"`
+	RepositoryAccessMode T `json:"RepositoryAccessMode"`
 
 	// RepositoryAuthConfig AWS CloudFormation Property
 	// Required: false

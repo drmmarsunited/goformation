@@ -38,7 +38,7 @@ type Template_TableVisual[T any] struct {
 	// VisualId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablevisual.html#cfn-quicksight-template-tablevisual-visualid
-	VisualId string `json:"VisualId"`
+	VisualId T `json:"VisualId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

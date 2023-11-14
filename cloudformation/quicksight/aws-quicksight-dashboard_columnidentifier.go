@@ -13,12 +13,12 @@ type Dashboard_ColumnIdentifier[T any] struct {
 	// ColumnName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-columnidentifier.html#cfn-quicksight-dashboard-columnidentifier-columnname
-	ColumnName string `json:"ColumnName"`
+	ColumnName T `json:"ColumnName"`
 
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-columnidentifier.html#cfn-quicksight-dashboard-columnidentifier-datasetidentifier
-	DataSetIdentifier string `json:"DataSetIdentifier"`
+	DataSetIdentifier T `json:"DataSetIdentifier"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

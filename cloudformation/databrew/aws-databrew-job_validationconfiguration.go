@@ -13,12 +13,12 @@ type Job_ValidationConfiguration[T any] struct {
 	// RulesetArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-validationconfiguration.html#cfn-databrew-job-validationconfiguration-rulesetarn
-	RulesetArn string `json:"RulesetArn"`
+	RulesetArn T `json:"RulesetArn"`
 
 	// ValidationMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-validationconfiguration.html#cfn-databrew-job-validationconfiguration-validationmode
-	ValidationMode *string `json:"ValidationMode,omitempty"`
+	ValidationMode *T `json:"ValidationMode,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

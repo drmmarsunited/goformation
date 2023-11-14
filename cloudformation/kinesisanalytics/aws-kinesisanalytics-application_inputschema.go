@@ -18,7 +18,7 @@ type Application_InputSchema[T any] struct {
 	// RecordEncoding AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-inputschema.html#cfn-kinesisanalytics-application-inputschema-recordencoding
-	RecordEncoding *string `json:"RecordEncoding,omitempty"`
+	RecordEncoding *T `json:"RecordEncoding,omitempty"`
 
 	// RecordFormat AWS CloudFormation Property
 	// Required: true

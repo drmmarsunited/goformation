@@ -16,12 +16,12 @@ type EmailChannel[T any] struct {
 	// ApplicationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-applicationid
-	ApplicationId string `json:"ApplicationId"`
+	ApplicationId T `json:"ApplicationId"`
 
 	// ConfigurationSet AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-configurationset
-	ConfigurationSet *string `json:"ConfigurationSet,omitempty"`
+	ConfigurationSet *T `json:"ConfigurationSet,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
@@ -31,17 +31,17 @@ type EmailChannel[T any] struct {
 	// FromAddress AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-fromaddress
-	FromAddress string `json:"FromAddress"`
+	FromAddress T `json:"FromAddress"`
 
 	// Identity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-identity
-	Identity string `json:"Identity"`
+	Identity T `json:"Identity"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-rolearn
-	RoleArn *string `json:"RoleArn,omitempty"`
+	RoleArn *T `json:"RoleArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Api_Route53Configuration[T any] struct {
 	// DistributedDomainName AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-api-route53configuration.html#sam-api-route53configuration-distributiondomainname
-	DistributedDomainName *string `json:"DistributedDomainName,omitempty"`
+	DistributedDomainName *T `json:"DistributedDomainName,omitempty"`
 
 	// EvaluateTargetHealth AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Api_Route53Configuration[T any] struct {
 	// HostedZoneId AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-api-route53configuration.html#sam-api-route53configuration-hostedzoneid
-	HostedZoneId *string `json:"HostedZoneId,omitempty"`
+	HostedZoneId *T `json:"HostedZoneId,omitempty"`
 
 	// HostedZoneName AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-api-route53configuration.html#sam-api-route53configuration-hostedzonename
-	HostedZoneName *string `json:"HostedZoneName,omitempty"`
+	HostedZoneName *T `json:"HostedZoneName,omitempty"`
 
 	// IpV6 AWS CloudFormation Property
 	// Required: false

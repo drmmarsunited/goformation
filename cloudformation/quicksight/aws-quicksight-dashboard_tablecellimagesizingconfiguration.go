@@ -13,7 +13,7 @@ type Dashboard_TableCellImageSizingConfiguration[T any] struct {
 	// TableCellImageScalingConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablecellimagesizingconfiguration.html#cfn-quicksight-dashboard-tablecellimagesizingconfiguration-tablecellimagescalingconfiguration
-	TableCellImageScalingConfiguration *string `json:"TableCellImageScalingConfiguration,omitempty"`
+	TableCellImageScalingConfiguration *T `json:"TableCellImageScalingConfiguration,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

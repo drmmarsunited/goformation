@@ -13,12 +13,12 @@ type ConnectorProfile_PardotConnectorProfileProperties[T any] struct {
 	// BusinessUnitId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-pardotconnectorprofileproperties.html#cfn-appflow-connectorprofile-pardotconnectorprofileproperties-businessunitid
-	BusinessUnitId string `json:"BusinessUnitId"`
+	BusinessUnitId T `json:"BusinessUnitId"`
 
 	// InstanceUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-pardotconnectorprofileproperties.html#cfn-appflow-connectorprofile-pardotconnectorprofileproperties-instanceurl
-	InstanceUrl *string `json:"InstanceUrl,omitempty"`
+	InstanceUrl *T `json:"InstanceUrl,omitempty"`
 
 	// IsSandboxEnvironment AWS CloudFormation Property
 	// Required: false

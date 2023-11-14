@@ -13,12 +13,12 @@ type PlaybackConfiguration_Bumper[T any] struct {
 	// EndUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-bumper.html#cfn-mediatailor-playbackconfiguration-bumper-endurl
-	EndUrl *string `json:"EndUrl,omitempty"`
+	EndUrl *T `json:"EndUrl,omitempty"`
 
 	// StartUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-bumper.html#cfn-mediatailor-playbackconfiguration-bumper-starturl
-	StartUrl *string `json:"StartUrl,omitempty"`
+	StartUrl *T `json:"StartUrl,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

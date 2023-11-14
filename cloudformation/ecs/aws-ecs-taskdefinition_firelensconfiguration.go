@@ -13,12 +13,12 @@ type TaskDefinition_FirelensConfiguration[T any] struct {
 	// Options AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-firelensconfiguration.html#cfn-ecs-taskdefinition-firelensconfiguration-options
-	Options map[string]string `json:"Options,omitempty"`
+	Options map[string]T `json:"Options,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-firelensconfiguration.html#cfn-ecs-taskdefinition-firelensconfiguration-type
-	Type *string `json:"Type,omitempty"`
+	Type *T `json:"Type,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

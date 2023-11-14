@@ -16,22 +16,22 @@ type LocalGatewayRoute[T any] struct {
 	// DestinationCidrBlock AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-destinationcidrblock
-	DestinationCidrBlock string `json:"DestinationCidrBlock"`
+	DestinationCidrBlock T `json:"DestinationCidrBlock"`
 
 	// LocalGatewayRouteTableId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-localgatewayroutetableid
-	LocalGatewayRouteTableId string `json:"LocalGatewayRouteTableId"`
+	LocalGatewayRouteTableId T `json:"LocalGatewayRouteTableId"`
 
 	// LocalGatewayVirtualInterfaceGroupId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-localgatewayvirtualinterfacegroupid
-	LocalGatewayVirtualInterfaceGroupId *string `json:"LocalGatewayVirtualInterfaceGroupId,omitempty"`
+	LocalGatewayVirtualInterfaceGroupId *T `json:"LocalGatewayVirtualInterfaceGroupId,omitempty"`
 
 	// NetworkInterfaceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-networkinterfaceid
-	NetworkInterfaceId *string `json:"NetworkInterfaceId,omitempty"`
+	NetworkInterfaceId *T `json:"NetworkInterfaceId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

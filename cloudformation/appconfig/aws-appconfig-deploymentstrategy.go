@@ -21,7 +21,7 @@ type DeploymentStrategy[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// FinalBakeTimeInMinutes AWS CloudFormation Property
 	// Required: false
@@ -36,17 +36,17 @@ type DeploymentStrategy[T any] struct {
 	// GrowthType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-growthtype
-	GrowthType *string `json:"GrowthType,omitempty"`
+	GrowthType *T `json:"GrowthType,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ReplicateTo AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-replicateto
-	ReplicateTo string `json:"ReplicateTo"`
+	ReplicateTo T `json:"ReplicateTo"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

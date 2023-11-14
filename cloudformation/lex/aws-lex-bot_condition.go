@@ -13,7 +13,7 @@ type Bot_Condition[T any] struct {
 	// ExpressionString AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-condition.html#cfn-lex-bot-condition-expressionstring
-	ExpressionString string `json:"ExpressionString"`
+	ExpressionString T `json:"ExpressionString"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

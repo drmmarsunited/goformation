@@ -18,7 +18,7 @@ type DataSet_ColumnTag[T any] struct {
 	// ColumnGeographicRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-columntag.html#cfn-quicksight-dataset-columntag-columngeographicrole
-	ColumnGeographicRole *string `json:"ColumnGeographicRole,omitempty"`
+	ColumnGeographicRole *T `json:"ColumnGeographicRole,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

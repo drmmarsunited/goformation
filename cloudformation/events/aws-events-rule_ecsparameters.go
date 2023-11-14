@@ -29,12 +29,12 @@ type Rule_EcsParameters[T any] struct {
 	// Group AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-group
-	Group *string `json:"Group,omitempty"`
+	Group *T `json:"Group,omitempty"`
 
 	// LaunchType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-launchtype
-	LaunchType *string `json:"LaunchType,omitempty"`
+	LaunchType *T `json:"LaunchType,omitempty"`
 
 	// NetworkConfiguration AWS CloudFormation Property
 	// Required: false
@@ -54,17 +54,17 @@ type Rule_EcsParameters[T any] struct {
 	// PlatformVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-platformversion
-	PlatformVersion *string `json:"PlatformVersion,omitempty"`
+	PlatformVersion *T `json:"PlatformVersion,omitempty"`
 
 	// PropagateTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-propagatetags
-	PropagateTags *string `json:"PropagateTags,omitempty"`
+	PropagateTags *T `json:"PropagateTags,omitempty"`
 
 	// ReferenceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-referenceid
-	ReferenceId *string `json:"ReferenceId,omitempty"`
+	ReferenceId *T `json:"ReferenceId,omitempty"`
 
 	// TagList AWS CloudFormation Property
 	// Required: false
@@ -79,7 +79,7 @@ type Rule_EcsParameters[T any] struct {
 	// TaskDefinitionArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-taskdefinitionarn
-	TaskDefinitionArn string `json:"TaskDefinitionArn"`
+	TaskDefinitionArn T `json:"TaskDefinitionArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

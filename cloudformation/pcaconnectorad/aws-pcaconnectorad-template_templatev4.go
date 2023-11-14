@@ -33,7 +33,7 @@ type Template_TemplateV4[T any] struct {
 	// HashAlgorithm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-template-templatev4.html#cfn-pcaconnectorad-template-templatev4-hashalgorithm
-	HashAlgorithm *string `json:"HashAlgorithm,omitempty"`
+	HashAlgorithm *T `json:"HashAlgorithm,omitempty"`
 
 	// PrivateKeyAttributes AWS CloudFormation Property
 	// Required: true
@@ -53,7 +53,7 @@ type Template_TemplateV4[T any] struct {
 	// SupersededTemplates AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-template-templatev4.html#cfn-pcaconnectorad-template-templatev4-supersededtemplates
-	SupersededTemplates []string `json:"SupersededTemplates,omitempty"`
+	SupersededTemplates []T `json:"SupersededTemplates,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

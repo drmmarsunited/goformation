@@ -16,17 +16,17 @@ type ImagePipeline[T any] struct {
 	// ContainerRecipeArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-containerrecipearn
-	ContainerRecipeArn *string `json:"ContainerRecipeArn,omitempty"`
+	ContainerRecipeArn *T `json:"ContainerRecipeArn,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DistributionConfigurationArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-distributionconfigurationarn
-	DistributionConfigurationArn *string `json:"DistributionConfigurationArn,omitempty"`
+	DistributionConfigurationArn *T `json:"DistributionConfigurationArn,omitempty"`
 
 	// EnhancedImageMetadataEnabled AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type ImagePipeline[T any] struct {
 	// ImageRecipeArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-imagerecipearn
-	ImageRecipeArn *string `json:"ImageRecipeArn,omitempty"`
+	ImageRecipeArn *T `json:"ImageRecipeArn,omitempty"`
 
 	// ImageScanningConfiguration AWS CloudFormation Property
 	// Required: false
@@ -51,12 +51,12 @@ type ImagePipeline[T any] struct {
 	// InfrastructureConfigurationArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-infrastructureconfigurationarn
-	InfrastructureConfigurationArn string `json:"InfrastructureConfigurationArn"`
+	InfrastructureConfigurationArn T `json:"InfrastructureConfigurationArn"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Schedule AWS CloudFormation Property
 	// Required: false
@@ -66,12 +66,12 @@ type ImagePipeline[T any] struct {
 	// Status AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-status
-	Status *string `json:"Status,omitempty"`
+	Status *T `json:"Status,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-tags
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

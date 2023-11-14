@@ -13,7 +13,7 @@ type Pipe_PipeTargetLambdaFunctionParameters[T any] struct {
 	// InvocationType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetlambdafunctionparameters.html#cfn-pipes-pipe-pipetargetlambdafunctionparameters-invocationtype
-	InvocationType *string `json:"InvocationType,omitempty"`
+	InvocationType *T `json:"InvocationType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

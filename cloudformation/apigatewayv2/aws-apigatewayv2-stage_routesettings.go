@@ -23,7 +23,7 @@ type Stage_RouteSettings[T any] struct {
 	// LoggingLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-logginglevel
-	LoggingLevel *string `json:"LoggingLevel,omitempty"`
+	LoggingLevel *T `json:"LoggingLevel,omitempty"`
 
 	// ThrottlingBurstLimit AWS CloudFormation Property
 	// Required: false

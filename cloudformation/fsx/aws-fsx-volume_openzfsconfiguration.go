@@ -18,7 +18,7 @@ type Volume_OpenZFSConfiguration[T any] struct {
 	// DataCompressionType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-datacompressiontype
-	DataCompressionType *string `json:"DataCompressionType,omitempty"`
+	DataCompressionType *T `json:"DataCompressionType,omitempty"`
 
 	// NfsExports AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Volume_OpenZFSConfiguration[T any] struct {
 	// Options AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-options
-	Options []string `json:"Options,omitempty"`
+	Options []T `json:"Options,omitempty"`
 
 	// OriginSnapshot AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Volume_OpenZFSConfiguration[T any] struct {
 	// ParentVolumeId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-parentvolumeid
-	ParentVolumeId string `json:"ParentVolumeId"`
+	ParentVolumeId T `json:"ParentVolumeId"`
 
 	// ReadOnly AWS CloudFormation Property
 	// Required: false

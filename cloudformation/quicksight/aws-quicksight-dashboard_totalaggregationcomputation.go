@@ -13,17 +13,17 @@ type Dashboard_TotalAggregationComputation[T any] struct {
 	// ComputationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-totalaggregationcomputation.html#cfn-quicksight-dashboard-totalaggregationcomputation-computationid
-	ComputationId string `json:"ComputationId"`
+	ComputationId T `json:"ComputationId"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-totalaggregationcomputation.html#cfn-quicksight-dashboard-totalaggregationcomputation-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Value AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-totalaggregationcomputation.html#cfn-quicksight-dashboard-totalaggregationcomputation-value
-	Value *Dashboard_MeasureField[any] `json:"Value"`
+	Value *Dashboard_MeasureField[any] `json:"Value,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

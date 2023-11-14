@@ -13,12 +13,12 @@ type SecurityConfig_SamlConfigOptions[T any] struct {
 	// GroupAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchserverless-securityconfig-samlconfigoptions.html#cfn-opensearchserverless-securityconfig-samlconfigoptions-groupattribute
-	GroupAttribute *string `json:"GroupAttribute,omitempty"`
+	GroupAttribute *T `json:"GroupAttribute,omitempty"`
 
 	// Metadata AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchserverless-securityconfig-samlconfigoptions.html#cfn-opensearchserverless-securityconfig-samlconfigoptions-metadata
-	Metadata string `json:"Metadata"`
+	Metadata T `json:"Metadata"`
 
 	// SessionTimeout AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type SecurityConfig_SamlConfigOptions[T any] struct {
 	// UserAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchserverless-securityconfig-samlconfigoptions.html#cfn-opensearchserverless-securityconfig-samlconfigoptions-userattribute
-	UserAttribute *string `json:"UserAttribute,omitempty"`
+	UserAttribute *T `json:"UserAttribute,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -17,37 +17,37 @@ type Agreement[T any] struct {
 	// AccessRole AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-accessrole
-	AccessRole string `json:"AccessRole"`
+	AccessRole T `json:"AccessRole"`
 
 	// BaseDirectory AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-basedirectory
-	BaseDirectory string `json:"BaseDirectory"`
+	BaseDirectory T `json:"BaseDirectory"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// LocalProfileId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-localprofileid
-	LocalProfileId string `json:"LocalProfileId"`
+	LocalProfileId T `json:"LocalProfileId"`
 
 	// PartnerProfileId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-partnerprofileid
-	PartnerProfileId string `json:"PartnerProfileId"`
+	PartnerProfileId T `json:"PartnerProfileId"`
 
 	// ServerId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-serverid
-	ServerId string `json:"ServerId"`
+	ServerId T `json:"ServerId"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-status
-	Status *string `json:"Status,omitempty"`
+	Status *T `json:"Status,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

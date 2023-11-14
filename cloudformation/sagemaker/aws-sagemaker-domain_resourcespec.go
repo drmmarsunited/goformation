@@ -13,22 +13,22 @@ type Domain_ResourceSpec[T any] struct {
 	// InstanceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-resourcespec.html#cfn-sagemaker-domain-resourcespec-instancetype
-	InstanceType *string `json:"InstanceType,omitempty"`
+	InstanceType *T `json:"InstanceType,omitempty"`
 
 	// LifecycleConfigArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-resourcespec.html#cfn-sagemaker-domain-resourcespec-lifecycleconfigarn
-	LifecycleConfigArn *string `json:"LifecycleConfigArn,omitempty"`
+	LifecycleConfigArn *T `json:"LifecycleConfigArn,omitempty"`
 
 	// SageMakerImageArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-resourcespec.html#cfn-sagemaker-domain-resourcespec-sagemakerimagearn
-	SageMakerImageArn *string `json:"SageMakerImageArn,omitempty"`
+	SageMakerImageArn *T `json:"SageMakerImageArn,omitempty"`
 
 	// SageMakerImageVersionArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-resourcespec.html#cfn-sagemaker-domain-resourcespec-sagemakerimageversionarn
-	SageMakerImageVersionArn *string `json:"SageMakerImageVersionArn,omitempty"`
+	SageMakerImageVersionArn *T `json:"SageMakerImageVersionArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

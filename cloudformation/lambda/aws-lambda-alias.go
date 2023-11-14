@@ -16,22 +16,22 @@ type Alias[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// FunctionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-functionname
-	FunctionName string `json:"FunctionName"`
+	FunctionName T `json:"FunctionName"`
 
 	// FunctionVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-functionversion
-	FunctionVersion string `json:"FunctionVersion"`
+	FunctionVersion T `json:"FunctionVersion"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ProvisionedConcurrencyConfig AWS CloudFormation Property
 	// Required: false

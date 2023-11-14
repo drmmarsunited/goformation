@@ -13,7 +13,7 @@ type Cluster_ServiceConnectDefaults[T any] struct {
 	// Namespace AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-serviceconnectdefaults.html#cfn-ecs-cluster-serviceconnectdefaults-namespace
-	Namespace *string `json:"Namespace,omitempty"`
+	Namespace *T `json:"Namespace,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

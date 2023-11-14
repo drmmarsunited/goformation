@@ -17,22 +17,22 @@ type ResolverRule[T any] struct {
 	// DomainName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-domainname
-	DomainName string `json:"DomainName"`
+	DomainName T `json:"DomainName"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// ResolverEndpointId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-resolverendpointid
-	ResolverEndpointId *string `json:"ResolverEndpointId,omitempty"`
+	ResolverEndpointId *T `json:"ResolverEndpointId,omitempty"`
 
 	// RuleType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-ruletype
-	RuleType string `json:"RuleType"`
+	RuleType T `json:"RuleType"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

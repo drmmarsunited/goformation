@@ -13,22 +13,22 @@ type DataSet_RowLevelPermissionTagRule[T any] struct {
 	// ColumnName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-rowlevelpermissiontagrule.html#cfn-quicksight-dataset-rowlevelpermissiontagrule-columnname
-	ColumnName string `json:"ColumnName"`
+	ColumnName T `json:"ColumnName"`
 
 	// MatchAllValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-rowlevelpermissiontagrule.html#cfn-quicksight-dataset-rowlevelpermissiontagrule-matchallvalue
-	MatchAllValue *string `json:"MatchAllValue,omitempty"`
+	MatchAllValue *T `json:"MatchAllValue,omitempty"`
 
 	// TagKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-rowlevelpermissiontagrule.html#cfn-quicksight-dataset-rowlevelpermissiontagrule-tagkey
-	TagKey string `json:"TagKey"`
+	TagKey T `json:"TagKey"`
 
 	// TagMultiValueDelimiter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-rowlevelpermissiontagrule.html#cfn-quicksight-dataset-rowlevelpermissiontagrule-tagmultivaluedelimiter
-	TagMultiValueDelimiter *string `json:"TagMultiValueDelimiter,omitempty"`
+	TagMultiValueDelimiter *T `json:"TagMultiValueDelimiter,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

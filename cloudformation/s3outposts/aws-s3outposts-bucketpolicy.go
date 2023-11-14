@@ -16,7 +16,7 @@ type BucketPolicy[T any] struct {
 	// Bucket AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-bucketpolicy.html#cfn-s3outposts-bucketpolicy-bucket
-	Bucket string `json:"Bucket"`
+	Bucket T `json:"Bucket"`
 
 	// PolicyDocument AWS CloudFormation Property
 	// Required: true

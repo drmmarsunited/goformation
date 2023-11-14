@@ -18,7 +18,7 @@ type Domain_EncryptionAtRestOptions[T any] struct {
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-encryptionatrestoptions.html#cfn-elasticsearch-domain-encryptionatrestoptions-kmskeyid
-	KmsKeyId *string `json:"KmsKeyId,omitempty"`
+	KmsKeyId *T `json:"KmsKeyId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

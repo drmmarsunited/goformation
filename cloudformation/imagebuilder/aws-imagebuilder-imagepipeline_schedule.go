@@ -13,12 +13,12 @@ type ImagePipeline_Schedule[T any] struct {
 	// PipelineExecutionStartCondition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-schedule.html#cfn-imagebuilder-imagepipeline-schedule-pipelineexecutionstartcondition
-	PipelineExecutionStartCondition *string `json:"PipelineExecutionStartCondition,omitempty"`
+	PipelineExecutionStartCondition *T `json:"PipelineExecutionStartCondition,omitempty"`
 
 	// ScheduleExpression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-schedule.html#cfn-imagebuilder-imagepipeline-schedule-scheduleexpression
-	ScheduleExpression *string `json:"ScheduleExpression,omitempty"`
+	ScheduleExpression *T `json:"ScheduleExpression,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

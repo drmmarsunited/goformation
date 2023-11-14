@@ -17,12 +17,12 @@ type PricingRule[T any] struct {
 	// BillingEntity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-billingentity
-	BillingEntity *string `json:"BillingEntity,omitempty"`
+	BillingEntity *T `json:"BillingEntity,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// ModifierPercentage AWS CloudFormation Property
 	// Required: false
@@ -32,22 +32,22 @@ type PricingRule[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Operation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-operation
-	Operation *string `json:"Operation,omitempty"`
+	Operation *T `json:"Operation,omitempty"`
 
 	// Scope AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-scope
-	Scope string `json:"Scope"`
+	Scope T `json:"Scope"`
 
 	// Service AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-service
-	Service *string `json:"Service,omitempty"`
+	Service *T `json:"Service,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -62,12 +62,12 @@ type PricingRule[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// UsageType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-usagetype
-	UsageType *string `json:"UsageType,omitempty"`
+	UsageType *T `json:"UsageType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

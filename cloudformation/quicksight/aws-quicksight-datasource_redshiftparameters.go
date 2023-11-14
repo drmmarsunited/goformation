@@ -13,17 +13,17 @@ type DataSource_RedshiftParameters[T any] struct {
 	// ClusterId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-redshiftparameters.html#cfn-quicksight-datasource-redshiftparameters-clusterid
-	ClusterId *string `json:"ClusterId,omitempty"`
+	ClusterId *T `json:"ClusterId,omitempty"`
 
 	// Database AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-redshiftparameters.html#cfn-quicksight-datasource-redshiftparameters-database
-	Database string `json:"Database"`
+	Database T `json:"Database"`
 
 	// Host AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-redshiftparameters.html#cfn-quicksight-datasource-redshiftparameters-host
-	Host *string `json:"Host,omitempty"`
+	Host *T `json:"Host,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false

@@ -18,7 +18,7 @@ type LoggingConfiguration_MatchPattern[T any] struct {
 	// IncludedPaths AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-matchpattern.html#cfn-wafv2-loggingconfiguration-matchpattern-includedpaths
-	IncludedPaths []string `json:"IncludedPaths,omitempty"`
+	IncludedPaths []T `json:"IncludedPaths,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

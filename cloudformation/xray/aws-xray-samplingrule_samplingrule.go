@@ -13,7 +13,7 @@ type SamplingRule_SamplingRule[T any] struct {
 	// Attributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-attributes
-	Attributes map[string]string `json:"Attributes,omitempty"`
+	Attributes map[string]T `json:"Attributes,omitempty"`
 
 	// FixedRate AWS CloudFormation Property
 	// Required: true
@@ -23,12 +23,12 @@ type SamplingRule_SamplingRule[T any] struct {
 	// HTTPMethod AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-httpmethod
-	HTTPMethod string `json:"HTTPMethod"`
+	HTTPMethod T `json:"HTTPMethod"`
 
 	// Host AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-host
-	Host string `json:"Host"`
+	Host T `json:"Host"`
 
 	// Priority AWS CloudFormation Property
 	// Required: true
@@ -43,32 +43,32 @@ type SamplingRule_SamplingRule[T any] struct {
 	// ResourceARN AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-resourcearn
-	ResourceARN string `json:"ResourceARN"`
+	ResourceARN T `json:"ResourceARN"`
 
 	// RuleARN AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-rulearn
-	RuleARN *string `json:"RuleARN,omitempty"`
+	RuleARN *T `json:"RuleARN,omitempty"`
 
 	// RuleName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-rulename
-	RuleName *string `json:"RuleName,omitempty"`
+	RuleName *T `json:"RuleName,omitempty"`
 
 	// ServiceName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-servicename
-	ServiceName string `json:"ServiceName"`
+	ServiceName T `json:"ServiceName"`
 
 	// ServiceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-servicetype
-	ServiceType string `json:"ServiceType"`
+	ServiceType T `json:"ServiceType"`
 
 	// URLPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-urlpath
-	URLPath string `json:"URLPath"`
+	URLPath T `json:"URLPath"`
 
 	// Version AWS CloudFormation Property
 	// Required: false

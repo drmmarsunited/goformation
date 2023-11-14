@@ -13,12 +13,12 @@ type Template_DataSetReference[T any] struct {
 	// DataSetArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetreference.html#cfn-quicksight-template-datasetreference-datasetarn
-	DataSetArn string `json:"DataSetArn"`
+	DataSetArn T `json:"DataSetArn"`
 
 	// DataSetPlaceholder AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetreference.html#cfn-quicksight-template-datasetreference-datasetplaceholder
-	DataSetPlaceholder string `json:"DataSetPlaceholder"`
+	DataSetPlaceholder T `json:"DataSetPlaceholder"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

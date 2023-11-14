@@ -13,7 +13,7 @@ type InstanceFleetConfig_SpotProvisioningSpecification[T any] struct {
 	// AllocationStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotprovisioningspecification.html#cfn-elasticmapreduce-instancefleetconfig-spotprovisioningspecification-allocationstrategy
-	AllocationStrategy *string `json:"AllocationStrategy,omitempty"`
+	AllocationStrategy *T `json:"AllocationStrategy,omitempty"`
 
 	// BlockDurationMinutes AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type InstanceFleetConfig_SpotProvisioningSpecification[T any] struct {
 	// TimeoutAction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotprovisioningspecification.html#cfn-elasticmapreduce-instancefleetconfig-spotprovisioningspecification-timeoutaction
-	TimeoutAction string `json:"TimeoutAction"`
+	TimeoutAction T `json:"TimeoutAction"`
 
 	// TimeoutDurationMinutes AWS CloudFormation Property
 	// Required: true

@@ -13,7 +13,7 @@ type ConfigurationSetEventDestination_SnsDestination[T any] struct {
 	// TopicARN AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-snsdestination.html#cfn-ses-configurationseteventdestination-snsdestination-topicarn
-	TopicARN string `json:"TopicARN"`
+	TopicARN T `json:"TopicARN"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

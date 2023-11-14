@@ -18,17 +18,17 @@ type Channel_AudioDescription[T any] struct {
 	// AudioSelectorName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-audioselectorname
-	AudioSelectorName *string `json:"AudioSelectorName,omitempty"`
+	AudioSelectorName *T `json:"AudioSelectorName,omitempty"`
 
 	// AudioType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-audiotype
-	AudioType *string `json:"AudioType,omitempty"`
+	AudioType *T `json:"AudioType,omitempty"`
 
 	// AudioTypeControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-audiotypecontrol
-	AudioTypeControl *string `json:"AudioTypeControl,omitempty"`
+	AudioTypeControl *T `json:"AudioTypeControl,omitempty"`
 
 	// AudioWatermarkingSettings AWS CloudFormation Property
 	// Required: false
@@ -43,17 +43,17 @@ type Channel_AudioDescription[T any] struct {
 	// LanguageCode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-languagecode
-	LanguageCode *string `json:"LanguageCode,omitempty"`
+	LanguageCode *T `json:"LanguageCode,omitempty"`
 
 	// LanguageCodeControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-languagecodecontrol
-	LanguageCodeControl *string `json:"LanguageCodeControl,omitempty"`
+	LanguageCodeControl *T `json:"LanguageCodeControl,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// RemixSettings AWS CloudFormation Property
 	// Required: false
@@ -63,7 +63,7 @@ type Channel_AudioDescription[T any] struct {
 	// StreamName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-streamname
-	StreamName *string `json:"StreamName,omitempty"`
+	StreamName *T `json:"StreamName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

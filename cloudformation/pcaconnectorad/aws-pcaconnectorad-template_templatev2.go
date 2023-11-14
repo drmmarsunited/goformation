@@ -48,7 +48,7 @@ type Template_TemplateV2[T any] struct {
 	// SupersededTemplates AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-template-templatev2.html#cfn-pcaconnectorad-template-templatev2-supersededtemplates
-	SupersededTemplates []string `json:"SupersededTemplates,omitempty"`
+	SupersededTemplates []T `json:"SupersededTemplates,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

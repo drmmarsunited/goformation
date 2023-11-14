@@ -38,7 +38,7 @@ type ScalingPlan_ScalingInstruction[T any] struct {
 	// PredictiveScalingMaxCapacityBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-predictivescalingmaxcapacitybehavior
-	PredictiveScalingMaxCapacityBehavior *string `json:"PredictiveScalingMaxCapacityBehavior,omitempty"`
+	PredictiveScalingMaxCapacityBehavior *T `json:"PredictiveScalingMaxCapacityBehavior,omitempty"`
 
 	// PredictiveScalingMaxCapacityBuffer AWS CloudFormation Property
 	// Required: false
@@ -48,22 +48,22 @@ type ScalingPlan_ScalingInstruction[T any] struct {
 	// PredictiveScalingMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-predictivescalingmode
-	PredictiveScalingMode *string `json:"PredictiveScalingMode,omitempty"`
+	PredictiveScalingMode *T `json:"PredictiveScalingMode,omitempty"`
 
 	// ResourceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-resourceid
-	ResourceId string `json:"ResourceId"`
+	ResourceId T `json:"ResourceId"`
 
 	// ScalableDimension AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-scalabledimension
-	ScalableDimension string `json:"ScalableDimension"`
+	ScalableDimension T `json:"ScalableDimension"`
 
 	// ScalingPolicyUpdateBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-scalingpolicyupdatebehavior
-	ScalingPolicyUpdateBehavior *string `json:"ScalingPolicyUpdateBehavior,omitempty"`
+	ScalingPolicyUpdateBehavior *T `json:"ScalingPolicyUpdateBehavior,omitempty"`
 
 	// ScheduledActionBufferTime AWS CloudFormation Property
 	// Required: false
@@ -73,7 +73,7 @@ type ScalingPlan_ScalingInstruction[T any] struct {
 	// ServiceNamespace AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-servicenamespace
-	ServiceNamespace string `json:"ServiceNamespace"`
+	ServiceNamespace T `json:"ServiceNamespace"`
 
 	// TargetTrackingConfigurations AWS CloudFormation Property
 	// Required: true

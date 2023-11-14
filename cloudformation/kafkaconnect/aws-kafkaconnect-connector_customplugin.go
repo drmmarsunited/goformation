@@ -13,7 +13,7 @@ type Connector_CustomPlugin[T any] struct {
 	// CustomPluginArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-customplugin.html#cfn-kafkaconnect-connector-customplugin-custompluginarn
-	CustomPluginArn string `json:"CustomPluginArn"`
+	CustomPluginArn T `json:"CustomPluginArn"`
 
 	// Revision AWS CloudFormation Property
 	// Required: true

@@ -18,17 +18,17 @@ type Analysis_FilterRelativeDateTimeControl[T any] struct {
 	// FilterControlId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterrelativedatetimecontrol.html#cfn-quicksight-analysis-filterrelativedatetimecontrol-filtercontrolid
-	FilterControlId string `json:"FilterControlId"`
+	FilterControlId T `json:"FilterControlId"`
 
 	// SourceFilterId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterrelativedatetimecontrol.html#cfn-quicksight-analysis-filterrelativedatetimecontrol-sourcefilterid
-	SourceFilterId string `json:"SourceFilterId"`
+	SourceFilterId T `json:"SourceFilterId"`
 
 	// Title AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterrelativedatetimecontrol.html#cfn-quicksight-analysis-filterrelativedatetimecontrol-title
-	Title string `json:"Title"`
+	Title T `json:"Title"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

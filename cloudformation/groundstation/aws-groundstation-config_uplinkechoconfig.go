@@ -13,7 +13,7 @@ type Config_UplinkEchoConfig[T any] struct {
 	// AntennaUplinkConfigArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-uplinkechoconfig.html#cfn-groundstation-config-uplinkechoconfig-antennauplinkconfigarn
-	AntennaUplinkConfigArn *string `json:"AntennaUplinkConfigArn,omitempty"`
+	AntennaUplinkConfigArn *T `json:"AntennaUplinkConfigArn,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false

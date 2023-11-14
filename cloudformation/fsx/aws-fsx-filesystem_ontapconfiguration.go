@@ -18,12 +18,12 @@ type FileSystem_OntapConfiguration[T any] struct {
 	// DailyAutomaticBackupStartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-dailyautomaticbackupstarttime
-	DailyAutomaticBackupStartTime *string `json:"DailyAutomaticBackupStartTime,omitempty"`
+	DailyAutomaticBackupStartTime *T `json:"DailyAutomaticBackupStartTime,omitempty"`
 
 	// DeploymentType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-deploymenttype
-	DeploymentType string `json:"DeploymentType"`
+	DeploymentType T `json:"DeploymentType"`
 
 	// DiskIopsConfiguration AWS CloudFormation Property
 	// Required: false
@@ -33,22 +33,22 @@ type FileSystem_OntapConfiguration[T any] struct {
 	// EndpointIpAddressRange AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-endpointipaddressrange
-	EndpointIpAddressRange *string `json:"EndpointIpAddressRange,omitempty"`
+	EndpointIpAddressRange *T `json:"EndpointIpAddressRange,omitempty"`
 
 	// FsxAdminPassword AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-fsxadminpassword
-	FsxAdminPassword *string `json:"FsxAdminPassword,omitempty"`
+	FsxAdminPassword *T `json:"FsxAdminPassword,omitempty"`
 
 	// PreferredSubnetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-preferredsubnetid
-	PreferredSubnetId *string `json:"PreferredSubnetId,omitempty"`
+	PreferredSubnetId *T `json:"PreferredSubnetId,omitempty"`
 
 	// RouteTableIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-routetableids
-	RouteTableIds []string `json:"RouteTableIds,omitempty"`
+	RouteTableIds []T `json:"RouteTableIds,omitempty"`
 
 	// ThroughputCapacity AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type FileSystem_OntapConfiguration[T any] struct {
 	// WeeklyMaintenanceStartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-weeklymaintenancestarttime
-	WeeklyMaintenanceStartTime *string `json:"WeeklyMaintenanceStartTime,omitempty"`
+	WeeklyMaintenanceStartTime *T `json:"WeeklyMaintenanceStartTime,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Campaign_InAppMessageContent[T any] struct {
 	// BackgroundColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagecontent.html#cfn-pinpoint-campaign-inappmessagecontent-backgroundcolor
-	BackgroundColor *string `json:"BackgroundColor,omitempty"`
+	BackgroundColor *T `json:"BackgroundColor,omitempty"`
 
 	// BodyConfig AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Campaign_InAppMessageContent[T any] struct {
 	// ImageUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagecontent.html#cfn-pinpoint-campaign-inappmessagecontent-imageurl
-	ImageUrl *string `json:"ImageUrl,omitempty"`
+	ImageUrl *T `json:"ImageUrl,omitempty"`
 
 	// PrimaryBtn AWS CloudFormation Property
 	// Required: false

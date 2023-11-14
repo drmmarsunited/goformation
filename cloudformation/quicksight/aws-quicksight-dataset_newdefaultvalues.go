@@ -13,7 +13,7 @@ type DataSet_NewDefaultValues[T any] struct {
 	// DateTimeStaticValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-newdefaultvalues.html#cfn-quicksight-dataset-newdefaultvalues-datetimestaticvalues
-	DateTimeStaticValues []string `json:"DateTimeStaticValues,omitempty"`
+	DateTimeStaticValues []T `json:"DateTimeStaticValues,omitempty"`
 
 	// DecimalStaticValues AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type DataSet_NewDefaultValues[T any] struct {
 	// StringStaticValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-newdefaultvalues.html#cfn-quicksight-dataset-newdefaultvalues-stringstaticvalues
-	StringStaticValues []string `json:"StringStaticValues,omitempty"`
+	StringStaticValues []T `json:"StringStaticValues,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

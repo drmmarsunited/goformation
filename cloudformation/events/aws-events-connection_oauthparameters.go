@@ -13,7 +13,7 @@ type Connection_OAuthParameters[T any] struct {
 	// AuthorizationEndpoint AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-oauthparameters.html#cfn-events-connection-oauthparameters-authorizationendpoint
-	AuthorizationEndpoint string `json:"AuthorizationEndpoint"`
+	AuthorizationEndpoint T `json:"AuthorizationEndpoint"`
 
 	// ClientParameters AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Connection_OAuthParameters[T any] struct {
 	// HttpMethod AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-oauthparameters.html#cfn-events-connection-oauthparameters-httpmethod
-	HttpMethod string `json:"HttpMethod"`
+	HttpMethod T `json:"HttpMethod"`
 
 	// OAuthHttpParameters AWS CloudFormation Property
 	// Required: false

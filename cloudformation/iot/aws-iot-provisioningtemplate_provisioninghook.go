@@ -13,12 +13,12 @@ type ProvisioningTemplate_ProvisioningHook[T any] struct {
 	// PayloadVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-provisioningtemplate-provisioninghook.html#cfn-iot-provisioningtemplate-provisioninghook-payloadversion
-	PayloadVersion *string `json:"PayloadVersion,omitempty"`
+	PayloadVersion *T `json:"PayloadVersion,omitempty"`
 
 	// TargetArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-provisioningtemplate-provisioninghook.html#cfn-iot-provisioningtemplate-provisioninghook-targetarn
-	TargetArn *string `json:"TargetArn,omitempty"`
+	TargetArn *T `json:"TargetArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

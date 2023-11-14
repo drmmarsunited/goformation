@@ -13,12 +13,12 @@ type Template_PrivateKeyAttributesV2[T any] struct {
 	// CryptoProviders AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-template-privatekeyattributesv2.html#cfn-pcaconnectorad-template-privatekeyattributesv2-cryptoproviders
-	CryptoProviders []string `json:"CryptoProviders,omitempty"`
+	CryptoProviders []T `json:"CryptoProviders,omitempty"`
 
 	// KeySpec AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-template-privatekeyattributesv2.html#cfn-pcaconnectorad-template-privatekeyattributesv2-keyspec
-	KeySpec string `json:"KeySpec"`
+	KeySpec T `json:"KeySpec"`
 
 	// MinimalKeyLength AWS CloudFormation Property
 	// Required: true

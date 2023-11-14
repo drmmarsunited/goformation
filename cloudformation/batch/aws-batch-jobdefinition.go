@@ -26,7 +26,7 @@ type JobDefinition[T any] struct {
 	// JobDefinitionName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-jobdefinitionname
-	JobDefinitionName *string `json:"JobDefinitionName,omitempty"`
+	JobDefinitionName *T `json:"JobDefinitionName,omitempty"`
 
 	// NodeProperties AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type JobDefinition[T any] struct {
 	// PlatformCapabilities AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-platformcapabilities
-	PlatformCapabilities []string `json:"PlatformCapabilities,omitempty"`
+	PlatformCapabilities []T `json:"PlatformCapabilities,omitempty"`
 
 	// PropagateTags AWS CloudFormation Property
 	// Required: false
@@ -71,7 +71,7 @@ type JobDefinition[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

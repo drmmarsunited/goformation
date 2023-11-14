@@ -13,7 +13,7 @@ type AnomalyDetector_MetricSet[T any] struct {
 	// DimensionList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricset.html#cfn-lookoutmetrics-anomalydetector-metricset-dimensionlist
-	DimensionList []string `json:"DimensionList,omitempty"`
+	DimensionList []T `json:"DimensionList,omitempty"`
 
 	// MetricList AWS CloudFormation Property
 	// Required: true
@@ -23,17 +23,17 @@ type AnomalyDetector_MetricSet[T any] struct {
 	// MetricSetDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricset.html#cfn-lookoutmetrics-anomalydetector-metricset-metricsetdescription
-	MetricSetDescription *string `json:"MetricSetDescription,omitempty"`
+	MetricSetDescription *T `json:"MetricSetDescription,omitempty"`
 
 	// MetricSetFrequency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricset.html#cfn-lookoutmetrics-anomalydetector-metricset-metricsetfrequency
-	MetricSetFrequency *string `json:"MetricSetFrequency,omitempty"`
+	MetricSetFrequency *T `json:"MetricSetFrequency,omitempty"`
 
 	// MetricSetName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricset.html#cfn-lookoutmetrics-anomalydetector-metricset-metricsetname
-	MetricSetName string `json:"MetricSetName"`
+	MetricSetName T `json:"MetricSetName"`
 
 	// MetricSource AWS CloudFormation Property
 	// Required: true
@@ -53,7 +53,7 @@ type AnomalyDetector_MetricSet[T any] struct {
 	// Timezone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricset.html#cfn-lookoutmetrics-anomalydetector-metricset-timezone
-	Timezone *string `json:"Timezone,omitempty"`
+	Timezone *T `json:"Timezone,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

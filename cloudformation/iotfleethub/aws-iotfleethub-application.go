@@ -17,17 +17,17 @@ type Application[T any] struct {
 	// ApplicationDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleethub-application.html#cfn-iotfleethub-application-applicationdescription
-	ApplicationDescription *string `json:"ApplicationDescription,omitempty"`
+	ApplicationDescription *T `json:"ApplicationDescription,omitempty"`
 
 	// ApplicationName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleethub-application.html#cfn-iotfleethub-application-applicationname
-	ApplicationName string `json:"ApplicationName"`
+	ApplicationName T `json:"ApplicationName"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleethub-application.html#cfn-iotfleethub-application-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

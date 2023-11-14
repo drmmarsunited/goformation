@@ -21,7 +21,7 @@ type Campaign[T any] struct {
 	// ApplicationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-applicationid
-	ApplicationId string `json:"ApplicationId"`
+	ApplicationId T `json:"ApplicationId"`
 
 	// CampaignHook AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type Campaign[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// HoldoutPercent AWS CloudFormation Property
 	// Required: false
@@ -61,7 +61,7 @@ type Campaign[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Priority AWS CloudFormation Property
 	// Required: false
@@ -76,7 +76,7 @@ type Campaign[T any] struct {
 	// SegmentId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-segmentid
-	SegmentId string `json:"SegmentId"`
+	SegmentId T `json:"SegmentId"`
 
 	// SegmentVersion AWS CloudFormation Property
 	// Required: false
@@ -96,12 +96,12 @@ type Campaign[T any] struct {
 	// TreatmentDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-treatmentdescription
-	TreatmentDescription *string `json:"TreatmentDescription,omitempty"`
+	TreatmentDescription *T `json:"TreatmentDescription,omitempty"`
 
 	// TreatmentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-treatmentname
-	TreatmentName *string `json:"TreatmentName,omitempty"`
+	TreatmentName *T `json:"TreatmentName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

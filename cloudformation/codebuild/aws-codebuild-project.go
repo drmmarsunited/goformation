@@ -42,12 +42,12 @@ type Project[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EncryptionKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-encryptionkey
-	EncryptionKey *string `json:"EncryptionKey,omitempty"`
+	EncryptionKey *T `json:"EncryptionKey,omitempty"`
 
 	// Environment AWS CloudFormation Property
 	// Required: true
@@ -67,7 +67,7 @@ type Project[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// QueuedTimeoutInMinutes AWS CloudFormation Property
 	// Required: false
@@ -77,7 +77,7 @@ type Project[T any] struct {
 	// ResourceAccessRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-resourceaccessrole
-	ResourceAccessRole *string `json:"ResourceAccessRole,omitempty"`
+	ResourceAccessRole *T `json:"ResourceAccessRole,omitempty"`
 
 	// SecondaryArtifacts AWS CloudFormation Property
 	// Required: false
@@ -97,7 +97,7 @@ type Project[T any] struct {
 	// ServiceRole AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-servicerole
-	ServiceRole string `json:"ServiceRole"`
+	ServiceRole T `json:"ServiceRole"`
 
 	// Source AWS CloudFormation Property
 	// Required: true
@@ -107,7 +107,7 @@ type Project[T any] struct {
 	// SourceVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-sourceversion
-	SourceVersion *string `json:"SourceVersion,omitempty"`
+	SourceVersion *T `json:"SourceVersion,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -127,7 +127,7 @@ type Project[T any] struct {
 	// Visibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-visibility
-	Visibility *string `json:"Visibility,omitempty"`
+	Visibility *T `json:"Visibility,omitempty"`
 
 	// VpcConfig AWS CloudFormation Property
 	// Required: false

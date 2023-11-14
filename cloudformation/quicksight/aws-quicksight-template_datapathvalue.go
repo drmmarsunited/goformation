@@ -10,15 +10,20 @@ import (
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datapathvalue.html
 type Template_DataPathValue[T any] struct {
 
+	// DataPathType AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datapathvalue.html#cfn-quicksight-template-datapathvalue-datapathtype
+	DataPathType *Template_DataPathType[any] `json:"DataPathType,omitempty"`
+
 	// FieldId AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datapathvalue.html#cfn-quicksight-template-datapathvalue-fieldid
-	FieldId string `json:"FieldId"`
+	FieldId *T `json:"FieldId,omitempty"`
 
 	// FieldValue AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datapathvalue.html#cfn-quicksight-template-datapathvalue-fieldvalue
-	FieldValue string `json:"FieldValue"`
+	FieldValue *T `json:"FieldValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

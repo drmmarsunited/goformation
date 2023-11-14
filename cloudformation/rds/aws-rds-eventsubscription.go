@@ -22,27 +22,27 @@ type EventSubscription[T any] struct {
 	// EventCategories AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-eventcategories
-	EventCategories []string `json:"EventCategories,omitempty"`
+	EventCategories []T `json:"EventCategories,omitempty"`
 
 	// SnsTopicArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-snstopicarn
-	SnsTopicArn string `json:"SnsTopicArn"`
+	SnsTopicArn T `json:"SnsTopicArn"`
 
 	// SourceIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-sourceids
-	SourceIds []string `json:"SourceIds,omitempty"`
+	SourceIds []T `json:"SourceIds,omitempty"`
 
 	// SourceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-sourcetype
-	SourceType *string `json:"SourceType,omitempty"`
+	SourceType *T `json:"SourceType,omitempty"`
 
 	// SubscriptionName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-subscriptionname
-	SubscriptionName *string `json:"SubscriptionName,omitempty"`
+	SubscriptionName *T `json:"SubscriptionName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

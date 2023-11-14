@@ -32,12 +32,12 @@ type AppMonitor[T any] struct {
 	// Domain AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-domain
-	Domain string `json:"Domain"`
+	Domain T `json:"Domain"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

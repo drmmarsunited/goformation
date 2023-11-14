@@ -16,37 +16,37 @@ type Deployment[T any] struct {
 	// ApplicationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deployment.html#cfn-appconfig-deployment-applicationid
-	ApplicationId string `json:"ApplicationId"`
+	ApplicationId T `json:"ApplicationId"`
 
 	// ConfigurationProfileId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deployment.html#cfn-appconfig-deployment-configurationprofileid
-	ConfigurationProfileId string `json:"ConfigurationProfileId"`
+	ConfigurationProfileId T `json:"ConfigurationProfileId"`
 
 	// ConfigurationVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deployment.html#cfn-appconfig-deployment-configurationversion
-	ConfigurationVersion string `json:"ConfigurationVersion"`
+	ConfigurationVersion T `json:"ConfigurationVersion"`
 
 	// DeploymentStrategyId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deployment.html#cfn-appconfig-deployment-deploymentstrategyid
-	DeploymentStrategyId string `json:"DeploymentStrategyId"`
+	DeploymentStrategyId T `json:"DeploymentStrategyId"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deployment.html#cfn-appconfig-deployment-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EnvironmentId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deployment.html#cfn-appconfig-deployment-environmentid
-	EnvironmentId string `json:"EnvironmentId"`
+	EnvironmentId T `json:"EnvironmentId"`
 
 	// KmsKeyIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deployment.html#cfn-appconfig-deployment-kmskeyidentifier
-	KmsKeyIdentifier *string `json:"KmsKeyIdentifier,omitempty"`
+	KmsKeyIdentifier *T `json:"KmsKeyIdentifier,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

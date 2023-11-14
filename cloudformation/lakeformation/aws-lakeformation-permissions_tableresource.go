@@ -13,17 +13,17 @@ type Permissions_TableResource[T any] struct {
 	// CatalogId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html#cfn-lakeformation-permissions-tableresource-catalogid
-	CatalogId *string `json:"CatalogId,omitempty"`
+	CatalogId *T `json:"CatalogId,omitempty"`
 
 	// DatabaseName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html#cfn-lakeformation-permissions-tableresource-databasename
-	DatabaseName *string `json:"DatabaseName,omitempty"`
+	DatabaseName *T `json:"DatabaseName,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html#cfn-lakeformation-permissions-tableresource-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// TableWildcard AWS CloudFormation Property
 	// Required: false

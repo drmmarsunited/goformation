@@ -17,17 +17,17 @@ type SubnetGroup[T any] struct {
 	// CacheSubnetGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-cachesubnetgroupname
-	CacheSubnetGroupName *string `json:"CacheSubnetGroupName,omitempty"`
+	CacheSubnetGroupName *T `json:"CacheSubnetGroupName,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-description
-	Description string `json:"Description"`
+	Description T `json:"Description"`
 
 	// SubnetIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-subnetids
-	SubnetIds []string `json:"SubnetIds"`
+	SubnetIds []T `json:"SubnetIds"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

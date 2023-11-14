@@ -13,17 +13,17 @@ type ModelCard_Function[T any] struct {
 	// Condition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-function.html#cfn-sagemaker-modelcard-function-condition
-	Condition *string `json:"Condition,omitempty"`
+	Condition *T `json:"Condition,omitempty"`
 
 	// Facet AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-function.html#cfn-sagemaker-modelcard-function-facet
-	Facet *string `json:"Facet,omitempty"`
+	Facet *T `json:"Facet,omitempty"`
 
 	// Function AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-function.html#cfn-sagemaker-modelcard-function-function
-	Function *string `json:"Function,omitempty"`
+	Function *T `json:"Function,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

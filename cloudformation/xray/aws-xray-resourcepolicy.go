@@ -21,12 +21,12 @@ type ResourcePolicy[T any] struct {
 	// PolicyDocument AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-resourcepolicy.html#cfn-xray-resourcepolicy-policydocument
-	PolicyDocument string `json:"PolicyDocument"`
+	PolicyDocument T `json:"PolicyDocument"`
 
 	// PolicyName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-resourcepolicy.html#cfn-xray-resourcepolicy-policyname
-	PolicyName string `json:"PolicyName"`
+	PolicyName T `json:"PolicyName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

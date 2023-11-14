@@ -43,12 +43,12 @@ type DeliveryStream_HttpEndpointDestinationConfiguration[T any] struct {
 	// RoleARN AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-rolearn
-	RoleARN *string `json:"RoleARN,omitempty"`
+	RoleARN *T `json:"RoleARN,omitempty"`
 
 	// S3BackupMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-s3backupmode
-	S3BackupMode *string `json:"S3BackupMode,omitempty"`
+	S3BackupMode *T `json:"S3BackupMode,omitempty"`
 
 	// S3Configuration AWS CloudFormation Property
 	// Required: true

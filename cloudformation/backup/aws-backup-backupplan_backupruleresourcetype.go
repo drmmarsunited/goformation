@@ -33,22 +33,22 @@ type BackupPlan_BackupRuleResourceType[T any] struct {
 	// RecoveryPointTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-recoverypointtags
-	RecoveryPointTags map[string]string `json:"RecoveryPointTags,omitempty"`
+	RecoveryPointTags map[string]T `json:"RecoveryPointTags,omitempty"`
 
 	// RuleName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-rulename
-	RuleName string `json:"RuleName"`
+	RuleName T `json:"RuleName"`
 
 	// ScheduleExpression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-scheduleexpression
-	ScheduleExpression *string `json:"ScheduleExpression,omitempty"`
+	ScheduleExpression *T `json:"ScheduleExpression,omitempty"`
 
 	// ScheduleExpressionTimezone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-scheduleexpressiontimezone
-	ScheduleExpressionTimezone *string `json:"ScheduleExpressionTimezone,omitempty"`
+	ScheduleExpressionTimezone *T `json:"ScheduleExpressionTimezone,omitempty"`
 
 	// StartWindowMinutes AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type BackupPlan_BackupRuleResourceType[T any] struct {
 	// TargetBackupVault AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-targetbackupvault
-	TargetBackupVault string `json:"TargetBackupVault"`
+	TargetBackupVault T `json:"TargetBackupVault"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

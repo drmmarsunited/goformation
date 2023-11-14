@@ -13,17 +13,17 @@ type ModelCard_BusinessDetails[T any] struct {
 	// BusinessProblem AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-businessdetails.html#cfn-sagemaker-modelcard-businessdetails-businessproblem
-	BusinessProblem *string `json:"BusinessProblem,omitempty"`
+	BusinessProblem *T `json:"BusinessProblem,omitempty"`
 
 	// BusinessStakeholders AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-businessdetails.html#cfn-sagemaker-modelcard-businessdetails-businessstakeholders
-	BusinessStakeholders *string `json:"BusinessStakeholders,omitempty"`
+	BusinessStakeholders *T `json:"BusinessStakeholders,omitempty"`
 
 	// LineOfBusiness AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-businessdetails.html#cfn-sagemaker-modelcard-businessdetails-lineofbusiness
-	LineOfBusiness *string `json:"LineOfBusiness,omitempty"`
+	LineOfBusiness *T `json:"LineOfBusiness,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

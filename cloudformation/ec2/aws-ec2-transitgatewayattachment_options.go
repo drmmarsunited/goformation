@@ -13,17 +13,17 @@ type TransitGatewayAttachment_Options[T any] struct {
 	// ApplianceModeSupport AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayattachment-options.html#cfn-ec2-transitgatewayattachment-options-appliancemodesupport
-	ApplianceModeSupport *string `json:"ApplianceModeSupport,omitempty"`
+	ApplianceModeSupport *T `json:"ApplianceModeSupport,omitempty"`
 
 	// DnsSupport AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayattachment-options.html#cfn-ec2-transitgatewayattachment-options-dnssupport
-	DnsSupport *string `json:"DnsSupport,omitempty"`
+	DnsSupport *T `json:"DnsSupport,omitempty"`
 
 	// Ipv6Support AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayattachment-options.html#cfn-ec2-transitgatewayattachment-options-ipv6support
-	Ipv6Support *string `json:"Ipv6Support,omitempty"`
+	Ipv6Support *T `json:"Ipv6Support,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

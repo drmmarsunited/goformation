@@ -13,12 +13,12 @@ type Distribution_CacheBehaviorPerPath[T any] struct {
 	// Behavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachebehaviorperpath.html#cfn-lightsail-distribution-cachebehaviorperpath-behavior
-	Behavior *string `json:"Behavior,omitempty"`
+	Behavior *T `json:"Behavior,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachebehaviorperpath.html#cfn-lightsail-distribution-cachebehaviorperpath-path
-	Path *string `json:"Path,omitempty"`
+	Path *T `json:"Path,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

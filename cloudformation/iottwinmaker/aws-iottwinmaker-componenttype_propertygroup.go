@@ -13,12 +13,12 @@ type ComponentType_PropertyGroup[T any] struct {
 	// GroupType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-propertygroup.html#cfn-iottwinmaker-componenttype-propertygroup-grouptype
-	GroupType *string `json:"GroupType,omitempty"`
+	GroupType *T `json:"GroupType,omitempty"`
 
 	// PropertyNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-propertygroup.html#cfn-iottwinmaker-componenttype-propertygroup-propertynames
-	PropertyNames []string `json:"PropertyNames,omitempty"`
+	PropertyNames []T `json:"PropertyNames,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

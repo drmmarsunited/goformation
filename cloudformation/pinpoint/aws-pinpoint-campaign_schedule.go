@@ -13,7 +13,7 @@ type Campaign_Schedule[T any] struct {
 	// EndTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-endtime
-	EndTime *string `json:"EndTime,omitempty"`
+	EndTime *T `json:"EndTime,omitempty"`
 
 	// EventFilter AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Campaign_Schedule[T any] struct {
 	// Frequency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-frequency
-	Frequency *string `json:"Frequency,omitempty"`
+	Frequency *T `json:"Frequency,omitempty"`
 
 	// IsLocalTime AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type Campaign_Schedule[T any] struct {
 	// StartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-starttime
-	StartTime *string `json:"StartTime,omitempty"`
+	StartTime *T `json:"StartTime,omitempty"`
 
 	// TimeZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-timezone
-	TimeZone *string `json:"TimeZone,omitempty"`
+	TimeZone *T `json:"TimeZone,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

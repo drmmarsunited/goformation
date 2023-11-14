@@ -13,7 +13,7 @@ type Template_BoxPlotStyleOptions[T any] struct {
 	// FillStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-boxplotstyleoptions.html#cfn-quicksight-template-boxplotstyleoptions-fillstyle
-	FillStyle *string `json:"FillStyle,omitempty"`
+	FillStyle *T `json:"FillStyle,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

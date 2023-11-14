@@ -21,12 +21,12 @@ type RealtimeLogConfig[T any] struct {
 	// Fields AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-realtimelogconfig.html#cfn-cloudfront-realtimelogconfig-fields
-	Fields []string `json:"Fields"`
+	Fields []T `json:"Fields"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-realtimelogconfig.html#cfn-cloudfront-realtimelogconfig-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// SamplingRate AWS CloudFormation Property
 	// Required: true

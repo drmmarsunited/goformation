@@ -13,17 +13,17 @@ type ComputeEnvironment_LaunchTemplateSpecification[T any] struct {
 	// LaunchTemplateId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-launchtemplatespecification.html#cfn-batch-computeenvironment-launchtemplatespecification-launchtemplateid
-	LaunchTemplateId *string `json:"LaunchTemplateId,omitempty"`
+	LaunchTemplateId *T `json:"LaunchTemplateId,omitempty"`
 
 	// LaunchTemplateName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-launchtemplatespecification.html#cfn-batch-computeenvironment-launchtemplatespecification-launchtemplatename
-	LaunchTemplateName *string `json:"LaunchTemplateName,omitempty"`
+	LaunchTemplateName *T `json:"LaunchTemplateName,omitempty"`
 
 	// Version AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-launchtemplatespecification.html#cfn-batch-computeenvironment-launchtemplatespecification-version
-	Version *string `json:"Version,omitempty"`
+	Version *T `json:"Version,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

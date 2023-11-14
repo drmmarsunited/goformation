@@ -17,12 +17,12 @@ type LifecyclePolicy[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-executionrolearn
-	ExecutionRoleArn *string `json:"ExecutionRoleArn,omitempty"`
+	ExecutionRoleArn *T `json:"ExecutionRoleArn,omitempty"`
 
 	// PolicyDetails AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type LifecyclePolicy[T any] struct {
 	// State AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-state
-	State *string `json:"State,omitempty"`
+	State *T `json:"State,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

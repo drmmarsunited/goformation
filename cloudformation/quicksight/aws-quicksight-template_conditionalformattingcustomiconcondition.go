@@ -13,7 +13,7 @@ type Template_ConditionalFormattingCustomIconCondition[T any] struct {
 	// Color AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-conditionalformattingcustomiconcondition.html#cfn-quicksight-template-conditionalformattingcustomiconcondition-color
-	Color *string `json:"Color,omitempty"`
+	Color *T `json:"Color,omitempty"`
 
 	// DisplayConfiguration AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Template_ConditionalFormattingCustomIconCondition[T any] struct {
 	// Expression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-conditionalformattingcustomiconcondition.html#cfn-quicksight-template-conditionalformattingcustomiconcondition-expression
-	Expression string `json:"Expression"`
+	Expression T `json:"Expression"`
 
 	// IconOptions AWS CloudFormation Property
 	// Required: true

@@ -13,12 +13,12 @@ type TaskDefinition_LogConfiguration[T any] struct {
 	// LogDriver AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-logconfiguration.html#cfn-ecs-taskdefinition-logconfiguration-logdriver
-	LogDriver string `json:"LogDriver"`
+	LogDriver T `json:"LogDriver"`
 
 	// Options AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-logconfiguration.html#cfn-ecs-taskdefinition-logconfiguration-options
-	Options map[string]string `json:"Options,omitempty"`
+	Options map[string]T `json:"Options,omitempty"`
 
 	// SecretOptions AWS CloudFormation Property
 	// Required: false

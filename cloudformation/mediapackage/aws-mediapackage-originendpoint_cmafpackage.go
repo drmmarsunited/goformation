@@ -28,7 +28,7 @@ type OriginEndpoint_CmafPackage[T any] struct {
 	// SegmentPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-cmafpackage.html#cfn-mediapackage-originendpoint-cmafpackage-segmentprefix
-	SegmentPrefix *string `json:"SegmentPrefix,omitempty"`
+	SegmentPrefix *T `json:"SegmentPrefix,omitempty"`
 
 	// StreamSelection AWS CloudFormation Property
 	// Required: false

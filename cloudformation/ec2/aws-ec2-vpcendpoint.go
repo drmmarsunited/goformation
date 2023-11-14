@@ -26,32 +26,32 @@ type VPCEndpoint[T any] struct {
 	// RouteTableIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-routetableids
-	RouteTableIds []string `json:"RouteTableIds,omitempty"`
+	RouteTableIds []T `json:"RouteTableIds,omitempty"`
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-securitygroupids
-	SecurityGroupIds []string `json:"SecurityGroupIds,omitempty"`
+	SecurityGroupIds []T `json:"SecurityGroupIds,omitempty"`
 
 	// ServiceName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-servicename
-	ServiceName string `json:"ServiceName"`
+	ServiceName T `json:"ServiceName"`
 
 	// SubnetIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-subnetids
-	SubnetIds []string `json:"SubnetIds,omitempty"`
+	SubnetIds []T `json:"SubnetIds,omitempty"`
 
 	// VpcEndpointType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-vpcendpointtype
-	VpcEndpointType *string `json:"VpcEndpointType,omitempty"`
+	VpcEndpointType *T `json:"VpcEndpointType,omitempty"`
 
 	// VpcId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-vpcid
-	VpcId string `json:"VpcId"`
+	VpcId T `json:"VpcId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

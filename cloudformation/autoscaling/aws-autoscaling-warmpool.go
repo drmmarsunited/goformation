@@ -16,7 +16,7 @@ type WarmPool[T any] struct {
 	// AutoScalingGroupName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-warmpool.html#cfn-autoscaling-warmpool-autoscalinggroupname
-	AutoScalingGroupName string `json:"AutoScalingGroupName"`
+	AutoScalingGroupName T `json:"AutoScalingGroupName"`
 
 	// InstanceReusePolicy AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type WarmPool[T any] struct {
 	// PoolState AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-warmpool.html#cfn-autoscaling-warmpool-poolstate
-	PoolState *string `json:"PoolState,omitempty"`
+	PoolState *T `json:"PoolState,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

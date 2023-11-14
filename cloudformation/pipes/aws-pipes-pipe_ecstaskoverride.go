@@ -18,7 +18,7 @@ type Pipe_EcsTaskOverride[T any] struct {
 	// Cpu AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecstaskoverride.html#cfn-pipes-pipe-ecstaskoverride-cpu
-	Cpu *string `json:"Cpu,omitempty"`
+	Cpu *T `json:"Cpu,omitempty"`
 
 	// EphemeralStorage AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Pipe_EcsTaskOverride[T any] struct {
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecstaskoverride.html#cfn-pipes-pipe-ecstaskoverride-executionrolearn
-	ExecutionRoleArn *string `json:"ExecutionRoleArn,omitempty"`
+	ExecutionRoleArn *T `json:"ExecutionRoleArn,omitempty"`
 
 	// InferenceAcceleratorOverrides AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type Pipe_EcsTaskOverride[T any] struct {
 	// Memory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecstaskoverride.html#cfn-pipes-pipe-ecstaskoverride-memory
-	Memory *string `json:"Memory,omitempty"`
+	Memory *T `json:"Memory,omitempty"`
 
 	// TaskRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecstaskoverride.html#cfn-pipes-pipe-ecstaskoverride-taskrolearn
-	TaskRoleArn *string `json:"TaskRoleArn,omitempty"`
+	TaskRoleArn *T `json:"TaskRoleArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

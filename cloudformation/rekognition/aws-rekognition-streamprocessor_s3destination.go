@@ -13,12 +13,12 @@ type StreamProcessor_S3Destination[T any] struct {
 	// BucketName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-s3destination.html#cfn-rekognition-streamprocessor-s3destination-bucketname
-	BucketName string `json:"BucketName"`
+	BucketName T `json:"BucketName"`
 
 	// ObjectKeyPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-s3destination.html#cfn-rekognition-streamprocessor-s3destination-objectkeyprefix
-	ObjectKeyPrefix *string `json:"ObjectKeyPrefix,omitempty"`
+	ObjectKeyPrefix *T `json:"ObjectKeyPrefix,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

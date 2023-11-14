@@ -23,12 +23,12 @@ type Template_ColumnTooltipItem[T any] struct {
 	// Label AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columntooltipitem.html#cfn-quicksight-template-columntooltipitem-label
-	Label *string `json:"Label,omitempty"`
+	Label *T `json:"Label,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columntooltipitem.html#cfn-quicksight-template-columntooltipitem-visibility
-	Visibility *string `json:"Visibility,omitempty"`
+	Visibility *T `json:"Visibility,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

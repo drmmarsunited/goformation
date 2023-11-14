@@ -13,12 +13,12 @@ type Analysis_SmallMultiplesAxisProperties[T any] struct {
 	// Placement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-smallmultiplesaxisproperties.html#cfn-quicksight-analysis-smallmultiplesaxisproperties-placement
-	Placement *string `json:"Placement,omitempty"`
+	Placement *T `json:"Placement,omitempty"`
 
 	// Scale AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-smallmultiplesaxisproperties.html#cfn-quicksight-analysis-smallmultiplesaxisproperties-scale
-	Scale *string `json:"Scale,omitempty"`
+	Scale *T `json:"Scale,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

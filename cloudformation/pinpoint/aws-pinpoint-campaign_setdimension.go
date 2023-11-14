@@ -13,12 +13,12 @@ type Campaign_SetDimension[T any] struct {
 	// DimensionType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-setdimension.html#cfn-pinpoint-campaign-setdimension-dimensiontype
-	DimensionType *string `json:"DimensionType,omitempty"`
+	DimensionType *T `json:"DimensionType,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-setdimension.html#cfn-pinpoint-campaign-setdimension-values
-	Values []string `json:"Values,omitempty"`
+	Values []T `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,12 +13,12 @@ type Connection_ApiKeyAuthParameters[T any] struct {
 	// ApiKeyName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-apikeyauthparameters.html#cfn-events-connection-apikeyauthparameters-apikeyname
-	ApiKeyName string `json:"ApiKeyName"`
+	ApiKeyName T `json:"ApiKeyName"`
 
 	// ApiKeyValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-apikeyauthparameters.html#cfn-events-connection-apikeyauthparameters-apikeyvalue
-	ApiKeyValue string `json:"ApiKeyValue"`
+	ApiKeyValue T `json:"ApiKeyValue"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

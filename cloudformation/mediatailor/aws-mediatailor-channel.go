@@ -17,7 +17,7 @@ type Channel[T any] struct {
 	// ChannelName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-channel.html#cfn-mediatailor-channel-channelname
-	ChannelName string `json:"ChannelName"`
+	ChannelName T `json:"ChannelName"`
 
 	// FillerSlate AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Channel[T any] struct {
 	// PlaybackMode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-channel.html#cfn-mediatailor-channel-playbackmode
-	PlaybackMode string `json:"PlaybackMode"`
+	PlaybackMode T `json:"PlaybackMode"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type Channel[T any] struct {
 	// Tier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-channel.html#cfn-mediatailor-channel-tier
-	Tier *string `json:"Tier,omitempty"`
+	Tier *T `json:"Tier,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

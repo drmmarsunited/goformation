@@ -16,22 +16,22 @@ type SyncJob[T any] struct {
 	// SyncRole AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html#cfn-iottwinmaker-syncjob-syncrole
-	SyncRole string `json:"SyncRole"`
+	SyncRole T `json:"SyncRole"`
 
 	// SyncSource AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html#cfn-iottwinmaker-syncjob-syncsource
-	SyncSource string `json:"SyncSource"`
+	SyncSource T `json:"SyncSource"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html#cfn-iottwinmaker-syncjob-tags
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// WorkspaceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html#cfn-iottwinmaker-syncjob-workspaceid
-	WorkspaceId string `json:"WorkspaceId"`
+	WorkspaceId T `json:"WorkspaceId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

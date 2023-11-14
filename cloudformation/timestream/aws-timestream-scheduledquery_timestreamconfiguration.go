@@ -13,7 +13,7 @@ type ScheduledQuery_TimestreamConfiguration[T any] struct {
 	// DatabaseName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-timestreamconfiguration.html#cfn-timestream-scheduledquery-timestreamconfiguration-databasename
-	DatabaseName string `json:"DatabaseName"`
+	DatabaseName T `json:"DatabaseName"`
 
 	// DimensionMappings AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type ScheduledQuery_TimestreamConfiguration[T any] struct {
 	// MeasureNameColumn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-timestreamconfiguration.html#cfn-timestream-scheduledquery-timestreamconfiguration-measurenamecolumn
-	MeasureNameColumn *string `json:"MeasureNameColumn,omitempty"`
+	MeasureNameColumn *T `json:"MeasureNameColumn,omitempty"`
 
 	// MixedMeasureMappings AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type ScheduledQuery_TimestreamConfiguration[T any] struct {
 	// TableName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-timestreamconfiguration.html#cfn-timestream-scheduledquery-timestreamconfiguration-tablename
-	TableName string `json:"TableName"`
+	TableName T `json:"TableName"`
 
 	// TimeColumn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-timestreamconfiguration.html#cfn-timestream-scheduledquery-timestreamconfiguration-timecolumn
-	TimeColumn string `json:"TimeColumn"`
+	TimeColumn T `json:"TimeColumn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

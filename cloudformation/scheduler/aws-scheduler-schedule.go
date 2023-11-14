@@ -16,12 +16,12 @@ type Schedule[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedule.html#cfn-scheduler-schedule-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EndDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedule.html#cfn-scheduler-schedule-enddate
-	EndDate *string `json:"EndDate,omitempty"`
+	EndDate *T `json:"EndDate,omitempty"`
 
 	// FlexibleTimeWindow AWS CloudFormation Property
 	// Required: true
@@ -31,37 +31,37 @@ type Schedule[T any] struct {
 	// GroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedule.html#cfn-scheduler-schedule-groupname
-	GroupName *string `json:"GroupName,omitempty"`
+	GroupName *T `json:"GroupName,omitempty"`
 
 	// KmsKeyArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedule.html#cfn-scheduler-schedule-kmskeyarn
-	KmsKeyArn *string `json:"KmsKeyArn,omitempty"`
+	KmsKeyArn *T `json:"KmsKeyArn,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedule.html#cfn-scheduler-schedule-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// ScheduleExpression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedule.html#cfn-scheduler-schedule-scheduleexpression
-	ScheduleExpression string `json:"ScheduleExpression"`
+	ScheduleExpression T `json:"ScheduleExpression"`
 
 	// ScheduleExpressionTimezone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedule.html#cfn-scheduler-schedule-scheduleexpressiontimezone
-	ScheduleExpressionTimezone *string `json:"ScheduleExpressionTimezone,omitempty"`
+	ScheduleExpressionTimezone *T `json:"ScheduleExpressionTimezone,omitempty"`
 
 	// StartDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedule.html#cfn-scheduler-schedule-startdate
-	StartDate *string `json:"StartDate,omitempty"`
+	StartDate *T `json:"StartDate,omitempty"`
 
 	// State AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedule.html#cfn-scheduler-schedule-state
-	State *string `json:"State,omitempty"`
+	State *T `json:"State,omitempty"`
 
 	// Target AWS CloudFormation Property
 	// Required: true

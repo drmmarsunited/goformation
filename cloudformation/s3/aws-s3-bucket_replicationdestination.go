@@ -18,12 +18,12 @@ type Bucket_ReplicationDestination[T any] struct {
 	// Account AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationdestination-account
-	Account *string `json:"Account,omitempty"`
+	Account *T `json:"Account,omitempty"`
 
 	// Bucket AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationconfiguration-rules-destination-bucket
-	Bucket string `json:"Bucket"`
+	Bucket T `json:"Bucket"`
 
 	// EncryptionConfiguration AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Bucket_ReplicationDestination[T any] struct {
 	// StorageClass AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationconfiguration-rules-destination-storageclass
-	StorageClass *string `json:"StorageClass,omitempty"`
+	StorageClass *T `json:"StorageClass,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

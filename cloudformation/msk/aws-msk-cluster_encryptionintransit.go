@@ -13,7 +13,7 @@ type Cluster_EncryptionInTransit[T any] struct {
 	// ClientBroker AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionintransit.html#cfn-msk-cluster-encryptionintransit-clientbroker
-	ClientBroker *string `json:"ClientBroker,omitempty"`
+	ClientBroker *T `json:"ClientBroker,omitempty"`
 
 	// InCluster AWS CloudFormation Property
 	// Required: false

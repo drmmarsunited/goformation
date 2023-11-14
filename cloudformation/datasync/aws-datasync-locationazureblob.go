@@ -17,22 +17,22 @@ type LocationAzureBlob[T any] struct {
 	// AgentArns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationazureblob.html#cfn-datasync-locationazureblob-agentarns
-	AgentArns []string `json:"AgentArns"`
+	AgentArns []T `json:"AgentArns"`
 
 	// AzureAccessTier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationazureblob.html#cfn-datasync-locationazureblob-azureaccesstier
-	AzureAccessTier *string `json:"AzureAccessTier,omitempty"`
+	AzureAccessTier *T `json:"AzureAccessTier,omitempty"`
 
 	// AzureBlobAuthenticationType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationazureblob.html#cfn-datasync-locationazureblob-azureblobauthenticationtype
-	AzureBlobAuthenticationType string `json:"AzureBlobAuthenticationType"`
+	AzureBlobAuthenticationType T `json:"AzureBlobAuthenticationType"`
 
 	// AzureBlobContainerUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationazureblob.html#cfn-datasync-locationazureblob-azureblobcontainerurl
-	AzureBlobContainerUrl *string `json:"AzureBlobContainerUrl,omitempty"`
+	AzureBlobContainerUrl *T `json:"AzureBlobContainerUrl,omitempty"`
 
 	// AzureBlobSasConfiguration AWS CloudFormation Property
 	// Required: false
@@ -42,12 +42,12 @@ type LocationAzureBlob[T any] struct {
 	// AzureBlobType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationazureblob.html#cfn-datasync-locationazureblob-azureblobtype
-	AzureBlobType *string `json:"AzureBlobType,omitempty"`
+	AzureBlobType *T `json:"AzureBlobType,omitempty"`
 
 	// Subdirectory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationazureblob.html#cfn-datasync-locationazureblob-subdirectory
-	Subdirectory *string `json:"Subdirectory,omitempty"`
+	Subdirectory *T `json:"Subdirectory,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -21,17 +21,17 @@ type Instance[T any] struct {
 	// DirectoryId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-instance.html#cfn-connect-instance-directoryid
-	DirectoryId *string `json:"DirectoryId,omitempty"`
+	DirectoryId *T `json:"DirectoryId,omitempty"`
 
 	// IdentityManagementType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-instance.html#cfn-connect-instance-identitymanagementtype
-	IdentityManagementType string `json:"IdentityManagementType"`
+	IdentityManagementType T `json:"IdentityManagementType"`
 
 	// InstanceAlias AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-instance.html#cfn-connect-instance-instancealias
-	InstanceAlias *string `json:"InstanceAlias,omitempty"`
+	InstanceAlias *T `json:"InstanceAlias,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

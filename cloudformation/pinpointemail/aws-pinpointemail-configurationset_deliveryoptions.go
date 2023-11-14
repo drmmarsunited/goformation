@@ -13,7 +13,7 @@ type ConfigurationSet_DeliveryOptions[T any] struct {
 	// SendingPoolName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-deliveryoptions.html#cfn-pinpointemail-configurationset-deliveryoptions-sendingpoolname
-	SendingPoolName *string `json:"SendingPoolName,omitempty"`
+	SendingPoolName *T `json:"SendingPoolName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

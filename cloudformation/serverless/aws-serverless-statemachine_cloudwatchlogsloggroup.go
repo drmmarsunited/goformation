@@ -13,7 +13,7 @@ type StateMachine_CloudWatchLogsLogGroup[T any] struct {
 	// LogGroupArn AWS CloudFormation Property
 	// Required: true
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-logdestination-cloudwatchlogsloggroup.html
-	LogGroupArn string `json:"LogGroupArn"`
+	LogGroupArn T `json:"LogGroupArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

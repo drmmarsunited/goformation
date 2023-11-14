@@ -13,7 +13,7 @@ type Flow_SalesforceSourceProperties[T any] struct {
 	// DataTransferApi AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcesourceproperties.html#cfn-appflow-flow-salesforcesourceproperties-datatransferapi
-	DataTransferApi *string `json:"DataTransferApi,omitempty"`
+	DataTransferApi *T `json:"DataTransferApi,omitempty"`
 
 	// EnableDynamicFieldUpdate AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Flow_SalesforceSourceProperties[T any] struct {
 	// Object AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcesourceproperties.html#cfn-appflow-flow-salesforcesourceproperties-object
-	Object string `json:"Object"`
+	Object T `json:"Object"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

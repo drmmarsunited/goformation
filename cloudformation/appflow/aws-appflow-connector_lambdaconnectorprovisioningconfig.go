@@ -13,7 +13,7 @@ type Connector_LambdaConnectorProvisioningConfig[T any] struct {
 	// LambdaArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connector-lambdaconnectorprovisioningconfig.html#cfn-appflow-connector-lambdaconnectorprovisioningconfig-lambdaarn
-	LambdaArn string `json:"LambdaArn"`
+	LambdaArn T `json:"LambdaArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

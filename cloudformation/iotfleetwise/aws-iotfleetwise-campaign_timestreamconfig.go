@@ -13,12 +13,12 @@ type Campaign_TimestreamConfig[T any] struct {
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-timestreamconfig.html#cfn-iotfleetwise-campaign-timestreamconfig-executionrolearn
-	ExecutionRoleArn string `json:"ExecutionRoleArn"`
+	ExecutionRoleArn T `json:"ExecutionRoleArn"`
 
 	// TimestreamTableArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-timestreamconfig.html#cfn-iotfleetwise-campaign-timestreamconfig-timestreamtablearn
-	TimestreamTableArn string `json:"TimestreamTableArn"`
+	TimestreamTableArn T `json:"TimestreamTableArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

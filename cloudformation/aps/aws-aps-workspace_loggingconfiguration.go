@@ -13,7 +13,7 @@ type Workspace_LoggingConfiguration[T any] struct {
 	// LogGroupArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-aps-workspace-loggingconfiguration.html#cfn-aps-workspace-loggingconfiguration-loggrouparn
-	LogGroupArn *string `json:"LogGroupArn,omitempty"`
+	LogGroupArn *T `json:"LogGroupArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

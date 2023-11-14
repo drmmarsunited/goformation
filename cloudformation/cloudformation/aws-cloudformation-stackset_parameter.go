@@ -13,12 +13,12 @@ type StackSet_Parameter[T any] struct {
 	// ParameterKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-parameter.html#cfn-cloudformation-stackset-parameter-parameterkey
-	ParameterKey string `json:"ParameterKey"`
+	ParameterKey T `json:"ParameterKey"`
 
 	// ParameterValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-parameter.html#cfn-cloudformation-stackset-parameter-parametervalue
-	ParameterValue string `json:"ParameterValue"`
+	ParameterValue T `json:"ParameterValue"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

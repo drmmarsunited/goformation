@@ -16,17 +16,17 @@ type EmailTemplate[T any] struct {
 	// DefaultSubstitutions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-defaultsubstitutions
-	DefaultSubstitutions *string `json:"DefaultSubstitutions,omitempty"`
+	DefaultSubstitutions *T `json:"DefaultSubstitutions,omitempty"`
 
 	// HtmlPart AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-htmlpart
-	HtmlPart *string `json:"HtmlPart,omitempty"`
+	HtmlPart *T `json:"HtmlPart,omitempty"`
 
 	// Subject AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-subject
-	Subject string `json:"Subject"`
+	Subject T `json:"Subject"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -36,17 +36,17 @@ type EmailTemplate[T any] struct {
 	// TemplateDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-templatedescription
-	TemplateDescription *string `json:"TemplateDescription,omitempty"`
+	TemplateDescription *T `json:"TemplateDescription,omitempty"`
 
 	// TemplateName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-templatename
-	TemplateName string `json:"TemplateName"`
+	TemplateName T `json:"TemplateName"`
 
 	// TextPart AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-textpart
-	TextPart *string `json:"TextPart,omitempty"`
+	TextPart *T `json:"TextPart,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

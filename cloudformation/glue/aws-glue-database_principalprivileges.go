@@ -13,7 +13,7 @@ type Database_PrincipalPrivileges[T any] struct {
 	// Permissions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-principalprivileges.html#cfn-glue-database-principalprivileges-permissions
-	Permissions []string `json:"Permissions,omitempty"`
+	Permissions []T `json:"Permissions,omitempty"`
 
 	// Principal AWS CloudFormation Property
 	// Required: false

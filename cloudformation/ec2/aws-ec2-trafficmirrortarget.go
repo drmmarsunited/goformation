@@ -17,22 +17,22 @@ type TrafficMirrorTarget[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrortarget.html#cfn-ec2-trafficmirrortarget-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// GatewayLoadBalancerEndpointId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrortarget.html#cfn-ec2-trafficmirrortarget-gatewayloadbalancerendpointid
-	GatewayLoadBalancerEndpointId *string `json:"GatewayLoadBalancerEndpointId,omitempty"`
+	GatewayLoadBalancerEndpointId *T `json:"GatewayLoadBalancerEndpointId,omitempty"`
 
 	// NetworkInterfaceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrortarget.html#cfn-ec2-trafficmirrortarget-networkinterfaceid
-	NetworkInterfaceId *string `json:"NetworkInterfaceId,omitempty"`
+	NetworkInterfaceId *T `json:"NetworkInterfaceId,omitempty"`
 
 	// NetworkLoadBalancerArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrortarget.html#cfn-ec2-trafficmirrortarget-networkloadbalancerarn
-	NetworkLoadBalancerArn *string `json:"NetworkLoadBalancerArn,omitempty"`
+	NetworkLoadBalancerArn *T `json:"NetworkLoadBalancerArn,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

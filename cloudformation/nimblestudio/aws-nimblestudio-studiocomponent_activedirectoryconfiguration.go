@@ -18,12 +18,12 @@ type StudioComponent_ActiveDirectoryConfiguration[T any] struct {
 	// DirectoryId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-activedirectoryconfiguration.html#cfn-nimblestudio-studiocomponent-activedirectoryconfiguration-directoryid
-	DirectoryId *string `json:"DirectoryId,omitempty"`
+	DirectoryId *T `json:"DirectoryId,omitempty"`
 
 	// OrganizationalUnitDistinguishedName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-activedirectoryconfiguration.html#cfn-nimblestudio-studiocomponent-activedirectoryconfiguration-organizationalunitdistinguishedname
-	OrganizationalUnitDistinguishedName *string `json:"OrganizationalUnitDistinguishedName,omitempty"`
+	OrganizationalUnitDistinguishedName *T `json:"OrganizationalUnitDistinguishedName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

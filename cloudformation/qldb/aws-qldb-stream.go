@@ -17,12 +17,12 @@ type Stream[T any] struct {
 	// ExclusiveEndTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-stream.html#cfn-qldb-stream-exclusiveendtime
-	ExclusiveEndTime *string `json:"ExclusiveEndTime,omitempty"`
+	ExclusiveEndTime *T `json:"ExclusiveEndTime,omitempty"`
 
 	// InclusiveStartTime AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-stream.html#cfn-qldb-stream-inclusivestarttime
-	InclusiveStartTime string `json:"InclusiveStartTime"`
+	InclusiveStartTime T `json:"InclusiveStartTime"`
 
 	// KinesisConfiguration AWS CloudFormation Property
 	// Required: true
@@ -32,17 +32,17 @@ type Stream[T any] struct {
 	// LedgerName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-stream.html#cfn-qldb-stream-ledgername
-	LedgerName string `json:"LedgerName"`
+	LedgerName T `json:"LedgerName"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-stream.html#cfn-qldb-stream-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// StreamName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-stream.html#cfn-qldb-stream-streamname
-	StreamName string `json:"StreamName"`
+	StreamName T `json:"StreamName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

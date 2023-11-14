@@ -13,7 +13,7 @@ type ResourceDefinition_SageMakerMachineLearningModelResourceData[T any] struct 
 	// DestinationPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinition-sagemakermachinelearningmodelresourcedata-destinationpath
-	DestinationPath string `json:"DestinationPath"`
+	DestinationPath T `json:"DestinationPath"`
 
 	// OwnerSetting AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type ResourceDefinition_SageMakerMachineLearningModelResourceData[T any] struct 
 	// SageMakerJobArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinition-sagemakermachinelearningmodelresourcedata-sagemakerjobarn
-	SageMakerJobArn string `json:"SageMakerJobArn"`
+	SageMakerJobArn T `json:"SageMakerJobArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

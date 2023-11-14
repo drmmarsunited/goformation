@@ -13,7 +13,7 @@ type Service_DeploymentAlarms[T any] struct {
 	// AlarmNames AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentalarms.html#cfn-ecs-service-deploymentalarms-alarmnames
-	AlarmNames []string `json:"AlarmNames"`
+	AlarmNames []T `json:"AlarmNames"`
 
 	// Enable AWS CloudFormation Property
 	// Required: true

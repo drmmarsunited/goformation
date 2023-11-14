@@ -13,17 +13,17 @@ type Certificate_DomainValidationOption[T any] struct {
 	// DomainName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-certificate-domainvalidationoption.html#cfn-certificatemanager-certificate-domainvalidationoptions-domainname
-	DomainName string `json:"DomainName"`
+	DomainName T `json:"DomainName"`
 
 	// HostedZoneId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-certificate-domainvalidationoption.html#cfn-certificatemanager-certificate-domainvalidationoption-hostedzoneid
-	HostedZoneId *string `json:"HostedZoneId,omitempty"`
+	HostedZoneId *T `json:"HostedZoneId,omitempty"`
 
 	// ValidationDomain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-certificate-domainvalidationoption.html#cfn-certificatemanager-certificate-domainvalidationoption-validationdomain
-	ValidationDomain *string `json:"ValidationDomain,omitempty"`
+	ValidationDomain *T `json:"ValidationDomain,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

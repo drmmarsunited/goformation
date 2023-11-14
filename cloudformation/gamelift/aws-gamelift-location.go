@@ -17,7 +17,7 @@ type Location[T any] struct {
 	// LocationName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-location.html#cfn-gamelift-location-locationname
-	LocationName string `json:"LocationName"`
+	LocationName T `json:"LocationName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

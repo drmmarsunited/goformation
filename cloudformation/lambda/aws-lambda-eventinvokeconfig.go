@@ -21,7 +21,7 @@ type EventInvokeConfig[T any] struct {
 	// FunctionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-functionname
-	FunctionName string `json:"FunctionName"`
+	FunctionName T `json:"FunctionName"`
 
 	// MaximumEventAgeInSeconds AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type EventInvokeConfig[T any] struct {
 	// Qualifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-qualifier
-	Qualifier string `json:"Qualifier"`
+	Qualifier T `json:"Qualifier"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

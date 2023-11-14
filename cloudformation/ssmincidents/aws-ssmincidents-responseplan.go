@@ -27,12 +27,12 @@ type ResponsePlan[T any] struct {
 	// DisplayName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-displayname
-	DisplayName *string `json:"DisplayName,omitempty"`
+	DisplayName *T `json:"DisplayName,omitempty"`
 
 	// Engagements AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-engagements
-	Engagements []string `json:"Engagements,omitempty"`
+	Engagements []T `json:"Engagements,omitempty"`
 
 	// IncidentTemplate AWS CloudFormation Property
 	// Required: true
@@ -47,7 +47,7 @@ type ResponsePlan[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

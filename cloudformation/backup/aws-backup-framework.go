@@ -22,12 +22,12 @@ type Framework[T any] struct {
 	// FrameworkDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-framework.html#cfn-backup-framework-frameworkdescription
-	FrameworkDescription *string `json:"FrameworkDescription,omitempty"`
+	FrameworkDescription *T `json:"FrameworkDescription,omitempty"`
 
 	// FrameworkName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-framework.html#cfn-backup-framework-frameworkname
-	FrameworkName *string `json:"FrameworkName,omitempty"`
+	FrameworkName *T `json:"FrameworkName,omitempty"`
 
 	// FrameworkTags AWS CloudFormation Property
 	// Required: false

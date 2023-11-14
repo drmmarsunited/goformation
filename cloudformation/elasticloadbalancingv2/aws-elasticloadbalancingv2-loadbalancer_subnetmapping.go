@@ -13,22 +13,22 @@ type LoadBalancer_SubnetMapping[T any] struct {
 	// AllocationId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-allocationid
-	AllocationId *string `json:"AllocationId,omitempty"`
+	AllocationId *T `json:"AllocationId,omitempty"`
 
 	// IPv6Address AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-ipv6address
-	IPv6Address *string `json:"IPv6Address,omitempty"`
+	IPv6Address *T `json:"IPv6Address,omitempty"`
 
 	// PrivateIPv4Address AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-privateipv4address
-	PrivateIPv4Address *string `json:"PrivateIPv4Address,omitempty"`
+	PrivateIPv4Address *T `json:"PrivateIPv4Address,omitempty"`
 
 	// SubnetId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-subnetid
-	SubnetId string `json:"SubnetId"`
+	SubnetId T `json:"SubnetId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

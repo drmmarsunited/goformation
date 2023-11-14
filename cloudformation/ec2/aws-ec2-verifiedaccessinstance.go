@@ -17,7 +17,12 @@ type VerifiedAccessInstance[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessinstance.html#cfn-ec2-verifiedaccessinstance-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
+
+	// FipsEnabled AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessinstance.html#cfn-ec2-verifiedaccessinstance-fipsenabled
+	FipsEnabled *T `json:"FipsEnabled,omitempty"`
 
 	// LoggingConfigurations AWS CloudFormation Property
 	// Required: false
@@ -32,7 +37,7 @@ type VerifiedAccessInstance[T any] struct {
 	// VerifiedAccessTrustProviderIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessinstance.html#cfn-ec2-verifiedaccessinstance-verifiedaccesstrustproviderids
-	VerifiedAccessTrustProviderIds []string `json:"VerifiedAccessTrustProviderIds,omitempty"`
+	VerifiedAccessTrustProviderIds []T `json:"VerifiedAccessTrustProviderIds,omitempty"`
 
 	// VerifiedAccessTrustProviders AWS CloudFormation Property
 	// Required: false

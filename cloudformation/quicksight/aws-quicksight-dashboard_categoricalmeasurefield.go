@@ -13,7 +13,7 @@ type Dashboard_CategoricalMeasureField[T any] struct {
 	// AggregationFunction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-categoricalmeasurefield.html#cfn-quicksight-dashboard-categoricalmeasurefield-aggregationfunction
-	AggregationFunction *string `json:"AggregationFunction,omitempty"`
+	AggregationFunction *T `json:"AggregationFunction,omitempty"`
 
 	// Column AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Dashboard_CategoricalMeasureField[T any] struct {
 	// FieldId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-categoricalmeasurefield.html#cfn-quicksight-dashboard-categoricalmeasurefield-fieldid
-	FieldId string `json:"FieldId"`
+	FieldId T `json:"FieldId"`
 
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false

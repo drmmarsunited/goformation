@@ -18,7 +18,7 @@ type DataSource_WorkDocsConfiguration[T any] struct {
 	// ExclusionPatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-workdocsconfiguration.html#cfn-kendra-datasource-workdocsconfiguration-exclusionpatterns
-	ExclusionPatterns []string `json:"ExclusionPatterns,omitempty"`
+	ExclusionPatterns []T `json:"ExclusionPatterns,omitempty"`
 
 	// FieldMappings AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type DataSource_WorkDocsConfiguration[T any] struct {
 	// InclusionPatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-workdocsconfiguration.html#cfn-kendra-datasource-workdocsconfiguration-inclusionpatterns
-	InclusionPatterns []string `json:"InclusionPatterns,omitempty"`
+	InclusionPatterns []T `json:"InclusionPatterns,omitempty"`
 
 	// OrganizationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-workdocsconfiguration.html#cfn-kendra-datasource-workdocsconfiguration-organizationid
-	OrganizationId string `json:"OrganizationId"`
+	OrganizationId T `json:"OrganizationId"`
 
 	// UseChangeLog AWS CloudFormation Property
 	// Required: false

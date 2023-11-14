@@ -18,7 +18,7 @@ type Component_ComponentChild[T any] struct {
 	// ComponentType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentchild.html#cfn-amplifyuibuilder-component-componentchild-componenttype
-	ComponentType string `json:"ComponentType"`
+	ComponentType T `json:"ComponentType"`
 
 	// Events AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Component_ComponentChild[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentchild.html#cfn-amplifyuibuilder-component-componentchild-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Properties AWS CloudFormation Property
 	// Required: true

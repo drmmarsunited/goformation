@@ -16,32 +16,32 @@ type VpcConnection[T any] struct {
 	// Authentication AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-vpcconnection.html#cfn-msk-vpcconnection-authentication
-	Authentication string `json:"Authentication"`
+	Authentication T `json:"Authentication"`
 
 	// ClientSubnets AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-vpcconnection.html#cfn-msk-vpcconnection-clientsubnets
-	ClientSubnets []string `json:"ClientSubnets"`
+	ClientSubnets []T `json:"ClientSubnets"`
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-vpcconnection.html#cfn-msk-vpcconnection-securitygroups
-	SecurityGroups []string `json:"SecurityGroups"`
+	SecurityGroups []T `json:"SecurityGroups"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-vpcconnection.html#cfn-msk-vpcconnection-tags
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// TargetClusterArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-vpcconnection.html#cfn-msk-vpcconnection-targetclusterarn
-	TargetClusterArn string `json:"TargetClusterArn"`
+	TargetClusterArn T `json:"TargetClusterArn"`
 
 	// VpcId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-vpcconnection.html#cfn-msk-vpcconnection-vpcid
-	VpcId string `json:"VpcId"`
+	VpcId T `json:"VpcId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

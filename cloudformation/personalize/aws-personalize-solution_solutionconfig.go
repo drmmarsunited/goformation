@@ -13,7 +13,7 @@ type Solution_SolutionConfig[T any] struct {
 	// AlgorithmHyperParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-solutionconfig.html#cfn-personalize-solution-solutionconfig-algorithmhyperparameters
-	AlgorithmHyperParameters map[string]string `json:"AlgorithmHyperParameters,omitempty"`
+	AlgorithmHyperParameters map[string]T `json:"AlgorithmHyperParameters,omitempty"`
 
 	// AutoMLConfig AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Solution_SolutionConfig[T any] struct {
 	// EventValueThreshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-solutionconfig.html#cfn-personalize-solution-solutionconfig-eventvaluethreshold
-	EventValueThreshold *string `json:"EventValueThreshold,omitempty"`
+	EventValueThreshold *T `json:"EventValueThreshold,omitempty"`
 
 	// FeatureTransformationParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-solutionconfig.html#cfn-personalize-solution-solutionconfig-featuretransformationparameters
-	FeatureTransformationParameters map[string]string `json:"FeatureTransformationParameters,omitempty"`
+	FeatureTransformationParameters map[string]T `json:"FeatureTransformationParameters,omitempty"`
 
 	// HpoConfig AWS CloudFormation Property
 	// Required: false

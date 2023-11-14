@@ -17,12 +17,12 @@ type Endpoint[T any] struct {
 	// CertificateArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-certificatearn
-	CertificateArn *string `json:"CertificateArn,omitempty"`
+	CertificateArn *T `json:"CertificateArn,omitempty"`
 
 	// DatabaseName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-databasename
-	DatabaseName *string `json:"DatabaseName,omitempty"`
+	DatabaseName *T `json:"DatabaseName,omitempty"`
 
 	// DocDbSettings AWS CloudFormation Property
 	// Required: false
@@ -42,22 +42,22 @@ type Endpoint[T any] struct {
 	// EndpointIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-endpointidentifier
-	EndpointIdentifier *string `json:"EndpointIdentifier,omitempty"`
+	EndpointIdentifier *T `json:"EndpointIdentifier,omitempty"`
 
 	// EndpointType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-endpointtype
-	EndpointType string `json:"EndpointType"`
+	EndpointType T `json:"EndpointType"`
 
 	// EngineName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-enginename
-	EngineName string `json:"EngineName"`
+	EngineName T `json:"EngineName"`
 
 	// ExtraConnectionAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-extraconnectionattributes
-	ExtraConnectionAttributes *string `json:"ExtraConnectionAttributes,omitempty"`
+	ExtraConnectionAttributes *T `json:"ExtraConnectionAttributes,omitempty"`
 
 	// GcpMySQLSettings AWS CloudFormation Property
 	// Required: false
@@ -82,7 +82,7 @@ type Endpoint[T any] struct {
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-kmskeyid
-	KmsKeyId *string `json:"KmsKeyId,omitempty"`
+	KmsKeyId *T `json:"KmsKeyId,omitempty"`
 
 	// MicrosoftSqlServerSettings AWS CloudFormation Property
 	// Required: false
@@ -112,7 +112,7 @@ type Endpoint[T any] struct {
 	// Password AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-password
-	Password *string `json:"Password,omitempty"`
+	Password *T `json:"Password,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
@@ -137,7 +137,7 @@ type Endpoint[T any] struct {
 	// ResourceIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-resourceidentifier
-	ResourceIdentifier *string `json:"ResourceIdentifier,omitempty"`
+	ResourceIdentifier *T `json:"ResourceIdentifier,omitempty"`
 
 	// S3Settings AWS CloudFormation Property
 	// Required: false
@@ -147,12 +147,12 @@ type Endpoint[T any] struct {
 	// ServerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-servername
-	ServerName *string `json:"ServerName,omitempty"`
+	ServerName *T `json:"ServerName,omitempty"`
 
 	// SslMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-sslmode
-	SslMode *string `json:"SslMode,omitempty"`
+	SslMode *T `json:"SslMode,omitempty"`
 
 	// SybaseSettings AWS CloudFormation Property
 	// Required: false
@@ -167,7 +167,7 @@ type Endpoint[T any] struct {
 	// Username AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-username
-	Username *string `json:"Username,omitempty"`
+	Username *T `json:"Username,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

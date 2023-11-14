@@ -13,7 +13,7 @@ type Function_StateMachineSAMPT[T any] struct {
 	// StateMachineName AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-	StateMachineName string `json:"StateMachineName"`
+	StateMachineName T `json:"StateMachineName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -23,7 +23,7 @@ type Dashboard_FilterDropDownControl[T any] struct {
 	// FilterControlId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterdropdowncontrol.html#cfn-quicksight-dashboard-filterdropdowncontrol-filtercontrolid
-	FilterControlId string `json:"FilterControlId"`
+	FilterControlId T `json:"FilterControlId"`
 
 	// SelectableValues AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type Dashboard_FilterDropDownControl[T any] struct {
 	// SourceFilterId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterdropdowncontrol.html#cfn-quicksight-dashboard-filterdropdowncontrol-sourcefilterid
-	SourceFilterId string `json:"SourceFilterId"`
+	SourceFilterId T `json:"SourceFilterId"`
 
 	// Title AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterdropdowncontrol.html#cfn-quicksight-dashboard-filterdropdowncontrol-title
-	Title string `json:"Title"`
+	Title T `json:"Title"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterdropdowncontrol.html#cfn-quicksight-dashboard-filterdropdowncontrol-type
-	Type *string `json:"Type,omitempty"`
+	Type *T `json:"Type,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

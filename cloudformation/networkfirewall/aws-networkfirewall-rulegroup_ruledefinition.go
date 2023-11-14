@@ -13,7 +13,7 @@ type RuleGroup_RuleDefinition[T any] struct {
 	// Actions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-ruledefinition.html#cfn-networkfirewall-rulegroup-ruledefinition-actions
-	Actions []string `json:"Actions"`
+	Actions []T `json:"Actions"`
 
 	// MatchAttributes AWS CloudFormation Property
 	// Required: true

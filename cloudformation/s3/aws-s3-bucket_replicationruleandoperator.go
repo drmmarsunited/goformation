@@ -13,7 +13,7 @@ type Bucket_ReplicationRuleAndOperator[T any] struct {
 	// Prefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationruleandoperator.html#cfn-s3-bucket-replicationruleandoperator-prefix
-	Prefix *string `json:"Prefix,omitempty"`
+	Prefix *T `json:"Prefix,omitempty"`
 
 	// TagFilters AWS CloudFormation Property
 	// Required: false

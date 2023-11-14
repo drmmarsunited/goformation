@@ -16,32 +16,32 @@ type FunctionConfiguration[T any] struct {
 	// ApiId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-apiid
-	ApiId string `json:"ApiId"`
+	ApiId T `json:"ApiId"`
 
 	// Code AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-code
-	Code *string `json:"Code,omitempty"`
+	Code *T `json:"Code,omitempty"`
 
 	// CodeS3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-codes3location
-	CodeS3Location *string `json:"CodeS3Location,omitempty"`
+	CodeS3Location *T `json:"CodeS3Location,omitempty"`
 
 	// DataSourceName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-datasourcename
-	DataSourceName string `json:"DataSourceName"`
+	DataSourceName T `json:"DataSourceName"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// FunctionVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-functionversion
-	FunctionVersion *string `json:"FunctionVersion,omitempty"`
+	FunctionVersion *T `json:"FunctionVersion,omitempty"`
 
 	// MaxBatchSize AWS CloudFormation Property
 	// Required: false
@@ -51,27 +51,27 @@ type FunctionConfiguration[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// RequestMappingTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-requestmappingtemplate
-	RequestMappingTemplate *string `json:"RequestMappingTemplate,omitempty"`
+	RequestMappingTemplate *T `json:"RequestMappingTemplate,omitempty"`
 
 	// RequestMappingTemplateS3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-requestmappingtemplates3location
-	RequestMappingTemplateS3Location *string `json:"RequestMappingTemplateS3Location,omitempty"`
+	RequestMappingTemplateS3Location *T `json:"RequestMappingTemplateS3Location,omitempty"`
 
 	// ResponseMappingTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-responsemappingtemplate
-	ResponseMappingTemplate *string `json:"ResponseMappingTemplate,omitempty"`
+	ResponseMappingTemplate *T `json:"ResponseMappingTemplate,omitempty"`
 
 	// ResponseMappingTemplateS3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-responsemappingtemplates3location
-	ResponseMappingTemplateS3Location *string `json:"ResponseMappingTemplateS3Location,omitempty"`
+	ResponseMappingTemplateS3Location *T `json:"ResponseMappingTemplateS3Location,omitempty"`
 
 	// Runtime AWS CloudFormation Property
 	// Required: false

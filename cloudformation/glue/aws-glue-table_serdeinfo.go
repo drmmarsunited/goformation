@@ -13,7 +13,7 @@ type Table_SerdeInfo[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html#cfn-glue-table-serdeinfo-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Table_SerdeInfo[T any] struct {
 	// SerializationLibrary AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html#cfn-glue-table-serdeinfo-serializationlibrary
-	SerializationLibrary *string `json:"SerializationLibrary,omitempty"`
+	SerializationLibrary *T `json:"SerializationLibrary,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Function_IdentitySAMPT[T any] struct {
 	// IdentityName AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-	IdentityName string `json:"IdentityName"`
+	IdentityName T `json:"IdentityName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

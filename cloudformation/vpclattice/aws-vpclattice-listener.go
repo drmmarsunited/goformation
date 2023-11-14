@@ -22,7 +22,7 @@ type Listener[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-listener.html#cfn-vpclattice-listener-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
@@ -32,12 +32,12 @@ type Listener[T any] struct {
 	// Protocol AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-listener.html#cfn-vpclattice-listener-protocol
-	Protocol string `json:"Protocol"`
+	Protocol T `json:"Protocol"`
 
 	// ServiceIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-listener.html#cfn-vpclattice-listener-serviceidentifier
-	ServiceIdentifier *string `json:"ServiceIdentifier,omitempty"`
+	ServiceIdentifier *T `json:"ServiceIdentifier,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -13,22 +13,22 @@ type Api_BodyS3Location[T any] struct {
 	// Bucket AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html#cfn-apigatewayv2-api-bodys3location-bucket
-	Bucket *string `json:"Bucket,omitempty"`
+	Bucket *T `json:"Bucket,omitempty"`
 
 	// Etag AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html#cfn-apigatewayv2-api-bodys3location-etag
-	Etag *string `json:"Etag,omitempty"`
+	Etag *T `json:"Etag,omitempty"`
 
 	// Key AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html#cfn-apigatewayv2-api-bodys3location-key
-	Key *string `json:"Key,omitempty"`
+	Key *T `json:"Key,omitempty"`
 
 	// Version AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html#cfn-apigatewayv2-api-bodys3location-version
-	Version *string `json:"Version,omitempty"`
+	Version *T `json:"Version,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

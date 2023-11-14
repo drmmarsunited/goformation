@@ -18,7 +18,7 @@ type TaskDefinition_VolumeFrom[T any] struct {
 	// SourceContainer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumefrom.html#cfn-ecs-taskdefinition-volumefrom-sourcecontainer
-	SourceContainer *string `json:"SourceContainer,omitempty"`
+	SourceContainer *T `json:"SourceContainer,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

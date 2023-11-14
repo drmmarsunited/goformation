@@ -13,12 +13,12 @@ type FeatureGroup_S3StorageConfig[T any] struct {
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-s3storageconfig.html#cfn-sagemaker-featuregroup-s3storageconfig-kmskeyid
-	KmsKeyId *string `json:"KmsKeyId,omitempty"`
+	KmsKeyId *T `json:"KmsKeyId,omitempty"`
 
 	// S3Uri AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-s3storageconfig.html#cfn-sagemaker-featuregroup-s3storageconfig-s3uri
-	S3Uri string `json:"S3Uri"`
+	S3Uri T `json:"S3Uri"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type AutomationRule_DateRange[T any] struct {
 	// Unit AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-automationrule-daterange.html#cfn-securityhub-automationrule-daterange-unit
-	Unit string `json:"Unit"`
+	Unit T `json:"Unit"`
 
 	// Value AWS CloudFormation Property
 	// Required: true

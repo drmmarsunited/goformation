@@ -13,12 +13,12 @@ type Workspace_VpcConfiguration[T any] struct {
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-vpcconfiguration.html#cfn-grafana-workspace-vpcconfiguration-securitygroupids
-	SecurityGroupIds []string `json:"SecurityGroupIds"`
+	SecurityGroupIds []T `json:"SecurityGroupIds"`
 
 	// SubnetIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-vpcconfiguration.html#cfn-grafana-workspace-vpcconfiguration-subnetids
-	SubnetIds []string `json:"SubnetIds"`
+	SubnetIds []T `json:"SubnetIds"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

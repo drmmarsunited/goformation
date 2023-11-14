@@ -38,12 +38,12 @@ type Campaign_WriteTreatmentResource[T any] struct {
 	// TreatmentDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-treatmentdescription
-	TreatmentDescription *string `json:"TreatmentDescription,omitempty"`
+	TreatmentDescription *T `json:"TreatmentDescription,omitempty"`
 
 	// TreatmentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-treatmentname
-	TreatmentName *string `json:"TreatmentName,omitempty"`
+	TreatmentName *T `json:"TreatmentName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -21,17 +21,17 @@ type NetworkInterfaceAttachment[T any] struct {
 	// DeviceIndex AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfaceattachment.html#cfn-ec2-networkinterfaceattachment-deviceindex
-	DeviceIndex string `json:"DeviceIndex"`
+	DeviceIndex T `json:"DeviceIndex"`
 
 	// InstanceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfaceattachment.html#cfn-ec2-networkinterfaceattachment-instanceid
-	InstanceId string `json:"InstanceId"`
+	InstanceId T `json:"InstanceId"`
 
 	// NetworkInterfaceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfaceattachment.html#cfn-ec2-networkinterfaceattachment-networkinterfaceid
-	NetworkInterfaceId string `json:"NetworkInterfaceId"`
+	NetworkInterfaceId T `json:"NetworkInterfaceId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

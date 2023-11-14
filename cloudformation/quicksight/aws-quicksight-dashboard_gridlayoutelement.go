@@ -23,12 +23,12 @@ type Dashboard_GridLayoutElement[T any] struct {
 	// ElementId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gridlayoutelement.html#cfn-quicksight-dashboard-gridlayoutelement-elementid
-	ElementId string `json:"ElementId"`
+	ElementId T `json:"ElementId"`
 
 	// ElementType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gridlayoutelement.html#cfn-quicksight-dashboard-gridlayoutelement-elementtype
-	ElementType string `json:"ElementType"`
+	ElementType T `json:"ElementType"`
 
 	// RowIndex AWS CloudFormation Property
 	// Required: false

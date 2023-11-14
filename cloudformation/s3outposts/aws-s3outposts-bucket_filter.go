@@ -18,7 +18,7 @@ type Bucket_Filter[T any] struct {
 	// Prefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filter.html#cfn-s3outposts-bucket-filter-prefix
-	Prefix *string `json:"Prefix,omitempty"`
+	Prefix *T `json:"Prefix,omitempty"`
 
 	// Tag AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type Application_ApplicationLocation[T any] struct {
 	// ApplicationId AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapplication
-	ApplicationId string `json:"ApplicationId"`
+	ApplicationId T `json:"ApplicationId"`
 
 	// SemanticVersion AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapplication
-	SemanticVersion string `json:"SemanticVersion"`
+	SemanticVersion T `json:"SemanticVersion"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

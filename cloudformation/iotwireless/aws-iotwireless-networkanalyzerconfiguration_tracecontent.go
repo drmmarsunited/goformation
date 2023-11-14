@@ -13,12 +13,12 @@ type NetworkAnalyzerConfiguration_TraceContent[T any] struct {
 	// LogLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-networkanalyzerconfiguration-tracecontent.html#cfn-iotwireless-networkanalyzerconfiguration-tracecontent-loglevel
-	LogLevel *string `json:"LogLevel,omitempty"`
+	LogLevel *T `json:"LogLevel,omitempty"`
 
 	// WirelessDeviceFrameInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-networkanalyzerconfiguration-tracecontent.html#cfn-iotwireless-networkanalyzerconfiguration-tracecontent-wirelessdeviceframeinfo
-	WirelessDeviceFrameInfo *string `json:"WirelessDeviceFrameInfo,omitempty"`
+	WirelessDeviceFrameInfo *T `json:"WirelessDeviceFrameInfo,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Container_PublicEndpoint[T any] struct {
 	// ContainerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-publicendpoint.html#cfn-lightsail-container-publicendpoint-containername
-	ContainerName *string `json:"ContainerName,omitempty"`
+	ContainerName *T `json:"ContainerName,omitempty"`
 
 	// ContainerPort AWS CloudFormation Property
 	// Required: false

@@ -13,7 +13,7 @@ type AssetModel_Metric[T any] struct {
 	// Expression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-metric.html#cfn-iotsitewise-assetmodel-metric-expression
-	Expression string `json:"Expression"`
+	Expression T `json:"Expression"`
 
 	// Variables AWS CloudFormation Property
 	// Required: true

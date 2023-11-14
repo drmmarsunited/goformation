@@ -16,12 +16,12 @@ type AccessPoint[T any] struct {
 	// Bucket AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-accesspoint.html#cfn-s3outposts-accesspoint-bucket
-	Bucket string `json:"Bucket"`
+	Bucket T `json:"Bucket"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-accesspoint.html#cfn-s3outposts-accesspoint-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Policy AWS CloudFormation Property
 	// Required: false

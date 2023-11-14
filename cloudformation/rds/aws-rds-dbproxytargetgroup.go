@@ -21,22 +21,22 @@ type DBProxyTargetGroup[T any] struct {
 	// DBClusterIdentifiers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-dbclusteridentifiers
-	DBClusterIdentifiers []string `json:"DBClusterIdentifiers,omitempty"`
+	DBClusterIdentifiers []T `json:"DBClusterIdentifiers,omitempty"`
 
 	// DBInstanceIdentifiers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-dbinstanceidentifiers
-	DBInstanceIdentifiers []string `json:"DBInstanceIdentifiers,omitempty"`
+	DBInstanceIdentifiers []T `json:"DBInstanceIdentifiers,omitempty"`
 
 	// DBProxyName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-dbproxyname
-	DBProxyName string `json:"DBProxyName"`
+	DBProxyName T `json:"DBProxyName"`
 
 	// TargetGroupName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-targetgroupname
-	TargetGroupName string `json:"TargetGroupName"`
+	TargetGroupName T `json:"TargetGroupName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

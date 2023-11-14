@@ -13,7 +13,7 @@ type Analysis_ColorScale[T any] struct {
 	// ColorFillType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-colorscale.html#cfn-quicksight-analysis-colorscale-colorfilltype
-	ColorFillType string `json:"ColorFillType"`
+	ColorFillType T `json:"ColorFillType"`
 
 	// Colors AWS CloudFormation Property
 	// Required: true

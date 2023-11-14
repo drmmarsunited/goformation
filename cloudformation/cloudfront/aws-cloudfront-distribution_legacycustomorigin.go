@@ -13,7 +13,7 @@ type Distribution_LegacyCustomOrigin[T any] struct {
 	// DNSName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacycustomorigin.html#cfn-cloudfront-distribution-legacycustomorigin-dnsname
-	DNSName string `json:"DNSName"`
+	DNSName T `json:"DNSName"`
 
 	// HTTPPort AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Distribution_LegacyCustomOrigin[T any] struct {
 	// OriginProtocolPolicy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacycustomorigin.html#cfn-cloudfront-distribution-legacycustomorigin-originprotocolpolicy
-	OriginProtocolPolicy string `json:"OriginProtocolPolicy"`
+	OriginProtocolPolicy T `json:"OriginProtocolPolicy"`
 
 	// OriginSSLProtocols AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacycustomorigin.html#cfn-cloudfront-distribution-legacycustomorigin-originsslprotocols
-	OriginSSLProtocols []string `json:"OriginSSLProtocols"`
+	OriginSSLProtocols []T `json:"OriginSSLProtocols"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

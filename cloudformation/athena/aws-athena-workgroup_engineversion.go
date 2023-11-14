@@ -13,12 +13,12 @@ type WorkGroup_EngineVersion[T any] struct {
 	// EffectiveEngineVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-engineversion.html#cfn-athena-workgroup-engineversion-effectiveengineversion
-	EffectiveEngineVersion *string `json:"EffectiveEngineVersion,omitempty"`
+	EffectiveEngineVersion *T `json:"EffectiveEngineVersion,omitempty"`
 
 	// SelectedEngineVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-engineversion.html#cfn-athena-workgroup-engineversion-selectedengineversion
-	SelectedEngineVersion *string `json:"SelectedEngineVersion,omitempty"`
+	SelectedEngineVersion *T `json:"SelectedEngineVersion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

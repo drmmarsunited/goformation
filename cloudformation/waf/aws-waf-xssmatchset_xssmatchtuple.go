@@ -18,7 +18,7 @@ type XssMatchSet_XssMatchTuple[T any] struct {
 	// TextTransformation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-xssmatchset-xssmatchtuple.html#cfn-waf-xssmatchset-xssmatchtuple-texttransformation
-	TextTransformation string `json:"TextTransformation"`
+	TextTransformation T `json:"TextTransformation"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

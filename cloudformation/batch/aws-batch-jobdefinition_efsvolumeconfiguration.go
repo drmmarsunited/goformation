@@ -18,17 +18,17 @@ type JobDefinition_EfsVolumeConfiguration[T any] struct {
 	// FileSystemId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-efsvolumeconfiguration.html#cfn-batch-jobdefinition-efsvolumeconfiguration-filesystemid
-	FileSystemId string `json:"FileSystemId"`
+	FileSystemId T `json:"FileSystemId"`
 
 	// RootDirectory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-efsvolumeconfiguration.html#cfn-batch-jobdefinition-efsvolumeconfiguration-rootdirectory
-	RootDirectory *string `json:"RootDirectory,omitempty"`
+	RootDirectory *T `json:"RootDirectory,omitempty"`
 
 	// TransitEncryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-efsvolumeconfiguration.html#cfn-batch-jobdefinition-efsvolumeconfiguration-transitencryption
-	TransitEncryption *string `json:"TransitEncryption,omitempty"`
+	TransitEncryption *T `json:"TransitEncryption,omitempty"`
 
 	// TransitEncryptionPort AWS CloudFormation Property
 	// Required: false

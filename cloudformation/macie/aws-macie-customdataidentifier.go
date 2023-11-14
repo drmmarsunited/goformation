@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 
 	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/tags"
 )
 
 // CustomDataIdentifier AWS CloudFormation Resource (AWS::Macie::CustomDataIdentifier)
@@ -16,17 +17,17 @@ type CustomDataIdentifier[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// IgnoreWords AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-ignorewords
-	IgnoreWords []string `json:"IgnoreWords,omitempty"`
+	IgnoreWords []T `json:"IgnoreWords,omitempty"`
 
 	// Keywords AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-keywords
-	Keywords []string `json:"Keywords,omitempty"`
+	Keywords []T `json:"Keywords,omitempty"`
 
 	// MaximumMatchDistance AWS CloudFormation Property
 	// Required: false
@@ -36,12 +37,17 @@ type CustomDataIdentifier[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Regex AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-regex
-	Regex string `json:"Regex"`
+	Regex T `json:"Regex"`
+
+	// Tags AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-tags
+	Tags []tags.Tag `json:"Tags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

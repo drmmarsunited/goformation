@@ -26,7 +26,7 @@ type Cluster[T any] struct {
 	// ClusterName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-clustername
-	ClusterName string `json:"ClusterName"`
+	ClusterName T `json:"ClusterName"`
 
 	// ConfigurationInfo AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type Cluster[T any] struct {
 	// CurrentVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-currentversion
-	CurrentVersion *string `json:"CurrentVersion,omitempty"`
+	CurrentVersion *T `json:"CurrentVersion,omitempty"`
 
 	// EncryptionInfo AWS CloudFormation Property
 	// Required: false
@@ -46,12 +46,12 @@ type Cluster[T any] struct {
 	// EnhancedMonitoring AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-enhancedmonitoring
-	EnhancedMonitoring *string `json:"EnhancedMonitoring,omitempty"`
+	EnhancedMonitoring *T `json:"EnhancedMonitoring,omitempty"`
 
 	// KafkaVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-kafkaversion
-	KafkaVersion string `json:"KafkaVersion"`
+	KafkaVersion T `json:"KafkaVersion"`
 
 	// LoggingInfo AWS CloudFormation Property
 	// Required: false
@@ -71,12 +71,12 @@ type Cluster[T any] struct {
 	// StorageMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-storagemode
-	StorageMode *string `json:"StorageMode,omitempty"`
+	StorageMode *T `json:"StorageMode,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-tags
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

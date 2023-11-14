@@ -13,7 +13,7 @@ type FindingsFilter_CriterionAdditionalProperties[T any] struct {
 	// eq AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-eq
-	eq []string `json:"eq,omitempty"`
+	eq []T `json:"eq,omitempty"`
 
 	// gt AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type FindingsFilter_CriterionAdditionalProperties[T any] struct {
 	// neq AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-neq
-	neq []string `json:"neq,omitempty"`
+	neq []T `json:"neq,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

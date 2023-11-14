@@ -13,22 +13,22 @@ type ModelPackage_MetadataProperties[T any] struct {
 	// CommitId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-metadataproperties.html#cfn-sagemaker-modelpackage-metadataproperties-commitid
-	CommitId *string `json:"CommitId,omitempty"`
+	CommitId *T `json:"CommitId,omitempty"`
 
 	// GeneratedBy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-metadataproperties.html#cfn-sagemaker-modelpackage-metadataproperties-generatedby
-	GeneratedBy *string `json:"GeneratedBy,omitempty"`
+	GeneratedBy *T `json:"GeneratedBy,omitempty"`
 
 	// ProjectId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-metadataproperties.html#cfn-sagemaker-modelpackage-metadataproperties-projectid
-	ProjectId *string `json:"ProjectId,omitempty"`
+	ProjectId *T `json:"ProjectId,omitempty"`
 
 	// Repository AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-metadataproperties.html#cfn-sagemaker-modelpackage-metadataproperties-repository
-	Repository *string `json:"Repository,omitempty"`
+	Repository *T `json:"Repository,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

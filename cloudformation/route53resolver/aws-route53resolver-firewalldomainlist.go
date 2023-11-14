@@ -17,17 +17,17 @@ type FirewallDomainList[T any] struct {
 	// DomainFileUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewalldomainlist.html#cfn-route53resolver-firewalldomainlist-domainfileurl
-	DomainFileUrl *string `json:"DomainFileUrl,omitempty"`
+	DomainFileUrl *T `json:"DomainFileUrl,omitempty"`
 
 	// Domains AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewalldomainlist.html#cfn-route53resolver-firewalldomainlist-domains
-	Domains []string `json:"Domains,omitempty"`
+	Domains []T `json:"Domains,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewalldomainlist.html#cfn-route53resolver-firewalldomainlist-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

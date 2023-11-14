@@ -18,7 +18,7 @@ type Analysis_UnaggregatedField[T any] struct {
 	// FieldId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-unaggregatedfield.html#cfn-quicksight-analysis-unaggregatedfield-fieldid
-	FieldId string `json:"FieldId"`
+	FieldId T `json:"FieldId"`
 
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false

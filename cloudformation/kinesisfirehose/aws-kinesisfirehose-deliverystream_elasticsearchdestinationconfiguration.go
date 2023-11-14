@@ -23,7 +23,7 @@ type DeliveryStream_ElasticsearchDestinationConfiguration[T any] struct {
 	// ClusterEndpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-clusterendpoint
-	ClusterEndpoint *string `json:"ClusterEndpoint,omitempty"`
+	ClusterEndpoint *T `json:"ClusterEndpoint,omitempty"`
 
 	// DocumentIdOptions AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type DeliveryStream_ElasticsearchDestinationConfiguration[T any] struct {
 	// DomainARN AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-domainarn
-	DomainARN *string `json:"DomainARN,omitempty"`
+	DomainARN *T `json:"DomainARN,omitempty"`
 
 	// IndexName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-indexname
-	IndexName string `json:"IndexName"`
+	IndexName T `json:"IndexName"`
 
 	// IndexRotationPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-indexrotationperiod
-	IndexRotationPeriod *string `json:"IndexRotationPeriod,omitempty"`
+	IndexRotationPeriod *T `json:"IndexRotationPeriod,omitempty"`
 
 	// ProcessingConfiguration AWS CloudFormation Property
 	// Required: false
@@ -58,12 +58,12 @@ type DeliveryStream_ElasticsearchDestinationConfiguration[T any] struct {
 	// RoleARN AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-rolearn
-	RoleARN string `json:"RoleARN"`
+	RoleARN T `json:"RoleARN"`
 
 	// S3BackupMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-s3backupmode
-	S3BackupMode *string `json:"S3BackupMode,omitempty"`
+	S3BackupMode *T `json:"S3BackupMode,omitempty"`
 
 	// S3Configuration AWS CloudFormation Property
 	// Required: true
@@ -73,7 +73,7 @@ type DeliveryStream_ElasticsearchDestinationConfiguration[T any] struct {
 	// TypeName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-typename
-	TypeName *string `json:"TypeName,omitempty"`
+	TypeName *T `json:"TypeName,omitempty"`
 
 	// VpcConfiguration AWS CloudFormation Property
 	// Required: false

@@ -16,12 +16,12 @@ type EndpointAuthorization[T any] struct {
 	// Account AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html#cfn-redshift-endpointauthorization-account
-	Account string `json:"Account"`
+	Account T `json:"Account"`
 
 	// ClusterIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html#cfn-redshift-endpointauthorization-clusteridentifier
-	ClusterIdentifier string `json:"ClusterIdentifier"`
+	ClusterIdentifier T `json:"ClusterIdentifier"`
 
 	// Force AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type EndpointAuthorization[T any] struct {
 	// VpcIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html#cfn-redshift-endpointauthorization-vpcids
-	VpcIds []string `json:"VpcIds,omitempty"`
+	VpcIds []T `json:"VpcIds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -22,17 +22,17 @@ type OutpostResolver[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-outpostresolver.html#cfn-route53resolver-outpostresolver-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// OutpostArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-outpostresolver.html#cfn-route53resolver-outpostresolver-outpostarn
-	OutpostArn string `json:"OutpostArn"`
+	OutpostArn T `json:"OutpostArn"`
 
 	// PreferredInstanceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-outpostresolver.html#cfn-route53resolver-outpostresolver-preferredinstancetype
-	PreferredInstanceType string `json:"PreferredInstanceType"`
+	PreferredInstanceType T `json:"PreferredInstanceType"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

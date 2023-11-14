@@ -13,7 +13,7 @@ import (
 
 // Function_CodeUri is a helper struct that can hold either a String or S3Location value
 type Function_CodeUri[T any] struct {
-	String *string
+	String *T
 
 	S3Location *Function_S3Location[any]
 }
@@ -52,7 +52,7 @@ func (r *Function_CodeUri[any]) UnmarshalJSON(b []byte) error {
 
 	switch val := typecheck.(type) {
 
-	case string:
+	case any:
 		r.String = &val
 
 	case map[string]interface{}:

@@ -13,7 +13,7 @@ type Analysis_SimpleClusterMarker[T any] struct {
 	// Color AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-simpleclustermarker.html#cfn-quicksight-analysis-simpleclustermarker-color
-	Color *string `json:"Color,omitempty"`
+	Color *T `json:"Color,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

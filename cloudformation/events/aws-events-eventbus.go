@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 
 	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/tags"
 )
 
 // EventBus AWS CloudFormation Resource (AWS::Events::EventBus)
@@ -16,17 +17,22 @@ type EventBus[T any] struct {
 	// EventSourceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbus.html#cfn-events-eventbus-eventsourcename
-	EventSourceName *string `json:"EventSourceName,omitempty"`
+	EventSourceName *T `json:"EventSourceName,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbus.html#cfn-events-eventbus-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
+
+	// Policy AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbus.html#cfn-events-eventbus-policy
+	Policy interface{} `json:"Policy,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbus.html#cfn-events-eventbus-tags
-	Tags []EventBus_TagEntry[any] `json:"Tags,omitempty"`
+	Tags []tags.Tag `json:"Tags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

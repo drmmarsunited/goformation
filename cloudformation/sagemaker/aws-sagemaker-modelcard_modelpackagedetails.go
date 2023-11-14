@@ -13,7 +13,7 @@ type ModelCard_ModelPackageDetails[T any] struct {
 	// ApprovalDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modelpackagedetails.html#cfn-sagemaker-modelcard-modelpackagedetails-approvaldescription
-	ApprovalDescription *string `json:"ApprovalDescription,omitempty"`
+	ApprovalDescription *T `json:"ApprovalDescription,omitempty"`
 
 	// CreatedBy AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type ModelCard_ModelPackageDetails[T any] struct {
 	// Domain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modelpackagedetails.html#cfn-sagemaker-modelcard-modelpackagedetails-domain
-	Domain *string `json:"Domain,omitempty"`
+	Domain *T `json:"Domain,omitempty"`
 
 	// InferenceSpecification AWS CloudFormation Property
 	// Required: false
@@ -33,32 +33,32 @@ type ModelCard_ModelPackageDetails[T any] struct {
 	// ModelApprovalStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modelpackagedetails.html#cfn-sagemaker-modelcard-modelpackagedetails-modelapprovalstatus
-	ModelApprovalStatus *string `json:"ModelApprovalStatus,omitempty"`
+	ModelApprovalStatus *T `json:"ModelApprovalStatus,omitempty"`
 
 	// ModelPackageArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modelpackagedetails.html#cfn-sagemaker-modelcard-modelpackagedetails-modelpackagearn
-	ModelPackageArn *string `json:"ModelPackageArn,omitempty"`
+	ModelPackageArn *T `json:"ModelPackageArn,omitempty"`
 
 	// ModelPackageDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modelpackagedetails.html#cfn-sagemaker-modelcard-modelpackagedetails-modelpackagedescription
-	ModelPackageDescription *string `json:"ModelPackageDescription,omitempty"`
+	ModelPackageDescription *T `json:"ModelPackageDescription,omitempty"`
 
 	// ModelPackageGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modelpackagedetails.html#cfn-sagemaker-modelcard-modelpackagedetails-modelpackagegroupname
-	ModelPackageGroupName *string `json:"ModelPackageGroupName,omitempty"`
+	ModelPackageGroupName *T `json:"ModelPackageGroupName,omitempty"`
 
 	// ModelPackageName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modelpackagedetails.html#cfn-sagemaker-modelcard-modelpackagedetails-modelpackagename
-	ModelPackageName *string `json:"ModelPackageName,omitempty"`
+	ModelPackageName *T `json:"ModelPackageName,omitempty"`
 
 	// ModelPackageStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modelpackagedetails.html#cfn-sagemaker-modelcard-modelpackagedetails-modelpackagestatus
-	ModelPackageStatus *string `json:"ModelPackageStatus,omitempty"`
+	ModelPackageStatus *T `json:"ModelPackageStatus,omitempty"`
 
 	// ModelPackageVersion AWS CloudFormation Property
 	// Required: false
@@ -73,7 +73,7 @@ type ModelCard_ModelPackageDetails[T any] struct {
 	// Task AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modelpackagedetails.html#cfn-sagemaker-modelcard-modelpackagedetails-task
-	Task *string `json:"Task,omitempty"`
+	Task *T `json:"Task,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

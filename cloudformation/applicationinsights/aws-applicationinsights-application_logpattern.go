@@ -13,12 +13,12 @@ type Application_LogPattern[T any] struct {
 	// Pattern AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-logpattern.html#cfn-applicationinsights-application-logpattern-pattern
-	Pattern string `json:"Pattern"`
+	Pattern T `json:"Pattern"`
 
 	// PatternName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-logpattern.html#cfn-applicationinsights-application-logpattern-patternname
-	PatternName string `json:"PatternName"`
+	PatternName T `json:"PatternName"`
 
 	// Rank AWS CloudFormation Property
 	// Required: true

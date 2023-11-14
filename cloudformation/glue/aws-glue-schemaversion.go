@@ -21,7 +21,7 @@ type SchemaVersion[T any] struct {
 	// SchemaDefinition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schemaversion.html#cfn-glue-schemaversion-schemadefinition
-	SchemaDefinition string `json:"SchemaDefinition"`
+	SchemaDefinition T `json:"SchemaDefinition"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

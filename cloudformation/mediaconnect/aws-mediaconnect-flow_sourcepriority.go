@@ -13,7 +13,7 @@ type Flow_SourcePriority[T any] struct {
 	// PrimarySource AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-sourcepriority.html#cfn-mediaconnect-flow-sourcepriority-primarysource
-	PrimarySource string `json:"PrimarySource"`
+	PrimarySource T `json:"PrimarySource"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

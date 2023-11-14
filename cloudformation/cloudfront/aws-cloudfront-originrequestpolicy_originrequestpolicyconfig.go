@@ -13,7 +13,7 @@ type OriginRequestPolicy_OriginRequestPolicyConfig[T any] struct {
 	// Comment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-originrequestpolicyconfig.html#cfn-cloudfront-originrequestpolicy-originrequestpolicyconfig-comment
-	Comment *string `json:"Comment,omitempty"`
+	Comment *T `json:"Comment,omitempty"`
 
 	// CookiesConfig AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type OriginRequestPolicy_OriginRequestPolicyConfig[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-originrequestpolicyconfig.html#cfn-cloudfront-originrequestpolicy-originrequestpolicyconfig-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// QueryStringsConfig AWS CloudFormation Property
 	// Required: true

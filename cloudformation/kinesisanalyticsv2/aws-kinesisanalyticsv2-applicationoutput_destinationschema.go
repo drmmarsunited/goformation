@@ -13,7 +13,7 @@ type ApplicationOutput_DestinationSchema[T any] struct {
 	// RecordFormatType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-destinationschema.html#cfn-kinesisanalyticsv2-applicationoutput-destinationschema-recordformattype
-	RecordFormatType *string `json:"RecordFormatType,omitempty"`
+	RecordFormatType *T `json:"RecordFormatType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type InstanceAccessControlAttributeConfiguration_AccessControlAttribute[T any] s
 	// Key AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattribute.html#cfn-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattribute-key
-	Key string `json:"Key"`
+	Key T `json:"Key"`
 
 	// Value AWS CloudFormation Property
 	// Required: true

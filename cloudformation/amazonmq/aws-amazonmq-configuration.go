@@ -16,32 +16,32 @@ type Configuration[T any] struct {
 	// AuthenticationStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-authenticationstrategy
-	AuthenticationStrategy *string `json:"AuthenticationStrategy,omitempty"`
+	AuthenticationStrategy *T `json:"AuthenticationStrategy,omitempty"`
 
 	// Data AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-data
-	Data string `json:"Data"`
+	Data T `json:"Data"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EngineType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-enginetype
-	EngineType string `json:"EngineType"`
+	EngineType T `json:"EngineType"`
 
 	// EngineVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-engineversion
-	EngineVersion string `json:"EngineVersion"`
+	EngineVersion T `json:"EngineVersion"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -16,7 +16,7 @@ type FileSystem[T any] struct {
 	// AvailabilityZoneName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-availabilityzonename
-	AvailabilityZoneName *string `json:"AvailabilityZoneName,omitempty"`
+	AvailabilityZoneName *T `json:"AvailabilityZoneName,omitempty"`
 
 	// BackupPolicy AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type FileSystem[T any] struct {
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-kmskeyid
-	KmsKeyId *string `json:"KmsKeyId,omitempty"`
+	KmsKeyId *T `json:"KmsKeyId,omitempty"`
 
 	// LifecyclePolicies AWS CloudFormation Property
 	// Required: false
@@ -56,17 +56,22 @@ type FileSystem[T any] struct {
 	// PerformanceMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-performancemode
-	PerformanceMode *string `json:"PerformanceMode,omitempty"`
+	PerformanceMode *T `json:"PerformanceMode,omitempty"`
 
 	// ProvisionedThroughputInMibps AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-provisionedthroughputinmibps
 	ProvisionedThroughputInMibps *T `json:"ProvisionedThroughputInMibps,omitempty"`
 
+	// ReplicationConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-replicationconfiguration
+	ReplicationConfiguration *FileSystem_ReplicationConfiguration[any] `json:"ReplicationConfiguration,omitempty"`
+
 	// ThroughputMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-throughputmode
-	ThroughputMode *string `json:"ThroughputMode,omitempty"`
+	ThroughputMode *T `json:"ThroughputMode,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

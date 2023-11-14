@@ -17,12 +17,12 @@ type IdentityProviderConfig[T any] struct {
 	// ClusterName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-identityproviderconfig.html#cfn-eks-identityproviderconfig-clustername
-	ClusterName string `json:"ClusterName"`
+	ClusterName T `json:"ClusterName"`
 
 	// IdentityProviderConfigName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-identityproviderconfig.html#cfn-eks-identityproviderconfig-identityproviderconfigname
-	IdentityProviderConfigName *string `json:"IdentityProviderConfigName,omitempty"`
+	IdentityProviderConfigName *T `json:"IdentityProviderConfigName,omitempty"`
 
 	// Oidc AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type IdentityProviderConfig[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-identityproviderconfig.html#cfn-eks-identityproviderconfig-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

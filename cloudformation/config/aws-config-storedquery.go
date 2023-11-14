@@ -17,17 +17,17 @@ type StoredQuery[T any] struct {
 	// QueryDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-storedquery.html#cfn-config-storedquery-querydescription
-	QueryDescription *string `json:"QueryDescription,omitempty"`
+	QueryDescription *T `json:"QueryDescription,omitempty"`
 
 	// QueryExpression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-storedquery.html#cfn-config-storedquery-queryexpression
-	QueryExpression string `json:"QueryExpression"`
+	QueryExpression T `json:"QueryExpression"`
 
 	// QueryName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-storedquery.html#cfn-config-storedquery-queryname
-	QueryName string `json:"QueryName"`
+	QueryName T `json:"QueryName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type AnomalyDetector_TimestampColumn[T any] struct {
 	// ColumnFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-timestampcolumn.html#cfn-lookoutmetrics-anomalydetector-timestampcolumn-columnformat
-	ColumnFormat *string `json:"ColumnFormat,omitempty"`
+	ColumnFormat *T `json:"ColumnFormat,omitempty"`
 
 	// ColumnName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-timestampcolumn.html#cfn-lookoutmetrics-anomalydetector-timestampcolumn-columnname
-	ColumnName *string `json:"ColumnName,omitempty"`
+	ColumnName *T `json:"ColumnName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

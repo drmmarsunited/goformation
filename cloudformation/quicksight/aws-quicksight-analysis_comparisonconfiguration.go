@@ -18,7 +18,7 @@ type Analysis_ComparisonConfiguration[T any] struct {
 	// ComparisonMethod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-comparisonconfiguration.html#cfn-quicksight-analysis-comparisonconfiguration-comparisonmethod
-	ComparisonMethod *string `json:"ComparisonMethod,omitempty"`
+	ComparisonMethod *T `json:"ComparisonMethod,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

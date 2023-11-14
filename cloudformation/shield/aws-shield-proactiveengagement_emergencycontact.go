@@ -13,17 +13,17 @@ type ProactiveEngagement_EmergencyContact[T any] struct {
 	// ContactNotes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-shield-proactiveengagement-emergencycontact.html#cfn-shield-proactiveengagement-emergencycontact-contactnotes
-	ContactNotes *string `json:"ContactNotes,omitempty"`
+	ContactNotes *T `json:"ContactNotes,omitempty"`
 
 	// EmailAddress AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-shield-proactiveengagement-emergencycontact.html#cfn-shield-proactiveengagement-emergencycontact-emailaddress
-	EmailAddress string `json:"EmailAddress"`
+	EmailAddress T `json:"EmailAddress"`
 
 	// PhoneNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-shield-proactiveengagement-emergencycontact.html#cfn-shield-proactiveengagement-emergencycontact-phonenumber
-	PhoneNumber *string `json:"PhoneNumber,omitempty"`
+	PhoneNumber *T `json:"PhoneNumber,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

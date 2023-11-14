@@ -17,7 +17,7 @@ type LocationEFS[T any] struct {
 	// AccessPointArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-accesspointarn
-	AccessPointArn *string `json:"AccessPointArn,omitempty"`
+	AccessPointArn *T `json:"AccessPointArn,omitempty"`
 
 	// Ec2Config AWS CloudFormation Property
 	// Required: true
@@ -27,22 +27,22 @@ type LocationEFS[T any] struct {
 	// EfsFilesystemArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-efsfilesystemarn
-	EfsFilesystemArn *string `json:"EfsFilesystemArn,omitempty"`
+	EfsFilesystemArn *T `json:"EfsFilesystemArn,omitempty"`
 
 	// FileSystemAccessRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-filesystemaccessrolearn
-	FileSystemAccessRoleArn *string `json:"FileSystemAccessRoleArn,omitempty"`
+	FileSystemAccessRoleArn *T `json:"FileSystemAccessRoleArn,omitempty"`
 
 	// InTransitEncryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-intransitencryption
-	InTransitEncryption *string `json:"InTransitEncryption,omitempty"`
+	InTransitEncryption *T `json:"InTransitEncryption,omitempty"`
 
 	// Subdirectory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-subdirectory
-	Subdirectory *string `json:"Subdirectory,omitempty"`
+	Subdirectory *T `json:"Subdirectory,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

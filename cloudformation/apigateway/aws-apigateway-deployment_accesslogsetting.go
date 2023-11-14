@@ -13,12 +13,12 @@ type Deployment_AccessLogSetting[T any] struct {
 	// DestinationArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-accesslogsetting.html#cfn-apigateway-deployment-accesslogsetting-destinationarn
-	DestinationArn *string `json:"DestinationArn,omitempty"`
+	DestinationArn *T `json:"DestinationArn,omitempty"`
 
 	// Format AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-accesslogsetting.html#cfn-apigateway-deployment-accesslogsetting-format
-	Format *string `json:"Format,omitempty"`
+	Format *T `json:"Format,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

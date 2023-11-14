@@ -13,12 +13,12 @@ type StreamingDistribution_S3Origin[T any] struct {
 	// DomainName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-s3origin.html#cfn-cloudfront-streamingdistribution-s3origin-domainname
-	DomainName string `json:"DomainName"`
+	DomainName T `json:"DomainName"`
 
 	// OriginAccessIdentity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-s3origin.html#cfn-cloudfront-streamingdistribution-s3origin-originaccessidentity
-	OriginAccessIdentity string `json:"OriginAccessIdentity"`
+	OriginAccessIdentity T `json:"OriginAccessIdentity"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

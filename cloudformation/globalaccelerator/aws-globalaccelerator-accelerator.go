@@ -22,17 +22,17 @@ type Accelerator[T any] struct {
 	// IpAddressType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-accelerator.html#cfn-globalaccelerator-accelerator-ipaddresstype
-	IpAddressType *string `json:"IpAddressType,omitempty"`
+	IpAddressType *T `json:"IpAddressType,omitempty"`
 
 	// IpAddresses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-accelerator.html#cfn-globalaccelerator-accelerator-ipaddresses
-	IpAddresses []string `json:"IpAddresses,omitempty"`
+	IpAddresses []T `json:"IpAddresses,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-accelerator.html#cfn-globalaccelerator-accelerator-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

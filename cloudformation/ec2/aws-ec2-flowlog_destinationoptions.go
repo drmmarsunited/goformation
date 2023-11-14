@@ -13,7 +13,7 @@ type FlowLog_DestinationOptions[T any] struct {
 	// FileFormat AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-flowlog-destinationoptions.html#cfn-ec2-flowlog-destinationoptions-fileformat
-	FileFormat string `json:"FileFormat"`
+	FileFormat T `json:"FileFormat"`
 
 	// HiveCompatiblePartitions AWS CloudFormation Property
 	// Required: true

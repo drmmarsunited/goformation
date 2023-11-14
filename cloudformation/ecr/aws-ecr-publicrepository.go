@@ -22,7 +22,7 @@ type PublicRepository[T any] struct {
 	// RepositoryName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositoryname
-	RepositoryName *string `json:"RepositoryName,omitempty"`
+	RepositoryName *T `json:"RepositoryName,omitempty"`
 
 	// RepositoryPolicyText AWS CloudFormation Property
 	// Required: false

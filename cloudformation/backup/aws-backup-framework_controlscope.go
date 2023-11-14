@@ -14,12 +14,12 @@ type Framework_ControlScope[T any] struct {
 	// ComplianceResourceIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-framework-controlscope.html#cfn-backup-framework-controlscope-complianceresourceids
-	ComplianceResourceIds []string `json:"ComplianceResourceIds,omitempty"`
+	ComplianceResourceIds []T `json:"ComplianceResourceIds,omitempty"`
 
 	// ComplianceResourceTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-framework-controlscope.html#cfn-backup-framework-controlscope-complianceresourcetypes
-	ComplianceResourceTypes []string `json:"ComplianceResourceTypes,omitempty"`
+	ComplianceResourceTypes []T `json:"ComplianceResourceTypes,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

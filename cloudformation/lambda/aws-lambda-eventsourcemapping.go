@@ -46,7 +46,7 @@ type EventSourceMapping[T any] struct {
 	// EventSourceArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-eventsourcearn
-	EventSourceArn *string `json:"EventSourceArn,omitempty"`
+	EventSourceArn *T `json:"EventSourceArn,omitempty"`
 
 	// FilterCriteria AWS CloudFormation Property
 	// Required: false
@@ -56,12 +56,12 @@ type EventSourceMapping[T any] struct {
 	// FunctionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-functionname
-	FunctionName string `json:"FunctionName"`
+	FunctionName T `json:"FunctionName"`
 
 	// FunctionResponseTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-functionresponsetypes
-	FunctionResponseTypes []string `json:"FunctionResponseTypes,omitempty"`
+	FunctionResponseTypes []T `json:"FunctionResponseTypes,omitempty"`
 
 	// MaximumBatchingWindowInSeconds AWS CloudFormation Property
 	// Required: false
@@ -86,7 +86,7 @@ type EventSourceMapping[T any] struct {
 	// Queues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-queues
-	Queues []string `json:"Queues,omitempty"`
+	Queues []T `json:"Queues,omitempty"`
 
 	// ScalingConfig AWS CloudFormation Property
 	// Required: false
@@ -111,7 +111,7 @@ type EventSourceMapping[T any] struct {
 	// StartingPosition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingposition
-	StartingPosition *string `json:"StartingPosition,omitempty"`
+	StartingPosition *T `json:"StartingPosition,omitempty"`
 
 	// StartingPositionTimestamp AWS CloudFormation Property
 	// Required: false
@@ -121,7 +121,7 @@ type EventSourceMapping[T any] struct {
 	// Topics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-topics
-	Topics []string `json:"Topics,omitempty"`
+	Topics []T `json:"Topics,omitempty"`
 
 	// TumblingWindowInSeconds AWS CloudFormation Property
 	// Required: false

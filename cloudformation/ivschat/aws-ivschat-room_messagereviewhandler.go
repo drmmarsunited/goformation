@@ -13,12 +13,12 @@ type Room_MessageReviewHandler[T any] struct {
 	// FallbackResult AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivschat-room-messagereviewhandler.html#cfn-ivschat-room-messagereviewhandler-fallbackresult
-	FallbackResult *string `json:"FallbackResult,omitempty"`
+	FallbackResult *T `json:"FallbackResult,omitempty"`
 
 	// Uri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivschat-room-messagereviewhandler.html#cfn-ivschat-room-messagereviewhandler-uri
-	Uri *string `json:"Uri,omitempty"`
+	Uri *T `json:"Uri,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

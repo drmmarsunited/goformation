@@ -13,7 +13,7 @@ type Dataset_DataSource[T any] struct {
 	// DataLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-dataset-datasource.html#cfn-personalize-dataset-datasource-datalocation
-	DataLocation *string `json:"DataLocation,omitempty"`
+	DataLocation *T `json:"DataLocation,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -16,12 +16,12 @@ type BridgeOutput[T any] struct {
 	// BridgeArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-bridgeoutput.html#cfn-mediaconnect-bridgeoutput-bridgearn
-	BridgeArn string `json:"BridgeArn"`
+	BridgeArn T `json:"BridgeArn"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-bridgeoutput.html#cfn-mediaconnect-bridgeoutput-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// NetworkOutput AWS CloudFormation Property
 	// Required: true

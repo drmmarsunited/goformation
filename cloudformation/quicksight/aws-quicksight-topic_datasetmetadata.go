@@ -28,17 +28,17 @@ type Topic_DatasetMetadata[T any] struct {
 	// DatasetArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-datasetmetadata.html#cfn-quicksight-topic-datasetmetadata-datasetarn
-	DatasetArn string `json:"DatasetArn"`
+	DatasetArn T `json:"DatasetArn"`
 
 	// DatasetDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-datasetmetadata.html#cfn-quicksight-topic-datasetmetadata-datasetdescription
-	DatasetDescription *string `json:"DatasetDescription,omitempty"`
+	DatasetDescription *T `json:"DatasetDescription,omitempty"`
 
 	// DatasetName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-datasetmetadata.html#cfn-quicksight-topic-datasetmetadata-datasetname
-	DatasetName *string `json:"DatasetName,omitempty"`
+	DatasetName *T `json:"DatasetName,omitempty"`
 
 	// Filters AWS CloudFormation Property
 	// Required: false

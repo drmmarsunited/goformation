@@ -13,7 +13,7 @@ type TaskDefinition_PortMapping[T any] struct {
 	// AppProtocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-portmapping.html#cfn-ecs-taskdefinition-portmapping-appprotocol
-	AppProtocol *string `json:"AppProtocol,omitempty"`
+	AppProtocol *T `json:"AppProtocol,omitempty"`
 
 	// ContainerPort AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type TaskDefinition_PortMapping[T any] struct {
 	// ContainerPortRange AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-portmapping.html#cfn-ecs-taskdefinition-portmapping-containerportrange
-	ContainerPortRange *string `json:"ContainerPortRange,omitempty"`
+	ContainerPortRange *T `json:"ContainerPortRange,omitempty"`
 
 	// HostPort AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type TaskDefinition_PortMapping[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-portmapping.html#cfn-ecs-taskdefinition-portmapping-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-portmapping.html#cfn-ecs-taskdefinition-portmapping-protocol
-	Protocol *string `json:"Protocol,omitempty"`
+	Protocol *T `json:"Protocol,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

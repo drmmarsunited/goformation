@@ -13,27 +13,27 @@ type User_UserIdentityInfo[T any] struct {
 	// Email AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-useridentityinfo.html#cfn-connect-user-useridentityinfo-email
-	Email *string `json:"Email,omitempty"`
+	Email *T `json:"Email,omitempty"`
 
 	// FirstName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-useridentityinfo.html#cfn-connect-user-useridentityinfo-firstname
-	FirstName *string `json:"FirstName,omitempty"`
+	FirstName *T `json:"FirstName,omitempty"`
 
 	// LastName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-useridentityinfo.html#cfn-connect-user-useridentityinfo-lastname
-	LastName *string `json:"LastName,omitempty"`
+	LastName *T `json:"LastName,omitempty"`
 
 	// Mobile AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-useridentityinfo.html#cfn-connect-user-useridentityinfo-mobile
-	Mobile *string `json:"Mobile,omitempty"`
+	Mobile *T `json:"Mobile,omitempty"`
 
 	// SecondaryEmail AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-useridentityinfo.html#cfn-connect-user-useridentityinfo-secondaryemail
-	SecondaryEmail *string `json:"SecondaryEmail,omitempty"`
+	SecondaryEmail *T `json:"SecondaryEmail,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

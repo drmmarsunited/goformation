@@ -13,7 +13,7 @@ type NotebookInstance_InstanceMetadataServiceConfiguration[T any] struct {
 	// MinimumInstanceMetadataServiceVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-notebookinstance-instancemetadataserviceconfiguration.html#cfn-sagemaker-notebookinstance-instancemetadataserviceconfiguration-minimuminstancemetadataserviceversion
-	MinimumInstanceMetadataServiceVersion string `json:"MinimumInstanceMetadataServiceVersion"`
+	MinimumInstanceMetadataServiceVersion T `json:"MinimumInstanceMetadataServiceVersion"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

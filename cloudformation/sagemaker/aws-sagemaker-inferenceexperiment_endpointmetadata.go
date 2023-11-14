@@ -13,17 +13,17 @@ type InferenceExperiment_EndpointMetadata[T any] struct {
 	// EndpointConfigName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-endpointmetadata.html#cfn-sagemaker-inferenceexperiment-endpointmetadata-endpointconfigname
-	EndpointConfigName *string `json:"EndpointConfigName,omitempty"`
+	EndpointConfigName *T `json:"EndpointConfigName,omitempty"`
 
 	// EndpointName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-endpointmetadata.html#cfn-sagemaker-inferenceexperiment-endpointmetadata-endpointname
-	EndpointName string `json:"EndpointName"`
+	EndpointName T `json:"EndpointName"`
 
 	// EndpointStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-endpointmetadata.html#cfn-sagemaker-inferenceexperiment-endpointmetadata-endpointstatus
-	EndpointStatus *string `json:"EndpointStatus,omitempty"`
+	EndpointStatus *T `json:"EndpointStatus,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

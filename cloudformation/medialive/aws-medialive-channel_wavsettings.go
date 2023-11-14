@@ -18,7 +18,7 @@ type Channel_WavSettings[T any] struct {
 	// CodingMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-wavsettings.html#cfn-medialive-channel-wavsettings-codingmode
-	CodingMode *string `json:"CodingMode,omitempty"`
+	CodingMode *T `json:"CodingMode,omitempty"`
 
 	// SampleRate AWS CloudFormation Property
 	// Required: false

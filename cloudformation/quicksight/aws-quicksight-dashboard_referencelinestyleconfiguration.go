@@ -13,12 +13,12 @@ type Dashboard_ReferenceLineStyleConfiguration[T any] struct {
 	// Color AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinestyleconfiguration.html#cfn-quicksight-dashboard-referencelinestyleconfiguration-color
-	Color *string `json:"Color,omitempty"`
+	Color *T `json:"Color,omitempty"`
 
 	// Pattern AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinestyleconfiguration.html#cfn-quicksight-dashboard-referencelinestyleconfiguration-pattern
-	Pattern *string `json:"Pattern,omitempty"`
+	Pattern *T `json:"Pattern,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

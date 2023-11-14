@@ -18,7 +18,7 @@ type Analysis_TableFieldLinkConfiguration[T any] struct {
 	// Target AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablefieldlinkconfiguration.html#cfn-quicksight-analysis-tablefieldlinkconfiguration-target
-	Target string `json:"Target"`
+	Target T `json:"Target"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -18,12 +18,12 @@ type ComponentType_Function[T any] struct {
 	// RequiredProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-function.html#cfn-iottwinmaker-componenttype-function-requiredproperties
-	RequiredProperties []string `json:"RequiredProperties,omitempty"`
+	RequiredProperties []T `json:"RequiredProperties,omitempty"`
 
 	// Scope AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-function.html#cfn-iottwinmaker-componenttype-function-scope
-	Scope *string `json:"Scope,omitempty"`
+	Scope *T `json:"Scope,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

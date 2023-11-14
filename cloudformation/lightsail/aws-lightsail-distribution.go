@@ -17,7 +17,7 @@ type Distribution[T any] struct {
 	// BundleId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-bundleid
-	BundleId string `json:"BundleId"`
+	BundleId T `json:"BundleId"`
 
 	// CacheBehaviorSettings AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type Distribution[T any] struct {
 	// CertificateName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-certificatename
-	CertificateName *string `json:"CertificateName,omitempty"`
+	CertificateName *T `json:"CertificateName,omitempty"`
 
 	// DefaultCacheBehavior AWS CloudFormation Property
 	// Required: true
@@ -42,12 +42,12 @@ type Distribution[T any] struct {
 	// DistributionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-distributionname
-	DistributionName string `json:"DistributionName"`
+	DistributionName T `json:"DistributionName"`
 
 	// IpAddressType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-ipaddresstype
-	IpAddressType *string `json:"IpAddressType,omitempty"`
+	IpAddressType *T `json:"IpAddressType,omitempty"`
 
 	// IsEnabled AWS CloudFormation Property
 	// Required: false

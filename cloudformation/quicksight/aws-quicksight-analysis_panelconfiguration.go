@@ -13,42 +13,42 @@ type Analysis_PanelConfiguration[T any] struct {
 	// BackgroundColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-panelconfiguration.html#cfn-quicksight-analysis-panelconfiguration-backgroundcolor
-	BackgroundColor *string `json:"BackgroundColor,omitempty"`
+	BackgroundColor *T `json:"BackgroundColor,omitempty"`
 
 	// BackgroundVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-panelconfiguration.html#cfn-quicksight-analysis-panelconfiguration-backgroundvisibility
-	BackgroundVisibility *string `json:"BackgroundVisibility,omitempty"`
+	BackgroundVisibility *T `json:"BackgroundVisibility,omitempty"`
 
 	// BorderColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-panelconfiguration.html#cfn-quicksight-analysis-panelconfiguration-bordercolor
-	BorderColor *string `json:"BorderColor,omitempty"`
+	BorderColor *T `json:"BorderColor,omitempty"`
 
 	// BorderStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-panelconfiguration.html#cfn-quicksight-analysis-panelconfiguration-borderstyle
-	BorderStyle *string `json:"BorderStyle,omitempty"`
+	BorderStyle *T `json:"BorderStyle,omitempty"`
 
 	// BorderThickness AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-panelconfiguration.html#cfn-quicksight-analysis-panelconfiguration-borderthickness
-	BorderThickness *string `json:"BorderThickness,omitempty"`
+	BorderThickness *T `json:"BorderThickness,omitempty"`
 
 	// BorderVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-panelconfiguration.html#cfn-quicksight-analysis-panelconfiguration-bordervisibility
-	BorderVisibility *string `json:"BorderVisibility,omitempty"`
+	BorderVisibility *T `json:"BorderVisibility,omitempty"`
 
 	// GutterSpacing AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-panelconfiguration.html#cfn-quicksight-analysis-panelconfiguration-gutterspacing
-	GutterSpacing *string `json:"GutterSpacing,omitempty"`
+	GutterSpacing *T `json:"GutterSpacing,omitempty"`
 
 	// GutterVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-panelconfiguration.html#cfn-quicksight-analysis-panelconfiguration-guttervisibility
-	GutterVisibility *string `json:"GutterVisibility,omitempty"`
+	GutterVisibility *T `json:"GutterVisibility,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false

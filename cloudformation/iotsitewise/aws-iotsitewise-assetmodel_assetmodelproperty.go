@@ -13,22 +13,22 @@ type AssetModel_AssetModelProperty[T any] struct {
 	// DataType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelproperty.html#cfn-iotsitewise-assetmodel-assetmodelproperty-datatype
-	DataType string `json:"DataType"`
+	DataType T `json:"DataType"`
 
 	// DataTypeSpec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelproperty.html#cfn-iotsitewise-assetmodel-assetmodelproperty-datatypespec
-	DataTypeSpec *string `json:"DataTypeSpec,omitempty"`
+	DataTypeSpec *T `json:"DataTypeSpec,omitempty"`
 
 	// LogicalId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelproperty.html#cfn-iotsitewise-assetmodel-assetmodelproperty-logicalid
-	LogicalId string `json:"LogicalId"`
+	LogicalId T `json:"LogicalId"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelproperty.html#cfn-iotsitewise-assetmodel-assetmodelproperty-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
@@ -38,7 +38,7 @@ type AssetModel_AssetModelProperty[T any] struct {
 	// Unit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelproperty.html#cfn-iotsitewise-assetmodel-assetmodelproperty-unit
-	Unit *string `json:"Unit,omitempty"`
+	Unit *T `json:"Unit,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

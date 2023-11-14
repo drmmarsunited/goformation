@@ -13,7 +13,7 @@ type NetworkInsightsAnalysis_AnalysisPacketHeader[T any] struct {
 	// DestinationAddresses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-destinationaddresses
-	DestinationAddresses []string `json:"DestinationAddresses,omitempty"`
+	DestinationAddresses []T `json:"DestinationAddresses,omitempty"`
 
 	// DestinationPortRanges AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type NetworkInsightsAnalysis_AnalysisPacketHeader[T any] struct {
 	// Protocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-protocol
-	Protocol *string `json:"Protocol,omitempty"`
+	Protocol *T `json:"Protocol,omitempty"`
 
 	// SourceAddresses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-sourceaddresses
-	SourceAddresses []string `json:"SourceAddresses,omitempty"`
+	SourceAddresses []T `json:"SourceAddresses,omitempty"`
 
 	// SourcePortRanges AWS CloudFormation Property
 	// Required: false

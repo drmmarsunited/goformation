@@ -22,12 +22,12 @@ type PatchBaseline[T any] struct {
 	// ApprovedPatches AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatches
-	ApprovedPatches []string `json:"ApprovedPatches,omitempty"`
+	ApprovedPatches []T `json:"ApprovedPatches,omitempty"`
 
 	// ApprovedPatchesComplianceLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatchescompliancelevel
-	ApprovedPatchesComplianceLevel *string `json:"ApprovedPatchesComplianceLevel,omitempty"`
+	ApprovedPatchesComplianceLevel *T `json:"ApprovedPatchesComplianceLevel,omitempty"`
 
 	// ApprovedPatchesEnableNonSecurity AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type PatchBaseline[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// GlobalFilters AWS CloudFormation Property
 	// Required: false
@@ -47,27 +47,27 @@ type PatchBaseline[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// OperatingSystem AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-operatingsystem
-	OperatingSystem *string `json:"OperatingSystem,omitempty"`
+	OperatingSystem *T `json:"OperatingSystem,omitempty"`
 
 	// PatchGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-patchgroups
-	PatchGroups []string `json:"PatchGroups,omitempty"`
+	PatchGroups []T `json:"PatchGroups,omitempty"`
 
 	// RejectedPatches AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-rejectedpatches
-	RejectedPatches []string `json:"RejectedPatches,omitempty"`
+	RejectedPatches []T `json:"RejectedPatches,omitempty"`
 
 	// RejectedPatchesAction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-rejectedpatchesaction
-	RejectedPatchesAction *string `json:"RejectedPatchesAction,omitempty"`
+	RejectedPatchesAction *T `json:"RejectedPatchesAction,omitempty"`
 
 	// Sources AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type CachePolicy_QueryStringsConfig[T any] struct {
 	// QueryStringBehavior AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-querystringsconfig.html#cfn-cloudfront-cachepolicy-querystringsconfig-querystringbehavior
-	QueryStringBehavior string `json:"QueryStringBehavior"`
+	QueryStringBehavior T `json:"QueryStringBehavior"`
 
 	// QueryStrings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-querystringsconfig.html#cfn-cloudfront-cachepolicy-querystringsconfig-querystrings
-	QueryStrings []string `json:"QueryStrings,omitempty"`
+	QueryStrings []T `json:"QueryStrings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,12 +13,12 @@ type MultiRegionAccessPoint_Region[T any] struct {
 	// Bucket AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-multiregionaccesspoint-region.html#cfn-s3-multiregionaccesspoint-region-bucket
-	Bucket string `json:"Bucket"`
+	Bucket T `json:"Bucket"`
 
 	// BucketAccountId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-multiregionaccesspoint-region.html#cfn-s3-multiregionaccesspoint-region-bucketaccountid
-	BucketAccountId *string `json:"BucketAccountId,omitempty"`
+	BucketAccountId *T `json:"BucketAccountId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type BillingGroup_ComputationPreference[T any] struct {
 	// PricingPlanArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-billinggroup-computationpreference.html#cfn-billingconductor-billinggroup-computationpreference-pricingplanarn
-	PricingPlanArn string `json:"PricingPlanArn"`
+	PricingPlanArn T `json:"PricingPlanArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

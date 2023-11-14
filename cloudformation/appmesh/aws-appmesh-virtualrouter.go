@@ -17,12 +17,12 @@ type VirtualRouter[T any] struct {
 	// MeshName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-meshname
-	MeshName string `json:"MeshName"`
+	MeshName T `json:"MeshName"`
 
 	// MeshOwner AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-meshowner
-	MeshOwner *string `json:"MeshOwner,omitempty"`
+	MeshOwner *T `json:"MeshOwner,omitempty"`
 
 	// Spec AWS CloudFormation Property
 	// Required: true
@@ -37,7 +37,7 @@ type VirtualRouter[T any] struct {
 	// VirtualRouterName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-virtualroutername
-	VirtualRouterName *string `json:"VirtualRouterName,omitempty"`
+	VirtualRouterName *T `json:"VirtualRouterName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

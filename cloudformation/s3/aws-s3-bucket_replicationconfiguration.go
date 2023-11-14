@@ -13,7 +13,7 @@ type Bucket_ReplicationConfiguration[T any] struct {
 	// Role AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html#cfn-s3-bucket-replicationconfiguration-role
-	Role string `json:"Role"`
+	Role T `json:"Role"`
 
 	// Rules AWS CloudFormation Property
 	// Required: true

@@ -13,12 +13,12 @@ type RecordingConfiguration_RenditionConfiguration[T any] struct {
 	// RenditionSelection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivs-recordingconfiguration-renditionconfiguration.html#cfn-ivs-recordingconfiguration-renditionconfiguration-renditionselection
-	RenditionSelection *string `json:"RenditionSelection,omitempty"`
+	RenditionSelection *T `json:"RenditionSelection,omitempty"`
 
 	// Renditions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivs-recordingconfiguration-renditionconfiguration.html#cfn-ivs-recordingconfiguration-renditionconfiguration-renditions
-	Renditions []string `json:"Renditions,omitempty"`
+	Renditions []T `json:"Renditions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

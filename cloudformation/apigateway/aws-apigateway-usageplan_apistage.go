@@ -13,12 +13,12 @@ type UsagePlan_ApiStage[T any] struct {
 	// ApiId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-apiid
-	ApiId *string `json:"ApiId,omitempty"`
+	ApiId *T `json:"ApiId,omitempty"`
 
 	// Stage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-stage
-	Stage *string `json:"Stage,omitempty"`
+	Stage *T `json:"Stage,omitempty"`
 
 	// Throttle AWS CloudFormation Property
 	// Required: false

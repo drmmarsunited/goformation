@@ -18,7 +18,7 @@ type VirtualGateway_VirtualGatewayListenerTls[T any] struct {
 	// Mode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertls.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertls-mode
-	Mode string `json:"Mode"`
+	Mode T `json:"Mode"`
 
 	// Validation AWS CloudFormation Property
 	// Required: false

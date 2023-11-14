@@ -13,7 +13,7 @@ type Domain_ServiceSoftwareOptions[T any] struct {
 	// AutomatedUpdateDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-servicesoftwareoptions.html#cfn-opensearchservice-domain-servicesoftwareoptions-automatedupdatedate
-	AutomatedUpdateDate *string `json:"AutomatedUpdateDate,omitempty"`
+	AutomatedUpdateDate *T `json:"AutomatedUpdateDate,omitempty"`
 
 	// Cancellable AWS CloudFormation Property
 	// Required: false
@@ -23,17 +23,17 @@ type Domain_ServiceSoftwareOptions[T any] struct {
 	// CurrentVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-servicesoftwareoptions.html#cfn-opensearchservice-domain-servicesoftwareoptions-currentversion
-	CurrentVersion *string `json:"CurrentVersion,omitempty"`
+	CurrentVersion *T `json:"CurrentVersion,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-servicesoftwareoptions.html#cfn-opensearchservice-domain-servicesoftwareoptions-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// NewVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-servicesoftwareoptions.html#cfn-opensearchservice-domain-servicesoftwareoptions-newversion
-	NewVersion *string `json:"NewVersion,omitempty"`
+	NewVersion *T `json:"NewVersion,omitempty"`
 
 	// OptionalDeployment AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Domain_ServiceSoftwareOptions[T any] struct {
 	// UpdateStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-servicesoftwareoptions.html#cfn-opensearchservice-domain-servicesoftwareoptions-updatestatus
-	UpdateStatus *string `json:"UpdateStatus,omitempty"`
+	UpdateStatus *T `json:"UpdateStatus,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

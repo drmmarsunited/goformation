@@ -13,7 +13,7 @@ type DataSource_LambdaConfig[T any] struct {
 	// LambdaFunctionArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-lambdaconfig.html#cfn-appsync-datasource-lambdaconfig-lambdafunctionarn
-	LambdaFunctionArn string `json:"LambdaFunctionArn"`
+	LambdaFunctionArn T `json:"LambdaFunctionArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

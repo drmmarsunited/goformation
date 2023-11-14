@@ -17,7 +17,7 @@ type Accessor[T any] struct {
 	// AccessorType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-accessor.html#cfn-managedblockchain-accessor-accessortype
-	AccessorType string `json:"AccessorType"`
+	AccessorType T `json:"AccessorType"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

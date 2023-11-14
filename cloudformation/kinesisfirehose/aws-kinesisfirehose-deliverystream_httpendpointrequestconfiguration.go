@@ -18,7 +18,7 @@ type DeliveryStream_HttpEndpointRequestConfiguration[T any] struct {
 	// ContentEncoding AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointrequestconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointrequestconfiguration-contentencoding
-	ContentEncoding *string `json:"ContentEncoding,omitempty"`
+	ContentEncoding *T `json:"ContentEncoding,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

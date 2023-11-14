@@ -23,7 +23,7 @@ type ComponentVersion_LambdaFunctionRecipeSource[T any] struct {
 	// ComponentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-componentname
-	ComponentName *string `json:"ComponentName,omitempty"`
+	ComponentName *T `json:"ComponentName,omitempty"`
 
 	// ComponentPlatforms AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type ComponentVersion_LambdaFunctionRecipeSource[T any] struct {
 	// ComponentVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-componentversion
-	ComponentVersion *string `json:"ComponentVersion,omitempty"`
+	ComponentVersion *T `json:"ComponentVersion,omitempty"`
 
 	// LambdaArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-lambdaarn
-	LambdaArn *string `json:"LambdaArn,omitempty"`
+	LambdaArn *T `json:"LambdaArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

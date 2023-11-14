@@ -13,12 +13,12 @@ type Dashboard_FieldLabelType[T any] struct {
 	// FieldId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fieldlabeltype.html#cfn-quicksight-dashboard-fieldlabeltype-fieldid
-	FieldId *string `json:"FieldId,omitempty"`
+	FieldId *T `json:"FieldId,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fieldlabeltype.html#cfn-quicksight-dashboard-fieldlabeltype-visibility
-	Visibility *string `json:"Visibility,omitempty"`
+	Visibility *T `json:"Visibility,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

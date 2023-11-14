@@ -13,17 +13,17 @@ type Project_ServiceCatalogProvisioningDetails[T any] struct {
 	// PathId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisioningdetails.html#cfn-sagemaker-project-servicecatalogprovisioningdetails-pathid
-	PathId *string `json:"PathId,omitempty"`
+	PathId *T `json:"PathId,omitempty"`
 
 	// ProductId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisioningdetails.html#cfn-sagemaker-project-servicecatalogprovisioningdetails-productid
-	ProductId string `json:"ProductId"`
+	ProductId T `json:"ProductId"`
 
 	// ProvisioningArtifactId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisioningdetails.html#cfn-sagemaker-project-servicecatalogprovisioningdetails-provisioningartifactid
-	ProvisioningArtifactId *string `json:"ProvisioningArtifactId,omitempty"`
+	ProvisioningArtifactId *T `json:"ProvisioningArtifactId,omitempty"`
 
 	// ProvisioningParameters AWS CloudFormation Property
 	// Required: false

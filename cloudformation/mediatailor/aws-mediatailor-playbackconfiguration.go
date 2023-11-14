@@ -17,7 +17,7 @@ type PlaybackConfiguration[T any] struct {
 	// AdDecisionServerUrl AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-addecisionserverurl
-	AdDecisionServerUrl string `json:"AdDecisionServerUrl"`
+	AdDecisionServerUrl T `json:"AdDecisionServerUrl"`
 
 	// AvailSuppression AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,7 @@ type PlaybackConfiguration[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// PersonalizationThresholdSeconds AWS CloudFormation Property
 	// Required: false
@@ -72,7 +72,7 @@ type PlaybackConfiguration[T any] struct {
 	// SlateAdUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-slateadurl
-	SlateAdUrl *string `json:"SlateAdUrl,omitempty"`
+	SlateAdUrl *T `json:"SlateAdUrl,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -82,12 +82,12 @@ type PlaybackConfiguration[T any] struct {
 	// TranscodeProfileName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-transcodeprofilename
-	TranscodeProfileName *string `json:"TranscodeProfileName,omitempty"`
+	TranscodeProfileName *T `json:"TranscodeProfileName,omitempty"`
 
 	// VideoContentSourceUrl AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-videocontentsourceurl
-	VideoContentSourceUrl string `json:"VideoContentSourceUrl"`
+	VideoContentSourceUrl T `json:"VideoContentSourceUrl"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

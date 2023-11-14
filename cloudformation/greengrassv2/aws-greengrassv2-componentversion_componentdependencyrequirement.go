@@ -13,12 +13,12 @@ type ComponentVersion_ComponentDependencyRequirement[T any] struct {
 	// DependencyType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-componentdependencyrequirement.html#cfn-greengrassv2-componentversion-componentdependencyrequirement-dependencytype
-	DependencyType *string `json:"DependencyType,omitempty"`
+	DependencyType *T `json:"DependencyType,omitempty"`
 
 	// VersionRequirement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-componentdependencyrequirement.html#cfn-greengrassv2-componentversion-componentdependencyrequirement-versionrequirement
-	VersionRequirement *string `json:"VersionRequirement,omitempty"`
+	VersionRequirement *T `json:"VersionRequirement,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

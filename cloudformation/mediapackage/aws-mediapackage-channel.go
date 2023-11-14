@@ -17,7 +17,7 @@ type Channel[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EgressAccessLogs AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type Channel[T any] struct {
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-id
-	Id string `json:"Id"`
+	Id T `json:"Id"`
 
 	// IngressAccessLogs AWS CloudFormation Property
 	// Required: false

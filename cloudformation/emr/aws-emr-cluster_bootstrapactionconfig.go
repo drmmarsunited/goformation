@@ -13,7 +13,7 @@ type Cluster_BootstrapActionConfig[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-bootstrapactionconfig.html#cfn-elasticmapreduce-cluster-bootstrapactionconfig-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ScriptBootstrapAction AWS CloudFormation Property
 	// Required: true

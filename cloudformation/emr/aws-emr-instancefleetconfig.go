@@ -16,12 +16,12 @@ type InstanceFleetConfig[T any] struct {
 	// ClusterId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-clusterid
-	ClusterId string `json:"ClusterId"`
+	ClusterId T `json:"ClusterId"`
 
 	// InstanceFleetType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancefleettype
-	InstanceFleetType string `json:"InstanceFleetType"`
+	InstanceFleetType T `json:"InstanceFleetType"`
 
 	// InstanceTypeConfigs AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type InstanceFleetConfig[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// TargetOnDemandCapacity AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type Channel_AudioNormalizationSettings[T any] struct {
 	// Algorithm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audionormalizationsettings.html#cfn-medialive-channel-audionormalizationsettings-algorithm
-	Algorithm *string `json:"Algorithm,omitempty"`
+	Algorithm *T `json:"Algorithm,omitempty"`
 
 	// AlgorithmControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audionormalizationsettings.html#cfn-medialive-channel-audionormalizationsettings-algorithmcontrol
-	AlgorithmControl *string `json:"AlgorithmControl,omitempty"`
+	AlgorithmControl *T `json:"AlgorithmControl,omitempty"`
 
 	// TargetLkfs AWS CloudFormation Property
 	// Required: false

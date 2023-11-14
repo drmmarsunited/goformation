@@ -23,27 +23,27 @@ type Topic_TopicFilter[T any] struct {
 	// FilterClass AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topicfilter.html#cfn-quicksight-topic-topicfilter-filterclass
-	FilterClass *string `json:"FilterClass,omitempty"`
+	FilterClass *T `json:"FilterClass,omitempty"`
 
 	// FilterDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topicfilter.html#cfn-quicksight-topic-topicfilter-filterdescription
-	FilterDescription *string `json:"FilterDescription,omitempty"`
+	FilterDescription *T `json:"FilterDescription,omitempty"`
 
 	// FilterName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topicfilter.html#cfn-quicksight-topic-topicfilter-filtername
-	FilterName string `json:"FilterName"`
+	FilterName T `json:"FilterName"`
 
 	// FilterSynonyms AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topicfilter.html#cfn-quicksight-topic-topicfilter-filtersynonyms
-	FilterSynonyms []string `json:"FilterSynonyms,omitempty"`
+	FilterSynonyms []T `json:"FilterSynonyms,omitempty"`
 
 	// FilterType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topicfilter.html#cfn-quicksight-topic-topicfilter-filtertype
-	FilterType *string `json:"FilterType,omitempty"`
+	FilterType *T `json:"FilterType,omitempty"`
 
 	// NumericEqualityFilter AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type Topic_TopicFilter[T any] struct {
 	// OperandFieldName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topicfilter.html#cfn-quicksight-topic-topicfilter-operandfieldname
-	OperandFieldName string `json:"OperandFieldName"`
+	OperandFieldName T `json:"OperandFieldName"`
 
 	// RelativeDateFilter AWS CloudFormation Property
 	// Required: false

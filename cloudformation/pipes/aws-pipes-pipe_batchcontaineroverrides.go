@@ -13,7 +13,7 @@ type Pipe_BatchContainerOverrides[T any] struct {
 	// Command AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-batchcontaineroverrides.html#cfn-pipes-pipe-batchcontaineroverrides-command
-	Command []string `json:"Command,omitempty"`
+	Command []T `json:"Command,omitempty"`
 
 	// Environment AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Pipe_BatchContainerOverrides[T any] struct {
 	// InstanceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-batchcontaineroverrides.html#cfn-pipes-pipe-batchcontaineroverrides-instancetype
-	InstanceType *string `json:"InstanceType,omitempty"`
+	InstanceType *T `json:"InstanceType,omitempty"`
 
 	// ResourceRequirements AWS CloudFormation Property
 	// Required: false

@@ -18,7 +18,7 @@ type Analysis_StringDefaultValues[T any] struct {
 	// StaticValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-stringdefaultvalues.html#cfn-quicksight-analysis-stringdefaultvalues-staticvalues
-	StaticValues []string `json:"StaticValues,omitempty"`
+	StaticValues []T `json:"StaticValues,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

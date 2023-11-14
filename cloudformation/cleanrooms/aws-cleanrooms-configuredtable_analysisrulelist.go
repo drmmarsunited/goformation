@@ -13,17 +13,17 @@ type ConfiguredTable_AnalysisRuleList[T any] struct {
 	// AllowedJoinOperators AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisrulelist.html#cfn-cleanrooms-configuredtable-analysisrulelist-allowedjoinoperators
-	AllowedJoinOperators []string `json:"AllowedJoinOperators,omitempty"`
+	AllowedJoinOperators []T `json:"AllowedJoinOperators,omitempty"`
 
 	// JoinColumns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisrulelist.html#cfn-cleanrooms-configuredtable-analysisrulelist-joincolumns
-	JoinColumns []string `json:"JoinColumns"`
+	JoinColumns []T `json:"JoinColumns"`
 
 	// ListColumns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisrulelist.html#cfn-cleanrooms-configuredtable-analysisrulelist-listcolumns
-	ListColumns []string `json:"ListColumns"`
+	ListColumns []T `json:"ListColumns"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

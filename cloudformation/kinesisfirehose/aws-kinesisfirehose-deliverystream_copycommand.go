@@ -13,17 +13,17 @@ type DeliveryStream_CopyCommand[T any] struct {
 	// CopyOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-copyoptions
-	CopyOptions *string `json:"CopyOptions,omitempty"`
+	CopyOptions *T `json:"CopyOptions,omitempty"`
 
 	// DataTableColumns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-datatablecolumns
-	DataTableColumns *string `json:"DataTableColumns,omitempty"`
+	DataTableColumns *T `json:"DataTableColumns,omitempty"`
 
 	// DataTableName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-datatablename
-	DataTableName string `json:"DataTableName"`
+	DataTableName T `json:"DataTableName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

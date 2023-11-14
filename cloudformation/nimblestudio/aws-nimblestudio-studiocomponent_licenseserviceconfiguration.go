@@ -13,7 +13,7 @@ type StudioComponent_LicenseServiceConfiguration[T any] struct {
 	// Endpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-licenseserviceconfiguration.html#cfn-nimblestudio-studiocomponent-licenseserviceconfiguration-endpoint
-	Endpoint *string `json:"Endpoint,omitempty"`
+	Endpoint *T `json:"Endpoint,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

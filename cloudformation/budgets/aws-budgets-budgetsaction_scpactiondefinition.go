@@ -13,12 +13,12 @@ type BudgetsAction_ScpActionDefinition[T any] struct {
 	// PolicyId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-scpactiondefinition.html#cfn-budgets-budgetsaction-scpactiondefinition-policyid
-	PolicyId string `json:"PolicyId"`
+	PolicyId T `json:"PolicyId"`
 
 	// TargetIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-scpactiondefinition.html#cfn-budgets-budgetsaction-scpactiondefinition-targetids
-	TargetIds []string `json:"TargetIds"`
+	TargetIds []T `json:"TargetIds"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type ListenerRule_TargetGroupTuple[T any] struct {
 	// TargetGroupArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-targetgrouptuple.html#cfn-elasticloadbalancingv2-listenerrule-targetgrouptuple-targetgrouparn
-	TargetGroupArn *string `json:"TargetGroupArn,omitempty"`
+	TargetGroupArn *T `json:"TargetGroupArn,omitempty"`
 
 	// Weight AWS CloudFormation Property
 	// Required: false

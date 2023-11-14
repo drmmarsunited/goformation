@@ -13,7 +13,7 @@ type Workspace_WorkspaceProperties[T any] struct {
 	// ComputeTypeName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-computetypename
-	ComputeTypeName *string `json:"ComputeTypeName,omitempty"`
+	ComputeTypeName *T `json:"ComputeTypeName,omitempty"`
 
 	// RootVolumeSizeGib AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Workspace_WorkspaceProperties[T any] struct {
 	// RunningMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-runningmode
-	RunningMode *string `json:"RunningMode,omitempty"`
+	RunningMode *T `json:"RunningMode,omitempty"`
 
 	// RunningModeAutoStopTimeoutInMinutes AWS CloudFormation Property
 	// Required: false

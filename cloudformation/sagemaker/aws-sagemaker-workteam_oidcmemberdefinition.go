@@ -13,7 +13,7 @@ type Workteam_OidcMemberDefinition[T any] struct {
 	// OidcGroups AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-oidcmemberdefinition.html#cfn-sagemaker-workteam-oidcmemberdefinition-oidcgroups
-	OidcGroups []string `json:"OidcGroups"`
+	OidcGroups []T `json:"OidcGroups"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

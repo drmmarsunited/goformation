@@ -13,7 +13,7 @@ type Topic_TopicNumericRangeFilter[T any] struct {
 	// Aggregation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topicnumericrangefilter.html#cfn-quicksight-topic-topicnumericrangefilter-aggregation
-	Aggregation *string `json:"Aggregation,omitempty"`
+	Aggregation *T `json:"Aggregation,omitempty"`
 
 	// Constant AWS CloudFormation Property
 	// Required: false

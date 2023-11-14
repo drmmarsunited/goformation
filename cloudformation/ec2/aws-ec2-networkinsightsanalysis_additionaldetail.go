@@ -13,7 +13,7 @@ type NetworkInsightsAnalysis_AdditionalDetail[T any] struct {
 	// AdditionalDetailType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-additionaldetail.html#cfn-ec2-networkinsightsanalysis-additionaldetail-additionaldetailtype
-	AdditionalDetailType *string `json:"AdditionalDetailType,omitempty"`
+	AdditionalDetailType *T `json:"AdditionalDetailType,omitempty"`
 
 	// Component AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type NetworkInsightsAnalysis_AdditionalDetail[T any] struct {
 	// ServiceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-additionaldetail.html#cfn-ec2-networkinsightsanalysis-additionaldetail-servicename
-	ServiceName *string `json:"ServiceName,omitempty"`
+	ServiceName *T `json:"ServiceName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

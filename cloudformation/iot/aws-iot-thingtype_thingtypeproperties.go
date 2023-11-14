@@ -13,12 +13,12 @@ type ThingType_ThingTypeProperties[T any] struct {
 	// SearchableAttributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-thingtype-thingtypeproperties.html#cfn-iot-thingtype-thingtypeproperties-searchableattributes
-	SearchableAttributes []string `json:"SearchableAttributes,omitempty"`
+	SearchableAttributes []T `json:"SearchableAttributes,omitempty"`
 
 	// ThingTypeDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-thingtype-thingtypeproperties.html#cfn-iot-thingtype-thingtypeproperties-thingtypedescription
-	ThingTypeDescription *string `json:"ThingTypeDescription,omitempty"`
+	ThingTypeDescription *T `json:"ThingTypeDescription,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

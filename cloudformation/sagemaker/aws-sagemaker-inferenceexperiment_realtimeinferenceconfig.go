@@ -18,7 +18,7 @@ type InferenceExperiment_RealTimeInferenceConfig[T any] struct {
 	// InstanceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-realtimeinferenceconfig.html#cfn-sagemaker-inferenceexperiment-realtimeinferenceconfig-instancetype
-	InstanceType string `json:"InstanceType"`
+	InstanceType T `json:"InstanceType"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

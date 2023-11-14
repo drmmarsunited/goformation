@@ -13,7 +13,7 @@ type DomainConfiguration_TlsConfig[T any] struct {
 	// SecurityPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-domainconfiguration-tlsconfig.html#cfn-iot-domainconfiguration-tlsconfig-securitypolicy
-	SecurityPolicy *string `json:"SecurityPolicy,omitempty"`
+	SecurityPolicy *T `json:"SecurityPolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

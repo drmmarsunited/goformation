@@ -23,7 +23,7 @@ type Channel_HlsAkamaiSettings[T any] struct {
 	// HttpTransferMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsakamaisettings.html#cfn-medialive-channel-hlsakamaisettings-httptransfermode
-	HttpTransferMode *string `json:"HttpTransferMode,omitempty"`
+	HttpTransferMode *T `json:"HttpTransferMode,omitempty"`
 
 	// NumRetries AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type Channel_HlsAkamaiSettings[T any] struct {
 	// Salt AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsakamaisettings.html#cfn-medialive-channel-hlsakamaisettings-salt
-	Salt *string `json:"Salt,omitempty"`
+	Salt *T `json:"Salt,omitempty"`
 
 	// Token AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsakamaisettings.html#cfn-medialive-channel-hlsakamaisettings-token
-	Token *string `json:"Token,omitempty"`
+	Token *T `json:"Token,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

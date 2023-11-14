@@ -13,12 +13,12 @@ type Connector_Vpc[T any] struct {
 	// SecurityGroups AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-vpc.html#cfn-kafkaconnect-connector-vpc-securitygroups
-	SecurityGroups []string `json:"SecurityGroups"`
+	SecurityGroups []T `json:"SecurityGroups"`
 
 	// Subnets AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-vpc.html#cfn-kafkaconnect-connector-vpc-subnets
-	Subnets []string `json:"Subnets"`
+	Subnets []T `json:"Subnets"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

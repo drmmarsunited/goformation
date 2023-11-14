@@ -17,7 +17,7 @@ type AssistantAssociation[T any] struct {
 	// AssistantId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-assistantassociation.html#cfn-wisdom-assistantassociation-assistantid
-	AssistantId string `json:"AssistantId"`
+	AssistantId T `json:"AssistantId"`
 
 	// Association AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type AssistantAssociation[T any] struct {
 	// AssociationType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-assistantassociation.html#cfn-wisdom-assistantassociation-associationtype
-	AssociationType string `json:"AssociationType"`
+	AssociationType T `json:"AssociationType"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

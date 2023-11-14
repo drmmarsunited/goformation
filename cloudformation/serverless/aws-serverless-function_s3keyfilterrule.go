@@ -13,12 +13,12 @@ type Function_S3KeyFilterRule[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key-rules.html
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key-rules.html
-	Value string `json:"Value"`
+	Value T `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -23,12 +23,12 @@ type ReceiptRule_Rule[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Recipients AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-recipients
-	Recipients []string `json:"Recipients,omitempty"`
+	Recipients []T `json:"Recipients,omitempty"`
 
 	// ScanEnabled AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type ReceiptRule_Rule[T any] struct {
 	// TlsPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-tlspolicy
-	TlsPolicy *string `json:"TlsPolicy,omitempty"`
+	TlsPolicy *T `json:"TlsPolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

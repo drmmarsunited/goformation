@@ -33,7 +33,7 @@ type ConfigurationRecorder_RecordingGroup[T any] struct {
 	// ResourceTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html#cfn-config-configurationrecorder-recordinggroup-resourcetypes
-	ResourceTypes []string `json:"ResourceTypes,omitempty"`
+	ResourceTypes []T `json:"ResourceTypes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

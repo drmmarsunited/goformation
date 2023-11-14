@@ -13,7 +13,7 @@ type Bot_SlotValue[T any] struct {
 	// InterpretedValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalue.html#cfn-lex-bot-slotvalue-interpretedvalue
-	InterpretedValue *string `json:"InterpretedValue,omitempty"`
+	InterpretedValue *T `json:"InterpretedValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

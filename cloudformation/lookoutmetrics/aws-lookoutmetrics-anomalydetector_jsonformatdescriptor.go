@@ -13,12 +13,12 @@ type AnomalyDetector_JsonFormatDescriptor[T any] struct {
 	// Charset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-jsonformatdescriptor.html#cfn-lookoutmetrics-anomalydetector-jsonformatdescriptor-charset
-	Charset *string `json:"Charset,omitempty"`
+	Charset *T `json:"Charset,omitempty"`
 
 	// FileCompression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-jsonformatdescriptor.html#cfn-lookoutmetrics-anomalydetector-jsonformatdescriptor-filecompression
-	FileCompression *string `json:"FileCompression,omitempty"`
+	FileCompression *T `json:"FileCompression,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

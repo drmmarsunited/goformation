@@ -16,7 +16,7 @@ type ApiGatewayManagedOverrides[T any] struct {
 	// ApiId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apigatewaymanagedoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-apiid
-	ApiId string `json:"ApiId"`
+	ApiId T `json:"ApiId"`
 
 	// Integration AWS CloudFormation Property
 	// Required: false

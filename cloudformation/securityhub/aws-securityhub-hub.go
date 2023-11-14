@@ -21,7 +21,7 @@ type Hub[T any] struct {
 	// ControlFindingGenerator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-hub.html#cfn-securityhub-hub-controlfindinggenerator
-	ControlFindingGenerator *string `json:"ControlFindingGenerator,omitempty"`
+	ControlFindingGenerator *T `json:"ControlFindingGenerator,omitempty"`
 
 	// EnableDefaultStandards AWS CloudFormation Property
 	// Required: false

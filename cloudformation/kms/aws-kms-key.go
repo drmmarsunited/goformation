@@ -22,7 +22,7 @@ type Key[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EnableKeyRotation AWS CloudFormation Property
 	// Required: false
@@ -42,12 +42,12 @@ type Key[T any] struct {
 	// KeySpec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-keyspec
-	KeySpec *string `json:"KeySpec,omitempty"`
+	KeySpec *T `json:"KeySpec,omitempty"`
 
 	// KeyUsage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-keyusage
-	KeyUsage *string `json:"KeyUsage,omitempty"`
+	KeyUsage *T `json:"KeyUsage,omitempty"`
 
 	// MultiRegion AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type Key[T any] struct {
 	// Origin AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-origin
-	Origin *string `json:"Origin,omitempty"`
+	Origin *T `json:"Origin,omitempty"`
 
 	// PendingWindowInDays AWS CloudFormation Property
 	// Required: false

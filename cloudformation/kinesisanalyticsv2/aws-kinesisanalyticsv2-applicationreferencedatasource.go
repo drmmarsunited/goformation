@@ -16,7 +16,7 @@ type ApplicationReferenceDataSource[T any] struct {
 	// ApplicationName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-applicationreferencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-applicationname
-	ApplicationName string `json:"ApplicationName"`
+	ApplicationName T `json:"ApplicationName"`
 
 	// ReferenceDataSource AWS CloudFormation Property
 	// Required: true

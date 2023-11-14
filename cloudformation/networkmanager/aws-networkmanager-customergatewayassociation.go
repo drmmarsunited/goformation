@@ -16,22 +16,22 @@ type CustomerGatewayAssociation[T any] struct {
 	// CustomerGatewayArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-customergatewayassociation.html#cfn-networkmanager-customergatewayassociation-customergatewayarn
-	CustomerGatewayArn string `json:"CustomerGatewayArn"`
+	CustomerGatewayArn T `json:"CustomerGatewayArn"`
 
 	// DeviceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-customergatewayassociation.html#cfn-networkmanager-customergatewayassociation-deviceid
-	DeviceId string `json:"DeviceId"`
+	DeviceId T `json:"DeviceId"`
 
 	// GlobalNetworkId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-customergatewayassociation.html#cfn-networkmanager-customergatewayassociation-globalnetworkid
-	GlobalNetworkId string `json:"GlobalNetworkId"`
+	GlobalNetworkId T `json:"GlobalNetworkId"`
 
 	// LinkId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-customergatewayassociation.html#cfn-networkmanager-customergatewayassociation-linkid
-	LinkId *string `json:"LinkId,omitempty"`
+	LinkId *T `json:"LinkId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

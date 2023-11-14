@@ -13,7 +13,7 @@ type Volume_AutocommitPeriod[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-snaplockconfiguration-autocommitperiod.html#cfn-fsx-volume-ontapconfiguration-snaplockconfiguration-autocommitperiod-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// Value AWS CloudFormation Property
 	// Required: false

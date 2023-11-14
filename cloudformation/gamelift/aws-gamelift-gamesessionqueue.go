@@ -17,7 +17,7 @@ type GameSessionQueue[T any] struct {
 	// CustomEventData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-customeventdata
-	CustomEventData *string `json:"CustomEventData,omitempty"`
+	CustomEventData *T `json:"CustomEventData,omitempty"`
 
 	// Destinations AWS CloudFormation Property
 	// Required: false
@@ -32,12 +32,12 @@ type GameSessionQueue[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// NotificationTarget AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-notificationtarget
-	NotificationTarget *string `json:"NotificationTarget,omitempty"`
+	NotificationTarget *T `json:"NotificationTarget,omitempty"`
 
 	// PlayerLatencyPolicies AWS CloudFormation Property
 	// Required: false

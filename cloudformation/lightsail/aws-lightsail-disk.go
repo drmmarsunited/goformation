@@ -22,12 +22,12 @@ type Disk[T any] struct {
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#cfn-lightsail-disk-availabilityzone
-	AvailabilityZone *string `json:"AvailabilityZone,omitempty"`
+	AvailabilityZone *T `json:"AvailabilityZone,omitempty"`
 
 	// DiskName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#cfn-lightsail-disk-diskname
-	DiskName string `json:"DiskName"`
+	DiskName T `json:"DiskName"`
 
 	// Location AWS CloudFormation Property
 	// Required: false

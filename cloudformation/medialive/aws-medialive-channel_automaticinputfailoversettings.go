@@ -23,12 +23,12 @@ type Channel_AutomaticInputFailoverSettings[T any] struct {
 	// InputPreference AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-automaticinputfailoversettings.html#cfn-medialive-channel-automaticinputfailoversettings-inputpreference
-	InputPreference *string `json:"InputPreference,omitempty"`
+	InputPreference *T `json:"InputPreference,omitempty"`
 
 	// SecondaryInputId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-automaticinputfailoversettings.html#cfn-medialive-channel-automaticinputfailoversettings-secondaryinputid
-	SecondaryInputId *string `json:"SecondaryInputId,omitempty"`
+	SecondaryInputId *T `json:"SecondaryInputId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

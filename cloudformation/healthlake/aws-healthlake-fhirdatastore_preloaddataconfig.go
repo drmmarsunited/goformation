@@ -13,7 +13,7 @@ type FHIRDatastore_PreloadDataConfig[T any] struct {
 	// PreloadDataType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-preloaddataconfig.html#cfn-healthlake-fhirdatastore-preloaddataconfig-preloaddatatype
-	PreloadDataType string `json:"PreloadDataType"`
+	PreloadDataType T `json:"PreloadDataType"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

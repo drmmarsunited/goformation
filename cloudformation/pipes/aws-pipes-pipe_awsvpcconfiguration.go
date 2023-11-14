@@ -13,17 +13,17 @@ type Pipe_AwsVpcConfiguration[T any] struct {
 	// AssignPublicIp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-awsvpcconfiguration.html#cfn-pipes-pipe-awsvpcconfiguration-assignpublicip
-	AssignPublicIp *string `json:"AssignPublicIp,omitempty"`
+	AssignPublicIp *T `json:"AssignPublicIp,omitempty"`
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-awsvpcconfiguration.html#cfn-pipes-pipe-awsvpcconfiguration-securitygroups
-	SecurityGroups []string `json:"SecurityGroups,omitempty"`
+	SecurityGroups []T `json:"SecurityGroups,omitempty"`
 
 	// Subnets AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-awsvpcconfiguration.html#cfn-pipes-pipe-awsvpcconfiguration-subnets
-	Subnets []string `json:"Subnets"`
+	Subnets []T `json:"Subnets"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

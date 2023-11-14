@@ -13,12 +13,12 @@ type Pipe_SelfManagedKafkaAccessConfigurationVpc[T any] struct {
 	// SecurityGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-selfmanagedkafkaaccessconfigurationvpc.html#cfn-pipes-pipe-selfmanagedkafkaaccessconfigurationvpc-securitygroup
-	SecurityGroup []string `json:"SecurityGroup,omitempty"`
+	SecurityGroup []T `json:"SecurityGroup,omitempty"`
 
 	// Subnets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-selfmanagedkafkaaccessconfigurationvpc.html#cfn-pipes-pipe-selfmanagedkafkaaccessconfigurationvpc-subnets
-	Subnets []string `json:"Subnets,omitempty"`
+	Subnets []T `json:"Subnets,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

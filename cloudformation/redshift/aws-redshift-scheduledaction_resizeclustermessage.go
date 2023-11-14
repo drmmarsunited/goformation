@@ -18,17 +18,17 @@ type ScheduledAction_ResizeClusterMessage[T any] struct {
 	// ClusterIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-scheduledaction-resizeclustermessage.html#cfn-redshift-scheduledaction-resizeclustermessage-clusteridentifier
-	ClusterIdentifier string `json:"ClusterIdentifier"`
+	ClusterIdentifier T `json:"ClusterIdentifier"`
 
 	// ClusterType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-scheduledaction-resizeclustermessage.html#cfn-redshift-scheduledaction-resizeclustermessage-clustertype
-	ClusterType *string `json:"ClusterType,omitempty"`
+	ClusterType *T `json:"ClusterType,omitempty"`
 
 	// NodeType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-scheduledaction-resizeclustermessage.html#cfn-redshift-scheduledaction-resizeclustermessage-nodetype
-	NodeType *string `json:"NodeType,omitempty"`
+	NodeType *T `json:"NodeType,omitempty"`
 
 	// NumberOfNodes AWS CloudFormation Property
 	// Required: false

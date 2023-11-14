@@ -17,7 +17,7 @@ type Layer[T any] struct {
 	// Attributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-attributes
-	Attributes map[string]string `json:"Attributes,omitempty"`
+	Attributes map[string]T `json:"Attributes,omitempty"`
 
 	// AutoAssignElasticIps AWS CloudFormation Property
 	// Required: true
@@ -32,7 +32,7 @@ type Layer[T any] struct {
 	// CustomInstanceProfileArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-custominstanceprofilearn
-	CustomInstanceProfileArn *string `json:"CustomInstanceProfileArn,omitempty"`
+	CustomInstanceProfileArn *T `json:"CustomInstanceProfileArn,omitempty"`
 
 	// CustomJson AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type Layer[T any] struct {
 	// CustomSecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customsecuritygroupids
-	CustomSecurityGroupIds []string `json:"CustomSecurityGroupIds,omitempty"`
+	CustomSecurityGroupIds []T `json:"CustomSecurityGroupIds,omitempty"`
 
 	// EnableAutoHealing AWS CloudFormation Property
 	// Required: true
@@ -72,22 +72,22 @@ type Layer[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Packages AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-packages
-	Packages []string `json:"Packages,omitempty"`
+	Packages []T `json:"Packages,omitempty"`
 
 	// Shortname AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-shortname
-	Shortname string `json:"Shortname"`
+	Shortname T `json:"Shortname"`
 
 	// StackId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-stackid
-	StackId string `json:"StackId"`
+	StackId T `json:"StackId"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -97,7 +97,7 @@ type Layer[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// UseEbsOptimizedInstances AWS CloudFormation Property
 	// Required: false

@@ -22,12 +22,12 @@ type PartnerAccount[T any] struct {
 	// PartnerAccountId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-partneraccountid
-	PartnerAccountId *string `json:"PartnerAccountId,omitempty"`
+	PartnerAccountId *T `json:"PartnerAccountId,omitempty"`
 
 	// PartnerType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-partnertype
-	PartnerType *string `json:"PartnerType,omitempty"`
+	PartnerType *T `json:"PartnerType,omitempty"`
 
 	// Sidewalk AWS CloudFormation Property
 	// Required: false

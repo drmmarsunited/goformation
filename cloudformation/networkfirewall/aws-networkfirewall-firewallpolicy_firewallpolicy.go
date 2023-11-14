@@ -18,7 +18,7 @@ type FirewallPolicy_FirewallPolicy[T any] struct {
 	// StatefulDefaultActions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicy-statefuldefaultactions
-	StatefulDefaultActions []string `json:"StatefulDefaultActions,omitempty"`
+	StatefulDefaultActions []T `json:"StatefulDefaultActions,omitempty"`
 
 	// StatefulEngineOptions AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type FirewallPolicy_FirewallPolicy[T any] struct {
 	// StatelessDefaultActions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicy-statelessdefaultactions
-	StatelessDefaultActions []string `json:"StatelessDefaultActions"`
+	StatelessDefaultActions []T `json:"StatelessDefaultActions"`
 
 	// StatelessFragmentDefaultActions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicy-statelessfragmentdefaultactions
-	StatelessFragmentDefaultActions []string `json:"StatelessFragmentDefaultActions"`
+	StatelessFragmentDefaultActions []T `json:"StatelessFragmentDefaultActions"`
 
 	// StatelessRuleGroupReferences AWS CloudFormation Property
 	// Required: false

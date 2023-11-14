@@ -16,7 +16,7 @@ type AccountAlias[T any] struct {
 	// AccountAlias AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-supportapp-accountalias.html#cfn-supportapp-accountalias-accountalias
-	AccountAlias string `json:"AccountAlias"`
+	AccountAlias T `json:"AccountAlias"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

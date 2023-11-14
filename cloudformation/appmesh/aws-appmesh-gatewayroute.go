@@ -17,17 +17,17 @@ type GatewayRoute[T any] struct {
 	// GatewayRouteName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-gatewayroutename
-	GatewayRouteName *string `json:"GatewayRouteName,omitempty"`
+	GatewayRouteName *T `json:"GatewayRouteName,omitempty"`
 
 	// MeshName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-meshname
-	MeshName string `json:"MeshName"`
+	MeshName T `json:"MeshName"`
 
 	// MeshOwner AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-meshowner
-	MeshOwner *string `json:"MeshOwner,omitempty"`
+	MeshOwner *T `json:"MeshOwner,omitempty"`
 
 	// Spec AWS CloudFormation Property
 	// Required: true
@@ -42,7 +42,7 @@ type GatewayRoute[T any] struct {
 	// VirtualGatewayName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-virtualgatewayname
-	VirtualGatewayName string `json:"VirtualGatewayName"`
+	VirtualGatewayName T `json:"VirtualGatewayName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

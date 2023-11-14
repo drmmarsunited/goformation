@@ -13,7 +13,7 @@ type Template_ForecastComputation[T any] struct {
 	// ComputationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-forecastcomputation.html#cfn-quicksight-template-forecastcomputation-computationid
-	ComputationId string `json:"ComputationId"`
+	ComputationId T `json:"ComputationId"`
 
 	// CustomSeasonalityValue AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Template_ForecastComputation[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-forecastcomputation.html#cfn-quicksight-template-forecastcomputation-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// PeriodsBackward AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Template_ForecastComputation[T any] struct {
 	// Seasonality AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-forecastcomputation.html#cfn-quicksight-template-forecastcomputation-seasonality
-	Seasonality *string `json:"Seasonality,omitempty"`
+	Seasonality *T `json:"Seasonality,omitempty"`
 
 	// Time AWS CloudFormation Property
 	// Required: false

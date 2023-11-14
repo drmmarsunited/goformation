@@ -13,12 +13,12 @@ type Bot_KendraConfiguration[T any] struct {
 	// KendraIndex AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-kendraconfiguration.html#cfn-lex-bot-kendraconfiguration-kendraindex
-	KendraIndex string `json:"KendraIndex"`
+	KendraIndex T `json:"KendraIndex"`
 
 	// QueryFilterString AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-kendraconfiguration.html#cfn-lex-bot-kendraconfiguration-queryfilterstring
-	QueryFilterString *string `json:"QueryFilterString,omitempty"`
+	QueryFilterString *T `json:"QueryFilterString,omitempty"`
 
 	// QueryFilterStringEnabled AWS CloudFormation Property
 	// Required: false

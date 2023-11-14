@@ -36,12 +36,12 @@ type Job[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// ExecutionClass AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-executionclass
-	ExecutionClass *string `json:"ExecutionClass,omitempty"`
+	ExecutionClass *T `json:"ExecutionClass,omitempty"`
 
 	// ExecutionProperty AWS CloudFormation Property
 	// Required: false
@@ -51,12 +51,12 @@ type Job[T any] struct {
 	// GlueVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-glueversion
-	GlueVersion *string `json:"GlueVersion,omitempty"`
+	GlueVersion *T `json:"GlueVersion,omitempty"`
 
 	// LogUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-loguri
-	LogUri *string `json:"LogUri,omitempty"`
+	LogUri *T `json:"LogUri,omitempty"`
 
 	// MaxCapacity AWS CloudFormation Property
 	// Required: false
@@ -71,7 +71,7 @@ type Job[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// NonOverridableArguments AWS CloudFormation Property
 	// Required: false
@@ -91,12 +91,12 @@ type Job[T any] struct {
 	// Role AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-role
-	Role string `json:"Role"`
+	Role T `json:"Role"`
 
 	// SecurityConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-securityconfiguration
-	SecurityConfiguration *string `json:"SecurityConfiguration,omitempty"`
+	SecurityConfiguration *T `json:"SecurityConfiguration,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -111,7 +111,7 @@ type Job[T any] struct {
 	// WorkerType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-workertype
-	WorkerType *string `json:"WorkerType,omitempty"`
+	WorkerType *T `json:"WorkerType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

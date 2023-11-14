@@ -13,12 +13,12 @@ type Template_FieldSeriesItem[T any] struct {
 	// AxisBinding AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-fieldseriesitem.html#cfn-quicksight-template-fieldseriesitem-axisbinding
-	AxisBinding string `json:"AxisBinding"`
+	AxisBinding T `json:"AxisBinding"`
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-fieldseriesitem.html#cfn-quicksight-template-fieldseriesitem-fieldid
-	FieldId string `json:"FieldId"`
+	FieldId T `json:"FieldId"`
 
 	// Settings AWS CloudFormation Property
 	// Required: false

@@ -22,17 +22,17 @@ type Firewall[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#cfn-networkfirewall-firewall-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// FirewallName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#cfn-networkfirewall-firewall-firewallname
-	FirewallName string `json:"FirewallName"`
+	FirewallName T `json:"FirewallName"`
 
 	// FirewallPolicyArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#cfn-networkfirewall-firewall-firewallpolicyarn
-	FirewallPolicyArn string `json:"FirewallPolicyArn"`
+	FirewallPolicyArn T `json:"FirewallPolicyArn"`
 
 	// FirewallPolicyChangeProtection AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type Firewall[T any] struct {
 	// VpcId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#cfn-networkfirewall-firewall-vpcid
-	VpcId string `json:"VpcId"`
+	VpcId T `json:"VpcId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

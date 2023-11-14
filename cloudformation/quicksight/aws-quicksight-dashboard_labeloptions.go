@@ -13,7 +13,7 @@ type Dashboard_LabelOptions[T any] struct {
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-labeloptions.html#cfn-quicksight-dashboard-labeloptions-customlabel
-	CustomLabel *string `json:"CustomLabel,omitempty"`
+	CustomLabel *T `json:"CustomLabel,omitempty"`
 
 	// FontConfiguration AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Dashboard_LabelOptions[T any] struct {
 	// Visibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-labeloptions.html#cfn-quicksight-dashboard-labeloptions-visibility
-	Visibility *string `json:"Visibility,omitempty"`
+	Visibility *T `json:"Visibility,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

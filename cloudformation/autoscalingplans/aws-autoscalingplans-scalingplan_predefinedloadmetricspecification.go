@@ -13,12 +13,12 @@ type ScalingPlan_PredefinedLoadMetricSpecification[T any] struct {
 	// PredefinedLoadMetricType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-predefinedloadmetricspecification-predefinedloadmetrictype
-	PredefinedLoadMetricType string `json:"PredefinedLoadMetricType"`
+	PredefinedLoadMetricType T `json:"PredefinedLoadMetricType"`
 
 	// ResourceLabel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-predefinedloadmetricspecification-resourcelabel
-	ResourceLabel *string `json:"ResourceLabel,omitempty"`
+	ResourceLabel *T `json:"ResourceLabel,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

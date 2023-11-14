@@ -13,7 +13,7 @@ type LoggingConfiguration_Filter[T any] struct {
 	// Behavior AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-filter.html#cfn-wafv2-loggingconfiguration-filter-behavior
-	Behavior string `json:"Behavior"`
+	Behavior T `json:"Behavior"`
 
 	// Conditions AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type LoggingConfiguration_Filter[T any] struct {
 	// Requirement AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-filter.html#cfn-wafv2-loggingconfiguration-filter-requirement
-	Requirement string `json:"Requirement"`
+	Requirement T `json:"Requirement"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

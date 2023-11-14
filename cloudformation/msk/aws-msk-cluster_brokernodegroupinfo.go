@@ -13,12 +13,12 @@ type Cluster_BrokerNodeGroupInfo[T any] struct {
 	// BrokerAZDistribution AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-brokerazdistribution
-	BrokerAZDistribution *string `json:"BrokerAZDistribution,omitempty"`
+	BrokerAZDistribution *T `json:"BrokerAZDistribution,omitempty"`
 
 	// ClientSubnets AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-clientsubnets
-	ClientSubnets []string `json:"ClientSubnets"`
+	ClientSubnets []T `json:"ClientSubnets"`
 
 	// ConnectivityInfo AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Cluster_BrokerNodeGroupInfo[T any] struct {
 	// InstanceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-instancetype
-	InstanceType string `json:"InstanceType"`
+	InstanceType T `json:"InstanceType"`
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-securitygroups
-	SecurityGroups []string `json:"SecurityGroups,omitempty"`
+	SecurityGroups []T `json:"SecurityGroups,omitempty"`
 
 	// StorageInfo AWS CloudFormation Property
 	// Required: false

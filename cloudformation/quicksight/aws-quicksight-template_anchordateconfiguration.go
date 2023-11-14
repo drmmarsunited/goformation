@@ -13,12 +13,12 @@ type Template_AnchorDateConfiguration[T any] struct {
 	// AnchorOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-anchordateconfiguration.html#cfn-quicksight-template-anchordateconfiguration-anchoroption
-	AnchorOption *string `json:"AnchorOption,omitempty"`
+	AnchorOption *T `json:"AnchorOption,omitempty"`
 
 	// ParameterName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-anchordateconfiguration.html#cfn-quicksight-template-anchordateconfiguration-parametername
-	ParameterName *string `json:"ParameterName,omitempty"`
+	ParameterName *T `json:"ParameterName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

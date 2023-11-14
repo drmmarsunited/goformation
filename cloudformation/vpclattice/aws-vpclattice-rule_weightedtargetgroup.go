@@ -13,7 +13,7 @@ type Rule_WeightedTargetGroup[T any] struct {
 	// TargetGroupIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-weightedtargetgroup.html#cfn-vpclattice-rule-weightedtargetgroup-targetgroupidentifier
-	TargetGroupIdentifier string `json:"TargetGroupIdentifier"`
+	TargetGroupIdentifier T `json:"TargetGroupIdentifier"`
 
 	// Weight AWS CloudFormation Property
 	// Required: false

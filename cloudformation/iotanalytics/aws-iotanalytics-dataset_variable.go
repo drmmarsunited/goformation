@@ -28,12 +28,12 @@ type Dataset_Variable[T any] struct {
 	// StringValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-stringvalue
-	StringValue *string `json:"StringValue,omitempty"`
+	StringValue *T `json:"StringValue,omitempty"`
 
 	// VariableName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-variablename
-	VariableName string `json:"VariableName"`
+	VariableName T `json:"VariableName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

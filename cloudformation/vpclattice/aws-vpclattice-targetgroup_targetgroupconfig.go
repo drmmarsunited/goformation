@@ -18,12 +18,12 @@ type TargetGroup_TargetGroupConfig[T any] struct {
 	// IpAddressType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-targetgroupconfig.html#cfn-vpclattice-targetgroup-targetgroupconfig-ipaddresstype
-	IpAddressType *string `json:"IpAddressType,omitempty"`
+	IpAddressType *T `json:"IpAddressType,omitempty"`
 
 	// LambdaEventStructureVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-targetgroupconfig.html#cfn-vpclattice-targetgroup-targetgroupconfig-lambdaeventstructureversion
-	LambdaEventStructureVersion *string `json:"LambdaEventStructureVersion,omitempty"`
+	LambdaEventStructureVersion *T `json:"LambdaEventStructureVersion,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type TargetGroup_TargetGroupConfig[T any] struct {
 	// Protocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-targetgroupconfig.html#cfn-vpclattice-targetgroup-targetgroupconfig-protocol
-	Protocol *string `json:"Protocol,omitempty"`
+	Protocol *T `json:"Protocol,omitempty"`
 
 	// ProtocolVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-targetgroupconfig.html#cfn-vpclattice-targetgroup-targetgroupconfig-protocolversion
-	ProtocolVersion *string `json:"ProtocolVersion,omitempty"`
+	ProtocolVersion *T `json:"ProtocolVersion,omitempty"`
 
 	// VpcIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-targetgroupconfig.html#cfn-vpclattice-targetgroup-targetgroupconfig-vpcidentifier
-	VpcIdentifier *string `json:"VpcIdentifier,omitempty"`
+	VpcIdentifier *T `json:"VpcIdentifier,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,17 +13,17 @@ type Broker_MaintenanceWindow[T any] struct {
 	// DayOfWeek AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-maintenancewindow.html#cfn-amazonmq-broker-maintenancewindow-dayofweek
-	DayOfWeek string `json:"DayOfWeek"`
+	DayOfWeek T `json:"DayOfWeek"`
 
 	// TimeOfDay AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-maintenancewindow.html#cfn-amazonmq-broker-maintenancewindow-timeofday
-	TimeOfDay string `json:"TimeOfDay"`
+	TimeOfDay T `json:"TimeOfDay"`
 
 	// TimeZone AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-maintenancewindow.html#cfn-amazonmq-broker-maintenancewindow-timezone
-	TimeZone string `json:"TimeZone"`
+	TimeZone T `json:"TimeZone"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

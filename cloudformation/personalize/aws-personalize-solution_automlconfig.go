@@ -13,12 +13,12 @@ type Solution_AutoMLConfig[T any] struct {
 	// MetricName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-automlconfig.html#cfn-personalize-solution-automlconfig-metricname
-	MetricName *string `json:"MetricName,omitempty"`
+	MetricName *T `json:"MetricName,omitempty"`
 
 	// RecipeList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-automlconfig.html#cfn-personalize-solution-automlconfig-recipelist
-	RecipeList []string `json:"RecipeList,omitempty"`
+	RecipeList []T `json:"RecipeList,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

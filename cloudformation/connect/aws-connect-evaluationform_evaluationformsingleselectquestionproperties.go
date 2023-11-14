@@ -18,7 +18,7 @@ type EvaluationForm_EvaluationFormSingleSelectQuestionProperties[T any] struct {
 	// DisplayAs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformsingleselectquestionproperties.html#cfn-connect-evaluationform-evaluationformsingleselectquestionproperties-displayas
-	DisplayAs *string `json:"DisplayAs,omitempty"`
+	DisplayAs *T `json:"DisplayAs,omitempty"`
 
 	// Options AWS CloudFormation Property
 	// Required: true

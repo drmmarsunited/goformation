@@ -13,17 +13,17 @@ type AppMonitor_MetricDestination[T any] struct {
 	// Destination AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-metricdestination.html#cfn-rum-appmonitor-metricdestination-destination
-	Destination string `json:"Destination"`
+	Destination T `json:"Destination"`
 
 	// DestinationArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-metricdestination.html#cfn-rum-appmonitor-metricdestination-destinationarn
-	DestinationArn *string `json:"DestinationArn,omitempty"`
+	DestinationArn *T `json:"DestinationArn,omitempty"`
 
 	// IamRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-metricdestination.html#cfn-rum-appmonitor-metricdestination-iamrolearn
-	IamRoleArn *string `json:"IamRoleArn,omitempty"`
+	IamRoleArn *T `json:"IamRoleArn,omitempty"`
 
 	// MetricDefinitions AWS CloudFormation Property
 	// Required: false

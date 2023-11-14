@@ -13,12 +13,12 @@ type Project_ServiceCatalogProvisionedProductDetails[T any] struct {
 	// ProvisionedProductId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisionedproductdetails.html#cfn-sagemaker-project-servicecatalogprovisionedproductdetails-provisionedproductid
-	ProvisionedProductId *string `json:"ProvisionedProductId,omitempty"`
+	ProvisionedProductId *T `json:"ProvisionedProductId,omitempty"`
 
 	// ProvisionedProductStatusMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisionedproductdetails.html#cfn-sagemaker-project-servicecatalogprovisionedproductdetails-provisionedproductstatusmessage
-	ProvisionedProductStatusMessage *string `json:"ProvisionedProductStatusMessage,omitempty"`
+	ProvisionedProductStatusMessage *T `json:"ProvisionedProductStatusMessage,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

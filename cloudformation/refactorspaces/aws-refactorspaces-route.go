@@ -17,7 +17,7 @@ type Route[T any] struct {
 	// ApplicationIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-route.html#cfn-refactorspaces-route-applicationidentifier
-	ApplicationIdentifier string `json:"ApplicationIdentifier"`
+	ApplicationIdentifier T `json:"ApplicationIdentifier"`
 
 	// DefaultRoute AWS CloudFormation Property
 	// Required: false
@@ -27,17 +27,17 @@ type Route[T any] struct {
 	// EnvironmentIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-route.html#cfn-refactorspaces-route-environmentidentifier
-	EnvironmentIdentifier string `json:"EnvironmentIdentifier"`
+	EnvironmentIdentifier T `json:"EnvironmentIdentifier"`
 
 	// RouteType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-route.html#cfn-refactorspaces-route-routetype
-	RouteType string `json:"RouteType"`
+	RouteType T `json:"RouteType"`
 
 	// ServiceIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-route.html#cfn-refactorspaces-route-serviceidentifier
-	ServiceIdentifier string `json:"ServiceIdentifier"`
+	ServiceIdentifier T `json:"ServiceIdentifier"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

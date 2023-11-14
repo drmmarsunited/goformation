@@ -13,7 +13,7 @@ type EC2Fleet_FleetLaunchTemplateOverridesRequest[T any] struct {
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-availabilityzone
-	AvailabilityZone *string `json:"AvailabilityZone,omitempty"`
+	AvailabilityZone *T `json:"AvailabilityZone,omitempty"`
 
 	// InstanceRequirements AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type EC2Fleet_FleetLaunchTemplateOverridesRequest[T any] struct {
 	// InstanceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-instancetype
-	InstanceType *string `json:"InstanceType,omitempty"`
+	InstanceType *T `json:"InstanceType,omitempty"`
 
 	// MaxPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-maxprice
-	MaxPrice *string `json:"MaxPrice,omitempty"`
+	MaxPrice *T `json:"MaxPrice,omitempty"`
 
 	// Placement AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type EC2Fleet_FleetLaunchTemplateOverridesRequest[T any] struct {
 	// SubnetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-subnetid
-	SubnetId *string `json:"SubnetId,omitempty"`
+	SubnetId *T `json:"SubnetId,omitempty"`
 
 	// WeightedCapacity AWS CloudFormation Property
 	// Required: false

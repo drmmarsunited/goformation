@@ -13,7 +13,7 @@ type AlarmModel_IotEvents[T any] struct {
 	// InputName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-iotevents.html#cfn-iotevents-alarmmodel-iotevents-inputname
-	InputName string `json:"InputName"`
+	InputName T `json:"InputName"`
 
 	// Payload AWS CloudFormation Property
 	// Required: false

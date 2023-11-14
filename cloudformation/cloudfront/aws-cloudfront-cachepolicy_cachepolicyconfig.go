@@ -13,7 +13,7 @@ type CachePolicy_CachePolicyConfig[T any] struct {
 	// Comment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-cachepolicyconfig.html#cfn-cloudfront-cachepolicy-cachepolicyconfig-comment
-	Comment *string `json:"Comment,omitempty"`
+	Comment *T `json:"Comment,omitempty"`
 
 	// DefaultTTL AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type CachePolicy_CachePolicyConfig[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-cachepolicyconfig.html#cfn-cloudfront-cachepolicy-cachepolicyconfig-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ParametersInCacheKeyAndForwardedToOrigin AWS CloudFormation Property
 	// Required: true

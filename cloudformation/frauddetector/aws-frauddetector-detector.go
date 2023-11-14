@@ -22,17 +22,17 @@ type Detector[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#cfn-frauddetector-detector-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DetectorId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#cfn-frauddetector-detector-detectorid
-	DetectorId string `json:"DetectorId"`
+	DetectorId T `json:"DetectorId"`
 
 	// DetectorVersionStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#cfn-frauddetector-detector-detectorversionstatus
-	DetectorVersionStatus *string `json:"DetectorVersionStatus,omitempty"`
+	DetectorVersionStatus *T `json:"DetectorVersionStatus,omitempty"`
 
 	// EventType AWS CloudFormation Property
 	// Required: true
@@ -42,7 +42,7 @@ type Detector[T any] struct {
 	// RuleExecutionMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#cfn-frauddetector-detector-ruleexecutionmode
-	RuleExecutionMode *string `json:"RuleExecutionMode,omitempty"`
+	RuleExecutionMode *T `json:"RuleExecutionMode,omitempty"`
 
 	// Rules AWS CloudFormation Property
 	// Required: true

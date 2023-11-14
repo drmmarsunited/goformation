@@ -27,7 +27,7 @@ type ThingType[T any] struct {
 	// ThingTypeName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thingtype.html#cfn-iot-thingtype-thingtypename
-	ThingTypeName *string `json:"ThingTypeName,omitempty"`
+	ThingTypeName *T `json:"ThingTypeName,omitempty"`
 
 	// ThingTypeProperties AWS CloudFormation Property
 	// Required: false

@@ -13,22 +13,22 @@ type AlarmModel_IotSiteWise[T any] struct {
 	// AssetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-iotsitewise.html#cfn-iotevents-alarmmodel-iotsitewise-assetid
-	AssetId *string `json:"AssetId,omitempty"`
+	AssetId *T `json:"AssetId,omitempty"`
 
 	// EntryId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-iotsitewise.html#cfn-iotevents-alarmmodel-iotsitewise-entryid
-	EntryId *string `json:"EntryId,omitempty"`
+	EntryId *T `json:"EntryId,omitempty"`
 
 	// PropertyAlias AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-iotsitewise.html#cfn-iotevents-alarmmodel-iotsitewise-propertyalias
-	PropertyAlias *string `json:"PropertyAlias,omitempty"`
+	PropertyAlias *T `json:"PropertyAlias,omitempty"`
 
 	// PropertyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-iotsitewise.html#cfn-iotevents-alarmmodel-iotsitewise-propertyid
-	PropertyId *string `json:"PropertyId,omitempty"`
+	PropertyId *T `json:"PropertyId,omitempty"`
 
 	// PropertyValue AWS CloudFormation Property
 	// Required: false

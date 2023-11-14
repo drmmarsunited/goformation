@@ -17,17 +17,17 @@ type Route[T any] struct {
 	// MeshName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html#cfn-appmesh-route-meshname
-	MeshName string `json:"MeshName"`
+	MeshName T `json:"MeshName"`
 
 	// MeshOwner AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html#cfn-appmesh-route-meshowner
-	MeshOwner *string `json:"MeshOwner,omitempty"`
+	MeshOwner *T `json:"MeshOwner,omitempty"`
 
 	// RouteName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html#cfn-appmesh-route-routename
-	RouteName *string `json:"RouteName,omitempty"`
+	RouteName *T `json:"RouteName,omitempty"`
 
 	// Spec AWS CloudFormation Property
 	// Required: true
@@ -42,7 +42,7 @@ type Route[T any] struct {
 	// VirtualRouterName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html#cfn-appmesh-route-virtualroutername
-	VirtualRouterName string `json:"VirtualRouterName"`
+	VirtualRouterName T `json:"VirtualRouterName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,17 +13,17 @@ type Dataset_DatabaseInputDefinition[T any] struct {
 	// DatabaseTableName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-databasetablename
-	DatabaseTableName *string `json:"DatabaseTableName,omitempty"`
+	DatabaseTableName *T `json:"DatabaseTableName,omitempty"`
 
 	// GlueConnectionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-glueconnectionname
-	GlueConnectionName string `json:"GlueConnectionName"`
+	GlueConnectionName T `json:"GlueConnectionName"`
 
 	// QueryString AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-querystring
-	QueryString *string `json:"QueryString,omitempty"`
+	QueryString *T `json:"QueryString,omitempty"`
 
 	// TempDirectory AWS CloudFormation Property
 	// Required: false

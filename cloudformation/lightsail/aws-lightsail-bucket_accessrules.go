@@ -18,7 +18,7 @@ type Bucket_AccessRules[T any] struct {
 	// GetObject AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-bucket-accessrules.html#cfn-lightsail-bucket-accessrules-getobject
-	GetObject *string `json:"GetObject,omitempty"`
+	GetObject *T `json:"GetObject,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

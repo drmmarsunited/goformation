@@ -16,12 +16,12 @@ type TrackerConsumer[T any] struct {
 	// ConsumerArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-trackerconsumer.html#cfn-location-trackerconsumer-consumerarn
-	ConsumerArn string `json:"ConsumerArn"`
+	ConsumerArn T `json:"ConsumerArn"`
 
 	// TrackerName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-trackerconsumer.html#cfn-location-trackerconsumer-trackername
-	TrackerName string `json:"TrackerName"`
+	TrackerName T `json:"TrackerName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

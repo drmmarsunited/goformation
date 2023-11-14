@@ -21,12 +21,12 @@ type UserPolicy[T any] struct {
 	// PolicyName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-userpolicy.html#cfn-iam-userpolicy-policyname
-	PolicyName string `json:"PolicyName"`
+	PolicyName T `json:"PolicyName"`
 
 	// UserName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-userpolicy.html#cfn-iam-userpolicy-username
-	UserName string `json:"UserName"`
+	UserName T `json:"UserName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

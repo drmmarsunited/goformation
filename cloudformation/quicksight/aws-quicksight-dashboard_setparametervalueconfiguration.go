@@ -13,7 +13,7 @@ type Dashboard_SetParameterValueConfiguration[T any] struct {
 	// DestinationParameterName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-setparametervalueconfiguration.html#cfn-quicksight-dashboard-setparametervalueconfiguration-destinationparametername
-	DestinationParameterName string `json:"DestinationParameterName"`
+	DestinationParameterName T `json:"DestinationParameterName"`
 
 	// Value AWS CloudFormation Property
 	// Required: true

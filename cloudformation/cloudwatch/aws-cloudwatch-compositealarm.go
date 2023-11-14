@@ -21,7 +21,7 @@ type CompositeAlarm[T any] struct {
 	// ActionsSuppressor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-actionssuppressor
-	ActionsSuppressor *string `json:"ActionsSuppressor,omitempty"`
+	ActionsSuppressor *T `json:"ActionsSuppressor,omitempty"`
 
 	// ActionsSuppressorExtensionPeriod AWS CloudFormation Property
 	// Required: false
@@ -36,32 +36,32 @@ type CompositeAlarm[T any] struct {
 	// AlarmActions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-alarmactions
-	AlarmActions []string `json:"AlarmActions,omitempty"`
+	AlarmActions []T `json:"AlarmActions,omitempty"`
 
 	// AlarmDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-alarmdescription
-	AlarmDescription *string `json:"AlarmDescription,omitempty"`
+	AlarmDescription *T `json:"AlarmDescription,omitempty"`
 
 	// AlarmName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-alarmname
-	AlarmName *string `json:"AlarmName,omitempty"`
+	AlarmName *T `json:"AlarmName,omitempty"`
 
 	// AlarmRule AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-alarmrule
-	AlarmRule string `json:"AlarmRule"`
+	AlarmRule T `json:"AlarmRule"`
 
 	// InsufficientDataActions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-insufficientdataactions
-	InsufficientDataActions []string `json:"InsufficientDataActions,omitempty"`
+	InsufficientDataActions []T `json:"InsufficientDataActions,omitempty"`
 
 	// OKActions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-okactions
-	OKActions []string `json:"OKActions,omitempty"`
+	OKActions []T `json:"OKActions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

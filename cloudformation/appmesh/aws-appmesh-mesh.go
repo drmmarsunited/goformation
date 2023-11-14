@@ -17,7 +17,7 @@ type Mesh[T any] struct {
 	// MeshName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-meshname
-	MeshName *string `json:"MeshName,omitempty"`
+	MeshName *T `json:"MeshName,omitempty"`
 
 	// Spec AWS CloudFormation Property
 	// Required: false

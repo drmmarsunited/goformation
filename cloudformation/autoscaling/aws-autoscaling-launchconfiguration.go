@@ -26,12 +26,12 @@ type LaunchConfiguration[T any] struct {
 	// ClassicLinkVPCId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-classiclinkvpcid
-	ClassicLinkVPCId *string `json:"ClassicLinkVPCId,omitempty"`
+	ClassicLinkVPCId *T `json:"ClassicLinkVPCId,omitempty"`
 
 	// ClassicLinkVPCSecurityGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-classiclinkvpcsecuritygroups
-	ClassicLinkVPCSecurityGroups []string `json:"ClassicLinkVPCSecurityGroups,omitempty"`
+	ClassicLinkVPCSecurityGroups []T `json:"ClassicLinkVPCSecurityGroups,omitempty"`
 
 	// EbsOptimized AWS CloudFormation Property
 	// Required: false
@@ -41,17 +41,17 @@ type LaunchConfiguration[T any] struct {
 	// IamInstanceProfile AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-iaminstanceprofile
-	IamInstanceProfile *string `json:"IamInstanceProfile,omitempty"`
+	IamInstanceProfile *T `json:"IamInstanceProfile,omitempty"`
 
 	// ImageId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-imageid
-	ImageId string `json:"ImageId"`
+	ImageId T `json:"ImageId"`
 
 	// InstanceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-instanceid
-	InstanceId *string `json:"InstanceId,omitempty"`
+	InstanceId *T `json:"InstanceId,omitempty"`
 
 	// InstanceMonitoring AWS CloudFormation Property
 	// Required: false
@@ -61,22 +61,22 @@ type LaunchConfiguration[T any] struct {
 	// InstanceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-instancetype
-	InstanceType string `json:"InstanceType"`
+	InstanceType T `json:"InstanceType"`
 
 	// KernelId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-kernelid
-	KernelId *string `json:"KernelId,omitempty"`
+	KernelId *T `json:"KernelId,omitempty"`
 
 	// KeyName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-keyname
-	KeyName *string `json:"KeyName,omitempty"`
+	KeyName *T `json:"KeyName,omitempty"`
 
 	// LaunchConfigurationName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-launchconfigurationname
-	LaunchConfigurationName *string `json:"LaunchConfigurationName,omitempty"`
+	LaunchConfigurationName *T `json:"LaunchConfigurationName,omitempty"`
 
 	// MetadataOptions AWS CloudFormation Property
 	// Required: false
@@ -86,27 +86,27 @@ type LaunchConfiguration[T any] struct {
 	// PlacementTenancy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-placementtenancy
-	PlacementTenancy *string `json:"PlacementTenancy,omitempty"`
+	PlacementTenancy *T `json:"PlacementTenancy,omitempty"`
 
 	// RamDiskId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-ramdiskid
-	RamDiskId *string `json:"RamDiskId,omitempty"`
+	RamDiskId *T `json:"RamDiskId,omitempty"`
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-securitygroups
-	SecurityGroups []string `json:"SecurityGroups,omitempty"`
+	SecurityGroups []T `json:"SecurityGroups,omitempty"`
 
 	// SpotPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-spotprice
-	SpotPrice *string `json:"SpotPrice,omitempty"`
+	SpotPrice *T `json:"SpotPrice,omitempty"`
 
 	// UserData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-userdata
-	UserData *string `json:"UserData,omitempty"`
+	UserData *T `json:"UserData,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

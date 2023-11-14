@@ -13,7 +13,7 @@ type Campaign_MetricDimension[T any] struct {
 	// ComparisonOperator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-metricdimension.html#cfn-pinpoint-campaign-metricdimension-comparisonoperator
-	ComparisonOperator *string `json:"ComparisonOperator,omitempty"`
+	ComparisonOperator *T `json:"ComparisonOperator,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: false

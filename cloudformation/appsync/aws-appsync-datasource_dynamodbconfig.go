@@ -13,7 +13,7 @@ type DataSource_DynamoDBConfig[T any] struct {
 	// AwsRegion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-awsregion
-	AwsRegion string `json:"AwsRegion"`
+	AwsRegion T `json:"AwsRegion"`
 
 	// DeltaSyncConfig AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type DataSource_DynamoDBConfig[T any] struct {
 	// TableName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-tablename
-	TableName string `json:"TableName"`
+	TableName T `json:"TableName"`
 
 	// UseCallerCredentials AWS CloudFormation Property
 	// Required: false

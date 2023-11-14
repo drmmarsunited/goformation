@@ -16,7 +16,7 @@ type DeviceDefinitionVersion[T any] struct {
 	// DeviceDefinitionId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinitionversion.html#cfn-greengrass-devicedefinitionversion-devicedefinitionid
-	DeviceDefinitionId string `json:"DeviceDefinitionId"`
+	DeviceDefinitionId T `json:"DeviceDefinitionId"`
 
 	// Devices AWS CloudFormation Property
 	// Required: true

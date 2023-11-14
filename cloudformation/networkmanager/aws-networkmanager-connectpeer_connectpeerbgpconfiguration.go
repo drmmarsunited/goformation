@@ -13,7 +13,7 @@ type ConnectPeer_ConnectPeerBgpConfiguration[T any] struct {
 	// CoreNetworkAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerbgpconfiguration.html#cfn-networkmanager-connectpeer-connectpeerbgpconfiguration-corenetworkaddress
-	CoreNetworkAddress *string `json:"CoreNetworkAddress,omitempty"`
+	CoreNetworkAddress *T `json:"CoreNetworkAddress,omitempty"`
 
 	// CoreNetworkAsn AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type ConnectPeer_ConnectPeerBgpConfiguration[T any] struct {
 	// PeerAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerbgpconfiguration.html#cfn-networkmanager-connectpeer-connectpeerbgpconfiguration-peeraddress
-	PeerAddress *string `json:"PeerAddress,omitempty"`
+	PeerAddress *T `json:"PeerAddress,omitempty"`
 
 	// PeerAsn AWS CloudFormation Property
 	// Required: false

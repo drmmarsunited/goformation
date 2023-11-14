@@ -28,12 +28,12 @@ type ConfigurationSetEventDestination_EventDestination[T any] struct {
 	// MatchingEventTypes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-matchingeventtypes
-	MatchingEventTypes []string `json:"MatchingEventTypes"`
+	MatchingEventTypes []T `json:"MatchingEventTypes"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// SnsDestination AWS CloudFormation Property
 	// Required: false

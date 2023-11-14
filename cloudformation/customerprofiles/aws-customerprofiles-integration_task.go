@@ -18,12 +18,12 @@ type Integration_Task[T any] struct {
 	// DestinationField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-task.html#cfn-customerprofiles-integration-task-destinationfield
-	DestinationField *string `json:"DestinationField,omitempty"`
+	DestinationField *T `json:"DestinationField,omitempty"`
 
 	// SourceFields AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-task.html#cfn-customerprofiles-integration-task-sourcefields
-	SourceFields []string `json:"SourceFields"`
+	SourceFields []T `json:"SourceFields"`
 
 	// TaskProperties AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Integration_Task[T any] struct {
 	// TaskType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-task.html#cfn-customerprofiles-integration-task-tasktype
-	TaskType string `json:"TaskType"`
+	TaskType T `json:"TaskType"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

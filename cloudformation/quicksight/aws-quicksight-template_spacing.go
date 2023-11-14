@@ -13,22 +13,22 @@ type Template_Spacing[T any] struct {
 	// Bottom AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-spacing.html#cfn-quicksight-template-spacing-bottom
-	Bottom *string `json:"Bottom,omitempty"`
+	Bottom *T `json:"Bottom,omitempty"`
 
 	// Left AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-spacing.html#cfn-quicksight-template-spacing-left
-	Left *string `json:"Left,omitempty"`
+	Left *T `json:"Left,omitempty"`
 
 	// Right AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-spacing.html#cfn-quicksight-template-spacing-right
-	Right *string `json:"Right,omitempty"`
+	Right *T `json:"Right,omitempty"`
 
 	// Top AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-spacing.html#cfn-quicksight-template-spacing-top
-	Top *string `json:"Top,omitempty"`
+	Top *T `json:"Top,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

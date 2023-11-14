@@ -18,7 +18,7 @@ type Table_GlobalSecondaryIndex[T any] struct {
 	// IndexName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-globalsecondaryindex.html#cfn-dynamodb-table-globalsecondaryindex-indexname
-	IndexName string `json:"IndexName"`
+	IndexName T `json:"IndexName"`
 
 	// KeySchema AWS CloudFormation Property
 	// Required: true

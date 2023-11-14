@@ -18,17 +18,17 @@ type Form_FieldInputConfig[T any] struct {
 	// DefaultCountryCode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldinputconfig.html#cfn-amplifyuibuilder-form-fieldinputconfig-defaultcountrycode
-	DefaultCountryCode *string `json:"DefaultCountryCode,omitempty"`
+	DefaultCountryCode *T `json:"DefaultCountryCode,omitempty"`
 
 	// DefaultValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldinputconfig.html#cfn-amplifyuibuilder-form-fieldinputconfig-defaultvalue
-	DefaultValue *string `json:"DefaultValue,omitempty"`
+	DefaultValue *T `json:"DefaultValue,omitempty"`
 
 	// DescriptiveText AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldinputconfig.html#cfn-amplifyuibuilder-form-fieldinputconfig-descriptivetext
-	DescriptiveText *string `json:"DescriptiveText,omitempty"`
+	DescriptiveText *T `json:"DescriptiveText,omitempty"`
 
 	// FileUploaderConfig AWS CloudFormation Property
 	// Required: false
@@ -53,12 +53,12 @@ type Form_FieldInputConfig[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldinputconfig.html#cfn-amplifyuibuilder-form-fieldinputconfig-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Placeholder AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldinputconfig.html#cfn-amplifyuibuilder-form-fieldinputconfig-placeholder
-	Placeholder *string `json:"Placeholder,omitempty"`
+	Placeholder *T `json:"Placeholder,omitempty"`
 
 	// ReadOnly AWS CloudFormation Property
 	// Required: false
@@ -78,12 +78,12 @@ type Form_FieldInputConfig[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldinputconfig.html#cfn-amplifyuibuilder-form-fieldinputconfig-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// Value AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldinputconfig.html#cfn-amplifyuibuilder-form-fieldinputconfig-value
-	Value *string `json:"Value,omitempty"`
+	Value *T `json:"Value,omitempty"`
 
 	// ValueMappings AWS CloudFormation Property
 	// Required: false

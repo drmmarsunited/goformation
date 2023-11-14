@@ -17,12 +17,12 @@ type Dashboard[T any] struct {
 	// AwsAccountId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-awsaccountid
-	AwsAccountId string `json:"AwsAccountId"`
+	AwsAccountId T `json:"AwsAccountId"`
 
 	// DashboardId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-dashboardid
-	DashboardId string `json:"DashboardId"`
+	DashboardId T `json:"DashboardId"`
 
 	// DashboardPublishOptions AWS CloudFormation Property
 	// Required: false
@@ -34,10 +34,15 @@ type Dashboard[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-definition
 	Definition *Dashboard_DashboardVersionDefinition[any] `json:"Definition,omitempty"`
 
+	// LinkSharingConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-linksharingconfiguration
+	LinkSharingConfiguration *Dashboard_LinkSharingConfiguration[any] `json:"LinkSharingConfiguration,omitempty"`
+
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
@@ -62,12 +67,17 @@ type Dashboard[T any] struct {
 	// ThemeArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-themearn
-	ThemeArn *string `json:"ThemeArn,omitempty"`
+	ThemeArn *T `json:"ThemeArn,omitempty"`
+
+	// ValidationStrategy AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-validationstrategy
+	ValidationStrategy *Dashboard_ValidationStrategy[any] `json:"ValidationStrategy,omitempty"`
 
 	// VersionDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-versiondescription
-	VersionDescription *string `json:"VersionDescription,omitempty"`
+	VersionDescription *T `json:"VersionDescription,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

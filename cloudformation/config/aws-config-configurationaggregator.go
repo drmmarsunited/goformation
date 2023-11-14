@@ -22,7 +22,7 @@ type ConfigurationAggregator[T any] struct {
 	// ConfigurationAggregatorName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html#cfn-config-configurationaggregator-configurationaggregatorname
-	ConfigurationAggregatorName *string `json:"ConfigurationAggregatorName,omitempty"`
+	ConfigurationAggregatorName *T `json:"ConfigurationAggregatorName,omitempty"`
 
 	// OrganizationAggregationSource AWS CloudFormation Property
 	// Required: false

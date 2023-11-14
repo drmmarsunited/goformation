@@ -17,27 +17,27 @@ type Environment[T any] struct {
 	// ApplicationName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-environment.html#cfn-elasticbeanstalk-environment-applicationname
-	ApplicationName string `json:"ApplicationName"`
+	ApplicationName T `json:"ApplicationName"`
 
 	// CNAMEPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-environment.html#cfn-elasticbeanstalk-environment-cnameprefix
-	CNAMEPrefix *string `json:"CNAMEPrefix,omitempty"`
+	CNAMEPrefix *T `json:"CNAMEPrefix,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-environment.html#cfn-elasticbeanstalk-environment-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EnvironmentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-environment.html#cfn-elasticbeanstalk-environment-environmentname
-	EnvironmentName *string `json:"EnvironmentName,omitempty"`
+	EnvironmentName *T `json:"EnvironmentName,omitempty"`
 
 	// OperationsRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-environment.html#cfn-elasticbeanstalk-environment-operationsrole
-	OperationsRole *string `json:"OperationsRole,omitempty"`
+	OperationsRole *T `json:"OperationsRole,omitempty"`
 
 	// OptionSettings AWS CloudFormation Property
 	// Required: false
@@ -47,12 +47,12 @@ type Environment[T any] struct {
 	// PlatformArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-environment.html#cfn-elasticbeanstalk-environment-platformarn
-	PlatformArn *string `json:"PlatformArn,omitempty"`
+	PlatformArn *T `json:"PlatformArn,omitempty"`
 
 	// SolutionStackName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-environment.html#cfn-elasticbeanstalk-environment-solutionstackname
-	SolutionStackName *string `json:"SolutionStackName,omitempty"`
+	SolutionStackName *T `json:"SolutionStackName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,7 @@ type Environment[T any] struct {
 	// TemplateName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-environment.html#cfn-elasticbeanstalk-environment-templatename
-	TemplateName *string `json:"TemplateName,omitempty"`
+	TemplateName *T `json:"TemplateName,omitempty"`
 
 	// Tier AWS CloudFormation Property
 	// Required: false
@@ -72,7 +72,7 @@ type Environment[T any] struct {
 	// VersionLabel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-environment.html#cfn-elasticbeanstalk-environment-versionlabel
-	VersionLabel *string `json:"VersionLabel,omitempty"`
+	VersionLabel *T `json:"VersionLabel,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

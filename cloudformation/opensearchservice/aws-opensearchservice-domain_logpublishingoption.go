@@ -13,7 +13,7 @@ type Domain_LogPublishingOption[T any] struct {
 	// CloudWatchLogsLogGroupArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-logpublishingoption.html#cfn-opensearchservice-domain-logpublishingoption-cloudwatchlogsloggrouparn
-	CloudWatchLogsLogGroupArn *string `json:"CloudWatchLogsLogGroupArn,omitempty"`
+	CloudWatchLogsLogGroupArn *T `json:"CloudWatchLogsLogGroupArn,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false

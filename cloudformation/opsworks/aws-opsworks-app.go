@@ -21,7 +21,7 @@ type App[T any] struct {
 	// Attributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-attributes
-	Attributes map[string]string `json:"Attributes,omitempty"`
+	Attributes map[string]T `json:"Attributes,omitempty"`
 
 	// DataSources AWS CloudFormation Property
 	// Required: false
@@ -31,12 +31,12 @@ type App[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Domains AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-domains
-	Domains []string `json:"Domains,omitempty"`
+	Domains []T `json:"Domains,omitempty"`
 
 	// EnableSsl AWS CloudFormation Property
 	// Required: false
@@ -51,12 +51,12 @@ type App[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Shortname AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-shortname
-	Shortname *string `json:"Shortname,omitempty"`
+	Shortname *T `json:"Shortname,omitempty"`
 
 	// SslConfiguration AWS CloudFormation Property
 	// Required: false
@@ -66,12 +66,12 @@ type App[T any] struct {
 	// StackId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-stackid
-	StackId string `json:"StackId"`
+	StackId T `json:"StackId"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

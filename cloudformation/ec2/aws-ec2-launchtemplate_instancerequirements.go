@@ -18,12 +18,12 @@ type LaunchTemplate_InstanceRequirements[T any] struct {
 	// AcceleratorManufacturers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-acceleratormanufacturers
-	AcceleratorManufacturers []string `json:"AcceleratorManufacturers,omitempty"`
+	AcceleratorManufacturers []T `json:"AcceleratorManufacturers,omitempty"`
 
 	// AcceleratorNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-acceleratornames
-	AcceleratorNames []string `json:"AcceleratorNames,omitempty"`
+	AcceleratorNames []T `json:"AcceleratorNames,omitempty"`
 
 	// AcceleratorTotalMemoryMiB AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type LaunchTemplate_InstanceRequirements[T any] struct {
 	// AcceleratorTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-acceleratortypes
-	AcceleratorTypes []string `json:"AcceleratorTypes,omitempty"`
+	AcceleratorTypes []T `json:"AcceleratorTypes,omitempty"`
 
 	// AllowedInstanceTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-allowedinstancetypes
-	AllowedInstanceTypes []string `json:"AllowedInstanceTypes,omitempty"`
+	AllowedInstanceTypes []T `json:"AllowedInstanceTypes,omitempty"`
 
 	// BareMetal AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-baremetal
-	BareMetal *string `json:"BareMetal,omitempty"`
+	BareMetal *T `json:"BareMetal,omitempty"`
 
 	// BaselineEbsBandwidthMbps AWS CloudFormation Property
 	// Required: false
@@ -53,32 +53,32 @@ type LaunchTemplate_InstanceRequirements[T any] struct {
 	// BurstablePerformance AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-burstableperformance
-	BurstablePerformance *string `json:"BurstablePerformance,omitempty"`
+	BurstablePerformance *T `json:"BurstablePerformance,omitempty"`
 
 	// CpuManufacturers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-cpumanufacturers
-	CpuManufacturers []string `json:"CpuManufacturers,omitempty"`
+	CpuManufacturers []T `json:"CpuManufacturers,omitempty"`
 
 	// ExcludedInstanceTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-excludedinstancetypes
-	ExcludedInstanceTypes []string `json:"ExcludedInstanceTypes,omitempty"`
+	ExcludedInstanceTypes []T `json:"ExcludedInstanceTypes,omitempty"`
 
 	// InstanceGenerations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-instancegenerations
-	InstanceGenerations []string `json:"InstanceGenerations,omitempty"`
+	InstanceGenerations []T `json:"InstanceGenerations,omitempty"`
 
 	// LocalStorage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-localstorage
-	LocalStorage *string `json:"LocalStorage,omitempty"`
+	LocalStorage *T `json:"LocalStorage,omitempty"`
 
 	// LocalStorageTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-localstoragetypes
-	LocalStorageTypes []string `json:"LocalStorageTypes,omitempty"`
+	LocalStorageTypes []T `json:"LocalStorageTypes,omitempty"`
 
 	// MemoryGiBPerVCpu AWS CloudFormation Property
 	// Required: false

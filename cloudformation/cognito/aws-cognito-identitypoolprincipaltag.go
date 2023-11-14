@@ -16,12 +16,12 @@ type IdentityPoolPrincipalTag[T any] struct {
 	// IdentityPoolId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolprincipaltag.html#cfn-cognito-identitypoolprincipaltag-identitypoolid
-	IdentityPoolId string `json:"IdentityPoolId"`
+	IdentityPoolId T `json:"IdentityPoolId"`
 
 	// IdentityProviderName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolprincipaltag.html#cfn-cognito-identitypoolprincipaltag-identityprovidername
-	IdentityProviderName string `json:"IdentityProviderName"`
+	IdentityProviderName T `json:"IdentityProviderName"`
 
 	// PrincipalTags AWS CloudFormation Property
 	// Required: false

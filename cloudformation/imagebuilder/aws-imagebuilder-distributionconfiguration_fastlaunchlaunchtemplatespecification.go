@@ -13,17 +13,17 @@ type DistributionConfiguration_FastLaunchLaunchTemplateSpecification[T any] stru
 	// LaunchTemplateId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-fastlaunchlaunchtemplatespecification.html#cfn-imagebuilder-distributionconfiguration-fastlaunchlaunchtemplatespecification-launchtemplateid
-	LaunchTemplateId *string `json:"LaunchTemplateId,omitempty"`
+	LaunchTemplateId *T `json:"LaunchTemplateId,omitempty"`
 
 	// LaunchTemplateName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-fastlaunchlaunchtemplatespecification.html#cfn-imagebuilder-distributionconfiguration-fastlaunchlaunchtemplatespecification-launchtemplatename
-	LaunchTemplateName *string `json:"LaunchTemplateName,omitempty"`
+	LaunchTemplateName *T `json:"LaunchTemplateName,omitempty"`
 
 	// LaunchTemplateVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-fastlaunchlaunchtemplatespecification.html#cfn-imagebuilder-distributionconfiguration-fastlaunchlaunchtemplatespecification-launchtemplateversion
-	LaunchTemplateVersion *string `json:"LaunchTemplateVersion,omitempty"`
+	LaunchTemplateVersion *T `json:"LaunchTemplateVersion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

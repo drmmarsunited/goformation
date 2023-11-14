@@ -22,7 +22,7 @@ type Table[T any] struct {
 	// BillingMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-billingmode
-	BillingMode *string `json:"BillingMode,omitempty"`
+	BillingMode *T `json:"BillingMode,omitempty"`
 
 	// ContributorInsightsSpecification AWS CloudFormation Property
 	// Required: false
@@ -82,12 +82,12 @@ type Table[T any] struct {
 	// TableClass AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-tableclass
-	TableClass *string `json:"TableClass,omitempty"`
+	TableClass *T `json:"TableClass,omitempty"`
 
 	// TableName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-tablename
-	TableName *string `json:"TableName,omitempty"`
+	TableName *T `json:"TableName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

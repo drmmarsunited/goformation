@@ -13,7 +13,7 @@ type FlowSource_GatewayBridgeSource[T any] struct {
 	// BridgeArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-gatewaybridgesource.html#cfn-mediaconnect-flowsource-gatewaybridgesource-bridgearn
-	BridgeArn string `json:"BridgeArn"`
+	BridgeArn T `json:"BridgeArn"`
 
 	// VpcInterfaceAttachment AWS CloudFormation Property
 	// Required: false

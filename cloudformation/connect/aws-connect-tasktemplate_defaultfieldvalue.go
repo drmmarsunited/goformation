@@ -13,7 +13,7 @@ type TaskTemplate_DefaultFieldValue[T any] struct {
 	// DefaultValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-tasktemplate-defaultfieldvalue.html#cfn-connect-tasktemplate-defaultfieldvalue-defaultvalue
-	DefaultValue string `json:"DefaultValue"`
+	DefaultValue T `json:"DefaultValue"`
 
 	// Id AWS CloudFormation Property
 	// Required: true

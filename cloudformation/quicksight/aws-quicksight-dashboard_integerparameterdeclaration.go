@@ -23,12 +23,12 @@ type Dashboard_IntegerParameterDeclaration[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-integerparameterdeclaration.html#cfn-quicksight-dashboard-integerparameterdeclaration-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ParameterValueType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-integerparameterdeclaration.html#cfn-quicksight-dashboard-integerparameterdeclaration-parametervaluetype
-	ParameterValueType string `json:"ParameterValueType"`
+	ParameterValueType T `json:"ParameterValueType"`
 
 	// ValueWhenUnset AWS CloudFormation Property
 	// Required: false

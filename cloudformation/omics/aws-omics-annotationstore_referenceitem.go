@@ -13,7 +13,7 @@ type AnnotationStore_ReferenceItem[T any] struct {
 	// ReferenceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-omics-annotationstore-referenceitem.html#cfn-omics-annotationstore-referenceitem-referencearn
-	ReferenceArn string `json:"ReferenceArn"`
+	ReferenceArn T `json:"ReferenceArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -21,12 +21,12 @@ type Stage[T any] struct {
 	// AccessPolicyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-accesspolicyid
-	AccessPolicyId *string `json:"AccessPolicyId,omitempty"`
+	AccessPolicyId *T `json:"AccessPolicyId,omitempty"`
 
 	// ApiId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-apiid
-	ApiId string `json:"ApiId"`
+	ApiId T `json:"ApiId"`
 
 	// AutoDeploy AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type Stage[T any] struct {
 	// ClientCertificateId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-clientcertificateid
-	ClientCertificateId *string `json:"ClientCertificateId,omitempty"`
+	ClientCertificateId *T `json:"ClientCertificateId,omitempty"`
 
 	// DefaultRouteSettings AWS CloudFormation Property
 	// Required: false
@@ -46,12 +46,12 @@ type Stage[T any] struct {
 	// DeploymentId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-deploymentid
-	DeploymentId *string `json:"DeploymentId,omitempty"`
+	DeploymentId *T `json:"DeploymentId,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// RouteSettings AWS CloudFormation Property
 	// Required: false
@@ -61,7 +61,7 @@ type Stage[T any] struct {
 	// StageName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-stagename
-	StageName string `json:"StageName"`
+	StageName T `json:"StageName"`
 
 	// StageVariables AWS CloudFormation Property
 	// Required: false

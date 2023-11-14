@@ -18,7 +18,7 @@ type Dashboard_CascadingControlSource[T any] struct {
 	// SourceSheetControlId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-cascadingcontrolsource.html#cfn-quicksight-dashboard-cascadingcontrolsource-sourcesheetcontrolid
-	SourceSheetControlId *string `json:"SourceSheetControlId,omitempty"`
+	SourceSheetControlId *T `json:"SourceSheetControlId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

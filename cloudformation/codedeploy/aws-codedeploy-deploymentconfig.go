@@ -16,12 +16,12 @@ type DeploymentConfig[T any] struct {
 	// ComputePlatform AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-computeplatform
-	ComputePlatform *string `json:"ComputePlatform,omitempty"`
+	ComputePlatform *T `json:"ComputePlatform,omitempty"`
 
 	// DeploymentConfigName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-deploymentconfigname
-	DeploymentConfigName *string `json:"DeploymentConfigName,omitempty"`
+	DeploymentConfigName *T `json:"DeploymentConfigName,omitempty"`
 
 	// MinimumHealthyHosts AWS CloudFormation Property
 	// Required: false

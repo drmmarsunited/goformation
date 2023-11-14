@@ -13,12 +13,12 @@ type SecurityProfile_MetricDimension[T any] struct {
 	// DimensionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metricdimension.html#cfn-iot-securityprofile-metricdimension-dimensionname
-	DimensionName string `json:"DimensionName"`
+	DimensionName T `json:"DimensionName"`
 
 	// Operator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metricdimension.html#cfn-iot-securityprofile-metricdimension-operator
-	Operator *string `json:"Operator,omitempty"`
+	Operator *T `json:"Operator,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -17,32 +17,32 @@ type Cluster[T any] struct {
 	// AdminUserName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdbelastic-cluster.html#cfn-docdbelastic-cluster-adminusername
-	AdminUserName string `json:"AdminUserName"`
+	AdminUserName T `json:"AdminUserName"`
 
 	// AdminUserPassword AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdbelastic-cluster.html#cfn-docdbelastic-cluster-adminuserpassword
-	AdminUserPassword *string `json:"AdminUserPassword,omitempty"`
+	AdminUserPassword *T `json:"AdminUserPassword,omitempty"`
 
 	// AuthType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdbelastic-cluster.html#cfn-docdbelastic-cluster-authtype
-	AuthType string `json:"AuthType"`
+	AuthType T `json:"AuthType"`
 
 	// ClusterName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdbelastic-cluster.html#cfn-docdbelastic-cluster-clustername
-	ClusterName string `json:"ClusterName"`
+	ClusterName T `json:"ClusterName"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdbelastic-cluster.html#cfn-docdbelastic-cluster-kmskeyid
-	KmsKeyId *string `json:"KmsKeyId,omitempty"`
+	KmsKeyId *T `json:"KmsKeyId,omitempty"`
 
 	// PreferredMaintenanceWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdbelastic-cluster.html#cfn-docdbelastic-cluster-preferredmaintenancewindow
-	PreferredMaintenanceWindow *string `json:"PreferredMaintenanceWindow,omitempty"`
+	PreferredMaintenanceWindow *T `json:"PreferredMaintenanceWindow,omitempty"`
 
 	// ShardCapacity AWS CloudFormation Property
 	// Required: true
@@ -57,7 +57,7 @@ type Cluster[T any] struct {
 	// SubnetIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdbelastic-cluster.html#cfn-docdbelastic-cluster-subnetids
-	SubnetIds []string `json:"SubnetIds,omitempty"`
+	SubnetIds []T `json:"SubnetIds,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -67,7 +67,7 @@ type Cluster[T any] struct {
 	// VpcSecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdbelastic-cluster.html#cfn-docdbelastic-cluster-vpcsecuritygroupids
-	VpcSecurityGroupIds []string `json:"VpcSecurityGroupIds,omitempty"`
+	VpcSecurityGroupIds []T `json:"VpcSecurityGroupIds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

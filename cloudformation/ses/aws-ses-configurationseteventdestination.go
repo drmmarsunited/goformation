@@ -16,7 +16,7 @@ type ConfigurationSetEventDestination[T any] struct {
 	// ConfigurationSetName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html#cfn-ses-configurationseteventdestination-configurationsetname
-	ConfigurationSetName string `json:"ConfigurationSetName"`
+	ConfigurationSetName T `json:"ConfigurationSetName"`
 
 	// EventDestination AWS CloudFormation Property
 	// Required: true

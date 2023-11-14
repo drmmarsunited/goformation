@@ -13,7 +13,7 @@ type NetworkInterface_Ipv4PrefixSpecification[T any] struct {
 	// Ipv4Prefix AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-ipv4prefixspecification.html#cfn-ec2-networkinterface-ipv4prefixspecification-ipv4prefix
-	Ipv4Prefix string `json:"Ipv4Prefix"`
+	Ipv4Prefix T `json:"Ipv4Prefix"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,17 +13,17 @@ type Workflow_CustomStepDetails[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-customstepdetails.html#cfn-transfer-workflow-customstepdetails-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// SourceFileLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-customstepdetails.html#cfn-transfer-workflow-customstepdetails-sourcefilelocation
-	SourceFileLocation *string `json:"SourceFileLocation,omitempty"`
+	SourceFileLocation *T `json:"SourceFileLocation,omitempty"`
 
 	// Target AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-customstepdetails.html#cfn-transfer-workflow-customstepdetails-target
-	Target *string `json:"Target,omitempty"`
+	Target *T `json:"Target,omitempty"`
 
 	// TimeoutSeconds AWS CloudFormation Property
 	// Required: false

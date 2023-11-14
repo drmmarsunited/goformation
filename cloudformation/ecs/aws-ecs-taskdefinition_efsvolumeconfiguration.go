@@ -18,17 +18,17 @@ type TaskDefinition_EFSVolumeConfiguration[T any] struct {
 	// FilesystemId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-efsvolumeconfiguration.html#cfn-ecs-taskdefinition-efsvolumeconfiguration-filesystemid
-	FilesystemId string `json:"FilesystemId"`
+	FilesystemId T `json:"FilesystemId"`
 
 	// RootDirectory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-efsvolumeconfiguration.html#cfn-ecs-taskdefinition-efsvolumeconfiguration-rootdirectory
-	RootDirectory *string `json:"RootDirectory,omitempty"`
+	RootDirectory *T `json:"RootDirectory,omitempty"`
 
 	// TransitEncryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-efsvolumeconfiguration.html#cfn-ecs-taskdefinition-efsvolumeconfiguration-transitencryption
-	TransitEncryption *string `json:"TransitEncryption,omitempty"`
+	TransitEncryption *T `json:"TransitEncryption,omitempty"`
 
 	// TransitEncryptionPort AWS CloudFormation Property
 	// Required: false

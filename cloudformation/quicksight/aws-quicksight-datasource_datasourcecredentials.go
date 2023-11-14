@@ -13,7 +13,7 @@ type DataSource_DataSourceCredentials[T any] struct {
 	// CopySourceArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourcecredentials.html#cfn-quicksight-datasource-datasourcecredentials-copysourcearn
-	CopySourceArn *string `json:"CopySourceArn,omitempty"`
+	CopySourceArn *T `json:"CopySourceArn,omitempty"`
 
 	// CredentialPair AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type DataSource_DataSourceCredentials[T any] struct {
 	// SecretArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourcecredentials.html#cfn-quicksight-datasource-datasourcecredentials-secretarn
-	SecretArn *string `json:"SecretArn,omitempty"`
+	SecretArn *T `json:"SecretArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

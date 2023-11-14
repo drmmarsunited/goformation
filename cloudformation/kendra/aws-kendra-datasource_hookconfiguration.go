@@ -18,12 +18,12 @@ type DataSource_HookConfiguration[T any] struct {
 	// LambdaArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-hookconfiguration.html#cfn-kendra-datasource-hookconfiguration-lambdaarn
-	LambdaArn string `json:"LambdaArn"`
+	LambdaArn T `json:"LambdaArn"`
 
 	// S3Bucket AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-hookconfiguration.html#cfn-kendra-datasource-hookconfiguration-s3bucket
-	S3Bucket string `json:"S3Bucket"`
+	S3Bucket T `json:"S3Bucket"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

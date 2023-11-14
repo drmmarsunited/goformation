@@ -13,7 +13,7 @@ type AssetModel_Transform[T any] struct {
 	// Expression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-transform.html#cfn-iotsitewise-assetmodel-transform-expression
-	Expression string `json:"Expression"`
+	Expression T `json:"Expression"`
 
 	// Variables AWS CloudFormation Property
 	// Required: true

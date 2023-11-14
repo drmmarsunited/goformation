@@ -13,7 +13,7 @@ type Job_CsvOutputOptions[T any] struct {
 	// Delimiter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-csvoutputoptions.html#cfn-databrew-job-csvoutputoptions-delimiter
-	Delimiter *string `json:"Delimiter,omitempty"`
+	Delimiter *T `json:"Delimiter,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

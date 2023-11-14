@@ -13,7 +13,7 @@ type ComponentVersion_LambdaExecutionParameters[T any] struct {
 	// EnvironmentVariables AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-environmentvariables
-	EnvironmentVariables map[string]string `json:"EnvironmentVariables,omitempty"`
+	EnvironmentVariables map[string]T `json:"EnvironmentVariables,omitempty"`
 
 	// EventSources AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type ComponentVersion_LambdaExecutionParameters[T any] struct {
 	// ExecArgs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-execargs
-	ExecArgs []string `json:"ExecArgs,omitempty"`
+	ExecArgs []T `json:"ExecArgs,omitempty"`
 
 	// InputPayloadEncodingType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-inputpayloadencodingtype
-	InputPayloadEncodingType *string `json:"InputPayloadEncodingType,omitempty"`
+	InputPayloadEncodingType *T `json:"InputPayloadEncodingType,omitempty"`
 
 	// LinuxProcessParams AWS CloudFormation Property
 	// Required: false

@@ -16,22 +16,22 @@ type IdentityProvider[T any] struct {
 	// IdentityProviderDetails AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-identityprovider.html#cfn-workspacesweb-identityprovider-identityproviderdetails
-	IdentityProviderDetails map[string]string `json:"IdentityProviderDetails"`
+	IdentityProviderDetails map[string]T `json:"IdentityProviderDetails"`
 
 	// IdentityProviderName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-identityprovider.html#cfn-workspacesweb-identityprovider-identityprovidername
-	IdentityProviderName string `json:"IdentityProviderName"`
+	IdentityProviderName T `json:"IdentityProviderName"`
 
 	// IdentityProviderType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-identityprovider.html#cfn-workspacesweb-identityprovider-identityprovidertype
-	IdentityProviderType string `json:"IdentityProviderType"`
+	IdentityProviderType T `json:"IdentityProviderType"`
 
 	// PortalArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-identityprovider.html#cfn-workspacesweb-identityprovider-portalarn
-	PortalArn *string `json:"PortalArn,omitempty"`
+	PortalArn *T `json:"PortalArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

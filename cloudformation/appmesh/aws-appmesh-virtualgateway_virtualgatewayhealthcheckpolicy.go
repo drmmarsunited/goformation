@@ -23,7 +23,7 @@ type VirtualGateway_VirtualGatewayHealthCheckPolicy[T any] struct {
 	// Path AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-path
-	Path *string `json:"Path,omitempty"`
+	Path *T `json:"Path,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type VirtualGateway_VirtualGatewayHealthCheckPolicy[T any] struct {
 	// Protocol AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-protocol
-	Protocol string `json:"Protocol"`
+	Protocol T `json:"Protocol"`
 
 	// TimeoutMillis AWS CloudFormation Property
 	// Required: true

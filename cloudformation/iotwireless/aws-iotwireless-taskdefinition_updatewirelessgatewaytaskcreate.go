@@ -18,12 +18,12 @@ type TaskDefinition_UpdateWirelessGatewayTaskCreate[T any] struct {
 	// UpdateDataRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-updatewirelessgatewaytaskcreate.html#cfn-iotwireless-taskdefinition-updatewirelessgatewaytaskcreate-updatedatarole
-	UpdateDataRole *string `json:"UpdateDataRole,omitempty"`
+	UpdateDataRole *T `json:"UpdateDataRole,omitempty"`
 
 	// UpdateDataSource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-updatewirelessgatewaytaskcreate.html#cfn-iotwireless-taskdefinition-updatewirelessgatewaytaskcreate-updatedatasource
-	UpdateDataSource *string `json:"UpdateDataSource,omitempty"`
+	UpdateDataSource *T `json:"UpdateDataSource,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

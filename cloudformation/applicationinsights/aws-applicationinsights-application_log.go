@@ -13,27 +13,27 @@ type Application_Log[T any] struct {
 	// Encoding AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-log.html#cfn-applicationinsights-application-log-encoding
-	Encoding *string `json:"Encoding,omitempty"`
+	Encoding *T `json:"Encoding,omitempty"`
 
 	// LogGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-log.html#cfn-applicationinsights-application-log-loggroupname
-	LogGroupName *string `json:"LogGroupName,omitempty"`
+	LogGroupName *T `json:"LogGroupName,omitempty"`
 
 	// LogPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-log.html#cfn-applicationinsights-application-log-logpath
-	LogPath *string `json:"LogPath,omitempty"`
+	LogPath *T `json:"LogPath,omitempty"`
 
 	// LogType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-log.html#cfn-applicationinsights-application-log-logtype
-	LogType string `json:"LogType"`
+	LogType T `json:"LogType"`
 
 	// PatternSet AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-log.html#cfn-applicationinsights-application-log-patternset
-	PatternSet *string `json:"PatternSet,omitempty"`
+	PatternSet *T `json:"PatternSet,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

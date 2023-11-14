@@ -28,27 +28,27 @@ type Analysis_RelativeDatesFilter[T any] struct {
 	// FilterId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-relativedatesfilter.html#cfn-quicksight-analysis-relativedatesfilter-filterid
-	FilterId string `json:"FilterId"`
+	FilterId T `json:"FilterId"`
 
 	// MinimumGranularity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-relativedatesfilter.html#cfn-quicksight-analysis-relativedatesfilter-minimumgranularity
-	MinimumGranularity *string `json:"MinimumGranularity,omitempty"`
+	MinimumGranularity *T `json:"MinimumGranularity,omitempty"`
 
 	// NullOption AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-relativedatesfilter.html#cfn-quicksight-analysis-relativedatesfilter-nulloption
-	NullOption string `json:"NullOption"`
+	NullOption T `json:"NullOption"`
 
 	// ParameterName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-relativedatesfilter.html#cfn-quicksight-analysis-relativedatesfilter-parametername
-	ParameterName *string `json:"ParameterName,omitempty"`
+	ParameterName *T `json:"ParameterName,omitempty"`
 
 	// RelativeDateType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-relativedatesfilter.html#cfn-quicksight-analysis-relativedatesfilter-relativedatetype
-	RelativeDateType string `json:"RelativeDateType"`
+	RelativeDateType T `json:"RelativeDateType"`
 
 	// RelativeDateValue AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type Analysis_RelativeDatesFilter[T any] struct {
 	// TimeGranularity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-relativedatesfilter.html#cfn-quicksight-analysis-relativedatesfilter-timegranularity
-	TimeGranularity string `json:"TimeGranularity"`
+	TimeGranularity T `json:"TimeGranularity"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

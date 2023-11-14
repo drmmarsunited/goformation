@@ -13,12 +13,12 @@ type AnnotationStore_TsvStoreOptions[T any] struct {
 	// AnnotationType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-omics-annotationstore-tsvstoreoptions.html#cfn-omics-annotationstore-tsvstoreoptions-annotationtype
-	AnnotationType *string `json:"AnnotationType,omitempty"`
+	AnnotationType *T `json:"AnnotationType,omitempty"`
 
 	// FormatToHeader AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-omics-annotationstore-tsvstoreoptions.html#cfn-omics-annotationstore-tsvstoreoptions-formattoheader
-	FormatToHeader map[string]string `json:"FormatToHeader,omitempty"`
+	FormatToHeader map[string]T `json:"FormatToHeader,omitempty"`
 
 	// Schema AWS CloudFormation Property
 	// Required: false

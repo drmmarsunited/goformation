@@ -13,7 +13,7 @@ type Flow_S3InputFormatConfig[T any] struct {
 	// S3InputFileType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3inputformatconfig.html#cfn-appflow-flow-s3inputformatconfig-s3inputfiletype
-	S3InputFileType *string `json:"S3InputFileType,omitempty"`
+	S3InputFileType *T `json:"S3InputFileType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

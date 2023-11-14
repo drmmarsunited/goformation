@@ -13,7 +13,7 @@ type Dashboard_VisualPalette[T any] struct {
 	// ChartColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visualpalette.html#cfn-quicksight-dashboard-visualpalette-chartcolor
-	ChartColor *string `json:"ChartColor,omitempty"`
+	ChartColor *T `json:"ChartColor,omitempty"`
 
 	// ColorMap AWS CloudFormation Property
 	// Required: false

@@ -13,7 +13,7 @@ type LifecyclePolicy_ShareRule[T any] struct {
 	// TargetAccounts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-sharerule.html#cfn-dlm-lifecyclepolicy-sharerule-targetaccounts
-	TargetAccounts []string `json:"TargetAccounts,omitempty"`
+	TargetAccounts []T `json:"TargetAccounts,omitempty"`
 
 	// UnshareInterval AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type LifecyclePolicy_ShareRule[T any] struct {
 	// UnshareIntervalUnit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-sharerule.html#cfn-dlm-lifecyclepolicy-sharerule-unshareintervalunit
-	UnshareIntervalUnit *string `json:"UnshareIntervalUnit,omitempty"`
+	UnshareIntervalUnit *T `json:"UnshareIntervalUnit,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

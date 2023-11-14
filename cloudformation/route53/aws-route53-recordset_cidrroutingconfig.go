@@ -13,12 +13,12 @@ type RecordSet_CidrRoutingConfig[T any] struct {
 	// CollectionId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-cidrroutingconfig.html#cfn-route53-cidrroutingconfig-collectionid
-	CollectionId string `json:"CollectionId"`
+	CollectionId T `json:"CollectionId"`
 
 	// LocationName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-cidrroutingconfig.html#cfn-route53-cidrroutingconfig-locationname
-	LocationName string `json:"LocationName"`
+	LocationName T `json:"LocationName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type RuleGroup_RegexPatternSetReferenceStatement[T any] struct {
 	// Arn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-regexpatternsetreferencestatement.html#cfn-wafv2-rulegroup-regexpatternsetreferencestatement-arn
-	Arn string `json:"Arn"`
+	Arn T `json:"Arn"`
 
 	// FieldToMatch AWS CloudFormation Property
 	// Required: true

@@ -13,12 +13,12 @@ type DataSource_TeradataParameters[T any] struct {
 	// Database AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-teradataparameters.html#cfn-quicksight-datasource-teradataparameters-database
-	Database string `json:"Database"`
+	Database T `json:"Database"`
 
 	// Host AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-teradataparameters.html#cfn-quicksight-datasource-teradataparameters-host
-	Host string `json:"Host"`
+	Host T `json:"Host"`
 
 	// Port AWS CloudFormation Property
 	// Required: true

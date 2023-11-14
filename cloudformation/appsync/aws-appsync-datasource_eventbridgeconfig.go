@@ -13,7 +13,7 @@ type DataSource_EventBridgeConfig[T any] struct {
 	// EventBusArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-eventbridgeconfig.html#cfn-appsync-datasource-eventbridgeconfig-eventbusarn
-	EventBusArn string `json:"EventBusArn"`
+	EventBusArn T `json:"EventBusArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

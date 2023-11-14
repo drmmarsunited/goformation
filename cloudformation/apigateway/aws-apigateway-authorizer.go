@@ -16,12 +16,12 @@ type Authorizer[T any] struct {
 	// AuthType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authtype
-	AuthType *string `json:"AuthType,omitempty"`
+	AuthType *T `json:"AuthType,omitempty"`
 
 	// AuthorizerCredentials AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizercredentials
-	AuthorizerCredentials *string `json:"AuthorizerCredentials,omitempty"`
+	AuthorizerCredentials *T `json:"AuthorizerCredentials,omitempty"`
 
 	// AuthorizerResultTtlInSeconds AWS CloudFormation Property
 	// Required: false
@@ -31,37 +31,37 @@ type Authorizer[T any] struct {
 	// AuthorizerUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizeruri
-	AuthorizerUri *string `json:"AuthorizerUri,omitempty"`
+	AuthorizerUri *T `json:"AuthorizerUri,omitempty"`
 
 	// IdentitySource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-identitysource
-	IdentitySource *string `json:"IdentitySource,omitempty"`
+	IdentitySource *T `json:"IdentitySource,omitempty"`
 
 	// IdentityValidationExpression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-identityvalidationexpression
-	IdentityValidationExpression *string `json:"IdentityValidationExpression,omitempty"`
+	IdentityValidationExpression *T `json:"IdentityValidationExpression,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ProviderARNs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-providerarns
-	ProviderARNs []string `json:"ProviderARNs,omitempty"`
+	ProviderARNs []T `json:"ProviderARNs,omitempty"`
 
 	// RestApiId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-restapiid
-	RestApiId string `json:"RestApiId"`
+	RestApiId T `json:"RestApiId"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

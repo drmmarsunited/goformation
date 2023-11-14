@@ -13,7 +13,7 @@ type DataSet_RowLevelPermissionTagConfiguration[T any] struct {
 	// Status AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-rowlevelpermissiontagconfiguration.html#cfn-quicksight-dataset-rowlevelpermissiontagconfiguration-status
-	Status *string `json:"Status,omitempty"`
+	Status *T `json:"Status,omitempty"`
 
 	// TagRuleConfigurations AWS CloudFormation Property
 	// Required: false

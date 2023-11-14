@@ -17,17 +17,17 @@ type UserProfile[T any] struct {
 	// DomainId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-userprofile.html#cfn-sagemaker-userprofile-domainid
-	DomainId string `json:"DomainId"`
+	DomainId T `json:"DomainId"`
 
 	// SingleSignOnUserIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-userprofile.html#cfn-sagemaker-userprofile-singlesignonuseridentifier
-	SingleSignOnUserIdentifier *string `json:"SingleSignOnUserIdentifier,omitempty"`
+	SingleSignOnUserIdentifier *T `json:"SingleSignOnUserIdentifier,omitempty"`
 
 	// SingleSignOnUserValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-userprofile.html#cfn-sagemaker-userprofile-singlesignonuservalue
-	SingleSignOnUserValue *string `json:"SingleSignOnUserValue,omitempty"`
+	SingleSignOnUserValue *T `json:"SingleSignOnUserValue,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type UserProfile[T any] struct {
 	// UserProfileName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-userprofile.html#cfn-sagemaker-userprofile-userprofilename
-	UserProfileName string `json:"UserProfileName"`
+	UserProfileName T `json:"UserProfileName"`
 
 	// UserSettings AWS CloudFormation Property
 	// Required: false

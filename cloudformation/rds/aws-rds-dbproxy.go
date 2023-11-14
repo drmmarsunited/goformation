@@ -21,7 +21,7 @@ type DBProxy[T any] struct {
 	// DBProxyName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-dbproxyname
-	DBProxyName string `json:"DBProxyName"`
+	DBProxyName T `json:"DBProxyName"`
 
 	// DebugLogging AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type DBProxy[T any] struct {
 	// EngineFamily AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-enginefamily
-	EngineFamily string `json:"EngineFamily"`
+	EngineFamily T `json:"EngineFamily"`
 
 	// IdleClientTimeout AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type DBProxy[T any] struct {
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -56,12 +56,12 @@ type DBProxy[T any] struct {
 	// VpcSecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-vpcsecuritygroupids
-	VpcSecurityGroupIds []string `json:"VpcSecurityGroupIds,omitempty"`
+	VpcSecurityGroupIds []T `json:"VpcSecurityGroupIds,omitempty"`
 
 	// VpcSubnetIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-vpcsubnetids
-	VpcSubnetIds []string `json:"VpcSubnetIds"`
+	VpcSubnetIds []T `json:"VpcSubnetIds"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Bridge_BridgeFlowSource[T any] struct {
 	// FlowArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-bridge-bridgeflowsource.html#cfn-mediaconnect-bridge-bridgeflowsource-flowarn
-	FlowArn string `json:"FlowArn"`
+	FlowArn T `json:"FlowArn"`
 
 	// FlowVpcInterfaceAttachment AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Bridge_BridgeFlowSource[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-bridge-bridgeflowsource.html#cfn-mediaconnect-bridge-bridgeflowsource-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

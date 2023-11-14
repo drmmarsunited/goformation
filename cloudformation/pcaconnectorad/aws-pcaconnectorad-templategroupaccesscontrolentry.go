@@ -21,17 +21,17 @@ type TemplateGroupAccessControlEntry[T any] struct {
 	// GroupDisplayName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcaconnectorad-templategroupaccesscontrolentry.html#cfn-pcaconnectorad-templategroupaccesscontrolentry-groupdisplayname
-	GroupDisplayName string `json:"GroupDisplayName"`
+	GroupDisplayName T `json:"GroupDisplayName"`
 
 	// GroupSecurityIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcaconnectorad-templategroupaccesscontrolentry.html#cfn-pcaconnectorad-templategroupaccesscontrolentry-groupsecurityidentifier
-	GroupSecurityIdentifier *string `json:"GroupSecurityIdentifier,omitempty"`
+	GroupSecurityIdentifier *T `json:"GroupSecurityIdentifier,omitempty"`
 
 	// TemplateArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcaconnectorad-templategroupaccesscontrolentry.html#cfn-pcaconnectorad-templategroupaccesscontrolentry-templatearn
-	TemplateArn *string `json:"TemplateArn,omitempty"`
+	TemplateArn *T `json:"TemplateArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

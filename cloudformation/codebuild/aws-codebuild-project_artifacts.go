@@ -13,7 +13,7 @@ type Project_Artifacts[T any] struct {
 	// ArtifactIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-artifactidentifier
-	ArtifactIdentifier *string `json:"ArtifactIdentifier,omitempty"`
+	ArtifactIdentifier *T `json:"ArtifactIdentifier,omitempty"`
 
 	// EncryptionDisabled AWS CloudFormation Property
 	// Required: false
@@ -23,17 +23,17 @@ type Project_Artifacts[T any] struct {
 	// Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-location
-	Location *string `json:"Location,omitempty"`
+	Location *T `json:"Location,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// NamespaceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-namespacetype
-	NamespaceType *string `json:"NamespaceType,omitempty"`
+	NamespaceType *T `json:"NamespaceType,omitempty"`
 
 	// OverrideArtifactName AWS CloudFormation Property
 	// Required: false
@@ -43,17 +43,17 @@ type Project_Artifacts[T any] struct {
 	// Packaging AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-packaging
-	Packaging *string `json:"Packaging,omitempty"`
+	Packaging *T `json:"Packaging,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-path
-	Path *string `json:"Path,omitempty"`
+	Path *T `json:"Path,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -23,7 +23,7 @@ type Domain_ClusterConfig[T any] struct {
 	// DedicatedMasterType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-dedicatedmastertype
-	DedicatedMasterType *string `json:"DedicatedMasterType,omitempty"`
+	DedicatedMasterType *T `json:"DedicatedMasterType,omitempty"`
 
 	// InstanceCount AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Domain_ClusterConfig[T any] struct {
 	// InstanceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-instancetype
-	InstanceType *string `json:"InstanceType,omitempty"`
+	InstanceType *T `json:"InstanceType,omitempty"`
 
 	// MultiAZWithStandbyEnabled AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Domain_ClusterConfig[T any] struct {
 	// WarmType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-warmtype
-	WarmType *string `json:"WarmType,omitempty"`
+	WarmType *T `json:"WarmType,omitempty"`
 
 	// ZoneAwarenessConfig AWS CloudFormation Property
 	// Required: false

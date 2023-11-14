@@ -18,32 +18,32 @@ type ModelPackage_AdditionalInferenceSpecificationDefinition[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-additionalinferencespecificationdefinition.html#cfn-sagemaker-modelpackage-additionalinferencespecificationdefinition-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-additionalinferencespecificationdefinition.html#cfn-sagemaker-modelpackage-additionalinferencespecificationdefinition-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// SupportedContentTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-additionalinferencespecificationdefinition.html#cfn-sagemaker-modelpackage-additionalinferencespecificationdefinition-supportedcontenttypes
-	SupportedContentTypes []string `json:"SupportedContentTypes,omitempty"`
+	SupportedContentTypes []T `json:"SupportedContentTypes,omitempty"`
 
 	// SupportedRealtimeInferenceInstanceTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-additionalinferencespecificationdefinition.html#cfn-sagemaker-modelpackage-additionalinferencespecificationdefinition-supportedrealtimeinferenceinstancetypes
-	SupportedRealtimeInferenceInstanceTypes []string `json:"SupportedRealtimeInferenceInstanceTypes,omitempty"`
+	SupportedRealtimeInferenceInstanceTypes []T `json:"SupportedRealtimeInferenceInstanceTypes,omitempty"`
 
 	// SupportedResponseMIMETypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-additionalinferencespecificationdefinition.html#cfn-sagemaker-modelpackage-additionalinferencespecificationdefinition-supportedresponsemimetypes
-	SupportedResponseMIMETypes []string `json:"SupportedResponseMIMETypes,omitempty"`
+	SupportedResponseMIMETypes []T `json:"SupportedResponseMIMETypes,omitempty"`
 
 	// SupportedTransformInstanceTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-additionalinferencespecificationdefinition.html#cfn-sagemaker-modelpackage-additionalinferencespecificationdefinition-supportedtransforminstancetypes
-	SupportedTransformInstanceTypes []string `json:"SupportedTransformInstanceTypes,omitempty"`
+	SupportedTransformInstanceTypes []T `json:"SupportedTransformInstanceTypes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

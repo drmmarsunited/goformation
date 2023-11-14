@@ -13,7 +13,7 @@ type Dashboard_LineChartDefaultSeriesSettings[T any] struct {
 	// AxisBinding AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartdefaultseriessettings.html#cfn-quicksight-dashboard-linechartdefaultseriessettings-axisbinding
-	AxisBinding *string `json:"AxisBinding,omitempty"`
+	AxisBinding *T `json:"AxisBinding,omitempty"`
 
 	// LineStyleSettings AWS CloudFormation Property
 	// Required: false

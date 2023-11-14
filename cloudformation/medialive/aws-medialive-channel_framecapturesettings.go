@@ -18,7 +18,7 @@ type Channel_FrameCaptureSettings[T any] struct {
 	// CaptureIntervalUnits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecapturesettings.html#cfn-medialive-channel-framecapturesettings-captureintervalunits
-	CaptureIntervalUnits *string `json:"CaptureIntervalUnits,omitempty"`
+	CaptureIntervalUnits *T `json:"CaptureIntervalUnits,omitempty"`
 
 	// TimecodeBurninSettings AWS CloudFormation Property
 	// Required: false

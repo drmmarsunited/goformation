@@ -13,17 +13,17 @@ type Bridge_BridgeNetworkSource[T any] struct {
 	// MulticastIp AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-bridge-bridgenetworksource.html#cfn-mediaconnect-bridge-bridgenetworksource-multicastip
-	MulticastIp string `json:"MulticastIp"`
+	MulticastIp T `json:"MulticastIp"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-bridge-bridgenetworksource.html#cfn-mediaconnect-bridge-bridgenetworksource-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// NetworkName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-bridge-bridgenetworksource.html#cfn-mediaconnect-bridge-bridgenetworksource-networkname
-	NetworkName string `json:"NetworkName"`
+	NetworkName T `json:"NetworkName"`
 
 	// Port AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type Bridge_BridgeNetworkSource[T any] struct {
 	// Protocol AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-bridge-bridgenetworksource.html#cfn-mediaconnect-bridge-bridgenetworksource-protocol
-	Protocol string `json:"Protocol"`
+	Protocol T `json:"Protocol"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

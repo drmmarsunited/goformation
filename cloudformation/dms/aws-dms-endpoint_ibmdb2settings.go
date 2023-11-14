@@ -13,7 +13,7 @@ type Endpoint_IbmDb2Settings[T any] struct {
 	// CurrentLsn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-ibmdb2settings.html#cfn-dms-endpoint-ibmdb2settings-currentlsn
-	CurrentLsn *string `json:"CurrentLsn,omitempty"`
+	CurrentLsn *T `json:"CurrentLsn,omitempty"`
 
 	// MaxKBytesPerRead AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Endpoint_IbmDb2Settings[T any] struct {
 	// SecretsManagerAccessRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-ibmdb2settings.html#cfn-dms-endpoint-ibmdb2settings-secretsmanageraccessrolearn
-	SecretsManagerAccessRoleArn *string `json:"SecretsManagerAccessRoleArn,omitempty"`
+	SecretsManagerAccessRoleArn *T `json:"SecretsManagerAccessRoleArn,omitempty"`
 
 	// SecretsManagerSecretId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-ibmdb2settings.html#cfn-dms-endpoint-ibmdb2settings-secretsmanagersecretid
-	SecretsManagerSecretId *string `json:"SecretsManagerSecretId,omitempty"`
+	SecretsManagerSecretId *T `json:"SecretsManagerSecretId,omitempty"`
 
 	// SetDataCaptureChanges AWS CloudFormation Property
 	// Required: false

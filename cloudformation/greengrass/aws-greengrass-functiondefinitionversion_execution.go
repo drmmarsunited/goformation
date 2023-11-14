@@ -13,7 +13,7 @@ type FunctionDefinitionVersion_Execution[T any] struct {
 	// IsolationMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-execution.html#cfn-greengrass-functiondefinitionversion-execution-isolationmode
-	IsolationMode *string `json:"IsolationMode,omitempty"`
+	IsolationMode *T `json:"IsolationMode,omitempty"`
 
 	// RunAs AWS CloudFormation Property
 	// Required: false

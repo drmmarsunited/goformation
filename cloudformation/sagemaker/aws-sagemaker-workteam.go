@@ -17,7 +17,7 @@ type Workteam[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// MemberDefinitions AWS CloudFormation Property
 	// Required: false
@@ -37,12 +37,12 @@ type Workteam[T any] struct {
 	// WorkforceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-workforcename
-	WorkforceName *string `json:"WorkforceName,omitempty"`
+	WorkforceName *T `json:"WorkforceName,omitempty"`
 
 	// WorkteamName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-workteamname
-	WorkteamName *string `json:"WorkteamName,omitempty"`
+	WorkteamName *T `json:"WorkteamName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Listener_WeightedTargetGroup[T any] struct {
 	// TargetGroupIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-listener-weightedtargetgroup.html#cfn-vpclattice-listener-weightedtargetgroup-targetgroupidentifier
-	TargetGroupIdentifier string `json:"TargetGroupIdentifier"`
+	TargetGroupIdentifier T `json:"TargetGroupIdentifier"`
 
 	// Weight AWS CloudFormation Property
 	// Required: false

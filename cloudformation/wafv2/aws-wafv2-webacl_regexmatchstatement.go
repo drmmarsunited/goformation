@@ -18,7 +18,7 @@ type WebACL_RegexMatchStatement[T any] struct {
 	// RegexString AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-regexmatchstatement.html#cfn-wafv2-webacl-regexmatchstatement-regexstring
-	RegexString string `json:"RegexString"`
+	RegexString T `json:"RegexString"`
 
 	// TextTransformations AWS CloudFormation Property
 	// Required: true

@@ -13,7 +13,7 @@ type RefreshSchedule_ScheduleFrequency[T any] struct {
 	// Interval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-refreshschedule-schedulefrequency.html#cfn-quicksight-refreshschedule-schedulefrequency-interval
-	Interval *string `json:"Interval,omitempty"`
+	Interval *T `json:"Interval,omitempty"`
 
 	// RefreshOnDay AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type RefreshSchedule_ScheduleFrequency[T any] struct {
 	// TimeOfTheDay AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-refreshschedule-schedulefrequency.html#cfn-quicksight-refreshschedule-schedulefrequency-timeoftheday
-	TimeOfTheDay *string `json:"TimeOfTheDay,omitempty"`
+	TimeOfTheDay *T `json:"TimeOfTheDay,omitempty"`
 
 	// TimeZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-refreshschedule-schedulefrequency.html#cfn-quicksight-refreshschedule-schedulefrequency-timezone
-	TimeZone *string `json:"TimeZone,omitempty"`
+	TimeZone *T `json:"TimeZone,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

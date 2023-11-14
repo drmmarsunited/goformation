@@ -16,17 +16,17 @@ type ModuleDefaultVersion[T any] struct {
 	// Arn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduledefaultversion.html#cfn-cloudformation-moduledefaultversion-arn
-	Arn *string `json:"Arn,omitempty"`
+	Arn *T `json:"Arn,omitempty"`
 
 	// ModuleName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduledefaultversion.html#cfn-cloudformation-moduledefaultversion-modulename
-	ModuleName *string `json:"ModuleName,omitempty"`
+	ModuleName *T `json:"ModuleName,omitempty"`
 
 	// VersionId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduledefaultversion.html#cfn-cloudformation-moduledefaultversion-versionid
-	VersionId *string `json:"VersionId,omitempty"`
+	VersionId *T `json:"VersionId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

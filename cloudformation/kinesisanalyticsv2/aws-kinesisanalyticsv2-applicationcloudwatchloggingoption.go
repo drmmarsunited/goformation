@@ -16,7 +16,7 @@ type ApplicationCloudWatchLoggingOption[T any] struct {
 	// ApplicationName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-applicationcloudwatchloggingoption.html#cfn-kinesisanalyticsv2-applicationcloudwatchloggingoption-applicationname
-	ApplicationName string `json:"ApplicationName"`
+	ApplicationName T `json:"ApplicationName"`
 
 	// CloudWatchLoggingOption AWS CloudFormation Property
 	// Required: true

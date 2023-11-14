@@ -18,7 +18,7 @@ type Distribution_OriginShield[T any] struct {
 	// OriginShieldRegion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-originshield.html#cfn-cloudfront-distribution-originshield-originshieldregion
-	OriginShieldRegion *string `json:"OriginShieldRegion,omitempty"`
+	OriginShieldRegion *T `json:"OriginShieldRegion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

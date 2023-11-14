@@ -13,12 +13,12 @@ type Application_ApplicationRestoreConfiguration[T any] struct {
 	// ApplicationRestoreType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationrestoreconfiguration.html#cfn-kinesisanalyticsv2-application-applicationrestoreconfiguration-applicationrestoretype
-	ApplicationRestoreType string `json:"ApplicationRestoreType"`
+	ApplicationRestoreType T `json:"ApplicationRestoreType"`
 
 	// SnapshotName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationrestoreconfiguration.html#cfn-kinesisanalyticsv2-application-applicationrestoreconfiguration-snapshotname
-	SnapshotName *string `json:"SnapshotName,omitempty"`
+	SnapshotName *T `json:"SnapshotName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

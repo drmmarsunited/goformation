@@ -17,12 +17,12 @@ type ReadinessCheck[T any] struct {
 	// ReadinessCheckName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-readinesscheck.html#cfn-route53recoveryreadiness-readinesscheck-readinesscheckname
-	ReadinessCheckName *string `json:"ReadinessCheckName,omitempty"`
+	ReadinessCheckName *T `json:"ReadinessCheckName,omitempty"`
 
 	// ResourceSetName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-readinesscheck.html#cfn-route53recoveryreadiness-readinesscheck-resourcesetname
-	ResourceSetName *string `json:"ResourceSetName,omitempty"`
+	ResourceSetName *T `json:"ResourceSetName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

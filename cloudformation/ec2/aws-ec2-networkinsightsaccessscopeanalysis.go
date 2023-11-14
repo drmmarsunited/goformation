@@ -17,7 +17,7 @@ type NetworkInsightsAccessScopeAnalysis[T any] struct {
 	// NetworkInsightsAccessScopeId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscopeanalysis.html#cfn-ec2-networkinsightsaccessscopeanalysis-networkinsightsaccessscopeid
-	NetworkInsightsAccessScopeId string `json:"NetworkInsightsAccessScopeId"`
+	NetworkInsightsAccessScopeId T `json:"NetworkInsightsAccessScopeId"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

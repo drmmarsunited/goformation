@@ -13,7 +13,7 @@ type JobQueue_ComputeEnvironmentOrder[T any] struct {
 	// ComputeEnvironment AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobqueue-computeenvironmentorder.html#cfn-batch-jobqueue-computeenvironmentorder-computeenvironment
-	ComputeEnvironment string `json:"ComputeEnvironment"`
+	ComputeEnvironment T `json:"ComputeEnvironment"`
 
 	// Order AWS CloudFormation Property
 	// Required: true

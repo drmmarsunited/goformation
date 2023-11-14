@@ -16,37 +16,37 @@ type Workspace[T any] struct {
 	// AccountAccessType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-grafana-workspace.html#cfn-grafana-workspace-accountaccesstype
-	AccountAccessType string `json:"AccountAccessType"`
+	AccountAccessType T `json:"AccountAccessType"`
 
 	// AuthenticationProviders AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-grafana-workspace.html#cfn-grafana-workspace-authenticationproviders
-	AuthenticationProviders []string `json:"AuthenticationProviders"`
+	AuthenticationProviders []T `json:"AuthenticationProviders"`
 
 	// ClientToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-grafana-workspace.html#cfn-grafana-workspace-clienttoken
-	ClientToken *string `json:"ClientToken,omitempty"`
+	ClientToken *T `json:"ClientToken,omitempty"`
 
 	// DataSources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-grafana-workspace.html#cfn-grafana-workspace-datasources
-	DataSources []string `json:"DataSources,omitempty"`
+	DataSources []T `json:"DataSources,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-grafana-workspace.html#cfn-grafana-workspace-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// GrafanaVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-grafana-workspace.html#cfn-grafana-workspace-grafanaversion
-	GrafanaVersion *string `json:"GrafanaVersion,omitempty"`
+	GrafanaVersion *T `json:"GrafanaVersion,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-grafana-workspace.html#cfn-grafana-workspace-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// NetworkAccessControl AWS CloudFormation Property
 	// Required: false
@@ -56,27 +56,27 @@ type Workspace[T any] struct {
 	// NotificationDestinations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-grafana-workspace.html#cfn-grafana-workspace-notificationdestinations
-	NotificationDestinations []string `json:"NotificationDestinations,omitempty"`
+	NotificationDestinations []T `json:"NotificationDestinations,omitempty"`
 
 	// OrganizationRoleName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-grafana-workspace.html#cfn-grafana-workspace-organizationrolename
-	OrganizationRoleName *string `json:"OrganizationRoleName,omitempty"`
+	OrganizationRoleName *T `json:"OrganizationRoleName,omitempty"`
 
 	// OrganizationalUnits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-grafana-workspace.html#cfn-grafana-workspace-organizationalunits
-	OrganizationalUnits []string `json:"OrganizationalUnits,omitempty"`
+	OrganizationalUnits []T `json:"OrganizationalUnits,omitempty"`
 
 	// PermissionType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-grafana-workspace.html#cfn-grafana-workspace-permissiontype
-	PermissionType string `json:"PermissionType"`
+	PermissionType T `json:"PermissionType"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-grafana-workspace.html#cfn-grafana-workspace-rolearn
-	RoleArn *string `json:"RoleArn,omitempty"`
+	RoleArn *T `json:"RoleArn,omitempty"`
 
 	// SamlConfiguration AWS CloudFormation Property
 	// Required: false
@@ -86,7 +86,7 @@ type Workspace[T any] struct {
 	// StackSetName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-grafana-workspace.html#cfn-grafana-workspace-stacksetname
-	StackSetName *string `json:"StackSetName,omitempty"`
+	StackSetName *T `json:"StackSetName,omitempty"`
 
 	// VpcConfiguration AWS CloudFormation Property
 	// Required: false

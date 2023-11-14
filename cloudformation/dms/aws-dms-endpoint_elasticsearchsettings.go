@@ -13,7 +13,7 @@ type Endpoint_ElasticsearchSettings[T any] struct {
 	// EndpointUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-elasticsearchsettings.html#cfn-dms-endpoint-elasticsearchsettings-endpointuri
-	EndpointUri *string `json:"EndpointUri,omitempty"`
+	EndpointUri *T `json:"EndpointUri,omitempty"`
 
 	// ErrorRetryDuration AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Endpoint_ElasticsearchSettings[T any] struct {
 	// ServiceAccessRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-elasticsearchsettings.html#cfn-dms-endpoint-elasticsearchsettings-serviceaccessrolearn
-	ServiceAccessRoleArn *string `json:"ServiceAccessRoleArn,omitempty"`
+	ServiceAccessRoleArn *T `json:"ServiceAccessRoleArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

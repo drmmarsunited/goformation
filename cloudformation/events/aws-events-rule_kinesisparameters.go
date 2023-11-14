@@ -13,7 +13,7 @@ type Rule_KinesisParameters[T any] struct {
 	// PartitionKeyPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-kinesisparameters.html#cfn-events-rule-kinesisparameters-partitionkeypath
-	PartitionKeyPath string `json:"PartitionKeyPath"`
+	PartitionKeyPath T `json:"PartitionKeyPath"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

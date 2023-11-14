@@ -23,12 +23,12 @@ type Template_GridLayoutElement[T any] struct {
 	// ElementId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gridlayoutelement.html#cfn-quicksight-template-gridlayoutelement-elementid
-	ElementId string `json:"ElementId"`
+	ElementId T `json:"ElementId"`
 
 	// ElementType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gridlayoutelement.html#cfn-quicksight-template-gridlayoutelement-elementtype
-	ElementType string `json:"ElementType"`
+	ElementType T `json:"ElementType"`
 
 	// RowIndex AWS CloudFormation Property
 	// Required: false

@@ -17,17 +17,17 @@ type Filter[T any] struct {
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-action
-	Action string `json:"Action"`
+	Action T `json:"Action"`
 
 	// Description AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-description
-	Description string `json:"Description"`
+	Description T `json:"Description"`
 
 	// DetectorId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-detectorid
-	DetectorId string `json:"DetectorId"`
+	DetectorId T `json:"DetectorId"`
 
 	// FindingCriteria AWS CloudFormation Property
 	// Required: true
@@ -37,7 +37,7 @@ type Filter[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Rank AWS CloudFormation Property
 	// Required: true

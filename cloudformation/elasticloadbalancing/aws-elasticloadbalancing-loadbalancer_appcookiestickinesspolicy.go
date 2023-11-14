@@ -13,12 +13,12 @@ type LoadBalancer_AppCookieStickinessPolicy[T any] struct {
 	// CookieName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html#cfn-elb-appcookiestickinesspolicy-cookiename
-	CookieName string `json:"CookieName"`
+	CookieName T `json:"CookieName"`
 
 	// PolicyName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html#cfn-elb-appcookiestickinesspolicy-policyname
-	PolicyName string `json:"PolicyName"`
+	PolicyName T `json:"PolicyName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

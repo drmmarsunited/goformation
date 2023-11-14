@@ -13,7 +13,7 @@ type StorageSystem_ServerConfiguration[T any] struct {
 	// ServerHostname AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-storagesystem-serverconfiguration.html#cfn-datasync-storagesystem-serverconfiguration-serverhostname
-	ServerHostname string `json:"ServerHostname"`
+	ServerHostname T `json:"ServerHostname"`
 
 	// ServerPort AWS CloudFormation Property
 	// Required: false

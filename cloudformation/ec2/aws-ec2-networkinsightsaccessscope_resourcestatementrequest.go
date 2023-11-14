@@ -13,12 +13,12 @@ type NetworkInsightsAccessScope_ResourceStatementRequest[T any] struct {
 	// ResourceTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-resourcestatementrequest.html#cfn-ec2-networkinsightsaccessscope-resourcestatementrequest-resourcetypes
-	ResourceTypes []string `json:"ResourceTypes,omitempty"`
+	ResourceTypes []T `json:"ResourceTypes,omitempty"`
 
 	// Resources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-resourcestatementrequest.html#cfn-ec2-networkinsightsaccessscope-resourcestatementrequest-resources
-	Resources []string `json:"Resources,omitempty"`
+	Resources []T `json:"Resources,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

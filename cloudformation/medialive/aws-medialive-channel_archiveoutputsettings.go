@@ -18,12 +18,12 @@ type Channel_ArchiveOutputSettings[T any] struct {
 	// Extension AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archiveoutputsettings.html#cfn-medialive-channel-archiveoutputsettings-extension
-	Extension *string `json:"Extension,omitempty"`
+	Extension *T `json:"Extension,omitempty"`
 
 	// NameModifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archiveoutputsettings.html#cfn-medialive-channel-archiveoutputsettings-namemodifier
-	NameModifier *string `json:"NameModifier,omitempty"`
+	NameModifier *T `json:"NameModifier,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

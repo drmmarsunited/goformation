@@ -13,7 +13,7 @@ type LaunchProfile_StreamConfigurationSessionStorage[T any] struct {
 	// Mode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfigurationsessionstorage.html#cfn-nimblestudio-launchprofile-streamconfigurationsessionstorage-mode
-	Mode []string `json:"Mode"`
+	Mode []T `json:"Mode"`
 
 	// Root AWS CloudFormation Property
 	// Required: false

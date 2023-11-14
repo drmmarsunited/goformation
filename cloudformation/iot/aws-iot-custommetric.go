@@ -17,17 +17,17 @@ type CustomMetric[T any] struct {
 	// DisplayName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-custommetric.html#cfn-iot-custommetric-displayname
-	DisplayName *string `json:"DisplayName,omitempty"`
+	DisplayName *T `json:"DisplayName,omitempty"`
 
 	// MetricName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-custommetric.html#cfn-iot-custommetric-metricname
-	MetricName *string `json:"MetricName,omitempty"`
+	MetricName *T `json:"MetricName,omitempty"`
 
 	// MetricType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-custommetric.html#cfn-iot-custommetric-metrictype
-	MetricType string `json:"MetricType"`
+	MetricType T `json:"MetricType"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

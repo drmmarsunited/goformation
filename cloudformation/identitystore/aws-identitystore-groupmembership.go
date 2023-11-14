@@ -16,12 +16,12 @@ type GroupMembership[T any] struct {
 	// GroupId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-identitystore-groupmembership.html#cfn-identitystore-groupmembership-groupid
-	GroupId string `json:"GroupId"`
+	GroupId T `json:"GroupId"`
 
 	// IdentityStoreId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-identitystore-groupmembership.html#cfn-identitystore-groupmembership-identitystoreid
-	IdentityStoreId string `json:"IdentityStoreId"`
+	IdentityStoreId T `json:"IdentityStoreId"`
 
 	// MemberId AWS CloudFormation Property
 	// Required: true

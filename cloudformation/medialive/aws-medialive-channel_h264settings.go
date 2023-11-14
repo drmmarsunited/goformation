@@ -13,12 +13,12 @@ type Channel_H264Settings[T any] struct {
 	// AdaptiveQuantization AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-adaptivequantization
-	AdaptiveQuantization *string `json:"AdaptiveQuantization,omitempty"`
+	AdaptiveQuantization *T `json:"AdaptiveQuantization,omitempty"`
 
 	// AfdSignaling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-afdsignaling
-	AfdSignaling *string `json:"AfdSignaling,omitempty"`
+	AfdSignaling *T `json:"AfdSignaling,omitempty"`
 
 	// Bitrate AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Channel_H264Settings[T any] struct {
 	// ColorMetadata AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-colormetadata
-	ColorMetadata *string `json:"ColorMetadata,omitempty"`
+	ColorMetadata *T `json:"ColorMetadata,omitempty"`
 
 	// ColorSpaceSettings AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Channel_H264Settings[T any] struct {
 	// EntropyEncoding AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-entropyencoding
-	EntropyEncoding *string `json:"EntropyEncoding,omitempty"`
+	EntropyEncoding *T `json:"EntropyEncoding,omitempty"`
 
 	// FilterSettings AWS CloudFormation Property
 	// Required: false
@@ -58,22 +58,22 @@ type Channel_H264Settings[T any] struct {
 	// FixedAfd AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-fixedafd
-	FixedAfd *string `json:"FixedAfd,omitempty"`
+	FixedAfd *T `json:"FixedAfd,omitempty"`
 
 	// FlickerAq AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-flickeraq
-	FlickerAq *string `json:"FlickerAq,omitempty"`
+	FlickerAq *T `json:"FlickerAq,omitempty"`
 
 	// ForceFieldPictures AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-forcefieldpictures
-	ForceFieldPictures *string `json:"ForceFieldPictures,omitempty"`
+	ForceFieldPictures *T `json:"ForceFieldPictures,omitempty"`
 
 	// FramerateControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-frameratecontrol
-	FramerateControl *string `json:"FramerateControl,omitempty"`
+	FramerateControl *T `json:"FramerateControl,omitempty"`
 
 	// FramerateDenominator AWS CloudFormation Property
 	// Required: false
@@ -88,7 +88,7 @@ type Channel_H264Settings[T any] struct {
 	// GopBReference AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-gopbreference
-	GopBReference *string `json:"GopBReference,omitempty"`
+	GopBReference *T `json:"GopBReference,omitempty"`
 
 	// GopClosedCadence AWS CloudFormation Property
 	// Required: false
@@ -108,17 +108,17 @@ type Channel_H264Settings[T any] struct {
 	// GopSizeUnits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-gopsizeunits
-	GopSizeUnits *string `json:"GopSizeUnits,omitempty"`
+	GopSizeUnits *T `json:"GopSizeUnits,omitempty"`
 
 	// Level AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-level
-	Level *string `json:"Level,omitempty"`
+	Level *T `json:"Level,omitempty"`
 
 	// LookAheadRateControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-lookaheadratecontrol
-	LookAheadRateControl *string `json:"LookAheadRateControl,omitempty"`
+	LookAheadRateControl *T `json:"LookAheadRateControl,omitempty"`
 
 	// MaxBitrate AWS CloudFormation Property
 	// Required: false
@@ -138,7 +138,7 @@ type Channel_H264Settings[T any] struct {
 	// ParControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-parcontrol
-	ParControl *string `json:"ParControl,omitempty"`
+	ParControl *T `json:"ParControl,omitempty"`
 
 	// ParDenominator AWS CloudFormation Property
 	// Required: false
@@ -153,12 +153,12 @@ type Channel_H264Settings[T any] struct {
 	// Profile AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-profile
-	Profile *string `json:"Profile,omitempty"`
+	Profile *T `json:"Profile,omitempty"`
 
 	// QualityLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-qualitylevel
-	QualityLevel *string `json:"QualityLevel,omitempty"`
+	QualityLevel *T `json:"QualityLevel,omitempty"`
 
 	// QvbrQualityLevel AWS CloudFormation Property
 	// Required: false
@@ -168,17 +168,17 @@ type Channel_H264Settings[T any] struct {
 	// RateControlMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-ratecontrolmode
-	RateControlMode *string `json:"RateControlMode,omitempty"`
+	RateControlMode *T `json:"RateControlMode,omitempty"`
 
 	// ScanType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-scantype
-	ScanType *string `json:"ScanType,omitempty"`
+	ScanType *T `json:"ScanType,omitempty"`
 
 	// SceneChangeDetect AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-scenechangedetect
-	SceneChangeDetect *string `json:"SceneChangeDetect,omitempty"`
+	SceneChangeDetect *T `json:"SceneChangeDetect,omitempty"`
 
 	// Slices AWS CloudFormation Property
 	// Required: false
@@ -193,22 +193,22 @@ type Channel_H264Settings[T any] struct {
 	// SpatialAq AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-spatialaq
-	SpatialAq *string `json:"SpatialAq,omitempty"`
+	SpatialAq *T `json:"SpatialAq,omitempty"`
 
 	// SubgopLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-subgoplength
-	SubgopLength *string `json:"SubgopLength,omitempty"`
+	SubgopLength *T `json:"SubgopLength,omitempty"`
 
 	// Syntax AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-syntax
-	Syntax *string `json:"Syntax,omitempty"`
+	Syntax *T `json:"Syntax,omitempty"`
 
 	// TemporalAq AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-temporalaq
-	TemporalAq *string `json:"TemporalAq,omitempty"`
+	TemporalAq *T `json:"TemporalAq,omitempty"`
 
 	// TimecodeBurninSettings AWS CloudFormation Property
 	// Required: false
@@ -218,7 +218,7 @@ type Channel_H264Settings[T any] struct {
 	// TimecodeInsertion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-timecodeinsertion
-	TimecodeInsertion *string `json:"TimecodeInsertion,omitempty"`
+	TimecodeInsertion *T `json:"TimecodeInsertion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,12 +13,12 @@ type Channel_NielsenConfiguration[T any] struct {
 	// DistributorId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsenconfiguration.html#cfn-medialive-channel-nielsenconfiguration-distributorid
-	DistributorId *string `json:"DistributorId,omitempty"`
+	DistributorId *T `json:"DistributorId,omitempty"`
 
 	// NielsenPcmToId3Tagging AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsenconfiguration.html#cfn-medialive-channel-nielsenconfiguration-nielsenpcmtoid3tagging
-	NielsenPcmToId3Tagging *string `json:"NielsenPcmToId3Tagging,omitempty"`
+	NielsenPcmToId3Tagging *T `json:"NielsenPcmToId3Tagging,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

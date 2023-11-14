@@ -13,7 +13,7 @@ type DataSet_ProjectOperation[T any] struct {
 	// ProjectedColumns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-projectoperation.html#cfn-quicksight-dataset-projectoperation-projectedcolumns
-	ProjectedColumns []string `json:"ProjectedColumns"`
+	ProjectedColumns []T `json:"ProjectedColumns"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

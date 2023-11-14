@@ -13,12 +13,12 @@ type CoreDefinitionVersion_Core[T any] struct {
 	// CertificateArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-certificatearn
-	CertificateArn string `json:"CertificateArn"`
+	CertificateArn T `json:"CertificateArn"`
 
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-id
-	Id string `json:"Id"`
+	Id T `json:"Id"`
 
 	// SyncShadow AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type CoreDefinitionVersion_Core[T any] struct {
 	// ThingArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-thingarn
-	ThingArn string `json:"ThingArn"`
+	ThingArn T `json:"ThingArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

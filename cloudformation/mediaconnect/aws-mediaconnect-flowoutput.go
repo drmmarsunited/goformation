@@ -16,17 +16,17 @@ type FlowOutput[T any] struct {
 	// CidrAllowList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-cidrallowlist
-	CidrAllowList []string `json:"CidrAllowList,omitempty"`
+	CidrAllowList []T `json:"CidrAllowList,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Destination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-destination
-	Destination *string `json:"Destination,omitempty"`
+	Destination *T `json:"Destination,omitempty"`
 
 	// Encryption AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type FlowOutput[T any] struct {
 	// FlowArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-flowarn
-	FlowArn string `json:"FlowArn"`
+	FlowArn T `json:"FlowArn"`
 
 	// MaxLatency AWS CloudFormation Property
 	// Required: false
@@ -51,7 +51,7 @@ type FlowOutput[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
@@ -61,12 +61,12 @@ type FlowOutput[T any] struct {
 	// Protocol AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-protocol
-	Protocol string `json:"Protocol"`
+	Protocol T `json:"Protocol"`
 
 	// RemoteId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-remoteid
-	RemoteId *string `json:"RemoteId,omitempty"`
+	RemoteId *T `json:"RemoteId,omitempty"`
 
 	// SmoothingLatency AWS CloudFormation Property
 	// Required: false
@@ -76,7 +76,7 @@ type FlowOutput[T any] struct {
 	// StreamId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-streamid
-	StreamId *string `json:"StreamId,omitempty"`
+	StreamId *T `json:"StreamId,omitempty"`
 
 	// VpcInterfaceAttachment AWS CloudFormation Property
 	// Required: false

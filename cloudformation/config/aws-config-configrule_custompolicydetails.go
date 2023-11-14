@@ -18,12 +18,12 @@ type ConfigRule_CustomPolicyDetails[T any] struct {
 	// PolicyRuntime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-custompolicydetails.html#cfn-config-configrule-custompolicydetails-policyruntime
-	PolicyRuntime *string `json:"PolicyRuntime,omitempty"`
+	PolicyRuntime *T `json:"PolicyRuntime,omitempty"`
 
 	// PolicyText AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-custompolicydetails.html#cfn-config-configrule-custompolicydetails-policytext
-	PolicyText *string `json:"PolicyText,omitempty"`
+	PolicyText *T `json:"PolicyText,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

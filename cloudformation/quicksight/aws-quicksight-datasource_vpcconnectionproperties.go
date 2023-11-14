@@ -13,7 +13,7 @@ type DataSource_VpcConnectionProperties[T any] struct {
 	// VpcConnectionArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-vpcconnectionproperties.html#cfn-quicksight-datasource-vpcconnectionproperties-vpcconnectionarn
-	VpcConnectionArn string `json:"VpcConnectionArn"`
+	VpcConnectionArn T `json:"VpcConnectionArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -18,12 +18,12 @@ type WebACL_Cookies[T any] struct {
 	// MatchScope AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-cookies.html#cfn-wafv2-webacl-cookies-matchscope
-	MatchScope string `json:"MatchScope"`
+	MatchScope T `json:"MatchScope"`
 
 	// OversizeHandling AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-cookies.html#cfn-wafv2-webacl-cookies-oversizehandling
-	OversizeHandling string `json:"OversizeHandling"`
+	OversizeHandling T `json:"OversizeHandling"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

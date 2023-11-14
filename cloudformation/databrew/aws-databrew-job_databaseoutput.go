@@ -18,12 +18,12 @@ type Job_DatabaseOutput[T any] struct {
 	// DatabaseOutputMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html#cfn-databrew-job-databaseoutput-databaseoutputmode
-	DatabaseOutputMode *string `json:"DatabaseOutputMode,omitempty"`
+	DatabaseOutputMode *T `json:"DatabaseOutputMode,omitempty"`
 
 	// GlueConnectionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html#cfn-databrew-job-databaseoutput-glueconnectionname
-	GlueConnectionName string `json:"GlueConnectionName"`
+	GlueConnectionName T `json:"GlueConnectionName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

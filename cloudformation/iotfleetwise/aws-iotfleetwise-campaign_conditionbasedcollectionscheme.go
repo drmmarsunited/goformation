@@ -18,7 +18,7 @@ type Campaign_ConditionBasedCollectionScheme[T any] struct {
 	// Expression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-conditionbasedcollectionscheme.html#cfn-iotfleetwise-campaign-conditionbasedcollectionscheme-expression
-	Expression string `json:"Expression"`
+	Expression T `json:"Expression"`
 
 	// MinimumTriggerIntervalMs AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Campaign_ConditionBasedCollectionScheme[T any] struct {
 	// TriggerMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-conditionbasedcollectionscheme.html#cfn-iotfleetwise-campaign-conditionbasedcollectionscheme-triggermode
-	TriggerMode *string `json:"TriggerMode,omitempty"`
+	TriggerMode *T `json:"TriggerMode,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

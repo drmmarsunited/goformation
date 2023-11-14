@@ -13,12 +13,12 @@ type Template_SheetControlInfoIconLabelOptions[T any] struct {
 	// InfoIconText AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetcontrolinfoiconlabeloptions.html#cfn-quicksight-template-sheetcontrolinfoiconlabeloptions-infoicontext
-	InfoIconText *string `json:"InfoIconText,omitempty"`
+	InfoIconText *T `json:"InfoIconText,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetcontrolinfoiconlabeloptions.html#cfn-quicksight-template-sheetcontrolinfoiconlabeloptions-visibility
-	Visibility *string `json:"Visibility,omitempty"`
+	Visibility *T `json:"Visibility,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

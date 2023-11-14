@@ -13,7 +13,7 @@ type Pipe_PipeSourceSelfManagedKafkaParameters[T any] struct {
 	// AdditionalBootstrapServers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceselfmanagedkafkaparameters.html#cfn-pipes-pipe-pipesourceselfmanagedkafkaparameters-additionalbootstrapservers
-	AdditionalBootstrapServers []string `json:"AdditionalBootstrapServers,omitempty"`
+	AdditionalBootstrapServers []T `json:"AdditionalBootstrapServers,omitempty"`
 
 	// BatchSize AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Pipe_PipeSourceSelfManagedKafkaParameters[T any] struct {
 	// ConsumerGroupID AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceselfmanagedkafkaparameters.html#cfn-pipes-pipe-pipesourceselfmanagedkafkaparameters-consumergroupid
-	ConsumerGroupID *string `json:"ConsumerGroupID,omitempty"`
+	ConsumerGroupID *T `json:"ConsumerGroupID,omitempty"`
 
 	// Credentials AWS CloudFormation Property
 	// Required: false
@@ -38,17 +38,17 @@ type Pipe_PipeSourceSelfManagedKafkaParameters[T any] struct {
 	// ServerRootCaCertificate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceselfmanagedkafkaparameters.html#cfn-pipes-pipe-pipesourceselfmanagedkafkaparameters-serverrootcacertificate
-	ServerRootCaCertificate *string `json:"ServerRootCaCertificate,omitempty"`
+	ServerRootCaCertificate *T `json:"ServerRootCaCertificate,omitempty"`
 
 	// StartingPosition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceselfmanagedkafkaparameters.html#cfn-pipes-pipe-pipesourceselfmanagedkafkaparameters-startingposition
-	StartingPosition *string `json:"StartingPosition,omitempty"`
+	StartingPosition *T `json:"StartingPosition,omitempty"`
 
 	// TopicName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceselfmanagedkafkaparameters.html#cfn-pipes-pipe-pipesourceselfmanagedkafkaparameters-topicname
-	TopicName string `json:"TopicName"`
+	TopicName T `json:"TopicName"`
 
 	// Vpc AWS CloudFormation Property
 	// Required: false

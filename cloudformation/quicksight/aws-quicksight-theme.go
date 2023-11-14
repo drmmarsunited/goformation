@@ -17,12 +17,12 @@ type Theme[T any] struct {
 	// AwsAccountId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-awsaccountid
-	AwsAccountId string `json:"AwsAccountId"`
+	AwsAccountId T `json:"AwsAccountId"`
 
 	// BaseThemeId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-basethemeid
-	BaseThemeId string `json:"BaseThemeId"`
+	BaseThemeId T `json:"BaseThemeId"`
 
 	// Configuration AWS CloudFormation Property
 	// Required: true
@@ -32,7 +32,7 @@ type Theme[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Permissions AWS CloudFormation Property
 	// Required: false
@@ -47,12 +47,12 @@ type Theme[T any] struct {
 	// ThemeId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-themeid
-	ThemeId string `json:"ThemeId"`
+	ThemeId T `json:"ThemeId"`
 
 	// VersionDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-versiondescription
-	VersionDescription *string `json:"VersionDescription,omitempty"`
+	VersionDescription *T `json:"VersionDescription,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

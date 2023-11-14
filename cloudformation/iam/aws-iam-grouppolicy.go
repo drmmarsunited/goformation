@@ -16,7 +16,7 @@ type GroupPolicy[T any] struct {
 	// GroupName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-grouppolicy.html#cfn-iam-grouppolicy-groupname
-	GroupName string `json:"GroupName"`
+	GroupName T `json:"GroupName"`
 
 	// PolicyDocument AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type GroupPolicy[T any] struct {
 	// PolicyName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-grouppolicy.html#cfn-iam-grouppolicy-policyname
-	PolicyName string `json:"PolicyName"`
+	PolicyName T `json:"PolicyName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

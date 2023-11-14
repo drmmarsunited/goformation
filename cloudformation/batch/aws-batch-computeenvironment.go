@@ -16,7 +16,7 @@ type ComputeEnvironment[T any] struct {
 	// ComputeEnvironmentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-computeenvironmentname
-	ComputeEnvironmentName *string `json:"ComputeEnvironmentName,omitempty"`
+	ComputeEnvironmentName *T `json:"ComputeEnvironmentName,omitempty"`
 
 	// ComputeResources AWS CloudFormation Property
 	// Required: false
@@ -36,22 +36,22 @@ type ComputeEnvironment[T any] struct {
 	// ServiceRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-servicerole
-	ServiceRole *string `json:"ServiceRole,omitempty"`
+	ServiceRole *T `json:"ServiceRole,omitempty"`
 
 	// State AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-state
-	State *string `json:"State,omitempty"`
+	State *T `json:"State,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-tags
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// UnmanagedvCpus AWS CloudFormation Property
 	// Required: false

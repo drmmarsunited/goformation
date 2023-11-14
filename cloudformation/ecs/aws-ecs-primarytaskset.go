@@ -16,17 +16,17 @@ type PrimaryTaskSet[T any] struct {
 	// Cluster AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-primarytaskset.html#cfn-ecs-primarytaskset-cluster
-	Cluster string `json:"Cluster"`
+	Cluster T `json:"Cluster"`
 
 	// Service AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-primarytaskset.html#cfn-ecs-primarytaskset-service
-	Service string `json:"Service"`
+	Service T `json:"Service"`
 
 	// TaskSetId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-primarytaskset.html#cfn-ecs-primarytaskset-tasksetid
-	TaskSetId string `json:"TaskSetId"`
+	TaskSetId T `json:"TaskSetId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

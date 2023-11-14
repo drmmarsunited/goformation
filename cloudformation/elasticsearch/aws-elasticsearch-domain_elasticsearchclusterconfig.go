@@ -28,7 +28,7 @@ type Domain_ElasticsearchClusterConfig[T any] struct {
 	// DedicatedMasterType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-dedicatedmastertype
-	DedicatedMasterType *string `json:"DedicatedMasterType,omitempty"`
+	DedicatedMasterType *T `json:"DedicatedMasterType,omitempty"`
 
 	// InstanceCount AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Domain_ElasticsearchClusterConfig[T any] struct {
 	// InstanceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-instnacetype
-	InstanceType *string `json:"InstanceType,omitempty"`
+	InstanceType *T `json:"InstanceType,omitempty"`
 
 	// WarmCount AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Domain_ElasticsearchClusterConfig[T any] struct {
 	// WarmType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-warmtype
-	WarmType *string `json:"WarmType,omitempty"`
+	WarmType *T `json:"WarmType,omitempty"`
 
 	// ZoneAwarenessConfig AWS CloudFormation Property
 	// Required: false

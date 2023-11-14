@@ -13,17 +13,17 @@ type Channel_RtmpGroupSettings[T any] struct {
 	// AdMarkers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpgroupsettings.html#cfn-medialive-channel-rtmpgroupsettings-admarkers
-	AdMarkers []string `json:"AdMarkers,omitempty"`
+	AdMarkers []T `json:"AdMarkers,omitempty"`
 
 	// AuthenticationScheme AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpgroupsettings.html#cfn-medialive-channel-rtmpgroupsettings-authenticationscheme
-	AuthenticationScheme *string `json:"AuthenticationScheme,omitempty"`
+	AuthenticationScheme *T `json:"AuthenticationScheme,omitempty"`
 
 	// CacheFullBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpgroupsettings.html#cfn-medialive-channel-rtmpgroupsettings-cachefullbehavior
-	CacheFullBehavior *string `json:"CacheFullBehavior,omitempty"`
+	CacheFullBehavior *T `json:"CacheFullBehavior,omitempty"`
 
 	// CacheLength AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type Channel_RtmpGroupSettings[T any] struct {
 	// CaptionData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpgroupsettings.html#cfn-medialive-channel-rtmpgroupsettings-captiondata
-	CaptionData *string `json:"CaptionData,omitempty"`
+	CaptionData *T `json:"CaptionData,omitempty"`
 
 	// IncludeFillerNalUnits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpgroupsettings.html#cfn-medialive-channel-rtmpgroupsettings-includefillernalunits
-	IncludeFillerNalUnits *string `json:"IncludeFillerNalUnits,omitempty"`
+	IncludeFillerNalUnits *T `json:"IncludeFillerNalUnits,omitempty"`
 
 	// InputLossAction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpgroupsettings.html#cfn-medialive-channel-rtmpgroupsettings-inputlossaction
-	InputLossAction *string `json:"InputLossAction,omitempty"`
+	InputLossAction *T `json:"InputLossAction,omitempty"`
 
 	// RestartDelay AWS CloudFormation Property
 	// Required: false

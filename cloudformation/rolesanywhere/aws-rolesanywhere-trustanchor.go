@@ -22,7 +22,7 @@ type TrustAnchor[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-trustanchor.html#cfn-rolesanywhere-trustanchor-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// NotificationSettings AWS CloudFormation Property
 	// Required: false

@@ -33,7 +33,7 @@ type OriginEndpoint_Segment[T any] struct {
 	// SegmentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-segment.html#cfn-mediapackagev2-originendpoint-segment-segmentname
-	SegmentName *string `json:"SegmentName,omitempty"`
+	SegmentName *T `json:"SegmentName,omitempty"`
 
 	// TsIncludeDvbSubtitles AWS CloudFormation Property
 	// Required: false

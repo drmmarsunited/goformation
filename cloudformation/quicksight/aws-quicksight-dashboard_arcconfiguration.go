@@ -18,7 +18,7 @@ type Dashboard_ArcConfiguration[T any] struct {
 	// ArcThickness AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-arcconfiguration.html#cfn-quicksight-dashboard-arcconfiguration-arcthickness
-	ArcThickness *string `json:"ArcThickness,omitempty"`
+	ArcThickness *T `json:"ArcThickness,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

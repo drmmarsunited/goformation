@@ -13,22 +13,22 @@ type Workgroup_NetworkInterface[T any] struct {
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-networkinterface.html#cfn-redshiftserverless-workgroup-networkinterface-availabilityzone
-	AvailabilityZone *string `json:"AvailabilityZone,omitempty"`
+	AvailabilityZone *T `json:"AvailabilityZone,omitempty"`
 
 	// NetworkInterfaceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-networkinterface.html#cfn-redshiftserverless-workgroup-networkinterface-networkinterfaceid
-	NetworkInterfaceId *string `json:"NetworkInterfaceId,omitempty"`
+	NetworkInterfaceId *T `json:"NetworkInterfaceId,omitempty"`
 
 	// PrivateIpAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-networkinterface.html#cfn-redshiftserverless-workgroup-networkinterface-privateipaddress
-	PrivateIpAddress *string `json:"PrivateIpAddress,omitempty"`
+	PrivateIpAddress *T `json:"PrivateIpAddress,omitempty"`
 
 	// SubnetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-networkinterface.html#cfn-redshiftserverless-workgroup-networkinterface-subnetid
-	SubnetId *string `json:"SubnetId,omitempty"`
+	SubnetId *T `json:"SubnetId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

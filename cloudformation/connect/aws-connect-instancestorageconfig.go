@@ -16,7 +16,7 @@ type InstanceStorageConfig[T any] struct {
 	// InstanceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-instancestorageconfig.html#cfn-connect-instancestorageconfig-instancearn
-	InstanceArn string `json:"InstanceArn"`
+	InstanceArn T `json:"InstanceArn"`
 
 	// KinesisFirehoseConfig AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type InstanceStorageConfig[T any] struct {
 	// ResourceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-instancestorageconfig.html#cfn-connect-instancestorageconfig-resourcetype
-	ResourceType string `json:"ResourceType"`
+	ResourceType T `json:"ResourceType"`
 
 	// S3Config AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type InstanceStorageConfig[T any] struct {
 	// StorageType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-instancestorageconfig.html#cfn-connect-instancestorageconfig-storagetype
-	StorageType string `json:"StorageType"`
+	StorageType T `json:"StorageType"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,12 +13,12 @@ type Entity_RelationshipValue[T any] struct {
 	// TargetComponentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-relationshipvalue.html#cfn-iottwinmaker-entity-relationshipvalue-targetcomponentname
-	TargetComponentName *string `json:"TargetComponentName,omitempty"`
+	TargetComponentName *T `json:"TargetComponentName,omitempty"`
 
 	// TargetEntityId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-relationshipvalue.html#cfn-iottwinmaker-entity-relationshipvalue-targetentityid
-	TargetEntityId *string `json:"TargetEntityId,omitempty"`
+	TargetEntityId *T `json:"TargetEntityId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

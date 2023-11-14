@@ -13,17 +13,17 @@ type DBInstance_Endpoint[T any] struct {
 	// Address AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-endpoint.html#cfn-rds-dbinstance-endpoint-address
-	Address *string `json:"Address,omitempty"`
+	Address *T `json:"Address,omitempty"`
 
 	// HostedZoneId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-endpoint.html#cfn-rds-dbinstance-endpoint-hostedzoneid
-	HostedZoneId *string `json:"HostedZoneId,omitempty"`
+	HostedZoneId *T `json:"HostedZoneId,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-endpoint.html#cfn-rds-dbinstance-endpoint-port
-	Port *string `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

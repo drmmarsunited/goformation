@@ -13,7 +13,7 @@ type Service_LoadBalancer[T any] struct {
 	// ContainerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-loadbalancer.html#cfn-ecs-service-loadbalancer-containername
-	ContainerName *string `json:"ContainerName,omitempty"`
+	ContainerName *T `json:"ContainerName,omitempty"`
 
 	// ContainerPort AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Service_LoadBalancer[T any] struct {
 	// LoadBalancerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-loadbalancer.html#cfn-ecs-service-loadbalancer-loadbalancername
-	LoadBalancerName *string `json:"LoadBalancerName,omitempty"`
+	LoadBalancerName *T `json:"LoadBalancerName,omitempty"`
 
 	// TargetGroupArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-loadbalancer.html#cfn-ecs-service-loadbalancer-targetgrouparn
-	TargetGroupArn *string `json:"TargetGroupArn,omitempty"`
+	TargetGroupArn *T `json:"TargetGroupArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

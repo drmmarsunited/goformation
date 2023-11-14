@@ -13,7 +13,7 @@ type Dashboard_FieldBasedTooltip[T any] struct {
 	// AggregationVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fieldbasedtooltip.html#cfn-quicksight-dashboard-fieldbasedtooltip-aggregationvisibility
-	AggregationVisibility *string `json:"AggregationVisibility,omitempty"`
+	AggregationVisibility *T `json:"AggregationVisibility,omitempty"`
 
 	// TooltipFields AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Dashboard_FieldBasedTooltip[T any] struct {
 	// TooltipTitleType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fieldbasedtooltip.html#cfn-quicksight-dashboard-fieldbasedtooltip-tooltiptitletype
-	TooltipTitleType *string `json:"TooltipTitleType,omitempty"`
+	TooltipTitleType *T `json:"TooltipTitleType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

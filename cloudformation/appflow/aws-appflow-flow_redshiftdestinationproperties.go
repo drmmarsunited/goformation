@@ -13,7 +13,7 @@ type Flow_RedshiftDestinationProperties[T any] struct {
 	// BucketPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-redshiftdestinationproperties.html#cfn-appflow-flow-redshiftdestinationproperties-bucketprefix
-	BucketPrefix *string `json:"BucketPrefix,omitempty"`
+	BucketPrefix *T `json:"BucketPrefix,omitempty"`
 
 	// ErrorHandlingConfig AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Flow_RedshiftDestinationProperties[T any] struct {
 	// IntermediateBucketName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-redshiftdestinationproperties.html#cfn-appflow-flow-redshiftdestinationproperties-intermediatebucketname
-	IntermediateBucketName string `json:"IntermediateBucketName"`
+	IntermediateBucketName T `json:"IntermediateBucketName"`
 
 	// Object AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-redshiftdestinationproperties.html#cfn-appflow-flow-redshiftdestinationproperties-object
-	Object string `json:"Object"`
+	Object T `json:"Object"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

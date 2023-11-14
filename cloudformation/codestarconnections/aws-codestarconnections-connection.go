@@ -17,17 +17,17 @@ type Connection[T any] struct {
 	// ConnectionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarconnections-connection.html#cfn-codestarconnections-connection-connectionname
-	ConnectionName string `json:"ConnectionName"`
+	ConnectionName T `json:"ConnectionName"`
 
 	// HostArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarconnections-connection.html#cfn-codestarconnections-connection-hostarn
-	HostArn *string `json:"HostArn,omitempty"`
+	HostArn *T `json:"HostArn,omitempty"`
 
 	// ProviderType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarconnections-connection.html#cfn-codestarconnections-connection-providertype
-	ProviderType *string `json:"ProviderType,omitempty"`
+	ProviderType *T `json:"ProviderType,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

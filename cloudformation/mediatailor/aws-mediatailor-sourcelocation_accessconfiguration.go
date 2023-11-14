@@ -13,7 +13,7 @@ type SourceLocation_AccessConfiguration[T any] struct {
 	// AccessType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-sourcelocation-accessconfiguration.html#cfn-mediatailor-sourcelocation-accessconfiguration-accesstype
-	AccessType *string `json:"AccessType,omitempty"`
+	AccessType *T `json:"AccessType,omitempty"`
 
 	// SecretsManagerAccessTokenConfiguration AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type Function_Destination[T any] struct {
 	// Destination AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#destination-config-object
-	Destination string `json:"Destination"`
+	Destination T `json:"Destination"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#destination-config-object
-	Type *string `json:"Type,omitempty"`
+	Type *T `json:"Type,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

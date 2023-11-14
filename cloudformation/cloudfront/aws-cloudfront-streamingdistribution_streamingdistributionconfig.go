@@ -13,12 +13,12 @@ type StreamingDistribution_StreamingDistributionConfig[T any] struct {
 	// Aliases AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-aliases
-	Aliases []string `json:"Aliases,omitempty"`
+	Aliases []T `json:"Aliases,omitempty"`
 
 	// Comment AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-comment
-	Comment string `json:"Comment"`
+	Comment T `json:"Comment"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type StreamingDistribution_StreamingDistributionConfig[T any] struct {
 	// PriceClass AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-priceclass
-	PriceClass *string `json:"PriceClass,omitempty"`
+	PriceClass *T `json:"PriceClass,omitempty"`
 
 	// S3Origin AWS CloudFormation Property
 	// Required: true

@@ -17,12 +17,12 @@ type Domain[T any] struct {
 	// DomainName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-domain.html#cfn-codeartifact-domain-domainname
-	DomainName string `json:"DomainName"`
+	DomainName T `json:"DomainName"`
 
 	// EncryptionKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-domain.html#cfn-codeartifact-domain-encryptionkey
-	EncryptionKey *string `json:"EncryptionKey,omitempty"`
+	EncryptionKey *T `json:"EncryptionKey,omitempty"`
 
 	// PermissionsPolicyDocument AWS CloudFormation Property
 	// Required: false

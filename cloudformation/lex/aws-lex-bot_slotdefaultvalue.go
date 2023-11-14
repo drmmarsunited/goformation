@@ -13,7 +13,7 @@ type Bot_SlotDefaultValue[T any] struct {
 	// DefaultValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotdefaultvalue.html#cfn-lex-bot-slotdefaultvalue-defaultvalue
-	DefaultValue string `json:"DefaultValue"`
+	DefaultValue T `json:"DefaultValue"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

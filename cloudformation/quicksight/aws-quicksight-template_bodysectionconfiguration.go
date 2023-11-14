@@ -23,7 +23,7 @@ type Template_BodySectionConfiguration[T any] struct {
 	// SectionId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-bodysectionconfiguration.html#cfn-quicksight-template-bodysectionconfiguration-sectionid
-	SectionId string `json:"SectionId"`
+	SectionId T `json:"SectionId"`
 
 	// Style AWS CloudFormation Property
 	// Required: false

@@ -37,7 +37,7 @@ type MissionProfile[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// StreamsKmsKey AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type MissionProfile[T any] struct {
 	// StreamsKmsRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-streamskmsrole
-	StreamsKmsRole *string `json:"StreamsKmsRole,omitempty"`
+	StreamsKmsRole *T `json:"StreamsKmsRole,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type MissionProfile[T any] struct {
 	// TrackingConfigArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-trackingconfigarn
-	TrackingConfigArn string `json:"TrackingConfigArn"`
+	TrackingConfigArn T `json:"TrackingConfigArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

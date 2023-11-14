@@ -16,7 +16,7 @@ type License[T any] struct {
 	// Beneficiary AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-beneficiary
-	Beneficiary *string `json:"Beneficiary,omitempty"`
+	Beneficiary *T `json:"Beneficiary,omitempty"`
 
 	// ConsumptionConfiguration AWS CloudFormation Property
 	// Required: true
@@ -31,7 +31,7 @@ type License[T any] struct {
 	// HomeRegion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-homeregion
-	HomeRegion string `json:"HomeRegion"`
+	HomeRegion T `json:"HomeRegion"`
 
 	// Issuer AWS CloudFormation Property
 	// Required: true
@@ -46,22 +46,22 @@ type License[T any] struct {
 	// LicenseName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-licensename
-	LicenseName string `json:"LicenseName"`
+	LicenseName T `json:"LicenseName"`
 
 	// ProductName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-productname
-	ProductName string `json:"ProductName"`
+	ProductName T `json:"ProductName"`
 
 	// ProductSKU AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-productsku
-	ProductSKU *string `json:"ProductSKU,omitempty"`
+	ProductSKU *T `json:"ProductSKU,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-status
-	Status *string `json:"Status,omitempty"`
+	Status *T `json:"Status,omitempty"`
 
 	// Validity AWS CloudFormation Property
 	// Required: true

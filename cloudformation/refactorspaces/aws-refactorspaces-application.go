@@ -22,17 +22,17 @@ type Application[T any] struct {
 	// EnvironmentIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#cfn-refactorspaces-application-environmentidentifier
-	EnvironmentIdentifier string `json:"EnvironmentIdentifier"`
+	EnvironmentIdentifier T `json:"EnvironmentIdentifier"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#cfn-refactorspaces-application-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ProxyType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#cfn-refactorspaces-application-proxytype
-	ProxyType string `json:"ProxyType"`
+	ProxyType T `json:"ProxyType"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type Application[T any] struct {
 	// VpcId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#cfn-refactorspaces-application-vpcid
-	VpcId string `json:"VpcId"`
+	VpcId T `json:"VpcId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

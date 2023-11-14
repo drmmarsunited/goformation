@@ -13,12 +13,12 @@ type Workflow_TagStepDetails[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-tagstepdetails.html#cfn-transfer-workflow-tagstepdetails-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// SourceFileLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-workflow-tagstepdetails.html#cfn-transfer-workflow-tagstepdetails-sourcefilelocation
-	SourceFileLocation *string `json:"SourceFileLocation,omitempty"`
+	SourceFileLocation *T `json:"SourceFileLocation,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

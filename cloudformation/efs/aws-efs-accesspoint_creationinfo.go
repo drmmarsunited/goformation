@@ -13,17 +13,17 @@ type AccessPoint_CreationInfo[T any] struct {
 	// OwnerGid AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-creationinfo.html#cfn-efs-accesspoint-creationinfo-ownergid
-	OwnerGid string `json:"OwnerGid"`
+	OwnerGid T `json:"OwnerGid"`
 
 	// OwnerUid AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-creationinfo.html#cfn-efs-accesspoint-creationinfo-owneruid
-	OwnerUid string `json:"OwnerUid"`
+	OwnerUid T `json:"OwnerUid"`
 
 	// Permissions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-creationinfo.html#cfn-efs-accesspoint-creationinfo-permissions
-	Permissions string `json:"Permissions"`
+	Permissions T `json:"Permissions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

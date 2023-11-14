@@ -18,7 +18,7 @@ type Template_KPIOptions[T any] struct {
 	// PrimaryValueDisplayType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpioptions.html#cfn-quicksight-template-kpioptions-primaryvaluedisplaytype
-	PrimaryValueDisplayType *string `json:"PrimaryValueDisplayType,omitempty"`
+	PrimaryValueDisplayType *T `json:"PrimaryValueDisplayType,omitempty"`
 
 	// PrimaryValueFontConfiguration AWS CloudFormation Property
 	// Required: false
@@ -40,10 +40,20 @@ type Template_KPIOptions[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpioptions.html#cfn-quicksight-template-kpioptions-secondaryvaluefontconfiguration
 	SecondaryValueFontConfiguration *Template_FontConfiguration[any] `json:"SecondaryValueFontConfiguration,omitempty"`
 
+	// Sparkline AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpioptions.html#cfn-quicksight-template-kpioptions-sparkline
+	Sparkline *Template_KPISparklineOptions[any] `json:"Sparkline,omitempty"`
+
 	// TrendArrows AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpioptions.html#cfn-quicksight-template-kpioptions-trendarrows
 	TrendArrows *Template_TrendArrowOptions[any] `json:"TrendArrows,omitempty"`
+
+	// VisualLayoutOptions AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpioptions.html#cfn-quicksight-template-kpioptions-visuallayoutoptions
+	VisualLayoutOptions *Template_KPIVisualLayoutOptions[any] `json:"VisualLayoutOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

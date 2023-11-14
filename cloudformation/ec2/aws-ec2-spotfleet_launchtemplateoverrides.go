@@ -13,7 +13,7 @@ type SpotFleet_LaunchTemplateOverrides[T any] struct {
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-availabilityzone
-	AvailabilityZone *string `json:"AvailabilityZone,omitempty"`
+	AvailabilityZone *T `json:"AvailabilityZone,omitempty"`
 
 	// InstanceRequirements AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type SpotFleet_LaunchTemplateOverrides[T any] struct {
 	// InstanceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-instancetype
-	InstanceType *string `json:"InstanceType,omitempty"`
+	InstanceType *T `json:"InstanceType,omitempty"`
 
 	// Priority AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type SpotFleet_LaunchTemplateOverrides[T any] struct {
 	// SpotPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-spotprice
-	SpotPrice *string `json:"SpotPrice,omitempty"`
+	SpotPrice *T `json:"SpotPrice,omitempty"`
 
 	// SubnetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-subnetid
-	SubnetId *string `json:"SubnetId,omitempty"`
+	SubnetId *T `json:"SubnetId,omitempty"`
 
 	// WeightedCapacity AWS CloudFormation Property
 	// Required: false

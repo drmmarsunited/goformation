@@ -16,22 +16,27 @@ type Version[T any] struct {
 	// CodeSha256 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-codesha256
-	CodeSha256 *string `json:"CodeSha256,omitempty"`
+	CodeSha256 *T `json:"CodeSha256,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// FunctionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-functionname
-	FunctionName string `json:"FunctionName"`
+	FunctionName T `json:"FunctionName"`
 
 	// ProvisionedConcurrencyConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-provisionedconcurrencyconfig
 	ProvisionedConcurrencyConfig *Version_ProvisionedConcurrencyConfiguration[any] `json:"ProvisionedConcurrencyConfig,omitempty"`
+
+	// RuntimePolicy AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-runtimepolicy
+	RuntimePolicy *Version_RuntimePolicy[any] `json:"RuntimePolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

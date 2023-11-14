@@ -13,17 +13,17 @@ type Table_S3BucketSource[T any] struct {
 	// S3Bucket AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-s3bucketsource.html#cfn-dynamodb-table-s3bucketsource-s3bucket
-	S3Bucket string `json:"S3Bucket"`
+	S3Bucket T `json:"S3Bucket"`
 
 	// S3BucketOwner AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-s3bucketsource.html#cfn-dynamodb-table-s3bucketsource-s3bucketowner
-	S3BucketOwner *string `json:"S3BucketOwner,omitempty"`
+	S3BucketOwner *T `json:"S3BucketOwner,omitempty"`
 
 	// S3KeyPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-s3bucketsource.html#cfn-dynamodb-table-s3bucketsource-s3keyprefix
-	S3KeyPrefix *string `json:"S3KeyPrefix,omitempty"`
+	S3KeyPrefix *T `json:"S3KeyPrefix,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

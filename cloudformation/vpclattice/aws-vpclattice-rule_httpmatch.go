@@ -18,7 +18,7 @@ type Rule_HttpMatch[T any] struct {
 	// Method AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-rule-httpmatch.html#cfn-vpclattice-rule-httpmatch-method
-	Method *string `json:"Method,omitempty"`
+	Method *T `json:"Method,omitempty"`
 
 	// PathMatch AWS CloudFormation Property
 	// Required: false

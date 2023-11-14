@@ -13,7 +13,7 @@ type Template_WhatIfPointScenario[T any] struct {
 	// Date AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-whatifpointscenario.html#cfn-quicksight-template-whatifpointscenario-date
-	Date string `json:"Date"`
+	Date T `json:"Date"`
 
 	// Value AWS CloudFormation Property
 	// Required: true

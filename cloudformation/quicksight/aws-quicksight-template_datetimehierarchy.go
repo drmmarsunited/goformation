@@ -18,7 +18,7 @@ type Template_DateTimeHierarchy[T any] struct {
 	// HierarchyId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datetimehierarchy.html#cfn-quicksight-template-datetimehierarchy-hierarchyid
-	HierarchyId string `json:"HierarchyId"`
+	HierarchyId T `json:"HierarchyId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

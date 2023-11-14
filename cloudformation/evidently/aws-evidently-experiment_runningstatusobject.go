@@ -13,22 +13,22 @@ type Experiment_RunningStatusObject[T any] struct {
 	// AnalysisCompleteTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-runningstatusobject.html#cfn-evidently-experiment-runningstatusobject-analysiscompletetime
-	AnalysisCompleteTime *string `json:"AnalysisCompleteTime,omitempty"`
+	AnalysisCompleteTime *T `json:"AnalysisCompleteTime,omitempty"`
 
 	// DesiredState AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-runningstatusobject.html#cfn-evidently-experiment-runningstatusobject-desiredstate
-	DesiredState *string `json:"DesiredState,omitempty"`
+	DesiredState *T `json:"DesiredState,omitempty"`
 
 	// Reason AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-runningstatusobject.html#cfn-evidently-experiment-runningstatusobject-reason
-	Reason *string `json:"Reason,omitempty"`
+	Reason *T `json:"Reason,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-runningstatusobject.html#cfn-evidently-experiment-runningstatusobject-status
-	Status string `json:"Status"`
+	Status T `json:"Status"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

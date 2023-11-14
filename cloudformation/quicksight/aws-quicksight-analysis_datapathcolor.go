@@ -13,7 +13,7 @@ type Analysis_DataPathColor[T any] struct {
 	// Color AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datapathcolor.html#cfn-quicksight-analysis-datapathcolor-color
-	Color string `json:"Color"`
+	Color T `json:"Color"`
 
 	// Element AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Analysis_DataPathColor[T any] struct {
 	// TimeGranularity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datapathcolor.html#cfn-quicksight-analysis-datapathcolor-timegranularity
-	TimeGranularity *string `json:"TimeGranularity,omitempty"`
+	TimeGranularity *T `json:"TimeGranularity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

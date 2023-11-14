@@ -16,17 +16,17 @@ type ImageVersion[T any] struct {
 	// Alias AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-imageversion.html#cfn-sagemaker-imageversion-alias
-	Alias *string `json:"Alias,omitempty"`
+	Alias *T `json:"Alias,omitempty"`
 
 	// Aliases AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-imageversion.html#cfn-sagemaker-imageversion-aliases
-	Aliases []string `json:"Aliases,omitempty"`
+	Aliases []T `json:"Aliases,omitempty"`
 
 	// BaseImage AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-imageversion.html#cfn-sagemaker-imageversion-baseimage
-	BaseImage string `json:"BaseImage"`
+	BaseImage T `json:"BaseImage"`
 
 	// Horovod AWS CloudFormation Property
 	// Required: false
@@ -36,37 +36,37 @@ type ImageVersion[T any] struct {
 	// ImageName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-imageversion.html#cfn-sagemaker-imageversion-imagename
-	ImageName string `json:"ImageName"`
+	ImageName T `json:"ImageName"`
 
 	// JobType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-imageversion.html#cfn-sagemaker-imageversion-jobtype
-	JobType *string `json:"JobType,omitempty"`
+	JobType *T `json:"JobType,omitempty"`
 
 	// MLFramework AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-imageversion.html#cfn-sagemaker-imageversion-mlframework
-	MLFramework *string `json:"MLFramework,omitempty"`
+	MLFramework *T `json:"MLFramework,omitempty"`
 
 	// Processor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-imageversion.html#cfn-sagemaker-imageversion-processor
-	Processor *string `json:"Processor,omitempty"`
+	Processor *T `json:"Processor,omitempty"`
 
 	// ProgrammingLang AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-imageversion.html#cfn-sagemaker-imageversion-programminglang
-	ProgrammingLang *string `json:"ProgrammingLang,omitempty"`
+	ProgrammingLang *T `json:"ProgrammingLang,omitempty"`
 
 	// ReleaseNotes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-imageversion.html#cfn-sagemaker-imageversion-releasenotes
-	ReleaseNotes *string `json:"ReleaseNotes,omitempty"`
+	ReleaseNotes *T `json:"ReleaseNotes,omitempty"`
 
 	// VendorGuidance AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-imageversion.html#cfn-sagemaker-imageversion-vendorguidance
-	VendorGuidance *string `json:"VendorGuidance,omitempty"`
+	VendorGuidance *T `json:"VendorGuidance,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

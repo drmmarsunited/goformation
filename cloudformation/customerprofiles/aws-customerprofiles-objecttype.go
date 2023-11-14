@@ -22,17 +22,17 @@ type ObjectType[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DomainName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-domainname
-	DomainName string `json:"DomainName"`
+	DomainName T `json:"DomainName"`
 
 	// EncryptionKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-encryptionkey
-	EncryptionKey *string `json:"EncryptionKey,omitempty"`
+	EncryptionKey *T `json:"EncryptionKey,omitempty"`
 
 	// ExpirationDays AWS CloudFormation Property
 	// Required: false
@@ -52,12 +52,12 @@ type ObjectType[T any] struct {
 	// ObjectTypeName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-objecttypename
-	ObjectTypeName *string `json:"ObjectTypeName,omitempty"`
+	ObjectTypeName *T `json:"ObjectTypeName,omitempty"`
 
 	// SourceLastUpdatedTimestampFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-sourcelastupdatedtimestampformat
-	SourceLastUpdatedTimestampFormat *string `json:"SourceLastUpdatedTimestampFormat,omitempty"`
+	SourceLastUpdatedTimestampFormat *T `json:"SourceLastUpdatedTimestampFormat,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -67,7 +67,7 @@ type ObjectType[T any] struct {
 	// TemplateId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-templateid
-	TemplateId *string `json:"TemplateId,omitempty"`
+	TemplateId *T `json:"TemplateId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

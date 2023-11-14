@@ -13,12 +13,12 @@ type Pipeline_VpcEndpoint[T any] struct {
 	// VpcEndpointId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-osis-pipeline-vpcendpoint.html#cfn-osis-pipeline-vpcendpoint-vpcendpointid
-	VpcEndpointId *string `json:"VpcEndpointId,omitempty"`
+	VpcEndpointId *T `json:"VpcEndpointId,omitempty"`
 
 	// VpcId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-osis-pipeline-vpcendpoint.html#cfn-osis-pipeline-vpcendpoint-vpcid
-	VpcId *string `json:"VpcId,omitempty"`
+	VpcId *T `json:"VpcId,omitempty"`
 
 	// VpcOptions AWS CloudFormation Property
 	// Required: false

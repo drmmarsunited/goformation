@@ -13,17 +13,17 @@ type Pipe_PipeTargetHttpParameters[T any] struct {
 	// HeaderParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargethttpparameters.html#cfn-pipes-pipe-pipetargethttpparameters-headerparameters
-	HeaderParameters map[string]string `json:"HeaderParameters,omitempty"`
+	HeaderParameters map[string]T `json:"HeaderParameters,omitempty"`
 
 	// PathParameterValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargethttpparameters.html#cfn-pipes-pipe-pipetargethttpparameters-pathparametervalues
-	PathParameterValues []string `json:"PathParameterValues,omitempty"`
+	PathParameterValues []T `json:"PathParameterValues,omitempty"`
 
 	// QueryStringParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargethttpparameters.html#cfn-pipes-pipe-pipetargethttpparameters-querystringparameters
-	QueryStringParameters map[string]string `json:"QueryStringParameters,omitempty"`
+	QueryStringParameters map[string]T `json:"QueryStringParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

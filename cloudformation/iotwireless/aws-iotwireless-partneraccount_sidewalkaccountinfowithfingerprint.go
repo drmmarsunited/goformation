@@ -13,17 +13,17 @@ type PartnerAccount_SidewalkAccountInfoWithFingerprint[T any] struct {
 	// AmazonId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint.html#cfn-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint-amazonid
-	AmazonId *string `json:"AmazonId,omitempty"`
+	AmazonId *T `json:"AmazonId,omitempty"`
 
 	// Arn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint.html#cfn-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint-arn
-	Arn *string `json:"Arn,omitempty"`
+	Arn *T `json:"Arn,omitempty"`
 
 	// Fingerprint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint.html#cfn-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint-fingerprint
-	Fingerprint *string `json:"Fingerprint,omitempty"`
+	Fingerprint *T `json:"Fingerprint,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

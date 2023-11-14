@@ -13,7 +13,7 @@ type Config_Frequency[T any] struct {
 	// Units AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-frequency.html#cfn-groundstation-config-frequency-units
-	Units *string `json:"Units,omitempty"`
+	Units *T `json:"Units,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: false

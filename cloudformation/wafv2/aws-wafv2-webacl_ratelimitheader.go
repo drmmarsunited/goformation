@@ -13,7 +13,7 @@ type WebACL_RateLimitHeader[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratelimitheader.html#cfn-wafv2-webacl-ratelimitheader-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// TextTransformations AWS CloudFormation Property
 	// Required: true

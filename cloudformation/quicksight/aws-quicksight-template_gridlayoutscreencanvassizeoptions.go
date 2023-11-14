@@ -13,12 +13,12 @@ type Template_GridLayoutScreenCanvasSizeOptions[T any] struct {
 	// OptimizedViewPortWidth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gridlayoutscreencanvassizeoptions.html#cfn-quicksight-template-gridlayoutscreencanvassizeoptions-optimizedviewportwidth
-	OptimizedViewPortWidth *string `json:"OptimizedViewPortWidth,omitempty"`
+	OptimizedViewPortWidth *T `json:"OptimizedViewPortWidth,omitempty"`
 
 	// ResizeOption AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gridlayoutscreencanvassizeoptions.html#cfn-quicksight-template-gridlayoutscreencanvassizeoptions-resizeoption
-	ResizeOption string `json:"ResizeOption"`
+	ResizeOption T `json:"ResizeOption"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

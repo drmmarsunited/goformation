@@ -13,7 +13,7 @@ type DeploymentGroup_DeploymentReadyOption[T any] struct {
 	// ActionOnTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentreadyoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-deploymentreadyoption-actionontimeout
-	ActionOnTimeout *string `json:"ActionOnTimeout,omitempty"`
+	ActionOnTimeout *T `json:"ActionOnTimeout,omitempty"`
 
 	// WaitTimeInMinutes AWS CloudFormation Property
 	// Required: false

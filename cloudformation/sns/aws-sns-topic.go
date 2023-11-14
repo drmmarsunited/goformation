@@ -14,6 +14,11 @@ import (
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html
 type Topic[T any] struct {
 
+	// ArchivePolicy AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-archivepolicy
+	ArchivePolicy interface{} `json:"ArchivePolicy,omitempty"`
+
 	// ContentBasedDeduplication AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-contentbaseddeduplication
@@ -27,7 +32,7 @@ type Topic[T any] struct {
 	// DisplayName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-displayname
-	DisplayName *string `json:"DisplayName,omitempty"`
+	DisplayName *T `json:"DisplayName,omitempty"`
 
 	// FifoTopic AWS CloudFormation Property
 	// Required: false
@@ -37,12 +42,12 @@ type Topic[T any] struct {
 	// KmsMasterKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-kmsmasterkeyid
-	KmsMasterKeyId *string `json:"KmsMasterKeyId,omitempty"`
+	KmsMasterKeyId *T `json:"KmsMasterKeyId,omitempty"`
 
 	// SignatureVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-signatureversion
-	SignatureVersion *string `json:"SignatureVersion,omitempty"`
+	SignatureVersion *T `json:"SignatureVersion,omitempty"`
 
 	// Subscription AWS CloudFormation Property
 	// Required: false
@@ -57,12 +62,12 @@ type Topic[T any] struct {
 	// TopicName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-topicname
-	TopicName *string `json:"TopicName,omitempty"`
+	TopicName *T `json:"TopicName,omitempty"`
 
 	// TracingConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-tracingconfig
-	TracingConfig *string `json:"TracingConfig,omitempty"`
+	TracingConfig *T `json:"TracingConfig,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

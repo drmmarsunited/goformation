@@ -16,17 +16,17 @@ type UserPoolUICustomizationAttachment[T any] struct {
 	// CSS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluicustomizationattachment.html#cfn-cognito-userpooluicustomizationattachment-css
-	CSS *string `json:"CSS,omitempty"`
+	CSS *T `json:"CSS,omitempty"`
 
 	// ClientId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluicustomizationattachment.html#cfn-cognito-userpooluicustomizationattachment-clientid
-	ClientId string `json:"ClientId"`
+	ClientId T `json:"ClientId"`
 
 	// UserPoolId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluicustomizationattachment.html#cfn-cognito-userpooluicustomizationattachment-userpoolid
-	UserPoolId string `json:"UserPoolId"`
+	UserPoolId T `json:"UserPoolId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

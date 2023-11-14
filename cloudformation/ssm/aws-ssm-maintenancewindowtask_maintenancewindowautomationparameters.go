@@ -13,7 +13,7 @@ type MaintenanceWindowTask_MaintenanceWindowAutomationParameters[T any] struct {
 	// DocumentVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowautomationparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowautomationparameters-documentversion
-	DocumentVersion *string `json:"DocumentVersion,omitempty"`
+	DocumentVersion *T `json:"DocumentVersion,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false

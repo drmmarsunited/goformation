@@ -13,17 +13,17 @@ type Skill_AuthenticationConfiguration[T any] struct {
 	// ClientId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-authenticationconfiguration.html#cfn-ask-skill-authenticationconfiguration-clientid
-	ClientId string `json:"ClientId"`
+	ClientId T `json:"ClientId"`
 
 	// ClientSecret AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-authenticationconfiguration.html#cfn-ask-skill-authenticationconfiguration-clientsecret
-	ClientSecret string `json:"ClientSecret"`
+	ClientSecret T `json:"ClientSecret"`
 
 	// RefreshToken AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-authenticationconfiguration.html#cfn-ask-skill-authenticationconfiguration-refreshtoken
-	RefreshToken string `json:"RefreshToken"`
+	RefreshToken T `json:"RefreshToken"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

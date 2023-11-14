@@ -28,7 +28,7 @@ type VerifiedAccessInstance_VerifiedAccessLogs[T any] struct {
 	// LogVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessinstance-verifiedaccesslogs.html#cfn-ec2-verifiedaccessinstance-verifiedaccesslogs-logversion
-	LogVersion *string `json:"LogVersion,omitempty"`
+	LogVersion *T `json:"LogVersion,omitempty"`
 
 	// S3 AWS CloudFormation Property
 	// Required: false

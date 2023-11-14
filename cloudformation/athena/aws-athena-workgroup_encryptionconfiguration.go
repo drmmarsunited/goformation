@@ -13,12 +13,12 @@ type WorkGroup_EncryptionConfiguration[T any] struct {
 	// EncryptionOption AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-encryptionconfiguration.html#cfn-athena-workgroup-encryptionconfiguration-encryptionoption
-	EncryptionOption string `json:"EncryptionOption"`
+	EncryptionOption T `json:"EncryptionOption"`
 
 	// KmsKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-encryptionconfiguration.html#cfn-athena-workgroup-encryptionconfiguration-kmskey
-	KmsKey *string `json:"KmsKey,omitempty"`
+	KmsKey *T `json:"KmsKey,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

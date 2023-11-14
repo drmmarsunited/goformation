@@ -18,7 +18,7 @@ type Job_EntityDetectorConfiguration[T any] struct {
 	// EntityTypes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-entitydetectorconfiguration.html#cfn-databrew-job-entitydetectorconfiguration-entitytypes
-	EntityTypes []string `json:"EntityTypes"`
+	EntityTypes []T `json:"EntityTypes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,17 +13,17 @@ type Topic_ComparativeOrder[T any] struct {
 	// SpecifedOrder AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-comparativeorder.html#cfn-quicksight-topic-comparativeorder-specifedorder
-	SpecifedOrder []string `json:"SpecifedOrder,omitempty"`
+	SpecifedOrder []T `json:"SpecifedOrder,omitempty"`
 
 	// TreatUndefinedSpecifiedValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-comparativeorder.html#cfn-quicksight-topic-comparativeorder-treatundefinedspecifiedvalues
-	TreatUndefinedSpecifiedValues *string `json:"TreatUndefinedSpecifiedValues,omitempty"`
+	TreatUndefinedSpecifiedValues *T `json:"TreatUndefinedSpecifiedValues,omitempty"`
 
 	// UseOrdering AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-comparativeorder.html#cfn-quicksight-topic-comparativeorder-useordering
-	UseOrdering *string `json:"UseOrdering,omitempty"`
+	UseOrdering *T `json:"UseOrdering,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -16,22 +16,22 @@ type APNSVoipSandboxChannel[T any] struct {
 	// ApplicationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-applicationid
-	ApplicationId string `json:"ApplicationId"`
+	ApplicationId T `json:"ApplicationId"`
 
 	// BundleId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-bundleid
-	BundleId *string `json:"BundleId,omitempty"`
+	BundleId *T `json:"BundleId,omitempty"`
 
 	// Certificate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-certificate
-	Certificate *string `json:"Certificate,omitempty"`
+	Certificate *T `json:"Certificate,omitempty"`
 
 	// DefaultAuthenticationMethod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-defaultauthenticationmethod
-	DefaultAuthenticationMethod *string `json:"DefaultAuthenticationMethod,omitempty"`
+	DefaultAuthenticationMethod *T `json:"DefaultAuthenticationMethod,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
@@ -41,22 +41,22 @@ type APNSVoipSandboxChannel[T any] struct {
 	// PrivateKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-privatekey
-	PrivateKey *string `json:"PrivateKey,omitempty"`
+	PrivateKey *T `json:"PrivateKey,omitempty"`
 
 	// TeamId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-teamid
-	TeamId *string `json:"TeamId,omitempty"`
+	TeamId *T `json:"TeamId,omitempty"`
 
 	// TokenKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-tokenkey
-	TokenKey *string `json:"TokenKey,omitempty"`
+	TokenKey *T `json:"TokenKey,omitempty"`
 
 	// TokenKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-tokenkeyid
-	TokenKeyId *string `json:"TokenKeyId,omitempty"`
+	TokenKeyId *T `json:"TokenKeyId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Pipeline_PipelineDefinition[T any] struct {
 	// PipelineDefinitionBody AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-pipelinedefinition.html#cfn-sagemaker-pipeline-pipelinedefinition-pipelinedefinitionbody
-	PipelineDefinitionBody *string `json:"PipelineDefinitionBody,omitempty"`
+	PipelineDefinitionBody *T `json:"PipelineDefinitionBody,omitempty"`
 
 	// PipelineDefinitionS3Location AWS CloudFormation Property
 	// Required: false

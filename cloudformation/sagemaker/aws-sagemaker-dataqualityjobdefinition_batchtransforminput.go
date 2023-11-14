@@ -13,27 +13,32 @@ type DataQualityJobDefinition_BatchTransformInput[T any] struct {
 	// DataCapturedDestinationS3Uri AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-batchtransforminput.html#cfn-sagemaker-dataqualityjobdefinition-batchtransforminput-datacaptureddestinations3uri
-	DataCapturedDestinationS3Uri string `json:"DataCapturedDestinationS3Uri"`
+	DataCapturedDestinationS3Uri T `json:"DataCapturedDestinationS3Uri"`
 
 	// DatasetFormat AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-batchtransforminput.html#cfn-sagemaker-dataqualityjobdefinition-batchtransforminput-datasetformat
 	DatasetFormat *DataQualityJobDefinition_DatasetFormat[any] `json:"DatasetFormat"`
 
+	// ExcludeFeaturesAttribute AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-batchtransforminput.html#cfn-sagemaker-dataqualityjobdefinition-batchtransforminput-excludefeaturesattribute
+	ExcludeFeaturesAttribute *T `json:"ExcludeFeaturesAttribute,omitempty"`
+
 	// LocalPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-batchtransforminput.html#cfn-sagemaker-dataqualityjobdefinition-batchtransforminput-localpath
-	LocalPath string `json:"LocalPath"`
+	LocalPath T `json:"LocalPath"`
 
 	// S3DataDistributionType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-batchtransforminput.html#cfn-sagemaker-dataqualityjobdefinition-batchtransforminput-s3datadistributiontype
-	S3DataDistributionType *string `json:"S3DataDistributionType,omitempty"`
+	S3DataDistributionType *T `json:"S3DataDistributionType,omitempty"`
 
 	// S3InputMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-batchtransforminput.html#cfn-sagemaker-dataqualityjobdefinition-batchtransforminput-s3inputmode
-	S3InputMode *string `json:"S3InputMode,omitempty"`
+	S3InputMode *T `json:"S3InputMode,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

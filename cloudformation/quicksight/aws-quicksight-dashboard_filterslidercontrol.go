@@ -18,7 +18,7 @@ type Dashboard_FilterSliderControl[T any] struct {
 	// FilterControlId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterslidercontrol.html#cfn-quicksight-dashboard-filterslidercontrol-filtercontrolid
-	FilterControlId string `json:"FilterControlId"`
+	FilterControlId T `json:"FilterControlId"`
 
 	// MaximumValue AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type Dashboard_FilterSliderControl[T any] struct {
 	// SourceFilterId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterslidercontrol.html#cfn-quicksight-dashboard-filterslidercontrol-sourcefilterid
-	SourceFilterId string `json:"SourceFilterId"`
+	SourceFilterId T `json:"SourceFilterId"`
 
 	// StepSize AWS CloudFormation Property
 	// Required: true
@@ -43,12 +43,12 @@ type Dashboard_FilterSliderControl[T any] struct {
 	// Title AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterslidercontrol.html#cfn-quicksight-dashboard-filterslidercontrol-title
-	Title string `json:"Title"`
+	Title T `json:"Title"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filterslidercontrol.html#cfn-quicksight-dashboard-filterslidercontrol-type
-	Type *string `json:"Type,omitempty"`
+	Type *T `json:"Type,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

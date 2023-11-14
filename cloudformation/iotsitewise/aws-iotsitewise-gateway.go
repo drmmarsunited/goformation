@@ -22,7 +22,7 @@ type Gateway[T any] struct {
 	// GatewayName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-gateway.html#cfn-iotsitewise-gateway-gatewayname
-	GatewayName string `json:"GatewayName"`
+	GatewayName T `json:"GatewayName"`
 
 	// GatewayPlatform AWS CloudFormation Property
 	// Required: true

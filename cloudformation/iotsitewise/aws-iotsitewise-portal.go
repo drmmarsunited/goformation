@@ -22,32 +22,32 @@ type Portal[T any] struct {
 	// NotificationSenderEmail AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-notificationsenderemail
-	NotificationSenderEmail *string `json:"NotificationSenderEmail,omitempty"`
+	NotificationSenderEmail *T `json:"NotificationSenderEmail,omitempty"`
 
 	// PortalAuthMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-portalauthmode
-	PortalAuthMode *string `json:"PortalAuthMode,omitempty"`
+	PortalAuthMode *T `json:"PortalAuthMode,omitempty"`
 
 	// PortalContactEmail AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-portalcontactemail
-	PortalContactEmail string `json:"PortalContactEmail"`
+	PortalContactEmail T `json:"PortalContactEmail"`
 
 	// PortalDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-portaldescription
-	PortalDescription *string `json:"PortalDescription,omitempty"`
+	PortalDescription *T `json:"PortalDescription,omitempty"`
 
 	// PortalName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-portalname
-	PortalName string `json:"PortalName"`
+	PortalName T `json:"PortalName"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

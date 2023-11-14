@@ -17,7 +17,7 @@ type Campaign[T any] struct {
 	// ConnectInstanceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connectcampaigns-campaign.html#cfn-connectcampaigns-campaign-connectinstancearn
-	ConnectInstanceArn string `json:"ConnectInstanceArn"`
+	ConnectInstanceArn T `json:"ConnectInstanceArn"`
 
 	// DialerConfig AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type Campaign[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connectcampaigns-campaign.html#cfn-connectcampaigns-campaign-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// OutboundCallConfig AWS CloudFormation Property
 	// Required: true

@@ -32,12 +32,12 @@ type DeliveryStream[T any] struct {
 	// DeliveryStreamName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamname
-	DeliveryStreamName *string `json:"DeliveryStreamName,omitempty"`
+	DeliveryStreamName *T `json:"DeliveryStreamName,omitempty"`
 
 	// DeliveryStreamType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamtype
-	DeliveryStreamType *string `json:"DeliveryStreamType,omitempty"`
+	DeliveryStreamType *T `json:"DeliveryStreamType,omitempty"`
 
 	// ElasticsearchDestinationConfiguration AWS CloudFormation Property
 	// Required: false
@@ -58,6 +58,11 @@ type DeliveryStream[T any] struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration
 	KinesisStreamSourceConfiguration *DeliveryStream_KinesisStreamSourceConfiguration[any] `json:"KinesisStreamSourceConfiguration,omitempty"`
+
+	// MSKSourceConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-msksourceconfiguration
+	MSKSourceConfiguration *DeliveryStream_MSKSourceConfiguration[any] `json:"MSKSourceConfiguration,omitempty"`
 
 	// RedshiftDestinationConfiguration AWS CloudFormation Property
 	// Required: false

@@ -13,22 +13,22 @@ type UserPoolClient_AnalyticsConfiguration[T any] struct {
 	// ApplicationArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-analyticsconfiguration.html#cfn-cognito-userpoolclient-analyticsconfiguration-applicationarn
-	ApplicationArn *string `json:"ApplicationArn,omitempty"`
+	ApplicationArn *T `json:"ApplicationArn,omitempty"`
 
 	// ApplicationId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-analyticsconfiguration.html#cfn-cognito-userpoolclient-analyticsconfiguration-applicationid
-	ApplicationId *string `json:"ApplicationId,omitempty"`
+	ApplicationId *T `json:"ApplicationId,omitempty"`
 
 	// ExternalId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-analyticsconfiguration.html#cfn-cognito-userpoolclient-analyticsconfiguration-externalid
-	ExternalId *string `json:"ExternalId,omitempty"`
+	ExternalId *T `json:"ExternalId,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-analyticsconfiguration.html#cfn-cognito-userpoolclient-analyticsconfiguration-rolearn
-	RoleArn *string `json:"RoleArn,omitempty"`
+	RoleArn *T `json:"RoleArn,omitempty"`
 
 	// UserDataShared AWS CloudFormation Property
 	// Required: false

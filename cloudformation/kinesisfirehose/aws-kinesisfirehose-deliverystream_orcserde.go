@@ -18,7 +18,7 @@ type DeliveryStream_OrcSerDe[T any] struct {
 	// BloomFilterColumns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html#cfn-kinesisfirehose-deliverystream-orcserde-bloomfiltercolumns
-	BloomFilterColumns []string `json:"BloomFilterColumns,omitempty"`
+	BloomFilterColumns []T `json:"BloomFilterColumns,omitempty"`
 
 	// BloomFilterFalsePositiveProbability AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type DeliveryStream_OrcSerDe[T any] struct {
 	// Compression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html#cfn-kinesisfirehose-deliverystream-orcserde-compression
-	Compression *string `json:"Compression,omitempty"`
+	Compression *T `json:"Compression,omitempty"`
 
 	// DictionaryKeyThreshold AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type DeliveryStream_OrcSerDe[T any] struct {
 	// FormatVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html#cfn-kinesisfirehose-deliverystream-orcserde-formatversion
-	FormatVersion *string `json:"FormatVersion,omitempty"`
+	FormatVersion *T `json:"FormatVersion,omitempty"`
 
 	// PaddingTolerance AWS CloudFormation Property
 	// Required: false

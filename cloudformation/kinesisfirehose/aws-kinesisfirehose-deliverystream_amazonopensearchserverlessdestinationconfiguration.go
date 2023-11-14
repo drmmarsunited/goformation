@@ -23,12 +23,12 @@ type DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration[T any] st
 	// CollectionEndpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration-collectionendpoint
-	CollectionEndpoint *string `json:"CollectionEndpoint,omitempty"`
+	CollectionEndpoint *T `json:"CollectionEndpoint,omitempty"`
 
 	// IndexName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration-indexname
-	IndexName string `json:"IndexName"`
+	IndexName T `json:"IndexName"`
 
 	// ProcessingConfiguration AWS CloudFormation Property
 	// Required: false
@@ -43,12 +43,12 @@ type DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration[T any] st
 	// RoleARN AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration-rolearn
-	RoleARN string `json:"RoleARN"`
+	RoleARN T `json:"RoleARN"`
 
 	// S3BackupMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchserverlessdestinationconfiguration-s3backupmode
-	S3BackupMode *string `json:"S3BackupMode,omitempty"`
+	S3BackupMode *T `json:"S3BackupMode,omitempty"`
 
 	// S3Configuration AWS CloudFormation Property
 	// Required: true

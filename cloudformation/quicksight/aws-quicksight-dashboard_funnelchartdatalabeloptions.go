@@ -13,12 +13,12 @@ type Dashboard_FunnelChartDataLabelOptions[T any] struct {
 	// CategoryLabelVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-funnelchartdatalabeloptions.html#cfn-quicksight-dashboard-funnelchartdatalabeloptions-categorylabelvisibility
-	CategoryLabelVisibility *string `json:"CategoryLabelVisibility,omitempty"`
+	CategoryLabelVisibility *T `json:"CategoryLabelVisibility,omitempty"`
 
 	// LabelColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-funnelchartdatalabeloptions.html#cfn-quicksight-dashboard-funnelchartdatalabeloptions-labelcolor
-	LabelColor *string `json:"LabelColor,omitempty"`
+	LabelColor *T `json:"LabelColor,omitempty"`
 
 	// LabelFontConfiguration AWS CloudFormation Property
 	// Required: false
@@ -28,22 +28,22 @@ type Dashboard_FunnelChartDataLabelOptions[T any] struct {
 	// MeasureDataLabelStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-funnelchartdatalabeloptions.html#cfn-quicksight-dashboard-funnelchartdatalabeloptions-measuredatalabelstyle
-	MeasureDataLabelStyle *string `json:"MeasureDataLabelStyle,omitempty"`
+	MeasureDataLabelStyle *T `json:"MeasureDataLabelStyle,omitempty"`
 
 	// MeasureLabelVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-funnelchartdatalabeloptions.html#cfn-quicksight-dashboard-funnelchartdatalabeloptions-measurelabelvisibility
-	MeasureLabelVisibility *string `json:"MeasureLabelVisibility,omitempty"`
+	MeasureLabelVisibility *T `json:"MeasureLabelVisibility,omitempty"`
 
 	// Position AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-funnelchartdatalabeloptions.html#cfn-quicksight-dashboard-funnelchartdatalabeloptions-position
-	Position *string `json:"Position,omitempty"`
+	Position *T `json:"Position,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-funnelchartdatalabeloptions.html#cfn-quicksight-dashboard-funnelchartdatalabeloptions-visibility
-	Visibility *string `json:"Visibility,omitempty"`
+	Visibility *T `json:"Visibility,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

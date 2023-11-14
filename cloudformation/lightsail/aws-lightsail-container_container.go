@@ -13,12 +13,12 @@ type Container_Container[T any] struct {
 	// Command AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-container.html#cfn-lightsail-container-container-command
-	Command []string `json:"Command,omitempty"`
+	Command []T `json:"Command,omitempty"`
 
 	// ContainerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-container.html#cfn-lightsail-container-container-containername
-	ContainerName *string `json:"ContainerName,omitempty"`
+	ContainerName *T `json:"ContainerName,omitempty"`
 
 	// Environment AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Container_Container[T any] struct {
 	// Image AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-container.html#cfn-lightsail-container-container-image
-	Image *string `json:"Image,omitempty"`
+	Image *T `json:"Image,omitempty"`
 
 	// Ports AWS CloudFormation Property
 	// Required: false

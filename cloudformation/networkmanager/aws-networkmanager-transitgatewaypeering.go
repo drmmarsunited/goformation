@@ -17,7 +17,7 @@ type TransitGatewayPeering[T any] struct {
 	// CoreNetworkId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html#cfn-networkmanager-transitgatewaypeering-corenetworkid
-	CoreNetworkId string `json:"CoreNetworkId"`
+	CoreNetworkId T `json:"CoreNetworkId"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type TransitGatewayPeering[T any] struct {
 	// TransitGatewayArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html#cfn-networkmanager-transitgatewaypeering-transitgatewayarn
-	TransitGatewayArn string `json:"TransitGatewayArn"`
+	TransitGatewayArn T `json:"TransitGatewayArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

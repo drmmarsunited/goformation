@@ -21,12 +21,12 @@ type DirectoryConfig[T any] struct {
 	// DirectoryName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-directoryname
-	DirectoryName string `json:"DirectoryName"`
+	DirectoryName T `json:"DirectoryName"`
 
 	// OrganizationalUnitDistinguishedNames AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-organizationalunitdistinguishednames
-	OrganizationalUnitDistinguishedNames []string `json:"OrganizationalUnitDistinguishedNames"`
+	OrganizationalUnitDistinguishedNames []T `json:"OrganizationalUnitDistinguishedNames"`
 
 	// ServiceAccountCredentials AWS CloudFormation Property
 	// Required: true

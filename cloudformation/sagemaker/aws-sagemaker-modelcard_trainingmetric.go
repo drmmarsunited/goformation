@@ -13,12 +13,12 @@ type ModelCard_TrainingMetric[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingmetric.html#cfn-sagemaker-modelcard-trainingmetric-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Notes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingmetric.html#cfn-sagemaker-modelcard-trainingmetric-notes
-	Notes *string `json:"Notes,omitempty"`
+	Notes *T `json:"Notes,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: true

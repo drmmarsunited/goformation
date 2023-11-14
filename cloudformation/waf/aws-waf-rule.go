@@ -16,12 +16,12 @@ type Rule[T any] struct {
 	// MetricName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html#cfn-waf-rule-metricname
-	MetricName string `json:"MetricName"`
+	MetricName T `json:"MetricName"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html#cfn-waf-rule-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Predicates AWS CloudFormation Property
 	// Required: false

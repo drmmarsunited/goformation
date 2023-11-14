@@ -23,7 +23,7 @@ type SpotFleet_InstanceNetworkInterfaceSpecification[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancenetworkinterfacespecification.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DeviceIndex AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type SpotFleet_InstanceNetworkInterfaceSpecification[T any] struct {
 	// Groups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancenetworkinterfacespecification.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-groups
-	Groups []string `json:"Groups,omitempty"`
+	Groups []T `json:"Groups,omitempty"`
 
 	// Ipv6AddressCount AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type SpotFleet_InstanceNetworkInterfaceSpecification[T any] struct {
 	// NetworkInterfaceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancenetworkinterfacespecification.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-networkinterfaceid
-	NetworkInterfaceId *string `json:"NetworkInterfaceId,omitempty"`
+	NetworkInterfaceId *T `json:"NetworkInterfaceId,omitempty"`
 
 	// PrivateIpAddresses AWS CloudFormation Property
 	// Required: false
@@ -63,7 +63,7 @@ type SpotFleet_InstanceNetworkInterfaceSpecification[T any] struct {
 	// SubnetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancenetworkinterfacespecification.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-subnetid
-	SubnetId *string `json:"SubnetId,omitempty"`
+	SubnetId *T `json:"SubnetId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

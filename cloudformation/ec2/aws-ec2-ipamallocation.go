@@ -16,17 +16,17 @@ type IPAMAllocation[T any] struct {
 	// Cidr AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamallocation.html#cfn-ec2-ipamallocation-cidr
-	Cidr *string `json:"Cidr,omitempty"`
+	Cidr *T `json:"Cidr,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamallocation.html#cfn-ec2-ipamallocation-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// IpamPoolId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamallocation.html#cfn-ec2-ipamallocation-ipampoolid
-	IpamPoolId string `json:"IpamPoolId"`
+	IpamPoolId T `json:"IpamPoolId"`
 
 	// NetmaskLength AWS CloudFormation Property
 	// Required: false

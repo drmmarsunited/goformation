@@ -13,37 +13,37 @@ type ModelQualityJobDefinition_ModelQualityAppSpecification[T any] struct {
 	// ContainerArguments AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-containerarguments
-	ContainerArguments []string `json:"ContainerArguments,omitempty"`
+	ContainerArguments []T `json:"ContainerArguments,omitempty"`
 
 	// ContainerEntrypoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-containerentrypoint
-	ContainerEntrypoint []string `json:"ContainerEntrypoint,omitempty"`
+	ContainerEntrypoint []T `json:"ContainerEntrypoint,omitempty"`
 
 	// Environment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-environment
-	Environment map[string]string `json:"Environment,omitempty"`
+	Environment map[string]T `json:"Environment,omitempty"`
 
 	// ImageUri AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-imageuri
-	ImageUri string `json:"ImageUri"`
+	ImageUri T `json:"ImageUri"`
 
 	// PostAnalyticsProcessorSourceUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-postanalyticsprocessorsourceuri
-	PostAnalyticsProcessorSourceUri *string `json:"PostAnalyticsProcessorSourceUri,omitempty"`
+	PostAnalyticsProcessorSourceUri *T `json:"PostAnalyticsProcessorSourceUri,omitempty"`
 
 	// ProblemType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-problemtype
-	ProblemType string `json:"ProblemType"`
+	ProblemType T `json:"ProblemType"`
 
 	// RecordPreprocessorSourceUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-recordpreprocessorsourceuri
-	RecordPreprocessorSourceUri *string `json:"RecordPreprocessorSourceUri,omitempty"`
+	RecordPreprocessorSourceUri *T `json:"RecordPreprocessorSourceUri,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

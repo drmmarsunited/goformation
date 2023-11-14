@@ -16,12 +16,12 @@ type StreamConsumer[T any] struct {
 	// ConsumerName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-streamconsumer.html#cfn-kinesis-streamconsumer-consumername
-	ConsumerName string `json:"ConsumerName"`
+	ConsumerName T `json:"ConsumerName"`
 
 	// StreamARN AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-streamconsumer.html#cfn-kinesis-streamconsumer-streamarn
-	StreamARN string `json:"StreamARN"`
+	StreamARN T `json:"StreamARN"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

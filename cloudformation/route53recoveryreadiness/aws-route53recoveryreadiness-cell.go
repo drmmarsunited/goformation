@@ -17,12 +17,12 @@ type Cell[T any] struct {
 	// CellName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-cell.html#cfn-route53recoveryreadiness-cell-cellname
-	CellName *string `json:"CellName,omitempty"`
+	CellName *T `json:"CellName,omitempty"`
 
 	// Cells AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-cell.html#cfn-route53recoveryreadiness-cell-cells
-	Cells []string `json:"Cells,omitempty"`
+	Cells []T `json:"Cells,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

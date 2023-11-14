@@ -13,12 +13,12 @@ type ListenerRule_HttpHeaderConfig[T any] struct {
 	// HttpHeaderName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-httpheaderconfig.html#cfn-elasticloadbalancingv2-listenerrule-httpheaderconfig-httpheadername
-	HttpHeaderName *string `json:"HttpHeaderName,omitempty"`
+	HttpHeaderName *T `json:"HttpHeaderName,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-httpheaderconfig.html#cfn-elasticloadbalancingv2-listenerrule-httpheaderconfig-values
-	Values []string `json:"Values,omitempty"`
+	Values []T `json:"Values,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

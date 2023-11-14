@@ -16,17 +16,17 @@ type ServiceActionAssociation[T any] struct {
 	// ProductId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceactionassociation.html#cfn-servicecatalog-serviceactionassociation-productid
-	ProductId string `json:"ProductId"`
+	ProductId T `json:"ProductId"`
 
 	// ProvisioningArtifactId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceactionassociation.html#cfn-servicecatalog-serviceactionassociation-provisioningartifactid
-	ProvisioningArtifactId string `json:"ProvisioningArtifactId"`
+	ProvisioningArtifactId T `json:"ProvisioningArtifactId"`
 
 	// ServiceActionId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceactionassociation.html#cfn-servicecatalog-serviceactionassociation-serviceactionid
-	ServiceActionId string `json:"ServiceActionId"`
+	ServiceActionId T `json:"ServiceActionId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -7,122 +7,122 @@ import (
 )
 
 // AutoScalingGroup_InstanceRequirements AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup.InstanceRequirements)
-// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html
+// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html
 type AutoScalingGroup_InstanceRequirements[T any] struct {
 
 	// AcceleratorCount AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-acceleratorcount
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-acceleratorcount
 	AcceleratorCount *AutoScalingGroup_AcceleratorCountRequest[any] `json:"AcceleratorCount,omitempty"`
 
 	// AcceleratorManufacturers AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-acceleratormanufacturers
-	AcceleratorManufacturers []string `json:"AcceleratorManufacturers,omitempty"`
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-acceleratormanufacturers
+	AcceleratorManufacturers []T `json:"AcceleratorManufacturers,omitempty"`
 
 	// AcceleratorNames AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-acceleratornames
-	AcceleratorNames []string `json:"AcceleratorNames,omitempty"`
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-acceleratornames
+	AcceleratorNames []T `json:"AcceleratorNames,omitempty"`
 
 	// AcceleratorTotalMemoryMiB AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-acceleratortotalmemorymib
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-acceleratortotalmemorymib
 	AcceleratorTotalMemoryMiB *AutoScalingGroup_AcceleratorTotalMemoryMiBRequest[any] `json:"AcceleratorTotalMemoryMiB,omitempty"`
 
 	// AcceleratorTypes AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-acceleratortypes
-	AcceleratorTypes []string `json:"AcceleratorTypes,omitempty"`
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-acceleratortypes
+	AcceleratorTypes []T `json:"AcceleratorTypes,omitempty"`
 
 	// AllowedInstanceTypes AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-allowedinstancetypes
-	AllowedInstanceTypes []string `json:"AllowedInstanceTypes,omitempty"`
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-allowedinstancetypes
+	AllowedInstanceTypes []T `json:"AllowedInstanceTypes,omitempty"`
 
 	// BareMetal AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-baremetal
-	BareMetal *string `json:"BareMetal,omitempty"`
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-baremetal
+	BareMetal *T `json:"BareMetal,omitempty"`
 
 	// BaselineEbsBandwidthMbps AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-baselineebsbandwidthmbps
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-baselineebsbandwidthmbps
 	BaselineEbsBandwidthMbps *AutoScalingGroup_BaselineEbsBandwidthMbpsRequest[any] `json:"BaselineEbsBandwidthMbps,omitempty"`
 
 	// BurstablePerformance AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-burstableperformance
-	BurstablePerformance *string `json:"BurstablePerformance,omitempty"`
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-burstableperformance
+	BurstablePerformance *T `json:"BurstablePerformance,omitempty"`
 
 	// CpuManufacturers AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-cpumanufacturers
-	CpuManufacturers []string `json:"CpuManufacturers,omitempty"`
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-cpumanufacturers
+	CpuManufacturers []T `json:"CpuManufacturers,omitempty"`
 
 	// ExcludedInstanceTypes AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-excludedinstancetypes
-	ExcludedInstanceTypes []string `json:"ExcludedInstanceTypes,omitempty"`
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-excludedinstancetypes
+	ExcludedInstanceTypes []T `json:"ExcludedInstanceTypes,omitempty"`
 
 	// InstanceGenerations AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-instancegenerations
-	InstanceGenerations []string `json:"InstanceGenerations,omitempty"`
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-instancegenerations
+	InstanceGenerations []T `json:"InstanceGenerations,omitempty"`
 
 	// LocalStorage AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-localstorage
-	LocalStorage *string `json:"LocalStorage,omitempty"`
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-localstorage
+	LocalStorage *T `json:"LocalStorage,omitempty"`
 
 	// LocalStorageTypes AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-localstoragetypes
-	LocalStorageTypes []string `json:"LocalStorageTypes,omitempty"`
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-localstoragetypes
+	LocalStorageTypes []T `json:"LocalStorageTypes,omitempty"`
 
 	// MemoryGiBPerVCpu AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-memorygibpervcpu
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-memorygibpervcpu
 	MemoryGiBPerVCpu *AutoScalingGroup_MemoryGiBPerVCpuRequest[any] `json:"MemoryGiBPerVCpu,omitempty"`
 
 	// MemoryMiB AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-memorymib
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-memorymib
 	MemoryMiB *AutoScalingGroup_MemoryMiBRequest[any] `json:"MemoryMiB,omitempty"`
 
 	// NetworkBandwidthGbps AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-networkbandwidthgbps
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-networkbandwidthgbps
 	NetworkBandwidthGbps *AutoScalingGroup_NetworkBandwidthGbpsRequest[any] `json:"NetworkBandwidthGbps,omitempty"`
 
 	// NetworkInterfaceCount AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-networkinterfacecount
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-networkinterfacecount
 	NetworkInterfaceCount *AutoScalingGroup_NetworkInterfaceCountRequest[any] `json:"NetworkInterfaceCount,omitempty"`
 
 	// OnDemandMaxPricePercentageOverLowestPrice AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-ondemandmaxpricepercentageoverlowestprice
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-ondemandmaxpricepercentageoverlowestprice
 	OnDemandMaxPricePercentageOverLowestPrice *T `json:"OnDemandMaxPricePercentageOverLowestPrice,omitempty"`
 
 	// RequireHibernateSupport AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-requirehibernatesupport
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-requirehibernatesupport
 	RequireHibernateSupport *T `json:"RequireHibernateSupport,omitempty"`
 
 	// SpotMaxPricePercentageOverLowestPrice AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-spotmaxpricepercentageoverlowestprice
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-spotmaxpricepercentageoverlowestprice
 	SpotMaxPricePercentageOverLowestPrice *T `json:"SpotMaxPricePercentageOverLowestPrice,omitempty"`
 
 	// TotalLocalStorageGB AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-totallocalstoragegb
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-totallocalstoragegb
 	TotalLocalStorageGB *AutoScalingGroup_TotalLocalStorageGBRequest[any] `json:"TotalLocalStorageGB,omitempty"`
 
 	// VCpuCount AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-vcpucount
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-vcpucount
 	VCpuCount *AutoScalingGroup_VCpuCountRequest[any] `json:"VCpuCount,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy

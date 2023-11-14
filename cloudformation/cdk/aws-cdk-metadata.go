@@ -16,7 +16,7 @@ type Metadata[T any] struct {
 	// Analytics AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/aws-cdk-rfcs/blob/master/text/0253-cdk-metadata-v2.md
-	Analytics *string `json:"Analytics,omitempty"`
+	Analytics *T `json:"Analytics,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,12 +13,12 @@ type Service_AuthenticationConfiguration[T any] struct {
 	// AccessRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-authenticationconfiguration.html#cfn-apprunner-service-authenticationconfiguration-accessrolearn
-	AccessRoleArn *string `json:"AccessRoleArn,omitempty"`
+	AccessRoleArn *T `json:"AccessRoleArn,omitempty"`
 
 	// ConnectionArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-authenticationconfiguration.html#cfn-apprunner-service-authenticationconfiguration-connectionarn
-	ConnectionArn *string `json:"ConnectionArn,omitempty"`
+	ConnectionArn *T `json:"ConnectionArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

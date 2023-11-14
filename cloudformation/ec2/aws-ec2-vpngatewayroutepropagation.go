@@ -16,12 +16,12 @@ type VPNGatewayRoutePropagation[T any] struct {
 	// RouteTableIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html#cfn-ec2-vpngatewayrouteprop-routetableids
-	RouteTableIds []string `json:"RouteTableIds"`
+	RouteTableIds []T `json:"RouteTableIds"`
 
 	// VpnGatewayId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html#cfn-ec2-vpngatewayrouteprop-vpngatewayid
-	VpnGatewayId string `json:"VpnGatewayId"`
+	VpnGatewayId T `json:"VpnGatewayId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

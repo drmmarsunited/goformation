@@ -17,7 +17,7 @@ type App[T any] struct {
 	// AccessToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-accesstoken
-	AccessToken *string `json:"AccessToken,omitempty"`
+	AccessToken *T `json:"AccessToken,omitempty"`
 
 	// AutoBranchCreationConfig AWS CloudFormation Property
 	// Required: false
@@ -32,12 +32,12 @@ type App[T any] struct {
 	// BuildSpec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-buildspec
-	BuildSpec *string `json:"BuildSpec,omitempty"`
+	BuildSpec *T `json:"BuildSpec,omitempty"`
 
 	// CustomHeaders AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-customheaders
-	CustomHeaders *string `json:"CustomHeaders,omitempty"`
+	CustomHeaders *T `json:"CustomHeaders,omitempty"`
 
 	// CustomRules AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type App[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EnableBranchAutoDeletion AWS CloudFormation Property
 	// Required: false
@@ -62,27 +62,27 @@ type App[T any] struct {
 	// IAMServiceRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-iamservicerole
-	IAMServiceRole *string `json:"IAMServiceRole,omitempty"`
+	IAMServiceRole *T `json:"IAMServiceRole,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// OauthToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-oauthtoken
-	OauthToken *string `json:"OauthToken,omitempty"`
+	OauthToken *T `json:"OauthToken,omitempty"`
 
 	// Platform AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-platform
-	Platform *string `json:"Platform,omitempty"`
+	Platform *T `json:"Platform,omitempty"`
 
 	// Repository AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-repository
-	Repository *string `json:"Repository,omitempty"`
+	Repository *T `json:"Repository,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

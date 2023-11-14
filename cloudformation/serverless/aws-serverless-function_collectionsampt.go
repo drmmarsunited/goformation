@@ -13,7 +13,7 @@ type Function_CollectionSAMPT[T any] struct {
 	// CollectionId AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-	CollectionId string `json:"CollectionId"`
+	CollectionId T `json:"CollectionId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

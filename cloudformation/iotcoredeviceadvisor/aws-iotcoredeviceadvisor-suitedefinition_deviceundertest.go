@@ -13,12 +13,12 @@ type SuiteDefinition_DeviceUnderTest[T any] struct {
 	// CertificateArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotcoredeviceadvisor-suitedefinition-deviceundertest.html#cfn-iotcoredeviceadvisor-suitedefinition-deviceundertest-certificatearn
-	CertificateArn *string `json:"CertificateArn,omitempty"`
+	CertificateArn *T `json:"CertificateArn,omitempty"`
 
 	// ThingArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotcoredeviceadvisor-suitedefinition-deviceundertest.html#cfn-iotcoredeviceadvisor-suitedefinition-deviceundertest-thingarn
-	ThingArn *string `json:"ThingArn,omitempty"`
+	ThingArn *T `json:"ThingArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

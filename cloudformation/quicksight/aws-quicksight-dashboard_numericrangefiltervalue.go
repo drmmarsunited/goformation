@@ -13,7 +13,7 @@ type Dashboard_NumericRangeFilterValue[T any] struct {
 	// Parameter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-numericrangefiltervalue.html#cfn-quicksight-dashboard-numericrangefiltervalue-parameter
-	Parameter *string `json:"Parameter,omitempty"`
+	Parameter *T `json:"Parameter,omitempty"`
 
 	// StaticValue AWS CloudFormation Property
 	// Required: false

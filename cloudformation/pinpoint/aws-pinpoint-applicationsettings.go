@@ -16,7 +16,7 @@ type ApplicationSettings[T any] struct {
 	// ApplicationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-applicationid
-	ApplicationId string `json:"ApplicationId"`
+	ApplicationId T `json:"ApplicationId"`
 
 	// CampaignHook AWS CloudFormation Property
 	// Required: false

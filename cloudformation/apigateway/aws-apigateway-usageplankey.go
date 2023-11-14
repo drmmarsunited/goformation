@@ -16,17 +16,17 @@ type UsagePlanKey[T any] struct {
 	// KeyId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-keyid
-	KeyId string `json:"KeyId"`
+	KeyId T `json:"KeyId"`
 
 	// KeyType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-keytype
-	KeyType string `json:"KeyType"`
+	KeyType T `json:"KeyType"`
 
 	// UsagePlanId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-usageplanid
-	UsagePlanId string `json:"UsagePlanId"`
+	UsagePlanId T `json:"UsagePlanId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

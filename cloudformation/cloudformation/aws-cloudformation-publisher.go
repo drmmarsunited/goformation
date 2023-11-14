@@ -21,7 +21,7 @@ type Publisher[T any] struct {
 	// ConnectionArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-publisher.html#cfn-cloudformation-publisher-connectionarn
-	ConnectionArn *string `json:"ConnectionArn,omitempty"`
+	ConnectionArn *T `json:"ConnectionArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

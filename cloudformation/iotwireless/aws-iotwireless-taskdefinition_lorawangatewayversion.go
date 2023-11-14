@@ -13,17 +13,17 @@ type TaskDefinition_LoRaWANGatewayVersion[T any] struct {
 	// Model AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawangatewayversion.html#cfn-iotwireless-taskdefinition-lorawangatewayversion-model
-	Model *string `json:"Model,omitempty"`
+	Model *T `json:"Model,omitempty"`
 
 	// PackageVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawangatewayversion.html#cfn-iotwireless-taskdefinition-lorawangatewayversion-packageversion
-	PackageVersion *string `json:"PackageVersion,omitempty"`
+	PackageVersion *T `json:"PackageVersion,omitempty"`
 
 	// Station AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawangatewayversion.html#cfn-iotwireless-taskdefinition-lorawangatewayversion-station
-	Station *string `json:"Station,omitempty"`
+	Station *T `json:"Station,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

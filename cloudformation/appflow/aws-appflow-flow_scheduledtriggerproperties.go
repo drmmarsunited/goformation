@@ -13,7 +13,7 @@ type Flow_ScheduledTriggerProperties[T any] struct {
 	// DataPullMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-datapullmode
-	DataPullMode *string `json:"DataPullMode,omitempty"`
+	DataPullMode *T `json:"DataPullMode,omitempty"`
 
 	// FirstExecutionFrom AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Flow_ScheduledTriggerProperties[T any] struct {
 	// ScheduleExpression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-scheduleexpression
-	ScheduleExpression string `json:"ScheduleExpression"`
+	ScheduleExpression T `json:"ScheduleExpression"`
 
 	// ScheduleOffset AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Flow_ScheduledTriggerProperties[T any] struct {
 	// TimeZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-timezone
-	TimeZone *string `json:"TimeZone,omitempty"`
+	TimeZone *T `json:"TimeZone,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

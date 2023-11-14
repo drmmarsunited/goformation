@@ -13,17 +13,17 @@ type Channel_H265Settings[T any] struct {
 	// AdaptiveQuantization AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-adaptivequantization
-	AdaptiveQuantization *string `json:"AdaptiveQuantization,omitempty"`
+	AdaptiveQuantization *T `json:"AdaptiveQuantization,omitempty"`
 
 	// AfdSignaling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-afdsignaling
-	AfdSignaling *string `json:"AfdSignaling,omitempty"`
+	AfdSignaling *T `json:"AfdSignaling,omitempty"`
 
 	// AlternativeTransferFunction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-alternativetransferfunction
-	AlternativeTransferFunction *string `json:"AlternativeTransferFunction,omitempty"`
+	AlternativeTransferFunction *T `json:"AlternativeTransferFunction,omitempty"`
 
 	// Bitrate AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Channel_H265Settings[T any] struct {
 	// ColorMetadata AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-colormetadata
-	ColorMetadata *string `json:"ColorMetadata,omitempty"`
+	ColorMetadata *T `json:"ColorMetadata,omitempty"`
 
 	// ColorSpaceSettings AWS CloudFormation Property
 	// Required: false
@@ -53,12 +53,12 @@ type Channel_H265Settings[T any] struct {
 	// FixedAfd AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-fixedafd
-	FixedAfd *string `json:"FixedAfd,omitempty"`
+	FixedAfd *T `json:"FixedAfd,omitempty"`
 
 	// FlickerAq AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-flickeraq
-	FlickerAq *string `json:"FlickerAq,omitempty"`
+	FlickerAq *T `json:"FlickerAq,omitempty"`
 
 	// FramerateDenominator AWS CloudFormation Property
 	// Required: false
@@ -83,17 +83,17 @@ type Channel_H265Settings[T any] struct {
 	// GopSizeUnits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-gopsizeunits
-	GopSizeUnits *string `json:"GopSizeUnits,omitempty"`
+	GopSizeUnits *T `json:"GopSizeUnits,omitempty"`
 
 	// Level AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-level
-	Level *string `json:"Level,omitempty"`
+	Level *T `json:"Level,omitempty"`
 
 	// LookAheadRateControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-lookaheadratecontrol
-	LookAheadRateControl *string `json:"LookAheadRateControl,omitempty"`
+	LookAheadRateControl *T `json:"LookAheadRateControl,omitempty"`
 
 	// MaxBitrate AWS CloudFormation Property
 	// Required: false
@@ -118,7 +118,7 @@ type Channel_H265Settings[T any] struct {
 	// Profile AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-profile
-	Profile *string `json:"Profile,omitempty"`
+	Profile *T `json:"Profile,omitempty"`
 
 	// QvbrQualityLevel AWS CloudFormation Property
 	// Required: false
@@ -128,17 +128,17 @@ type Channel_H265Settings[T any] struct {
 	// RateControlMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-ratecontrolmode
-	RateControlMode *string `json:"RateControlMode,omitempty"`
+	RateControlMode *T `json:"RateControlMode,omitempty"`
 
 	// ScanType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-scantype
-	ScanType *string `json:"ScanType,omitempty"`
+	ScanType *T `json:"ScanType,omitempty"`
 
 	// SceneChangeDetect AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-scenechangedetect
-	SceneChangeDetect *string `json:"SceneChangeDetect,omitempty"`
+	SceneChangeDetect *T `json:"SceneChangeDetect,omitempty"`
 
 	// Slices AWS CloudFormation Property
 	// Required: false
@@ -148,7 +148,7 @@ type Channel_H265Settings[T any] struct {
 	// Tier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-tier
-	Tier *string `json:"Tier,omitempty"`
+	Tier *T `json:"Tier,omitempty"`
 
 	// TimecodeBurninSettings AWS CloudFormation Property
 	// Required: false
@@ -158,7 +158,7 @@ type Channel_H265Settings[T any] struct {
 	// TimecodeInsertion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-timecodeinsertion
-	TimecodeInsertion *string `json:"TimecodeInsertion,omitempty"`
+	TimecodeInsertion *T `json:"TimecodeInsertion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

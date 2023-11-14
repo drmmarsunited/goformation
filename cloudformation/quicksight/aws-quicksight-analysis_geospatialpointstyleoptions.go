@@ -23,7 +23,7 @@ type Analysis_GeospatialPointStyleOptions[T any] struct {
 	// SelectedPointStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialpointstyleoptions.html#cfn-quicksight-analysis-geospatialpointstyleoptions-selectedpointstyle
-	SelectedPointStyle *string `json:"SelectedPointStyle,omitempty"`
+	SelectedPointStyle *T `json:"SelectedPointStyle,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

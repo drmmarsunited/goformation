@@ -22,7 +22,7 @@ type Container[T any] struct {
 	// ContainerName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-containername
-	ContainerName string `json:"ContainerName"`
+	ContainerName T `json:"ContainerName"`
 
 	// CorsPolicy AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type Container[T any] struct {
 	// LifecyclePolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-lifecyclepolicy
-	LifecyclePolicy *string `json:"LifecyclePolicy,omitempty"`
+	LifecyclePolicy *T `json:"LifecyclePolicy,omitempty"`
 
 	// MetricPolicy AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type Container[T any] struct {
 	// Policy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-policy
-	Policy *string `json:"Policy,omitempty"`
+	Policy *T `json:"Policy,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

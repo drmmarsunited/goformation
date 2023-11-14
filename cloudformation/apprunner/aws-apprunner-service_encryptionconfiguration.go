@@ -13,7 +13,7 @@ type Service_EncryptionConfiguration[T any] struct {
 	// KmsKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-encryptionconfiguration.html#cfn-apprunner-service-encryptionconfiguration-kmskey
-	KmsKey string `json:"KmsKey"`
+	KmsKey T `json:"KmsKey"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

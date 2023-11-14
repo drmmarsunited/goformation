@@ -21,22 +21,22 @@ type Certificate[T any] struct {
 	// CertificateAuthorityArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-certificateauthorityarn
-	CertificateAuthorityArn string `json:"CertificateAuthorityArn"`
+	CertificateAuthorityArn T `json:"CertificateAuthorityArn"`
 
 	// CertificateSigningRequest AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-certificatesigningrequest
-	CertificateSigningRequest string `json:"CertificateSigningRequest"`
+	CertificateSigningRequest T `json:"CertificateSigningRequest"`
 
 	// SigningAlgorithm AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-signingalgorithm
-	SigningAlgorithm string `json:"SigningAlgorithm"`
+	SigningAlgorithm T `json:"SigningAlgorithm"`
 
 	// TemplateArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-templatearn
-	TemplateArn *string `json:"TemplateArn,omitempty"`
+	TemplateArn *T `json:"TemplateArn,omitempty"`
 
 	// Validity AWS CloudFormation Property
 	// Required: true

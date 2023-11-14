@@ -13,7 +13,7 @@ type CertificateAuthority_CrlConfiguration[T any] struct {
 	// CustomCname AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-crlconfiguration.html#cfn-acmpca-certificateauthority-crlconfiguration-customcname
-	CustomCname *string `json:"CustomCname,omitempty"`
+	CustomCname *T `json:"CustomCname,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type CertificateAuthority_CrlConfiguration[T any] struct {
 	// S3BucketName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-crlconfiguration.html#cfn-acmpca-certificateauthority-crlconfiguration-s3bucketname
-	S3BucketName *string `json:"S3BucketName,omitempty"`
+	S3BucketName *T `json:"S3BucketName,omitempty"`
 
 	// S3ObjectAcl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-crlconfiguration.html#cfn-acmpca-certificateauthority-crlconfiguration-s3objectacl
-	S3ObjectAcl *string `json:"S3ObjectAcl,omitempty"`
+	S3ObjectAcl *T `json:"S3ObjectAcl,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

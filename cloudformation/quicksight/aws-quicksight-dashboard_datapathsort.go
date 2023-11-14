@@ -13,7 +13,7 @@ type Dashboard_DataPathSort[T any] struct {
 	// Direction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datapathsort.html#cfn-quicksight-dashboard-datapathsort-direction
-	Direction string `json:"Direction"`
+	Direction T `json:"Direction"`
 
 	// SortPaths AWS CloudFormation Property
 	// Required: true

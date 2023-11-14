@@ -38,17 +38,17 @@ type AutomationRule_AutomationRulesFindingFieldsUpdate[T any] struct {
 	// Types AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-automationrule-automationrulesfindingfieldsupdate.html#cfn-securityhub-automationrule-automationrulesfindingfieldsupdate-types
-	Types []string `json:"Types,omitempty"`
+	Types []T `json:"Types,omitempty"`
 
 	// UserDefinedFields AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-automationrule-automationrulesfindingfieldsupdate.html#cfn-securityhub-automationrule-automationrulesfindingfieldsupdate-userdefinedfields
-	UserDefinedFields map[string]string `json:"UserDefinedFields,omitempty"`
+	UserDefinedFields map[string]T `json:"UserDefinedFields,omitempty"`
 
 	// VerificationState AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-automationrule-automationrulesfindingfieldsupdate.html#cfn-securityhub-automationrule-automationrulesfindingfieldsupdate-verificationstate
-	VerificationState *string `json:"VerificationState,omitempty"`
+	VerificationState *T `json:"VerificationState,omitempty"`
 
 	// Workflow AWS CloudFormation Property
 	// Required: false

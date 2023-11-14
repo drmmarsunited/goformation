@@ -16,7 +16,7 @@ type Account[T any] struct {
 	// CloudWatchRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-account.html#cfn-apigateway-account-cloudwatchrolearn
-	CloudWatchRoleArn *string `json:"CloudWatchRoleArn,omitempty"`
+	CloudWatchRoleArn *T `json:"CloudWatchRoleArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -22,17 +22,17 @@ type AppBlockBuilder[T any] struct {
 	// AppBlockArns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblockbuilder.html#cfn-appstream-appblockbuilder-appblockarns
-	AppBlockArns []string `json:"AppBlockArns,omitempty"`
+	AppBlockArns []T `json:"AppBlockArns,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblockbuilder.html#cfn-appstream-appblockbuilder-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DisplayName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblockbuilder.html#cfn-appstream-appblockbuilder-displayname
-	DisplayName *string `json:"DisplayName,omitempty"`
+	DisplayName *T `json:"DisplayName,omitempty"`
 
 	// EnableDefaultInternetAccess AWS CloudFormation Property
 	// Required: false
@@ -42,22 +42,22 @@ type AppBlockBuilder[T any] struct {
 	// IamRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblockbuilder.html#cfn-appstream-appblockbuilder-iamrolearn
-	IamRoleArn *string `json:"IamRoleArn,omitempty"`
+	IamRoleArn *T `json:"IamRoleArn,omitempty"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblockbuilder.html#cfn-appstream-appblockbuilder-instancetype
-	InstanceType string `json:"InstanceType"`
+	InstanceType T `json:"InstanceType"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblockbuilder.html#cfn-appstream-appblockbuilder-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Platform AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblockbuilder.html#cfn-appstream-appblockbuilder-platform
-	Platform string `json:"Platform"`
+	Platform T `json:"Platform"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

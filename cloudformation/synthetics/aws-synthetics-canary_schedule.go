@@ -13,12 +13,12 @@ type Canary_Schedule[T any] struct {
 	// DurationInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-schedule.html#cfn-synthetics-canary-schedule-durationinseconds
-	DurationInSeconds *string `json:"DurationInSeconds,omitempty"`
+	DurationInSeconds *T `json:"DurationInSeconds,omitempty"`
 
 	// Expression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-schedule.html#cfn-synthetics-canary-schedule-expression
-	Expression string `json:"Expression"`
+	Expression T `json:"Expression"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

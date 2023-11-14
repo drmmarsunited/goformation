@@ -23,12 +23,12 @@ type Container_HealthCheckConfig[T any] struct {
 	// Path AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-healthcheckconfig.html#cfn-lightsail-container-healthcheckconfig-path
-	Path *string `json:"Path,omitempty"`
+	Path *T `json:"Path,omitempty"`
 
 	// SuccessCodes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-healthcheckconfig.html#cfn-lightsail-container-healthcheckconfig-successcodes
-	SuccessCodes *string `json:"SuccessCodes,omitempty"`
+	SuccessCodes *T `json:"SuccessCodes,omitempty"`
 
 	// TimeoutSeconds AWS CloudFormation Property
 	// Required: false

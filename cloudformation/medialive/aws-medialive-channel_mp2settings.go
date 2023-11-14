@@ -18,7 +18,7 @@ type Channel_Mp2Settings[T any] struct {
 	// CodingMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mp2settings.html#cfn-medialive-channel-mp2settings-codingmode
-	CodingMode *string `json:"CodingMode,omitempty"`
+	CodingMode *T `json:"CodingMode,omitempty"`
 
 	// SampleRate AWS CloudFormation Property
 	// Required: false

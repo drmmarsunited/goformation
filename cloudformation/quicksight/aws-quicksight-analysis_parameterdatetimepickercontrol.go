@@ -18,17 +18,17 @@ type Analysis_ParameterDateTimePickerControl[T any] struct {
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterdatetimepickercontrol.html#cfn-quicksight-analysis-parameterdatetimepickercontrol-parametercontrolid
-	ParameterControlId string `json:"ParameterControlId"`
+	ParameterControlId T `json:"ParameterControlId"`
 
 	// SourceParameterName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterdatetimepickercontrol.html#cfn-quicksight-analysis-parameterdatetimepickercontrol-sourceparametername
-	SourceParameterName string `json:"SourceParameterName"`
+	SourceParameterName T `json:"SourceParameterName"`
 
 	// Title AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterdatetimepickercontrol.html#cfn-quicksight-analysis-parameterdatetimepickercontrol-title
-	Title string `json:"Title"`
+	Title T `json:"Title"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

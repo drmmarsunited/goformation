@@ -17,17 +17,17 @@ type ApplicationInstance[T any] struct {
 	// ApplicationInstanceIdToReplace AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#cfn-panorama-applicationinstance-applicationinstanceidtoreplace
-	ApplicationInstanceIdToReplace *string `json:"ApplicationInstanceIdToReplace,omitempty"`
+	ApplicationInstanceIdToReplace *T `json:"ApplicationInstanceIdToReplace,omitempty"`
 
 	// DefaultRuntimeContextDevice AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#cfn-panorama-applicationinstance-defaultruntimecontextdevice
-	DefaultRuntimeContextDevice string `json:"DefaultRuntimeContextDevice"`
+	DefaultRuntimeContextDevice T `json:"DefaultRuntimeContextDevice"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#cfn-panorama-applicationinstance-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// ManifestOverridesPayload AWS CloudFormation Property
 	// Required: false
@@ -42,12 +42,12 @@ type ApplicationInstance[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#cfn-panorama-applicationinstance-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// RuntimeRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#cfn-panorama-applicationinstance-runtimerolearn
-	RuntimeRoleArn *string `json:"RuntimeRoleArn,omitempty"`
+	RuntimeRoleArn *T `json:"RuntimeRoleArn,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

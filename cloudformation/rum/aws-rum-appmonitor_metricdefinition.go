@@ -13,32 +13,32 @@ type AppMonitor_MetricDefinition[T any] struct {
 	// DimensionKeys AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-metricdefinition.html#cfn-rum-appmonitor-metricdefinition-dimensionkeys
-	DimensionKeys map[string]string `json:"DimensionKeys,omitempty"`
+	DimensionKeys map[string]T `json:"DimensionKeys,omitempty"`
 
 	// EventPattern AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-metricdefinition.html#cfn-rum-appmonitor-metricdefinition-eventpattern
-	EventPattern *string `json:"EventPattern,omitempty"`
+	EventPattern *T `json:"EventPattern,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-metricdefinition.html#cfn-rum-appmonitor-metricdefinition-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Namespace AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-metricdefinition.html#cfn-rum-appmonitor-metricdefinition-namespace
-	Namespace *string `json:"Namespace,omitempty"`
+	Namespace *T `json:"Namespace,omitempty"`
 
 	// UnitLabel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-metricdefinition.html#cfn-rum-appmonitor-metricdefinition-unitlabel
-	UnitLabel *string `json:"UnitLabel,omitempty"`
+	UnitLabel *T `json:"UnitLabel,omitempty"`
 
 	// ValueKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-metricdefinition.html#cfn-rum-appmonitor-metricdefinition-valuekey
-	ValueKey *string `json:"ValueKey,omitempty"`
+	ValueKey *T `json:"ValueKey,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

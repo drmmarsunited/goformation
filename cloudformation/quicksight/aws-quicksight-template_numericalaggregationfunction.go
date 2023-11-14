@@ -18,7 +18,7 @@ type Template_NumericalAggregationFunction[T any] struct {
 	// SimpleNumericalAggregation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericalaggregationfunction.html#cfn-quicksight-template-numericalaggregationfunction-simplenumericalaggregation
-	SimpleNumericalAggregation *string `json:"SimpleNumericalAggregation,omitempty"`
+	SimpleNumericalAggregation *T `json:"SimpleNumericalAggregation,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

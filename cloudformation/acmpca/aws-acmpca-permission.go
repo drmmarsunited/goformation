@@ -16,22 +16,22 @@ type Permission[T any] struct {
 	// Actions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-permission.html#cfn-acmpca-permission-actions
-	Actions []string `json:"Actions"`
+	Actions []T `json:"Actions"`
 
 	// CertificateAuthorityArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-permission.html#cfn-acmpca-permission-certificateauthorityarn
-	CertificateAuthorityArn string `json:"CertificateAuthorityArn"`
+	CertificateAuthorityArn T `json:"CertificateAuthorityArn"`
 
 	// Principal AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-permission.html#cfn-acmpca-permission-principal
-	Principal string `json:"Principal"`
+	Principal T `json:"Principal"`
 
 	// SourceAccount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-permission.html#cfn-acmpca-permission-sourceaccount
-	SourceAccount *string `json:"SourceAccount,omitempty"`
+	SourceAccount *T `json:"SourceAccount,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

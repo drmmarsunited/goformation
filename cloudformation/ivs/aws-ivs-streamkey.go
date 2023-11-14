@@ -17,7 +17,7 @@ type StreamKey[T any] struct {
 	// ChannelArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-streamkey.html#cfn-ivs-streamkey-channelarn
-	ChannelArn string `json:"ChannelArn"`
+	ChannelArn T `json:"ChannelArn"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -38,7 +38,7 @@ type Template_LineChartVisual[T any] struct {
 	// VisualId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-linechartvisual.html#cfn-quicksight-template-linechartvisual-visualid
-	VisualId string `json:"VisualId"`
+	VisualId T `json:"VisualId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,12 +13,12 @@ type VirtualNode_ListenerTlsFileCertificate[T any] struct {
 	// CertificateChain AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlsfilecertificate.html#cfn-appmesh-virtualnode-listenertlsfilecertificate-certificatechain
-	CertificateChain string `json:"CertificateChain"`
+	CertificateChain T `json:"CertificateChain"`
 
 	// PrivateKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlsfilecertificate.html#cfn-appmesh-virtualnode-listenertlsfilecertificate-privatekey
-	PrivateKey string `json:"PrivateKey"`
+	PrivateKey T `json:"PrivateKey"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

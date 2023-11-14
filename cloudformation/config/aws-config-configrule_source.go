@@ -18,7 +18,7 @@ type ConfigRule_Source[T any] struct {
 	// Owner AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-owner
-	Owner string `json:"Owner"`
+	Owner T `json:"Owner"`
 
 	// SourceDetails AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type ConfigRule_Source[T any] struct {
 	// SourceIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-sourceidentifier
-	SourceIdentifier *string `json:"SourceIdentifier,omitempty"`
+	SourceIdentifier *T `json:"SourceIdentifier,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

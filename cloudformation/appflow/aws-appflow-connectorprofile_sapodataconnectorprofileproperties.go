@@ -13,17 +13,17 @@ type ConnectorProfile_SAPODataConnectorProfileProperties[T any] struct {
 	// ApplicationHostUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofileproperties.html#cfn-appflow-connectorprofile-sapodataconnectorprofileproperties-applicationhosturl
-	ApplicationHostUrl *string `json:"ApplicationHostUrl,omitempty"`
+	ApplicationHostUrl *T `json:"ApplicationHostUrl,omitempty"`
 
 	// ApplicationServicePath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofileproperties.html#cfn-appflow-connectorprofile-sapodataconnectorprofileproperties-applicationservicepath
-	ApplicationServicePath *string `json:"ApplicationServicePath,omitempty"`
+	ApplicationServicePath *T `json:"ApplicationServicePath,omitempty"`
 
 	// ClientNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofileproperties.html#cfn-appflow-connectorprofile-sapodataconnectorprofileproperties-clientnumber
-	ClientNumber *string `json:"ClientNumber,omitempty"`
+	ClientNumber *T `json:"ClientNumber,omitempty"`
 
 	// DisableSSO AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type ConnectorProfile_SAPODataConnectorProfileProperties[T any] struct {
 	// LogonLanguage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofileproperties.html#cfn-appflow-connectorprofile-sapodataconnectorprofileproperties-logonlanguage
-	LogonLanguage *string `json:"LogonLanguage,omitempty"`
+	LogonLanguage *T `json:"LogonLanguage,omitempty"`
 
 	// OAuthProperties AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type ConnectorProfile_SAPODataConnectorProfileProperties[T any] struct {
 	// PrivateLinkServiceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofileproperties.html#cfn-appflow-connectorprofile-sapodataconnectorprofileproperties-privatelinkservicename
-	PrivateLinkServiceName *string `json:"PrivateLinkServiceName,omitempty"`
+	PrivateLinkServiceName *T `json:"PrivateLinkServiceName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

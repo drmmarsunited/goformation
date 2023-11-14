@@ -13,12 +13,12 @@ type ResourceDefinitionVersion_SecretsManagerSecretResourceData[T any] struct {
 	// ARN AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata-arn
-	ARN string `json:"ARN"`
+	ARN T `json:"ARN"`
 
 	// AdditionalStagingLabelsToDownload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata-additionalstaginglabelstodownload
-	AdditionalStagingLabelsToDownload []string `json:"AdditionalStagingLabelsToDownload,omitempty"`
+	AdditionalStagingLabelsToDownload []T `json:"AdditionalStagingLabelsToDownload,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

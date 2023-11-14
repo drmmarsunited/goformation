@@ -13,12 +13,12 @@ type Index_JsonTokenTypeConfiguration[T any] struct {
 	// GroupAttributeField AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jsontokentypeconfiguration.html#cfn-kendra-index-jsontokentypeconfiguration-groupattributefield
-	GroupAttributeField string `json:"GroupAttributeField"`
+	GroupAttributeField T `json:"GroupAttributeField"`
 
 	// UserNameAttributeField AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jsontokentypeconfiguration.html#cfn-kendra-index-jsontokentypeconfiguration-usernameattributefield
-	UserNameAttributeField string `json:"UserNameAttributeField"`
+	UserNameAttributeField T `json:"UserNameAttributeField"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

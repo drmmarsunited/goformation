@@ -17,7 +17,7 @@ type UserAccessLoggingSettings[T any] struct {
 	// KinesisStreamArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-useraccessloggingsettings.html#cfn-workspacesweb-useraccessloggingsettings-kinesisstreamarn
-	KinesisStreamArn string `json:"KinesisStreamArn"`
+	KinesisStreamArn T `json:"KinesisStreamArn"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

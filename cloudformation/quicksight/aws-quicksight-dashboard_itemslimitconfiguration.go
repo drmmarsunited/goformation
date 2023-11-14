@@ -18,7 +18,7 @@ type Dashboard_ItemsLimitConfiguration[T any] struct {
 	// OtherCategories AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-itemslimitconfiguration.html#cfn-quicksight-dashboard-itemslimitconfiguration-othercategories
-	OtherCategories *string `json:"OtherCategories,omitempty"`
+	OtherCategories *T `json:"OtherCategories,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

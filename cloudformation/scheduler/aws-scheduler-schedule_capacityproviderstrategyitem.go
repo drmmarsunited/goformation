@@ -18,7 +18,7 @@ type Schedule_CapacityProviderStrategyItem[T any] struct {
 	// CapacityProvider AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-capacityproviderstrategyitem.html#cfn-scheduler-schedule-capacityproviderstrategyitem-capacityprovider
-	CapacityProvider string `json:"CapacityProvider"`
+	CapacityProvider T `json:"CapacityProvider"`
 
 	// Weight AWS CloudFormation Property
 	// Required: false

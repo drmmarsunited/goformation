@@ -33,12 +33,12 @@ type DistributionConfiguration_Distribution[T any] struct {
 	// LicenseConfigurationArns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-distribution.html#cfn-imagebuilder-distributionconfiguration-distribution-licenseconfigurationarns
-	LicenseConfigurationArns []string `json:"LicenseConfigurationArns,omitempty"`
+	LicenseConfigurationArns []T `json:"LicenseConfigurationArns,omitempty"`
 
 	// Region AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-distribution.html#cfn-imagebuilder-distributionconfiguration-distribution-region
-	Region string `json:"Region"`
+	Region T `json:"Region"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

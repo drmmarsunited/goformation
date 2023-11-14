@@ -13,17 +13,17 @@ type ModelBiasJobDefinition_ModelBiasAppSpecification[T any] struct {
 	// ConfigUri AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasappspecification.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasappspecification-configuri
-	ConfigUri string `json:"ConfigUri"`
+	ConfigUri T `json:"ConfigUri"`
 
 	// Environment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasappspecification.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasappspecification-environment
-	Environment map[string]string `json:"Environment,omitempty"`
+	Environment map[string]T `json:"Environment,omitempty"`
 
 	// ImageUri AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasappspecification.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasappspecification-imageuri
-	ImageUri string `json:"ImageUri"`
+	ImageUri T `json:"ImageUri"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

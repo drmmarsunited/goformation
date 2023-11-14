@@ -13,17 +13,17 @@ type DataIntegration_ScheduleConfig[T any] struct {
 	// FirstExecutionFrom AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-dataintegration-scheduleconfig.html#cfn-appintegrations-dataintegration-scheduleconfig-firstexecutionfrom
-	FirstExecutionFrom *string `json:"FirstExecutionFrom,omitempty"`
+	FirstExecutionFrom *T `json:"FirstExecutionFrom,omitempty"`
 
 	// Object AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-dataintegration-scheduleconfig.html#cfn-appintegrations-dataintegration-scheduleconfig-object
-	Object *string `json:"Object,omitempty"`
+	Object *T `json:"Object,omitempty"`
 
 	// ScheduleExpression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-dataintegration-scheduleconfig.html#cfn-appintegrations-dataintegration-scheduleconfig-scheduleexpression
-	ScheduleExpression string `json:"ScheduleExpression"`
+	ScheduleExpression T `json:"ScheduleExpression"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

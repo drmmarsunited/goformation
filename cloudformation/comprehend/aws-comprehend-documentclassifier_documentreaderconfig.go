@@ -13,17 +13,17 @@ type DocumentClassifier_DocumentReaderConfig[T any] struct {
 	// DocumentReadAction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-documentclassifier-documentreaderconfig.html#cfn-comprehend-documentclassifier-documentreaderconfig-documentreadaction
-	DocumentReadAction string `json:"DocumentReadAction"`
+	DocumentReadAction T `json:"DocumentReadAction"`
 
 	// DocumentReadMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-documentclassifier-documentreaderconfig.html#cfn-comprehend-documentclassifier-documentreaderconfig-documentreadmode
-	DocumentReadMode *string `json:"DocumentReadMode,omitempty"`
+	DocumentReadMode *T `json:"DocumentReadMode,omitempty"`
 
 	// FeatureTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-documentclassifier-documentreaderconfig.html#cfn-comprehend-documentclassifier-documentreaderconfig-featuretypes
-	FeatureTypes []string `json:"FeatureTypes,omitempty"`
+	FeatureTypes []T `json:"FeatureTypes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

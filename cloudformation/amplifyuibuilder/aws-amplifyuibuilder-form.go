@@ -16,7 +16,7 @@ type Form[T any] struct {
 	// AppId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-form.html#cfn-amplifyuibuilder-form-appid
-	AppId *string `json:"AppId,omitempty"`
+	AppId *T `json:"AppId,omitempty"`
 
 	// Cta AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type Form[T any] struct {
 	// EnvironmentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-form.html#cfn-amplifyuibuilder-form-environmentname
-	EnvironmentName *string `json:"EnvironmentName,omitempty"`
+	EnvironmentName *T `json:"EnvironmentName,omitempty"`
 
 	// Fields AWS CloudFormation Property
 	// Required: true
@@ -41,22 +41,22 @@ type Form[T any] struct {
 	// FormActionType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-form.html#cfn-amplifyuibuilder-form-formactiontype
-	FormActionType string `json:"FormActionType"`
+	FormActionType T `json:"FormActionType"`
 
 	// LabelDecorator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-form.html#cfn-amplifyuibuilder-form-labeldecorator
-	LabelDecorator *string `json:"LabelDecorator,omitempty"`
+	LabelDecorator *T `json:"LabelDecorator,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-form.html#cfn-amplifyuibuilder-form-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// SchemaVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-form.html#cfn-amplifyuibuilder-form-schemaversion
-	SchemaVersion string `json:"SchemaVersion"`
+	SchemaVersion T `json:"SchemaVersion"`
 
 	// SectionalElements AWS CloudFormation Property
 	// Required: true
@@ -71,7 +71,7 @@ type Form[T any] struct {
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-form.html#cfn-amplifyuibuilder-form-tags
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -16,12 +16,12 @@ type ClientVpnTargetNetworkAssociation[T any] struct {
 	// ClientVpnEndpointId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpntargetnetworkassociation.html#cfn-ec2-clientvpntargetnetworkassociation-clientvpnendpointid
-	ClientVpnEndpointId string `json:"ClientVpnEndpointId"`
+	ClientVpnEndpointId T `json:"ClientVpnEndpointId"`
 
 	// SubnetId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpntargetnetworkassociation.html#cfn-ec2-clientvpntargetnetworkassociation-subnetid
-	SubnetId string `json:"SubnetId"`
+	SubnetId T `json:"SubnetId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

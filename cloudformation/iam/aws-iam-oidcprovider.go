@@ -17,7 +17,7 @@ type OIDCProvider[T any] struct {
 	// ClientIdList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-oidcprovider.html#cfn-iam-oidcprovider-clientidlist
-	ClientIdList []string `json:"ClientIdList,omitempty"`
+	ClientIdList []T `json:"ClientIdList,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type OIDCProvider[T any] struct {
 	// ThumbprintList AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-oidcprovider.html#cfn-iam-oidcprovider-thumbprintlist
-	ThumbprintList []string `json:"ThumbprintList"`
+	ThumbprintList []T `json:"ThumbprintList"`
 
 	// Url AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-oidcprovider.html#cfn-iam-oidcprovider-url
-	Url *string `json:"Url,omitempty"`
+	Url *T `json:"Url,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -16,12 +16,12 @@ type EnabledControl[T any] struct {
 	// ControlIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-controltower-enabledcontrol.html#cfn-controltower-enabledcontrol-controlidentifier
-	ControlIdentifier string `json:"ControlIdentifier"`
+	ControlIdentifier T `json:"ControlIdentifier"`
 
 	// TargetIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-controltower-enabledcontrol.html#cfn-controltower-enabledcontrol-targetidentifier
-	TargetIdentifier string `json:"TargetIdentifier"`
+	TargetIdentifier T `json:"TargetIdentifier"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

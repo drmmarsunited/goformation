@@ -22,17 +22,17 @@ type Protection[T any] struct {
 	// HealthCheckArns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-shield-protection.html#cfn-shield-protection-healthcheckarns
-	HealthCheckArns []string `json:"HealthCheckArns,omitempty"`
+	HealthCheckArns []T `json:"HealthCheckArns,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-shield-protection.html#cfn-shield-protection-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ResourceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-shield-protection.html#cfn-shield-protection-resourcearn
-	ResourceArn string `json:"ResourceArn"`
+	ResourceArn T `json:"ResourceArn"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

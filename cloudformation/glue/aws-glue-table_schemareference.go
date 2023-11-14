@@ -18,7 +18,7 @@ type Table_SchemaReference[T any] struct {
 	// SchemaVersionId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemareference.html#cfn-glue-table-schemareference-schemaversionid
-	SchemaVersionId *string `json:"SchemaVersionId,omitempty"`
+	SchemaVersionId *T `json:"SchemaVersionId,omitempty"`
 
 	// SchemaVersionNumber AWS CloudFormation Property
 	// Required: false

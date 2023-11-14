@@ -16,17 +16,17 @@ type PrincipalPermissions[T any] struct {
 	// Catalog AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-principalpermissions.html#cfn-lakeformation-principalpermissions-catalog
-	Catalog *string `json:"Catalog,omitempty"`
+	Catalog *T `json:"Catalog,omitempty"`
 
 	// Permissions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-principalpermissions.html#cfn-lakeformation-principalpermissions-permissions
-	Permissions []string `json:"Permissions"`
+	Permissions []T `json:"Permissions"`
 
 	// PermissionsWithGrantOption AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-principalpermissions.html#cfn-lakeformation-principalpermissions-permissionswithgrantoption
-	PermissionsWithGrantOption []string `json:"PermissionsWithGrantOption"`
+	PermissionsWithGrantOption []T `json:"PermissionsWithGrantOption"`
 
 	// Principal AWS CloudFormation Property
 	// Required: true

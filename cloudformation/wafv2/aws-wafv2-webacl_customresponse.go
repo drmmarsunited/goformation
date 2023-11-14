@@ -13,7 +13,7 @@ type WebACL_CustomResponse[T any] struct {
 	// CustomResponseBodyKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-customresponse.html#cfn-wafv2-webacl-customresponse-customresponsebodykey
-	CustomResponseBodyKey *string `json:"CustomResponseBodyKey,omitempty"`
+	CustomResponseBodyKey *T `json:"CustomResponseBodyKey,omitempty"`
 
 	// ResponseCode AWS CloudFormation Property
 	// Required: true

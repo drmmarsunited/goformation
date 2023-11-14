@@ -13,12 +13,12 @@ type Table_RetentionProperties[T any] struct {
 	// MagneticStoreRetentionPeriodInDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-retentionproperties.html#cfn-timestream-table-retentionproperties-magneticstoreretentionperiodindays
-	MagneticStoreRetentionPeriodInDays *string `json:"MagneticStoreRetentionPeriodInDays,omitempty"`
+	MagneticStoreRetentionPeriodInDays *T `json:"MagneticStoreRetentionPeriodInDays,omitempty"`
 
 	// MemoryStoreRetentionPeriodInHours AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-retentionproperties.html#cfn-timestream-table-retentionproperties-memorystoreretentionperiodinhours
-	MemoryStoreRetentionPeriodInHours *string `json:"MemoryStoreRetentionPeriodInHours,omitempty"`
+	MemoryStoreRetentionPeriodInHours *T `json:"MemoryStoreRetentionPeriodInHours,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -22,7 +22,7 @@ type SafetyRule[T any] struct {
 	// ControlPanelArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-safetyrule.html#cfn-route53recoverycontrol-safetyrule-controlpanelarn
-	ControlPanelArn string `json:"ControlPanelArn"`
+	ControlPanelArn T `json:"ControlPanelArn"`
 
 	// GatingRule AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type SafetyRule[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-safetyrule.html#cfn-route53recoverycontrol-safetyrule-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// RuleConfig AWS CloudFormation Property
 	// Required: true

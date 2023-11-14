@@ -28,7 +28,7 @@ type WebACL_RequestInspectionACFP[T any] struct {
 	// PayloadType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-requestinspectionacfp.html#cfn-wafv2-webacl-requestinspectionacfp-payloadtype
-	PayloadType string `json:"PayloadType"`
+	PayloadType T `json:"PayloadType"`
 
 	// PhoneNumberFields AWS CloudFormation Property
 	// Required: false

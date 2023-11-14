@@ -16,12 +16,12 @@ type VPNConnectionRoute[T any] struct {
 	// DestinationCidrBlock AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnectionroute.html#cfn-ec2-vpnconnectionroute-destinationcidrblock
-	DestinationCidrBlock string `json:"DestinationCidrBlock"`
+	DestinationCidrBlock T `json:"DestinationCidrBlock"`
 
 	// VpnConnectionId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnectionroute.html#cfn-ec2-vpnconnectionroute-vpnconnectionid
-	VpnConnectionId string `json:"VpnConnectionId"`
+	VpnConnectionId T `json:"VpnConnectionId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

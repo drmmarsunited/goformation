@@ -23,7 +23,7 @@ type Form_FormCTA[T any] struct {
 	// Position AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-formcta.html#cfn-amplifyuibuilder-form-formcta-position
-	Position *string `json:"Position,omitempty"`
+	Position *T `json:"Position,omitempty"`
 
 	// Submit AWS CloudFormation Property
 	// Required: false

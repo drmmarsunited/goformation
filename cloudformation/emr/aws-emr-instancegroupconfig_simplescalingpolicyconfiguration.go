@@ -13,7 +13,7 @@ type InstanceGroupConfig_SimpleScalingPolicyConfiguration[T any] struct {
 	// AdjustmentType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-simplescalingpolicyconfiguration.html#cfn-elasticmapreduce-instancegroupconfig-simplescalingpolicyconfiguration-adjustmenttype
-	AdjustmentType *string `json:"AdjustmentType,omitempty"`
+	AdjustmentType *T `json:"AdjustmentType,omitempty"`
 
 	// CoolDown AWS CloudFormation Property
 	// Required: false

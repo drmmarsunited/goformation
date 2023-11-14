@@ -13,22 +13,22 @@ type RestApi_S3Location[T any] struct {
 	// Bucket AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-bucket
-	Bucket *string `json:"Bucket,omitempty"`
+	Bucket *T `json:"Bucket,omitempty"`
 
 	// ETag AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-etag
-	ETag *string `json:"ETag,omitempty"`
+	ETag *T `json:"ETag,omitempty"`
 
 	// Key AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-key
-	Key *string `json:"Key,omitempty"`
+	Key *T `json:"Key,omitempty"`
 
 	// Version AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-version
-	Version *string `json:"Version,omitempty"`
+	Version *T `json:"Version,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

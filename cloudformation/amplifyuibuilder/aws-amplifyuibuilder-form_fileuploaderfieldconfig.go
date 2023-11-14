@@ -13,12 +13,12 @@ type Form_FileUploaderFieldConfig[T any] struct {
 	// AcceptedFileTypes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fileuploaderfieldconfig.html#cfn-amplifyuibuilder-form-fileuploaderfieldconfig-acceptedfiletypes
-	AcceptedFileTypes []string `json:"AcceptedFileTypes"`
+	AcceptedFileTypes []T `json:"AcceptedFileTypes"`
 
 	// AccessLevel AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fileuploaderfieldconfig.html#cfn-amplifyuibuilder-form-fileuploaderfieldconfig-accesslevel
-	AccessLevel string `json:"AccessLevel"`
+	AccessLevel T `json:"AccessLevel"`
 
 	// IsResumable AWS CloudFormation Property
 	// Required: false

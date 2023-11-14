@@ -23,17 +23,17 @@ type Cluster_ResourcesVpcConfig[T any] struct {
 	// PublicAccessCidrs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html#cfn-eks-cluster-resourcesvpcconfig-publicaccesscidrs
-	PublicAccessCidrs []string `json:"PublicAccessCidrs,omitempty"`
+	PublicAccessCidrs []T `json:"PublicAccessCidrs,omitempty"`
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html#cfn-eks-cluster-resourcesvpcconfig-securitygroupids
-	SecurityGroupIds []string `json:"SecurityGroupIds,omitempty"`
+	SecurityGroupIds []T `json:"SecurityGroupIds,omitempty"`
 
 	// SubnetIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html#cfn-eks-cluster-resourcesvpcconfig-subnetids
-	SubnetIds []string `json:"SubnetIds"`
+	SubnetIds []T `json:"SubnetIds"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,12 +13,12 @@ type Dashboard_ConditionalFormattingCustomIconOptions[T any] struct {
 	// Icon AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-conditionalformattingcustomiconoptions.html#cfn-quicksight-dashboard-conditionalformattingcustomiconoptions-icon
-	Icon *string `json:"Icon,omitempty"`
+	Icon *T `json:"Icon,omitempty"`
 
 	// UnicodeIcon AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-conditionalformattingcustomiconoptions.html#cfn-quicksight-dashboard-conditionalformattingcustomiconoptions-unicodeicon
-	UnicodeIcon *string `json:"UnicodeIcon,omitempty"`
+	UnicodeIcon *T `json:"UnicodeIcon,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type RuleGroup_Address[T any] struct {
 	// AddressDefinition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-address.html#cfn-networkfirewall-rulegroup-address-addressdefinition
-	AddressDefinition string `json:"AddressDefinition"`
+	AddressDefinition T `json:"AddressDefinition"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

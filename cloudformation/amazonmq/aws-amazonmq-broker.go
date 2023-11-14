@@ -16,7 +16,7 @@ type Broker[T any] struct {
 	// AuthenticationStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-authenticationstrategy
-	AuthenticationStrategy *string `json:"AuthenticationStrategy,omitempty"`
+	AuthenticationStrategy *T `json:"AuthenticationStrategy,omitempty"`
 
 	// AutoMinorVersionUpgrade AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type Broker[T any] struct {
 	// BrokerName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-brokername
-	BrokerName string `json:"BrokerName"`
+	BrokerName T `json:"BrokerName"`
 
 	// Configuration AWS CloudFormation Property
 	// Required: false
@@ -36,17 +36,17 @@ type Broker[T any] struct {
 	// DataReplicationMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-datareplicationmode
-	DataReplicationMode *string `json:"DataReplicationMode,omitempty"`
+	DataReplicationMode *T `json:"DataReplicationMode,omitempty"`
 
 	// DataReplicationPrimaryBrokerArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-datareplicationprimarybrokerarn
-	DataReplicationPrimaryBrokerArn *string `json:"DataReplicationPrimaryBrokerArn,omitempty"`
+	DataReplicationPrimaryBrokerArn *T `json:"DataReplicationPrimaryBrokerArn,omitempty"`
 
 	// DeploymentMode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-deploymentmode
-	DeploymentMode string `json:"DeploymentMode"`
+	DeploymentMode T `json:"DeploymentMode"`
 
 	// EncryptionOptions AWS CloudFormation Property
 	// Required: false
@@ -56,17 +56,17 @@ type Broker[T any] struct {
 	// EngineType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-enginetype
-	EngineType string `json:"EngineType"`
+	EngineType T `json:"EngineType"`
 
 	// EngineVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-engineversion
-	EngineVersion string `json:"EngineVersion"`
+	EngineVersion T `json:"EngineVersion"`
 
 	// HostInstanceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-hostinstancetype
-	HostInstanceType string `json:"HostInstanceType"`
+	HostInstanceType T `json:"HostInstanceType"`
 
 	// LdapServerMetadata AWS CloudFormation Property
 	// Required: false
@@ -91,17 +91,17 @@ type Broker[T any] struct {
 	// SecurityGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-securitygroups
-	SecurityGroups []string `json:"SecurityGroups,omitempty"`
+	SecurityGroups []T `json:"SecurityGroups,omitempty"`
 
 	// StorageType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-storagetype
-	StorageType *string `json:"StorageType,omitempty"`
+	StorageType *T `json:"StorageType,omitempty"`
 
 	// SubnetIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-subnetids
-	SubnetIds []string `json:"SubnetIds,omitempty"`
+	SubnetIds []T `json:"SubnetIds,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

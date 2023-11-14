@@ -13,12 +13,12 @@ type Standard_StandardsControl[T any] struct {
 	// Reason AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-standard-standardscontrol.html#cfn-securityhub-standard-standardscontrol-reason
-	Reason *string `json:"Reason,omitempty"`
+	Reason *T `json:"Reason,omitempty"`
 
 	// StandardsControlArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-standard-standardscontrol.html#cfn-securityhub-standard-standardscontrol-standardscontrolarn
-	StandardsControlArn string `json:"StandardsControlArn"`
+	StandardsControlArn T `json:"StandardsControlArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

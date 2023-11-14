@@ -18,7 +18,7 @@ type SpotFleet_PrivateIpAddressSpecification[T any] struct {
 	// PrivateIpAddress AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-privateipaddressspecification.html#cfn-ec2-spotfleet-privateipaddressspecification-privateipaddress
-	PrivateIpAddress string `json:"PrivateIpAddress"`
+	PrivateIpAddress T `json:"PrivateIpAddress"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

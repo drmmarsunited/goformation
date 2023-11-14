@@ -13,12 +13,12 @@ type Analysis_PivotTableRowsLabelOptions[T any] struct {
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottablerowslabeloptions.html#cfn-quicksight-analysis-pivottablerowslabeloptions-customlabel
-	CustomLabel *string `json:"CustomLabel,omitempty"`
+	CustomLabel *T `json:"CustomLabel,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottablerowslabeloptions.html#cfn-quicksight-analysis-pivottablerowslabeloptions-visibility
-	Visibility *string `json:"Visibility,omitempty"`
+	Visibility *T `json:"Visibility,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

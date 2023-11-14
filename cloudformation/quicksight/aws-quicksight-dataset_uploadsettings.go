@@ -18,12 +18,12 @@ type DataSet_UploadSettings[T any] struct {
 	// Delimiter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html#cfn-quicksight-dataset-uploadsettings-delimiter
-	Delimiter *string `json:"Delimiter,omitempty"`
+	Delimiter *T `json:"Delimiter,omitempty"`
 
 	// Format AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html#cfn-quicksight-dataset-uploadsettings-format
-	Format *string `json:"Format,omitempty"`
+	Format *T `json:"Format,omitempty"`
 
 	// StartFromRow AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type DataSet_UploadSettings[T any] struct {
 	// TextQualifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html#cfn-quicksight-dataset-uploadsettings-textqualifier
-	TextQualifier *string `json:"TextQualifier,omitempty"`
+	TextQualifier *T `json:"TextQualifier,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

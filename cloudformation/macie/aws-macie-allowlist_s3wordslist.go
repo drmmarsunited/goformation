@@ -13,12 +13,12 @@ type AllowList_S3WordsList[T any] struct {
 	// BucketName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-allowlist-s3wordslist.html#cfn-macie-allowlist-s3wordslist-bucketname
-	BucketName string `json:"BucketName"`
+	BucketName T `json:"BucketName"`
 
 	// ObjectKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-allowlist-s3wordslist.html#cfn-macie-allowlist-s3wordslist-objectkey
-	ObjectKey string `json:"ObjectKey"`
+	ObjectKey T `json:"ObjectKey"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

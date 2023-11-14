@@ -17,12 +17,12 @@ type Workspace[T any] struct {
 	// AlertManagerDefinition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-workspace.html#cfn-aps-workspace-alertmanagerdefinition
-	AlertManagerDefinition *string `json:"AlertManagerDefinition,omitempty"`
+	AlertManagerDefinition *T `json:"AlertManagerDefinition,omitempty"`
 
 	// Alias AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-workspace.html#cfn-aps-workspace-alias
-	Alias *string `json:"Alias,omitempty"`
+	Alias *T `json:"Alias,omitempty"`
 
 	// LoggingConfiguration AWS CloudFormation Property
 	// Required: false

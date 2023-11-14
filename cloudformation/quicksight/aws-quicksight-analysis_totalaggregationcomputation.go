@@ -13,12 +13,12 @@ type Analysis_TotalAggregationComputation[T any] struct {
 	// ComputationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-totalaggregationcomputation.html#cfn-quicksight-analysis-totalaggregationcomputation-computationid
-	ComputationId string `json:"ComputationId"`
+	ComputationId T `json:"ComputationId"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-totalaggregationcomputation.html#cfn-quicksight-analysis-totalaggregationcomputation-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: false

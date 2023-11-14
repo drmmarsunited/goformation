@@ -18,12 +18,12 @@ type Template_DateDimensionField[T any] struct {
 	// DateGranularity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datedimensionfield.html#cfn-quicksight-template-datedimensionfield-dategranularity
-	DateGranularity *string `json:"DateGranularity,omitempty"`
+	DateGranularity *T `json:"DateGranularity,omitempty"`
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datedimensionfield.html#cfn-quicksight-template-datedimensionfield-fieldid
-	FieldId string `json:"FieldId"`
+	FieldId T `json:"FieldId"`
 
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Template_DateDimensionField[T any] struct {
 	// HierarchyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datedimensionfield.html#cfn-quicksight-template-datedimensionfield-hierarchyid
-	HierarchyId *string `json:"HierarchyId,omitempty"`
+	HierarchyId *T `json:"HierarchyId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

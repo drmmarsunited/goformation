@@ -13,7 +13,7 @@ type Analysis_FreeFormLayoutScreenCanvasSizeOptions[T any] struct {
 	// OptimizedViewPortWidth AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutscreencanvassizeoptions.html#cfn-quicksight-analysis-freeformlayoutscreencanvassizeoptions-optimizedviewportwidth
-	OptimizedViewPortWidth string `json:"OptimizedViewPortWidth"`
+	OptimizedViewPortWidth T `json:"OptimizedViewPortWidth"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

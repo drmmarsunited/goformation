@@ -17,12 +17,12 @@ type ResourceSet[T any] struct {
 	// ResourceSetName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-resourceset.html#cfn-route53recoveryreadiness-resourceset-resourcesetname
-	ResourceSetName *string `json:"ResourceSetName,omitempty"`
+	ResourceSetName *T `json:"ResourceSetName,omitempty"`
 
 	// ResourceSetType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-resourceset.html#cfn-route53recoveryreadiness-resourceset-resourcesettype
-	ResourceSetType string `json:"ResourceSetType"`
+	ResourceSetType T `json:"ResourceSetType"`
 
 	// Resources AWS CloudFormation Property
 	// Required: true

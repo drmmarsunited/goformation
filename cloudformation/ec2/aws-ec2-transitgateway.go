@@ -22,42 +22,42 @@ type TransitGateway[T any] struct {
 	// AssociationDefaultRouteTableId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-associationdefaultroutetableid
-	AssociationDefaultRouteTableId *string `json:"AssociationDefaultRouteTableId,omitempty"`
+	AssociationDefaultRouteTableId *T `json:"AssociationDefaultRouteTableId,omitempty"`
 
 	// AutoAcceptSharedAttachments AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-autoacceptsharedattachments
-	AutoAcceptSharedAttachments *string `json:"AutoAcceptSharedAttachments,omitempty"`
+	AutoAcceptSharedAttachments *T `json:"AutoAcceptSharedAttachments,omitempty"`
 
 	// DefaultRouteTableAssociation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-defaultroutetableassociation
-	DefaultRouteTableAssociation *string `json:"DefaultRouteTableAssociation,omitempty"`
+	DefaultRouteTableAssociation *T `json:"DefaultRouteTableAssociation,omitempty"`
 
 	// DefaultRouteTablePropagation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-defaultroutetablepropagation
-	DefaultRouteTablePropagation *string `json:"DefaultRouteTablePropagation,omitempty"`
+	DefaultRouteTablePropagation *T `json:"DefaultRouteTablePropagation,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DnsSupport AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-dnssupport
-	DnsSupport *string `json:"DnsSupport,omitempty"`
+	DnsSupport *T `json:"DnsSupport,omitempty"`
 
 	// MulticastSupport AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-multicastsupport
-	MulticastSupport *string `json:"MulticastSupport,omitempty"`
+	MulticastSupport *T `json:"MulticastSupport,omitempty"`
 
 	// PropagationDefaultRouteTableId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-propagationdefaultroutetableid
-	PropagationDefaultRouteTableId *string `json:"PropagationDefaultRouteTableId,omitempty"`
+	PropagationDefaultRouteTableId *T `json:"PropagationDefaultRouteTableId,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -67,12 +67,12 @@ type TransitGateway[T any] struct {
 	// TransitGatewayCidrBlocks AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-transitgatewaycidrblocks
-	TransitGatewayCidrBlocks []string `json:"TransitGatewayCidrBlocks,omitempty"`
+	TransitGatewayCidrBlocks []T `json:"TransitGatewayCidrBlocks,omitempty"`
 
 	// VpnEcmpSupport AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-vpnecmpsupport
-	VpnEcmpSupport *string `json:"VpnEcmpSupport,omitempty"`
+	VpnEcmpSupport *T `json:"VpnEcmpSupport,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

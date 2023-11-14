@@ -32,17 +32,17 @@ type ReplicationInstance[T any] struct {
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-availabilityzone
-	AvailabilityZone *string `json:"AvailabilityZone,omitempty"`
+	AvailabilityZone *T `json:"AvailabilityZone,omitempty"`
 
 	// EngineVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-engineversion
-	EngineVersion *string `json:"EngineVersion,omitempty"`
+	EngineVersion *T `json:"EngineVersion,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-kmskeyid
-	KmsKeyId *string `json:"KmsKeyId,omitempty"`
+	KmsKeyId *T `json:"KmsKeyId,omitempty"`
 
 	// MultiAZ AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type ReplicationInstance[T any] struct {
 	// PreferredMaintenanceWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-preferredmaintenancewindow
-	PreferredMaintenanceWindow *string `json:"PreferredMaintenanceWindow,omitempty"`
+	PreferredMaintenanceWindow *T `json:"PreferredMaintenanceWindow,omitempty"`
 
 	// PubliclyAccessible AWS CloudFormation Property
 	// Required: false
@@ -62,22 +62,22 @@ type ReplicationInstance[T any] struct {
 	// ReplicationInstanceClass AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationinstanceclass
-	ReplicationInstanceClass string `json:"ReplicationInstanceClass"`
+	ReplicationInstanceClass T `json:"ReplicationInstanceClass"`
 
 	// ReplicationInstanceIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationinstanceidentifier
-	ReplicationInstanceIdentifier *string `json:"ReplicationInstanceIdentifier,omitempty"`
+	ReplicationInstanceIdentifier *T `json:"ReplicationInstanceIdentifier,omitempty"`
 
 	// ReplicationSubnetGroupIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationsubnetgroupidentifier
-	ReplicationSubnetGroupIdentifier *string `json:"ReplicationSubnetGroupIdentifier,omitempty"`
+	ReplicationSubnetGroupIdentifier *T `json:"ReplicationSubnetGroupIdentifier,omitempty"`
 
 	// ResourceIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-resourceidentifier
-	ResourceIdentifier *string `json:"ResourceIdentifier,omitempty"`
+	ResourceIdentifier *T `json:"ResourceIdentifier,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -87,7 +87,7 @@ type ReplicationInstance[T any] struct {
 	// VpcSecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-vpcsecuritygroupids
-	VpcSecurityGroupIds []string `json:"VpcSecurityGroupIds,omitempty"`
+	VpcSecurityGroupIds []T `json:"VpcSecurityGroupIds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type TargetGroup_Matcher[T any] struct {
 	// HttpCode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-matcher.html#cfn-vpclattice-targetgroup-matcher-httpcode
-	HttpCode string `json:"HttpCode"`
+	HttpCode T `json:"HttpCode"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

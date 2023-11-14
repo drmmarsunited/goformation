@@ -16,17 +16,17 @@ type ApplicationEntitlementAssociation[T any] struct {
 	// ApplicationIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-applicationentitlementassociation.html#cfn-appstream-applicationentitlementassociation-applicationidentifier
-	ApplicationIdentifier string `json:"ApplicationIdentifier"`
+	ApplicationIdentifier T `json:"ApplicationIdentifier"`
 
 	// EntitlementName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-applicationentitlementassociation.html#cfn-appstream-applicationentitlementassociation-entitlementname
-	EntitlementName string `json:"EntitlementName"`
+	EntitlementName T `json:"EntitlementName"`
 
 	// StackName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-applicationentitlementassociation.html#cfn-appstream-applicationentitlementassociation-stackname
-	StackName string `json:"StackName"`
+	StackName T `json:"StackName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

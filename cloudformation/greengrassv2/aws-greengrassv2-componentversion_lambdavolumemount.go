@@ -18,17 +18,17 @@ type ComponentVersion_LambdaVolumeMount[T any] struct {
 	// DestinationPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdavolumemount.html#cfn-greengrassv2-componentversion-lambdavolumemount-destinationpath
-	DestinationPath *string `json:"DestinationPath,omitempty"`
+	DestinationPath *T `json:"DestinationPath,omitempty"`
 
 	// Permission AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdavolumemount.html#cfn-greengrassv2-componentversion-lambdavolumemount-permission
-	Permission *string `json:"Permission,omitempty"`
+	Permission *T `json:"Permission,omitempty"`
 
 	// SourcePath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdavolumemount.html#cfn-greengrassv2-componentversion-lambdavolumemount-sourcepath
-	SourcePath *string `json:"SourcePath,omitempty"`
+	SourcePath *T `json:"SourcePath,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

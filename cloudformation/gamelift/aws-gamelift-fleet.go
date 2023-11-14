@@ -18,10 +18,15 @@ type Fleet[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-anywhereconfiguration
 	AnywhereConfiguration *Fleet_AnywhereConfiguration[any] `json:"AnywhereConfiguration,omitempty"`
 
+	// ApplyCapacity AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-applycapacity
+	ApplyCapacity *T `json:"ApplyCapacity,omitempty"`
+
 	// BuildId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-buildid
-	BuildId *string `json:"BuildId,omitempty"`
+	BuildId *T `json:"BuildId,omitempty"`
 
 	// CertificateConfiguration AWS CloudFormation Property
 	// Required: false
@@ -31,12 +36,12 @@ type Fleet[T any] struct {
 	// ComputeType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-computetype
-	ComputeType *string `json:"ComputeType,omitempty"`
+	ComputeType *T `json:"ComputeType,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DesiredEC2Instances AWS CloudFormation Property
 	// Required: false
@@ -51,17 +56,22 @@ type Fleet[T any] struct {
 	// EC2InstanceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-ec2instancetype
-	EC2InstanceType *string `json:"EC2InstanceType,omitempty"`
+	EC2InstanceType *T `json:"EC2InstanceType,omitempty"`
 
 	// FleetType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-fleettype
-	FleetType *string `json:"FleetType,omitempty"`
+	FleetType *T `json:"FleetType,omitempty"`
 
 	// InstanceRoleARN AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-instancerolearn
-	InstanceRoleARN *string `json:"InstanceRoleARN,omitempty"`
+	InstanceRoleARN *T `json:"InstanceRoleARN,omitempty"`
+
+	// InstanceRoleCredentialsProvider AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-instancerolecredentialsprovider
+	InstanceRoleCredentialsProvider *T `json:"InstanceRoleCredentialsProvider,omitempty"`
 
 	// Locations AWS CloudFormation Property
 	// Required: false
@@ -76,7 +86,7 @@ type Fleet[T any] struct {
 	// MetricGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-metricgroups
-	MetricGroups []string `json:"MetricGroups,omitempty"`
+	MetricGroups []T `json:"MetricGroups,omitempty"`
 
 	// MinSize AWS CloudFormation Property
 	// Required: false
@@ -86,22 +96,22 @@ type Fleet[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// NewGameSessionProtectionPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-newgamesessionprotectionpolicy
-	NewGameSessionProtectionPolicy *string `json:"NewGameSessionProtectionPolicy,omitempty"`
+	NewGameSessionProtectionPolicy *T `json:"NewGameSessionProtectionPolicy,omitempty"`
 
 	// PeerVpcAwsAccountId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-peervpcawsaccountid
-	PeerVpcAwsAccountId *string `json:"PeerVpcAwsAccountId,omitempty"`
+	PeerVpcAwsAccountId *T `json:"PeerVpcAwsAccountId,omitempty"`
 
 	// PeerVpcId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-peervpcid
-	PeerVpcId *string `json:"PeerVpcId,omitempty"`
+	PeerVpcId *T `json:"PeerVpcId,omitempty"`
 
 	// ResourceCreationLimitPolicy AWS CloudFormation Property
 	// Required: false
@@ -113,10 +123,15 @@ type Fleet[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-runtimeconfiguration
 	RuntimeConfiguration *Fleet_RuntimeConfiguration[any] `json:"RuntimeConfiguration,omitempty"`
 
+	// ScalingPolicies AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-scalingpolicies
+	ScalingPolicies []Fleet_ScalingPolicy[any] `json:"ScalingPolicies,omitempty"`
+
 	// ScriptId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-scriptid
-	ScriptId *string `json:"ScriptId,omitempty"`
+	ScriptId *T `json:"ScriptId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

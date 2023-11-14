@@ -13,7 +13,7 @@ type WebACL_JsonBody[T any] struct {
 	// InvalidFallbackBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-jsonbody.html#cfn-wafv2-webacl-jsonbody-invalidfallbackbehavior
-	InvalidFallbackBehavior *string `json:"InvalidFallbackBehavior,omitempty"`
+	InvalidFallbackBehavior *T `json:"InvalidFallbackBehavior,omitempty"`
 
 	// MatchPattern AWS CloudFormation Property
 	// Required: true
@@ -23,12 +23,12 @@ type WebACL_JsonBody[T any] struct {
 	// MatchScope AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-jsonbody.html#cfn-wafv2-webacl-jsonbody-matchscope
-	MatchScope string `json:"MatchScope"`
+	MatchScope T `json:"MatchScope"`
 
 	// OversizeHandling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-jsonbody.html#cfn-wafv2-webacl-jsonbody-oversizehandling
-	OversizeHandling *string `json:"OversizeHandling,omitempty"`
+	OversizeHandling *T `json:"OversizeHandling,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

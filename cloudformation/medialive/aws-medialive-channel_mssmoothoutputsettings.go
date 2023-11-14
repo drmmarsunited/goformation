@@ -13,12 +13,12 @@ type Channel_MsSmoothOutputSettings[T any] struct {
 	// H265PackagingType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothoutputsettings.html#cfn-medialive-channel-mssmoothoutputsettings-h265packagingtype
-	H265PackagingType *string `json:"H265PackagingType,omitempty"`
+	H265PackagingType *T `json:"H265PackagingType,omitempty"`
 
 	// NameModifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothoutputsettings.html#cfn-medialive-channel-mssmoothoutputsettings-namemodifier
-	NameModifier *string `json:"NameModifier,omitempty"`
+	NameModifier *T `json:"NameModifier,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

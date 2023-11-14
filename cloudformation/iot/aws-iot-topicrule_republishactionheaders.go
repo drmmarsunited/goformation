@@ -13,27 +13,27 @@ type TopicRule_RepublishActionHeaders[T any] struct {
 	// ContentType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishactionheaders.html#cfn-iot-topicrule-republishactionheaders-contenttype
-	ContentType *string `json:"ContentType,omitempty"`
+	ContentType *T `json:"ContentType,omitempty"`
 
 	// CorrelationData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishactionheaders.html#cfn-iot-topicrule-republishactionheaders-correlationdata
-	CorrelationData *string `json:"CorrelationData,omitempty"`
+	CorrelationData *T `json:"CorrelationData,omitempty"`
 
 	// MessageExpiry AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishactionheaders.html#cfn-iot-topicrule-republishactionheaders-messageexpiry
-	MessageExpiry *string `json:"MessageExpiry,omitempty"`
+	MessageExpiry *T `json:"MessageExpiry,omitempty"`
 
 	// PayloadFormatIndicator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishactionheaders.html#cfn-iot-topicrule-republishactionheaders-payloadformatindicator
-	PayloadFormatIndicator *string `json:"PayloadFormatIndicator,omitempty"`
+	PayloadFormatIndicator *T `json:"PayloadFormatIndicator,omitempty"`
 
 	// ResponseTopic AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishactionheaders.html#cfn-iot-topicrule-republishactionheaders-responsetopic
-	ResponseTopic *string `json:"ResponseTopic,omitempty"`
+	ResponseTopic *T `json:"ResponseTopic,omitempty"`
 
 	// UserProperties AWS CloudFormation Property
 	// Required: false

@@ -17,22 +17,22 @@ type ResourceSet[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-resourceset.html#cfn-fms-resourceset-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-resourceset.html#cfn-fms-resourceset-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ResourceTypeList AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-resourceset.html#cfn-fms-resourceset-resourcetypelist
-	ResourceTypeList []string `json:"ResourceTypeList"`
+	ResourceTypeList []T `json:"ResourceTypeList"`
 
 	// Resources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-resourceset.html#cfn-fms-resourceset-resources
-	Resources []string `json:"Resources,omitempty"`
+	Resources []T `json:"Resources,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

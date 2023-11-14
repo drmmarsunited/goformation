@@ -13,7 +13,7 @@ type RecordSet_AliasTarget[T any] struct {
 	// DNSName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-dnshostname
-	DNSName string `json:"DNSName"`
+	DNSName T `json:"DNSName"`
 
 	// EvaluateTargetHealth AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type RecordSet_AliasTarget[T any] struct {
 	// HostedZoneId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-hostedzoneid
-	HostedZoneId string `json:"HostedZoneId"`
+	HostedZoneId T `json:"HostedZoneId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

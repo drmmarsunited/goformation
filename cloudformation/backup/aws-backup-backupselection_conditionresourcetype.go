@@ -13,17 +13,17 @@ type BackupSelection_ConditionResourceType[T any] struct {
 	// ConditionKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionresourcetype.html#cfn-backup-backupselection-conditionresourcetype-conditionkey
-	ConditionKey string `json:"ConditionKey"`
+	ConditionKey T `json:"ConditionKey"`
 
 	// ConditionType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionresourcetype.html#cfn-backup-backupselection-conditionresourcetype-conditiontype
-	ConditionType string `json:"ConditionType"`
+	ConditionType T `json:"ConditionType"`
 
 	// ConditionValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionresourcetype.html#cfn-backup-backupselection-conditionresourcetype-conditionvalue
-	ConditionValue string `json:"ConditionValue"`
+	ConditionValue T `json:"ConditionValue"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

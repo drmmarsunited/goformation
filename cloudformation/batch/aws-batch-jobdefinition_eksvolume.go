@@ -23,7 +23,7 @@ type JobDefinition_EksVolume[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-eksvolume.html#cfn-batch-jobdefinition-eksvolume-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Secret AWS CloudFormation Property
 	// Required: false

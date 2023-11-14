@@ -13,12 +13,12 @@ type OriginEndpoint_EncryptionMethod[T any] struct {
 	// CmafEncryptionMethod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-encryptionmethod.html#cfn-mediapackagev2-originendpoint-encryptionmethod-cmafencryptionmethod
-	CmafEncryptionMethod *string `json:"CmafEncryptionMethod,omitempty"`
+	CmafEncryptionMethod *T `json:"CmafEncryptionMethod,omitempty"`
 
 	// TsEncryptionMethod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-encryptionmethod.html#cfn-mediapackagev2-originendpoint-encryptionmethod-tsencryptionmethod
-	TsEncryptionMethod *string `json:"TsEncryptionMethod,omitempty"`
+	TsEncryptionMethod *T `json:"TsEncryptionMethod,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

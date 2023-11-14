@@ -13,7 +13,7 @@ type Schedule_SqsParameters[T any] struct {
 	// MessageGroupId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-sqsparameters.html#cfn-scheduler-schedule-sqsparameters-messagegroupid
-	MessageGroupId *string `json:"MessageGroupId,omitempty"`
+	MessageGroupId *T `json:"MessageGroupId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

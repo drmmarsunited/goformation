@@ -18,7 +18,7 @@ type Analysis_ColumnSort[T any] struct {
 	// Direction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnsort.html#cfn-quicksight-analysis-columnsort-direction
-	Direction string `json:"Direction"`
+	Direction T `json:"Direction"`
 
 	// SortBy AWS CloudFormation Property
 	// Required: true

@@ -13,7 +13,7 @@ type Dashboard_ForecastComputation[T any] struct {
 	// ComputationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-forecastcomputation.html#cfn-quicksight-dashboard-forecastcomputation-computationid
-	ComputationId string `json:"ComputationId"`
+	ComputationId T `json:"ComputationId"`
 
 	// CustomSeasonalityValue AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Dashboard_ForecastComputation[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-forecastcomputation.html#cfn-quicksight-dashboard-forecastcomputation-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// PeriodsBackward AWS CloudFormation Property
 	// Required: false
@@ -48,12 +48,12 @@ type Dashboard_ForecastComputation[T any] struct {
 	// Seasonality AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-forecastcomputation.html#cfn-quicksight-dashboard-forecastcomputation-seasonality
-	Seasonality *string `json:"Seasonality,omitempty"`
+	Seasonality *T `json:"Seasonality,omitempty"`
 
 	// Time AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-forecastcomputation.html#cfn-quicksight-dashboard-forecastcomputation-time
-	Time *Dashboard_DimensionField[any] `json:"Time"`
+	Time *Dashboard_DimensionField[any] `json:"Time,omitempty"`
 
 	// UpperBoundary AWS CloudFormation Property
 	// Required: false

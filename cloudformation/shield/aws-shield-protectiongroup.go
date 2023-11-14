@@ -17,27 +17,27 @@ type ProtectionGroup[T any] struct {
 	// Aggregation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-shield-protectiongroup.html#cfn-shield-protectiongroup-aggregation
-	Aggregation string `json:"Aggregation"`
+	Aggregation T `json:"Aggregation"`
 
 	// Members AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-shield-protectiongroup.html#cfn-shield-protectiongroup-members
-	Members []string `json:"Members,omitempty"`
+	Members []T `json:"Members,omitempty"`
 
 	// Pattern AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-shield-protectiongroup.html#cfn-shield-protectiongroup-pattern
-	Pattern string `json:"Pattern"`
+	Pattern T `json:"Pattern"`
 
 	// ProtectionGroupId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-shield-protectiongroup.html#cfn-shield-protectiongroup-protectiongroupid
-	ProtectionGroupId string `json:"ProtectionGroupId"`
+	ProtectionGroupId T `json:"ProtectionGroupId"`
 
 	// ResourceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-shield-protectiongroup.html#cfn-shield-protectiongroup-resourcetype
-	ResourceType *string `json:"ResourceType,omitempty"`
+	ResourceType *T `json:"ResourceType,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type Project_RegistryCredential[T any] struct {
 	// Credential AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-registrycredential.html#cfn-codebuild-project-registrycredential-credential
-	Credential string `json:"Credential"`
+	Credential T `json:"Credential"`
 
 	// CredentialProvider AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-registrycredential.html#cfn-codebuild-project-registrycredential-credentialprovider
-	CredentialProvider string `json:"CredentialProvider"`
+	CredentialProvider T `json:"CredentialProvider"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

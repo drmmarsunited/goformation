@@ -13,7 +13,7 @@ type Channel_AudioOnlyHlsSettings[T any] struct {
 	// AudioGroupId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioonlyhlssettings.html#cfn-medialive-channel-audioonlyhlssettings-audiogroupid
-	AudioGroupId *string `json:"AudioGroupId,omitempty"`
+	AudioGroupId *T `json:"AudioGroupId,omitempty"`
 
 	// AudioOnlyImage AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Channel_AudioOnlyHlsSettings[T any] struct {
 	// AudioTrackType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioonlyhlssettings.html#cfn-medialive-channel-audioonlyhlssettings-audiotracktype
-	AudioTrackType *string `json:"AudioTrackType,omitempty"`
+	AudioTrackType *T `json:"AudioTrackType,omitempty"`
 
 	// SegmentType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioonlyhlssettings.html#cfn-medialive-channel-audioonlyhlssettings-segmenttype
-	SegmentType *string `json:"SegmentType,omitempty"`
+	SegmentType *T `json:"SegmentType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

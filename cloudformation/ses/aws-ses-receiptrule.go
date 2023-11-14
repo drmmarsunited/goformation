@@ -16,7 +16,7 @@ type ReceiptRule[T any] struct {
 	// After AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-after
-	After *string `json:"After,omitempty"`
+	After *T `json:"After,omitempty"`
 
 	// Rule AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type ReceiptRule[T any] struct {
 	// RuleSetName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-rulesetname
-	RuleSetName string `json:"RuleSetName"`
+	RuleSetName T `json:"RuleSetName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

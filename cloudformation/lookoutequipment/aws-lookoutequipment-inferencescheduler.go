@@ -32,27 +32,27 @@ type InferenceScheduler[T any] struct {
 	// DataUploadFrequency AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-datauploadfrequency
-	DataUploadFrequency string `json:"DataUploadFrequency"`
+	DataUploadFrequency T `json:"DataUploadFrequency"`
 
 	// InferenceSchedulerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-inferenceschedulername
-	InferenceSchedulerName *string `json:"InferenceSchedulerName,omitempty"`
+	InferenceSchedulerName *T `json:"InferenceSchedulerName,omitempty"`
 
 	// ModelName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-modelname
-	ModelName string `json:"ModelName"`
+	ModelName T `json:"ModelName"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// ServerSideKmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-serversidekmskeyid
-	ServerSideKmsKeyId *string `json:"ServerSideKmsKeyId,omitempty"`
+	ServerSideKmsKeyId *T `json:"ServerSideKmsKeyId,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -13,22 +13,22 @@ type Dashboard_LineChartLineStyleSettings[T any] struct {
 	// LineInterpolation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartlinestylesettings.html#cfn-quicksight-dashboard-linechartlinestylesettings-lineinterpolation
-	LineInterpolation *string `json:"LineInterpolation,omitempty"`
+	LineInterpolation *T `json:"LineInterpolation,omitempty"`
 
 	// LineStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartlinestylesettings.html#cfn-quicksight-dashboard-linechartlinestylesettings-linestyle
-	LineStyle *string `json:"LineStyle,omitempty"`
+	LineStyle *T `json:"LineStyle,omitempty"`
 
 	// LineVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartlinestylesettings.html#cfn-quicksight-dashboard-linechartlinestylesettings-linevisibility
-	LineVisibility *string `json:"LineVisibility,omitempty"`
+	LineVisibility *T `json:"LineVisibility,omitempty"`
 
 	// LineWidth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartlinestylesettings.html#cfn-quicksight-dashboard-linechartlinestylesettings-linewidth
-	LineWidth *string `json:"LineWidth,omitempty"`
+	LineWidth *T `json:"LineWidth,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

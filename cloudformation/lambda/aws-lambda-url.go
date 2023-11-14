@@ -16,7 +16,7 @@ type Url[T any] struct {
 	// AuthType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-url.html#cfn-lambda-url-authtype
-	AuthType string `json:"AuthType"`
+	AuthType T `json:"AuthType"`
 
 	// Cors AWS CloudFormation Property
 	// Required: false
@@ -26,17 +26,17 @@ type Url[T any] struct {
 	// InvokeMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-url.html#cfn-lambda-url-invokemode
-	InvokeMode *string `json:"InvokeMode,omitempty"`
+	InvokeMode *T `json:"InvokeMode,omitempty"`
 
 	// Qualifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-url.html#cfn-lambda-url-qualifier
-	Qualifier *string `json:"Qualifier,omitempty"`
+	Qualifier *T `json:"Qualifier,omitempty"`
 
 	// TargetFunctionArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-url.html#cfn-lambda-url-targetfunctionarn
-	TargetFunctionArn string `json:"TargetFunctionArn"`
+	TargetFunctionArn T `json:"TargetFunctionArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

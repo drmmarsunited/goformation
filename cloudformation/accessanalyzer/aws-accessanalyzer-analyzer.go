@@ -17,7 +17,7 @@ type Analyzer[T any] struct {
 	// AnalyzerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-accessanalyzer-analyzer.html#cfn-accessanalyzer-analyzer-analyzername
-	AnalyzerName *string `json:"AnalyzerName,omitempty"`
+	AnalyzerName *T `json:"AnalyzerName,omitempty"`
 
 	// ArchiveRules AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type Analyzer[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-accessanalyzer-analyzer.html#cfn-accessanalyzer-analyzer-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

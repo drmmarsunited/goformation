@@ -16,12 +16,12 @@ type PolicyPrincipalAttachment[T any] struct {
 	// PolicyName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policyprincipalattachment.html#cfn-iot-policyprincipalattachment-policyname
-	PolicyName string `json:"PolicyName"`
+	PolicyName T `json:"PolicyName"`
 
 	// Principal AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policyprincipalattachment.html#cfn-iot-policyprincipalattachment-principal
-	Principal string `json:"Principal"`
+	Principal T `json:"Principal"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Analysis_FilledMapShapeConditionalFormatting[T any] struct {
 	// FieldId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filledmapshapeconditionalformatting.html#cfn-quicksight-analysis-filledmapshapeconditionalformatting-fieldid
-	FieldId string `json:"FieldId"`
+	FieldId T `json:"FieldId"`
 
 	// Format AWS CloudFormation Property
 	// Required: false

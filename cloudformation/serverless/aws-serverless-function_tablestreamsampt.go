@@ -13,12 +13,12 @@ type Function_TableStreamSAMPT[T any] struct {
 	// StreamName AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-	StreamName string `json:"StreamName"`
+	StreamName T `json:"StreamName"`
 
 	// TableName AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-	TableName string `json:"TableName"`
+	TableName T `json:"TableName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

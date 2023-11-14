@@ -17,17 +17,17 @@ type DBClusterParameterGroup[T any] struct {
 	// DBClusterParameterGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-dbclusterparametergroupname
-	DBClusterParameterGroupName *string `json:"DBClusterParameterGroupName,omitempty"`
+	DBClusterParameterGroupName *T `json:"DBClusterParameterGroupName,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-description
-	Description string `json:"Description"`
+	Description T `json:"Description"`
 
 	// Family AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-family
-	Family string `json:"Family"`
+	Family T `json:"Family"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: true

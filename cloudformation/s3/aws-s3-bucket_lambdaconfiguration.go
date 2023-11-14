@@ -13,7 +13,7 @@ type Bucket_LambdaConfiguration[T any] struct {
 	// Event AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-lambdaconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig-event
-	Event string `json:"Event"`
+	Event T `json:"Event"`
 
 	// Filter AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Bucket_LambdaConfiguration[T any] struct {
 	// Function AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-lambdaconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig-function
-	Function string `json:"Function"`
+	Function T `json:"Function"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

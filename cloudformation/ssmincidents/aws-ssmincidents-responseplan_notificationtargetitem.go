@@ -13,7 +13,7 @@ type ResponsePlan_NotificationTargetItem[T any] struct {
 	// SnsTopicArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-notificationtargetitem.html#cfn-ssmincidents-responseplan-notificationtargetitem-snstopicarn
-	SnsTopicArn *string `json:"SnsTopicArn,omitempty"`
+	SnsTopicArn *T `json:"SnsTopicArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

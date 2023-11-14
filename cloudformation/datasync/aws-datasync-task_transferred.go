@@ -13,7 +13,7 @@ type Task_Transferred[T any] struct {
 	// ReportLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-transferred.html#cfn-datasync-task-transferred-reportlevel
-	ReportLevel *string `json:"ReportLevel,omitempty"`
+	ReportLevel *T `json:"ReportLevel,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type JobDefinition_FargatePlatformConfiguration[T any] struct {
 	// PlatformVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-fargateplatformconfiguration.html#cfn-batch-jobdefinition-containerproperties-fargateplatformconfiguration-platformversion
-	PlatformVersion *string `json:"PlatformVersion,omitempty"`
+	PlatformVersion *T `json:"PlatformVersion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

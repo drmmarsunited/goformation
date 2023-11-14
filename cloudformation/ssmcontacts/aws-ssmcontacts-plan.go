@@ -16,12 +16,12 @@ type Plan[T any] struct {
 	// ContactId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-plan.html#cfn-ssmcontacts-plan-contactid
-	ContactId string `json:"ContactId"`
+	ContactId T `json:"ContactId"`
 
 	// RotationIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-plan.html#cfn-ssmcontacts-plan-rotationids
-	RotationIds []string `json:"RotationIds,omitempty"`
+	RotationIds []T `json:"RotationIds,omitempty"`
 
 	// Stages AWS CloudFormation Property
 	// Required: false

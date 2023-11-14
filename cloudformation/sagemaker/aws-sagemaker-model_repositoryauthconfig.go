@@ -13,7 +13,7 @@ type Model_RepositoryAuthConfig[T any] struct {
 	// RepositoryCredentialsProviderArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-imageconfig-repositoryauthconfig.html#cfn-sagemaker-model-containerdefinition-imageconfig-repositoryauthconfig-repositorycredentialsproviderarn
-	RepositoryCredentialsProviderArn string `json:"RepositoryCredentialsProviderArn"`
+	RepositoryCredentialsProviderArn T `json:"RepositoryCredentialsProviderArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

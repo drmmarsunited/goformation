@@ -13,17 +13,17 @@ type Monitor_S3Config[T any] struct {
 	// BucketName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-internetmonitor-monitor-s3config.html#cfn-internetmonitor-monitor-s3config-bucketname
-	BucketName *string `json:"BucketName,omitempty"`
+	BucketName *T `json:"BucketName,omitempty"`
 
 	// BucketPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-internetmonitor-monitor-s3config.html#cfn-internetmonitor-monitor-s3config-bucketprefix
-	BucketPrefix *string `json:"BucketPrefix,omitempty"`
+	BucketPrefix *T `json:"BucketPrefix,omitempty"`
 
 	// LogDeliveryStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-internetmonitor-monitor-s3config.html#cfn-internetmonitor-monitor-s3config-logdeliverystatus
-	LogDeliveryStatus *string `json:"LogDeliveryStatus,omitempty"`
+	LogDeliveryStatus *T `json:"LogDeliveryStatus,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

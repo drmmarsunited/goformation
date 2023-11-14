@@ -13,7 +13,7 @@ type StreamProcessor_FaceSearchSettings[T any] struct {
 	// CollectionId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-facesearchsettings.html#cfn-rekognition-streamprocessor-facesearchsettings-collectionid
-	CollectionId string `json:"CollectionId"`
+	CollectionId T `json:"CollectionId"`
 
 	// FaceMatchThreshold AWS CloudFormation Property
 	// Required: false

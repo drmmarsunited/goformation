@@ -18,12 +18,12 @@ type Workgroup_VpcEndpoint[T any] struct {
 	// VpcEndpointId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-vpcendpoint.html#cfn-redshiftserverless-workgroup-vpcendpoint-vpcendpointid
-	VpcEndpointId *string `json:"VpcEndpointId,omitempty"`
+	VpcEndpointId *T `json:"VpcEndpointId,omitempty"`
 
 	// VpcId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-vpcendpoint.html#cfn-redshiftserverless-workgroup-vpcendpoint-vpcid
-	VpcId *string `json:"VpcId,omitempty"`
+	VpcId *T `json:"VpcId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

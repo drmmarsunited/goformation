@@ -22,22 +22,22 @@ type Rule[T any] struct {
 	// Function AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-rule.html#cfn-connect-rule-function
-	Function string `json:"Function"`
+	Function T `json:"Function"`
 
 	// InstanceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-rule.html#cfn-connect-rule-instancearn
-	InstanceArn string `json:"InstanceArn"`
+	InstanceArn T `json:"InstanceArn"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-rule.html#cfn-connect-rule-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// PublishStatus AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-rule.html#cfn-connect-rule-publishstatus
-	PublishStatus string `json:"PublishStatus"`
+	PublishStatus T `json:"PublishStatus"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

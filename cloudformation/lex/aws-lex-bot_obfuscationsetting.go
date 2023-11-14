@@ -13,7 +13,7 @@ type Bot_ObfuscationSetting[T any] struct {
 	// ObfuscationSettingType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-obfuscationsetting.html#cfn-lex-bot-obfuscationsetting-obfuscationsettingtype
-	ObfuscationSettingType string `json:"ObfuscationSettingType"`
+	ObfuscationSettingType T `json:"ObfuscationSettingType"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

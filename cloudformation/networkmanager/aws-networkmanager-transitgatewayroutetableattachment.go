@@ -17,7 +17,7 @@ type TransitGatewayRouteTableAttachment[T any] struct {
 	// PeeringId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#cfn-networkmanager-transitgatewayroutetableattachment-peeringid
-	PeeringId string `json:"PeeringId"`
+	PeeringId T `json:"PeeringId"`
 
 	// ProposedSegmentChange AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type TransitGatewayRouteTableAttachment[T any] struct {
 	// TransitGatewayRouteTableArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#cfn-networkmanager-transitgatewayroutetableattachment-transitgatewayroutetablearn
-	TransitGatewayRouteTableArn string `json:"TransitGatewayRouteTableArn"`
+	TransitGatewayRouteTableArn T `json:"TransitGatewayRouteTableArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

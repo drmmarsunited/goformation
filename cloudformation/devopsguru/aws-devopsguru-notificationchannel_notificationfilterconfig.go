@@ -13,12 +13,12 @@ type NotificationChannel_NotificationFilterConfig[T any] struct {
 	// MessageTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationfilterconfig.html#cfn-devopsguru-notificationchannel-notificationfilterconfig-messagetypes
-	MessageTypes []string `json:"MessageTypes,omitempty"`
+	MessageTypes []T `json:"MessageTypes,omitempty"`
 
 	// Severities AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationfilterconfig.html#cfn-devopsguru-notificationchannel-notificationfilterconfig-severities
-	Severities []string `json:"Severities,omitempty"`
+	Severities []T `json:"Severities,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

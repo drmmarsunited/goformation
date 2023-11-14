@@ -13,12 +13,12 @@ type ModelPackage_SourceAlgorithm[T any] struct {
 	// AlgorithmName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-sourcealgorithm.html#cfn-sagemaker-modelpackage-sourcealgorithm-algorithmname
-	AlgorithmName string `json:"AlgorithmName"`
+	AlgorithmName T `json:"AlgorithmName"`
 
 	// ModelDataUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-sourcealgorithm.html#cfn-sagemaker-modelpackage-sourcealgorithm-modeldataurl
-	ModelDataUrl *string `json:"ModelDataUrl,omitempty"`
+	ModelDataUrl *T `json:"ModelDataUrl,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

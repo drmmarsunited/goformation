@@ -13,7 +13,7 @@ type Endpoint_GcpMySQLSettings[T any] struct {
 	// AfterConnectScript AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-gcpmysqlsettings.html#cfn-dms-endpoint-gcpmysqlsettings-afterconnectscript
-	AfterConnectScript *string `json:"AfterConnectScript,omitempty"`
+	AfterConnectScript *T `json:"AfterConnectScript,omitempty"`
 
 	// CleanSourceMetadataOnMismatch AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Endpoint_GcpMySQLSettings[T any] struct {
 	// DatabaseName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-gcpmysqlsettings.html#cfn-dms-endpoint-gcpmysqlsettings-databasename
-	DatabaseName *string `json:"DatabaseName,omitempty"`
+	DatabaseName *T `json:"DatabaseName,omitempty"`
 
 	// EventsPollInterval AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Endpoint_GcpMySQLSettings[T any] struct {
 	// Password AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-gcpmysqlsettings.html#cfn-dms-endpoint-gcpmysqlsettings-password
-	Password *string `json:"Password,omitempty"`
+	Password *T `json:"Password,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
@@ -53,27 +53,27 @@ type Endpoint_GcpMySQLSettings[T any] struct {
 	// SecretsManagerAccessRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-gcpmysqlsettings.html#cfn-dms-endpoint-gcpmysqlsettings-secretsmanageraccessrolearn
-	SecretsManagerAccessRoleArn *string `json:"SecretsManagerAccessRoleArn,omitempty"`
+	SecretsManagerAccessRoleArn *T `json:"SecretsManagerAccessRoleArn,omitempty"`
 
 	// SecretsManagerSecretId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-gcpmysqlsettings.html#cfn-dms-endpoint-gcpmysqlsettings-secretsmanagersecretid
-	SecretsManagerSecretId *string `json:"SecretsManagerSecretId,omitempty"`
+	SecretsManagerSecretId *T `json:"SecretsManagerSecretId,omitempty"`
 
 	// ServerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-gcpmysqlsettings.html#cfn-dms-endpoint-gcpmysqlsettings-servername
-	ServerName *string `json:"ServerName,omitempty"`
+	ServerName *T `json:"ServerName,omitempty"`
 
 	// ServerTimezone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-gcpmysqlsettings.html#cfn-dms-endpoint-gcpmysqlsettings-servertimezone
-	ServerTimezone *string `json:"ServerTimezone,omitempty"`
+	ServerTimezone *T `json:"ServerTimezone,omitempty"`
 
 	// Username AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-gcpmysqlsettings.html#cfn-dms-endpoint-gcpmysqlsettings-username
-	Username *string `json:"Username,omitempty"`
+	Username *T `json:"Username,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

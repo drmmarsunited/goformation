@@ -23,12 +23,12 @@ type DataSource_ConfluenceSpaceConfiguration[T any] struct {
 	// ExcludeSpaces AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespaceconfiguration.html#cfn-kendra-datasource-confluencespaceconfiguration-excludespaces
-	ExcludeSpaces []string `json:"ExcludeSpaces,omitempty"`
+	ExcludeSpaces []T `json:"ExcludeSpaces,omitempty"`
 
 	// IncludeSpaces AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespaceconfiguration.html#cfn-kendra-datasource-confluencespaceconfiguration-includespaces
-	IncludeSpaces []string `json:"IncludeSpaces,omitempty"`
+	IncludeSpaces []T `json:"IncludeSpaces,omitempty"`
 
 	// SpaceFieldMappings AWS CloudFormation Property
 	// Required: false

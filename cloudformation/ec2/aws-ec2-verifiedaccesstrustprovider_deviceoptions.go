@@ -13,7 +13,7 @@ type VerifiedAccessTrustProvider_DeviceOptions[T any] struct {
 	// TenantId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccesstrustprovider-deviceoptions.html#cfn-ec2-verifiedaccesstrustprovider-deviceoptions-tenantid
-	TenantId *string `json:"TenantId,omitempty"`
+	TenantId *T `json:"TenantId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

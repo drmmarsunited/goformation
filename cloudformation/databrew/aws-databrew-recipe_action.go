@@ -13,7 +13,7 @@ type Recipe_Action[T any] struct {
 	// Operation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-operation
-	Operation string `json:"Operation"`
+	Operation T `json:"Operation"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false

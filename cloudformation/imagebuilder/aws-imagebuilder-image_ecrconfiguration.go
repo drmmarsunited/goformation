@@ -13,12 +13,12 @@ type Image_EcrConfiguration[T any] struct {
 	// ContainerTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-ecrconfiguration.html#cfn-imagebuilder-image-ecrconfiguration-containertags
-	ContainerTags []string `json:"ContainerTags,omitempty"`
+	ContainerTags []T `json:"ContainerTags,omitempty"`
 
 	// RepositoryName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-ecrconfiguration.html#cfn-imagebuilder-image-ecrconfiguration-repositoryname
-	RepositoryName *string `json:"RepositoryName,omitempty"`
+	RepositoryName *T `json:"RepositoryName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

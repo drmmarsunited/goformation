@@ -18,7 +18,7 @@ type Application_ParallelismConfiguration[T any] struct {
 	// ConfigurationType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-parallelismconfiguration.html#cfn-kinesisanalyticsv2-application-parallelismconfiguration-configurationtype
-	ConfigurationType string `json:"ConfigurationType"`
+	ConfigurationType T `json:"ConfigurationType"`
 
 	// Parallelism AWS CloudFormation Property
 	// Required: false

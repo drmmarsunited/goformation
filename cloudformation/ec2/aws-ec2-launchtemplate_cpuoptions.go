@@ -13,7 +13,7 @@ type LaunchTemplate_CpuOptions[T any] struct {
 	// AmdSevSnp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-cpuoptions.html#cfn-ec2-launchtemplate-cpuoptions-amdsevsnp
-	AmdSevSnp *string `json:"AmdSevSnp,omitempty"`
+	AmdSevSnp *T `json:"AmdSevSnp,omitempty"`
 
 	// CoreCount AWS CloudFormation Property
 	// Required: false

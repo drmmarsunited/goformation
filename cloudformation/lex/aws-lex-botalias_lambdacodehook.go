@@ -13,12 +13,12 @@ type BotAlias_LambdaCodeHook[T any] struct {
 	// CodeHookInterfaceVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-lambdacodehook.html#cfn-lex-botalias-lambdacodehook-codehookinterfaceversion
-	CodeHookInterfaceVersion string `json:"CodeHookInterfaceVersion"`
+	CodeHookInterfaceVersion T `json:"CodeHookInterfaceVersion"`
 
 	// LambdaArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-lambdacodehook.html#cfn-lex-botalias-lambdacodehook-lambdaarn
-	LambdaArn string `json:"LambdaArn"`
+	LambdaArn T `json:"LambdaArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

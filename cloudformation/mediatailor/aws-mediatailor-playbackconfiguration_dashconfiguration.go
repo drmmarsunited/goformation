@@ -13,17 +13,17 @@ type PlaybackConfiguration_DashConfiguration[T any] struct {
 	// ManifestEndpointPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-dashconfiguration.html#cfn-mediatailor-playbackconfiguration-dashconfiguration-manifestendpointprefix
-	ManifestEndpointPrefix *string `json:"ManifestEndpointPrefix,omitempty"`
+	ManifestEndpointPrefix *T `json:"ManifestEndpointPrefix,omitempty"`
 
 	// MpdLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-dashconfiguration.html#cfn-mediatailor-playbackconfiguration-dashconfiguration-mpdlocation
-	MpdLocation *string `json:"MpdLocation,omitempty"`
+	MpdLocation *T `json:"MpdLocation,omitempty"`
 
 	// OriginManifestType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-dashconfiguration.html#cfn-mediatailor-playbackconfiguration-dashconfiguration-originmanifesttype
-	OriginManifestType *string `json:"OriginManifestType,omitempty"`
+	OriginManifestType *T `json:"OriginManifestType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -18,7 +18,7 @@ type Rule_CapacityProviderStrategyItem[T any] struct {
 	// CapacityProvider AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-capacityproviderstrategyitem.html#cfn-events-rule-capacityproviderstrategyitem-capacityprovider
-	CapacityProvider string `json:"CapacityProvider"`
+	CapacityProvider T `json:"CapacityProvider"`
 
 	// Weight AWS CloudFormation Property
 	// Required: false

@@ -13,7 +13,7 @@ type NotificationChannel_SnsChannelConfig[T any] struct {
 	// TopicArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-snschannelconfig.html#cfn-devopsguru-notificationchannel-snschannelconfig-topicarn
-	TopicArn *string `json:"TopicArn,omitempty"`
+	TopicArn *T `json:"TopicArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

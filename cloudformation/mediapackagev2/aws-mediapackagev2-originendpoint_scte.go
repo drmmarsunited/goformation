@@ -13,7 +13,7 @@ type OriginEndpoint_Scte[T any] struct {
 	// ScteFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-scte.html#cfn-mediapackagev2-originendpoint-scte-sctefilter
-	ScteFilter []string `json:"ScteFilter,omitempty"`
+	ScteFilter []T `json:"ScteFilter,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -27,7 +27,7 @@ type Model[T any] struct {
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-executionrolearn
-	ExecutionRoleArn string `json:"ExecutionRoleArn"`
+	ExecutionRoleArn T `json:"ExecutionRoleArn"`
 
 	// InferenceExecutionConfig AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Model[T any] struct {
 	// ModelName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-modelname
-	ModelName *string `json:"ModelName,omitempty"`
+	ModelName *T `json:"ModelName,omitempty"`
 
 	// PrimaryContainer AWS CloudFormation Property
 	// Required: false

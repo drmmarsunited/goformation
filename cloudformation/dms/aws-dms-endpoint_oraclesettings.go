@@ -43,22 +43,22 @@ type Endpoint_OracleSettings[T any] struct {
 	// AsmPassword AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-asmpassword
-	AsmPassword *string `json:"AsmPassword,omitempty"`
+	AsmPassword *T `json:"AsmPassword,omitempty"`
 
 	// AsmServer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-asmserver
-	AsmServer *string `json:"AsmServer,omitempty"`
+	AsmServer *T `json:"AsmServer,omitempty"`
 
 	// AsmUser AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-asmuser
-	AsmUser *string `json:"AsmUser,omitempty"`
+	AsmUser *T `json:"AsmUser,omitempty"`
 
 	// CharLengthSemantics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-charlengthsemantics
-	CharLengthSemantics *string `json:"CharLengthSemantics,omitempty"`
+	CharLengthSemantics *T `json:"CharLengthSemantics,omitempty"`
 
 	// DirectPathNoLog AWS CloudFormation Property
 	// Required: false
@@ -93,7 +93,7 @@ type Endpoint_OracleSettings[T any] struct {
 	// OraclePathPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-oraclepathprefix
-	OraclePathPrefix *string `json:"OraclePathPrefix,omitempty"`
+	OraclePathPrefix *T `json:"OraclePathPrefix,omitempty"`
 
 	// ParallelAsmReadThreads AWS CloudFormation Property
 	// Required: false
@@ -123,37 +123,37 @@ type Endpoint_OracleSettings[T any] struct {
 	// SecretsManagerAccessRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-secretsmanageraccessrolearn
-	SecretsManagerAccessRoleArn *string `json:"SecretsManagerAccessRoleArn,omitempty"`
+	SecretsManagerAccessRoleArn *T `json:"SecretsManagerAccessRoleArn,omitempty"`
 
 	// SecretsManagerOracleAsmAccessRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-secretsmanageroracleasmaccessrolearn
-	SecretsManagerOracleAsmAccessRoleArn *string `json:"SecretsManagerOracleAsmAccessRoleArn,omitempty"`
+	SecretsManagerOracleAsmAccessRoleArn *T `json:"SecretsManagerOracleAsmAccessRoleArn,omitempty"`
 
 	// SecretsManagerOracleAsmSecretId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-secretsmanageroracleasmsecretid
-	SecretsManagerOracleAsmSecretId *string `json:"SecretsManagerOracleAsmSecretId,omitempty"`
+	SecretsManagerOracleAsmSecretId *T `json:"SecretsManagerOracleAsmSecretId,omitempty"`
 
 	// SecretsManagerSecretId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-secretsmanagersecretid
-	SecretsManagerSecretId *string `json:"SecretsManagerSecretId,omitempty"`
+	SecretsManagerSecretId *T `json:"SecretsManagerSecretId,omitempty"`
 
 	// SecurityDbEncryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-securitydbencryption
-	SecurityDbEncryption *string `json:"SecurityDbEncryption,omitempty"`
+	SecurityDbEncryption *T `json:"SecurityDbEncryption,omitempty"`
 
 	// SecurityDbEncryptionName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-securitydbencryptionname
-	SecurityDbEncryptionName *string `json:"SecurityDbEncryptionName,omitempty"`
+	SecurityDbEncryptionName *T `json:"SecurityDbEncryptionName,omitempty"`
 
 	// SpatialDataOptionToGeoJsonFunctionName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-spatialdataoptiontogeojsonfunctionname
-	SpatialDataOptionToGeoJsonFunctionName *string `json:"SpatialDataOptionToGeoJsonFunctionName,omitempty"`
+	SpatialDataOptionToGeoJsonFunctionName *T `json:"SpatialDataOptionToGeoJsonFunctionName,omitempty"`
 
 	// StandbyDelayTime AWS CloudFormation Property
 	// Required: false
@@ -183,7 +183,7 @@ type Endpoint_OracleSettings[T any] struct {
 	// UsePathPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-usepathprefix
-	UsePathPrefix *string `json:"UsePathPrefix,omitempty"`
+	UsePathPrefix *T `json:"UsePathPrefix,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -38,7 +38,7 @@ type Template_BarChartVisual[T any] struct {
 	// VisualId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-barchartvisual.html#cfn-quicksight-template-barchartvisual-visualid
-	VisualId string `json:"VisualId"`
+	VisualId T `json:"VisualId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

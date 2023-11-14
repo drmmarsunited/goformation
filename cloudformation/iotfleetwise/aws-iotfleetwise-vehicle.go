@@ -17,27 +17,27 @@ type Vehicle[T any] struct {
 	// AssociationBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-vehicle.html#cfn-iotfleetwise-vehicle-associationbehavior
-	AssociationBehavior *string `json:"AssociationBehavior,omitempty"`
+	AssociationBehavior *T `json:"AssociationBehavior,omitempty"`
 
 	// Attributes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-vehicle.html#cfn-iotfleetwise-vehicle-attributes
-	Attributes map[string]string `json:"Attributes,omitempty"`
+	Attributes map[string]T `json:"Attributes,omitempty"`
 
 	// DecoderManifestArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-vehicle.html#cfn-iotfleetwise-vehicle-decodermanifestarn
-	DecoderManifestArn string `json:"DecoderManifestArn"`
+	DecoderManifestArn T `json:"DecoderManifestArn"`
 
 	// ModelManifestArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-vehicle.html#cfn-iotfleetwise-vehicle-modelmanifestarn
-	ModelManifestArn string `json:"ModelManifestArn"`
+	ModelManifestArn T `json:"ModelManifestArn"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-vehicle.html#cfn-iotfleetwise-vehicle-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -37,7 +37,7 @@ type Application[T any] struct {
 	// GroupingType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-groupingtype
-	GroupingType *string `json:"GroupingType,omitempty"`
+	GroupingType *T `json:"GroupingType,omitempty"`
 
 	// LogPatternSets AWS CloudFormation Property
 	// Required: false
@@ -52,12 +52,12 @@ type Application[T any] struct {
 	// OpsItemSNSTopicArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-opsitemsnstopicarn
-	OpsItemSNSTopicArn *string `json:"OpsItemSNSTopicArn,omitempty"`
+	OpsItemSNSTopicArn *T `json:"OpsItemSNSTopicArn,omitempty"`
 
 	// ResourceGroupName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-resourcegroupname
-	ResourceGroupName string `json:"ResourceGroupName"`
+	ResourceGroupName T `json:"ResourceGroupName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

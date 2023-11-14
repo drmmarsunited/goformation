@@ -16,7 +16,7 @@ type Member[T any] struct {
 	// InvitationId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-member.html#cfn-managedblockchain-member-invitationid
-	InvitationId *string `json:"InvitationId,omitempty"`
+	InvitationId *T `json:"InvitationId,omitempty"`
 
 	// MemberConfiguration AWS CloudFormation Property
 	// Required: true
@@ -31,7 +31,7 @@ type Member[T any] struct {
 	// NetworkId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-member.html#cfn-managedblockchain-member-networkid
-	NetworkId *string `json:"NetworkId,omitempty"`
+	NetworkId *T `json:"NetworkId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

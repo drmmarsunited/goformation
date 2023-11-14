@@ -13,7 +13,7 @@ type UserPool_LambdaConfig[T any] struct {
 	// CreateAuthChallenge AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-createauthchallenge
-	CreateAuthChallenge *string `json:"CreateAuthChallenge,omitempty"`
+	CreateAuthChallenge *T `json:"CreateAuthChallenge,omitempty"`
 
 	// CustomEmailSender AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type UserPool_LambdaConfig[T any] struct {
 	// CustomMessage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-custommessage
-	CustomMessage *string `json:"CustomMessage,omitempty"`
+	CustomMessage *T `json:"CustomMessage,omitempty"`
 
 	// CustomSMSSender AWS CloudFormation Property
 	// Required: false
@@ -33,47 +33,47 @@ type UserPool_LambdaConfig[T any] struct {
 	// DefineAuthChallenge AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-defineauthchallenge
-	DefineAuthChallenge *string `json:"DefineAuthChallenge,omitempty"`
+	DefineAuthChallenge *T `json:"DefineAuthChallenge,omitempty"`
 
 	// KMSKeyID AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-kmskeyid
-	KMSKeyID *string `json:"KMSKeyID,omitempty"`
+	KMSKeyID *T `json:"KMSKeyID,omitempty"`
 
 	// PostAuthentication AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-postauthentication
-	PostAuthentication *string `json:"PostAuthentication,omitempty"`
+	PostAuthentication *T `json:"PostAuthentication,omitempty"`
 
 	// PostConfirmation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-postconfirmation
-	PostConfirmation *string `json:"PostConfirmation,omitempty"`
+	PostConfirmation *T `json:"PostConfirmation,omitempty"`
 
 	// PreAuthentication AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-preauthentication
-	PreAuthentication *string `json:"PreAuthentication,omitempty"`
+	PreAuthentication *T `json:"PreAuthentication,omitempty"`
 
 	// PreSignUp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-presignup
-	PreSignUp *string `json:"PreSignUp,omitempty"`
+	PreSignUp *T `json:"PreSignUp,omitempty"`
 
 	// PreTokenGeneration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-pretokengeneration
-	PreTokenGeneration *string `json:"PreTokenGeneration,omitempty"`
+	PreTokenGeneration *T `json:"PreTokenGeneration,omitempty"`
 
 	// UserMigration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-usermigration
-	UserMigration *string `json:"UserMigration,omitempty"`
+	UserMigration *T `json:"UserMigration,omitempty"`
 
 	// VerifyAuthChallengeResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-verifyauthchallengeresponse
-	VerifyAuthChallengeResponse *string `json:"VerifyAuthChallengeResponse,omitempty"`
+	VerifyAuthChallengeResponse *T `json:"VerifyAuthChallengeResponse,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

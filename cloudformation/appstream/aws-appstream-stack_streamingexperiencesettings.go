@@ -13,7 +13,7 @@ type Stack_StreamingExperienceSettings[T any] struct {
 	// PreferredProtocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-streamingexperiencesettings.html#cfn-appstream-stack-streamingexperiencesettings-preferredprotocol
-	PreferredProtocol *string `json:"PreferredProtocol,omitempty"`
+	PreferredProtocol *T `json:"PreferredProtocol,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

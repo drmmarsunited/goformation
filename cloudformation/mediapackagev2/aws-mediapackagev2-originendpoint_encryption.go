@@ -13,7 +13,7 @@ type OriginEndpoint_Encryption[T any] struct {
 	// ConstantInitializationVector AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-encryption.html#cfn-mediapackagev2-originendpoint-encryption-constantinitializationvector
-	ConstantInitializationVector *string `json:"ConstantInitializationVector,omitempty"`
+	ConstantInitializationVector *T `json:"ConstantInitializationVector,omitempty"`
 
 	// EncryptionMethod AWS CloudFormation Property
 	// Required: true

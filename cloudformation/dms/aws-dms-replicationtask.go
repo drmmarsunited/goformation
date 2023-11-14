@@ -17,7 +17,7 @@ type ReplicationTask[T any] struct {
 	// CdcStartPosition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-cdcstartposition
-	CdcStartPosition *string `json:"CdcStartPosition,omitempty"`
+	CdcStartPosition *T `json:"CdcStartPosition,omitempty"`
 
 	// CdcStartTime AWS CloudFormation Property
 	// Required: false
@@ -27,42 +27,42 @@ type ReplicationTask[T any] struct {
 	// CdcStopPosition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-cdcstopposition
-	CdcStopPosition *string `json:"CdcStopPosition,omitempty"`
+	CdcStopPosition *T `json:"CdcStopPosition,omitempty"`
 
 	// MigrationType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-migrationtype
-	MigrationType string `json:"MigrationType"`
+	MigrationType T `json:"MigrationType"`
 
 	// ReplicationInstanceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-replicationinstancearn
-	ReplicationInstanceArn string `json:"ReplicationInstanceArn"`
+	ReplicationInstanceArn T `json:"ReplicationInstanceArn"`
 
 	// ReplicationTaskIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-replicationtaskidentifier
-	ReplicationTaskIdentifier *string `json:"ReplicationTaskIdentifier,omitempty"`
+	ReplicationTaskIdentifier *T `json:"ReplicationTaskIdentifier,omitempty"`
 
 	// ReplicationTaskSettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-replicationtasksettings
-	ReplicationTaskSettings *string `json:"ReplicationTaskSettings,omitempty"`
+	ReplicationTaskSettings *T `json:"ReplicationTaskSettings,omitempty"`
 
 	// ResourceIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-resourceidentifier
-	ResourceIdentifier *string `json:"ResourceIdentifier,omitempty"`
+	ResourceIdentifier *T `json:"ResourceIdentifier,omitempty"`
 
 	// SourceEndpointArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-sourceendpointarn
-	SourceEndpointArn string `json:"SourceEndpointArn"`
+	SourceEndpointArn T `json:"SourceEndpointArn"`
 
 	// TableMappings AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-tablemappings
-	TableMappings string `json:"TableMappings"`
+	TableMappings T `json:"TableMappings"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -72,12 +72,12 @@ type ReplicationTask[T any] struct {
 	// TargetEndpointArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-targetendpointarn
-	TargetEndpointArn string `json:"TargetEndpointArn"`
+	TargetEndpointArn T `json:"TargetEndpointArn"`
 
 	// TaskData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-taskdata
-	TaskData *string `json:"TaskData,omitempty"`
+	TaskData *T `json:"TaskData,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

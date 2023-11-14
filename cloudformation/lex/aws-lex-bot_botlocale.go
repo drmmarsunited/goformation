@@ -18,7 +18,7 @@ type Bot_BotLocale[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Intents AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Bot_BotLocale[T any] struct {
 	// LocaleId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-localeid
-	LocaleId string `json:"LocaleId"`
+	LocaleId T `json:"LocaleId"`
 
 	// NluConfidenceThreshold AWS CloudFormation Property
 	// Required: true

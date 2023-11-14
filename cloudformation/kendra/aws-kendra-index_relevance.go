@@ -13,7 +13,7 @@ type Index_Relevance[T any] struct {
 	// Duration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-relevance.html#cfn-kendra-index-relevance-duration
-	Duration *string `json:"Duration,omitempty"`
+	Duration *T `json:"Duration,omitempty"`
 
 	// Freshness AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Index_Relevance[T any] struct {
 	// RankOrder AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-relevance.html#cfn-kendra-index-relevance-rankorder
-	RankOrder *string `json:"RankOrder,omitempty"`
+	RankOrder *T `json:"RankOrder,omitempty"`
 
 	// ValueImportanceItems AWS CloudFormation Property
 	// Required: false

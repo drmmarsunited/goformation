@@ -13,12 +13,12 @@ type Domain_CustomImage[T any] struct {
 	// AppImageConfigName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-customimage.html#cfn-sagemaker-domain-customimage-appimageconfigname
-	AppImageConfigName string `json:"AppImageConfigName"`
+	AppImageConfigName T `json:"AppImageConfigName"`
 
 	// ImageName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-customimage.html#cfn-sagemaker-domain-customimage-imagename
-	ImageName string `json:"ImageName"`
+	ImageName T `json:"ImageName"`
 
 	// ImageVersionNumber AWS CloudFormation Property
 	// Required: false

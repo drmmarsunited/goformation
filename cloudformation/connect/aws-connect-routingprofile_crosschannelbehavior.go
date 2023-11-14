@@ -13,7 +13,7 @@ type RoutingProfile_CrossChannelBehavior[T any] struct {
 	// BehaviorType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-routingprofile-crosschannelbehavior.html#cfn-connect-routingprofile-crosschannelbehavior-behaviortype
-	BehaviorType string `json:"BehaviorType"`
+	BehaviorType T `json:"BehaviorType"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

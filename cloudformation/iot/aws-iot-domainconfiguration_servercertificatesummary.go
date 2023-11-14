@@ -13,17 +13,17 @@ type DomainConfiguration_ServerCertificateSummary[T any] struct {
 	// ServerCertificateArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-domainconfiguration-servercertificatesummary.html#cfn-iot-domainconfiguration-servercertificatesummary-servercertificatearn
-	ServerCertificateArn *string `json:"ServerCertificateArn,omitempty"`
+	ServerCertificateArn *T `json:"ServerCertificateArn,omitempty"`
 
 	// ServerCertificateStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-domainconfiguration-servercertificatesummary.html#cfn-iot-domainconfiguration-servercertificatesummary-servercertificatestatus
-	ServerCertificateStatus *string `json:"ServerCertificateStatus,omitempty"`
+	ServerCertificateStatus *T `json:"ServerCertificateStatus,omitempty"`
 
 	// ServerCertificateStatusDetail AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-domainconfiguration-servercertificatesummary.html#cfn-iot-domainconfiguration-servercertificatesummary-servercertificatestatusdetail
-	ServerCertificateStatusDetail *string `json:"ServerCertificateStatusDetail,omitempty"`
+	ServerCertificateStatusDetail *T `json:"ServerCertificateStatusDetail,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Bot_SlotValueRegexFilter[T any] struct {
 	// Pattern AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueregexfilter.html#cfn-lex-bot-slotvalueregexfilter-pattern
-	Pattern string `json:"Pattern"`
+	Pattern T `json:"Pattern"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

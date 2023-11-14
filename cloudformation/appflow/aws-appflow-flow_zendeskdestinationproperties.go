@@ -18,17 +18,17 @@ type Flow_ZendeskDestinationProperties[T any] struct {
 	// IdFieldNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-zendeskdestinationproperties.html#cfn-appflow-flow-zendeskdestinationproperties-idfieldnames
-	IdFieldNames []string `json:"IdFieldNames,omitempty"`
+	IdFieldNames []T `json:"IdFieldNames,omitempty"`
 
 	// Object AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-zendeskdestinationproperties.html#cfn-appflow-flow-zendeskdestinationproperties-object
-	Object string `json:"Object"`
+	Object T `json:"Object"`
 
 	// WriteOperationType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-zendeskdestinationproperties.html#cfn-appflow-flow-zendeskdestinationproperties-writeoperationtype
-	WriteOperationType *string `json:"WriteOperationType,omitempty"`
+	WriteOperationType *T `json:"WriteOperationType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

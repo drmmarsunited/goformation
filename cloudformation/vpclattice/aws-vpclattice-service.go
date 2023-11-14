@@ -17,17 +17,17 @@ type Service[T any] struct {
 	// AuthType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-service.html#cfn-vpclattice-service-authtype
-	AuthType *string `json:"AuthType,omitempty"`
+	AuthType *T `json:"AuthType,omitempty"`
 
 	// CertificateArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-service.html#cfn-vpclattice-service-certificatearn
-	CertificateArn *string `json:"CertificateArn,omitempty"`
+	CertificateArn *T `json:"CertificateArn,omitempty"`
 
 	// CustomDomainName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-service.html#cfn-vpclattice-service-customdomainname
-	CustomDomainName *string `json:"CustomDomainName,omitempty"`
+	CustomDomainName *T `json:"CustomDomainName,omitempty"`
 
 	// DnsEntry AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Service[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-service.html#cfn-vpclattice-service-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

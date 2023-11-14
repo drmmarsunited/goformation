@@ -10,7 +10,7 @@ import (
 )
 
 var typeToGo = map[string]string{
-	"String":    "string",
+	"String":    "T",
 	"Long":      "T",
 	"Integer":   "T",
 	"Double":    "T",

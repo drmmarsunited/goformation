@@ -13,7 +13,7 @@ type Bot_AdvancedRecognitionSetting[T any] struct {
 	// AudioRecognitionStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-advancedrecognitionsetting.html#cfn-lex-bot-advancedrecognitionsetting-audiorecognitionstrategy
-	AudioRecognitionStrategy *string `json:"AudioRecognitionStrategy,omitempty"`
+	AudioRecognitionStrategy *T `json:"AudioRecognitionStrategy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

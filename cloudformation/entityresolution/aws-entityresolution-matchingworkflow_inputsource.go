@@ -18,12 +18,12 @@ type MatchingWorkflow_InputSource[T any] struct {
 	// InputSourceARN AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-matchingworkflow-inputsource.html#cfn-entityresolution-matchingworkflow-inputsource-inputsourcearn
-	InputSourceARN string `json:"InputSourceARN"`
+	InputSourceARN T `json:"InputSourceARN"`
 
 	// SchemaArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-matchingworkflow-inputsource.html#cfn-entityresolution-matchingworkflow-inputsource-schemaarn
-	SchemaArn string `json:"SchemaArn"`
+	SchemaArn T `json:"SchemaArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

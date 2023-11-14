@@ -13,12 +13,12 @@ type Member_MemberFabricConfiguration[T any] struct {
 	// AdminPassword AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberfabricconfiguration.html#cfn-managedblockchain-member-memberfabricconfiguration-adminpassword
-	AdminPassword string `json:"AdminPassword"`
+	AdminPassword T `json:"AdminPassword"`
 
 	// AdminUsername AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberfabricconfiguration.html#cfn-managedblockchain-member-memberfabricconfiguration-adminusername
-	AdminUsername string `json:"AdminUsername"`
+	AdminUsername T `json:"AdminUsername"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

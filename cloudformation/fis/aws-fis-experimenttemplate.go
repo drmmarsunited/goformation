@@ -21,7 +21,7 @@ type ExperimentTemplate[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-description
-	Description string `json:"Description"`
+	Description T `json:"Description"`
 
 	// LogConfiguration AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type ExperimentTemplate[T any] struct {
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// StopConditions AWS CloudFormation Property
 	// Required: true
@@ -41,7 +41,7 @@ type ExperimentTemplate[T any] struct {
 	// Tags AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-tags
-	Tags map[string]string `json:"Tags"`
+	Tags map[string]T `json:"Tags"`
 
 	// Targets AWS CloudFormation Property
 	// Required: true

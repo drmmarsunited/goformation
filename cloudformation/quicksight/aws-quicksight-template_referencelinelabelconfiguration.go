@@ -18,7 +18,7 @@ type Template_ReferenceLineLabelConfiguration[T any] struct {
 	// FontColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referencelinelabelconfiguration.html#cfn-quicksight-template-referencelinelabelconfiguration-fontcolor
-	FontColor *string `json:"FontColor,omitempty"`
+	FontColor *T `json:"FontColor,omitempty"`
 
 	// FontConfiguration AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Template_ReferenceLineLabelConfiguration[T any] struct {
 	// HorizontalPosition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referencelinelabelconfiguration.html#cfn-quicksight-template-referencelinelabelconfiguration-horizontalposition
-	HorizontalPosition *string `json:"HorizontalPosition,omitempty"`
+	HorizontalPosition *T `json:"HorizontalPosition,omitempty"`
 
 	// ValueLabelConfiguration AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Template_ReferenceLineLabelConfiguration[T any] struct {
 	// VerticalPosition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-referencelinelabelconfiguration.html#cfn-quicksight-template-referencelinelabelconfiguration-verticalposition
-	VerticalPosition *string `json:"VerticalPosition,omitempty"`
+	VerticalPosition *T `json:"VerticalPosition,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

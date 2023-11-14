@@ -13,12 +13,12 @@ type ObjectType_ObjectTypeKey[T any] struct {
 	// FieldNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-objecttype-objecttypekey.html#cfn-customerprofiles-objecttype-objecttypekey-fieldnames
-	FieldNames []string `json:"FieldNames,omitempty"`
+	FieldNames []T `json:"FieldNames,omitempty"`
 
 	// StandardIdentifiers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-objecttype-objecttypekey.html#cfn-customerprofiles-objecttype-objecttypekey-standardidentifiers
-	StandardIdentifiers []string `json:"StandardIdentifiers,omitempty"`
+	StandardIdentifiers []T `json:"StandardIdentifiers,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

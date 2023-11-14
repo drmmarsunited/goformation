@@ -13,22 +13,22 @@ type MLTransform_GlueTables[T any] struct {
 	// CatalogId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html#cfn-glue-mltransform-inputrecordtables-gluetables-catalogid
-	CatalogId *string `json:"CatalogId,omitempty"`
+	CatalogId *T `json:"CatalogId,omitempty"`
 
 	// ConnectionName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html#cfn-glue-mltransform-inputrecordtables-gluetables-connectionname
-	ConnectionName *string `json:"ConnectionName,omitempty"`
+	ConnectionName *T `json:"ConnectionName,omitempty"`
 
 	// DatabaseName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html#cfn-glue-mltransform-inputrecordtables-gluetables-databasename
-	DatabaseName string `json:"DatabaseName"`
+	DatabaseName T `json:"DatabaseName"`
 
 	// TableName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html#cfn-glue-mltransform-inputrecordtables-gluetables-tablename
-	TableName string `json:"TableName"`
+	TableName T `json:"TableName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

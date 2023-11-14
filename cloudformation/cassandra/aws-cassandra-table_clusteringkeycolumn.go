@@ -18,7 +18,7 @@ type Table_ClusteringKeyColumn[T any] struct {
 	// OrderBy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-clusteringkeycolumn.html#cfn-cassandra-table-clusteringkeycolumn-orderby
-	OrderBy *string `json:"OrderBy,omitempty"`
+	OrderBy *T `json:"OrderBy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

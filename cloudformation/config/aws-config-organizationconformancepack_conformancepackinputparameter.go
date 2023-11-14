@@ -13,12 +13,12 @@ type OrganizationConformancePack_ConformancePackInputParameter[T any] struct {
 	// ParameterName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconformancepack-conformancepackinputparameter.html#cfn-config-organizationconformancepack-conformancepackinputparameter-parametername
-	ParameterName string `json:"ParameterName"`
+	ParameterName T `json:"ParameterName"`
 
 	// ParameterValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconformancepack-conformancepackinputparameter.html#cfn-config-organizationconformancepack-conformancepackinputparameter-parametervalue
-	ParameterValue string `json:"ParameterValue"`
+	ParameterValue T `json:"ParameterValue"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

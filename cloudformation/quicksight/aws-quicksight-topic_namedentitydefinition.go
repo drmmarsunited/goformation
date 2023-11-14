@@ -13,7 +13,7 @@ type Topic_NamedEntityDefinition[T any] struct {
 	// FieldName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-namedentitydefinition.html#cfn-quicksight-topic-namedentitydefinition-fieldname
-	FieldName *string `json:"FieldName,omitempty"`
+	FieldName *T `json:"FieldName,omitempty"`
 
 	// Metric AWS CloudFormation Property
 	// Required: false
@@ -23,17 +23,17 @@ type Topic_NamedEntityDefinition[T any] struct {
 	// PropertyName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-namedentitydefinition.html#cfn-quicksight-topic-namedentitydefinition-propertyname
-	PropertyName *string `json:"PropertyName,omitempty"`
+	PropertyName *T `json:"PropertyName,omitempty"`
 
 	// PropertyRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-namedentitydefinition.html#cfn-quicksight-topic-namedentitydefinition-propertyrole
-	PropertyRole *string `json:"PropertyRole,omitempty"`
+	PropertyRole *T `json:"PropertyRole,omitempty"`
 
 	// PropertyUsage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-namedentitydefinition.html#cfn-quicksight-topic-namedentitydefinition-propertyusage
-	PropertyUsage *string `json:"PropertyUsage,omitempty"`
+	PropertyUsage *T `json:"PropertyUsage,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

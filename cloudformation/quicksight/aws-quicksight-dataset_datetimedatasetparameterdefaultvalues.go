@@ -13,7 +13,7 @@ type DataSet_DateTimeDatasetParameterDefaultValues[T any] struct {
 	// StaticValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-datetimedatasetparameterdefaultvalues.html#cfn-quicksight-dataset-datetimedatasetparameterdefaultvalues-staticvalues
-	StaticValues []string `json:"StaticValues,omitempty"`
+	StaticValues []T `json:"StaticValues,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,12 +13,12 @@ type IdentitySource_CognitoUserPoolConfiguration[T any] struct {
 	// ClientIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-verifiedpermissions-identitysource-cognitouserpoolconfiguration.html#cfn-verifiedpermissions-identitysource-cognitouserpoolconfiguration-clientids
-	ClientIds []string `json:"ClientIds,omitempty"`
+	ClientIds []T `json:"ClientIds,omitempty"`
 
 	// UserPoolArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-verifiedpermissions-identitysource-cognitouserpoolconfiguration.html#cfn-verifiedpermissions-identitysource-cognitouserpoolconfiguration-userpoolarn
-	UserPoolArn string `json:"UserPoolArn"`
+	UserPoolArn T `json:"UserPoolArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

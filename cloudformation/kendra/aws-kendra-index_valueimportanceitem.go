@@ -13,7 +13,7 @@ type Index_ValueImportanceItem[T any] struct {
 	// Key AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-valueimportanceitem.html#cfn-kendra-index-valueimportanceitem-key
-	Key *string `json:"Key,omitempty"`
+	Key *T `json:"Key,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type Portal_Alarms[T any] struct {
 	// AlarmRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-portal-alarms.html#cfn-iotsitewise-portal-alarms-alarmrolearn
-	AlarmRoleArn *string `json:"AlarmRoleArn,omitempty"`
+	AlarmRoleArn *T `json:"AlarmRoleArn,omitempty"`
 
 	// NotificationLambdaArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-portal-alarms.html#cfn-iotsitewise-portal-alarms-notificationlambdaarn
-	NotificationLambdaArn *string `json:"NotificationLambdaArn,omitempty"`
+	NotificationLambdaArn *T `json:"NotificationLambdaArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

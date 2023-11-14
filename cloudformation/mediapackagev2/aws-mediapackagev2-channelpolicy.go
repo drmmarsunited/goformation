@@ -16,12 +16,12 @@ type ChannelPolicy[T any] struct {
 	// ChannelGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-channelpolicy.html#cfn-mediapackagev2-channelpolicy-channelgroupname
-	ChannelGroupName *string `json:"ChannelGroupName,omitempty"`
+	ChannelGroupName *T `json:"ChannelGroupName,omitempty"`
 
 	// ChannelName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-channelpolicy.html#cfn-mediapackagev2-channelpolicy-channelname
-	ChannelName *string `json:"ChannelName,omitempty"`
+	ChannelName *T `json:"ChannelName,omitempty"`
 
 	// Policy AWS CloudFormation Property
 	// Required: true

@@ -13,12 +13,12 @@ type Stage_AccessLogSettings[T any] struct {
 	// DestinationArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-accesslogsettings.html#cfn-apigatewayv2-stage-accesslogsettings-destinationarn
-	DestinationArn *string `json:"DestinationArn,omitempty"`
+	DestinationArn *T `json:"DestinationArn,omitempty"`
 
 	// Format AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-accesslogsettings.html#cfn-apigatewayv2-stage-accesslogsettings-format
-	Format *string `json:"Format,omitempty"`
+	Format *T `json:"Format,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

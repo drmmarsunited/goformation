@@ -26,7 +26,7 @@ type StateMachine[T any] struct {
 	// DefinitionString AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-definitionstring
-	DefinitionString *string `json:"DefinitionString,omitempty"`
+	DefinitionString *T `json:"DefinitionString,omitempty"`
 
 	// DefinitionSubstitutions AWS CloudFormation Property
 	// Required: false
@@ -41,17 +41,17 @@ type StateMachine[T any] struct {
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// StateMachineName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-statemachinename
-	StateMachineName *string `json:"StateMachineName,omitempty"`
+	StateMachineName *T `json:"StateMachineName,omitempty"`
 
 	// StateMachineType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-statemachinetype
-	StateMachineType *string `json:"StateMachineType,omitempty"`
+	StateMachineType *T `json:"StateMachineType,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

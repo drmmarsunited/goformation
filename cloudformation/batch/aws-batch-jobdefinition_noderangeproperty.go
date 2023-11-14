@@ -18,7 +18,7 @@ type JobDefinition_NodeRangeProperty[T any] struct {
 	// TargetNodes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-noderangeproperty.html#cfn-batch-jobdefinition-noderangeproperty-targetnodes
-	TargetNodes string `json:"TargetNodes"`
+	TargetNodes T `json:"TargetNodes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -18,17 +18,17 @@ type Topic_TopicNamedEntity[T any] struct {
 	// EntityDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topicnamedentity.html#cfn-quicksight-topic-topicnamedentity-entitydescription
-	EntityDescription *string `json:"EntityDescription,omitempty"`
+	EntityDescription *T `json:"EntityDescription,omitempty"`
 
 	// EntityName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topicnamedentity.html#cfn-quicksight-topic-topicnamedentity-entityname
-	EntityName string `json:"EntityName"`
+	EntityName T `json:"EntityName"`
 
 	// EntitySynonyms AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topicnamedentity.html#cfn-quicksight-topic-topicnamedentity-entitysynonyms
-	EntitySynonyms []string `json:"EntitySynonyms,omitempty"`
+	EntitySynonyms []T `json:"EntitySynonyms,omitempty"`
 
 	// SemanticEntityType AWS CloudFormation Property
 	// Required: false

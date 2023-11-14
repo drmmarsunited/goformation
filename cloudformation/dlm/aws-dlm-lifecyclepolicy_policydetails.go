@@ -29,17 +29,17 @@ type LifecyclePolicy_PolicyDetails[T any] struct {
 	// PolicyType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-policytype
-	PolicyType *string `json:"PolicyType,omitempty"`
+	PolicyType *T `json:"PolicyType,omitempty"`
 
 	// ResourceLocations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-resourcelocations
-	ResourceLocations []string `json:"ResourceLocations,omitempty"`
+	ResourceLocations []T `json:"ResourceLocations,omitempty"`
 
 	// ResourceTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-resourcetypes
-	ResourceTypes []string `json:"ResourceTypes,omitempty"`
+	ResourceTypes []T `json:"ResourceTypes,omitempty"`
 
 	// Schedules AWS CloudFormation Property
 	// Required: false

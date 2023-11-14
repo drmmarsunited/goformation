@@ -13,7 +13,7 @@ type CapacityReservation_CapacityAssignment[T any] struct {
 	// WorkgroupNames AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-capacityreservation-capacityassignment.html#cfn-athena-capacityreservation-capacityassignment-workgroupnames
-	WorkgroupNames []string `json:"WorkgroupNames"`
+	WorkgroupNames []T `json:"WorkgroupNames"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

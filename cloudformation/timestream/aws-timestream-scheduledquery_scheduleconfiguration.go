@@ -13,7 +13,7 @@ type ScheduledQuery_ScheduleConfiguration[T any] struct {
 	// ScheduleExpression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-scheduleconfiguration.html#cfn-timestream-scheduledquery-scheduleconfiguration-scheduleexpression
-	ScheduleExpression string `json:"ScheduleExpression"`
+	ScheduleExpression T `json:"ScheduleExpression"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

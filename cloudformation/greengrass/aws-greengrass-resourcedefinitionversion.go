@@ -16,7 +16,7 @@ type ResourceDefinitionVersion[T any] struct {
 	// ResourceDefinitionId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinitionversion.html#cfn-greengrass-resourcedefinitionversion-resourcedefinitionid
-	ResourceDefinitionId string `json:"ResourceDefinitionId"`
+	ResourceDefinitionId T `json:"ResourceDefinitionId"`
 
 	// Resources AWS CloudFormation Property
 	// Required: true

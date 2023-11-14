@@ -13,17 +13,17 @@ type Dashboard_PeriodOverPeriodComputation[T any] struct {
 	// ComputationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-periodoverperiodcomputation.html#cfn-quicksight-dashboard-periodoverperiodcomputation-computationid
-	ComputationId string `json:"ComputationId"`
+	ComputationId T `json:"ComputationId"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-periodoverperiodcomputation.html#cfn-quicksight-dashboard-periodoverperiodcomputation-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Time AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-periodoverperiodcomputation.html#cfn-quicksight-dashboard-periodoverperiodcomputation-time
-	Time *Dashboard_DimensionField[any] `json:"Time"`
+	Time *Dashboard_DimensionField[any] `json:"Time,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: false

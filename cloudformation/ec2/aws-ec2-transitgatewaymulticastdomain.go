@@ -27,7 +27,7 @@ type TransitGatewayMulticastDomain[T any] struct {
 	// TransitGatewayId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomain.html#cfn-ec2-transitgatewaymulticastdomain-transitgatewayid
-	TransitGatewayId string `json:"TransitGatewayId"`
+	TransitGatewayId T `json:"TransitGatewayId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

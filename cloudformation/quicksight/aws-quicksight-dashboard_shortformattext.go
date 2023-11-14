@@ -13,12 +13,12 @@ type Dashboard_ShortFormatText[T any] struct {
 	// PlainText AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-shortformattext.html#cfn-quicksight-dashboard-shortformattext-plaintext
-	PlainText *string `json:"PlainText,omitempty"`
+	PlainText *T `json:"PlainText,omitempty"`
 
 	// RichText AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-shortformattext.html#cfn-quicksight-dashboard-shortformattext-richtext
-	RichText *string `json:"RichText,omitempty"`
+	RichText *T `json:"RichText,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

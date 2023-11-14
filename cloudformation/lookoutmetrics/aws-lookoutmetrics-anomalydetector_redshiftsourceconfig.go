@@ -13,17 +13,17 @@ type AnomalyDetector_RedshiftSourceConfig[T any] struct {
 	// ClusterIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-redshiftsourceconfig.html#cfn-lookoutmetrics-anomalydetector-redshiftsourceconfig-clusteridentifier
-	ClusterIdentifier string `json:"ClusterIdentifier"`
+	ClusterIdentifier T `json:"ClusterIdentifier"`
 
 	// DatabaseHost AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-redshiftsourceconfig.html#cfn-lookoutmetrics-anomalydetector-redshiftsourceconfig-databasehost
-	DatabaseHost string `json:"DatabaseHost"`
+	DatabaseHost T `json:"DatabaseHost"`
 
 	// DatabaseName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-redshiftsourceconfig.html#cfn-lookoutmetrics-anomalydetector-redshiftsourceconfig-databasename
-	DatabaseName string `json:"DatabaseName"`
+	DatabaseName T `json:"DatabaseName"`
 
 	// DatabasePort AWS CloudFormation Property
 	// Required: true
@@ -33,17 +33,17 @@ type AnomalyDetector_RedshiftSourceConfig[T any] struct {
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-redshiftsourceconfig.html#cfn-lookoutmetrics-anomalydetector-redshiftsourceconfig-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// SecretManagerArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-redshiftsourceconfig.html#cfn-lookoutmetrics-anomalydetector-redshiftsourceconfig-secretmanagerarn
-	SecretManagerArn string `json:"SecretManagerArn"`
+	SecretManagerArn T `json:"SecretManagerArn"`
 
 	// TableName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-redshiftsourceconfig.html#cfn-lookoutmetrics-anomalydetector-redshiftsourceconfig-tablename
-	TableName string `json:"TableName"`
+	TableName T `json:"TableName"`
 
 	// VpcConfiguration AWS CloudFormation Property
 	// Required: true

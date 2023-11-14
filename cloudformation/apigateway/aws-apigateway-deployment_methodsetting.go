@@ -33,12 +33,12 @@ type Deployment_MethodSetting[T any] struct {
 	// HttpMethod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-httpmethod
-	HttpMethod *string `json:"HttpMethod,omitempty"`
+	HttpMethod *T `json:"HttpMethod,omitempty"`
 
 	// LoggingLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-logginglevel
-	LoggingLevel *string `json:"LoggingLevel,omitempty"`
+	LoggingLevel *T `json:"LoggingLevel,omitempty"`
 
 	// MetricsEnabled AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Deployment_MethodSetting[T any] struct {
 	// ResourcePath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-methodsetting.html#cfn-apigateway-deployment-methodsetting-resourcepath
-	ResourcePath *string `json:"ResourcePath,omitempty"`
+	ResourcePath *T `json:"ResourcePath,omitempty"`
 
 	// ThrottlingBurstLimit AWS CloudFormation Property
 	// Required: false

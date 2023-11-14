@@ -13,22 +13,22 @@ type Entity_Component[T any] struct {
 	// ComponentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-componentname
-	ComponentName *string `json:"ComponentName,omitempty"`
+	ComponentName *T `json:"ComponentName,omitempty"`
 
 	// ComponentTypeId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-componenttypeid
-	ComponentTypeId *string `json:"ComponentTypeId,omitempty"`
+	ComponentTypeId *T `json:"ComponentTypeId,omitempty"`
 
 	// DefinedIn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-definedin
-	DefinedIn *string `json:"DefinedIn,omitempty"`
+	DefinedIn *T `json:"DefinedIn,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Properties AWS CloudFormation Property
 	// Required: false

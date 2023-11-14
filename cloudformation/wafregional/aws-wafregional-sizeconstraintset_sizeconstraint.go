@@ -13,7 +13,7 @@ type SizeConstraintSet_SizeConstraint[T any] struct {
 	// ComparisonOperator AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-sizeconstraint.html#cfn-wafregional-sizeconstraintset-sizeconstraint-comparisonoperator
-	ComparisonOperator string `json:"ComparisonOperator"`
+	ComparisonOperator T `json:"ComparisonOperator"`
 
 	// FieldToMatch AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type SizeConstraintSet_SizeConstraint[T any] struct {
 	// TextTransformation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-sizeconstraint.html#cfn-wafregional-sizeconstraintset-sizeconstraint-texttransformation
-	TextTransformation string `json:"TextTransformation"`
+	TextTransformation T `json:"TextTransformation"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

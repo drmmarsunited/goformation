@@ -13,7 +13,7 @@ type Job_DatabaseTableOutputOptions[T any] struct {
 	// TableName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databasetableoutputoptions.html#cfn-databrew-job-databasetableoutputoptions-tablename
-	TableName string `json:"TableName"`
+	TableName T `json:"TableName"`
 
 	// TempDirectory AWS CloudFormation Property
 	// Required: false

@@ -13,7 +13,7 @@ type Analysis_CustomParameterValues[T any] struct {
 	// DateTimeValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customparametervalues.html#cfn-quicksight-analysis-customparametervalues-datetimevalues
-	DateTimeValues []string `json:"DateTimeValues,omitempty"`
+	DateTimeValues []T `json:"DateTimeValues,omitempty"`
 
 	// DecimalValues AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Analysis_CustomParameterValues[T any] struct {
 	// StringValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customparametervalues.html#cfn-quicksight-analysis-customparametervalues-stringvalues
-	StringValues []string `json:"StringValues,omitempty"`
+	StringValues []T `json:"StringValues,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

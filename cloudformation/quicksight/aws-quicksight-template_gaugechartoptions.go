@@ -28,7 +28,7 @@ type Template_GaugeChartOptions[T any] struct {
 	// PrimaryValueDisplayType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-gaugechartoptions.html#cfn-quicksight-template-gaugechartoptions-primaryvaluedisplaytype
-	PrimaryValueDisplayType *string `json:"PrimaryValueDisplayType,omitempty"`
+	PrimaryValueDisplayType *T `json:"PrimaryValueDisplayType,omitempty"`
 
 	// PrimaryValueFontConfiguration AWS CloudFormation Property
 	// Required: false

@@ -23,12 +23,12 @@ type ResourceDataSync_SyncSource[T any] struct {
 	// SourceRegions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-syncsource.html#cfn-ssm-resourcedatasync-syncsource-sourceregions
-	SourceRegions []string `json:"SourceRegions"`
+	SourceRegions []T `json:"SourceRegions"`
 
 	// SourceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-syncsource.html#cfn-ssm-resourcedatasync-syncsource-sourcetype
-	SourceType string `json:"SourceType"`
+	SourceType T `json:"SourceType"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

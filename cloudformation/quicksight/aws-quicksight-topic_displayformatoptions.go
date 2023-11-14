@@ -13,22 +13,22 @@ type Topic_DisplayFormatOptions[T any] struct {
 	// BlankCellFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-displayformatoptions.html#cfn-quicksight-topic-displayformatoptions-blankcellformat
-	BlankCellFormat *string `json:"BlankCellFormat,omitempty"`
+	BlankCellFormat *T `json:"BlankCellFormat,omitempty"`
 
 	// CurrencySymbol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-displayformatoptions.html#cfn-quicksight-topic-displayformatoptions-currencysymbol
-	CurrencySymbol *string `json:"CurrencySymbol,omitempty"`
+	CurrencySymbol *T `json:"CurrencySymbol,omitempty"`
 
 	// DateFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-displayformatoptions.html#cfn-quicksight-topic-displayformatoptions-dateformat
-	DateFormat *string `json:"DateFormat,omitempty"`
+	DateFormat *T `json:"DateFormat,omitempty"`
 
 	// DecimalSeparator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-displayformatoptions.html#cfn-quicksight-topic-displayformatoptions-decimalseparator
-	DecimalSeparator *string `json:"DecimalSeparator,omitempty"`
+	DecimalSeparator *T `json:"DecimalSeparator,omitempty"`
 
 	// FractionDigits AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Topic_DisplayFormatOptions[T any] struct {
 	// GroupingSeparator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-displayformatoptions.html#cfn-quicksight-topic-displayformatoptions-groupingseparator
-	GroupingSeparator *string `json:"GroupingSeparator,omitempty"`
+	GroupingSeparator *T `json:"GroupingSeparator,omitempty"`
 
 	// NegativeFormat AWS CloudFormation Property
 	// Required: false
@@ -48,17 +48,17 @@ type Topic_DisplayFormatOptions[T any] struct {
 	// Prefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-displayformatoptions.html#cfn-quicksight-topic-displayformatoptions-prefix
-	Prefix *string `json:"Prefix,omitempty"`
+	Prefix *T `json:"Prefix,omitempty"`
 
 	// Suffix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-displayformatoptions.html#cfn-quicksight-topic-displayformatoptions-suffix
-	Suffix *string `json:"Suffix,omitempty"`
+	Suffix *T `json:"Suffix,omitempty"`
 
 	// UnitScaler AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-displayformatoptions.html#cfn-quicksight-topic-displayformatoptions-unitscaler
-	UnitScaler *string `json:"UnitScaler,omitempty"`
+	UnitScaler *T `json:"UnitScaler,omitempty"`
 
 	// UseBlankCellFormat AWS CloudFormation Property
 	// Required: false

@@ -21,12 +21,12 @@ type ConfigRule[T any] struct {
 	// ConfigRuleName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-configrulename
-	ConfigRuleName *string `json:"ConfigRuleName,omitempty"`
+	ConfigRuleName *T `json:"ConfigRuleName,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EvaluationModes AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type ConfigRule[T any] struct {
 	// MaximumExecutionFrequency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-maximumexecutionfrequency
-	MaximumExecutionFrequency *string `json:"MaximumExecutionFrequency,omitempty"`
+	MaximumExecutionFrequency *T `json:"MaximumExecutionFrequency,omitempty"`
 
 	// Scope AWS CloudFormation Property
 	// Required: false

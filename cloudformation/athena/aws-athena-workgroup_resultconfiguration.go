@@ -23,12 +23,12 @@ type WorkGroup_ResultConfiguration[T any] struct {
 	// ExpectedBucketOwner AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-resultconfiguration.html#cfn-athena-workgroup-resultconfiguration-expectedbucketowner
-	ExpectedBucketOwner *string `json:"ExpectedBucketOwner,omitempty"`
+	ExpectedBucketOwner *T `json:"ExpectedBucketOwner,omitempty"`
 
 	// OutputLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-resultconfiguration.html#cfn-athena-workgroup-resultconfiguration-outputlocation
-	OutputLocation *string `json:"OutputLocation,omitempty"`
+	OutputLocation *T `json:"OutputLocation,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

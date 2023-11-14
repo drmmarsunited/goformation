@@ -13,12 +13,17 @@ type Dashboard_ReferenceLineDataConfiguration[T any] struct {
 	// AxisBinding AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinedataconfiguration.html#cfn-quicksight-dashboard-referencelinedataconfiguration-axisbinding
-	AxisBinding *string `json:"AxisBinding,omitempty"`
+	AxisBinding *T `json:"AxisBinding,omitempty"`
 
 	// DynamicConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinedataconfiguration.html#cfn-quicksight-dashboard-referencelinedataconfiguration-dynamicconfiguration
 	DynamicConfiguration *Dashboard_ReferenceLineDynamicDataConfiguration[any] `json:"DynamicConfiguration,omitempty"`
+
+	// SeriesType AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinedataconfiguration.html#cfn-quicksight-dashboard-referencelinedataconfiguration-seriestype
+	SeriesType *T `json:"SeriesType,omitempty"`
 
 	// StaticConfiguration AWS CloudFormation Property
 	// Required: false

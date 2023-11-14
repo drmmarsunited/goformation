@@ -17,12 +17,12 @@ type FHIRDatastore[T any] struct {
 	// DatastoreName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-datastorename
-	DatastoreName *string `json:"DatastoreName,omitempty"`
+	DatastoreName *T `json:"DatastoreName,omitempty"`
 
 	// DatastoreTypeVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-datastoretypeversion
-	DatastoreTypeVersion string `json:"DatastoreTypeVersion"`
+	DatastoreTypeVersion T `json:"DatastoreTypeVersion"`
 
 	// IdentityProviderConfiguration AWS CloudFormation Property
 	// Required: false

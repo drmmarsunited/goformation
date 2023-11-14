@@ -13,7 +13,7 @@ type Function_SnapStart[T any] struct {
 	// ApplyOn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-snapstart.html#cfn-lambda-function-snapstart-applyon
-	ApplyOn string `json:"ApplyOn"`
+	ApplyOn T `json:"ApplyOn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

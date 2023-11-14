@@ -13,12 +13,12 @@ type Analysis_LegendOptions[T any] struct {
 	// Height AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-legendoptions.html#cfn-quicksight-analysis-legendoptions-height
-	Height *string `json:"Height,omitempty"`
+	Height *T `json:"Height,omitempty"`
 
 	// Position AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-legendoptions.html#cfn-quicksight-analysis-legendoptions-position
-	Position *string `json:"Position,omitempty"`
+	Position *T `json:"Position,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Analysis_LegendOptions[T any] struct {
 	// Visibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-legendoptions.html#cfn-quicksight-analysis-legendoptions-visibility
-	Visibility *string `json:"Visibility,omitempty"`
+	Visibility *T `json:"Visibility,omitempty"`
 
 	// Width AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-legendoptions.html#cfn-quicksight-analysis-legendoptions-width
-	Width *string `json:"Width,omitempty"`
+	Width *T `json:"Width,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

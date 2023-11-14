@@ -13,12 +13,12 @@ type ApplicationReferenceDataSource_CSVMappingParameters[T any] struct {
 	// RecordColumnDelimiter AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-csvmappingparameters.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-csvmappingparameters-recordcolumndelimiter
-	RecordColumnDelimiter string `json:"RecordColumnDelimiter"`
+	RecordColumnDelimiter T `json:"RecordColumnDelimiter"`
 
 	// RecordRowDelimiter AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-csvmappingparameters.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-csvmappingparameters-recordrowdelimiter
-	RecordRowDelimiter string `json:"RecordRowDelimiter"`
+	RecordRowDelimiter T `json:"RecordRowDelimiter"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

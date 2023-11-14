@@ -13,7 +13,7 @@ type Bucket_ReplicationTime[T any] struct {
 	// Status AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationtime.html#cfn-s3-bucket-replicationtime-status
-	Status string `json:"Status"`
+	Status T `json:"Status"`
 
 	// Time AWS CloudFormation Property
 	// Required: true

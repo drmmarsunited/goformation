@@ -13,12 +13,12 @@ type ConfigurationSetEventDestination_KinesisFirehoseDestination[T any] struct {
 	// DeliveryStreamArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-kinesisfirehosedestination.html#cfn-pinpointemail-configurationseteventdestination-kinesisfirehosedestination-deliverystreamarn
-	DeliveryStreamArn string `json:"DeliveryStreamArn"`
+	DeliveryStreamArn T `json:"DeliveryStreamArn"`
 
 	// IamRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-kinesisfirehosedestination.html#cfn-pinpointemail-configurationseteventdestination-kinesisfirehosedestination-iamrolearn
-	IamRoleArn string `json:"IamRoleArn"`
+	IamRoleArn T `json:"IamRoleArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type LocationNFS_OnPremConfig[T any] struct {
 	// AgentArns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationnfs-onpremconfig.html#cfn-datasync-locationnfs-onpremconfig-agentarns
-	AgentArns []string `json:"AgentArns"`
+	AgentArns []T `json:"AgentArns"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

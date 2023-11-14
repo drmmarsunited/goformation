@@ -13,7 +13,7 @@ type SourceLocation_HttpConfiguration[T any] struct {
 	// BaseUrl AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-sourcelocation-httpconfiguration.html#cfn-mediatailor-sourcelocation-httpconfiguration-baseurl
-	BaseUrl string `json:"BaseUrl"`
+	BaseUrl T `json:"BaseUrl"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

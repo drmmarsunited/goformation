@@ -18,7 +18,7 @@ type Channel_Eac3AtmosSettings[T any] struct {
 	// CodingMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3atmossettings.html#cfn-medialive-channel-eac3atmossettings-codingmode
-	CodingMode *string `json:"CodingMode,omitempty"`
+	CodingMode *T `json:"CodingMode,omitempty"`
 
 	// Dialnorm AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Channel_Eac3AtmosSettings[T any] struct {
 	// DrcLine AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3atmossettings.html#cfn-medialive-channel-eac3atmossettings-drcline
-	DrcLine *string `json:"DrcLine,omitempty"`
+	DrcLine *T `json:"DrcLine,omitempty"`
 
 	// DrcRf AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3atmossettings.html#cfn-medialive-channel-eac3atmossettings-drcrf
-	DrcRf *string `json:"DrcRf,omitempty"`
+	DrcRf *T `json:"DrcRf,omitempty"`
 
 	// HeightTrim AWS CloudFormation Property
 	// Required: false

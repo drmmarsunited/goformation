@@ -13,12 +13,12 @@ type Service_LogConfiguration[T any] struct {
 	// LogDriver AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-logconfiguration.html#cfn-ecs-service-logconfiguration-logdriver
-	LogDriver *string `json:"LogDriver,omitempty"`
+	LogDriver *T `json:"LogDriver,omitempty"`
 
 	// Options AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-logconfiguration.html#cfn-ecs-service-logconfiguration-options
-	Options map[string]string `json:"Options,omitempty"`
+	Options map[string]T `json:"Options,omitempty"`
 
 	// SecretOptions AWS CloudFormation Property
 	// Required: false

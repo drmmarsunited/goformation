@@ -28,12 +28,12 @@ type FileSystem_OpenZFSConfiguration[T any] struct {
 	// DailyAutomaticBackupStartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-dailyautomaticbackupstarttime
-	DailyAutomaticBackupStartTime *string `json:"DailyAutomaticBackupStartTime,omitempty"`
+	DailyAutomaticBackupStartTime *T `json:"DailyAutomaticBackupStartTime,omitempty"`
 
 	// DeploymentType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-deploymenttype
-	DeploymentType string `json:"DeploymentType"`
+	DeploymentType T `json:"DeploymentType"`
 
 	// DiskIopsConfiguration AWS CloudFormation Property
 	// Required: false
@@ -43,17 +43,17 @@ type FileSystem_OpenZFSConfiguration[T any] struct {
 	// EndpointIpAddressRange AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-endpointipaddressrange
-	EndpointIpAddressRange *string `json:"EndpointIpAddressRange,omitempty"`
+	EndpointIpAddressRange *T `json:"EndpointIpAddressRange,omitempty"`
 
 	// Options AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-options
-	Options []string `json:"Options,omitempty"`
+	Options []T `json:"Options,omitempty"`
 
 	// PreferredSubnetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-preferredsubnetid
-	PreferredSubnetId *string `json:"PreferredSubnetId,omitempty"`
+	PreferredSubnetId *T `json:"PreferredSubnetId,omitempty"`
 
 	// RootVolumeConfiguration AWS CloudFormation Property
 	// Required: false
@@ -63,7 +63,7 @@ type FileSystem_OpenZFSConfiguration[T any] struct {
 	// RouteTableIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-routetableids
-	RouteTableIds []string `json:"RouteTableIds,omitempty"`
+	RouteTableIds []T `json:"RouteTableIds,omitempty"`
 
 	// ThroughputCapacity AWS CloudFormation Property
 	// Required: false
@@ -73,7 +73,7 @@ type FileSystem_OpenZFSConfiguration[T any] struct {
 	// WeeklyMaintenanceStartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-weeklymaintenancestarttime
-	WeeklyMaintenanceStartTime *string `json:"WeeklyMaintenanceStartTime,omitempty"`
+	WeeklyMaintenanceStartTime *T `json:"WeeklyMaintenanceStartTime,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

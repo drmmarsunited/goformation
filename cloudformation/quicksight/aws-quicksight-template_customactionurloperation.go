@@ -13,12 +13,12 @@ type Template_CustomActionURLOperation[T any] struct {
 	// URLTarget AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-customactionurloperation.html#cfn-quicksight-template-customactionurloperation-urltarget
-	URLTarget string `json:"URLTarget"`
+	URLTarget T `json:"URLTarget"`
 
 	// URLTemplate AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-customactionurloperation.html#cfn-quicksight-template-customactionurloperation-urltemplate
-	URLTemplate string `json:"URLTemplate"`
+	URLTemplate T `json:"URLTemplate"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

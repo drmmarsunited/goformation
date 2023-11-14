@@ -13,12 +13,12 @@ type BridgeOutput_BridgeNetworkOutput[T any] struct {
 	// IpAddress AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-bridgeoutput-bridgenetworkoutput.html#cfn-mediaconnect-bridgeoutput-bridgenetworkoutput-ipaddress
-	IpAddress string `json:"IpAddress"`
+	IpAddress T `json:"IpAddress"`
 
 	// NetworkName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-bridgeoutput-bridgenetworkoutput.html#cfn-mediaconnect-bridgeoutput-bridgenetworkoutput-networkname
-	NetworkName string `json:"NetworkName"`
+	NetworkName T `json:"NetworkName"`
 
 	// Port AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type BridgeOutput_BridgeNetworkOutput[T any] struct {
 	// Protocol AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-bridgeoutput-bridgenetworkoutput.html#cfn-mediaconnect-bridgeoutput-bridgenetworkoutput-protocol
-	Protocol string `json:"Protocol"`
+	Protocol T `json:"Protocol"`
 
 	// Ttl AWS CloudFormation Property
 	// Required: true

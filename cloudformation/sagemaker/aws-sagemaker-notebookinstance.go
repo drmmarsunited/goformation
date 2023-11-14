@@ -17,22 +17,22 @@ type NotebookInstance[T any] struct {
 	// AcceleratorTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-acceleratortypes
-	AcceleratorTypes []string `json:"AcceleratorTypes,omitempty"`
+	AcceleratorTypes []T `json:"AcceleratorTypes,omitempty"`
 
 	// AdditionalCodeRepositories AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-additionalcoderepositories
-	AdditionalCodeRepositories []string `json:"AdditionalCodeRepositories,omitempty"`
+	AdditionalCodeRepositories []T `json:"AdditionalCodeRepositories,omitempty"`
 
 	// DefaultCodeRepository AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-defaultcoderepository
-	DefaultCodeRepository *string `json:"DefaultCodeRepository,omitempty"`
+	DefaultCodeRepository *T `json:"DefaultCodeRepository,omitempty"`
 
 	// DirectInternetAccess AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-directinternetaccess
-	DirectInternetAccess *string `json:"DirectInternetAccess,omitempty"`
+	DirectInternetAccess *T `json:"DirectInternetAccess,omitempty"`
 
 	// InstanceMetadataServiceConfiguration AWS CloudFormation Property
 	// Required: false
@@ -42,47 +42,47 @@ type NotebookInstance[T any] struct {
 	// InstanceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-instancetype
-	InstanceType string `json:"InstanceType"`
+	InstanceType T `json:"InstanceType"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-kmskeyid
-	KmsKeyId *string `json:"KmsKeyId,omitempty"`
+	KmsKeyId *T `json:"KmsKeyId,omitempty"`
 
 	// LifecycleConfigName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-lifecycleconfigname
-	LifecycleConfigName *string `json:"LifecycleConfigName,omitempty"`
+	LifecycleConfigName *T `json:"LifecycleConfigName,omitempty"`
 
 	// NotebookInstanceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-notebookinstancename
-	NotebookInstanceName *string `json:"NotebookInstanceName,omitempty"`
+	NotebookInstanceName *T `json:"NotebookInstanceName,omitempty"`
 
 	// PlatformIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-platformidentifier
-	PlatformIdentifier *string `json:"PlatformIdentifier,omitempty"`
+	PlatformIdentifier *T `json:"PlatformIdentifier,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// RootAccess AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-rootaccess
-	RootAccess *string `json:"RootAccess,omitempty"`
+	RootAccess *T `json:"RootAccess,omitempty"`
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-securitygroupids
-	SecurityGroupIds []string `json:"SecurityGroupIds,omitempty"`
+	SecurityGroupIds []T `json:"SecurityGroupIds,omitempty"`
 
 	// SubnetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-subnetid
-	SubnetId *string `json:"SubnetId,omitempty"`
+	SubnetId *T `json:"SubnetId,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

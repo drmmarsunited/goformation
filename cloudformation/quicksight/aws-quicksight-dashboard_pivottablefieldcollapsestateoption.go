@@ -13,7 +13,7 @@ type Dashboard_PivotTableFieldCollapseStateOption[T any] struct {
 	// State AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottablefieldcollapsestateoption.html#cfn-quicksight-dashboard-pivottablefieldcollapsestateoption-state
-	State *string `json:"State,omitempty"`
+	State *T `json:"State,omitempty"`
 
 	// Target AWS CloudFormation Property
 	// Required: true

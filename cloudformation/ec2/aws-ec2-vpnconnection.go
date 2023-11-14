@@ -17,7 +17,7 @@ type VPNConnection[T any] struct {
 	// CustomerGatewayId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-customergatewayid
-	CustomerGatewayId string `json:"CustomerGatewayId"`
+	CustomerGatewayId T `json:"CustomerGatewayId"`
 
 	// StaticRoutesOnly AWS CloudFormation Property
 	// Required: false
@@ -32,17 +32,17 @@ type VPNConnection[T any] struct {
 	// TransitGatewayId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-transitgatewayid
-	TransitGatewayId *string `json:"TransitGatewayId,omitempty"`
+	TransitGatewayId *T `json:"TransitGatewayId,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// VpnGatewayId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-vpngatewayid
-	VpnGatewayId *string `json:"VpnGatewayId,omitempty"`
+	VpnGatewayId *T `json:"VpnGatewayId,omitempty"`
 
 	// VpnTunnelOptionsSpecifications AWS CloudFormation Property
 	// Required: false

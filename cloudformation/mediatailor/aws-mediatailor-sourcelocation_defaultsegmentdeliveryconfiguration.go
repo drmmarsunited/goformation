@@ -13,7 +13,7 @@ type SourceLocation_DefaultSegmentDeliveryConfiguration[T any] struct {
 	// BaseUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-sourcelocation-defaultsegmentdeliveryconfiguration.html#cfn-mediatailor-sourcelocation-defaultsegmentdeliveryconfiguration-baseurl
-	BaseUrl *string `json:"BaseUrl,omitempty"`
+	BaseUrl *T `json:"BaseUrl,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

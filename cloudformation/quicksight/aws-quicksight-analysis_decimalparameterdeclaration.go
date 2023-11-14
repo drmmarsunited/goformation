@@ -23,12 +23,12 @@ type Analysis_DecimalParameterDeclaration[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-decimalparameterdeclaration.html#cfn-quicksight-analysis-decimalparameterdeclaration-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ParameterValueType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-decimalparameterdeclaration.html#cfn-quicksight-analysis-decimalparameterdeclaration-parametervaluetype
-	ParameterValueType string `json:"ParameterValueType"`
+	ParameterValueType T `json:"ParameterValueType"`
 
 	// ValueWhenUnset AWS CloudFormation Property
 	// Required: false

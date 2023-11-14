@@ -13,7 +13,7 @@ type JobDefinition_LogConfiguration[T any] struct {
 	// LogDriver AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html#cfn-batch-jobdefinition-containerproperties-logconfiguration-logdriver
-	LogDriver string `json:"LogDriver"`
+	LogDriver T `json:"LogDriver"`
 
 	// Options AWS CloudFormation Property
 	// Required: false

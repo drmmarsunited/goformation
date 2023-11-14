@@ -17,7 +17,7 @@ type LocationFSxOpenZFS[T any] struct {
 	// FsxFilesystemArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#cfn-datasync-locationfsxopenzfs-fsxfilesystemarn
-	FsxFilesystemArn *string `json:"FsxFilesystemArn,omitempty"`
+	FsxFilesystemArn *T `json:"FsxFilesystemArn,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true
@@ -27,12 +27,12 @@ type LocationFSxOpenZFS[T any] struct {
 	// SecurityGroupArns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#cfn-datasync-locationfsxopenzfs-securitygrouparns
-	SecurityGroupArns []string `json:"SecurityGroupArns"`
+	SecurityGroupArns []T `json:"SecurityGroupArns"`
 
 	// Subdirectory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#cfn-datasync-locationfsxopenzfs-subdirectory
-	Subdirectory *string `json:"Subdirectory,omitempty"`
+	Subdirectory *T `json:"Subdirectory,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

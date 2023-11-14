@@ -18,7 +18,7 @@ type EndpointGroup_EndpointConfiguration[T any] struct {
 	// EndpointId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-globalaccelerator-endpointgroup-endpointconfiguration.html#cfn-globalaccelerator-endpointgroup-endpointconfiguration-endpointid
-	EndpointId string `json:"EndpointId"`
+	EndpointId T `json:"EndpointId"`
 
 	// Weight AWS CloudFormation Property
 	// Required: false

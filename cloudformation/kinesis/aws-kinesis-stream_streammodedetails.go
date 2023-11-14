@@ -13,7 +13,7 @@ type Stream_StreamModeDetails[T any] struct {
 	// StreamMode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-streammodedetails.html#cfn-kinesis-stream-streammodedetails-streammode
-	StreamMode string `json:"StreamMode"`
+	StreamMode T `json:"StreamMode"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

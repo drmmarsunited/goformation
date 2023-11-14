@@ -13,27 +13,27 @@ type MonitoringSchedule_MonitoringAppSpecification[T any] struct {
 	// ContainerArguments AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringappspecification.html#cfn-sagemaker-monitoringschedule-monitoringappspecification-containerarguments
-	ContainerArguments []string `json:"ContainerArguments,omitempty"`
+	ContainerArguments []T `json:"ContainerArguments,omitempty"`
 
 	// ContainerEntrypoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringappspecification.html#cfn-sagemaker-monitoringschedule-monitoringappspecification-containerentrypoint
-	ContainerEntrypoint []string `json:"ContainerEntrypoint,omitempty"`
+	ContainerEntrypoint []T `json:"ContainerEntrypoint,omitempty"`
 
 	// ImageUri AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringappspecification.html#cfn-sagemaker-monitoringschedule-monitoringappspecification-imageuri
-	ImageUri string `json:"ImageUri"`
+	ImageUri T `json:"ImageUri"`
 
 	// PostAnalyticsProcessorSourceUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringappspecification.html#cfn-sagemaker-monitoringschedule-monitoringappspecification-postanalyticsprocessorsourceuri
-	PostAnalyticsProcessorSourceUri *string `json:"PostAnalyticsProcessorSourceUri,omitempty"`
+	PostAnalyticsProcessorSourceUri *T `json:"PostAnalyticsProcessorSourceUri,omitempty"`
 
 	// RecordPreprocessorSourceUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringappspecification.html#cfn-sagemaker-monitoringschedule-monitoringappspecification-recordpreprocessorsourceuri
-	RecordPreprocessorSourceUri *string `json:"RecordPreprocessorSourceUri,omitempty"`
+	RecordPreprocessorSourceUri *T `json:"RecordPreprocessorSourceUri,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

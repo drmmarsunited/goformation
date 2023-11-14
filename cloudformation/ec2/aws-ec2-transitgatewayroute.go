@@ -21,17 +21,17 @@ type TransitGatewayRoute[T any] struct {
 	// DestinationCidrBlock AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html#cfn-ec2-transitgatewayroute-destinationcidrblock
-	DestinationCidrBlock *string `json:"DestinationCidrBlock,omitempty"`
+	DestinationCidrBlock *T `json:"DestinationCidrBlock,omitempty"`
 
 	// TransitGatewayAttachmentId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html#cfn-ec2-transitgatewayroute-transitgatewayattachmentid
-	TransitGatewayAttachmentId *string `json:"TransitGatewayAttachmentId,omitempty"`
+	TransitGatewayAttachmentId *T `json:"TransitGatewayAttachmentId,omitempty"`
 
 	// TransitGatewayRouteTableId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html#cfn-ec2-transitgatewayroute-transitgatewayroutetableid
-	TransitGatewayRouteTableId string `json:"TransitGatewayRouteTableId"`
+	TransitGatewayRouteTableId T `json:"TransitGatewayRouteTableId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

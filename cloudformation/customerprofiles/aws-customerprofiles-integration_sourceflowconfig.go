@@ -13,12 +13,12 @@ type Integration_SourceFlowConfig[T any] struct {
 	// ConnectorProfileName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-sourceflowconfig.html#cfn-customerprofiles-integration-sourceflowconfig-connectorprofilename
-	ConnectorProfileName *string `json:"ConnectorProfileName,omitempty"`
+	ConnectorProfileName *T `json:"ConnectorProfileName,omitempty"`
 
 	// ConnectorType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-sourceflowconfig.html#cfn-customerprofiles-integration-sourceflowconfig-connectortype
-	ConnectorType string `json:"ConnectorType"`
+	ConnectorType T `json:"ConnectorType"`
 
 	// IncrementalPullConfig AWS CloudFormation Property
 	// Required: false

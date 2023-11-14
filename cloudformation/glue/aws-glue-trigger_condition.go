@@ -13,27 +13,27 @@ type Trigger_Condition[T any] struct {
 	// CrawlState AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlstate
-	CrawlState *string `json:"CrawlState,omitempty"`
+	CrawlState *T `json:"CrawlState,omitempty"`
 
 	// CrawlerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlername
-	CrawlerName *string `json:"CrawlerName,omitempty"`
+	CrawlerName *T `json:"CrawlerName,omitempty"`
 
 	// JobName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-jobname
-	JobName *string `json:"JobName,omitempty"`
+	JobName *T `json:"JobName,omitempty"`
 
 	// LogicalOperator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-logicaloperator
-	LogicalOperator *string `json:"LogicalOperator,omitempty"`
+	LogicalOperator *T `json:"LogicalOperator,omitempty"`
 
 	// State AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-state
-	State *string `json:"State,omitempty"`
+	State *T `json:"State,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

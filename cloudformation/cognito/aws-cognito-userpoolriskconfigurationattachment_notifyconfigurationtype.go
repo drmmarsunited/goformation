@@ -18,7 +18,7 @@ type UserPoolRiskConfigurationAttachment_NotifyConfigurationType[T any] struct {
 	// From AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype-from
-	From *string `json:"From,omitempty"`
+	From *T `json:"From,omitempty"`
 
 	// MfaEmail AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type UserPoolRiskConfigurationAttachment_NotifyConfigurationType[T any] struct {
 	// ReplyTo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype-replyto
-	ReplyTo *string `json:"ReplyTo,omitempty"`
+	ReplyTo *T `json:"ReplyTo,omitempty"`
 
 	// SourceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype-sourcearn
-	SourceArn string `json:"SourceArn"`
+	SourceArn T `json:"SourceArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

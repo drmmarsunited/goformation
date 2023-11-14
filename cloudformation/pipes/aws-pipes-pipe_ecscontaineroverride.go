@@ -13,7 +13,7 @@ type Pipe_EcsContainerOverride[T any] struct {
 	// Command AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecscontaineroverride.html#cfn-pipes-pipe-ecscontaineroverride-command
-	Command []string `json:"Command,omitempty"`
+	Command []T `json:"Command,omitempty"`
 
 	// Cpu AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Pipe_EcsContainerOverride[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecscontaineroverride.html#cfn-pipes-pipe-ecscontaineroverride-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// ResourceRequirements AWS CloudFormation Property
 	// Required: false

@@ -17,7 +17,7 @@ type Room[T any] struct {
 	// LoggingConfigurationIdentifiers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivschat-room.html#cfn-ivschat-room-loggingconfigurationidentifiers
-	LoggingConfigurationIdentifiers []string `json:"LoggingConfigurationIdentifiers,omitempty"`
+	LoggingConfigurationIdentifiers []T `json:"LoggingConfigurationIdentifiers,omitempty"`
 
 	// MaximumMessageLength AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Room[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivschat-room.html#cfn-ivschat-room-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

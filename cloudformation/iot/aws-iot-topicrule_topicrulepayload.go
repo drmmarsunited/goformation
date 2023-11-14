@@ -18,12 +18,12 @@ type TopicRule_TopicRulePayload[T any] struct {
 	// AwsIotSqlVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-awsiotsqlversion
-	AwsIotSqlVersion *string `json:"AwsIotSqlVersion,omitempty"`
+	AwsIotSqlVersion *T `json:"AwsIotSqlVersion,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// ErrorAction AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type TopicRule_TopicRulePayload[T any] struct {
 	// Sql AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-sql
-	Sql string `json:"Sql"`
+	Sql T `json:"Sql"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

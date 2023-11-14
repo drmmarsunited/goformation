@@ -13,12 +13,12 @@ type Volume_OriginSnapshot[T any] struct {
 	// CopyStrategy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-originsnapshot.html#cfn-fsx-volume-openzfsconfiguration-originsnapshot-copystrategy
-	CopyStrategy string `json:"CopyStrategy"`
+	CopyStrategy T `json:"CopyStrategy"`
 
 	// SnapshotARN AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-originsnapshot.html#cfn-fsx-volume-openzfsconfiguration-originsnapshot-snapshotarn
-	SnapshotARN string `json:"SnapshotARN"`
+	SnapshotARN T `json:"SnapshotARN"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

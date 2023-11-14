@@ -13,27 +13,27 @@ type Method_IntegrationResponse[T any] struct {
 	// ContentHandling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html#cfn-apigateway-method-integrationresponse-contenthandling
-	ContentHandling *string `json:"ContentHandling,omitempty"`
+	ContentHandling *T `json:"ContentHandling,omitempty"`
 
 	// ResponseParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html#cfn-apigateway-method-integration-integrationresponse-responseparameters
-	ResponseParameters map[string]string `json:"ResponseParameters,omitempty"`
+	ResponseParameters map[string]T `json:"ResponseParameters,omitempty"`
 
 	// ResponseTemplates AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html#cfn-apigateway-method-integration-integrationresponse-responsetemplates
-	ResponseTemplates map[string]string `json:"ResponseTemplates,omitempty"`
+	ResponseTemplates map[string]T `json:"ResponseTemplates,omitempty"`
 
 	// SelectionPattern AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html#cfn-apigateway-method-integration-integrationresponse-selectionpattern
-	SelectionPattern *string `json:"SelectionPattern,omitempty"`
+	SelectionPattern *T `json:"SelectionPattern,omitempty"`
 
 	// StatusCode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html#cfn-apigateway-method-integration-integrationresponse-statuscode
-	StatusCode string `json:"StatusCode"`
+	StatusCode T `json:"StatusCode"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

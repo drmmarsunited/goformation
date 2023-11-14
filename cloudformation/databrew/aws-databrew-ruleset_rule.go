@@ -13,7 +13,7 @@ type Ruleset_Rule[T any] struct {
 	// CheckExpression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-rule.html#cfn-databrew-ruleset-rule-checkexpression
-	CheckExpression string `json:"CheckExpression"`
+	CheckExpression T `json:"CheckExpression"`
 
 	// ColumnSelectors AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Ruleset_Rule[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-rule.html#cfn-databrew-ruleset-rule-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// SubstitutionMap AWS CloudFormation Property
 	// Required: false

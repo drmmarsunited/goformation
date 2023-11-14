@@ -32,12 +32,12 @@ type Pipeline[T any] struct {
 	// PipelineConfigurationBody AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-osis-pipeline.html#cfn-osis-pipeline-pipelineconfigurationbody
-	PipelineConfigurationBody string `json:"PipelineConfigurationBody"`
+	PipelineConfigurationBody T `json:"PipelineConfigurationBody"`
 
 	// PipelineName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-osis-pipeline.html#cfn-osis-pipeline-pipelinename
-	PipelineName string `json:"PipelineName"`
+	PipelineName T `json:"PipelineName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

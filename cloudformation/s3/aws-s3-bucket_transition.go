@@ -13,7 +13,7 @@ type Bucket_Transition[T any] struct {
 	// StorageClass AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-transition.html#cfn-s3-bucket-lifecycleconfig-rule-transition-storageclass
-	StorageClass string `json:"StorageClass"`
+	StorageClass T `json:"StorageClass"`
 
 	// TransitionDate AWS CloudFormation Property
 	// Required: false

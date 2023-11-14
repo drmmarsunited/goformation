@@ -13,12 +13,12 @@ type Dashboard_FontConfiguration[T any] struct {
 	// FontColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fontconfiguration.html#cfn-quicksight-dashboard-fontconfiguration-fontcolor
-	FontColor *string `json:"FontColor,omitempty"`
+	FontColor *T `json:"FontColor,omitempty"`
 
 	// FontDecoration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fontconfiguration.html#cfn-quicksight-dashboard-fontconfiguration-fontdecoration
-	FontDecoration *string `json:"FontDecoration,omitempty"`
+	FontDecoration *T `json:"FontDecoration,omitempty"`
 
 	// FontSize AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Dashboard_FontConfiguration[T any] struct {
 	// FontStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fontconfiguration.html#cfn-quicksight-dashboard-fontconfiguration-fontstyle
-	FontStyle *string `json:"FontStyle,omitempty"`
+	FontStyle *T `json:"FontStyle,omitempty"`
 
 	// FontWeight AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type UserPool_NumberAttributeConstraints[T any] struct {
 	// MaxValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-numberattributeconstraints.html#cfn-cognito-userpool-numberattributeconstraints-maxvalue
-	MaxValue *string `json:"MaxValue,omitempty"`
+	MaxValue *T `json:"MaxValue,omitempty"`
 
 	// MinValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-numberattributeconstraints.html#cfn-cognito-userpool-numberattributeconstraints-minvalue
-	MinValue *string `json:"MinValue,omitempty"`
+	MinValue *T `json:"MinValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

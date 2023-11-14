@@ -13,7 +13,7 @@ type Launch_GroupToWeight[T any] struct {
 	// GroupName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-grouptoweight.html#cfn-evidently-launch-grouptoweight-groupname
-	GroupName string `json:"GroupName"`
+	GroupName T `json:"GroupName"`
 
 	// SplitWeight AWS CloudFormation Property
 	// Required: true

@@ -13,12 +13,12 @@ type Group_Query[T any] struct {
 	// ResourceTypeFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-query.html#cfn-resourcegroups-group-query-resourcetypefilters
-	ResourceTypeFilters []string `json:"ResourceTypeFilters,omitempty"`
+	ResourceTypeFilters []T `json:"ResourceTypeFilters,omitempty"`
 
 	// StackIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-query.html#cfn-resourcegroups-group-query-stackidentifier
-	StackIdentifier *string `json:"StackIdentifier,omitempty"`
+	StackIdentifier *T `json:"StackIdentifier,omitempty"`
 
 	// TagFilters AWS CloudFormation Property
 	// Required: false

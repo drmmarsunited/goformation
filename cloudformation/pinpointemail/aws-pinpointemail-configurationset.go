@@ -21,7 +21,7 @@ type ConfigurationSet[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ReputationOptions AWS CloudFormation Property
 	// Required: false

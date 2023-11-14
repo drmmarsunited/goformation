@@ -13,7 +13,7 @@ type Service_ServiceObservabilityConfiguration[T any] struct {
 	// ObservabilityConfigurationArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-serviceobservabilityconfiguration.html#cfn-apprunner-service-serviceobservabilityconfiguration-observabilityconfigurationarn
-	ObservabilityConfigurationArn *string `json:"ObservabilityConfigurationArn,omitempty"`
+	ObservabilityConfigurationArn *T `json:"ObservabilityConfigurationArn,omitempty"`
 
 	// ObservabilityEnabled AWS CloudFormation Property
 	// Required: true

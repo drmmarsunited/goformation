@@ -17,7 +17,7 @@ type WirelessDeviceImportTask[T any] struct {
 	// DestinationName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdeviceimporttask.html#cfn-iotwireless-wirelessdeviceimporttask-destinationname
-	DestinationName string `json:"DestinationName"`
+	DestinationName T `json:"DestinationName"`
 
 	// Sidewalk AWS CloudFormation Property
 	// Required: true

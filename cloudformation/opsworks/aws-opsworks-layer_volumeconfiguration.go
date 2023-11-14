@@ -23,7 +23,7 @@ type Layer_VolumeConfiguration[T any] struct {
 	// MountPoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-mountpoint
-	MountPoint *string `json:"MountPoint,omitempty"`
+	MountPoint *T `json:"MountPoint,omitempty"`
 
 	// NumberOfDisks AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Layer_VolumeConfiguration[T any] struct {
 	// VolumeType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-volumetype
-	VolumeType *string `json:"VolumeType,omitempty"`
+	VolumeType *T `json:"VolumeType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

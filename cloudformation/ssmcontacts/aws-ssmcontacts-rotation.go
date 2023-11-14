@@ -17,12 +17,12 @@ type Rotation[T any] struct {
 	// ContactIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-rotation.html#cfn-ssmcontacts-rotation-contactids
-	ContactIds []string `json:"ContactIds"`
+	ContactIds []T `json:"ContactIds"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-rotation.html#cfn-ssmcontacts-rotation-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Recurrence AWS CloudFormation Property
 	// Required: true
@@ -32,7 +32,7 @@ type Rotation[T any] struct {
 	// StartTime AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-rotation.html#cfn-ssmcontacts-rotation-starttime
-	StartTime string `json:"StartTime"`
+	StartTime T `json:"StartTime"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type Rotation[T any] struct {
 	// TimeZoneId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-rotation.html#cfn-ssmcontacts-rotation-timezoneid
-	TimeZoneId string `json:"TimeZoneId"`
+	TimeZoneId T `json:"TimeZoneId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

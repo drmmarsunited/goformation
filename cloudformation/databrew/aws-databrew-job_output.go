@@ -13,12 +13,12 @@ type Job_Output[T any] struct {
 	// CompressionFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-compressionformat
-	CompressionFormat *string `json:"CompressionFormat,omitempty"`
+	CompressionFormat *T `json:"CompressionFormat,omitempty"`
 
 	// Format AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-format
-	Format *string `json:"Format,omitempty"`
+	Format *T `json:"Format,omitempty"`
 
 	// FormatOptions AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Job_Output[T any] struct {
 	// PartitionColumns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-partitioncolumns
-	PartitionColumns []string `json:"PartitionColumns,omitempty"`
+	PartitionColumns []T `json:"PartitionColumns,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

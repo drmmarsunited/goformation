@@ -13,7 +13,7 @@ type ModelPackage_ValidationProfile[T any] struct {
 	// ProfileName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-validationprofile.html#cfn-sagemaker-modelpackage-validationprofile-profilename
-	ProfileName string `json:"ProfileName"`
+	ProfileName T `json:"ProfileName"`
 
 	// TransformJobDefinition AWS CloudFormation Property
 	// Required: true

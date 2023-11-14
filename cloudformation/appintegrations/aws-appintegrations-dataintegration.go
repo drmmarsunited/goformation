@@ -17,7 +17,7 @@ type DataIntegration[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-dataintegration.html#cfn-appintegrations-dataintegration-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// FileConfiguration AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type DataIntegration[T any] struct {
 	// KmsKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-dataintegration.html#cfn-appintegrations-dataintegration-kmskey
-	KmsKey string `json:"KmsKey"`
+	KmsKey T `json:"KmsKey"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-dataintegration.html#cfn-appintegrations-dataintegration-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ObjectConfiguration AWS CloudFormation Property
 	// Required: false
@@ -40,14 +40,14 @@ type DataIntegration[T any] struct {
 	ObjectConfiguration interface{} `json:"ObjectConfiguration,omitempty"`
 
 	// ScheduleConfig AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-dataintegration.html#cfn-appintegrations-dataintegration-scheduleconfig
-	ScheduleConfig *DataIntegration_ScheduleConfig[any] `json:"ScheduleConfig"`
+	ScheduleConfig *DataIntegration_ScheduleConfig[any] `json:"ScheduleConfig,omitempty"`
 
 	// SourceURI AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-dataintegration.html#cfn-appintegrations-dataintegration-sourceuri
-	SourceURI string `json:"SourceURI"`
+	SourceURI T `json:"SourceURI"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

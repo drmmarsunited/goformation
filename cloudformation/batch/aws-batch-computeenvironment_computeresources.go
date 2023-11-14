@@ -13,7 +13,7 @@ type ComputeEnvironment_ComputeResources[T any] struct {
 	// AllocationStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-allocationstrategy
-	AllocationStrategy *string `json:"AllocationStrategy,omitempty"`
+	AllocationStrategy *T `json:"AllocationStrategy,omitempty"`
 
 	// BidPercentage AWS CloudFormation Property
 	// Required: false
@@ -33,22 +33,22 @@ type ComputeEnvironment_ComputeResources[T any] struct {
 	// Ec2KeyPair AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-ec2keypair
-	Ec2KeyPair *string `json:"Ec2KeyPair,omitempty"`
+	Ec2KeyPair *T `json:"Ec2KeyPair,omitempty"`
 
 	// ImageId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-imageid
-	ImageId *string `json:"ImageId,omitempty"`
+	ImageId *T `json:"ImageId,omitempty"`
 
 	// InstanceRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-instancerole
-	InstanceRole *string `json:"InstanceRole,omitempty"`
+	InstanceRole *T `json:"InstanceRole,omitempty"`
 
 	// InstanceTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-instancetypes
-	InstanceTypes []string `json:"InstanceTypes,omitempty"`
+	InstanceTypes []T `json:"InstanceTypes,omitempty"`
 
 	// LaunchTemplate AWS CloudFormation Property
 	// Required: false
@@ -68,32 +68,32 @@ type ComputeEnvironment_ComputeResources[T any] struct {
 	// PlacementGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-placementgroup
-	PlacementGroup *string `json:"PlacementGroup,omitempty"`
+	PlacementGroup *T `json:"PlacementGroup,omitempty"`
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-securitygroupids
-	SecurityGroupIds []string `json:"SecurityGroupIds,omitempty"`
+	SecurityGroupIds []T `json:"SecurityGroupIds,omitempty"`
 
 	// SpotIamFleetRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-spotiamfleetrole
-	SpotIamFleetRole *string `json:"SpotIamFleetRole,omitempty"`
+	SpotIamFleetRole *T `json:"SpotIamFleetRole,omitempty"`
 
 	// Subnets AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-subnets
-	Subnets []string `json:"Subnets"`
+	Subnets []T `json:"Subnets"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-tags
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// UpdateToLatestImageVersion AWS CloudFormation Property
 	// Required: false

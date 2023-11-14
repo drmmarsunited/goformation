@@ -13,12 +13,12 @@ type JobDefinition_Tmpfs[T any] struct {
 	// ContainerPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-tmpfs.html#cfn-batch-jobdefinition-tmpfs-containerpath
-	ContainerPath string `json:"ContainerPath"`
+	ContainerPath T `json:"ContainerPath"`
 
 	// MountOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-tmpfs.html#cfn-batch-jobdefinition-tmpfs-mountoptions
-	MountOptions []string `json:"MountOptions,omitempty"`
+	MountOptions []T `json:"MountOptions,omitempty"`
 
 	// Size AWS CloudFormation Property
 	// Required: true

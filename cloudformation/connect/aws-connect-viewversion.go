@@ -16,17 +16,17 @@ type ViewVersion[T any] struct {
 	// VersionDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-viewversion.html#cfn-connect-viewversion-versiondescription
-	VersionDescription *string `json:"VersionDescription,omitempty"`
+	VersionDescription *T `json:"VersionDescription,omitempty"`
 
 	// ViewArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-viewversion.html#cfn-connect-viewversion-viewarn
-	ViewArn string `json:"ViewArn"`
+	ViewArn T `json:"ViewArn"`
 
 	// ViewContentSha256 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-viewversion.html#cfn-connect-viewversion-viewcontentsha256
-	ViewContentSha256 *string `json:"ViewContentSha256,omitempty"`
+	ViewContentSha256 *T `json:"ViewContentSha256,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

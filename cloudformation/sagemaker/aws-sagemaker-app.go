@@ -17,17 +17,17 @@ type App[T any] struct {
 	// AppName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-app.html#cfn-sagemaker-app-appname
-	AppName string `json:"AppName"`
+	AppName T `json:"AppName"`
 
 	// AppType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-app.html#cfn-sagemaker-app-apptype
-	AppType string `json:"AppType"`
+	AppType T `json:"AppType"`
 
 	// DomainId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-app.html#cfn-sagemaker-app-domainid
-	DomainId string `json:"DomainId"`
+	DomainId T `json:"DomainId"`
 
 	// ResourceSpec AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type App[T any] struct {
 	// UserProfileName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-app.html#cfn-sagemaker-app-userprofilename
-	UserProfileName string `json:"UserProfileName"`
+	UserProfileName T `json:"UserProfileName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

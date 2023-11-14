@@ -13,12 +13,12 @@ type JobDefinition_EksContainer[T any] struct {
 	// Args AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainer.html#cfn-batch-jobdefinition-ekscontainer-args
-	Args []string `json:"Args,omitempty"`
+	Args []T `json:"Args,omitempty"`
 
 	// Command AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainer.html#cfn-batch-jobdefinition-ekscontainer-command
-	Command []string `json:"Command,omitempty"`
+	Command []T `json:"Command,omitempty"`
 
 	// Env AWS CloudFormation Property
 	// Required: false
@@ -28,17 +28,17 @@ type JobDefinition_EksContainer[T any] struct {
 	// Image AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainer.html#cfn-batch-jobdefinition-ekscontainer-image
-	Image string `json:"Image"`
+	Image T `json:"Image"`
 
 	// ImagePullPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainer.html#cfn-batch-jobdefinition-ekscontainer-imagepullpolicy
-	ImagePullPolicy *string `json:"ImagePullPolicy,omitempty"`
+	ImagePullPolicy *T `json:"ImagePullPolicy,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainer.html#cfn-batch-jobdefinition-ekscontainer-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Resources AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type GatewayRoute_HttpPathMatch[T any] struct {
 	// Exact AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httppathmatch.html#cfn-appmesh-gatewayroute-httppathmatch-exact
-	Exact *string `json:"Exact,omitempty"`
+	Exact *T `json:"Exact,omitempty"`
 
 	// Regex AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httppathmatch.html#cfn-appmesh-gatewayroute-httppathmatch-regex
-	Regex *string `json:"Regex,omitempty"`
+	Regex *T `json:"Regex,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

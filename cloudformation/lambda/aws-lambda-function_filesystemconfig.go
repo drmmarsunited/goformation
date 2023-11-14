@@ -13,12 +13,12 @@ type Function_FileSystemConfig[T any] struct {
 	// Arn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-filesystemconfig.html#cfn-lambda-function-filesystemconfig-arn
-	Arn string `json:"Arn"`
+	Arn T `json:"Arn"`
 
 	// LocalMountPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-filesystemconfig.html#cfn-lambda-function-filesystemconfig-localmountpath
-	LocalMountPath string `json:"LocalMountPath"`
+	LocalMountPath T `json:"LocalMountPath"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

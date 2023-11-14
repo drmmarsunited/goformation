@@ -13,12 +13,12 @@ type MitigationAction_EnableIoTLoggingParams[T any] struct {
 	// LogLevel AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-enableiotloggingparams.html#cfn-iot-mitigationaction-enableiotloggingparams-loglevel
-	LogLevel string `json:"LogLevel"`
+	LogLevel T `json:"LogLevel"`
 
 	// RoleArnForLogging AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-enableiotloggingparams.html#cfn-iot-mitigationaction-enableiotloggingparams-rolearnforlogging
-	RoleArnForLogging string `json:"RoleArnForLogging"`
+	RoleArnForLogging T `json:"RoleArnForLogging"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

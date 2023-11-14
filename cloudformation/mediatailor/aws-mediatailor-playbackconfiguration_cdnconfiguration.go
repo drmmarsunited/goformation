@@ -13,12 +13,12 @@ type PlaybackConfiguration_CdnConfiguration[T any] struct {
 	// AdSegmentUrlPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-cdnconfiguration.html#cfn-mediatailor-playbackconfiguration-cdnconfiguration-adsegmenturlprefix
-	AdSegmentUrlPrefix *string `json:"AdSegmentUrlPrefix,omitempty"`
+	AdSegmentUrlPrefix *T `json:"AdSegmentUrlPrefix,omitempty"`
 
 	// ContentSegmentUrlPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-cdnconfiguration.html#cfn-mediatailor-playbackconfiguration-cdnconfiguration-contentsegmenturlprefix
-	ContentSegmentUrlPrefix *string `json:"ContentSegmentUrlPrefix,omitempty"`
+	ContentSegmentUrlPrefix *T `json:"ContentSegmentUrlPrefix,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

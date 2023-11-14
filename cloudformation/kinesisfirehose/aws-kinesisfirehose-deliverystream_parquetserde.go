@@ -18,7 +18,7 @@ type DeliveryStream_ParquetSerDe[T any] struct {
 	// Compression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html#cfn-kinesisfirehose-deliverystream-parquetserde-compression
-	Compression *string `json:"Compression,omitempty"`
+	Compression *T `json:"Compression,omitempty"`
 
 	// EnableDictionaryCompression AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type DeliveryStream_ParquetSerDe[T any] struct {
 	// WriterVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html#cfn-kinesisfirehose-deliverystream-parquetserde-writerversion
-	WriterVersion *string `json:"WriterVersion,omitempty"`
+	WriterVersion *T `json:"WriterVersion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

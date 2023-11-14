@@ -13,7 +13,7 @@ type Channel_CdiInputSpecification[T any] struct {
 	// Resolution AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-cdiinputspecification.html#cfn-medialive-channel-cdiinputspecification-resolution
-	Resolution *string `json:"Resolution,omitempty"`
+	Resolution *T `json:"Resolution,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type ExperimentTemplate_CloudWatchLogsConfiguration[T any] struct {
 	// LogGroupArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-cloudwatchlogsconfiguration.html#cfn-fis-experimenttemplate-cloudwatchlogsconfiguration-loggrouparn
-	LogGroupArn string `json:"LogGroupArn"`
+	LogGroupArn T `json:"LogGroupArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

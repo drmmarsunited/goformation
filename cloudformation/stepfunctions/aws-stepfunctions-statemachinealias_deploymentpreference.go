@@ -13,7 +13,7 @@ type StateMachineAlias_DeploymentPreference[T any] struct {
 	// Alarms AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachinealias-deploymentpreference.html#cfn-stepfunctions-statemachinealias-deploymentpreference-alarms
-	Alarms []string `json:"Alarms,omitempty"`
+	Alarms []T `json:"Alarms,omitempty"`
 
 	// Interval AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type StateMachineAlias_DeploymentPreference[T any] struct {
 	// StateMachineVersionArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachinealias-deploymentpreference.html#cfn-stepfunctions-statemachinealias-deploymentpreference-statemachineversionarn
-	StateMachineVersionArn string `json:"StateMachineVersionArn"`
+	StateMachineVersionArn T `json:"StateMachineVersionArn"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachinealias-deploymentpreference.html#cfn-stepfunctions-statemachinealias-deploymentpreference-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type DetectorModel_DetectorModelDefinition[T any] struct {
 	// InitialStateName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-detectormodeldefinition.html#cfn-iotevents-detectormodel-detectormodeldefinition-initialstatename
-	InitialStateName string `json:"InitialStateName"`
+	InitialStateName T `json:"InitialStateName"`
 
 	// States AWS CloudFormation Property
 	// Required: true

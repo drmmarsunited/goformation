@@ -21,7 +21,7 @@ type Deployment[T any] struct {
 	// DeploymentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrassv2-deployment.html#cfn-greengrassv2-deployment-deploymentname
-	DeploymentName *string `json:"DeploymentName,omitempty"`
+	DeploymentName *T `json:"DeploymentName,omitempty"`
 
 	// DeploymentPolicies AWS CloudFormation Property
 	// Required: false
@@ -36,17 +36,17 @@ type Deployment[T any] struct {
 	// ParentTargetArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrassv2-deployment.html#cfn-greengrassv2-deployment-parenttargetarn
-	ParentTargetArn *string `json:"ParentTargetArn,omitempty"`
+	ParentTargetArn *T `json:"ParentTargetArn,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrassv2-deployment.html#cfn-greengrassv2-deployment-tags
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// TargetArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrassv2-deployment.html#cfn-greengrassv2-deployment-targetarn
-	TargetArn string `json:"TargetArn"`
+	TargetArn T `json:"TargetArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

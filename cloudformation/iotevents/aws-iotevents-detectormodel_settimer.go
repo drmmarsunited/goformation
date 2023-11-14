@@ -13,7 +13,7 @@ type DetectorModel_SetTimer[T any] struct {
 	// DurationExpression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-settimer.html#cfn-iotevents-detectormodel-settimer-durationexpression
-	DurationExpression *string `json:"DurationExpression,omitempty"`
+	DurationExpression *T `json:"DurationExpression,omitempty"`
 
 	// Seconds AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type DetectorModel_SetTimer[T any] struct {
 	// TimerName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-settimer.html#cfn-iotevents-detectormodel-settimer-timername
-	TimerName string `json:"TimerName"`
+	TimerName T `json:"TimerName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

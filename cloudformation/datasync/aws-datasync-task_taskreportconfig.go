@@ -18,12 +18,12 @@ type Task_TaskReportConfig[T any] struct {
 	// ObjectVersionIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-taskreportconfig.html#cfn-datasync-task-taskreportconfig-objectversionids
-	ObjectVersionIds *string `json:"ObjectVersionIds,omitempty"`
+	ObjectVersionIds *T `json:"ObjectVersionIds,omitempty"`
 
 	// OutputType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-taskreportconfig.html#cfn-datasync-task-taskreportconfig-outputtype
-	OutputType string `json:"OutputType"`
+	OutputType T `json:"OutputType"`
 
 	// Overrides AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Task_TaskReportConfig[T any] struct {
 	// ReportLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-taskreportconfig.html#cfn-datasync-task-taskreportconfig-reportlevel
-	ReportLevel *string `json:"ReportLevel,omitempty"`
+	ReportLevel *T `json:"ReportLevel,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

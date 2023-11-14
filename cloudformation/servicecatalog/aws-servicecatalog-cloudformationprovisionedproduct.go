@@ -17,47 +17,47 @@ type CloudFormationProvisionedProduct[T any] struct {
 	// AcceptLanguage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-acceptlanguage
-	AcceptLanguage *string `json:"AcceptLanguage,omitempty"`
+	AcceptLanguage *T `json:"AcceptLanguage,omitempty"`
 
 	// NotificationArns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-notificationarns
-	NotificationArns []string `json:"NotificationArns,omitempty"`
+	NotificationArns []T `json:"NotificationArns,omitempty"`
 
 	// PathId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-pathid
-	PathId *string `json:"PathId,omitempty"`
+	PathId *T `json:"PathId,omitempty"`
 
 	// PathName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-pathname
-	PathName *string `json:"PathName,omitempty"`
+	PathName *T `json:"PathName,omitempty"`
 
 	// ProductId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-productid
-	ProductId *string `json:"ProductId,omitempty"`
+	ProductId *T `json:"ProductId,omitempty"`
 
 	// ProductName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-productname
-	ProductName *string `json:"ProductName,omitempty"`
+	ProductName *T `json:"ProductName,omitempty"`
 
 	// ProvisionedProductName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisionedproductname
-	ProvisionedProductName *string `json:"ProvisionedProductName,omitempty"`
+	ProvisionedProductName *T `json:"ProvisionedProductName,omitempty"`
 
 	// ProvisioningArtifactId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningartifactid
-	ProvisioningArtifactId *string `json:"ProvisioningArtifactId,omitempty"`
+	ProvisioningArtifactId *T `json:"ProvisioningArtifactId,omitempty"`
 
 	// ProvisioningArtifactName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningartifactname
-	ProvisioningArtifactName *string `json:"ProvisioningArtifactName,omitempty"`
+	ProvisioningArtifactName *T `json:"ProvisioningArtifactName,omitempty"`
 
 	// ProvisioningParameters AWS CloudFormation Property
 	// Required: false

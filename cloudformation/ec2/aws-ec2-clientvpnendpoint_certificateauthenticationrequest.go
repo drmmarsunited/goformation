@@ -13,7 +13,7 @@ type ClientVpnEndpoint_CertificateAuthenticationRequest[T any] struct {
 	// ClientRootCertificateChainArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-certificateauthenticationrequest.html#cfn-ec2-clientvpnendpoint-certificateauthenticationrequest-clientrootcertificatechainarn
-	ClientRootCertificateChainArn string `json:"ClientRootCertificateChainArn"`
+	ClientRootCertificateChainArn T `json:"ClientRootCertificateChainArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

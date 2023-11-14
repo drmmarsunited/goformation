@@ -13,17 +13,17 @@ type RecordingConfiguration_ThumbnailConfiguration[T any] struct {
 	// RecordingMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivs-recordingconfiguration-thumbnailconfiguration.html#cfn-ivs-recordingconfiguration-thumbnailconfiguration-recordingmode
-	RecordingMode *string `json:"RecordingMode,omitempty"`
+	RecordingMode *T `json:"RecordingMode,omitempty"`
 
 	// Resolution AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivs-recordingconfiguration-thumbnailconfiguration.html#cfn-ivs-recordingconfiguration-thumbnailconfiguration-resolution
-	Resolution *string `json:"Resolution,omitempty"`
+	Resolution *T `json:"Resolution,omitempty"`
 
 	// Storage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivs-recordingconfiguration-thumbnailconfiguration.html#cfn-ivs-recordingconfiguration-thumbnailconfiguration-storage
-	Storage []string `json:"Storage,omitempty"`
+	Storage []T `json:"Storage,omitempty"`
 
 	// TargetIntervalSeconds AWS CloudFormation Property
 	// Required: false

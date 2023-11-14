@@ -17,17 +17,17 @@ type CACertificate[T any] struct {
 	// AutoRegistrationStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-cacertificate.html#cfn-iot-cacertificate-autoregistrationstatus
-	AutoRegistrationStatus *string `json:"AutoRegistrationStatus,omitempty"`
+	AutoRegistrationStatus *T `json:"AutoRegistrationStatus,omitempty"`
 
 	// CACertificatePem AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-cacertificate.html#cfn-iot-cacertificate-cacertificatepem
-	CACertificatePem string `json:"CACertificatePem"`
+	CACertificatePem T `json:"CACertificatePem"`
 
 	// CertificateMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-cacertificate.html#cfn-iot-cacertificate-certificatemode
-	CertificateMode *string `json:"CertificateMode,omitempty"`
+	CertificateMode *T `json:"CertificateMode,omitempty"`
 
 	// RegistrationConfig AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type CACertificate[T any] struct {
 	// Status AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-cacertificate.html#cfn-iot-cacertificate-status
-	Status string `json:"Status"`
+	Status T `json:"Status"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type CACertificate[T any] struct {
 	// VerificationCertificatePem AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-cacertificate.html#cfn-iot-cacertificate-verificationcertificatepem
-	VerificationCertificatePem *string `json:"VerificationCertificatePem,omitempty"`
+	VerificationCertificatePem *T `json:"VerificationCertificatePem,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

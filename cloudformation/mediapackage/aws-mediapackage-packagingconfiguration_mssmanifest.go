@@ -13,7 +13,7 @@ type PackagingConfiguration_MssManifest[T any] struct {
 	// ManifestName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-mssmanifest.html#cfn-mediapackage-packagingconfiguration-mssmanifest-manifestname
-	ManifestName *string `json:"ManifestName,omitempty"`
+	ManifestName *T `json:"ManifestName,omitempty"`
 
 	// StreamSelection AWS CloudFormation Property
 	// Required: false

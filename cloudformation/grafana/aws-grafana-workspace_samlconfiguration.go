@@ -13,7 +13,7 @@ type Workspace_SamlConfiguration[T any] struct {
 	// AllowedOrganizations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-samlconfiguration.html#cfn-grafana-workspace-samlconfiguration-allowedorganizations
-	AllowedOrganizations []string `json:"AllowedOrganizations,omitempty"`
+	AllowedOrganizations []T `json:"AllowedOrganizations,omitempty"`
 
 	// AssertionAttributes AWS CloudFormation Property
 	// Required: false

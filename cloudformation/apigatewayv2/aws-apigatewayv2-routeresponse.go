@@ -16,12 +16,12 @@ type RouteResponse[T any] struct {
 	// ApiId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-routeresponse.html#cfn-apigatewayv2-routeresponse-apiid
-	ApiId string `json:"ApiId"`
+	ApiId T `json:"ApiId"`
 
 	// ModelSelectionExpression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-routeresponse.html#cfn-apigatewayv2-routeresponse-modelselectionexpression
-	ModelSelectionExpression *string `json:"ModelSelectionExpression,omitempty"`
+	ModelSelectionExpression *T `json:"ModelSelectionExpression,omitempty"`
 
 	// ResponseModels AWS CloudFormation Property
 	// Required: false
@@ -36,12 +36,12 @@ type RouteResponse[T any] struct {
 	// RouteId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-routeresponse.html#cfn-apigatewayv2-routeresponse-routeid
-	RouteId string `json:"RouteId"`
+	RouteId T `json:"RouteId"`
 
 	// RouteResponseKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-routeresponse.html#cfn-apigatewayv2-routeresponse-routeresponsekey
-	RouteResponseKey string `json:"RouteResponseKey"`
+	RouteResponseKey T `json:"RouteResponseKey"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

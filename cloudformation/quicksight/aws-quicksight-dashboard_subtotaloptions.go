@@ -13,12 +13,12 @@ type Dashboard_SubtotalOptions[T any] struct {
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-subtotaloptions.html#cfn-quicksight-dashboard-subtotaloptions-customlabel
-	CustomLabel *string `json:"CustomLabel,omitempty"`
+	CustomLabel *T `json:"CustomLabel,omitempty"`
 
 	// FieldLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-subtotaloptions.html#cfn-quicksight-dashboard-subtotaloptions-fieldlevel
-	FieldLevel *string `json:"FieldLevel,omitempty"`
+	FieldLevel *T `json:"FieldLevel,omitempty"`
 
 	// FieldLevelOptions AWS CloudFormation Property
 	// Required: false
@@ -30,6 +30,11 @@ type Dashboard_SubtotalOptions[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-subtotaloptions.html#cfn-quicksight-dashboard-subtotaloptions-metricheadercellstyle
 	MetricHeaderCellStyle *Dashboard_TableCellStyle[any] `json:"MetricHeaderCellStyle,omitempty"`
 
+	// StyleTargets AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-subtotaloptions.html#cfn-quicksight-dashboard-subtotaloptions-styletargets
+	StyleTargets []Dashboard_TableStyleTarget[any] `json:"StyleTargets,omitempty"`
+
 	// TotalCellStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-subtotaloptions.html#cfn-quicksight-dashboard-subtotaloptions-totalcellstyle
@@ -38,7 +43,7 @@ type Dashboard_SubtotalOptions[T any] struct {
 	// TotalsVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-subtotaloptions.html#cfn-quicksight-dashboard-subtotaloptions-totalsvisibility
-	TotalsVisibility *string `json:"TotalsVisibility,omitempty"`
+	TotalsVisibility *T `json:"TotalsVisibility,omitempty"`
 
 	// ValueCellStyle AWS CloudFormation Property
 	// Required: false

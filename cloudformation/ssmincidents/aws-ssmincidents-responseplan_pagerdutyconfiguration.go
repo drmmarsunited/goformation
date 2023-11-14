@@ -13,7 +13,7 @@ type ResponsePlan_PagerDutyConfiguration[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-pagerdutyconfiguration.html#cfn-ssmincidents-responseplan-pagerdutyconfiguration-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// PagerDutyIncidentConfiguration AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type ResponsePlan_PagerDutyConfiguration[T any] struct {
 	// SecretId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-pagerdutyconfiguration.html#cfn-ssmincidents-responseplan-pagerdutyconfiguration-secretid
-	SecretId string `json:"SecretId"`
+	SecretId T `json:"SecretId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

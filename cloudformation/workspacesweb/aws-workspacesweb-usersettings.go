@@ -17,7 +17,7 @@ type UserSettings[T any] struct {
 	// AdditionalEncryptionContext AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-usersettings.html#cfn-workspacesweb-usersettings-additionalencryptioncontext
-	AdditionalEncryptionContext map[string]string `json:"AdditionalEncryptionContext,omitempty"`
+	AdditionalEncryptionContext map[string]T `json:"AdditionalEncryptionContext,omitempty"`
 
 	// CookieSynchronizationConfiguration AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type UserSettings[T any] struct {
 	// CopyAllowed AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-usersettings.html#cfn-workspacesweb-usersettings-copyallowed
-	CopyAllowed string `json:"CopyAllowed"`
+	CopyAllowed T `json:"CopyAllowed"`
 
 	// CustomerManagedKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-usersettings.html#cfn-workspacesweb-usersettings-customermanagedkey
-	CustomerManagedKey *string `json:"CustomerManagedKey,omitempty"`
+	CustomerManagedKey *T `json:"CustomerManagedKey,omitempty"`
 
 	// DisconnectTimeoutInMinutes AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type UserSettings[T any] struct {
 	// DownloadAllowed AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-usersettings.html#cfn-workspacesweb-usersettings-downloadallowed
-	DownloadAllowed string `json:"DownloadAllowed"`
+	DownloadAllowed T `json:"DownloadAllowed"`
 
 	// IdleDisconnectTimeoutInMinutes AWS CloudFormation Property
 	// Required: false
@@ -52,12 +52,12 @@ type UserSettings[T any] struct {
 	// PasteAllowed AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-usersettings.html#cfn-workspacesweb-usersettings-pasteallowed
-	PasteAllowed string `json:"PasteAllowed"`
+	PasteAllowed T `json:"PasteAllowed"`
 
 	// PrintAllowed AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-usersettings.html#cfn-workspacesweb-usersettings-printallowed
-	PrintAllowed string `json:"PrintAllowed"`
+	PrintAllowed T `json:"PrintAllowed"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -67,7 +67,7 @@ type UserSettings[T any] struct {
 	// UploadAllowed AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-usersettings.html#cfn-workspacesweb-usersettings-uploadallowed
-	UploadAllowed string `json:"UploadAllowed"`
+	UploadAllowed T `json:"UploadAllowed"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

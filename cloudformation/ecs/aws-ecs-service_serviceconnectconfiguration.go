@@ -23,7 +23,7 @@ type Service_ServiceConnectConfiguration[T any] struct {
 	// Namespace AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectconfiguration.html#cfn-ecs-service-serviceconnectconfiguration-namespace
-	Namespace *string `json:"Namespace,omitempty"`
+	Namespace *T `json:"Namespace,omitempty"`
 
 	// Services AWS CloudFormation Property
 	// Required: false

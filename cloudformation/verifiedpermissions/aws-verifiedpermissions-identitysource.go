@@ -21,12 +21,12 @@ type IdentitySource[T any] struct {
 	// PolicyStoreId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-verifiedpermissions-identitysource.html#cfn-verifiedpermissions-identitysource-policystoreid
-	PolicyStoreId *string `json:"PolicyStoreId,omitempty"`
+	PolicyStoreId *T `json:"PolicyStoreId,omitempty"`
 
 	// PrincipalEntityType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-verifiedpermissions-identitysource.html#cfn-verifiedpermissions-identitysource-principalentitytype
-	PrincipalEntityType *string `json:"PrincipalEntityType,omitempty"`
+	PrincipalEntityType *T `json:"PrincipalEntityType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

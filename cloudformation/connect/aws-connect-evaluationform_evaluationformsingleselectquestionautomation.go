@@ -13,7 +13,7 @@ type EvaluationForm_EvaluationFormSingleSelectQuestionAutomation[T any] struct {
 	// DefaultOptionRefId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformsingleselectquestionautomation.html#cfn-connect-evaluationform-evaluationformsingleselectquestionautomation-defaultoptionrefid
-	DefaultOptionRefId *string `json:"DefaultOptionRefId,omitempty"`
+	DefaultOptionRefId *T `json:"DefaultOptionRefId,omitempty"`
 
 	// Options AWS CloudFormation Property
 	// Required: true

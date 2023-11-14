@@ -21,22 +21,22 @@ type MemberInvitation[T any] struct {
 	// GraphArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-detective-memberinvitation.html#cfn-detective-memberinvitation-grapharn
-	GraphArn string `json:"GraphArn"`
+	GraphArn T `json:"GraphArn"`
 
 	// MemberEmailAddress AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-detective-memberinvitation.html#cfn-detective-memberinvitation-memberemailaddress
-	MemberEmailAddress string `json:"MemberEmailAddress"`
+	MemberEmailAddress T `json:"MemberEmailAddress"`
 
 	// MemberId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-detective-memberinvitation.html#cfn-detective-memberinvitation-memberid
-	MemberId string `json:"MemberId"`
+	MemberId T `json:"MemberId"`
 
 	// Message AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-detective-memberinvitation.html#cfn-detective-memberinvitation-message
-	Message *string `json:"Message,omitempty"`
+	Message *T `json:"Message,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

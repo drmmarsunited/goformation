@@ -13,17 +13,17 @@ type DataSet_CastColumnTypeOperation[T any] struct {
 	// ColumnName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-castcolumntypeoperation.html#cfn-quicksight-dataset-castcolumntypeoperation-columnname
-	ColumnName string `json:"ColumnName"`
+	ColumnName T `json:"ColumnName"`
 
 	// Format AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-castcolumntypeoperation.html#cfn-quicksight-dataset-castcolumntypeoperation-format
-	Format *string `json:"Format,omitempty"`
+	Format *T `json:"Format,omitempty"`
 
 	// NewColumnType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-castcolumntypeoperation.html#cfn-quicksight-dataset-castcolumntypeoperation-newcolumntype
-	NewColumnType string `json:"NewColumnType"`
+	NewColumnType T `json:"NewColumnType"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -33,7 +33,7 @@ type Bot_SlotValueElicitationSetting[T any] struct {
 	// SlotConstraint AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueelicitationsetting.html#cfn-lex-bot-slotvalueelicitationsetting-slotconstraint
-	SlotConstraint string `json:"SlotConstraint"`
+	SlotConstraint T `json:"SlotConstraint"`
 
 	// WaitAndContinueSpecification AWS CloudFormation Property
 	// Required: false

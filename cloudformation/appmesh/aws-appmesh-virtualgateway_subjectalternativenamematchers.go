@@ -13,7 +13,7 @@ type VirtualGateway_SubjectAlternativeNameMatchers[T any] struct {
 	// Exact AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-subjectalternativenamematchers.html#cfn-appmesh-virtualgateway-subjectalternativenamematchers-exact
-	Exact []string `json:"Exact,omitempty"`
+	Exact []T `json:"Exact,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

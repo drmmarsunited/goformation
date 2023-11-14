@@ -13,12 +13,17 @@ type OriginEndpoint_LowLatencyHlsManifestConfiguration[T any] struct {
 	// ChildManifestName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-lowlatencyhlsmanifestconfiguration.html#cfn-mediapackagev2-originendpoint-lowlatencyhlsmanifestconfiguration-childmanifestname
-	ChildManifestName *string `json:"ChildManifestName,omitempty"`
+	ChildManifestName *T `json:"ChildManifestName,omitempty"`
+
+	// FilterConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-lowlatencyhlsmanifestconfiguration.html#cfn-mediapackagev2-originendpoint-lowlatencyhlsmanifestconfiguration-filterconfiguration
+	FilterConfiguration *OriginEndpoint_FilterConfiguration[any] `json:"FilterConfiguration,omitempty"`
 
 	// ManifestName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-lowlatencyhlsmanifestconfiguration.html#cfn-mediapackagev2-originendpoint-lowlatencyhlsmanifestconfiguration-manifestname
-	ManifestName string `json:"ManifestName"`
+	ManifestName T `json:"ManifestName"`
 
 	// ManifestWindowSeconds AWS CloudFormation Property
 	// Required: false
@@ -38,7 +43,7 @@ type OriginEndpoint_LowLatencyHlsManifestConfiguration[T any] struct {
 	// Url AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-lowlatencyhlsmanifestconfiguration.html#cfn-mediapackagev2-originendpoint-lowlatencyhlsmanifestconfiguration-url
-	Url *string `json:"Url,omitempty"`
+	Url *T `json:"Url,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

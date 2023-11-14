@@ -17,7 +17,7 @@ type Asset[T any] struct {
 	// AssetDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-asset.html#cfn-iotsitewise-asset-assetdescription
-	AssetDescription *string `json:"AssetDescription,omitempty"`
+	AssetDescription *T `json:"AssetDescription,omitempty"`
 
 	// AssetHierarchies AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type Asset[T any] struct {
 	// AssetModelId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-asset.html#cfn-iotsitewise-asset-assetmodelid
-	AssetModelId string `json:"AssetModelId"`
+	AssetModelId T `json:"AssetModelId"`
 
 	// AssetName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-asset.html#cfn-iotsitewise-asset-assetname
-	AssetName string `json:"AssetName"`
+	AssetName T `json:"AssetName"`
 
 	// AssetProperties AWS CloudFormation Property
 	// Required: false

@@ -21,17 +21,17 @@ type UserProfile[T any] struct {
 	// IamUserArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-iamuserarn
-	IamUserArn string `json:"IamUserArn"`
+	IamUserArn T `json:"IamUserArn"`
 
 	// SshPublicKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-sshpublickey
-	SshPublicKey *string `json:"SshPublicKey,omitempty"`
+	SshPublicKey *T `json:"SshPublicKey,omitempty"`
 
 	// SshUsername AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-sshusername
-	SshUsername *string `json:"SshUsername,omitempty"`
+	SshUsername *T `json:"SshUsername,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -16,27 +16,27 @@ type ReportDefinition[T any] struct {
 	// AdditionalArtifacts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-additionalartifacts
-	AdditionalArtifacts []string `json:"AdditionalArtifacts,omitempty"`
+	AdditionalArtifacts []T `json:"AdditionalArtifacts,omitempty"`
 
 	// AdditionalSchemaElements AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-additionalschemaelements
-	AdditionalSchemaElements []string `json:"AdditionalSchemaElements,omitempty"`
+	AdditionalSchemaElements []T `json:"AdditionalSchemaElements,omitempty"`
 
 	// BillingViewArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-billingviewarn
-	BillingViewArn *string `json:"BillingViewArn,omitempty"`
+	BillingViewArn *T `json:"BillingViewArn,omitempty"`
 
 	// Compression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-compression
-	Compression string `json:"Compression"`
+	Compression T `json:"Compression"`
 
 	// Format AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-format
-	Format string `json:"Format"`
+	Format T `json:"Format"`
 
 	// RefreshClosedReports AWS CloudFormation Property
 	// Required: true
@@ -46,32 +46,32 @@ type ReportDefinition[T any] struct {
 	// ReportName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-reportname
-	ReportName string `json:"ReportName"`
+	ReportName T `json:"ReportName"`
 
 	// ReportVersioning AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-reportversioning
-	ReportVersioning string `json:"ReportVersioning"`
+	ReportVersioning T `json:"ReportVersioning"`
 
 	// S3Bucket AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-s3bucket
-	S3Bucket string `json:"S3Bucket"`
+	S3Bucket T `json:"S3Bucket"`
 
 	// S3Prefix AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-s3prefix
-	S3Prefix string `json:"S3Prefix"`
+	S3Prefix T `json:"S3Prefix"`
 
 	// S3Region AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-s3region
-	S3Region string `json:"S3Region"`
+	S3Region T `json:"S3Region"`
 
 	// TimeUnit AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-timeunit
-	TimeUnit string `json:"TimeUnit"`
+	TimeUnit T `json:"TimeUnit"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Deployment_DeploymentComponentUpdatePolicy[T any] struct {
 	// Action AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-deploymentcomponentupdatepolicy.html#cfn-greengrassv2-deployment-deploymentcomponentupdatepolicy-action
-	Action *string `json:"Action,omitempty"`
+	Action *T `json:"Action,omitempty"`
 
 	// TimeoutInSeconds AWS CloudFormation Property
 	// Required: false

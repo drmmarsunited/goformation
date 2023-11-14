@@ -27,12 +27,12 @@ type Profile[T any] struct {
 	// ManagedPolicyArns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-profile.html#cfn-rolesanywhere-profile-managedpolicyarns
-	ManagedPolicyArns []string `json:"ManagedPolicyArns,omitempty"`
+	ManagedPolicyArns []T `json:"ManagedPolicyArns,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-profile.html#cfn-rolesanywhere-profile-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// RequireInstanceProperties AWS CloudFormation Property
 	// Required: false
@@ -42,12 +42,12 @@ type Profile[T any] struct {
 	// RoleArns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-profile.html#cfn-rolesanywhere-profile-rolearns
-	RoleArns []string `json:"RoleArns"`
+	RoleArns []T `json:"RoleArns"`
 
 	// SessionPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-profile.html#cfn-rolesanywhere-profile-sessionpolicy
-	SessionPolicy *string `json:"SessionPolicy,omitempty"`
+	SessionPolicy *T `json:"SessionPolicy,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

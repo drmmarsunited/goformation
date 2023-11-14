@@ -13,12 +13,12 @@ type Topic_RangeConstant[T any] struct {
 	// Maximum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-rangeconstant.html#cfn-quicksight-topic-rangeconstant-maximum
-	Maximum *string `json:"Maximum,omitempty"`
+	Maximum *T `json:"Maximum,omitempty"`
 
 	// Minimum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-rangeconstant.html#cfn-quicksight-topic-rangeconstant-minimum
-	Minimum *string `json:"Minimum,omitempty"`
+	Minimum *T `json:"Minimum,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

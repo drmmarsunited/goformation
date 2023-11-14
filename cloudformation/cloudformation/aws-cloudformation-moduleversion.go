@@ -16,12 +16,12 @@ type ModuleVersion[T any] struct {
 	// ModuleName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html#cfn-cloudformation-moduleversion-modulename
-	ModuleName string `json:"ModuleName"`
+	ModuleName T `json:"ModuleName"`
 
 	// ModulePackage AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html#cfn-cloudformation-moduleversion-modulepackage
-	ModulePackage string `json:"ModulePackage"`
+	ModulePackage T `json:"ModulePackage"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

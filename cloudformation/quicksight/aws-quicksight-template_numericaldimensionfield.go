@@ -18,7 +18,7 @@ type Template_NumericalDimensionField[T any] struct {
 	// FieldId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericaldimensionfield.html#cfn-quicksight-template-numericaldimensionfield-fieldid
-	FieldId string `json:"FieldId"`
+	FieldId T `json:"FieldId"`
 
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Template_NumericalDimensionField[T any] struct {
 	// HierarchyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericaldimensionfield.html#cfn-quicksight-template-numericaldimensionfield-hierarchyid
-	HierarchyId *string `json:"HierarchyId,omitempty"`
+	HierarchyId *T `json:"HierarchyId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

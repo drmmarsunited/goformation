@@ -18,12 +18,12 @@ type RotationSchedule_RotationRules[T any] struct {
 	// Duration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-rotationrules.html#cfn-secretsmanager-rotationschedule-rotationrules-duration
-	Duration *string `json:"Duration,omitempty"`
+	Duration *T `json:"Duration,omitempty"`
 
 	// ScheduleExpression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-rotationrules.html#cfn-secretsmanager-rotationschedule-rotationrules-scheduleexpression
-	ScheduleExpression *string `json:"ScheduleExpression,omitempty"`
+	ScheduleExpression *T `json:"ScheduleExpression,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

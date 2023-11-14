@@ -16,17 +16,17 @@ type App[T any] struct {
 	// AppAssessmentSchedule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html#cfn-resiliencehub-app-appassessmentschedule
-	AppAssessmentSchedule *string `json:"AppAssessmentSchedule,omitempty"`
+	AppAssessmentSchedule *T `json:"AppAssessmentSchedule,omitempty"`
 
 	// AppTemplateBody AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html#cfn-resiliencehub-app-apptemplatebody
-	AppTemplateBody string `json:"AppTemplateBody"`
+	AppTemplateBody T `json:"AppTemplateBody"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html#cfn-resiliencehub-app-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EventSubscriptions AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type App[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html#cfn-resiliencehub-app-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// PermissionModel AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type App[T any] struct {
 	// ResiliencyPolicyArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html#cfn-resiliencehub-app-resiliencypolicyarn
-	ResiliencyPolicyArn *string `json:"ResiliencyPolicyArn,omitempty"`
+	ResiliencyPolicyArn *T `json:"ResiliencyPolicyArn,omitempty"`
 
 	// ResourceMappings AWS CloudFormation Property
 	// Required: true
@@ -56,7 +56,7 @@ type App[T any] struct {
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html#cfn-resiliencehub-app-tags
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

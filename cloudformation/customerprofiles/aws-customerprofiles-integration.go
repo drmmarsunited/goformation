@@ -17,7 +17,7 @@ type Integration[T any] struct {
 	// DomainName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-integration.html#cfn-customerprofiles-integration-domainname
-	DomainName string `json:"DomainName"`
+	DomainName T `json:"DomainName"`
 
 	// FlowDefinition AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Integration[T any] struct {
 	// ObjectTypeName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-integration.html#cfn-customerprofiles-integration-objecttypename
-	ObjectTypeName *string `json:"ObjectTypeName,omitempty"`
+	ObjectTypeName *T `json:"ObjectTypeName,omitempty"`
 
 	// ObjectTypeNames AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type Integration[T any] struct {
 	// Uri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-integration.html#cfn-customerprofiles-integration-uri
-	Uri *string `json:"Uri,omitempty"`
+	Uri *T `json:"Uri,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

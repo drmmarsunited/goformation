@@ -28,7 +28,7 @@ type RuleGroup_Rule[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Priority AWS CloudFormation Property
 	// Required: true

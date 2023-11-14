@@ -17,12 +17,12 @@ type ModelPackageGroup[T any] struct {
 	// ModelPackageGroupDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackagegroup.html#cfn-sagemaker-modelpackagegroup-modelpackagegroupdescription
-	ModelPackageGroupDescription *string `json:"ModelPackageGroupDescription,omitempty"`
+	ModelPackageGroupDescription *T `json:"ModelPackageGroupDescription,omitempty"`
 
 	// ModelPackageGroupName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackagegroup.html#cfn-sagemaker-modelpackagegroup-modelpackagegroupname
-	ModelPackageGroupName string `json:"ModelPackageGroupName"`
+	ModelPackageGroupName T `json:"ModelPackageGroupName"`
 
 	// ModelPackageGroupPolicy AWS CloudFormation Property
 	// Required: false

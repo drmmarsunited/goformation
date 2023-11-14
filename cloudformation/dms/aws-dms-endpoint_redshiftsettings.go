@@ -18,17 +18,17 @@ type Endpoint_RedshiftSettings[T any] struct {
 	// AfterConnectScript AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-afterconnectscript
-	AfterConnectScript *string `json:"AfterConnectScript,omitempty"`
+	AfterConnectScript *T `json:"AfterConnectScript,omitempty"`
 
 	// BucketFolder AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-bucketfolder
-	BucketFolder *string `json:"BucketFolder,omitempty"`
+	BucketFolder *T `json:"BucketFolder,omitempty"`
 
 	// BucketName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-bucketname
-	BucketName *string `json:"BucketName,omitempty"`
+	BucketName *T `json:"BucketName,omitempty"`
 
 	// CaseSensitiveNames AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Endpoint_RedshiftSettings[T any] struct {
 	// DateFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-dateformat
-	DateFormat *string `json:"DateFormat,omitempty"`
+	DateFormat *T `json:"DateFormat,omitempty"`
 
 	// EmptyAsNull AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type Endpoint_RedshiftSettings[T any] struct {
 	// EncryptionMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-encryptionmode
-	EncryptionMode *string `json:"EncryptionMode,omitempty"`
+	EncryptionMode *T `json:"EncryptionMode,omitempty"`
 
 	// ExplicitIds AWS CloudFormation Property
 	// Required: false
@@ -93,37 +93,37 @@ type Endpoint_RedshiftSettings[T any] struct {
 	// ReplaceChars AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-replacechars
-	ReplaceChars *string `json:"ReplaceChars,omitempty"`
+	ReplaceChars *T `json:"ReplaceChars,omitempty"`
 
 	// ReplaceInvalidChars AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-replaceinvalidchars
-	ReplaceInvalidChars *string `json:"ReplaceInvalidChars,omitempty"`
+	ReplaceInvalidChars *T `json:"ReplaceInvalidChars,omitempty"`
 
 	// SecretsManagerAccessRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-secretsmanageraccessrolearn
-	SecretsManagerAccessRoleArn *string `json:"SecretsManagerAccessRoleArn,omitempty"`
+	SecretsManagerAccessRoleArn *T `json:"SecretsManagerAccessRoleArn,omitempty"`
 
 	// SecretsManagerSecretId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-secretsmanagersecretid
-	SecretsManagerSecretId *string `json:"SecretsManagerSecretId,omitempty"`
+	SecretsManagerSecretId *T `json:"SecretsManagerSecretId,omitempty"`
 
 	// ServerSideEncryptionKmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-serversideencryptionkmskeyid
-	ServerSideEncryptionKmsKeyId *string `json:"ServerSideEncryptionKmsKeyId,omitempty"`
+	ServerSideEncryptionKmsKeyId *T `json:"ServerSideEncryptionKmsKeyId,omitempty"`
 
 	// ServiceAccessRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-serviceaccessrolearn
-	ServiceAccessRoleArn *string `json:"ServiceAccessRoleArn,omitempty"`
+	ServiceAccessRoleArn *T `json:"ServiceAccessRoleArn,omitempty"`
 
 	// TimeFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redshiftsettings.html#cfn-dms-endpoint-redshiftsettings-timeformat
-	TimeFormat *string `json:"TimeFormat,omitempty"`
+	TimeFormat *T `json:"TimeFormat,omitempty"`
 
 	// TrimBlanks AWS CloudFormation Property
 	// Required: false

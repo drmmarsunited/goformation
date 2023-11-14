@@ -17,12 +17,12 @@ type NetworkSettings[T any] struct {
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-networksettings.html#cfn-workspacesweb-networksettings-securitygroupids
-	SecurityGroupIds []string `json:"SecurityGroupIds"`
+	SecurityGroupIds []T `json:"SecurityGroupIds"`
 
 	// SubnetIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-networksettings.html#cfn-workspacesweb-networksettings-subnetids
-	SubnetIds []string `json:"SubnetIds"`
+	SubnetIds []T `json:"SubnetIds"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type NetworkSettings[T any] struct {
 	// VpcId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-networksettings.html#cfn-workspacesweb-networksettings-vpcid
-	VpcId string `json:"VpcId"`
+	VpcId T `json:"VpcId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

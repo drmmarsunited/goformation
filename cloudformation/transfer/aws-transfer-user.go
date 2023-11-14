@@ -17,7 +17,7 @@ type User[T any] struct {
 	// HomeDirectory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-homedirectory
-	HomeDirectory *string `json:"HomeDirectory,omitempty"`
+	HomeDirectory *T `json:"HomeDirectory,omitempty"`
 
 	// HomeDirectoryMappings AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type User[T any] struct {
 	// HomeDirectoryType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-homedirectorytype
-	HomeDirectoryType *string `json:"HomeDirectoryType,omitempty"`
+	HomeDirectoryType *T `json:"HomeDirectoryType,omitempty"`
 
 	// Policy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-policy
-	Policy *string `json:"Policy,omitempty"`
+	Policy *T `json:"Policy,omitempty"`
 
 	// PosixProfile AWS CloudFormation Property
 	// Required: false
@@ -42,12 +42,12 @@ type User[T any] struct {
 	// Role AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-role
-	Role string `json:"Role"`
+	Role T `json:"Role"`
 
 	// ServerId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-serverid
-	ServerId string `json:"ServerId"`
+	ServerId T `json:"ServerId"`
 
 	// SshPublicKeys AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,7 @@ type User[T any] struct {
 	// UserName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-username
-	UserName string `json:"UserName"`
+	UserName T `json:"UserName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

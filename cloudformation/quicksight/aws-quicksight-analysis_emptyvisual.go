@@ -18,12 +18,12 @@ type Analysis_EmptyVisual[T any] struct {
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-emptyvisual.html#cfn-quicksight-analysis-emptyvisual-datasetidentifier
-	DataSetIdentifier string `json:"DataSetIdentifier"`
+	DataSetIdentifier T `json:"DataSetIdentifier"`
 
 	// VisualId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-emptyvisual.html#cfn-quicksight-analysis-emptyvisual-visualid
-	VisualId string `json:"VisualId"`
+	VisualId T `json:"VisualId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

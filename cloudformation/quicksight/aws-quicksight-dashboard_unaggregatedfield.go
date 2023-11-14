@@ -18,7 +18,7 @@ type Dashboard_UnaggregatedField[T any] struct {
 	// FieldId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-unaggregatedfield.html#cfn-quicksight-dashboard-unaggregatedfield-fieldid
-	FieldId string `json:"FieldId"`
+	FieldId T `json:"FieldId"`
 
 	// FormatConfiguration AWS CloudFormation Property
 	// Required: false

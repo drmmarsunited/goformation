@@ -13,17 +13,17 @@ type TaskDefinition_Device[T any] struct {
 	// ContainerPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html#cfn-ecs-taskdefinition-device-containerpath
-	ContainerPath *string `json:"ContainerPath,omitempty"`
+	ContainerPath *T `json:"ContainerPath,omitempty"`
 
 	// HostPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html#cfn-ecs-taskdefinition-device-hostpath
-	HostPath *string `json:"HostPath,omitempty"`
+	HostPath *T `json:"HostPath,omitempty"`
 
 	// Permissions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html#cfn-ecs-taskdefinition-device-permissions
-	Permissions []string `json:"Permissions,omitempty"`
+	Permissions []T `json:"Permissions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

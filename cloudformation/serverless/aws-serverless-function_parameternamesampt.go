@@ -13,7 +13,7 @@ type Function_ParameterNameSAMPT[T any] struct {
 	// ParameterName AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-	ParameterName string `json:"ParameterName"`
+	ParameterName T `json:"ParameterName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

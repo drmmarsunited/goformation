@@ -32,27 +32,27 @@ type Monitor[T any] struct {
 	// MonitorName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-internetmonitor-monitor.html#cfn-internetmonitor-monitor-monitorname
-	MonitorName string `json:"MonitorName"`
+	MonitorName T `json:"MonitorName"`
 
 	// Resources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-internetmonitor-monitor.html#cfn-internetmonitor-monitor-resources
-	Resources []string `json:"Resources,omitempty"`
+	Resources []T `json:"Resources,omitempty"`
 
 	// ResourcesToAdd AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-internetmonitor-monitor.html#cfn-internetmonitor-monitor-resourcestoadd
-	ResourcesToAdd []string `json:"ResourcesToAdd,omitempty"`
+	ResourcesToAdd []T `json:"ResourcesToAdd,omitempty"`
 
 	// ResourcesToRemove AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-internetmonitor-monitor.html#cfn-internetmonitor-monitor-resourcestoremove
-	ResourcesToRemove []string `json:"ResourcesToRemove,omitempty"`
+	ResourcesToRemove []T `json:"ResourcesToRemove,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-internetmonitor-monitor.html#cfn-internetmonitor-monitor-status
-	Status *string `json:"Status,omitempty"`
+	Status *T `json:"Status,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

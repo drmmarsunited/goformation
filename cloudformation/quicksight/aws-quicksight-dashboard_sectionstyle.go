@@ -13,7 +13,7 @@ type Dashboard_SectionStyle[T any] struct {
 	// Height AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sectionstyle.html#cfn-quicksight-dashboard-sectionstyle-height
-	Height *string `json:"Height,omitempty"`
+	Height *T `json:"Height,omitempty"`
 
 	// Padding AWS CloudFormation Property
 	// Required: false

@@ -13,7 +13,7 @@ type ImageRecipe_ComponentConfiguration[T any] struct {
 	// ComponentArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-componentconfiguration.html#cfn-imagebuilder-imagerecipe-componentconfiguration-componentarn
-	ComponentArn *string `json:"ComponentArn,omitempty"`
+	ComponentArn *T `json:"ComponentArn,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false

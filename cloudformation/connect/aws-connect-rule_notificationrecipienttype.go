@@ -13,12 +13,12 @@ type Rule_NotificationRecipientType[T any] struct {
 	// UserArns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-notificationrecipienttype.html#cfn-connect-rule-notificationrecipienttype-userarns
-	UserArns []string `json:"UserArns,omitempty"`
+	UserArns []T `json:"UserArns,omitempty"`
 
 	// UserTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-notificationrecipienttype.html#cfn-connect-rule-notificationrecipienttype-usertags
-	UserTags map[string]string `json:"UserTags,omitempty"`
+	UserTags map[string]T `json:"UserTags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

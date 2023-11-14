@@ -13,12 +13,12 @@ type ContainerRecipe_TargetContainerRepository[T any] struct {
 	// RepositoryName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-targetcontainerrepository.html#cfn-imagebuilder-containerrecipe-targetcontainerrepository-repositoryname
-	RepositoryName *string `json:"RepositoryName,omitempty"`
+	RepositoryName *T `json:"RepositoryName,omitempty"`
 
 	// Service AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-targetcontainerrepository.html#cfn-imagebuilder-containerrecipe-targetcontainerrepository-service
-	Service *string `json:"Service,omitempty"`
+	Service *T `json:"Service,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

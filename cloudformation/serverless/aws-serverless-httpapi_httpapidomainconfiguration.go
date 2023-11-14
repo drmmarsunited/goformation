@@ -13,22 +13,22 @@ type HttpApi_HttpApiDomainConfiguration[T any] struct {
 	// BasePath AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#domain-configuration-object
-	BasePath *string `json:"BasePath,omitempty"`
+	BasePath *T `json:"BasePath,omitempty"`
 
 	// CertificateArn AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#domain-configuration-object
-	CertificateArn string `json:"CertificateArn"`
+	CertificateArn T `json:"CertificateArn"`
 
 	// DomainName AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#domain-configuration-object
-	DomainName string `json:"DomainName"`
+	DomainName T `json:"DomainName"`
 
 	// EndpointConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#domain-configuration-object
-	EndpointConfiguration *string `json:"EndpointConfiguration,omitempty"`
+	EndpointConfiguration *T `json:"EndpointConfiguration,omitempty"`
 
 	// MutualTlsAuthentication AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type HttpApi_HttpApiDomainConfiguration[T any] struct {
 	// SecurityPolicy AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#domain-configuration-object
-	SecurityPolicy *string `json:"SecurityPolicy,omitempty"`
+	SecurityPolicy *T `json:"SecurityPolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

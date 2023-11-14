@@ -13,7 +13,7 @@ type WorkGroup_AclConfiguration[T any] struct {
 	// S3AclOption AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-aclconfiguration.html#cfn-athena-workgroup-aclconfiguration-s3acloption
-	S3AclOption string `json:"S3AclOption"`
+	S3AclOption T `json:"S3AclOption"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

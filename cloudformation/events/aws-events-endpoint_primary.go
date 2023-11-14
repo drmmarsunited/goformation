@@ -13,7 +13,7 @@ type Endpoint_Primary[T any] struct {
 	// HealthCheck AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-endpoint-primary.html#cfn-events-endpoint-primary-healthcheck
-	HealthCheck string `json:"HealthCheck"`
+	HealthCheck T `json:"HealthCheck"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

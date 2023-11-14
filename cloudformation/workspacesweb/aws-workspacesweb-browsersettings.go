@@ -17,17 +17,17 @@ type BrowserSettings[T any] struct {
 	// AdditionalEncryptionContext AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-browsersettings.html#cfn-workspacesweb-browsersettings-additionalencryptioncontext
-	AdditionalEncryptionContext map[string]string `json:"AdditionalEncryptionContext,omitempty"`
+	AdditionalEncryptionContext map[string]T `json:"AdditionalEncryptionContext,omitempty"`
 
 	// BrowserPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-browsersettings.html#cfn-workspacesweb-browsersettings-browserpolicy
-	BrowserPolicy *string `json:"BrowserPolicy,omitempty"`
+	BrowserPolicy *T `json:"BrowserPolicy,omitempty"`
 
 	// CustomerManagedKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-browsersettings.html#cfn-workspacesweb-browsersettings-customermanagedkey
-	CustomerManagedKey *string `json:"CustomerManagedKey,omitempty"`
+	CustomerManagedKey *T `json:"CustomerManagedKey,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

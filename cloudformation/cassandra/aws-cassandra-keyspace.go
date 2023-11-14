@@ -17,7 +17,7 @@ type Keyspace[T any] struct {
 	// KeyspaceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-keyspace.html#cfn-cassandra-keyspace-keyspacename
-	KeyspaceName *string `json:"KeyspaceName,omitempty"`
+	KeyspaceName *T `json:"KeyspaceName,omitempty"`
 
 	// ReplicationSpecification AWS CloudFormation Property
 	// Required: false

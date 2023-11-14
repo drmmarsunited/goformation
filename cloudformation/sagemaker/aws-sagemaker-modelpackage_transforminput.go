@@ -13,12 +13,12 @@ type ModelPackage_TransformInput[T any] struct {
 	// CompressionType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transforminput.html#cfn-sagemaker-modelpackage-transforminput-compressiontype
-	CompressionType *string `json:"CompressionType,omitempty"`
+	CompressionType *T `json:"CompressionType,omitempty"`
 
 	// ContentType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transforminput.html#cfn-sagemaker-modelpackage-transforminput-contenttype
-	ContentType *string `json:"ContentType,omitempty"`
+	ContentType *T `json:"ContentType,omitempty"`
 
 	// DataSource AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type ModelPackage_TransformInput[T any] struct {
 	// SplitType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transforminput.html#cfn-sagemaker-modelpackage-transforminput-splittype
-	SplitType *string `json:"SplitType,omitempty"`
+	SplitType *T `json:"SplitType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

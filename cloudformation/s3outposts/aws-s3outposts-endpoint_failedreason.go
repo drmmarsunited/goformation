@@ -13,12 +13,12 @@ type Endpoint_FailedReason[T any] struct {
 	// ErrorCode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-endpoint-failedreason.html#cfn-s3outposts-endpoint-failedreason-errorcode
-	ErrorCode *string `json:"ErrorCode,omitempty"`
+	ErrorCode *T `json:"ErrorCode,omitempty"`
 
 	// Message AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-endpoint-failedreason.html#cfn-s3outposts-endpoint-failedreason-message
-	Message *string `json:"Message,omitempty"`
+	Message *T `json:"Message,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

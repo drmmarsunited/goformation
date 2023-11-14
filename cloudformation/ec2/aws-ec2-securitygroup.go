@@ -17,12 +17,12 @@ type SecurityGroup[T any] struct {
 	// GroupDescription AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-groupdescription
-	GroupDescription string `json:"GroupDescription"`
+	GroupDescription T `json:"GroupDescription"`
 
 	// GroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-groupname
-	GroupName *string `json:"GroupName,omitempty"`
+	GroupName *T `json:"GroupName,omitempty"`
 
 	// SecurityGroupEgress AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type SecurityGroup[T any] struct {
 	// VpcId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-vpcid
-	VpcId *string `json:"VpcId,omitempty"`
+	VpcId *T `json:"VpcId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

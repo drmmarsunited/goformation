@@ -13,7 +13,7 @@ type VerifiedAccessInstance_KinesisDataFirehose[T any] struct {
 	// DeliveryStream AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessinstance-kinesisdatafirehose.html#cfn-ec2-verifiedaccessinstance-kinesisdatafirehose-deliverystream
-	DeliveryStream *string `json:"DeliveryStream,omitempty"`
+	DeliveryStream *T `json:"DeliveryStream,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false

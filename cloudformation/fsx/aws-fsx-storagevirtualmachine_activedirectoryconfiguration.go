@@ -13,7 +13,7 @@ type StorageVirtualMachine_ActiveDirectoryConfiguration[T any] struct {
 	// NetBiosName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-activedirectoryconfiguration-netbiosname
-	NetBiosName *string `json:"NetBiosName,omitempty"`
+	NetBiosName *T `json:"NetBiosName,omitempty"`
 
 	// SelfManagedActiveDirectoryConfiguration AWS CloudFormation Property
 	// Required: false

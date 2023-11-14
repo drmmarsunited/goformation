@@ -18,7 +18,7 @@ type Route_WeightedTarget[T any] struct {
 	// VirtualNode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-weightedtarget.html#cfn-appmesh-route-weightedtarget-virtualnode
-	VirtualNode string `json:"VirtualNode"`
+	VirtualNode T `json:"VirtualNode"`
 
 	// Weight AWS CloudFormation Property
 	// Required: true

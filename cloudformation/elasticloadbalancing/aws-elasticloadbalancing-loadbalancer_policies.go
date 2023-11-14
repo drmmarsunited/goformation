@@ -18,22 +18,22 @@ type LoadBalancer_Policies[T any] struct {
 	// InstancePorts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html#cfn-ec2-elb-policy-instanceports
-	InstancePorts []string `json:"InstancePorts,omitempty"`
+	InstancePorts []T `json:"InstancePorts,omitempty"`
 
 	// LoadBalancerPorts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html#cfn-ec2-elb-policy-loadbalancerports
-	LoadBalancerPorts []string `json:"LoadBalancerPorts,omitempty"`
+	LoadBalancerPorts []T `json:"LoadBalancerPorts,omitempty"`
 
 	// PolicyName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html#cfn-ec2-elb-policy-policyname
-	PolicyName string `json:"PolicyName"`
+	PolicyName T `json:"PolicyName"`
 
 	// PolicyType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html#cfn-ec2-elb-policy-policytype
-	PolicyType string `json:"PolicyType"`
+	PolicyType T `json:"PolicyType"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,12 @@ type Template_TableFieldOptions[T any] struct {
 	// Order AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablefieldoptions.html#cfn-quicksight-template-tablefieldoptions-order
-	Order []string `json:"Order,omitempty"`
+	Order []T `json:"Order,omitempty"`
+
+	// PinnedFieldOptions AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tablefieldoptions.html#cfn-quicksight-template-tablefieldoptions-pinnedfieldoptions
+	PinnedFieldOptions *Template_TablePinnedFieldOptions[any] `json:"PinnedFieldOptions,omitempty"`
 
 	// SelectedFieldOptions AWS CloudFormation Property
 	// Required: false

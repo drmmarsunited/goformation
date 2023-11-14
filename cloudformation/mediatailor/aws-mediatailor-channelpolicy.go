@@ -16,7 +16,7 @@ type ChannelPolicy[T any] struct {
 	// ChannelName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-channelpolicy.html#cfn-mediatailor-channelpolicy-channelname
-	ChannelName string `json:"ChannelName"`
+	ChannelName T `json:"ChannelName"`
 
 	// Policy AWS CloudFormation Property
 	// Required: true

@@ -17,22 +17,22 @@ type FileSystem[T any] struct {
 	// BackupId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-backupid
-	BackupId *string `json:"BackupId,omitempty"`
+	BackupId *T `json:"BackupId,omitempty"`
 
 	// FileSystemType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-filesystemtype
-	FileSystemType string `json:"FileSystemType"`
+	FileSystemType T `json:"FileSystemType"`
 
 	// FileSystemTypeVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-filesystemtypeversion
-	FileSystemTypeVersion *string `json:"FileSystemTypeVersion,omitempty"`
+	FileSystemTypeVersion *T `json:"FileSystemTypeVersion,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-kmskeyid
-	KmsKeyId *string `json:"KmsKeyId,omitempty"`
+	KmsKeyId *T `json:"KmsKeyId,omitempty"`
 
 	// LustreConfiguration AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type FileSystem[T any] struct {
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-securitygroupids
-	SecurityGroupIds []string `json:"SecurityGroupIds,omitempty"`
+	SecurityGroupIds []T `json:"SecurityGroupIds,omitempty"`
 
 	// StorageCapacity AWS CloudFormation Property
 	// Required: false
@@ -62,12 +62,12 @@ type FileSystem[T any] struct {
 	// StorageType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-storagetype
-	StorageType *string `json:"StorageType,omitempty"`
+	StorageType *T `json:"StorageType,omitempty"`
 
 	// SubnetIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-subnetids
-	SubnetIds []string `json:"SubnetIds"`
+	SubnetIds []T `json:"SubnetIds"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

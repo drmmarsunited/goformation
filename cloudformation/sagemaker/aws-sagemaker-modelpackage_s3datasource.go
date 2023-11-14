@@ -13,12 +13,12 @@ type ModelPackage_S3DataSource[T any] struct {
 	// S3DataType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-s3datasource.html#cfn-sagemaker-modelpackage-s3datasource-s3datatype
-	S3DataType string `json:"S3DataType"`
+	S3DataType T `json:"S3DataType"`
 
 	// S3Uri AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-s3datasource.html#cfn-sagemaker-modelpackage-s3datasource-s3uri
-	S3Uri string `json:"S3Uri"`
+	S3Uri T `json:"S3Uri"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

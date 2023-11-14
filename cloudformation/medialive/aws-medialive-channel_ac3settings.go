@@ -13,7 +13,7 @@ type Channel_Ac3Settings[T any] struct {
 	// AttenuationControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html#cfn-medialive-channel-ac3settings-attenuationcontrol
-	AttenuationControl *string `json:"AttenuationControl,omitempty"`
+	AttenuationControl *T `json:"AttenuationControl,omitempty"`
 
 	// Bitrate AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Channel_Ac3Settings[T any] struct {
 	// BitstreamMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html#cfn-medialive-channel-ac3settings-bitstreammode
-	BitstreamMode *string `json:"BitstreamMode,omitempty"`
+	BitstreamMode *T `json:"BitstreamMode,omitempty"`
 
 	// CodingMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html#cfn-medialive-channel-ac3settings-codingmode
-	CodingMode *string `json:"CodingMode,omitempty"`
+	CodingMode *T `json:"CodingMode,omitempty"`
 
 	// Dialnorm AWS CloudFormation Property
 	// Required: false
@@ -38,17 +38,17 @@ type Channel_Ac3Settings[T any] struct {
 	// DrcProfile AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html#cfn-medialive-channel-ac3settings-drcprofile
-	DrcProfile *string `json:"DrcProfile,omitempty"`
+	DrcProfile *T `json:"DrcProfile,omitempty"`
 
 	// LfeFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html#cfn-medialive-channel-ac3settings-lfefilter
-	LfeFilter *string `json:"LfeFilter,omitempty"`
+	LfeFilter *T `json:"LfeFilter,omitempty"`
 
 	// MetadataControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html#cfn-medialive-channel-ac3settings-metadatacontrol
-	MetadataControl *string `json:"MetadataControl,omitempty"`
+	MetadataControl *T `json:"MetadataControl,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -17,22 +17,22 @@ type OriginEndpoint[T any] struct {
 	// ChannelGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-originendpoint.html#cfn-mediapackagev2-originendpoint-channelgroupname
-	ChannelGroupName *string `json:"ChannelGroupName,omitempty"`
+	ChannelGroupName *T `json:"ChannelGroupName,omitempty"`
 
 	// ChannelName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-originendpoint.html#cfn-mediapackagev2-originendpoint-channelname
-	ChannelName *string `json:"ChannelName,omitempty"`
+	ChannelName *T `json:"ChannelName,omitempty"`
 
 	// ContainerType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-originendpoint.html#cfn-mediapackagev2-originendpoint-containertype
-	ContainerType string `json:"ContainerType"`
+	ContainerType T `json:"ContainerType"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-originendpoint.html#cfn-mediapackagev2-originendpoint-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// HlsManifests AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type OriginEndpoint[T any] struct {
 	// OriginEndpointName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-originendpoint.html#cfn-mediapackagev2-originendpoint-originendpointname
-	OriginEndpointName *string `json:"OriginEndpointName,omitempty"`
+	OriginEndpointName *T `json:"OriginEndpointName,omitempty"`
 
 	// Segment AWS CloudFormation Property
 	// Required: false

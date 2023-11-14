@@ -13,7 +13,7 @@ type Policy_ThirdPartyFirewallPolicy[T any] struct {
 	// FirewallDeploymentModel AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fms-policy-thirdpartyfirewallpolicy.html#cfn-fms-policy-thirdpartyfirewallpolicy-firewalldeploymentmodel
-	FirewallDeploymentModel string `json:"FirewallDeploymentModel"`
+	FirewallDeploymentModel T `json:"FirewallDeploymentModel"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

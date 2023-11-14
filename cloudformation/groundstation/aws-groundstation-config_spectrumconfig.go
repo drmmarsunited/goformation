@@ -23,7 +23,7 @@ type Config_SpectrumConfig[T any] struct {
 	// Polarization AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-spectrumconfig.html#cfn-groundstation-config-spectrumconfig-polarization
-	Polarization *string `json:"Polarization,omitempty"`
+	Polarization *T `json:"Polarization,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

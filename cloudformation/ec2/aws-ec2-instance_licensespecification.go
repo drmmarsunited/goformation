@@ -13,7 +13,7 @@ type Instance_LicenseSpecification[T any] struct {
 	// LicenseConfigurationArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-licensespecification.html#cfn-ec2-instance-licensespecification-licenseconfigurationarn
-	LicenseConfigurationArn string `json:"LicenseConfigurationArn"`
+	LicenseConfigurationArn T `json:"LicenseConfigurationArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

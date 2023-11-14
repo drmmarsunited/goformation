@@ -22,7 +22,7 @@ type BotAlias[T any] struct {
 	// BotAliasName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-botaliasname
-	BotAliasName string `json:"BotAliasName"`
+	BotAliasName T `json:"BotAliasName"`
 
 	// BotAliasTags AWS CloudFormation Property
 	// Required: false
@@ -32,12 +32,12 @@ type BotAlias[T any] struct {
 	// BotId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-botid
-	BotId string `json:"BotId"`
+	BotId T `json:"BotId"`
 
 	// BotVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-botversion
-	BotVersion *string `json:"BotVersion,omitempty"`
+	BotVersion *T `json:"BotVersion,omitempty"`
 
 	// ConversationLogSettings AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type BotAlias[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// SentimentAnalysisSettings AWS CloudFormation Property
 	// Required: false

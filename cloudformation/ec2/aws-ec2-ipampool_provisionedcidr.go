@@ -13,7 +13,7 @@ type IPAMPool_ProvisionedCidr[T any] struct {
 	// Cidr AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipampool-provisionedcidr.html#cfn-ec2-ipampool-provisionedcidr-cidr
-	Cidr string `json:"Cidr"`
+	Cidr T `json:"Cidr"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

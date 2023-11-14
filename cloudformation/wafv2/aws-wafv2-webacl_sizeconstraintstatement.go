@@ -13,7 +13,7 @@ type WebACL_SizeConstraintStatement[T any] struct {
 	// ComparisonOperator AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-sizeconstraintstatement.html#cfn-wafv2-webacl-sizeconstraintstatement-comparisonoperator
-	ComparisonOperator string `json:"ComparisonOperator"`
+	ComparisonOperator T `json:"ComparisonOperator"`
 
 	// FieldToMatch AWS CloudFormation Property
 	// Required: true

@@ -13,7 +13,7 @@ type Project_ProjectBuildBatchConfig[T any] struct {
 	// BatchReportMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectbuildbatchconfig.html#cfn-codebuild-project-projectbuildbatchconfig-batchreportmode
-	BatchReportMode *string `json:"BatchReportMode,omitempty"`
+	BatchReportMode *T `json:"BatchReportMode,omitempty"`
 
 	// CombineArtifacts AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Project_ProjectBuildBatchConfig[T any] struct {
 	// ServiceRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectbuildbatchconfig.html#cfn-codebuild-project-projectbuildbatchconfig-servicerole
-	ServiceRole *string `json:"ServiceRole,omitempty"`
+	ServiceRole *T `json:"ServiceRole,omitempty"`
 
 	// TimeoutInMins AWS CloudFormation Property
 	// Required: false

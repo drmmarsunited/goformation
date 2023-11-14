@@ -23,12 +23,12 @@ type NetworkInsightsAnalysis_Explanation[T any] struct {
 	// Address AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-address
-	Address *string `json:"Address,omitempty"`
+	Address *T `json:"Address,omitempty"`
 
 	// Addresses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-addresses
-	Addresses []string `json:"Addresses,omitempty"`
+	Addresses []T `json:"Addresses,omitempty"`
 
 	// AttachedTo AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type NetworkInsightsAnalysis_Explanation[T any] struct {
 	// AvailabilityZones AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-availabilityzones
-	AvailabilityZones []string `json:"AvailabilityZones,omitempty"`
+	AvailabilityZones []T `json:"AvailabilityZones,omitempty"`
 
 	// Cidrs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-cidrs
-	Cidrs []string `json:"Cidrs,omitempty"`
+	Cidrs []T `json:"Cidrs,omitempty"`
 
 	// ClassicLoadBalancerListener AWS CloudFormation Property
 	// Required: false
@@ -58,12 +58,12 @@ type NetworkInsightsAnalysis_Explanation[T any] struct {
 	// ComponentAccount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-componentaccount
-	ComponentAccount *string `json:"ComponentAccount,omitempty"`
+	ComponentAccount *T `json:"ComponentAccount,omitempty"`
 
 	// ComponentRegion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-componentregion
-	ComponentRegion *string `json:"ComponentRegion,omitempty"`
+	ComponentRegion *T `json:"ComponentRegion,omitempty"`
 
 	// CustomerGateway AWS CloudFormation Property
 	// Required: false
@@ -83,7 +83,7 @@ type NetworkInsightsAnalysis_Explanation[T any] struct {
 	// Direction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-direction
-	Direction *string `json:"Direction,omitempty"`
+	Direction *T `json:"Direction,omitempty"`
 
 	// ElasticLoadBalancerListener AWS CloudFormation Property
 	// Required: false
@@ -93,7 +93,7 @@ type NetworkInsightsAnalysis_Explanation[T any] struct {
 	// ExplanationCode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-explanationcode
-	ExplanationCode *string `json:"ExplanationCode,omitempty"`
+	ExplanationCode *T `json:"ExplanationCode,omitempty"`
 
 	// IngressRouteTable AWS CloudFormation Property
 	// Required: false
@@ -108,7 +108,7 @@ type NetworkInsightsAnalysis_Explanation[T any] struct {
 	// LoadBalancerArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancerarn
-	LoadBalancerArn *string `json:"LoadBalancerArn,omitempty"`
+	LoadBalancerArn *T `json:"LoadBalancerArn,omitempty"`
 
 	// LoadBalancerListenerPort AWS CloudFormation Property
 	// Required: false
@@ -138,7 +138,7 @@ type NetworkInsightsAnalysis_Explanation[T any] struct {
 	// MissingComponent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-missingcomponent
-	MissingComponent *string `json:"MissingComponent,omitempty"`
+	MissingComponent *T `json:"MissingComponent,omitempty"`
 
 	// NatGateway AWS CloudFormation Property
 	// Required: false
@@ -153,7 +153,7 @@ type NetworkInsightsAnalysis_Explanation[T any] struct {
 	// PacketField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-packetfield
-	PacketField *string `json:"PacketField,omitempty"`
+	PacketField *T `json:"PacketField,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
@@ -173,7 +173,7 @@ type NetworkInsightsAnalysis_Explanation[T any] struct {
 	// Protocols AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-protocols
-	Protocols []string `json:"Protocols,omitempty"`
+	Protocols []T `json:"Protocols,omitempty"`
 
 	// RouteTable AWS CloudFormation Property
 	// Required: false
@@ -208,7 +208,7 @@ type NetworkInsightsAnalysis_Explanation[T any] struct {
 	// State AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-state
-	State *string `json:"State,omitempty"`
+	State *T `json:"State,omitempty"`
 
 	// Subnet AWS CloudFormation Property
 	// Required: false

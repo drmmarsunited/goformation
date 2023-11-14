@@ -18,7 +18,7 @@ type Route_HttpRouteMatch[T any] struct {
 	// Method AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-method
-	Method *string `json:"Method,omitempty"`
+	Method *T `json:"Method,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Route_HttpRouteMatch[T any] struct {
 	// Prefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-prefix
-	Prefix *string `json:"Prefix,omitempty"`
+	Prefix *T `json:"Prefix,omitempty"`
 
 	// QueryParameters AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Route_HttpRouteMatch[T any] struct {
 	// Scheme AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-scheme
-	Scheme *string `json:"Scheme,omitempty"`
+	Scheme *T `json:"Scheme,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

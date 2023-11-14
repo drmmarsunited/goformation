@@ -13,12 +13,12 @@ type DataSource_WebCrawlerSeedUrlConfiguration[T any] struct {
 	// SeedUrls AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerseedurlconfiguration.html#cfn-kendra-datasource-webcrawlerseedurlconfiguration-seedurls
-	SeedUrls []string `json:"SeedUrls"`
+	SeedUrls []T `json:"SeedUrls"`
 
 	// WebCrawlerMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerseedurlconfiguration.html#cfn-kendra-datasource-webcrawlerseedurlconfiguration-webcrawlermode
-	WebCrawlerMode *string `json:"WebCrawlerMode,omitempty"`
+	WebCrawlerMode *T `json:"WebCrawlerMode,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

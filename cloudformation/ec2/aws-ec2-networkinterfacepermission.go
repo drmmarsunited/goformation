@@ -16,17 +16,17 @@ type NetworkInterfacePermission[T any] struct {
 	// AwsAccountId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-awsaccountid
-	AwsAccountId string `json:"AwsAccountId"`
+	AwsAccountId T `json:"AwsAccountId"`
 
 	// NetworkInterfaceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-networkinterfaceid
-	NetworkInterfaceId string `json:"NetworkInterfaceId"`
+	NetworkInterfaceId T `json:"NetworkInterfaceId"`
 
 	// Permission AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-permission
-	Permission string `json:"Permission"`
+	Permission T `json:"Permission"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

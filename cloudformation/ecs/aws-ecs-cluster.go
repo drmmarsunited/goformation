@@ -17,12 +17,12 @@ type Cluster[T any] struct {
 	// CapacityProviders AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-capacityproviders
-	CapacityProviders []string `json:"CapacityProviders,omitempty"`
+	CapacityProviders []T `json:"CapacityProviders,omitempty"`
 
 	// ClusterName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-clustername
-	ClusterName *string `json:"ClusterName,omitempty"`
+	ClusterName *T `json:"ClusterName,omitempty"`
 
 	// ClusterSettings AWS CloudFormation Property
 	// Required: false

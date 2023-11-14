@@ -13,12 +13,12 @@ type Channel_UdpGroupSettings[T any] struct {
 	// InputLossAction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpgroupsettings.html#cfn-medialive-channel-udpgroupsettings-inputlossaction
-	InputLossAction *string `json:"InputLossAction,omitempty"`
+	InputLossAction *T `json:"InputLossAction,omitempty"`
 
 	// TimedMetadataId3Frame AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpgroupsettings.html#cfn-medialive-channel-udpgroupsettings-timedmetadataid3frame
-	TimedMetadataId3Frame *string `json:"TimedMetadataId3Frame,omitempty"`
+	TimedMetadataId3Frame *T `json:"TimedMetadataId3Frame,omitempty"`
 
 	// TimedMetadataId3Period AWS CloudFormation Property
 	// Required: false

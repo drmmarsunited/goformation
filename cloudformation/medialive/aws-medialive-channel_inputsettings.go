@@ -23,12 +23,12 @@ type Channel_InputSettings[T any] struct {
 	// DeblockFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-deblockfilter
-	DeblockFilter *string `json:"DeblockFilter,omitempty"`
+	DeblockFilter *T `json:"DeblockFilter,omitempty"`
 
 	// DenoiseFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-denoisefilter
-	DenoiseFilter *string `json:"DenoiseFilter,omitempty"`
+	DenoiseFilter *T `json:"DenoiseFilter,omitempty"`
 
 	// FilterStrength AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Channel_InputSettings[T any] struct {
 	// InputFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-inputfilter
-	InputFilter *string `json:"InputFilter,omitempty"`
+	InputFilter *T `json:"InputFilter,omitempty"`
 
 	// NetworkInputSettings AWS CloudFormation Property
 	// Required: false
@@ -53,12 +53,12 @@ type Channel_InputSettings[T any] struct {
 	// Smpte2038DataPreference AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-smpte2038datapreference
-	Smpte2038DataPreference *string `json:"Smpte2038DataPreference,omitempty"`
+	Smpte2038DataPreference *T `json:"Smpte2038DataPreference,omitempty"`
 
 	// SourceEndBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-sourceendbehavior
-	SourceEndBehavior *string `json:"SourceEndBehavior,omitempty"`
+	SourceEndBehavior *T `json:"SourceEndBehavior,omitempty"`
 
 	// VideoSelector AWS CloudFormation Property
 	// Required: false

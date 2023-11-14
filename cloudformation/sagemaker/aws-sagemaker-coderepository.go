@@ -17,7 +17,7 @@ type CodeRepository[T any] struct {
 	// CodeRepositoryName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-coderepository.html#cfn-sagemaker-coderepository-coderepositoryname
-	CodeRepositoryName *string `json:"CodeRepositoryName,omitempty"`
+	CodeRepositoryName *T `json:"CodeRepositoryName,omitempty"`
 
 	// GitConfig AWS CloudFormation Property
 	// Required: true

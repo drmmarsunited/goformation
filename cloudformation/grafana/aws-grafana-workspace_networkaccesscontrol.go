@@ -13,12 +13,12 @@ type Workspace_NetworkAccessControl[T any] struct {
 	// PrefixListIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-networkaccesscontrol.html#cfn-grafana-workspace-networkaccesscontrol-prefixlistids
-	PrefixListIds []string `json:"PrefixListIds,omitempty"`
+	PrefixListIds []T `json:"PrefixListIds,omitempty"`
 
 	// VpceIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-networkaccesscontrol.html#cfn-grafana-workspace-networkaccesscontrol-vpceids
-	VpceIds []string `json:"VpceIds,omitempty"`
+	VpceIds []T `json:"VpceIds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

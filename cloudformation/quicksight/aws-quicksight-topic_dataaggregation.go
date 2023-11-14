@@ -13,12 +13,12 @@ type Topic_DataAggregation[T any] struct {
 	// DatasetRowDateGranularity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-dataaggregation.html#cfn-quicksight-topic-dataaggregation-datasetrowdategranularity
-	DatasetRowDateGranularity *string `json:"DatasetRowDateGranularity,omitempty"`
+	DatasetRowDateGranularity *T `json:"DatasetRowDateGranularity,omitempty"`
 
 	// DefaultDateColumnName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-dataaggregation.html#cfn-quicksight-topic-dataaggregation-defaultdatecolumnname
-	DefaultDateColumnName *string `json:"DefaultDateColumnName,omitempty"`
+	DefaultDateColumnName *T `json:"DefaultDateColumnName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

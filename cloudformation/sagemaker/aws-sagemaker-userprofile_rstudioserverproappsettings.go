@@ -13,12 +13,12 @@ type UserProfile_RStudioServerProAppSettings[T any] struct {
 	// AccessStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-rstudioserverproappsettings.html#cfn-sagemaker-userprofile-rstudioserverproappsettings-accessstatus
-	AccessStatus *string `json:"AccessStatus,omitempty"`
+	AccessStatus *T `json:"AccessStatus,omitempty"`
 
 	// UserGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-rstudioserverproappsettings.html#cfn-sagemaker-userprofile-rstudioserverproappsettings-usergroup
-	UserGroup *string `json:"UserGroup,omitempty"`
+	UserGroup *T `json:"UserGroup,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

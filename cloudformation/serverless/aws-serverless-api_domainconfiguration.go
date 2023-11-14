@@ -13,22 +13,22 @@ type Api_DomainConfiguration[T any] struct {
 	// BasePath AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-api-domainconfiguration.html#sam-api-domainconfiguration-basepath
-	BasePath []string `json:"BasePath,omitempty"`
+	BasePath []T `json:"BasePath,omitempty"`
 
 	// CertificateArn AWS CloudFormation Property
 	// Required: true
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-api-domainconfiguration.html#sam-api-domainconfiguration-certificatearn
-	CertificateArn string `json:"CertificateArn"`
+	CertificateArn T `json:"CertificateArn"`
 
 	// DomainName AWS CloudFormation Property
 	// Required: true
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-api-domainconfiguration.html#sam-api-domainconfiguration-domainname
-	DomainName string `json:"DomainName"`
+	DomainName T `json:"DomainName"`
 
 	// EndpointConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-api-domainconfiguration.html#sam-api-domainconfiguration-endpointconfiguration
-	EndpointConfiguration *string `json:"EndpointConfiguration,omitempty"`
+	EndpointConfiguration *T `json:"EndpointConfiguration,omitempty"`
 
 	// MutualTlsAuthentication AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Api_DomainConfiguration[T any] struct {
 	// OwnershipVerificationCertificateArn AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-api-domainconfiguration.html#sam-api-domainconfiguration-ownershipverificationcertificatearn
-	OwnershipVerificationCertificateArn *string `json:"OwnershipVerificationCertificateArn,omitempty"`
+	OwnershipVerificationCertificateArn *T `json:"OwnershipVerificationCertificateArn,omitempty"`
 
 	// Route53 AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Api_DomainConfiguration[T any] struct {
 	// SecurityPolicy AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-api-domainconfiguration.html#sam-api-domainconfiguration-securitypolicy
-	SecurityPolicy *string `json:"SecurityPolicy,omitempty"`
+	SecurityPolicy *T `json:"SecurityPolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

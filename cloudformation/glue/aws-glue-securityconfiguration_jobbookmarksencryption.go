@@ -13,12 +13,12 @@ type SecurityConfiguration_JobBookmarksEncryption[T any] struct {
 	// JobBookmarksEncryptionMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-jobbookmarksencryption.html#cfn-glue-securityconfiguration-jobbookmarksencryption-jobbookmarksencryptionmode
-	JobBookmarksEncryptionMode *string `json:"JobBookmarksEncryptionMode,omitempty"`
+	JobBookmarksEncryptionMode *T `json:"JobBookmarksEncryptionMode,omitempty"`
 
 	// KmsKeyArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-jobbookmarksencryption.html#cfn-glue-securityconfiguration-jobbookmarksencryption-kmskeyarn
-	KmsKeyArn *string `json:"KmsKeyArn,omitempty"`
+	KmsKeyArn *T `json:"KmsKeyArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

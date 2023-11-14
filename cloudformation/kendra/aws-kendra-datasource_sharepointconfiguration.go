@@ -23,12 +23,12 @@ type DataSource_SharePointConfiguration[T any] struct {
 	// DocumentTitleFieldName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-documenttitlefieldname
-	DocumentTitleFieldName *string `json:"DocumentTitleFieldName,omitempty"`
+	DocumentTitleFieldName *T `json:"DocumentTitleFieldName,omitempty"`
 
 	// ExclusionPatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-exclusionpatterns
-	ExclusionPatterns []string `json:"ExclusionPatterns,omitempty"`
+	ExclusionPatterns []T `json:"ExclusionPatterns,omitempty"`
 
 	// FieldMappings AWS CloudFormation Property
 	// Required: false
@@ -38,17 +38,17 @@ type DataSource_SharePointConfiguration[T any] struct {
 	// InclusionPatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-inclusionpatterns
-	InclusionPatterns []string `json:"InclusionPatterns,omitempty"`
+	InclusionPatterns []T `json:"InclusionPatterns,omitempty"`
 
 	// SecretArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-secretarn
-	SecretArn string `json:"SecretArn"`
+	SecretArn T `json:"SecretArn"`
 
 	// SharePointVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-sharepointversion
-	SharePointVersion string `json:"SharePointVersion"`
+	SharePointVersion T `json:"SharePointVersion"`
 
 	// SslCertificateS3Path AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type DataSource_SharePointConfiguration[T any] struct {
 	// Urls AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-urls
-	Urls []string `json:"Urls"`
+	Urls []T `json:"Urls"`
 
 	// UseChangeLog AWS CloudFormation Property
 	// Required: false

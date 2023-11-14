@@ -18,7 +18,7 @@ type DataSource_OneDriveConfiguration[T any] struct {
 	// ExclusionPatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-exclusionpatterns
-	ExclusionPatterns []string `json:"ExclusionPatterns,omitempty"`
+	ExclusionPatterns []T `json:"ExclusionPatterns,omitempty"`
 
 	// FieldMappings AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type DataSource_OneDriveConfiguration[T any] struct {
 	// InclusionPatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-inclusionpatterns
-	InclusionPatterns []string `json:"InclusionPatterns,omitempty"`
+	InclusionPatterns []T `json:"InclusionPatterns,omitempty"`
 
 	// OneDriveUsers AWS CloudFormation Property
 	// Required: true
@@ -38,12 +38,12 @@ type DataSource_OneDriveConfiguration[T any] struct {
 	// SecretArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-secretarn
-	SecretArn string `json:"SecretArn"`
+	SecretArn T `json:"SecretArn"`
 
 	// TenantDomain AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-tenantdomain
-	TenantDomain string `json:"TenantDomain"`
+	TenantDomain T `json:"TenantDomain"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

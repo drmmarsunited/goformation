@@ -28,7 +28,7 @@ type Domain_EBSOptions[T any] struct {
 	// VolumeType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-ebsoptions.html#cfn-elasticsearch-domain-ebsoptions-volumetype
-	VolumeType *string `json:"VolumeType,omitempty"`
+	VolumeType *T `json:"VolumeType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

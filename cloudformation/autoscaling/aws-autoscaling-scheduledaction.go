@@ -16,7 +16,7 @@ type ScheduledAction[T any] struct {
 	// AutoScalingGroupName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html#cfn-autoscaling-scheduledaction-autoscalinggroupname
-	AutoScalingGroupName string `json:"AutoScalingGroupName"`
+	AutoScalingGroupName T `json:"AutoScalingGroupName"`
 
 	// DesiredCapacity AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type ScheduledAction[T any] struct {
 	// EndTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html#cfn-autoscaling-scheduledaction-endtime
-	EndTime *string `json:"EndTime,omitempty"`
+	EndTime *T `json:"EndTime,omitempty"`
 
 	// MaxSize AWS CloudFormation Property
 	// Required: false
@@ -41,17 +41,17 @@ type ScheduledAction[T any] struct {
 	// Recurrence AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html#cfn-autoscaling-scheduledaction-recurrence
-	Recurrence *string `json:"Recurrence,omitempty"`
+	Recurrence *T `json:"Recurrence,omitempty"`
 
 	// StartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html#cfn-autoscaling-scheduledaction-starttime
-	StartTime *string `json:"StartTime,omitempty"`
+	StartTime *T `json:"StartTime,omitempty"`
 
 	// TimeZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html#cfn-autoscaling-scheduledaction-timezone
-	TimeZone *string `json:"TimeZone,omitempty"`
+	TimeZone *T `json:"TimeZone,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

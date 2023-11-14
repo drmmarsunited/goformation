@@ -22,7 +22,7 @@ type Application[T any] struct {
 	// ApplicationDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-application.html#cfn-kinesisanalyticsv2-application-applicationdescription
-	ApplicationDescription *string `json:"ApplicationDescription,omitempty"`
+	ApplicationDescription *T `json:"ApplicationDescription,omitempty"`
 
 	// ApplicationMaintenanceConfiguration AWS CloudFormation Property
 	// Required: false
@@ -32,12 +32,12 @@ type Application[T any] struct {
 	// ApplicationMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-application.html#cfn-kinesisanalyticsv2-application-applicationmode
-	ApplicationMode *string `json:"ApplicationMode,omitempty"`
+	ApplicationMode *T `json:"ApplicationMode,omitempty"`
 
 	// ApplicationName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-application.html#cfn-kinesisanalyticsv2-application-applicationname
-	ApplicationName *string `json:"ApplicationName,omitempty"`
+	ApplicationName *T `json:"ApplicationName,omitempty"`
 
 	// RunConfiguration AWS CloudFormation Property
 	// Required: false
@@ -47,12 +47,12 @@ type Application[T any] struct {
 	// RuntimeEnvironment AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-application.html#cfn-kinesisanalyticsv2-application-runtimeenvironment
-	RuntimeEnvironment string `json:"RuntimeEnvironment"`
+	RuntimeEnvironment T `json:"RuntimeEnvironment"`
 
 	// ServiceExecutionRole AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-application.html#cfn-kinesisanalyticsv2-application-serviceexecutionrole
-	ServiceExecutionRole string `json:"ServiceExecutionRole"`
+	ServiceExecutionRole T `json:"ServiceExecutionRole"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

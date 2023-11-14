@@ -23,7 +23,7 @@ type Application_CheckpointConfiguration[T any] struct {
 	// ConfigurationType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-checkpointconfiguration.html#cfn-kinesisanalyticsv2-application-checkpointconfiguration-configurationtype
-	ConfigurationType string `json:"ConfigurationType"`
+	ConfigurationType T `json:"ConfigurationType"`
 
 	// MinPauseBetweenCheckpoints AWS CloudFormation Property
 	// Required: false

@@ -13,17 +13,17 @@ type Function_EventBridgeRuleEvent[T any] struct {
 	// EventBusName AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#eventbridgerule
-	EventBusName *string `json:"EventBusName,omitempty"`
+	EventBusName *T `json:"EventBusName,omitempty"`
 
 	// Input AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#eventbridgerule
-	Input *string `json:"Input,omitempty"`
+	Input *T `json:"Input,omitempty"`
 
 	// InputPath AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#eventbridgerule
-	InputPath *string `json:"InputPath,omitempty"`
+	InputPath *T `json:"InputPath,omitempty"`
 
 	// Pattern AWS CloudFormation Property
 	// Required: true

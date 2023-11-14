@@ -26,7 +26,7 @@ type ListenerRule[T any] struct {
 	// ListenerArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-listenerarn
-	ListenerArn *string `json:"ListenerArn,omitempty"`
+	ListenerArn *T `json:"ListenerArn,omitempty"`
 
 	// Priority AWS CloudFormation Property
 	// Required: true

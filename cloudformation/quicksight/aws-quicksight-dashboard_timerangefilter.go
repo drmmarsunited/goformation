@@ -23,7 +23,7 @@ type Dashboard_TimeRangeFilter[T any] struct {
 	// FilterId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-timerangefilter.html#cfn-quicksight-dashboard-timerangefilter-filterid
-	FilterId string `json:"FilterId"`
+	FilterId T `json:"FilterId"`
 
 	// IncludeMaximum AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Dashboard_TimeRangeFilter[T any] struct {
 	// NullOption AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-timerangefilter.html#cfn-quicksight-dashboard-timerangefilter-nulloption
-	NullOption string `json:"NullOption"`
+	NullOption T `json:"NullOption"`
 
 	// RangeMaximumValue AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Dashboard_TimeRangeFilter[T any] struct {
 	// TimeGranularity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-timerangefilter.html#cfn-quicksight-dashboard-timerangefilter-timegranularity
-	TimeGranularity *string `json:"TimeGranularity,omitempty"`
+	TimeGranularity *T `json:"TimeGranularity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

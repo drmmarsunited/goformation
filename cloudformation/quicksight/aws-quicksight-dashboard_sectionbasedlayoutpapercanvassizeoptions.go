@@ -18,12 +18,12 @@ type Dashboard_SectionBasedLayoutPaperCanvasSizeOptions[T any] struct {
 	// PaperOrientation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sectionbasedlayoutpapercanvassizeoptions.html#cfn-quicksight-dashboard-sectionbasedlayoutpapercanvassizeoptions-paperorientation
-	PaperOrientation *string `json:"PaperOrientation,omitempty"`
+	PaperOrientation *T `json:"PaperOrientation,omitempty"`
 
 	// PaperSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sectionbasedlayoutpapercanvassizeoptions.html#cfn-quicksight-dashboard-sectionbasedlayoutpapercanvassizeoptions-papersize
-	PaperSize *string `json:"PaperSize,omitempty"`
+	PaperSize *T `json:"PaperSize,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

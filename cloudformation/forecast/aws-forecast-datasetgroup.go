@@ -17,17 +17,17 @@ type DatasetGroup[T any] struct {
 	// DatasetArns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-datasetgroup.html#cfn-forecast-datasetgroup-datasetarns
-	DatasetArns []string `json:"DatasetArns,omitempty"`
+	DatasetArns []T `json:"DatasetArns,omitempty"`
 
 	// DatasetGroupName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-datasetgroup.html#cfn-forecast-datasetgroup-datasetgroupname
-	DatasetGroupName string `json:"DatasetGroupName"`
+	DatasetGroupName T `json:"DatasetGroupName"`
 
 	// Domain AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-datasetgroup.html#cfn-forecast-datasetgroup-domain
-	Domain string `json:"Domain"`
+	Domain T `json:"Domain"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

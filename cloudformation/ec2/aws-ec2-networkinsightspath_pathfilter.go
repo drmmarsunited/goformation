@@ -13,7 +13,7 @@ type NetworkInsightsPath_PathFilter[T any] struct {
 	// DestinationAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightspath-pathfilter.html#cfn-ec2-networkinsightspath-pathfilter-destinationaddress
-	DestinationAddress *string `json:"DestinationAddress,omitempty"`
+	DestinationAddress *T `json:"DestinationAddress,omitempty"`
 
 	// DestinationPortRange AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type NetworkInsightsPath_PathFilter[T any] struct {
 	// SourceAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightspath-pathfilter.html#cfn-ec2-networkinsightspath-pathfilter-sourceaddress
-	SourceAddress *string `json:"SourceAddress,omitempty"`
+	SourceAddress *T `json:"SourceAddress,omitempty"`
 
 	// SourcePortRange AWS CloudFormation Property
 	// Required: false

@@ -23,7 +23,7 @@ type Analysis_TableOptions[T any] struct {
 	// Orientation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableoptions.html#cfn-quicksight-analysis-tableoptions-orientation
-	Orientation *string `json:"Orientation,omitempty"`
+	Orientation *T `json:"Orientation,omitempty"`
 
 	// RowAlternateColorOptions AWS CloudFormation Property
 	// Required: false

@@ -16,7 +16,7 @@ type CustomResource[T any] struct {
 	// ServiceToken AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cfn-customresource.html#cfn-customresource-servicetoken
-	ServiceToken string `json:"ServiceToken"`
+	ServiceToken T `json:"ServiceToken"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

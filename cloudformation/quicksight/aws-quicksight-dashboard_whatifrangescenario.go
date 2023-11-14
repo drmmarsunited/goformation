@@ -13,12 +13,12 @@ type Dashboard_WhatIfRangeScenario[T any] struct {
 	// EndDate AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-whatifrangescenario.html#cfn-quicksight-dashboard-whatifrangescenario-enddate
-	EndDate string `json:"EndDate"`
+	EndDate T `json:"EndDate"`
 
 	// StartDate AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-whatifrangescenario.html#cfn-quicksight-dashboard-whatifrangescenario-startdate
-	StartDate string `json:"StartDate"`
+	StartDate T `json:"StartDate"`
 
 	// Value AWS CloudFormation Property
 	// Required: true

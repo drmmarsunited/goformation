@@ -18,22 +18,22 @@ type Api_CorsConfiguration[T any] struct {
 	// AllowHeaders AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#cors-configuration
-	AllowHeaders *string `json:"AllowHeaders,omitempty"`
+	AllowHeaders *T `json:"AllowHeaders,omitempty"`
 
 	// AllowMethods AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#cors-configuration
-	AllowMethods *string `json:"AllowMethods,omitempty"`
+	AllowMethods *T `json:"AllowMethods,omitempty"`
 
 	// AllowOrigin AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#cors-configuration
-	AllowOrigin string `json:"AllowOrigin"`
+	AllowOrigin T `json:"AllowOrigin"`
 
 	// MaxAge AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#cors-configuration
-	MaxAge *string `json:"MaxAge,omitempty"`
+	MaxAge *T `json:"MaxAge,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Channel_DvbSubSourceSettings[T any] struct {
 	// OcrLanguage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubsourcesettings.html#cfn-medialive-channel-dvbsubsourcesettings-ocrlanguage
-	OcrLanguage *string `json:"OcrLanguage,omitempty"`
+	OcrLanguage *T `json:"OcrLanguage,omitempty"`
 
 	// Pid AWS CloudFormation Property
 	// Required: false

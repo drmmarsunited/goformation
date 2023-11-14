@@ -13,7 +13,7 @@ type InstanceGroupConfig_CloudWatchAlarmDefinition[T any] struct {
 	// ComparisonOperator AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition-comparisonoperator
-	ComparisonOperator string `json:"ComparisonOperator"`
+	ComparisonOperator T `json:"ComparisonOperator"`
 
 	// Dimensions AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type InstanceGroupConfig_CloudWatchAlarmDefinition[T any] struct {
 	// MetricName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition-metricname
-	MetricName string `json:"MetricName"`
+	MetricName T `json:"MetricName"`
 
 	// Namespace AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition-namespace
-	Namespace *string `json:"Namespace,omitempty"`
+	Namespace *T `json:"Namespace,omitempty"`
 
 	// Period AWS CloudFormation Property
 	// Required: true
@@ -43,7 +43,7 @@ type InstanceGroupConfig_CloudWatchAlarmDefinition[T any] struct {
 	// Statistic AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition-statistic
-	Statistic *string `json:"Statistic,omitempty"`
+	Statistic *T `json:"Statistic,omitempty"`
 
 	// Threshold AWS CloudFormation Property
 	// Required: true
@@ -53,7 +53,7 @@ type InstanceGroupConfig_CloudWatchAlarmDefinition[T any] struct {
 	// Unit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition-unit
-	Unit *string `json:"Unit,omitempty"`
+	Unit *T `json:"Unit,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

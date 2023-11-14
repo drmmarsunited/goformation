@@ -13,7 +13,7 @@ type Application_GlueDataCatalogConfiguration[T any] struct {
 	// DatabaseARN AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-gluedatacatalogconfiguration.html#cfn-kinesisanalyticsv2-application-gluedatacatalogconfiguration-databasearn
-	DatabaseARN *string `json:"DatabaseARN,omitempty"`
+	DatabaseARN *T `json:"DatabaseARN,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

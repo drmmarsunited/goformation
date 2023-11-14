@@ -18,17 +18,17 @@ type Dashboard_TimeRangeDrillDownFilter[T any] struct {
 	// RangeMaximum AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-timerangedrilldownfilter.html#cfn-quicksight-dashboard-timerangedrilldownfilter-rangemaximum
-	RangeMaximum string `json:"RangeMaximum"`
+	RangeMaximum T `json:"RangeMaximum"`
 
 	// RangeMinimum AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-timerangedrilldownfilter.html#cfn-quicksight-dashboard-timerangedrilldownfilter-rangeminimum
-	RangeMinimum string `json:"RangeMinimum"`
+	RangeMinimum T `json:"RangeMinimum"`
 
 	// TimeGranularity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-timerangedrilldownfilter.html#cfn-quicksight-dashboard-timerangedrilldownfilter-timegranularity
-	TimeGranularity string `json:"TimeGranularity"`
+	TimeGranularity T `json:"TimeGranularity"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

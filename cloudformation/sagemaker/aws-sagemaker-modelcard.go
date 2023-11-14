@@ -32,12 +32,12 @@ type ModelCard[T any] struct {
 	// ModelCardName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-modelcardname
-	ModelCardName string `json:"ModelCardName"`
+	ModelCardName T `json:"ModelCardName"`
 
 	// ModelCardStatus AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-modelcardstatus
-	ModelCardStatus string `json:"ModelCardStatus"`
+	ModelCardStatus T `json:"ModelCardStatus"`
 
 	// SecurityConfig AWS CloudFormation Property
 	// Required: false

@@ -21,12 +21,12 @@ type AccessPoint[T any] struct {
 	// ClientToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-accesspoint.html#cfn-efs-accesspoint-clienttoken
-	ClientToken *string `json:"ClientToken,omitempty"`
+	ClientToken *T `json:"ClientToken,omitempty"`
 
 	// FileSystemId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-accesspoint.html#cfn-efs-accesspoint-filesystemid
-	FileSystemId string `json:"FileSystemId"`
+	FileSystemId T `json:"FileSystemId"`
 
 	// PosixUser AWS CloudFormation Property
 	// Required: false

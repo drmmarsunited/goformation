@@ -27,17 +27,17 @@ type Job[T any] struct {
 	// DatasetName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-datasetname
-	DatasetName *string `json:"DatasetName,omitempty"`
+	DatasetName *T `json:"DatasetName,omitempty"`
 
 	// EncryptionKeyArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-encryptionkeyarn
-	EncryptionKeyArn *string `json:"EncryptionKeyArn,omitempty"`
+	EncryptionKeyArn *T `json:"EncryptionKeyArn,omitempty"`
 
 	// EncryptionMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-encryptionmode
-	EncryptionMode *string `json:"EncryptionMode,omitempty"`
+	EncryptionMode *T `json:"EncryptionMode,omitempty"`
 
 	// JobSample AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type Job[T any] struct {
 	// LogSubscription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-logsubscription
-	LogSubscription *string `json:"LogSubscription,omitempty"`
+	LogSubscription *T `json:"LogSubscription,omitempty"`
 
 	// MaxCapacity AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,7 @@ type Job[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// OutputLocation AWS CloudFormation Property
 	// Required: false
@@ -82,7 +82,7 @@ type Job[T any] struct {
 	// ProjectName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-projectname
-	ProjectName *string `json:"ProjectName,omitempty"`
+	ProjectName *T `json:"ProjectName,omitempty"`
 
 	// Recipe AWS CloudFormation Property
 	// Required: false
@@ -92,7 +92,7 @@ type Job[T any] struct {
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -107,7 +107,7 @@ type Job[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// ValidationConfigurations AWS CloudFormation Property
 	// Required: false

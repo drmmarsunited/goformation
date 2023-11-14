@@ -13,17 +13,17 @@ type AccessPoint_PosixUser[T any] struct {
 	// Gid AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-posixuser.html#cfn-efs-accesspoint-posixuser-gid
-	Gid string `json:"Gid"`
+	Gid T `json:"Gid"`
 
 	// SecondaryGids AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-posixuser.html#cfn-efs-accesspoint-posixuser-secondarygids
-	SecondaryGids []string `json:"SecondaryGids,omitempty"`
+	SecondaryGids []T `json:"SecondaryGids,omitempty"`
 
 	// Uid AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-posixuser.html#cfn-efs-accesspoint-posixuser-uid
-	Uid string `json:"Uid"`
+	Uid T `json:"Uid"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

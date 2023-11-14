@@ -13,17 +13,17 @@ type Endpoint_RedisSettings[T any] struct {
 	// AuthPassword AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redissettings.html#cfn-dms-endpoint-redissettings-authpassword
-	AuthPassword *string `json:"AuthPassword,omitempty"`
+	AuthPassword *T `json:"AuthPassword,omitempty"`
 
 	// AuthType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redissettings.html#cfn-dms-endpoint-redissettings-authtype
-	AuthType *string `json:"AuthType,omitempty"`
+	AuthType *T `json:"AuthType,omitempty"`
 
 	// AuthUserName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redissettings.html#cfn-dms-endpoint-redissettings-authusername
-	AuthUserName *string `json:"AuthUserName,omitempty"`
+	AuthUserName *T `json:"AuthUserName,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type Endpoint_RedisSettings[T any] struct {
 	// ServerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redissettings.html#cfn-dms-endpoint-redissettings-servername
-	ServerName *string `json:"ServerName,omitempty"`
+	ServerName *T `json:"ServerName,omitempty"`
 
 	// SslCaCertificateArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redissettings.html#cfn-dms-endpoint-redissettings-sslcacertificatearn
-	SslCaCertificateArn *string `json:"SslCaCertificateArn,omitempty"`
+	SslCaCertificateArn *T `json:"SslCaCertificateArn,omitempty"`
 
 	// SslSecurityProtocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redissettings.html#cfn-dms-endpoint-redissettings-sslsecurityprotocol
-	SslSecurityProtocol *string `json:"SslSecurityProtocol,omitempty"`
+	SslSecurityProtocol *T `json:"SslSecurityProtocol,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

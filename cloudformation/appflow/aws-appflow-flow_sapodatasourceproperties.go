@@ -13,7 +13,7 @@ type Flow_SAPODataSourceProperties[T any] struct {
 	// ObjectPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sapodatasourceproperties.html#cfn-appflow-flow-sapodatasourceproperties-objectpath
-	ObjectPath string `json:"ObjectPath"`
+	ObjectPath T `json:"ObjectPath"`
 
 	// paginationConfig AWS CloudFormation Property
 	// Required: false

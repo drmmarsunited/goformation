@@ -16,12 +16,12 @@ type TrafficMirrorFilterRule[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DestinationCidrBlock AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-destinationcidrblock
-	DestinationCidrBlock string `json:"DestinationCidrBlock"`
+	DestinationCidrBlock T `json:"DestinationCidrBlock"`
 
 	// DestinationPortRange AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type TrafficMirrorFilterRule[T any] struct {
 	// RuleAction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-ruleaction
-	RuleAction string `json:"RuleAction"`
+	RuleAction T `json:"RuleAction"`
 
 	// RuleNumber AWS CloudFormation Property
 	// Required: true
@@ -46,7 +46,7 @@ type TrafficMirrorFilterRule[T any] struct {
 	// SourceCidrBlock AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-sourcecidrblock
-	SourceCidrBlock string `json:"SourceCidrBlock"`
+	SourceCidrBlock T `json:"SourceCidrBlock"`
 
 	// SourcePortRange AWS CloudFormation Property
 	// Required: false
@@ -56,12 +56,12 @@ type TrafficMirrorFilterRule[T any] struct {
 	// TrafficDirection AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-trafficdirection
-	TrafficDirection string `json:"TrafficDirection"`
+	TrafficDirection T `json:"TrafficDirection"`
 
 	// TrafficMirrorFilterId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorfilterid
-	TrafficMirrorFilterId string `json:"TrafficMirrorFilterId"`
+	TrafficMirrorFilterId T `json:"TrafficMirrorFilterId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

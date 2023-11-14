@@ -7,38 +7,38 @@ import (
 )
 
 // AutoScalingGroup_InstancesDistribution AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup.InstancesDistribution)
-// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancesdistribution.html
+// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancesdistribution.html
 type AutoScalingGroup_InstancesDistribution[T any] struct {
 
 	// OnDemandAllocationStrategy AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-ondemandallocationstrategy
-	OnDemandAllocationStrategy *string `json:"OnDemandAllocationStrategy,omitempty"`
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-ondemandallocationstrategy
+	OnDemandAllocationStrategy *T `json:"OnDemandAllocationStrategy,omitempty"`
 
 	// OnDemandBaseCapacity AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-ondemandbasecapacity
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-ondemandbasecapacity
 	OnDemandBaseCapacity *T `json:"OnDemandBaseCapacity,omitempty"`
 
 	// OnDemandPercentageAboveBaseCapacity AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-ondemandpercentageabovebasecapacity
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-ondemandpercentageabovebasecapacity
 	OnDemandPercentageAboveBaseCapacity *T `json:"OnDemandPercentageAboveBaseCapacity,omitempty"`
 
 	// SpotAllocationStrategy AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-spotallocationstrategy
-	SpotAllocationStrategy *string `json:"SpotAllocationStrategy,omitempty"`
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-spotallocationstrategy
+	SpotAllocationStrategy *T `json:"SpotAllocationStrategy,omitempty"`
 
 	// SpotInstancePools AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-spotinstancepools
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-spotinstancepools
 	SpotInstancePools *T `json:"SpotInstancePools,omitempty"`
 
 	// SpotMaxPrice AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-spotmaxprice
-	SpotMaxPrice *string `json:"SpotMaxPrice,omitempty"`
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-spotmaxprice
+	SpotMaxPrice *T `json:"SpotMaxPrice,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

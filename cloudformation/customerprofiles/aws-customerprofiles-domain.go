@@ -17,12 +17,12 @@ type Domain[T any] struct {
 	// DeadLetterQueueUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-domain.html#cfn-customerprofiles-domain-deadletterqueueurl
-	DeadLetterQueueUrl *string `json:"DeadLetterQueueUrl,omitempty"`
+	DeadLetterQueueUrl *T `json:"DeadLetterQueueUrl,omitempty"`
 
 	// DefaultEncryptionKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-domain.html#cfn-customerprofiles-domain-defaultencryptionkey
-	DefaultEncryptionKey *string `json:"DefaultEncryptionKey,omitempty"`
+	DefaultEncryptionKey *T `json:"DefaultEncryptionKey,omitempty"`
 
 	// DefaultExpirationDays AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,17 @@ type Domain[T any] struct {
 	// DomainName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-domain.html#cfn-customerprofiles-domain-domainname
-	DomainName string `json:"DomainName"`
+	DomainName T `json:"DomainName"`
+
+	// Matching AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-domain.html#cfn-customerprofiles-domain-matching
+	Matching *Domain_Matching[any] `json:"Matching,omitempty"`
+
+	// RuleBasedMatching AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-domain.html#cfn-customerprofiles-domain-rulebasedmatching
+	RuleBasedMatching *Domain_RuleBasedMatching[any] `json:"RuleBasedMatching,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

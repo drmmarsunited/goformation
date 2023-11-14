@@ -18,7 +18,7 @@ type MLTransform_TransformEncryption[T any] struct {
 	// TaskRunSecurityConfigurationName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformencryption.html#cfn-glue-mltransform-transformencryption-taskrunsecurityconfigurationname
-	TaskRunSecurityConfigurationName *string `json:"TaskRunSecurityConfigurationName,omitempty"`
+	TaskRunSecurityConfigurationName *T `json:"TaskRunSecurityConfigurationName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

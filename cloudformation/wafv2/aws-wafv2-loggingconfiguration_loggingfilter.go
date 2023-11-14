@@ -13,7 +13,7 @@ type LoggingConfiguration_LoggingFilter[T any] struct {
 	// DefaultBehavior AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-loggingfilter.html#cfn-wafv2-loggingconfiguration-loggingfilter-defaultbehavior
-	DefaultBehavior string `json:"DefaultBehavior"`
+	DefaultBehavior T `json:"DefaultBehavior"`
 
 	// Filters AWS CloudFormation Property
 	// Required: true

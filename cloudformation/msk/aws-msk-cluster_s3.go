@@ -13,7 +13,7 @@ type Cluster_S3[T any] struct {
 	// Bucket AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-bucket
-	Bucket *string `json:"Bucket,omitempty"`
+	Bucket *T `json:"Bucket,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type Cluster_S3[T any] struct {
 	// Prefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-prefix
-	Prefix *string `json:"Prefix,omitempty"`
+	Prefix *T `json:"Prefix,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

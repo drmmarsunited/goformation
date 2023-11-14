@@ -16,17 +16,17 @@ type InsightRule[T any] struct {
 	// RuleBody AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-insightrule.html#cfn-cloudwatch-insightrule-rulebody
-	RuleBody string `json:"RuleBody"`
+	RuleBody T `json:"RuleBody"`
 
 	// RuleName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-insightrule.html#cfn-cloudwatch-insightrule-rulename
-	RuleName string `json:"RuleName"`
+	RuleName T `json:"RuleName"`
 
 	// RuleState AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-insightrule.html#cfn-cloudwatch-insightrule-rulestate
-	RuleState string `json:"RuleState"`
+	RuleState T `json:"RuleState"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

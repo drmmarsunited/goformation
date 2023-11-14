@@ -13,27 +13,27 @@ type Channel_HlsGroupSettings[T any] struct {
 	// AdMarkers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-admarkers
-	AdMarkers []string `json:"AdMarkers,omitempty"`
+	AdMarkers []T `json:"AdMarkers,omitempty"`
 
 	// BaseUrlContent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-baseurlcontent
-	BaseUrlContent *string `json:"BaseUrlContent,omitempty"`
+	BaseUrlContent *T `json:"BaseUrlContent,omitempty"`
 
 	// BaseUrlContent1 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-baseurlcontent1
-	BaseUrlContent1 *string `json:"BaseUrlContent1,omitempty"`
+	BaseUrlContent1 *T `json:"BaseUrlContent1,omitempty"`
 
 	// BaseUrlManifest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-baseurlmanifest
-	BaseUrlManifest *string `json:"BaseUrlManifest,omitempty"`
+	BaseUrlManifest *T `json:"BaseUrlManifest,omitempty"`
 
 	// BaseUrlManifest1 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-baseurlmanifest1
-	BaseUrlManifest1 *string `json:"BaseUrlManifest1,omitempty"`
+	BaseUrlManifest1 *T `json:"BaseUrlManifest1,omitempty"`
 
 	// CaptionLanguageMappings AWS CloudFormation Property
 	// Required: false
@@ -43,22 +43,22 @@ type Channel_HlsGroupSettings[T any] struct {
 	// CaptionLanguageSetting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-captionlanguagesetting
-	CaptionLanguageSetting *string `json:"CaptionLanguageSetting,omitempty"`
+	CaptionLanguageSetting *T `json:"CaptionLanguageSetting,omitempty"`
 
 	// ClientCache AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-clientcache
-	ClientCache *string `json:"ClientCache,omitempty"`
+	ClientCache *T `json:"ClientCache,omitempty"`
 
 	// CodecSpecification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-codecspecification
-	CodecSpecification *string `json:"CodecSpecification,omitempty"`
+	CodecSpecification *T `json:"CodecSpecification,omitempty"`
 
 	// ConstantIv AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-constantiv
-	ConstantIv *string `json:"ConstantIv,omitempty"`
+	ConstantIv *T `json:"ConstantIv,omitempty"`
 
 	// Destination AWS CloudFormation Property
 	// Required: false
@@ -68,17 +68,17 @@ type Channel_HlsGroupSettings[T any] struct {
 	// DirectoryStructure AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-directorystructure
-	DirectoryStructure *string `json:"DirectoryStructure,omitempty"`
+	DirectoryStructure *T `json:"DirectoryStructure,omitempty"`
 
 	// DiscontinuityTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-discontinuitytags
-	DiscontinuityTags *string `json:"DiscontinuityTags,omitempty"`
+	DiscontinuityTags *T `json:"DiscontinuityTags,omitempty"`
 
 	// EncryptionType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-encryptiontype
-	EncryptionType *string `json:"EncryptionType,omitempty"`
+	EncryptionType *T `json:"EncryptionType,omitempty"`
 
 	// HlsCdnSettings AWS CloudFormation Property
 	// Required: false
@@ -88,17 +88,17 @@ type Channel_HlsGroupSettings[T any] struct {
 	// HlsId3SegmentTagging AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-hlsid3segmenttagging
-	HlsId3SegmentTagging *string `json:"HlsId3SegmentTagging,omitempty"`
+	HlsId3SegmentTagging *T `json:"HlsId3SegmentTagging,omitempty"`
 
 	// IFrameOnlyPlaylists AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-iframeonlyplaylists
-	IFrameOnlyPlaylists *string `json:"IFrameOnlyPlaylists,omitempty"`
+	IFrameOnlyPlaylists *T `json:"IFrameOnlyPlaylists,omitempty"`
 
 	// IncompleteSegmentBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-incompletesegmentbehavior
-	IncompleteSegmentBehavior *string `json:"IncompleteSegmentBehavior,omitempty"`
+	IncompleteSegmentBehavior *T `json:"IncompleteSegmentBehavior,omitempty"`
 
 	// IndexNSegments AWS CloudFormation Property
 	// Required: false
@@ -108,17 +108,17 @@ type Channel_HlsGroupSettings[T any] struct {
 	// InputLossAction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-inputlossaction
-	InputLossAction *string `json:"InputLossAction,omitempty"`
+	InputLossAction *T `json:"InputLossAction,omitempty"`
 
 	// IvInManifest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-ivinmanifest
-	IvInManifest *string `json:"IvInManifest,omitempty"`
+	IvInManifest *T `json:"IvInManifest,omitempty"`
 
 	// IvSource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-ivsource
-	IvSource *string `json:"IvSource,omitempty"`
+	IvSource *T `json:"IvSource,omitempty"`
 
 	// KeepSegments AWS CloudFormation Property
 	// Required: false
@@ -128,12 +128,12 @@ type Channel_HlsGroupSettings[T any] struct {
 	// KeyFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-keyformat
-	KeyFormat *string `json:"KeyFormat,omitempty"`
+	KeyFormat *T `json:"KeyFormat,omitempty"`
 
 	// KeyFormatVersions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-keyformatversions
-	KeyFormatVersions *string `json:"KeyFormatVersions,omitempty"`
+	KeyFormatVersions *T `json:"KeyFormatVersions,omitempty"`
 
 	// KeyProviderSettings AWS CloudFormation Property
 	// Required: false
@@ -143,12 +143,12 @@ type Channel_HlsGroupSettings[T any] struct {
 	// ManifestCompression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-manifestcompression
-	ManifestCompression *string `json:"ManifestCompression,omitempty"`
+	ManifestCompression *T `json:"ManifestCompression,omitempty"`
 
 	// ManifestDurationFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-manifestdurationformat
-	ManifestDurationFormat *string `json:"ManifestDurationFormat,omitempty"`
+	ManifestDurationFormat *T `json:"ManifestDurationFormat,omitempty"`
 
 	// MinSegmentLength AWS CloudFormation Property
 	// Required: false
@@ -158,22 +158,22 @@ type Channel_HlsGroupSettings[T any] struct {
 	// Mode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-mode
-	Mode *string `json:"Mode,omitempty"`
+	Mode *T `json:"Mode,omitempty"`
 
 	// OutputSelection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-outputselection
-	OutputSelection *string `json:"OutputSelection,omitempty"`
+	OutputSelection *T `json:"OutputSelection,omitempty"`
 
 	// ProgramDateTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-programdatetime
-	ProgramDateTime *string `json:"ProgramDateTime,omitempty"`
+	ProgramDateTime *T `json:"ProgramDateTime,omitempty"`
 
 	// ProgramDateTimeClock AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-programdatetimeclock
-	ProgramDateTimeClock *string `json:"ProgramDateTimeClock,omitempty"`
+	ProgramDateTimeClock *T `json:"ProgramDateTimeClock,omitempty"`
 
 	// ProgramDateTimePeriod AWS CloudFormation Property
 	// Required: false
@@ -183,7 +183,7 @@ type Channel_HlsGroupSettings[T any] struct {
 	// RedundantManifest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-redundantmanifest
-	RedundantManifest *string `json:"RedundantManifest,omitempty"`
+	RedundantManifest *T `json:"RedundantManifest,omitempty"`
 
 	// SegmentLength AWS CloudFormation Property
 	// Required: false
@@ -193,7 +193,7 @@ type Channel_HlsGroupSettings[T any] struct {
 	// SegmentationMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-segmentationmode
-	SegmentationMode *string `json:"SegmentationMode,omitempty"`
+	SegmentationMode *T `json:"SegmentationMode,omitempty"`
 
 	// SegmentsPerSubdirectory AWS CloudFormation Property
 	// Required: false
@@ -203,12 +203,12 @@ type Channel_HlsGroupSettings[T any] struct {
 	// StreamInfResolution AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-streaminfresolution
-	StreamInfResolution *string `json:"StreamInfResolution,omitempty"`
+	StreamInfResolution *T `json:"StreamInfResolution,omitempty"`
 
 	// TimedMetadataId3Frame AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-timedmetadataid3frame
-	TimedMetadataId3Frame *string `json:"TimedMetadataId3Frame,omitempty"`
+	TimedMetadataId3Frame *T `json:"TimedMetadataId3Frame,omitempty"`
 
 	// TimedMetadataId3Period AWS CloudFormation Property
 	// Required: false
@@ -223,7 +223,7 @@ type Channel_HlsGroupSettings[T any] struct {
 	// TsFileMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-tsfilemode
-	TsFileMode *string `json:"TsFileMode,omitempty"`
+	TsFileMode *T `json:"TsFileMode,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

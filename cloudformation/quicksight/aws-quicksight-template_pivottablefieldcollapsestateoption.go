@@ -13,7 +13,7 @@ type Template_PivotTableFieldCollapseStateOption[T any] struct {
 	// State AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-pivottablefieldcollapsestateoption.html#cfn-quicksight-template-pivottablefieldcollapsestateoption-state
-	State *string `json:"State,omitempty"`
+	State *T `json:"State,omitempty"`
 
 	// Target AWS CloudFormation Property
 	// Required: true

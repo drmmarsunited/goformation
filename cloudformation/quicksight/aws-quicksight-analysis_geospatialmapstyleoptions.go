@@ -13,7 +13,7 @@ type Analysis_GeospatialMapStyleOptions[T any] struct {
 	// BaseMapStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialmapstyleoptions.html#cfn-quicksight-analysis-geospatialmapstyleoptions-basemapstyle
-	BaseMapStyle *string `json:"BaseMapStyle,omitempty"`
+	BaseMapStyle *T `json:"BaseMapStyle,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

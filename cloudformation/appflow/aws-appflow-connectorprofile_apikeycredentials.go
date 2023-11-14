@@ -13,12 +13,12 @@ type ConnectorProfile_ApiKeyCredentials[T any] struct {
 	// ApiKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-apikeycredentials.html#cfn-appflow-connectorprofile-apikeycredentials-apikey
-	ApiKey string `json:"ApiKey"`
+	ApiKey T `json:"ApiKey"`
 
 	// ApiSecretKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-apikeycredentials.html#cfn-appflow-connectorprofile-apikeycredentials-apisecretkey
-	ApiSecretKey *string `json:"ApiSecretKey,omitempty"`
+	ApiSecretKey *T `json:"ApiSecretKey,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

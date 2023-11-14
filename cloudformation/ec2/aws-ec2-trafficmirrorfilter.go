@@ -17,12 +17,12 @@ type TrafficMirrorFilter[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilter.html#cfn-ec2-trafficmirrorfilter-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// NetworkServices AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilter.html#cfn-ec2-trafficmirrorfilter-networkservices
-	NetworkServices []string `json:"NetworkServices,omitempty"`
+	NetworkServices []T `json:"NetworkServices,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

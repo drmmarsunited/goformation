@@ -16,7 +16,7 @@ type Organization[T any] struct {
 	// FeatureSet AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-organization.html#cfn-organizations-organization-featureset
-	FeatureSet *string `json:"FeatureSet,omitempty"`
+	FeatureSet *T `json:"FeatureSet,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

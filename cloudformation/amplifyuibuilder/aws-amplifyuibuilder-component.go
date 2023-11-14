@@ -16,7 +16,7 @@ type Component[T any] struct {
 	// AppId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-appid
-	AppId *string `json:"AppId,omitempty"`
+	AppId *T `json:"AppId,omitempty"`
 
 	// BindingProperties AWS CloudFormation Property
 	// Required: true
@@ -36,12 +36,12 @@ type Component[T any] struct {
 	// ComponentType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-componenttype
-	ComponentType string `json:"ComponentType"`
+	ComponentType T `json:"ComponentType"`
 
 	// EnvironmentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-environmentname
-	EnvironmentName *string `json:"EnvironmentName,omitempty"`
+	EnvironmentName *T `json:"EnvironmentName,omitempty"`
 
 	// Events AWS CloudFormation Property
 	// Required: false
@@ -51,7 +51,7 @@ type Component[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Overrides AWS CloudFormation Property
 	// Required: true
@@ -66,17 +66,17 @@ type Component[T any] struct {
 	// SchemaVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-schemaversion
-	SchemaVersion *string `json:"SchemaVersion,omitempty"`
+	SchemaVersion *T `json:"SchemaVersion,omitempty"`
 
 	// SourceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-sourceid
-	SourceId *string `json:"SourceId,omitempty"`
+	SourceId *T `json:"SourceId,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-tags
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// Variants AWS CloudFormation Property
 	// Required: true

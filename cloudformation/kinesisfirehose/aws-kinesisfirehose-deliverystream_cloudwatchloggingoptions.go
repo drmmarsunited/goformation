@@ -18,12 +18,12 @@ type DeliveryStream_CloudWatchLoggingOptions[T any] struct {
 	// LogGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html#cfn-kinesisfirehose-deliverystream-cloudwatchloggingoptions-loggroupname
-	LogGroupName *string `json:"LogGroupName,omitempty"`
+	LogGroupName *T `json:"LogGroupName,omitempty"`
 
 	// LogStreamName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html#cfn-kinesisfirehose-deliverystream-cloudwatchloggingoptions-logstreamname
-	LogStreamName *string `json:"LogStreamName,omitempty"`
+	LogStreamName *T `json:"LogStreamName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

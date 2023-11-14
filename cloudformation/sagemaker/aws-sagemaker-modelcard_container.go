@@ -13,17 +13,17 @@ type ModelCard_Container[T any] struct {
 	// Image AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-container.html#cfn-sagemaker-modelcard-container-image
-	Image string `json:"Image"`
+	Image T `json:"Image"`
 
 	// ModelDataUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-container.html#cfn-sagemaker-modelcard-container-modeldataurl
-	ModelDataUrl *string `json:"ModelDataUrl,omitempty"`
+	ModelDataUrl *T `json:"ModelDataUrl,omitempty"`
 
 	// NearestModelName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-container.html#cfn-sagemaker-modelcard-container-nearestmodelname
-	NearestModelName *string `json:"NearestModelName,omitempty"`
+	NearestModelName *T `json:"NearestModelName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

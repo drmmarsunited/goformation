@@ -18,12 +18,12 @@ type Rule_BatchParameters[T any] struct {
 	// JobDefinition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-batchparameters.html#cfn-events-rule-batchparameters-jobdefinition
-	JobDefinition string `json:"JobDefinition"`
+	JobDefinition T `json:"JobDefinition"`
 
 	// JobName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-batchparameters.html#cfn-events-rule-batchparameters-jobname
-	JobName string `json:"JobName"`
+	JobName T `json:"JobName"`
 
 	// RetryStrategy AWS CloudFormation Property
 	// Required: false

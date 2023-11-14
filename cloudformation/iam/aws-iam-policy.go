@@ -16,7 +16,7 @@ type Policy[T any] struct {
 	// Groups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-groups
-	Groups []string `json:"Groups,omitempty"`
+	Groups []T `json:"Groups,omitempty"`
 
 	// PolicyDocument AWS CloudFormation Property
 	// Required: true
@@ -26,17 +26,17 @@ type Policy[T any] struct {
 	// PolicyName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-policyname
-	PolicyName string `json:"PolicyName"`
+	PolicyName T `json:"PolicyName"`
 
 	// Roles AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-roles
-	Roles []string `json:"Roles,omitempty"`
+	Roles []T `json:"Roles,omitempty"`
 
 	// Users AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-users
-	Users []string `json:"Users,omitempty"`
+	Users []T `json:"Users,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

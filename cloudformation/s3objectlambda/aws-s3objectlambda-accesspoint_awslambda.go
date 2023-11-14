@@ -13,12 +13,12 @@ type AccessPoint_AwsLambda[T any] struct {
 	// FunctionArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-awslambda.html#cfn-s3objectlambda-accesspoint-awslambda-functionarn
-	FunctionArn string `json:"FunctionArn"`
+	FunctionArn T `json:"FunctionArn"`
 
 	// FunctionPayload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-awslambda.html#cfn-s3objectlambda-accesspoint-awslambda-functionpayload
-	FunctionPayload *string `json:"FunctionPayload,omitempty"`
+	FunctionPayload *T `json:"FunctionPayload,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

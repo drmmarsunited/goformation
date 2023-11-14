@@ -27,7 +27,7 @@ type ModelPackage[T any] struct {
 	// ApprovalDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-approvaldescription
-	ApprovalDescription *string `json:"ApprovalDescription,omitempty"`
+	ApprovalDescription *T `json:"ApprovalDescription,omitempty"`
 
 	// CertifyForMarketplace AWS CloudFormation Property
 	// Required: false
@@ -37,17 +37,17 @@ type ModelPackage[T any] struct {
 	// ClientToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-clienttoken
-	ClientToken *string `json:"ClientToken,omitempty"`
+	ClientToken *T `json:"ClientToken,omitempty"`
 
 	// CustomerMetadataProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-customermetadataproperties
-	CustomerMetadataProperties map[string]string `json:"CustomerMetadataProperties,omitempty"`
+	CustomerMetadataProperties map[string]T `json:"CustomerMetadataProperties,omitempty"`
 
 	// Domain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-domain
-	Domain *string `json:"Domain,omitempty"`
+	Domain *T `json:"Domain,omitempty"`
 
 	// DriftCheckBaselines AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,7 @@ type ModelPackage[T any] struct {
 	// LastModifiedTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-lastmodifiedtime
-	LastModifiedTime *string `json:"LastModifiedTime,omitempty"`
+	LastModifiedTime *T `json:"LastModifiedTime,omitempty"`
 
 	// MetadataProperties AWS CloudFormation Property
 	// Required: false
@@ -72,7 +72,7 @@ type ModelPackage[T any] struct {
 	// ModelApprovalStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-modelapprovalstatus
-	ModelApprovalStatus *string `json:"ModelApprovalStatus,omitempty"`
+	ModelApprovalStatus *T `json:"ModelApprovalStatus,omitempty"`
 
 	// ModelMetrics AWS CloudFormation Property
 	// Required: false
@@ -82,17 +82,17 @@ type ModelPackage[T any] struct {
 	// ModelPackageDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-modelpackagedescription
-	ModelPackageDescription *string `json:"ModelPackageDescription,omitempty"`
+	ModelPackageDescription *T `json:"ModelPackageDescription,omitempty"`
 
 	// ModelPackageGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-modelpackagegroupname
-	ModelPackageGroupName *string `json:"ModelPackageGroupName,omitempty"`
+	ModelPackageGroupName *T `json:"ModelPackageGroupName,omitempty"`
 
 	// ModelPackageName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-modelpackagename
-	ModelPackageName *string `json:"ModelPackageName,omitempty"`
+	ModelPackageName *T `json:"ModelPackageName,omitempty"`
 
 	// ModelPackageStatusDetails AWS CloudFormation Property
 	// Required: false
@@ -107,7 +107,12 @@ type ModelPackage[T any] struct {
 	// SamplePayloadUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-samplepayloadurl
-	SamplePayloadUrl *string `json:"SamplePayloadUrl,omitempty"`
+	SamplePayloadUrl *T `json:"SamplePayloadUrl,omitempty"`
+
+	// SkipModelValidation AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-skipmodelvalidation
+	SkipModelValidation *T `json:"SkipModelValidation,omitempty"`
 
 	// SourceAlgorithmSpecification AWS CloudFormation Property
 	// Required: false
@@ -122,7 +127,7 @@ type ModelPackage[T any] struct {
 	// Task AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-task
-	Task *string `json:"Task,omitempty"`
+	Task *T `json:"Task,omitempty"`
 
 	// ValidationSpecification AWS CloudFormation Property
 	// Required: false

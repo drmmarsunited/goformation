@@ -13,7 +13,7 @@ type SecurityProfile_MetricToRetain[T any] struct {
 	// Metric AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metrictoretain.html#cfn-iot-securityprofile-metrictoretain-metric
-	Metric string `json:"Metric"`
+	Metric T `json:"Metric"`
 
 	// MetricDimension AWS CloudFormation Property
 	// Required: false

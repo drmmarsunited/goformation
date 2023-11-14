@@ -13,7 +13,7 @@ type ConfigurationSetEventDestination_PinpointDestination[T any] struct {
 	// ApplicationArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-pinpointdestination.html#cfn-pinpointemail-configurationseteventdestination-pinpointdestination-applicationarn
-	ApplicationArn *string `json:"ApplicationArn,omitempty"`
+	ApplicationArn *T `json:"ApplicationArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

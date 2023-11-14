@@ -13,7 +13,7 @@ type Environment_ModuleLoggingConfiguration[T any] struct {
 	// CloudWatchLogGroupArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-moduleloggingconfiguration.html#cfn-mwaa-environment-moduleloggingconfiguration-cloudwatchloggrouparn
-	CloudWatchLogGroupArn *string `json:"CloudWatchLogGroupArn,omitempty"`
+	CloudWatchLogGroupArn *T `json:"CloudWatchLogGroupArn,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Environment_ModuleLoggingConfiguration[T any] struct {
 	// LogLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-moduleloggingconfiguration.html#cfn-mwaa-environment-moduleloggingconfiguration-loglevel
-	LogLevel *string `json:"LogLevel,omitempty"`
+	LogLevel *T `json:"LogLevel,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

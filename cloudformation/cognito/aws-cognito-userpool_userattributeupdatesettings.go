@@ -13,7 +13,7 @@ type UserPool_UserAttributeUpdateSettings[T any] struct {
 	// AttributesRequireVerificationBeforeUpdate AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-userattributeupdatesettings.html#cfn-cognito-userpool-userattributeupdatesettings-attributesrequireverificationbeforeupdate
-	AttributesRequireVerificationBeforeUpdate []string `json:"AttributesRequireVerificationBeforeUpdate"`
+	AttributesRequireVerificationBeforeUpdate []T `json:"AttributesRequireVerificationBeforeUpdate"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

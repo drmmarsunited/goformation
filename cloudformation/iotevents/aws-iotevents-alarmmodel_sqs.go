@@ -18,7 +18,7 @@ type AlarmModel_Sqs[T any] struct {
 	// QueueUrl AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-sqs.html#cfn-iotevents-alarmmodel-sqs-queueurl
-	QueueUrl string `json:"QueueUrl"`
+	QueueUrl T `json:"QueueUrl"`
 
 	// UseBase64 AWS CloudFormation Property
 	// Required: false

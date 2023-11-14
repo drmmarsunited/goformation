@@ -13,7 +13,7 @@ type FunctionConfiguration_LambdaConflictHandlerConfig[T any] struct {
 	// LambdaConflictHandlerArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-lambdaconflicthandlerconfig.html#cfn-appsync-functionconfiguration-lambdaconflicthandlerconfig-lambdaconflicthandlerarn
-	LambdaConflictHandlerArn *string `json:"LambdaConflictHandlerArn,omitempty"`
+	LambdaConflictHandlerArn *T `json:"LambdaConflictHandlerArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

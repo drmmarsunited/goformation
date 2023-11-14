@@ -16,12 +16,12 @@ type TransitGatewayRouteTableAssociation[T any] struct {
 	// TransitGatewayAttachmentId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetableassociation.html#cfn-ec2-transitgatewayroutetableassociation-transitgatewayattachmentid
-	TransitGatewayAttachmentId string `json:"TransitGatewayAttachmentId"`
+	TransitGatewayAttachmentId T `json:"TransitGatewayAttachmentId"`
 
 	// TransitGatewayRouteTableId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetableassociation.html#cfn-ec2-transitgatewayroutetableassociation-transitgatewayroutetableid
-	TransitGatewayRouteTableId string `json:"TransitGatewayRouteTableId"`
+	TransitGatewayRouteTableId T `json:"TransitGatewayRouteTableId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -18,12 +18,12 @@ type Dashboard_FilterOperationSelectedFieldsConfiguration[T any] struct {
 	// SelectedFieldOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filteroperationselectedfieldsconfiguration.html#cfn-quicksight-dashboard-filteroperationselectedfieldsconfiguration-selectedfieldoptions
-	SelectedFieldOptions *string `json:"SelectedFieldOptions,omitempty"`
+	SelectedFieldOptions *T `json:"SelectedFieldOptions,omitempty"`
 
 	// SelectedFields AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filteroperationselectedfieldsconfiguration.html#cfn-quicksight-dashboard-filteroperationselectedfieldsconfiguration-selectedfields
-	SelectedFields []string `json:"SelectedFields,omitempty"`
+	SelectedFields []T `json:"SelectedFields,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Flow_SalesforceDestinationProperties[T any] struct {
 	// DataTransferApi AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcedestinationproperties.html#cfn-appflow-flow-salesforcedestinationproperties-datatransferapi
-	DataTransferApi *string `json:"DataTransferApi,omitempty"`
+	DataTransferApi *T `json:"DataTransferApi,omitempty"`
 
 	// ErrorHandlingConfig AWS CloudFormation Property
 	// Required: false
@@ -23,17 +23,17 @@ type Flow_SalesforceDestinationProperties[T any] struct {
 	// IdFieldNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcedestinationproperties.html#cfn-appflow-flow-salesforcedestinationproperties-idfieldnames
-	IdFieldNames []string `json:"IdFieldNames,omitempty"`
+	IdFieldNames []T `json:"IdFieldNames,omitempty"`
 
 	// Object AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcedestinationproperties.html#cfn-appflow-flow-salesforcedestinationproperties-object
-	Object string `json:"Object"`
+	Object T `json:"Object"`
 
 	// WriteOperationType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcedestinationproperties.html#cfn-appflow-flow-salesforcedestinationproperties-writeoperationtype
-	WriteOperationType *string `json:"WriteOperationType,omitempty"`
+	WriteOperationType *T `json:"WriteOperationType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

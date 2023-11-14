@@ -13,12 +13,12 @@ type Topic_TopicCategoryFilter[T any] struct {
 	// CategoryFilterFunction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccategoryfilter.html#cfn-quicksight-topic-topiccategoryfilter-categoryfilterfunction
-	CategoryFilterFunction *string `json:"CategoryFilterFunction,omitempty"`
+	CategoryFilterFunction *T `json:"CategoryFilterFunction,omitempty"`
 
 	// CategoryFilterType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccategoryfilter.html#cfn-quicksight-topic-topiccategoryfilter-categoryfiltertype
-	CategoryFilterType *string `json:"CategoryFilterType,omitempty"`
+	CategoryFilterType *T `json:"CategoryFilterType,omitempty"`
 
 	// Constant AWS CloudFormation Property
 	// Required: false

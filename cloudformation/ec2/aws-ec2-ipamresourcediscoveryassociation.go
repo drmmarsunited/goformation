@@ -17,12 +17,12 @@ type IPAMResourceDiscoveryAssociation[T any] struct {
 	// IpamId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html#cfn-ec2-ipamresourcediscoveryassociation-ipamid
-	IpamId string `json:"IpamId"`
+	IpamId T `json:"IpamId"`
 
 	// IpamResourceDiscoveryId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html#cfn-ec2-ipamresourcediscoveryassociation-ipamresourcediscoveryid
-	IpamResourceDiscoveryId string `json:"IpamResourceDiscoveryId"`
+	IpamResourceDiscoveryId T `json:"IpamResourceDiscoveryId"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

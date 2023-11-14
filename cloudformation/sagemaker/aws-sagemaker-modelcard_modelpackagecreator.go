@@ -13,7 +13,7 @@ type ModelCard_ModelPackageCreator[T any] struct {
 	// UserProfileName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modelpackagecreator.html#cfn-sagemaker-modelcard-modelpackagecreator-userprofilename
-	UserProfileName *string `json:"UserProfileName,omitempty"`
+	UserProfileName *T `json:"UserProfileName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

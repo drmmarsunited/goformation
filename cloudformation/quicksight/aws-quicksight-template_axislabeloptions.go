@@ -18,7 +18,7 @@ type Template_AxisLabelOptions[T any] struct {
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-axislabeloptions.html#cfn-quicksight-template-axislabeloptions-customlabel
-	CustomLabel *string `json:"CustomLabel,omitempty"`
+	CustomLabel *T `json:"CustomLabel,omitempty"`
 
 	// FontConfiguration AWS CloudFormation Property
 	// Required: false

@@ -13,7 +13,7 @@ type Service_ServiceConnectClientAlias[T any] struct {
 	// DnsName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectclientalias.html#cfn-ecs-service-serviceconnectclientalias-dnsname
-	DnsName *string `json:"DnsName,omitempty"`
+	DnsName *T `json:"DnsName,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: true

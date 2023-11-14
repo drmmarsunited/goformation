@@ -13,12 +13,12 @@ type LaunchTemplate_CapacityReservationTarget[T any] struct {
 	// CapacityReservationId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationtarget.html#cfn-ec2-launchtemplate-capacityreservationtarget-capacityreservationid
-	CapacityReservationId *string `json:"CapacityReservationId,omitempty"`
+	CapacityReservationId *T `json:"CapacityReservationId,omitempty"`
 
 	// CapacityReservationResourceGroupArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationtarget.html#cfn-ec2-launchtemplate-capacityreservationtarget-capacityreservationresourcegrouparn
-	CapacityReservationResourceGroupArn *string `json:"CapacityReservationResourceGroupArn,omitempty"`
+	CapacityReservationResourceGroupArn *T `json:"CapacityReservationResourceGroupArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

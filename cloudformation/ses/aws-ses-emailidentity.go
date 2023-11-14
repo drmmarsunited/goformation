@@ -31,7 +31,7 @@ type EmailIdentity[T any] struct {
 	// EmailIdentity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-emailidentity.html#cfn-ses-emailidentity-emailidentity
-	EmailIdentity string `json:"EmailIdentity"`
+	EmailIdentity T `json:"EmailIdentity"`
 
 	// FeedbackAttributes AWS CloudFormation Property
 	// Required: false

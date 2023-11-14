@@ -22,7 +22,7 @@ type DataSource[T any] struct {
 	// AwsAccountId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-awsaccountid
-	AwsAccountId *string `json:"AwsAccountId,omitempty"`
+	AwsAccountId *T `json:"AwsAccountId,omitempty"`
 
 	// Credentials AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type DataSource[T any] struct {
 	// DataSourceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-datasourceid
-	DataSourceId *string `json:"DataSourceId,omitempty"`
+	DataSourceId *T `json:"DataSourceId,omitempty"`
 
 	// DataSourceParameters AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type DataSource[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Permissions AWS CloudFormation Property
 	// Required: false
@@ -67,7 +67,7 @@ type DataSource[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-type
-	Type *string `json:"Type,omitempty"`
+	Type *T `json:"Type,omitempty"`
 
 	// VpcConnectionProperties AWS CloudFormation Property
 	// Required: false

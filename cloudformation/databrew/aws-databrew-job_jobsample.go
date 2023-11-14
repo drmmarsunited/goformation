@@ -13,7 +13,7 @@ type Job_JobSample[T any] struct {
 	// Mode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-jobsample.html#cfn-databrew-job-jobsample-mode
-	Mode *string `json:"Mode,omitempty"`
+	Mode *T `json:"Mode,omitempty"`
 
 	// Size AWS CloudFormation Property
 	// Required: false

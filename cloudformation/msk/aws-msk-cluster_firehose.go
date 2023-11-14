@@ -13,7 +13,7 @@ type Cluster_Firehose[T any] struct {
 	// DeliveryStream AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html#cfn-msk-cluster-firehose-deliverystream
-	DeliveryStream *string `json:"DeliveryStream,omitempty"`
+	DeliveryStream *T `json:"DeliveryStream,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: true

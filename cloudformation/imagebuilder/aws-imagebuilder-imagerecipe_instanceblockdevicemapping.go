@@ -13,7 +13,7 @@ type ImageRecipe_InstanceBlockDeviceMapping[T any] struct {
 	// DeviceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-instanceblockdevicemapping.html#cfn-imagebuilder-imagerecipe-instanceblockdevicemapping-devicename
-	DeviceName *string `json:"DeviceName,omitempty"`
+	DeviceName *T `json:"DeviceName,omitempty"`
 
 	// Ebs AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type ImageRecipe_InstanceBlockDeviceMapping[T any] struct {
 	// NoDevice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-instanceblockdevicemapping.html#cfn-imagebuilder-imagerecipe-instanceblockdevicemapping-nodevice
-	NoDevice *string `json:"NoDevice,omitempty"`
+	NoDevice *T `json:"NoDevice,omitempty"`
 
 	// VirtualName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-instanceblockdevicemapping.html#cfn-imagebuilder-imagerecipe-instanceblockdevicemapping-virtualname
-	VirtualName *string `json:"VirtualName,omitempty"`
+	VirtualName *T `json:"VirtualName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

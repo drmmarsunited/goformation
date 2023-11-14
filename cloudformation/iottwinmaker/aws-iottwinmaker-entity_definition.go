@@ -13,7 +13,7 @@ type Entity_Definition[T any] struct {
 	// Configuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-configuration
-	Configuration map[string]string `json:"Configuration,omitempty"`
+	Configuration map[string]T `json:"Configuration,omitempty"`
 
 	// DataType AWS CloudFormation Property
 	// Required: false

@@ -13,17 +13,17 @@ type ReportPlan_ReportDeliveryChannel[T any] struct {
 	// Formats AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportdeliverychannel.html#cfn-backup-reportplan-reportdeliverychannel-formats
-	Formats []string `json:"Formats,omitempty"`
+	Formats []T `json:"Formats,omitempty"`
 
 	// S3BucketName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportdeliverychannel.html#cfn-backup-reportplan-reportdeliverychannel-s3bucketname
-	S3BucketName string `json:"S3BucketName"`
+	S3BucketName T `json:"S3BucketName"`
 
 	// S3KeyPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportdeliverychannel.html#cfn-backup-reportplan-reportdeliverychannel-s3keyprefix
-	S3KeyPrefix *string `json:"S3KeyPrefix,omitempty"`
+	S3KeyPrefix *T `json:"S3KeyPrefix,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

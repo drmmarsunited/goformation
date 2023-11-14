@@ -13,7 +13,7 @@ type DistributionConfiguration_FastLaunchConfiguration[T any] struct {
 	// AccountId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-fastlaunchconfiguration.html#cfn-imagebuilder-distributionconfiguration-fastlaunchconfiguration-accountid
-	AccountId *string `json:"AccountId,omitempty"`
+	AccountId *T `json:"AccountId,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false

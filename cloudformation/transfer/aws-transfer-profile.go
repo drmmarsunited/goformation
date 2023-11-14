@@ -17,17 +17,17 @@ type Profile[T any] struct {
 	// As2Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-profile.html#cfn-transfer-profile-as2id
-	As2Id string `json:"As2Id"`
+	As2Id T `json:"As2Id"`
 
 	// CertificateIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-profile.html#cfn-transfer-profile-certificateids
-	CertificateIds []string `json:"CertificateIds,omitempty"`
+	CertificateIds []T `json:"CertificateIds,omitempty"`
 
 	// ProfileType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-profile.html#cfn-transfer-profile-profiletype
-	ProfileType string `json:"ProfileType"`
+	ProfileType T `json:"ProfileType"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

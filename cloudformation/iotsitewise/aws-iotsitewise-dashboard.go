@@ -17,22 +17,22 @@ type Dashboard[T any] struct {
 	// DashboardDefinition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-dashboard.html#cfn-iotsitewise-dashboard-dashboarddefinition
-	DashboardDefinition string `json:"DashboardDefinition"`
+	DashboardDefinition T `json:"DashboardDefinition"`
 
 	// DashboardDescription AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-dashboard.html#cfn-iotsitewise-dashboard-dashboarddescription
-	DashboardDescription string `json:"DashboardDescription"`
+	DashboardDescription T `json:"DashboardDescription"`
 
 	// DashboardName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-dashboard.html#cfn-iotsitewise-dashboard-dashboardname
-	DashboardName string `json:"DashboardName"`
+	DashboardName T `json:"DashboardName"`
 
 	// ProjectId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-dashboard.html#cfn-iotsitewise-dashboard-projectid
-	ProjectId *string `json:"ProjectId,omitempty"`
+	ProjectId *T `json:"ProjectId,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

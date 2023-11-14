@@ -18,12 +18,12 @@ type Dashboard_AggregationFunction[T any] struct {
 	// CategoricalAggregationFunction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-aggregationfunction.html#cfn-quicksight-dashboard-aggregationfunction-categoricalaggregationfunction
-	CategoricalAggregationFunction *string `json:"CategoricalAggregationFunction,omitempty"`
+	CategoricalAggregationFunction *T `json:"CategoricalAggregationFunction,omitempty"`
 
 	// DateAggregationFunction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-aggregationfunction.html#cfn-quicksight-dashboard-aggregationfunction-dateaggregationfunction
-	DateAggregationFunction *string `json:"DateAggregationFunction,omitempty"`
+	DateAggregationFunction *T `json:"DateAggregationFunction,omitempty"`
 
 	// NumericalAggregationFunction AWS CloudFormation Property
 	// Required: false

@@ -16,7 +16,7 @@ type StackUserAssociation[T any] struct {
 	// AuthenticationType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html#cfn-appstream-stackuserassociation-authenticationtype
-	AuthenticationType string `json:"AuthenticationType"`
+	AuthenticationType T `json:"AuthenticationType"`
 
 	// SendEmailNotification AWS CloudFormation Property
 	// Required: false
@@ -26,12 +26,12 @@ type StackUserAssociation[T any] struct {
 	// StackName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html#cfn-appstream-stackuserassociation-stackname
-	StackName string `json:"StackName"`
+	StackName T `json:"StackName"`
 
 	// UserName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html#cfn-appstream-stackuserassociation-username
-	UserName string `json:"UserName"`
+	UserName T `json:"UserName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

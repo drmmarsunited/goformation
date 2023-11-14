@@ -22,12 +22,12 @@ type ServiceNetworkServiceAssociation[T any] struct {
 	// ServiceIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-servicenetworkserviceassociation.html#cfn-vpclattice-servicenetworkserviceassociation-serviceidentifier
-	ServiceIdentifier *string `json:"ServiceIdentifier,omitempty"`
+	ServiceIdentifier *T `json:"ServiceIdentifier,omitempty"`
 
 	// ServiceNetworkIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-servicenetworkserviceassociation.html#cfn-vpclattice-servicenetworkserviceassociation-servicenetworkidentifier
-	ServiceNetworkIdentifier *string `json:"ServiceNetworkIdentifier,omitempty"`
+	ServiceNetworkIdentifier *T `json:"ServiceNetworkIdentifier,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

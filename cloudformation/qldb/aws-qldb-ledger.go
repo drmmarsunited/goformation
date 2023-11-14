@@ -22,17 +22,17 @@ type Ledger[T any] struct {
 	// KmsKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-ledger.html#cfn-qldb-ledger-kmskey
-	KmsKey *string `json:"KmsKey,omitempty"`
+	KmsKey *T `json:"KmsKey,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-ledger.html#cfn-qldb-ledger-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// PermissionsMode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-ledger.html#cfn-qldb-ledger-permissionsmode
-	PermissionsMode string `json:"PermissionsMode"`
+	PermissionsMode T `json:"PermissionsMode"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

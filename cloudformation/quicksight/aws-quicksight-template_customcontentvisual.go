@@ -23,7 +23,7 @@ type Template_CustomContentVisual[T any] struct {
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-customcontentvisual.html#cfn-quicksight-template-customcontentvisual-datasetidentifier
-	DataSetIdentifier string `json:"DataSetIdentifier"`
+	DataSetIdentifier T `json:"DataSetIdentifier"`
 
 	// Subtitle AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Template_CustomContentVisual[T any] struct {
 	// VisualId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-customcontentvisual.html#cfn-quicksight-template-customcontentvisual-visualid
-	VisualId string `json:"VisualId"`
+	VisualId T `json:"VisualId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -18,12 +18,12 @@ type RuleGroup_Headers[T any] struct {
 	// MatchScope AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-headers.html#cfn-wafv2-rulegroup-headers-matchscope
-	MatchScope string `json:"MatchScope"`
+	MatchScope T `json:"MatchScope"`
 
 	// OversizeHandling AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-headers.html#cfn-wafv2-rulegroup-headers-oversizehandling
-	OversizeHandling string `json:"OversizeHandling"`
+	OversizeHandling T `json:"OversizeHandling"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

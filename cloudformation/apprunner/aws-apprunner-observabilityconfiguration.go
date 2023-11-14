@@ -17,7 +17,7 @@ type ObservabilityConfiguration[T any] struct {
 	// ObservabilityConfigurationName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-observabilityconfiguration.html#cfn-apprunner-observabilityconfiguration-observabilityconfigurationname
-	ObservabilityConfigurationName *string `json:"ObservabilityConfigurationName,omitempty"`
+	ObservabilityConfigurationName *T `json:"ObservabilityConfigurationName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

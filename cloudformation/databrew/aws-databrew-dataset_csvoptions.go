@@ -13,7 +13,7 @@ type Dataset_CsvOptions[T any] struct {
 	// Delimiter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-csvoptions.html#cfn-databrew-dataset-csvoptions-delimiter
-	Delimiter *string `json:"Delimiter,omitempty"`
+	Delimiter *T `json:"Delimiter,omitempty"`
 
 	// HeaderRow AWS CloudFormation Property
 	// Required: false

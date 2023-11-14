@@ -13,12 +13,12 @@ type Flow_ErrorHandlingConfig[T any] struct {
 	// BucketName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-errorhandlingconfig.html#cfn-appflow-flow-errorhandlingconfig-bucketname
-	BucketName *string `json:"BucketName,omitempty"`
+	BucketName *T `json:"BucketName,omitempty"`
 
 	// BucketPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-errorhandlingconfig.html#cfn-appflow-flow-errorhandlingconfig-bucketprefix
-	BucketPrefix *string `json:"BucketPrefix,omitempty"`
+	BucketPrefix *T `json:"BucketPrefix,omitempty"`
 
 	// FailOnFirstError AWS CloudFormation Property
 	// Required: false

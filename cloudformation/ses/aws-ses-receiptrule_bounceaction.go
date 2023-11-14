@@ -13,27 +13,27 @@ type ReceiptRule_BounceAction[T any] struct {
 	// Message AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html#cfn-ses-receiptrule-bounceaction-message
-	Message string `json:"Message"`
+	Message T `json:"Message"`
 
 	// Sender AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html#cfn-ses-receiptrule-bounceaction-sender
-	Sender string `json:"Sender"`
+	Sender T `json:"Sender"`
 
 	// SmtpReplyCode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html#cfn-ses-receiptrule-bounceaction-smtpreplycode
-	SmtpReplyCode string `json:"SmtpReplyCode"`
+	SmtpReplyCode T `json:"SmtpReplyCode"`
 
 	// StatusCode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html#cfn-ses-receiptrule-bounceaction-statuscode
-	StatusCode *string `json:"StatusCode,omitempty"`
+	StatusCode *T `json:"StatusCode,omitempty"`
 
 	// TopicArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html#cfn-ses-receiptrule-bounceaction-topicarn
-	TopicArn *string `json:"TopicArn,omitempty"`
+	TopicArn *T `json:"TopicArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

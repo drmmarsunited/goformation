@@ -28,7 +28,7 @@ type FeatureGroup_OfflineStoreConfig[T any] struct {
 	// TableFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-offlinestoreconfig.html#cfn-sagemaker-featuregroup-offlinestoreconfig-tableformat
-	TableFormat *string `json:"TableFormat,omitempty"`
+	TableFormat *T `json:"TableFormat,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

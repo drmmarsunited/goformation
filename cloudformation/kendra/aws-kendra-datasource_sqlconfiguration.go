@@ -13,7 +13,7 @@ type DataSource_SqlConfiguration[T any] struct {
 	// QueryIdentifiersEnclosingOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sqlconfiguration.html#cfn-kendra-datasource-sqlconfiguration-queryidentifiersenclosingoption
-	QueryIdentifiersEnclosingOption *string `json:"QueryIdentifiersEnclosingOption,omitempty"`
+	QueryIdentifiersEnclosingOption *T `json:"QueryIdentifiersEnclosingOption,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

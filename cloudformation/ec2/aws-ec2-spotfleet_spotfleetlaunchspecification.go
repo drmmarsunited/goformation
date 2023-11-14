@@ -28,7 +28,7 @@ type SpotFleet_SpotFleetLaunchSpecification[T any] struct {
 	// ImageId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetlaunchspecification.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-imageid
-	ImageId string `json:"ImageId"`
+	ImageId T `json:"ImageId"`
 
 	// InstanceRequirements AWS CloudFormation Property
 	// Required: false
@@ -38,17 +38,17 @@ type SpotFleet_SpotFleetLaunchSpecification[T any] struct {
 	// InstanceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetlaunchspecification.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-instancetype
-	InstanceType *string `json:"InstanceType,omitempty"`
+	InstanceType *T `json:"InstanceType,omitempty"`
 
 	// KernelId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetlaunchspecification.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-kernelid
-	KernelId *string `json:"KernelId,omitempty"`
+	KernelId *T `json:"KernelId,omitempty"`
 
 	// KeyName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetlaunchspecification.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-keyname
-	KeyName *string `json:"KeyName,omitempty"`
+	KeyName *T `json:"KeyName,omitempty"`
 
 	// Monitoring AWS CloudFormation Property
 	// Required: false
@@ -68,7 +68,7 @@ type SpotFleet_SpotFleetLaunchSpecification[T any] struct {
 	// RamdiskId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetlaunchspecification.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-ramdiskid
-	RamdiskId *string `json:"RamdiskId,omitempty"`
+	RamdiskId *T `json:"RamdiskId,omitempty"`
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: false
@@ -78,12 +78,12 @@ type SpotFleet_SpotFleetLaunchSpecification[T any] struct {
 	// SpotPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetlaunchspecification.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-spotprice
-	SpotPrice *string `json:"SpotPrice,omitempty"`
+	SpotPrice *T `json:"SpotPrice,omitempty"`
 
 	// SubnetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetlaunchspecification.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-subnetid
-	SubnetId *string `json:"SubnetId,omitempty"`
+	SubnetId *T `json:"SubnetId,omitempty"`
 
 	// TagSpecifications AWS CloudFormation Property
 	// Required: false
@@ -93,7 +93,7 @@ type SpotFleet_SpotFleetLaunchSpecification[T any] struct {
 	// UserData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetlaunchspecification.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-userdata
-	UserData *string `json:"UserData,omitempty"`
+	UserData *T `json:"UserData,omitempty"`
 
 	// WeightedCapacity AWS CloudFormation Property
 	// Required: false

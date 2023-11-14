@@ -14,7 +14,7 @@ type ResponsePlan_IncidentTemplate[T any] struct {
 	// DedupeString AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html#cfn-ssmincidents-responseplan-incidenttemplate-dedupestring
-	DedupeString *string `json:"DedupeString,omitempty"`
+	DedupeString *T `json:"DedupeString,omitempty"`
 
 	// Impact AWS CloudFormation Property
 	// Required: true
@@ -34,12 +34,12 @@ type ResponsePlan_IncidentTemplate[T any] struct {
 	// Summary AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html#cfn-ssmincidents-responseplan-incidenttemplate-summary
-	Summary *string `json:"Summary,omitempty"`
+	Summary *T `json:"Summary,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html#cfn-ssmincidents-responseplan-incidenttemplate-title
-	Title string `json:"Title"`
+	Title T `json:"Title"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -23,7 +23,7 @@ type Dashboard_ParameterDropDownControl[T any] struct {
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterdropdowncontrol.html#cfn-quicksight-dashboard-parameterdropdowncontrol-parametercontrolid
-	ParameterControlId string `json:"ParameterControlId"`
+	ParameterControlId T `json:"ParameterControlId"`
 
 	// SelectableValues AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type Dashboard_ParameterDropDownControl[T any] struct {
 	// SourceParameterName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterdropdowncontrol.html#cfn-quicksight-dashboard-parameterdropdowncontrol-sourceparametername
-	SourceParameterName string `json:"SourceParameterName"`
+	SourceParameterName T `json:"SourceParameterName"`
 
 	// Title AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterdropdowncontrol.html#cfn-quicksight-dashboard-parameterdropdowncontrol-title
-	Title string `json:"Title"`
+	Title T `json:"Title"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameterdropdowncontrol.html#cfn-quicksight-dashboard-parameterdropdowncontrol-type
-	Type *string `json:"Type,omitempty"`
+	Type *T `json:"Type,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

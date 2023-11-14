@@ -13,7 +13,7 @@ type NetworkInterface_InstanceIpv6Address[T any] struct {
 	// Ipv6Address AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-instanceipv6address.html#cfn-ec2-networkinterface-instanceipv6address-ipv6address
-	Ipv6Address string `json:"Ipv6Address"`
+	Ipv6Address T `json:"Ipv6Address"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

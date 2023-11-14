@@ -13,7 +13,7 @@ type RuleGroup_IPSetReferenceStatement[T any] struct {
 	// Arn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ipsetreferencestatement.html#cfn-wafv2-rulegroup-ipsetreferencestatement-arn
-	Arn string `json:"Arn"`
+	Arn T `json:"Arn"`
 
 	// IPSetForwardedIPConfig AWS CloudFormation Property
 	// Required: false

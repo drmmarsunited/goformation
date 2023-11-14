@@ -16,27 +16,27 @@ type SecurityGroupEgress[T any] struct {
 	// CidrIp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-cidrip
-	CidrIp *string `json:"CidrIp,omitempty"`
+	CidrIp *T `json:"CidrIp,omitempty"`
 
 	// CidrIpv6 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-cidripv6
-	CidrIpv6 *string `json:"CidrIpv6,omitempty"`
+	CidrIpv6 *T `json:"CidrIpv6,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DestinationPrefixListId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-destinationprefixlistid
-	DestinationPrefixListId *string `json:"DestinationPrefixListId,omitempty"`
+	DestinationPrefixListId *T `json:"DestinationPrefixListId,omitempty"`
 
 	// DestinationSecurityGroupId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-destinationsecuritygroupid
-	DestinationSecurityGroupId *string `json:"DestinationSecurityGroupId,omitempty"`
+	DestinationSecurityGroupId *T `json:"DestinationSecurityGroupId,omitempty"`
 
 	// FromPort AWS CloudFormation Property
 	// Required: false
@@ -46,12 +46,12 @@ type SecurityGroupEgress[T any] struct {
 	// GroupId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-groupid
-	GroupId string `json:"GroupId"`
+	GroupId T `json:"GroupId"`
 
 	// IpProtocol AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-ipprotocol
-	IpProtocol string `json:"IpProtocol"`
+	IpProtocol T `json:"IpProtocol"`
 
 	// ToPort AWS CloudFormation Property
 	// Required: false

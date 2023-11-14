@@ -13,12 +13,12 @@ type Table_AttributeDefinition[T any] struct {
 	// AttributeName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-attributedefinition.html#cfn-dynamodb-table-attributedefinition-attributename
-	AttributeName string `json:"AttributeName"`
+	AttributeName T `json:"AttributeName"`
 
 	// AttributeType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-attributedefinition.html#cfn-dynamodb-table-attributedefinition-attributetype
-	AttributeType string `json:"AttributeType"`
+	AttributeType T `json:"AttributeType"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

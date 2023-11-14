@@ -13,7 +13,7 @@ type Deployment_ComponentRunWith[T any] struct {
 	// PosixUser AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-componentrunwith.html#cfn-greengrassv2-deployment-componentrunwith-posixuser
-	PosixUser *string `json:"PosixUser,omitempty"`
+	PosixUser *T `json:"PosixUser,omitempty"`
 
 	// SystemResourceLimits AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Deployment_ComponentRunWith[T any] struct {
 	// WindowsUser AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-componentrunwith.html#cfn-greengrassv2-deployment-componentrunwith-windowsuser
-	WindowsUser *string `json:"WindowsUser,omitempty"`
+	WindowsUser *T `json:"WindowsUser,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

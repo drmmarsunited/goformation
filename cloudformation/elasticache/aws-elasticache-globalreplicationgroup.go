@@ -21,17 +21,17 @@ type GlobalReplicationGroup[T any] struct {
 	// CacheNodeType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-cachenodetype
-	CacheNodeType *string `json:"CacheNodeType,omitempty"`
+	CacheNodeType *T `json:"CacheNodeType,omitempty"`
 
 	// CacheParameterGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-cacheparametergroupname
-	CacheParameterGroupName *string `json:"CacheParameterGroupName,omitempty"`
+	CacheParameterGroupName *T `json:"CacheParameterGroupName,omitempty"`
 
 	// EngineVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-engineversion
-	EngineVersion *string `json:"EngineVersion,omitempty"`
+	EngineVersion *T `json:"EngineVersion,omitempty"`
 
 	// GlobalNodeGroupCount AWS CloudFormation Property
 	// Required: false
@@ -41,12 +41,12 @@ type GlobalReplicationGroup[T any] struct {
 	// GlobalReplicationGroupDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupdescription
-	GlobalReplicationGroupDescription *string `json:"GlobalReplicationGroupDescription,omitempty"`
+	GlobalReplicationGroupDescription *T `json:"GlobalReplicationGroupDescription,omitempty"`
 
 	// GlobalReplicationGroupIdSuffix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupidsuffix
-	GlobalReplicationGroupIdSuffix *string `json:"GlobalReplicationGroupIdSuffix,omitempty"`
+	GlobalReplicationGroupIdSuffix *T `json:"GlobalReplicationGroupIdSuffix,omitempty"`
 
 	// Members AWS CloudFormation Property
 	// Required: true

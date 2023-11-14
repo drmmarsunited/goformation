@@ -13,7 +13,7 @@ type ResponseHeadersPolicy_CustomHeader[T any] struct {
 	// Header AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html#cfn-cloudfront-responseheaderspolicy-customheader-header
-	Header string `json:"Header"`
+	Header T `json:"Header"`
 
 	// Override AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type ResponseHeadersPolicy_CustomHeader[T any] struct {
 	// Value AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html#cfn-cloudfront-responseheaderspolicy-customheader-value
-	Value string `json:"Value"`
+	Value T `json:"Value"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

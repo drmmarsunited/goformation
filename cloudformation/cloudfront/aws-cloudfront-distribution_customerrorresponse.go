@@ -28,7 +28,7 @@ type Distribution_CustomErrorResponse[T any] struct {
 	// ResponsePagePath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-responsepagepath
-	ResponsePagePath *string `json:"ResponsePagePath,omitempty"`
+	ResponsePagePath *T `json:"ResponsePagePath,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

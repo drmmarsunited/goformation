@@ -18,7 +18,7 @@ type Framework_FrameworkControl[T any] struct {
 	// ControlName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-framework-frameworkcontrol.html#cfn-backup-framework-frameworkcontrol-controlname
-	ControlName string `json:"ControlName"`
+	ControlName T `json:"ControlName"`
 
 	// ControlScope AWS CloudFormation Property
 	// Required: false

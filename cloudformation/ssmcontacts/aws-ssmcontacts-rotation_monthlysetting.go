@@ -18,7 +18,7 @@ type Rotation_MonthlySetting[T any] struct {
 	// HandOffTime AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-rotation-monthlysetting.html#cfn-ssmcontacts-rotation-monthlysetting-handofftime
-	HandOffTime string `json:"HandOffTime"`
+	HandOffTime T `json:"HandOffTime"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,22 +13,22 @@ type JobDefinition_EvaluateOnExit[T any] struct {
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-evaluateonexit.html#cfn-batch-jobdefinition-evaluateonexit-action
-	Action string `json:"Action"`
+	Action T `json:"Action"`
 
 	// OnExitCode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-evaluateonexit.html#cfn-batch-jobdefinition-evaluateonexit-onexitcode
-	OnExitCode *string `json:"OnExitCode,omitempty"`
+	OnExitCode *T `json:"OnExitCode,omitempty"`
 
 	// OnReason AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-evaluateonexit.html#cfn-batch-jobdefinition-evaluateonexit-onreason
-	OnReason *string `json:"OnReason,omitempty"`
+	OnReason *T `json:"OnReason,omitempty"`
 
 	// OnStatusReason AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-evaluateonexit.html#cfn-batch-jobdefinition-evaluateonexit-onstatusreason
-	OnStatusReason *string `json:"OnStatusReason,omitempty"`
+	OnStatusReason *T `json:"OnStatusReason,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

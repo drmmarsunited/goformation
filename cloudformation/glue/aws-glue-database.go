@@ -16,7 +16,7 @@ type Database[T any] struct {
 	// CatalogId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-database.html#cfn-glue-database-catalogid
-	CatalogId string `json:"CatalogId"`
+	CatalogId T `json:"CatalogId"`
 
 	// DatabaseInput AWS CloudFormation Property
 	// Required: true

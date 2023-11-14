@@ -22,17 +22,17 @@ type DataRepositoryAssociation[T any] struct {
 	// DataRepositoryPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-datarepositoryassociation.html#cfn-fsx-datarepositoryassociation-datarepositorypath
-	DataRepositoryPath string `json:"DataRepositoryPath"`
+	DataRepositoryPath T `json:"DataRepositoryPath"`
 
 	// FileSystemId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-datarepositoryassociation.html#cfn-fsx-datarepositoryassociation-filesystemid
-	FileSystemId string `json:"FileSystemId"`
+	FileSystemId T `json:"FileSystemId"`
 
 	// FileSystemPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-datarepositoryassociation.html#cfn-fsx-datarepositoryassociation-filesystempath
-	FileSystemPath string `json:"FileSystemPath"`
+	FileSystemPath T `json:"FileSystemPath"`
 
 	// ImportedFileChunkSize AWS CloudFormation Property
 	// Required: false

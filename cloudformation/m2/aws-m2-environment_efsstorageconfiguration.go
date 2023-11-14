@@ -13,12 +13,12 @@ type Environment_EfsStorageConfiguration[T any] struct {
 	// FileSystemId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-environment-efsstorageconfiguration.html#cfn-m2-environment-efsstorageconfiguration-filesystemid
-	FileSystemId string `json:"FileSystemId"`
+	FileSystemId T `json:"FileSystemId"`
 
 	// MountPoint AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-environment-efsstorageconfiguration.html#cfn-m2-environment-efsstorageconfiguration-mountpoint
-	MountPoint string `json:"MountPoint"`
+	MountPoint T `json:"MountPoint"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

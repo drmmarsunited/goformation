@@ -13,12 +13,12 @@ type DistributionConfiguration_TargetContainerRepository[T any] struct {
 	// RepositoryName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-targetcontainerrepository.html#cfn-imagebuilder-distributionconfiguration-targetcontainerrepository-repositoryname
-	RepositoryName *string `json:"RepositoryName,omitempty"`
+	RepositoryName *T `json:"RepositoryName,omitempty"`
 
 	// Service AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-targetcontainerrepository.html#cfn-imagebuilder-distributionconfiguration-targetcontainerrepository-service
-	Service *string `json:"Service,omitempty"`
+	Service *T `json:"Service,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

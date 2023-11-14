@@ -13,7 +13,7 @@ type StateMachineAlias_RoutingConfigurationVersion[T any] struct {
 	// StateMachineVersionArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachinealias-routingconfigurationversion.html#cfn-stepfunctions-statemachinealias-routingconfigurationversion-statemachineversionarn
-	StateMachineVersionArn string `json:"StateMachineVersionArn"`
+	StateMachineVersionArn T `json:"StateMachineVersionArn"`
 
 	// Weight AWS CloudFormation Property
 	// Required: true

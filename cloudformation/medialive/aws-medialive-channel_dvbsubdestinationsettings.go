@@ -13,12 +13,12 @@ type Channel_DvbSubDestinationSettings[T any] struct {
 	// Alignment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-alignment
-	Alignment *string `json:"Alignment,omitempty"`
+	Alignment *T `json:"Alignment,omitempty"`
 
 	// BackgroundColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-backgroundcolor
-	BackgroundColor *string `json:"BackgroundColor,omitempty"`
+	BackgroundColor *T `json:"BackgroundColor,omitempty"`
 
 	// BackgroundOpacity AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Channel_DvbSubDestinationSettings[T any] struct {
 	// FontColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-fontcolor
-	FontColor *string `json:"FontColor,omitempty"`
+	FontColor *T `json:"FontColor,omitempty"`
 
 	// FontOpacity AWS CloudFormation Property
 	// Required: false
@@ -48,12 +48,12 @@ type Channel_DvbSubDestinationSettings[T any] struct {
 	// FontSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-fontsize
-	FontSize *string `json:"FontSize,omitempty"`
+	FontSize *T `json:"FontSize,omitempty"`
 
 	// OutlineColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-outlinecolor
-	OutlineColor *string `json:"OutlineColor,omitempty"`
+	OutlineColor *T `json:"OutlineColor,omitempty"`
 
 	// OutlineSize AWS CloudFormation Property
 	// Required: false
@@ -63,7 +63,7 @@ type Channel_DvbSubDestinationSettings[T any] struct {
 	// ShadowColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-shadowcolor
-	ShadowColor *string `json:"ShadowColor,omitempty"`
+	ShadowColor *T `json:"ShadowColor,omitempty"`
 
 	// ShadowOpacity AWS CloudFormation Property
 	// Required: false
@@ -83,7 +83,7 @@ type Channel_DvbSubDestinationSettings[T any] struct {
 	// TeletextGridControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-teletextgridcontrol
-	TeletextGridControl *string `json:"TeletextGridControl,omitempty"`
+	TeletextGridControl *T `json:"TeletextGridControl,omitempty"`
 
 	// XPosition AWS CloudFormation Property
 	// Required: false

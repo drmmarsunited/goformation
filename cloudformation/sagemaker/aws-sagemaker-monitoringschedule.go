@@ -17,12 +17,12 @@ type MonitoringSchedule[T any] struct {
 	// EndpointName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-endpointname
-	EndpointName *string `json:"EndpointName,omitempty"`
+	EndpointName *T `json:"EndpointName,omitempty"`
 
 	// FailureReason AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-failurereason
-	FailureReason *string `json:"FailureReason,omitempty"`
+	FailureReason *T `json:"FailureReason,omitempty"`
 
 	// LastMonitoringExecutionSummary AWS CloudFormation Property
 	// Required: false
@@ -37,12 +37,12 @@ type MonitoringSchedule[T any] struct {
 	// MonitoringScheduleName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-monitoringschedulename
-	MonitoringScheduleName string `json:"MonitoringScheduleName"`
+	MonitoringScheduleName T `json:"MonitoringScheduleName"`
 
 	// MonitoringScheduleStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-monitoringschedulestatus
-	MonitoringScheduleStatus *string `json:"MonitoringScheduleStatus,omitempty"`
+	MonitoringScheduleStatus *T `json:"MonitoringScheduleStatus,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

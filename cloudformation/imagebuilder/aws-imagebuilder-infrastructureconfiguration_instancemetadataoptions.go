@@ -18,7 +18,7 @@ type InfrastructureConfiguration_InstanceMetadataOptions[T any] struct {
 	// HttpTokens AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-instancemetadataoptions.html#cfn-imagebuilder-infrastructureconfiguration-instancemetadataoptions-httptokens
-	HttpTokens *string `json:"HttpTokens,omitempty"`
+	HttpTokens *T `json:"HttpTokens,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

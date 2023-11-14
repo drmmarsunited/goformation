@@ -13,12 +13,12 @@ type Asset_AssetHierarchy[T any] struct {
 	// ChildAssetId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-asset-assethierarchy.html#cfn-iotsitewise-asset-assethierarchy-childassetid
-	ChildAssetId string `json:"ChildAssetId"`
+	ChildAssetId T `json:"ChildAssetId"`
 
 	// LogicalId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-asset-assethierarchy.html#cfn-iotsitewise-asset-assethierarchy-logicalid
-	LogicalId string `json:"LogicalId"`
+	LogicalId T `json:"LogicalId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

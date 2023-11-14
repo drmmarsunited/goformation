@@ -13,22 +13,22 @@ type Pipe_SelfManagedKafkaAccessConfigurationCredentials[T any] struct {
 	// BasicAuth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-selfmanagedkafkaaccessconfigurationcredentials.html#cfn-pipes-pipe-selfmanagedkafkaaccessconfigurationcredentials-basicauth
-	BasicAuth *string `json:"BasicAuth,omitempty"`
+	BasicAuth *T `json:"BasicAuth,omitempty"`
 
 	// ClientCertificateTlsAuth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-selfmanagedkafkaaccessconfigurationcredentials.html#cfn-pipes-pipe-selfmanagedkafkaaccessconfigurationcredentials-clientcertificatetlsauth
-	ClientCertificateTlsAuth *string `json:"ClientCertificateTlsAuth,omitempty"`
+	ClientCertificateTlsAuth *T `json:"ClientCertificateTlsAuth,omitempty"`
 
 	// SaslScram256Auth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-selfmanagedkafkaaccessconfigurationcredentials.html#cfn-pipes-pipe-selfmanagedkafkaaccessconfigurationcredentials-saslscram256auth
-	SaslScram256Auth *string `json:"SaslScram256Auth,omitempty"`
+	SaslScram256Auth *T `json:"SaslScram256Auth,omitempty"`
 
 	// SaslScram512Auth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-selfmanagedkafkaaccessconfigurationcredentials.html#cfn-pipes-pipe-selfmanagedkafkaaccessconfigurationcredentials-saslscram512auth
-	SaslScram512Auth *string `json:"SaslScram512Auth,omitempty"`
+	SaslScram512Auth *T `json:"SaslScram512Auth,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

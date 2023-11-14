@@ -13,7 +13,7 @@ type MaintenanceWindowTask_CloudWatchOutputConfig[T any] struct {
 	// CloudWatchLogGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-cloudwatchoutputconfig.html#cfn-ssm-maintenancewindowtask-cloudwatchoutputconfig-cloudwatchloggroupname
-	CloudWatchLogGroupName *string `json:"CloudWatchLogGroupName,omitempty"`
+	CloudWatchLogGroupName *T `json:"CloudWatchLogGroupName,omitempty"`
 
 	// CloudWatchOutputEnabled AWS CloudFormation Property
 	// Required: false

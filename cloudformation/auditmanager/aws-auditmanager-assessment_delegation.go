@@ -13,27 +13,27 @@ type Assessment_Delegation[T any] struct {
 	// AssessmentId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-assessmentid
-	AssessmentId *string `json:"AssessmentId,omitempty"`
+	AssessmentId *T `json:"AssessmentId,omitempty"`
 
 	// AssessmentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-assessmentname
-	AssessmentName *string `json:"AssessmentName,omitempty"`
+	AssessmentName *T `json:"AssessmentName,omitempty"`
 
 	// Comment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-comment
-	Comment *string `json:"Comment,omitempty"`
+	Comment *T `json:"Comment,omitempty"`
 
 	// ControlSetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-controlsetid
-	ControlSetId *string `json:"ControlSetId,omitempty"`
+	ControlSetId *T `json:"ControlSetId,omitempty"`
 
 	// CreatedBy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-createdby
-	CreatedBy *string `json:"CreatedBy,omitempty"`
+	CreatedBy *T `json:"CreatedBy,omitempty"`
 
 	// CreationTime AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Assessment_Delegation[T any] struct {
 	// Id AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-id
-	Id *string `json:"Id,omitempty"`
+	Id *T `json:"Id,omitempty"`
 
 	// LastUpdated AWS CloudFormation Property
 	// Required: false
@@ -53,17 +53,17 @@ type Assessment_Delegation[T any] struct {
 	// RoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-rolearn
-	RoleArn *string `json:"RoleArn,omitempty"`
+	RoleArn *T `json:"RoleArn,omitempty"`
 
 	// RoleType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-roletype
-	RoleType *string `json:"RoleType,omitempty"`
+	RoleType *T `json:"RoleType,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-status
-	Status *string `json:"Status,omitempty"`
+	Status *T `json:"Status,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -73,12 +73,12 @@ type LaunchTemplate_LaunchTemplateData[T any] struct {
 	// ImageId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-imageid
-	ImageId *string `json:"ImageId,omitempty"`
+	ImageId *T `json:"ImageId,omitempty"`
 
 	// InstanceInitiatedShutdownBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instanceinitiatedshutdownbehavior
-	InstanceInitiatedShutdownBehavior *string `json:"InstanceInitiatedShutdownBehavior,omitempty"`
+	InstanceInitiatedShutdownBehavior *T `json:"InstanceInitiatedShutdownBehavior,omitempty"`
 
 	// InstanceMarketOptions AWS CloudFormation Property
 	// Required: false
@@ -93,17 +93,17 @@ type LaunchTemplate_LaunchTemplateData[T any] struct {
 	// InstanceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancetype
-	InstanceType *string `json:"InstanceType,omitempty"`
+	InstanceType *T `json:"InstanceType,omitempty"`
 
 	// KernelId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-kernelid
-	KernelId *string `json:"KernelId,omitempty"`
+	KernelId *T `json:"KernelId,omitempty"`
 
 	// KeyName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-keyname
-	KeyName *string `json:"KeyName,omitempty"`
+	KeyName *T `json:"KeyName,omitempty"`
 
 	// LicenseSpecifications AWS CloudFormation Property
 	// Required: false
@@ -143,17 +143,17 @@ type LaunchTemplate_LaunchTemplateData[T any] struct {
 	// RamDiskId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-ramdiskid
-	RamDiskId *string `json:"RamDiskId,omitempty"`
+	RamDiskId *T `json:"RamDiskId,omitempty"`
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-securitygroupids
-	SecurityGroupIds []string `json:"SecurityGroupIds,omitempty"`
+	SecurityGroupIds []T `json:"SecurityGroupIds,omitempty"`
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-securitygroups
-	SecurityGroups []string `json:"SecurityGroups,omitempty"`
+	SecurityGroups []T `json:"SecurityGroups,omitempty"`
 
 	// TagSpecifications AWS CloudFormation Property
 	// Required: false
@@ -163,7 +163,7 @@ type LaunchTemplate_LaunchTemplateData[T any] struct {
 	// UserData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-userdata
-	UserData *string `json:"UserData,omitempty"`
+	UserData *T `json:"UserData,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

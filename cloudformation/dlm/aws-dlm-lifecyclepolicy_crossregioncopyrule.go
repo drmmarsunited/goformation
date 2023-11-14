@@ -13,7 +13,7 @@ type LifecyclePolicy_CrossRegionCopyRule[T any] struct {
 	// CmkArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyrule-cmkarn
-	CmkArn *string `json:"CmkArn,omitempty"`
+	CmkArn *T `json:"CmkArn,omitempty"`
 
 	// CopyTags AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type LifecyclePolicy_CrossRegionCopyRule[T any] struct {
 	// Target AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyrule-target
-	Target *string `json:"Target,omitempty"`
+	Target *T `json:"Target,omitempty"`
 
 	// TargetRegion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyrule-targetregion
-	TargetRegion *string `json:"TargetRegion,omitempty"`
+	TargetRegion *T `json:"TargetRegion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -17,7 +17,7 @@ type ConnectionAlias[T any] struct {
 	// ConnectionString AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#cfn-workspaces-connectionalias-connectionstring
-	ConnectionString string `json:"ConnectionString"`
+	ConnectionString T `json:"ConnectionString"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

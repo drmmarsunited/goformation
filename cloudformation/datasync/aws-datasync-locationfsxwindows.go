@@ -17,27 +17,27 @@ type LocationFSxWindows[T any] struct {
 	// Domain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-domain
-	Domain *string `json:"Domain,omitempty"`
+	Domain *T `json:"Domain,omitempty"`
 
 	// FsxFilesystemArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-fsxfilesystemarn
-	FsxFilesystemArn *string `json:"FsxFilesystemArn,omitempty"`
+	FsxFilesystemArn *T `json:"FsxFilesystemArn,omitempty"`
 
 	// Password AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-password
-	Password *string `json:"Password,omitempty"`
+	Password *T `json:"Password,omitempty"`
 
 	// SecurityGroupArns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-securitygrouparns
-	SecurityGroupArns []string `json:"SecurityGroupArns"`
+	SecurityGroupArns []T `json:"SecurityGroupArns"`
 
 	// Subdirectory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-subdirectory
-	Subdirectory *string `json:"Subdirectory,omitempty"`
+	Subdirectory *T `json:"Subdirectory,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type LocationFSxWindows[T any] struct {
 	// User AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-user
-	User string `json:"User"`
+	User T `json:"User"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

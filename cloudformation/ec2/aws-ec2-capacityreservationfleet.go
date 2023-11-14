@@ -16,17 +16,17 @@ type CapacityReservationFleet[T any] struct {
 	// AllocationStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-allocationstrategy
-	AllocationStrategy *string `json:"AllocationStrategy,omitempty"`
+	AllocationStrategy *T `json:"AllocationStrategy,omitempty"`
 
 	// EndDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-enddate
-	EndDate *string `json:"EndDate,omitempty"`
+	EndDate *T `json:"EndDate,omitempty"`
 
 	// InstanceMatchCriteria AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-instancematchcriteria
-	InstanceMatchCriteria *string `json:"InstanceMatchCriteria,omitempty"`
+	InstanceMatchCriteria *T `json:"InstanceMatchCriteria,omitempty"`
 
 	// InstanceTypeSpecifications AWS CloudFormation Property
 	// Required: false
@@ -51,7 +51,7 @@ type CapacityReservationFleet[T any] struct {
 	// Tenancy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-tenancy
-	Tenancy *string `json:"Tenancy,omitempty"`
+	Tenancy *T `json:"Tenancy,omitempty"`
 
 	// TotalTargetCapacity AWS CloudFormation Property
 	// Required: false

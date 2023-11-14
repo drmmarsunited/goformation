@@ -16,12 +16,12 @@ type Listener[T any] struct {
 	// AcceleratorArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-listener.html#cfn-globalaccelerator-listener-acceleratorarn
-	AcceleratorArn string `json:"AcceleratorArn"`
+	AcceleratorArn T `json:"AcceleratorArn"`
 
 	// ClientAffinity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-listener.html#cfn-globalaccelerator-listener-clientaffinity
-	ClientAffinity *string `json:"ClientAffinity,omitempty"`
+	ClientAffinity *T `json:"ClientAffinity,omitempty"`
 
 	// PortRanges AWS CloudFormation Property
 	// Required: true
@@ -31,7 +31,7 @@ type Listener[T any] struct {
 	// Protocol AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-listener.html#cfn-globalaccelerator-listener-protocol
-	Protocol string `json:"Protocol"`
+	Protocol T `json:"Protocol"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -23,12 +23,12 @@ type ScalableTarget_ScheduledAction[T any] struct {
 	// Schedule AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-schedule
-	Schedule string `json:"Schedule"`
+	Schedule T `json:"Schedule"`
 
 	// ScheduledActionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-scheduledactionname
-	ScheduledActionName string `json:"ScheduledActionName"`
+	ScheduledActionName T `json:"ScheduledActionName"`
 
 	// StartTime AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type ScalableTarget_ScheduledAction[T any] struct {
 	// Timezone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-timezone
-	Timezone *string `json:"Timezone,omitempty"`
+	Timezone *T `json:"Timezone,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

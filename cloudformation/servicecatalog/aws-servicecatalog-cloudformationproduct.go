@@ -17,32 +17,32 @@ type CloudFormationProduct[T any] struct {
 	// AcceptLanguage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-acceptlanguage
-	AcceptLanguage *string `json:"AcceptLanguage,omitempty"`
+	AcceptLanguage *T `json:"AcceptLanguage,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Distributor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-distributor
-	Distributor *string `json:"Distributor,omitempty"`
+	Distributor *T `json:"Distributor,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Owner AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-owner
-	Owner string `json:"Owner"`
+	Owner T `json:"Owner"`
 
 	// ProductType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-producttype
-	ProductType *string `json:"ProductType,omitempty"`
+	ProductType *T `json:"ProductType,omitempty"`
 
 	// ProvisioningArtifactParameters AWS CloudFormation Property
 	// Required: false
@@ -62,17 +62,17 @@ type CloudFormationProduct[T any] struct {
 	// SupportDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supportdescription
-	SupportDescription *string `json:"SupportDescription,omitempty"`
+	SupportDescription *T `json:"SupportDescription,omitempty"`
 
 	// SupportEmail AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supportemail
-	SupportEmail *string `json:"SupportEmail,omitempty"`
+	SupportEmail *T `json:"SupportEmail,omitempty"`
 
 	// SupportUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supporturl
-	SupportUrl *string `json:"SupportUrl,omitempty"`
+	SupportUrl *T `json:"SupportUrl,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

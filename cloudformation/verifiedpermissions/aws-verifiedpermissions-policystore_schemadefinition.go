@@ -13,7 +13,7 @@ type PolicyStore_SchemaDefinition[T any] struct {
 	// CedarJson AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-verifiedpermissions-policystore-schemadefinition.html#cfn-verifiedpermissions-policystore-schemadefinition-cedarjson
-	CedarJson *string `json:"CedarJson,omitempty"`
+	CedarJson *T `json:"CedarJson,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

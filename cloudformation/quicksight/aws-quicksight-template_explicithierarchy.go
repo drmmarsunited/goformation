@@ -23,7 +23,7 @@ type Template_ExplicitHierarchy[T any] struct {
 	// HierarchyId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-explicithierarchy.html#cfn-quicksight-template-explicithierarchy-hierarchyid
-	HierarchyId string `json:"HierarchyId"`
+	HierarchyId T `json:"HierarchyId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

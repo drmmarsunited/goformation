@@ -13,7 +13,7 @@ type Dashboard_DonutCenterOptions[T any] struct {
 	// LabelVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-donutcenteroptions.html#cfn-quicksight-dashboard-donutcenteroptions-labelvisibility
-	LabelVisibility *string `json:"LabelVisibility,omitempty"`
+	LabelVisibility *T `json:"LabelVisibility,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

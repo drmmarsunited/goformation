@@ -13,7 +13,7 @@ type Distribution_LambdaFunctionAssociation[T any] struct {
 	// EventType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html#cfn-cloudfront-distribution-lambdafunctionassociation-eventtype
-	EventType *string `json:"EventType,omitempty"`
+	EventType *T `json:"EventType,omitempty"`
 
 	// IncludeBody AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Distribution_LambdaFunctionAssociation[T any] struct {
 	// LambdaFunctionARN AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html#cfn-cloudfront-distribution-lambdafunctionassociation-lambdafunctionarn
-	LambdaFunctionARN *string `json:"LambdaFunctionARN,omitempty"`
+	LambdaFunctionARN *T `json:"LambdaFunctionARN,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

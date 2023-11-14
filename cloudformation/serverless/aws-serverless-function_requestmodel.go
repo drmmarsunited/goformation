@@ -13,7 +13,7 @@ type Function_RequestModel[T any] struct {
 	// Model AWS CloudFormation Property
 	// Required: true
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-requestmodel.html#sam-function-requestmodel-model
-	Model string `json:"Model"`
+	Model T `json:"Model"`
 
 	// Required AWS CloudFormation Property
 	// Required: false

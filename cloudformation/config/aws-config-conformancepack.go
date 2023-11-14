@@ -21,27 +21,27 @@ type ConformancePack[T any] struct {
 	// ConformancePackName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-conformancepackname
-	ConformancePackName string `json:"ConformancePackName"`
+	ConformancePackName T `json:"ConformancePackName"`
 
 	// DeliveryS3Bucket AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-deliverys3bucket
-	DeliveryS3Bucket *string `json:"DeliveryS3Bucket,omitempty"`
+	DeliveryS3Bucket *T `json:"DeliveryS3Bucket,omitempty"`
 
 	// DeliveryS3KeyPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-deliverys3keyprefix
-	DeliveryS3KeyPrefix *string `json:"DeliveryS3KeyPrefix,omitempty"`
+	DeliveryS3KeyPrefix *T `json:"DeliveryS3KeyPrefix,omitempty"`
 
 	// TemplateBody AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templatebody
-	TemplateBody *string `json:"TemplateBody,omitempty"`
+	TemplateBody *T `json:"TemplateBody,omitempty"`
 
 	// TemplateS3Uri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templates3uri
-	TemplateS3Uri *string `json:"TemplateS3Uri,omitempty"`
+	TemplateS3Uri *T `json:"TemplateS3Uri,omitempty"`
 
 	// TemplateSSMDocumentDetails AWS CloudFormation Property
 	// Required: false

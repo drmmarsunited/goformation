@@ -22,22 +22,22 @@ type StorageVirtualMachine[T any] struct {
 	// FileSystemId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-storagevirtualmachine.html#cfn-fsx-storagevirtualmachine-filesystemid
-	FileSystemId string `json:"FileSystemId"`
+	FileSystemId T `json:"FileSystemId"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-storagevirtualmachine.html#cfn-fsx-storagevirtualmachine-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// RootVolumeSecurityStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-storagevirtualmachine.html#cfn-fsx-storagevirtualmachine-rootvolumesecuritystyle
-	RootVolumeSecurityStyle *string `json:"RootVolumeSecurityStyle,omitempty"`
+	RootVolumeSecurityStyle *T `json:"RootVolumeSecurityStyle,omitempty"`
 
 	// SvmAdminPassword AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-storagevirtualmachine.html#cfn-fsx-storagevirtualmachine-svmadminpassword
-	SvmAdminPassword *string `json:"SvmAdminPassword,omitempty"`
+	SvmAdminPassword *T `json:"SvmAdminPassword,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

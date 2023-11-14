@@ -13,12 +13,12 @@ type ConnectorProfile_SalesforceConnectorProfileCredentials[T any] struct {
 	// AccessToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofilecredentials.html#cfn-appflow-connectorprofile-salesforceconnectorprofilecredentials-accesstoken
-	AccessToken *string `json:"AccessToken,omitempty"`
+	AccessToken *T `json:"AccessToken,omitempty"`
 
 	// ClientCredentialsArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofilecredentials.html#cfn-appflow-connectorprofile-salesforceconnectorprofilecredentials-clientcredentialsarn
-	ClientCredentialsArn *string `json:"ClientCredentialsArn,omitempty"`
+	ClientCredentialsArn *T `json:"ClientCredentialsArn,omitempty"`
 
 	// ConnectorOAuthRequest AWS CloudFormation Property
 	// Required: false
@@ -28,17 +28,17 @@ type ConnectorProfile_SalesforceConnectorProfileCredentials[T any] struct {
 	// JwtToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofilecredentials.html#cfn-appflow-connectorprofile-salesforceconnectorprofilecredentials-jwttoken
-	JwtToken *string `json:"JwtToken,omitempty"`
+	JwtToken *T `json:"JwtToken,omitempty"`
 
 	// OAuth2GrantType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofilecredentials.html#cfn-appflow-connectorprofile-salesforceconnectorprofilecredentials-oauth2granttype
-	OAuth2GrantType *string `json:"OAuth2GrantType,omitempty"`
+	OAuth2GrantType *T `json:"OAuth2GrantType,omitempty"`
 
 	// RefreshToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofilecredentials.html#cfn-appflow-connectorprofile-salesforceconnectorprofilecredentials-refreshtoken
-	RefreshToken *string `json:"RefreshToken,omitempty"`
+	RefreshToken *T `json:"RefreshToken,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

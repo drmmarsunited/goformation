@@ -13,27 +13,27 @@ type ReportPlan_ReportSetting[T any] struct {
 	// Accounts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportsetting.html#cfn-backup-reportplan-reportsetting-accounts
-	Accounts []string `json:"Accounts,omitempty"`
+	Accounts []T `json:"Accounts,omitempty"`
 
 	// FrameworkArns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportsetting.html#cfn-backup-reportplan-reportsetting-frameworkarns
-	FrameworkArns []string `json:"FrameworkArns,omitempty"`
+	FrameworkArns []T `json:"FrameworkArns,omitempty"`
 
 	// OrganizationUnits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportsetting.html#cfn-backup-reportplan-reportsetting-organizationunits
-	OrganizationUnits []string `json:"OrganizationUnits,omitempty"`
+	OrganizationUnits []T `json:"OrganizationUnits,omitempty"`
 
 	// Regions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportsetting.html#cfn-backup-reportplan-reportsetting-regions
-	Regions []string `json:"Regions,omitempty"`
+	Regions []T `json:"Regions,omitempty"`
 
 	// ReportTemplate AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportsetting.html#cfn-backup-reportplan-reportsetting-reporttemplate
-	ReportTemplate string `json:"ReportTemplate"`
+	ReportTemplate T `json:"ReportTemplate"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Template_LocalNavigationConfiguration[T any] struct {
 	// TargetSheetId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-localnavigationconfiguration.html#cfn-quicksight-template-localnavigationconfiguration-targetsheetid
-	TargetSheetId string `json:"TargetSheetId"`
+	TargetSheetId T `json:"TargetSheetId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

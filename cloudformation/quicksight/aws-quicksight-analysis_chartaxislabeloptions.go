@@ -18,12 +18,12 @@ type Analysis_ChartAxisLabelOptions[T any] struct {
 	// SortIconVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-chartaxislabeloptions.html#cfn-quicksight-analysis-chartaxislabeloptions-sorticonvisibility
-	SortIconVisibility *string `json:"SortIconVisibility,omitempty"`
+	SortIconVisibility *T `json:"SortIconVisibility,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-chartaxislabeloptions.html#cfn-quicksight-analysis-chartaxislabeloptions-visibility
-	Visibility *string `json:"Visibility,omitempty"`
+	Visibility *T `json:"Visibility,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

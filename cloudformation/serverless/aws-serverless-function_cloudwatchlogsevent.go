@@ -13,12 +13,12 @@ type Function_CloudWatchLogsEvent[T any] struct {
 	// FilterPattern AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#cloudwatchlogs
-	FilterPattern string `json:"FilterPattern"`
+	FilterPattern T `json:"FilterPattern"`
 
 	// LogGroupName AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#cloudwatchlogs
-	LogGroupName string `json:"LogGroupName"`
+	LogGroupName T `json:"LogGroupName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

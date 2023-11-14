@@ -17,7 +17,7 @@ type DBCluster[T any] struct {
 	// AvailabilityZones AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-availabilityzones
-	AvailabilityZones []string `json:"AvailabilityZones,omitempty"`
+	AvailabilityZones []T `json:"AvailabilityZones,omitempty"`
 
 	// BackupRetentionPeriod AWS CloudFormation Property
 	// Required: false
@@ -32,17 +32,17 @@ type DBCluster[T any] struct {
 	// DBClusterIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-dbclusteridentifier
-	DBClusterIdentifier *string `json:"DBClusterIdentifier,omitempty"`
+	DBClusterIdentifier *T `json:"DBClusterIdentifier,omitempty"`
 
 	// DBClusterParameterGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-dbclusterparametergroupname
-	DBClusterParameterGroupName *string `json:"DBClusterParameterGroupName,omitempty"`
+	DBClusterParameterGroupName *T `json:"DBClusterParameterGroupName,omitempty"`
 
 	// DBSubnetGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-dbsubnetgroupname
-	DBSubnetGroupName *string `json:"DBSubnetGroupName,omitempty"`
+	DBSubnetGroupName *T `json:"DBSubnetGroupName,omitempty"`
 
 	// DeletionProtection AWS CloudFormation Property
 	// Required: false
@@ -52,27 +52,27 @@ type DBCluster[T any] struct {
 	// EnableCloudwatchLogsExports AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-enablecloudwatchlogsexports
-	EnableCloudwatchLogsExports []string `json:"EnableCloudwatchLogsExports,omitempty"`
+	EnableCloudwatchLogsExports []T `json:"EnableCloudwatchLogsExports,omitempty"`
 
 	// EngineVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-engineversion
-	EngineVersion *string `json:"EngineVersion,omitempty"`
+	EngineVersion *T `json:"EngineVersion,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-kmskeyid
-	KmsKeyId *string `json:"KmsKeyId,omitempty"`
+	KmsKeyId *T `json:"KmsKeyId,omitempty"`
 
 	// MasterUserPassword AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-masteruserpassword
-	MasterUserPassword *string `json:"MasterUserPassword,omitempty"`
+	MasterUserPassword *T `json:"MasterUserPassword,omitempty"`
 
 	// MasterUsername AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-masterusername
-	MasterUsername *string `json:"MasterUsername,omitempty"`
+	MasterUsername *T `json:"MasterUsername,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
@@ -82,32 +82,32 @@ type DBCluster[T any] struct {
 	// PreferredBackupWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-preferredbackupwindow
-	PreferredBackupWindow *string `json:"PreferredBackupWindow,omitempty"`
+	PreferredBackupWindow *T `json:"PreferredBackupWindow,omitempty"`
 
 	// PreferredMaintenanceWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-preferredmaintenancewindow
-	PreferredMaintenanceWindow *string `json:"PreferredMaintenanceWindow,omitempty"`
+	PreferredMaintenanceWindow *T `json:"PreferredMaintenanceWindow,omitempty"`
 
 	// RestoreToTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-restoretotime
-	RestoreToTime *string `json:"RestoreToTime,omitempty"`
+	RestoreToTime *T `json:"RestoreToTime,omitempty"`
 
 	// RestoreType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-restoretype
-	RestoreType *string `json:"RestoreType,omitempty"`
+	RestoreType *T `json:"RestoreType,omitempty"`
 
 	// SnapshotIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-snapshotidentifier
-	SnapshotIdentifier *string `json:"SnapshotIdentifier,omitempty"`
+	SnapshotIdentifier *T `json:"SnapshotIdentifier,omitempty"`
 
 	// SourceDBClusterIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-sourcedbclusteridentifier
-	SourceDBClusterIdentifier *string `json:"SourceDBClusterIdentifier,omitempty"`
+	SourceDBClusterIdentifier *T `json:"SourceDBClusterIdentifier,omitempty"`
 
 	// StorageEncrypted AWS CloudFormation Property
 	// Required: false
@@ -127,7 +127,7 @@ type DBCluster[T any] struct {
 	// VpcSecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-vpcsecuritygroupids
-	VpcSecurityGroupIds []string `json:"VpcSecurityGroupIds,omitempty"`
+	VpcSecurityGroupIds []T `json:"VpcSecurityGroupIds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

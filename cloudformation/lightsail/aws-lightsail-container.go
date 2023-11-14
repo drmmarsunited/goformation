@@ -27,7 +27,12 @@ type Container[T any] struct {
 	// Power AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-power
-	Power string `json:"Power"`
+	Power T `json:"Power"`
+
+	// PrivateRegistryAccess AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-privateregistryaccess
+	PrivateRegistryAccess *Container_PrivateRegistryAccess[any] `json:"PrivateRegistryAccess,omitempty"`
 
 	// PublicDomainNames AWS CloudFormation Property
 	// Required: false
@@ -42,7 +47,7 @@ type Container[T any] struct {
 	// ServiceName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-servicename
-	ServiceName string `json:"ServiceName"`
+	ServiceName T `json:"ServiceName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

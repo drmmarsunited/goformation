@@ -13,12 +13,12 @@ type Function_HttpApiFunctionAuth[T any] struct {
 	// AuthorizationScopes AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-httpapifunctionauth.html
-	AuthorizationScopes []string `json:"AuthorizationScopes,omitempty"`
+	AuthorizationScopes []T `json:"AuthorizationScopes,omitempty"`
 
 	// Authorizer AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-httpapifunctionauth.html
-	Authorizer *string `json:"Authorizer,omitempty"`
+	Authorizer *T `json:"Authorizer,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

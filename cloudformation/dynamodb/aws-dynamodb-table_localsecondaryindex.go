@@ -13,7 +13,7 @@ type Table_LocalSecondaryIndex[T any] struct {
 	// IndexName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-localsecondaryindex.html#cfn-dynamodb-table-localsecondaryindex-indexname
-	IndexName string `json:"IndexName"`
+	IndexName T `json:"IndexName"`
 
 	// KeySchema AWS CloudFormation Property
 	// Required: true

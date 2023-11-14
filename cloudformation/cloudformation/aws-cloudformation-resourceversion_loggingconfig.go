@@ -13,12 +13,12 @@ type ResourceVersion_LoggingConfig[T any] struct {
 	// LogGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-resourceversion-loggingconfig.html#cfn-cloudformation-resourceversion-loggingconfig-loggroupname
-	LogGroupName *string `json:"LogGroupName,omitempty"`
+	LogGroupName *T `json:"LogGroupName,omitempty"`
 
 	// LogRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-resourceversion-loggingconfig.html#cfn-cloudformation-resourceversion-loggingconfig-logrolearn
-	LogRoleArn *string `json:"LogRoleArn,omitempty"`
+	LogRoleArn *T `json:"LogRoleArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

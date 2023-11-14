@@ -18,7 +18,7 @@ type RuleGroup_RulesSource[T any] struct {
 	// RulesString AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulessource.html#cfn-networkfirewall-rulegroup-rulessource-rulesstring
-	RulesString *string `json:"RulesString,omitempty"`
+	RulesString *T `json:"RulesString,omitempty"`
 
 	// StatefulRules AWS CloudFormation Property
 	// Required: false

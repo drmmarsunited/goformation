@@ -13,17 +13,17 @@ type Table_TableInput[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Owner AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-owner
-	Owner *string `json:"Owner,omitempty"`
+	Owner *T `json:"Owner,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Table_TableInput[T any] struct {
 	// TableType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-tabletype
-	TableType *string `json:"TableType,omitempty"`
+	TableType *T `json:"TableType,omitempty"`
 
 	// TargetTable AWS CloudFormation Property
 	// Required: false
@@ -58,12 +58,12 @@ type Table_TableInput[T any] struct {
 	// ViewExpandedText AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-viewexpandedtext
-	ViewExpandedText *string `json:"ViewExpandedText,omitempty"`
+	ViewExpandedText *T `json:"ViewExpandedText,omitempty"`
 
 	// ViewOriginalText AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-vieworiginaltext
-	ViewOriginalText *string `json:"ViewOriginalText,omitempty"`
+	ViewOriginalText *T `json:"ViewOriginalText,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

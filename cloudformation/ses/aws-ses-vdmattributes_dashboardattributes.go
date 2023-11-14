@@ -13,7 +13,7 @@ type VdmAttributes_DashboardAttributes[T any] struct {
 	// EngagementMetrics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-vdmattributes-dashboardattributes.html#cfn-ses-vdmattributes-dashboardattributes-engagementmetrics
-	EngagementMetrics *string `json:"EngagementMetrics,omitempty"`
+	EngagementMetrics *T `json:"EngagementMetrics,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

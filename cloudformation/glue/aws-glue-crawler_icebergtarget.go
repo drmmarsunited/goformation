@@ -13,12 +13,12 @@ type Crawler_IcebergTarget[T any] struct {
 	// ConnectionName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-icebergtarget.html#cfn-glue-crawler-icebergtarget-connectionname
-	ConnectionName *string `json:"ConnectionName,omitempty"`
+	ConnectionName *T `json:"ConnectionName,omitempty"`
 
 	// Exclusions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-icebergtarget.html#cfn-glue-crawler-icebergtarget-exclusions
-	Exclusions []string `json:"Exclusions,omitempty"`
+	Exclusions []T `json:"Exclusions,omitempty"`
 
 	// MaximumTraversalDepth AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Crawler_IcebergTarget[T any] struct {
 	// Paths AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-icebergtarget.html#cfn-glue-crawler-icebergtarget-paths
-	Paths []string `json:"Paths,omitempty"`
+	Paths []T `json:"Paths,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

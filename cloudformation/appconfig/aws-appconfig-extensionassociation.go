@@ -17,7 +17,7 @@ type ExtensionAssociation[T any] struct {
 	// ExtensionIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-extensionassociation.html#cfn-appconfig-extensionassociation-extensionidentifier
-	ExtensionIdentifier *string `json:"ExtensionIdentifier,omitempty"`
+	ExtensionIdentifier *T `json:"ExtensionIdentifier,omitempty"`
 
 	// ExtensionVersionNumber AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type ExtensionAssociation[T any] struct {
 	// Parameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-extensionassociation.html#cfn-appconfig-extensionassociation-parameters
-	Parameters map[string]string `json:"Parameters,omitempty"`
+	Parameters map[string]T `json:"Parameters,omitempty"`
 
 	// ResourceIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-extensionassociation.html#cfn-appconfig-extensionassociation-resourceidentifier
-	ResourceIdentifier *string `json:"ResourceIdentifier,omitempty"`
+	ResourceIdentifier *T `json:"ResourceIdentifier,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

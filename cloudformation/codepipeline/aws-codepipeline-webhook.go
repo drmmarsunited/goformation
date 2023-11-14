@@ -16,7 +16,7 @@ type Webhook[T any] struct {
 	// Authentication AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-authentication
-	Authentication string `json:"Authentication"`
+	Authentication T `json:"Authentication"`
 
 	// AuthenticationConfiguration AWS CloudFormation Property
 	// Required: true
@@ -31,7 +31,7 @@ type Webhook[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// RegisterWithThirdParty AWS CloudFormation Property
 	// Required: false
@@ -41,12 +41,12 @@ type Webhook[T any] struct {
 	// TargetAction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetaction
-	TargetAction string `json:"TargetAction"`
+	TargetAction T `json:"TargetAction"`
 
 	// TargetPipeline AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetpipeline
-	TargetPipeline string `json:"TargetPipeline"`
+	TargetPipeline T `json:"TargetPipeline"`
 
 	// TargetPipelineVersion AWS CloudFormation Property
 	// Required: true

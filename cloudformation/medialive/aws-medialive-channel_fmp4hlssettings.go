@@ -13,17 +13,17 @@ type Channel_Fmp4HlsSettings[T any] struct {
 	// AudioRenditionSets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-fmp4hlssettings.html#cfn-medialive-channel-fmp4hlssettings-audiorenditionsets
-	AudioRenditionSets *string `json:"AudioRenditionSets,omitempty"`
+	AudioRenditionSets *T `json:"AudioRenditionSets,omitempty"`
 
 	// NielsenId3Behavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-fmp4hlssettings.html#cfn-medialive-channel-fmp4hlssettings-nielsenid3behavior
-	NielsenId3Behavior *string `json:"NielsenId3Behavior,omitempty"`
+	NielsenId3Behavior *T `json:"NielsenId3Behavior,omitempty"`
 
 	// TimedMetadataBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-fmp4hlssettings.html#cfn-medialive-channel-fmp4hlssettings-timedmetadatabehavior
-	TimedMetadataBehavior *string `json:"TimedMetadataBehavior,omitempty"`
+	TimedMetadataBehavior *T `json:"TimedMetadataBehavior,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Policy_TemplateLinkedPolicyDefinition[T any] struct {
 	// PolicyTemplateId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-verifiedpermissions-policy-templatelinkedpolicydefinition.html#cfn-verifiedpermissions-policy-templatelinkedpolicydefinition-policytemplateid
-	PolicyTemplateId string `json:"PolicyTemplateId"`
+	PolicyTemplateId T `json:"PolicyTemplateId"`
 
 	// Principal AWS CloudFormation Property
 	// Required: false

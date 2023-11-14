@@ -13,7 +13,7 @@ type MulticastGroup_LoRaWAN[T any] struct {
 	// DlClass AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-multicastgroup-lorawan.html#cfn-iotwireless-multicastgroup-lorawan-dlclass
-	DlClass string `json:"DlClass"`
+	DlClass T `json:"DlClass"`
 
 	// NumberOfDevicesInGroup AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type MulticastGroup_LoRaWAN[T any] struct {
 	// RfRegion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-multicastgroup-lorawan.html#cfn-iotwireless-multicastgroup-lorawan-rfregion
-	RfRegion string `json:"RfRegion"`
+	RfRegion T `json:"RfRegion"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

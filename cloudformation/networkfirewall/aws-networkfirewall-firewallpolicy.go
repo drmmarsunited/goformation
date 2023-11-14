@@ -17,7 +17,7 @@ type FirewallPolicy[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// FirewallPolicy AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type FirewallPolicy[T any] struct {
 	// FirewallPolicyName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicyname
-	FirewallPolicyName string `json:"FirewallPolicyName"`
+	FirewallPolicyName T `json:"FirewallPolicyName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type Application_Definition[T any] struct {
 	// Content AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-application-definition.html#cfn-m2-application-definition-content
-	Content *string `json:"Content,omitempty"`
+	Content *T `json:"Content,omitempty"`
 
 	// S3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-application-definition.html#cfn-m2-application-definition-s3location
-	S3Location *string `json:"S3Location,omitempty"`
+	S3Location *T `json:"S3Location,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

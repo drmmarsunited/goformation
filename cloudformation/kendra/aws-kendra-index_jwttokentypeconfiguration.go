@@ -13,37 +13,37 @@ type Index_JwtTokenTypeConfiguration[T any] struct {
 	// ClaimRegex AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-claimregex
-	ClaimRegex *string `json:"ClaimRegex,omitempty"`
+	ClaimRegex *T `json:"ClaimRegex,omitempty"`
 
 	// GroupAttributeField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-groupattributefield
-	GroupAttributeField *string `json:"GroupAttributeField,omitempty"`
+	GroupAttributeField *T `json:"GroupAttributeField,omitempty"`
 
 	// Issuer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-issuer
-	Issuer *string `json:"Issuer,omitempty"`
+	Issuer *T `json:"Issuer,omitempty"`
 
 	// KeyLocation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-keylocation
-	KeyLocation string `json:"KeyLocation"`
+	KeyLocation T `json:"KeyLocation"`
 
 	// SecretManagerArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-secretmanagerarn
-	SecretManagerArn *string `json:"SecretManagerArn,omitempty"`
+	SecretManagerArn *T `json:"SecretManagerArn,omitempty"`
 
 	// URL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-url
-	URL *string `json:"URL,omitempty"`
+	URL *T `json:"URL,omitempty"`
 
 	// UserNameAttributeField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-usernameattributefield
-	UserNameAttributeField *string `json:"UserNameAttributeField,omitempty"`
+	UserNameAttributeField *T `json:"UserNameAttributeField,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

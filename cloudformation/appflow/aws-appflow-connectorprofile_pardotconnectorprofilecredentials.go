@@ -13,12 +13,12 @@ type ConnectorProfile_PardotConnectorProfileCredentials[T any] struct {
 	// AccessToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-pardotconnectorprofilecredentials.html#cfn-appflow-connectorprofile-pardotconnectorprofilecredentials-accesstoken
-	AccessToken *string `json:"AccessToken,omitempty"`
+	AccessToken *T `json:"AccessToken,omitempty"`
 
 	// ClientCredentialsArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-pardotconnectorprofilecredentials.html#cfn-appflow-connectorprofile-pardotconnectorprofilecredentials-clientcredentialsarn
-	ClientCredentialsArn *string `json:"ClientCredentialsArn,omitempty"`
+	ClientCredentialsArn *T `json:"ClientCredentialsArn,omitempty"`
 
 	// ConnectorOAuthRequest AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type ConnectorProfile_PardotConnectorProfileCredentials[T any] struct {
 	// RefreshToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-pardotconnectorprofilecredentials.html#cfn-appflow-connectorprofile-pardotconnectorprofilecredentials-refreshtoken
-	RefreshToken *string `json:"RefreshToken,omitempty"`
+	RefreshToken *T `json:"RefreshToken,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

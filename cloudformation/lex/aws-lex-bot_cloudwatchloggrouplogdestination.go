@@ -13,12 +13,12 @@ type Bot_CloudWatchLogGroupLogDestination[T any] struct {
 	// CloudWatchLogGroupArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-cloudwatchloggrouplogdestination.html#cfn-lex-bot-cloudwatchloggrouplogdestination-cloudwatchloggrouparn
-	CloudWatchLogGroupArn string `json:"CloudWatchLogGroupArn"`
+	CloudWatchLogGroupArn T `json:"CloudWatchLogGroupArn"`
 
 	// LogPrefix AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-cloudwatchloggrouplogdestination.html#cfn-lex-bot-cloudwatchloggrouplogdestination-logprefix
-	LogPrefix string `json:"LogPrefix"`
+	LogPrefix T `json:"LogPrefix"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

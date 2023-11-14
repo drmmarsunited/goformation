@@ -13,17 +13,17 @@ type Dashboard_CustomContentConfiguration[T any] struct {
 	// ContentType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customcontentconfiguration.html#cfn-quicksight-dashboard-customcontentconfiguration-contenttype
-	ContentType *string `json:"ContentType,omitempty"`
+	ContentType *T `json:"ContentType,omitempty"`
 
 	// ContentUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customcontentconfiguration.html#cfn-quicksight-dashboard-customcontentconfiguration-contenturl
-	ContentUrl *string `json:"ContentUrl,omitempty"`
+	ContentUrl *T `json:"ContentUrl,omitempty"`
 
 	// ImageScaling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customcontentconfiguration.html#cfn-quicksight-dashboard-customcontentconfiguration-imagescaling
-	ImageScaling *string `json:"ImageScaling,omitempty"`
+	ImageScaling *T `json:"ImageScaling,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type AutomationRule_NoteUpdate[T any] struct {
 	// Text AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-automationrule-noteupdate.html#cfn-securityhub-automationrule-noteupdate-text
-	Text string `json:"Text"`
+	Text T `json:"Text"`
 
 	// UpdatedBy AWS CloudFormation Property
 	// Required: true

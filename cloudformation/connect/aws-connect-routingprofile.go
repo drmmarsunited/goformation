@@ -14,20 +14,25 @@ import (
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-routingprofile.html
 type RoutingProfile[T any] struct {
 
+	// AgentAvailabilityTimer AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-routingprofile.html#cfn-connect-routingprofile-agentavailabilitytimer
+	AgentAvailabilityTimer *T `json:"AgentAvailabilityTimer,omitempty"`
+
 	// DefaultOutboundQueueArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-routingprofile.html#cfn-connect-routingprofile-defaultoutboundqueuearn
-	DefaultOutboundQueueArn string `json:"DefaultOutboundQueueArn"`
+	DefaultOutboundQueueArn T `json:"DefaultOutboundQueueArn"`
 
 	// Description AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-routingprofile.html#cfn-connect-routingprofile-description
-	Description string `json:"Description"`
+	Description T `json:"Description"`
 
 	// InstanceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-routingprofile.html#cfn-connect-routingprofile-instancearn
-	InstanceArn string `json:"InstanceArn"`
+	InstanceArn T `json:"InstanceArn"`
 
 	// MediaConcurrencies AWS CloudFormation Property
 	// Required: true
@@ -37,7 +42,7 @@ type RoutingProfile[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-routingprofile.html#cfn-connect-routingprofile-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// QueueConfigs AWS CloudFormation Property
 	// Required: false

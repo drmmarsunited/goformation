@@ -13,22 +13,22 @@ type Dashboard_LineChartMarkerStyleSettings[T any] struct {
 	// MarkerColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartmarkerstylesettings.html#cfn-quicksight-dashboard-linechartmarkerstylesettings-markercolor
-	MarkerColor *string `json:"MarkerColor,omitempty"`
+	MarkerColor *T `json:"MarkerColor,omitempty"`
 
 	// MarkerShape AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartmarkerstylesettings.html#cfn-quicksight-dashboard-linechartmarkerstylesettings-markershape
-	MarkerShape *string `json:"MarkerShape,omitempty"`
+	MarkerShape *T `json:"MarkerShape,omitempty"`
 
 	// MarkerSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartmarkerstylesettings.html#cfn-quicksight-dashboard-linechartmarkerstylesettings-markersize
-	MarkerSize *string `json:"MarkerSize,omitempty"`
+	MarkerSize *T `json:"MarkerSize,omitempty"`
 
 	// MarkerVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartmarkerstylesettings.html#cfn-quicksight-dashboard-linechartmarkerstylesettings-markervisibility
-	MarkerVisibility *string `json:"MarkerVisibility,omitempty"`
+	MarkerVisibility *T `json:"MarkerVisibility,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

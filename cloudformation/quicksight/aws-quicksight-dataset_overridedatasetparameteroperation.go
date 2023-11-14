@@ -18,12 +18,12 @@ type DataSet_OverrideDatasetParameterOperation[T any] struct {
 	// NewParameterName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-overridedatasetparameteroperation.html#cfn-quicksight-dataset-overridedatasetparameteroperation-newparametername
-	NewParameterName *string `json:"NewParameterName,omitempty"`
+	NewParameterName *T `json:"NewParameterName,omitempty"`
 
 	// ParameterName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-overridedatasetparameteroperation.html#cfn-quicksight-dataset-overridedatasetparameteroperation-parametername
-	ParameterName string `json:"ParameterName"`
+	ParameterName T `json:"ParameterName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

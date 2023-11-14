@@ -13,7 +13,7 @@ type EvaluationForm_EvaluationFormQuestion[T any] struct {
 	// Instructions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformquestion.html#cfn-connect-evaluationform-evaluationformquestion-instructions
-	Instructions *string `json:"Instructions,omitempty"`
+	Instructions *T `json:"Instructions,omitempty"`
 
 	// NotApplicableEnabled AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type EvaluationForm_EvaluationFormQuestion[T any] struct {
 	// QuestionType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformquestion.html#cfn-connect-evaluationform-evaluationformquestion-questiontype
-	QuestionType string `json:"QuestionType"`
+	QuestionType T `json:"QuestionType"`
 
 	// QuestionTypeProperties AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type EvaluationForm_EvaluationFormQuestion[T any] struct {
 	// RefId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformquestion.html#cfn-connect-evaluationform-evaluationformquestion-refid
-	RefId string `json:"RefId"`
+	RefId T `json:"RefId"`
 
 	// Title AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformquestion.html#cfn-connect-evaluationform-evaluationformquestion-title
-	Title string `json:"Title"`
+	Title T `json:"Title"`
 
 	// Weight AWS CloudFormation Property
 	// Required: false

@@ -27,7 +27,7 @@ type MaintenanceWindow[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Duration AWS CloudFormation Property
 	// Required: true
@@ -37,17 +37,17 @@ type MaintenanceWindow[T any] struct {
 	// EndDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-enddate
-	EndDate *string `json:"EndDate,omitempty"`
+	EndDate *T `json:"EndDate,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Schedule AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-schedule
-	Schedule string `json:"Schedule"`
+	Schedule T `json:"Schedule"`
 
 	// ScheduleOffset AWS CloudFormation Property
 	// Required: false
@@ -57,12 +57,12 @@ type MaintenanceWindow[T any] struct {
 	// ScheduleTimezone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-scheduletimezone
-	ScheduleTimezone *string `json:"ScheduleTimezone,omitempty"`
+	ScheduleTimezone *T `json:"ScheduleTimezone,omitempty"`
 
 	// StartDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-startdate
-	StartDate *string `json:"StartDate,omitempty"`
+	StartDate *T `json:"StartDate,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

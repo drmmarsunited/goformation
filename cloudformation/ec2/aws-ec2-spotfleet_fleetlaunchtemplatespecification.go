@@ -13,17 +13,17 @@ type SpotFleet_FleetLaunchTemplateSpecification[T any] struct {
 	// LaunchTemplateId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-fleetlaunchtemplatespecification.html#cfn-ec2-spotfleet-fleetlaunchtemplatespecification-launchtemplateid
-	LaunchTemplateId *string `json:"LaunchTemplateId,omitempty"`
+	LaunchTemplateId *T `json:"LaunchTemplateId,omitempty"`
 
 	// LaunchTemplateName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-fleetlaunchtemplatespecification.html#cfn-ec2-spotfleet-fleetlaunchtemplatespecification-launchtemplatename
-	LaunchTemplateName *string `json:"LaunchTemplateName,omitempty"`
+	LaunchTemplateName *T `json:"LaunchTemplateName,omitempty"`
 
 	// Version AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-fleetlaunchtemplatespecification.html#cfn-ec2-spotfleet-fleetlaunchtemplatespecification-version
-	Version string `json:"Version"`
+	Version T `json:"Version"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -17,17 +17,22 @@ type VerifiedAccessGroup[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessgroup.html#cfn-ec2-verifiedaccessgroup-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// PolicyDocument AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessgroup.html#cfn-ec2-verifiedaccessgroup-policydocument
-	PolicyDocument *string `json:"PolicyDocument,omitempty"`
+	PolicyDocument *T `json:"PolicyDocument,omitempty"`
 
 	// PolicyEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessgroup.html#cfn-ec2-verifiedaccessgroup-policyenabled
 	PolicyEnabled *T `json:"PolicyEnabled,omitempty"`
+
+	// SseSpecification AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessgroup.html#cfn-ec2-verifiedaccessgroup-ssespecification
+	SseSpecification *VerifiedAccessGroup_SseSpecification[any] `json:"SseSpecification,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -37,7 +42,7 @@ type VerifiedAccessGroup[T any] struct {
 	// VerifiedAccessInstanceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessgroup.html#cfn-ec2-verifiedaccessgroup-verifiedaccessinstanceid
-	VerifiedAccessInstanceId string `json:"VerifiedAccessInstanceId"`
+	VerifiedAccessInstanceId T `json:"VerifiedAccessInstanceId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

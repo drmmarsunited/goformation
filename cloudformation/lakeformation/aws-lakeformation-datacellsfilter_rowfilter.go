@@ -18,7 +18,7 @@ type DataCellsFilter_RowFilter[T any] struct {
 	// FilterExpression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datacellsfilter-rowfilter.html#cfn-lakeformation-datacellsfilter-rowfilter-filterexpression
-	FilterExpression *string `json:"FilterExpression,omitempty"`
+	FilterExpression *T `json:"FilterExpression,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

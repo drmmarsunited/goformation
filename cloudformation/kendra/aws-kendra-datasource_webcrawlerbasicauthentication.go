@@ -13,12 +13,12 @@ type DataSource_WebCrawlerBasicAuthentication[T any] struct {
 	// Credentials AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerbasicauthentication.html#cfn-kendra-datasource-webcrawlerbasicauthentication-credentials
-	Credentials string `json:"Credentials"`
+	Credentials T `json:"Credentials"`
 
 	// Host AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerbasicauthentication.html#cfn-kendra-datasource-webcrawlerbasicauthentication-host
-	Host string `json:"Host"`
+	Host T `json:"Host"`
 
 	// Port AWS CloudFormation Property
 	// Required: true

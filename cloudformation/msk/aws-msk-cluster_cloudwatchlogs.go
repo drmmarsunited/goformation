@@ -18,7 +18,7 @@ type Cluster_CloudWatchLogs[T any] struct {
 	// LogGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-cloudwatchlogs.html#cfn-msk-cluster-cloudwatchlogs-loggroup
-	LogGroup *string `json:"LogGroup,omitempty"`
+	LogGroup *T `json:"LogGroup,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

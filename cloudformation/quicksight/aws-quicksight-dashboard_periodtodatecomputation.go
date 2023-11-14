@@ -13,22 +13,22 @@ type Dashboard_PeriodToDateComputation[T any] struct {
 	// ComputationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-periodtodatecomputation.html#cfn-quicksight-dashboard-periodtodatecomputation-computationid
-	ComputationId string `json:"ComputationId"`
+	ComputationId T `json:"ComputationId"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-periodtodatecomputation.html#cfn-quicksight-dashboard-periodtodatecomputation-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// PeriodTimeGranularity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-periodtodatecomputation.html#cfn-quicksight-dashboard-periodtodatecomputation-periodtimegranularity
-	PeriodTimeGranularity *string `json:"PeriodTimeGranularity,omitempty"`
+	PeriodTimeGranularity *T `json:"PeriodTimeGranularity,omitempty"`
 
 	// Time AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-periodtodatecomputation.html#cfn-quicksight-dashboard-periodtodatecomputation-time
-	Time *Dashboard_DimensionField[any] `json:"Time"`
+	Time *Dashboard_DimensionField[any] `json:"Time,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: false

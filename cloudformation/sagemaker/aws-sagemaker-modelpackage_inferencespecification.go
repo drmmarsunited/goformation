@@ -18,22 +18,22 @@ type ModelPackage_InferenceSpecification[T any] struct {
 	// SupportedContentTypes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-inferencespecification.html#cfn-sagemaker-modelpackage-inferencespecification-supportedcontenttypes
-	SupportedContentTypes []string `json:"SupportedContentTypes"`
+	SupportedContentTypes []T `json:"SupportedContentTypes"`
 
 	// SupportedRealtimeInferenceInstanceTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-inferencespecification.html#cfn-sagemaker-modelpackage-inferencespecification-supportedrealtimeinferenceinstancetypes
-	SupportedRealtimeInferenceInstanceTypes []string `json:"SupportedRealtimeInferenceInstanceTypes,omitempty"`
+	SupportedRealtimeInferenceInstanceTypes []T `json:"SupportedRealtimeInferenceInstanceTypes,omitempty"`
 
 	// SupportedResponseMIMETypes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-inferencespecification.html#cfn-sagemaker-modelpackage-inferencespecification-supportedresponsemimetypes
-	SupportedResponseMIMETypes []string `json:"SupportedResponseMIMETypes"`
+	SupportedResponseMIMETypes []T `json:"SupportedResponseMIMETypes"`
 
 	// SupportedTransformInstanceTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-inferencespecification.html#cfn-sagemaker-modelpackage-inferencespecification-supportedtransforminstancetypes
-	SupportedTransformInstanceTypes []string `json:"SupportedTransformInstanceTypes,omitempty"`
+	SupportedTransformInstanceTypes []T `json:"SupportedTransformInstanceTypes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

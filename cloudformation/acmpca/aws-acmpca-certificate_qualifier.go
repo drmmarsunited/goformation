@@ -13,7 +13,7 @@ type Certificate_Qualifier[T any] struct {
 	// CpsUri AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-qualifier.html#cfn-acmpca-certificate-qualifier-cpsuri
-	CpsUri string `json:"CpsUri"`
+	CpsUri T `json:"CpsUri"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

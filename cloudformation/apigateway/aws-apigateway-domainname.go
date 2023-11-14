@@ -17,12 +17,12 @@ type DomainName[T any] struct {
 	// CertificateArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-certificatearn
-	CertificateArn *string `json:"CertificateArn,omitempty"`
+	CertificateArn *T `json:"CertificateArn,omitempty"`
 
 	// DomainName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-domainname
-	DomainName *string `json:"DomainName,omitempty"`
+	DomainName *T `json:"DomainName,omitempty"`
 
 	// EndpointConfiguration AWS CloudFormation Property
 	// Required: false
@@ -37,17 +37,17 @@ type DomainName[T any] struct {
 	// OwnershipVerificationCertificateArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-ownershipverificationcertificatearn
-	OwnershipVerificationCertificateArn *string `json:"OwnershipVerificationCertificateArn,omitempty"`
+	OwnershipVerificationCertificateArn *T `json:"OwnershipVerificationCertificateArn,omitempty"`
 
 	// RegionalCertificateArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-regionalcertificatearn
-	RegionalCertificateArn *string `json:"RegionalCertificateArn,omitempty"`
+	RegionalCertificateArn *T `json:"RegionalCertificateArn,omitempty"`
 
 	// SecurityPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-securitypolicy
-	SecurityPolicy *string `json:"SecurityPolicy,omitempty"`
+	SecurityPolicy *T `json:"SecurityPolicy,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -13,17 +13,17 @@ type Flow_DestinationFlowConfig[T any] struct {
 	// ApiVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationflowconfig.html#cfn-appflow-flow-destinationflowconfig-apiversion
-	ApiVersion *string `json:"ApiVersion,omitempty"`
+	ApiVersion *T `json:"ApiVersion,omitempty"`
 
 	// ConnectorProfileName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationflowconfig.html#cfn-appflow-flow-destinationflowconfig-connectorprofilename
-	ConnectorProfileName *string `json:"ConnectorProfileName,omitempty"`
+	ConnectorProfileName *T `json:"ConnectorProfileName,omitempty"`
 
 	// ConnectorType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationflowconfig.html#cfn-appflow-flow-destinationflowconfig-connectortype
-	ConnectorType string `json:"ConnectorType"`
+	ConnectorType T `json:"ConnectorType"`
 
 	// DestinationConnectorProperties AWS CloudFormation Property
 	// Required: true

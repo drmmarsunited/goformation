@@ -13,7 +13,7 @@ type Route_DefaultRouteInput[T any] struct {
 	// ActivationState AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-route-defaultrouteinput.html#cfn-refactorspaces-route-defaultrouteinput-activationstate
-	ActivationState string `json:"ActivationState"`
+	ActivationState T `json:"ActivationState"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

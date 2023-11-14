@@ -13,12 +13,12 @@ type ClusterParameterGroup_Parameter[T any] struct {
 	// ParameterName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-clusterparametergroup-parameter.html#cfn-redshift-clusterparametergroup-parameter-parametername
-	ParameterName string `json:"ParameterName"`
+	ParameterName T `json:"ParameterName"`
 
 	// ParameterValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-clusterparametergroup-parameter.html#cfn-redshift-clusterparametergroup-parameter-parametervalue
-	ParameterValue string `json:"ParameterValue"`
+	ParameterValue T `json:"ParameterValue"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

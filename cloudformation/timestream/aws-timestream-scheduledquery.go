@@ -17,7 +17,7 @@ type ScheduledQuery[T any] struct {
 	// ClientToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-clienttoken
-	ClientToken *string `json:"ClientToken,omitempty"`
+	ClientToken *T `json:"ClientToken,omitempty"`
 
 	// ErrorReportConfiguration AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type ScheduledQuery[T any] struct {
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-kmskeyid
-	KmsKeyId *string `json:"KmsKeyId,omitempty"`
+	KmsKeyId *T `json:"KmsKeyId,omitempty"`
 
 	// NotificationConfiguration AWS CloudFormation Property
 	// Required: true
@@ -37,7 +37,7 @@ type ScheduledQuery[T any] struct {
 	// QueryString AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-querystring
-	QueryString string `json:"QueryString"`
+	QueryString T `json:"QueryString"`
 
 	// ScheduleConfiguration AWS CloudFormation Property
 	// Required: true
@@ -47,12 +47,12 @@ type ScheduledQuery[T any] struct {
 	// ScheduledQueryExecutionRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-scheduledqueryexecutionrolearn
-	ScheduledQueryExecutionRoleArn string `json:"ScheduledQueryExecutionRoleArn"`
+	ScheduledQueryExecutionRoleArn T `json:"ScheduledQueryExecutionRoleArn"`
 
 	// ScheduledQueryName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-scheduledqueryname
-	ScheduledQueryName *string `json:"ScheduledQueryName,omitempty"`
+	ScheduledQueryName *T `json:"ScheduledQueryName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

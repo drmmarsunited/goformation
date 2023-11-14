@@ -18,7 +18,7 @@ type InstanceStorageConfig_KinesisVideoStreamConfig[T any] struct {
 	// Prefix AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instancestorageconfig-kinesisvideostreamconfig.html#cfn-connect-instancestorageconfig-kinesisvideostreamconfig-prefix
-	Prefix string `json:"Prefix"`
+	Prefix T `json:"Prefix"`
 
 	// RetentionPeriodHours AWS CloudFormation Property
 	// Required: true

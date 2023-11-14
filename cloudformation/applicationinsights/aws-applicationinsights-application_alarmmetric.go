@@ -13,7 +13,7 @@ type Application_AlarmMetric[T any] struct {
 	// AlarmMetricName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-alarmmetric.html#cfn-applicationinsights-application-alarmmetric-alarmmetricname
-	AlarmMetricName string `json:"AlarmMetricName"`
+	AlarmMetricName T `json:"AlarmMetricName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

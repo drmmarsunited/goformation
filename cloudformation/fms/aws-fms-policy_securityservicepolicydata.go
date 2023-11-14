@@ -13,7 +13,7 @@ type Policy_SecurityServicePolicyData[T any] struct {
 	// ManagedServiceData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fms-policy-securityservicepolicydata.html#cfn-fms-policy-securityservicepolicydata-managedservicedata
-	ManagedServiceData *string `json:"ManagedServiceData,omitempty"`
+	ManagedServiceData *T `json:"ManagedServiceData,omitempty"`
 
 	// PolicyOption AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Policy_SecurityServicePolicyData[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fms-policy-securityservicepolicydata.html#cfn-fms-policy-securityservicepolicydata-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

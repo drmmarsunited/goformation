@@ -23,7 +23,7 @@ type Instance_PrivateDnsNameOptions[T any] struct {
 	// HostnameType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-privatednsnameoptions.html#cfn-ec2-instance-privatednsnameoptions-hostnametype
-	HostnameType *string `json:"HostnameType,omitempty"`
+	HostnameType *T `json:"HostnameType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

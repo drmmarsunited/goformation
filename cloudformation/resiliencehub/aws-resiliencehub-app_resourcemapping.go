@@ -13,17 +13,17 @@ type App_ResourceMapping[T any] struct {
 	// EksSourceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-app-resourcemapping.html#cfn-resiliencehub-app-resourcemapping-ekssourcename
-	EksSourceName *string `json:"EksSourceName,omitempty"`
+	EksSourceName *T `json:"EksSourceName,omitempty"`
 
 	// LogicalStackName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-app-resourcemapping.html#cfn-resiliencehub-app-resourcemapping-logicalstackname
-	LogicalStackName *string `json:"LogicalStackName,omitempty"`
+	LogicalStackName *T `json:"LogicalStackName,omitempty"`
 
 	// MappingType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-app-resourcemapping.html#cfn-resiliencehub-app-resourcemapping-mappingtype
-	MappingType string `json:"MappingType"`
+	MappingType T `json:"MappingType"`
 
 	// PhysicalResourceId AWS CloudFormation Property
 	// Required: true
@@ -33,12 +33,12 @@ type App_ResourceMapping[T any] struct {
 	// ResourceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-app-resourcemapping.html#cfn-resiliencehub-app-resourcemapping-resourcename
-	ResourceName *string `json:"ResourceName,omitempty"`
+	ResourceName *T `json:"ResourceName,omitempty"`
 
 	// TerraformSourceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-app-resourcemapping.html#cfn-resiliencehub-app-resourcemapping-terraformsourcename
-	TerraformSourceName *string `json:"TerraformSourceName,omitempty"`
+	TerraformSourceName *T `json:"TerraformSourceName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

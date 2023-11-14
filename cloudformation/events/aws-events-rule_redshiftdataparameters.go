@@ -13,27 +13,32 @@ type Rule_RedshiftDataParameters[T any] struct {
 	// Database AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-redshiftdataparameters.html#cfn-events-rule-redshiftdataparameters-database
-	Database string `json:"Database"`
+	Database T `json:"Database"`
 
 	// DbUser AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-redshiftdataparameters.html#cfn-events-rule-redshiftdataparameters-dbuser
-	DbUser *string `json:"DbUser,omitempty"`
+	DbUser *T `json:"DbUser,omitempty"`
 
 	// SecretManagerArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-redshiftdataparameters.html#cfn-events-rule-redshiftdataparameters-secretmanagerarn
-	SecretManagerArn *string `json:"SecretManagerArn,omitempty"`
+	SecretManagerArn *T `json:"SecretManagerArn,omitempty"`
 
 	// Sql AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-redshiftdataparameters.html#cfn-events-rule-redshiftdataparameters-sql
-	Sql *string `json:"Sql,omitempty"`
+	Sql *T `json:"Sql,omitempty"`
+
+	// Sqls AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-redshiftdataparameters.html#cfn-events-rule-redshiftdataparameters-sqls
+	Sqls []T `json:"Sqls,omitempty"`
 
 	// StatementName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-redshiftdataparameters.html#cfn-events-rule-redshiftdataparameters-statementname
-	StatementName *string `json:"StatementName,omitempty"`
+	StatementName *T `json:"StatementName,omitempty"`
 
 	// WithEvent AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type Certificate_ExtendedKeyUsage[T any] struct {
 	// ExtendedKeyUsageObjectIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-extendedkeyusage.html#cfn-acmpca-certificate-extendedkeyusage-extendedkeyusageobjectidentifier
-	ExtendedKeyUsageObjectIdentifier *string `json:"ExtendedKeyUsageObjectIdentifier,omitempty"`
+	ExtendedKeyUsageObjectIdentifier *T `json:"ExtendedKeyUsageObjectIdentifier,omitempty"`
 
 	// ExtendedKeyUsageType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-extendedkeyusage.html#cfn-acmpca-certificate-extendedkeyusage-extendedkeyusagetype
-	ExtendedKeyUsageType *string `json:"ExtendedKeyUsageType,omitempty"`
+	ExtendedKeyUsageType *T `json:"ExtendedKeyUsageType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

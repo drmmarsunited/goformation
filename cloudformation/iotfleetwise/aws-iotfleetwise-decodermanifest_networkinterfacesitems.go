@@ -18,7 +18,7 @@ type DecoderManifest_NetworkInterfacesItems[T any] struct {
 	// InterfaceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-networkinterfacesitems.html#cfn-iotfleetwise-decodermanifest-networkinterfacesitems-interfaceid
-	InterfaceId string `json:"InterfaceId"`
+	InterfaceId T `json:"InterfaceId"`
 
 	// ObdInterface AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type DecoderManifest_NetworkInterfacesItems[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-networkinterfacesitems.html#cfn-iotfleetwise-decodermanifest-networkinterfacesitems-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,27 +13,27 @@ type Integration_ConnectorOperator[T any] struct {
 	// Marketo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-connectoroperator.html#cfn-customerprofiles-integration-connectoroperator-marketo
-	Marketo *string `json:"Marketo,omitempty"`
+	Marketo *T `json:"Marketo,omitempty"`
 
 	// S3 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-connectoroperator.html#cfn-customerprofiles-integration-connectoroperator-s3
-	S3 *string `json:"S3,omitempty"`
+	S3 *T `json:"S3,omitempty"`
 
 	// Salesforce AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-connectoroperator.html#cfn-customerprofiles-integration-connectoroperator-salesforce
-	Salesforce *string `json:"Salesforce,omitempty"`
+	Salesforce *T `json:"Salesforce,omitempty"`
 
 	// ServiceNow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-connectoroperator.html#cfn-customerprofiles-integration-connectoroperator-servicenow
-	ServiceNow *string `json:"ServiceNow,omitempty"`
+	ServiceNow *T `json:"ServiceNow,omitempty"`
 
 	// Zendesk AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-connectoroperator.html#cfn-customerprofiles-integration-connectoroperator-zendesk
-	Zendesk *string `json:"Zendesk,omitempty"`
+	Zendesk *T `json:"Zendesk,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

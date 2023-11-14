@@ -23,7 +23,7 @@ type Flywheel_TaskConfig[T any] struct {
 	// LanguageCode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-flywheel-taskconfig.html#cfn-comprehend-flywheel-taskconfig-languagecode
-	LanguageCode string `json:"LanguageCode"`
+	LanguageCode T `json:"LanguageCode"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

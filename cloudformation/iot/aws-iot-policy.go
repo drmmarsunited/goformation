@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 
 	"github.com/drmmarsunited/goformation/v7/cloudformation/policies"
+	"github.com/drmmarsunited/goformation/v7/cloudformation/tags"
 )
 
 // Policy AWS CloudFormation Resource (AWS::IoT::Policy)
@@ -21,7 +22,12 @@ type Policy[T any] struct {
 	// PolicyName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html#cfn-iot-policy-policyname
-	PolicyName *string `json:"PolicyName,omitempty"`
+	PolicyName *T `json:"PolicyName,omitempty"`
+
+	// Tags AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html#cfn-iot-policy-tags
+	Tags []tags.Tag `json:"Tags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

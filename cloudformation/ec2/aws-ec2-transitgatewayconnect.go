@@ -27,7 +27,7 @@ type TransitGatewayConnect[T any] struct {
 	// TransportTransitGatewayAttachmentId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayconnect.html#cfn-ec2-transitgatewayconnect-transporttransitgatewayattachmentid
-	TransportTransitGatewayAttachmentId string `json:"TransportTransitGatewayAttachmentId"`
+	TransportTransitGatewayAttachmentId T `json:"TransportTransitGatewayAttachmentId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

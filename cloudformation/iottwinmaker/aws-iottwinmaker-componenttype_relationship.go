@@ -13,12 +13,12 @@ type ComponentType_Relationship[T any] struct {
 	// RelationshipType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-relationship.html#cfn-iottwinmaker-componenttype-relationship-relationshiptype
-	RelationshipType *string `json:"RelationshipType,omitempty"`
+	RelationshipType *T `json:"RelationshipType,omitempty"`
 
 	// TargetComponentTypeId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-relationship.html#cfn-iottwinmaker-componenttype-relationship-targetcomponenttypeid
-	TargetComponentTypeId *string `json:"TargetComponentTypeId,omitempty"`
+	TargetComponentTypeId *T `json:"TargetComponentTypeId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

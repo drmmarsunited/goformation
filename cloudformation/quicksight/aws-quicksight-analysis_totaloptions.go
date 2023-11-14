@@ -13,17 +13,22 @@ type Analysis_TotalOptions[T any] struct {
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-totaloptions.html#cfn-quicksight-analysis-totaloptions-customlabel
-	CustomLabel *string `json:"CustomLabel,omitempty"`
+	CustomLabel *T `json:"CustomLabel,omitempty"`
 
 	// Placement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-totaloptions.html#cfn-quicksight-analysis-totaloptions-placement
-	Placement *string `json:"Placement,omitempty"`
+	Placement *T `json:"Placement,omitempty"`
 
 	// ScrollStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-totaloptions.html#cfn-quicksight-analysis-totaloptions-scrollstatus
-	ScrollStatus *string `json:"ScrollStatus,omitempty"`
+	ScrollStatus *T `json:"ScrollStatus,omitempty"`
+
+	// TotalAggregationOptions AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-totaloptions.html#cfn-quicksight-analysis-totaloptions-totalaggregationoptions
+	TotalAggregationOptions []Analysis_TotalAggregationOption[any] `json:"TotalAggregationOptions,omitempty"`
 
 	// TotalCellStyle AWS CloudFormation Property
 	// Required: false
@@ -33,7 +38,7 @@ type Analysis_TotalOptions[T any] struct {
 	// TotalsVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-totaloptions.html#cfn-quicksight-analysis-totaloptions-totalsvisibility
-	TotalsVisibility *string `json:"TotalsVisibility,omitempty"`
+	TotalsVisibility *T `json:"TotalsVisibility,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

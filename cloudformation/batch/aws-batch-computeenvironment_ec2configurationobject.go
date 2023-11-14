@@ -13,17 +13,17 @@ type ComputeEnvironment_Ec2ConfigurationObject[T any] struct {
 	// ImageIdOverride AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-ec2configurationobject.html#cfn-batch-computeenvironment-ec2configurationobject-imageidoverride
-	ImageIdOverride *string `json:"ImageIdOverride,omitempty"`
+	ImageIdOverride *T `json:"ImageIdOverride,omitempty"`
 
 	// ImageKubernetesVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-ec2configurationobject.html#cfn-batch-computeenvironment-ec2configurationobject-imagekubernetesversion
-	ImageKubernetesVersion *string `json:"ImageKubernetesVersion,omitempty"`
+	ImageKubernetesVersion *T `json:"ImageKubernetesVersion,omitempty"`
 
 	// ImageType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-ec2configurationobject.html#cfn-batch-computeenvironment-ec2configurationobject-imagetype
-	ImageType string `json:"ImageType"`
+	ImageType T `json:"ImageType"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

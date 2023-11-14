@@ -28,7 +28,7 @@ type ResponseHeadersPolicy_XSSProtection[T any] struct {
 	// ReportUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-reporturi
-	ReportUri *string `json:"ReportUri,omitempty"`
+	ReportUri *T `json:"ReportUri,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

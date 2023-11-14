@@ -13,7 +13,7 @@ type Template_NegativeValueConfiguration[T any] struct {
 	// DisplayMode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-negativevalueconfiguration.html#cfn-quicksight-template-negativevalueconfiguration-displaymode
-	DisplayMode string `json:"DisplayMode"`
+	DisplayMode T `json:"DisplayMode"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -28,7 +28,7 @@ type Analysis_ColumnConfiguration[T any] struct {
 	// Role AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnconfiguration.html#cfn-quicksight-analysis-columnconfiguration-role
-	Role *string `json:"Role,omitempty"`
+	Role *T `json:"Role,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

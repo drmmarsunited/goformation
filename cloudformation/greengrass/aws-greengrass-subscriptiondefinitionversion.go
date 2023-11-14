@@ -16,7 +16,7 @@ type SubscriptionDefinitionVersion[T any] struct {
 	// SubscriptionDefinitionId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinitionversion.html#cfn-greengrass-subscriptiondefinitionversion-subscriptiondefinitionid
-	SubscriptionDefinitionId string `json:"SubscriptionDefinitionId"`
+	SubscriptionDefinitionId T `json:"SubscriptionDefinitionId"`
 
 	// Subscriptions AWS CloudFormation Property
 	// Required: true

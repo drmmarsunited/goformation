@@ -37,12 +37,12 @@ type DataQualityJobDefinition[T any] struct {
 	// EndpointName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-endpointname
-	EndpointName *string `json:"EndpointName,omitempty"`
+	EndpointName *T `json:"EndpointName,omitempty"`
 
 	// JobDefinitionName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-jobdefinitionname
-	JobDefinitionName *string `json:"JobDefinitionName,omitempty"`
+	JobDefinitionName *T `json:"JobDefinitionName,omitempty"`
 
 	// JobResources AWS CloudFormation Property
 	// Required: true
@@ -57,7 +57,7 @@ type DataQualityJobDefinition[T any] struct {
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// StoppingCondition AWS CloudFormation Property
 	// Required: false

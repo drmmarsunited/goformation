@@ -13,7 +13,7 @@ type EndpointConfig_CaptureOption[T any] struct {
 	// CaptureMode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-captureoption.html#cfn-sagemaker-endpointconfig-captureoption-capturemode
-	CaptureMode string `json:"CaptureMode"`
+	CaptureMode T `json:"CaptureMode"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

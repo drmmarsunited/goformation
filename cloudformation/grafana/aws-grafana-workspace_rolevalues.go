@@ -13,12 +13,12 @@ type Workspace_RoleValues[T any] struct {
 	// Admin AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-rolevalues.html#cfn-grafana-workspace-rolevalues-admin
-	Admin []string `json:"Admin,omitempty"`
+	Admin []T `json:"Admin,omitempty"`
 
 	// Editor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-rolevalues.html#cfn-grafana-workspace-rolevalues-editor
-	Editor []string `json:"Editor,omitempty"`
+	Editor []T `json:"Editor,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

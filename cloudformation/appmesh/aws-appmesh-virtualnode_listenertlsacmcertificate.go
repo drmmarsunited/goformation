@@ -13,7 +13,7 @@ type VirtualNode_ListenerTlsAcmCertificate[T any] struct {
 	// CertificateArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlsacmcertificate.html#cfn-appmesh-virtualnode-listenertlsacmcertificate-certificatearn
-	CertificateArn string `json:"CertificateArn"`
+	CertificateArn T `json:"CertificateArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

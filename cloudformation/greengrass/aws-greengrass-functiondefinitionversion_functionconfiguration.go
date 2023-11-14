@@ -13,7 +13,7 @@ type FunctionDefinitionVersion_FunctionConfiguration[T any] struct {
 	// EncodingType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-encodingtype
-	EncodingType *string `json:"EncodingType,omitempty"`
+	EncodingType *T `json:"EncodingType,omitempty"`
 
 	// Environment AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type FunctionDefinitionVersion_FunctionConfiguration[T any] struct {
 	// ExecArgs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-execargs
-	ExecArgs *string `json:"ExecArgs,omitempty"`
+	ExecArgs *T `json:"ExecArgs,omitempty"`
 
 	// Executable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-executable
-	Executable *string `json:"Executable,omitempty"`
+	Executable *T `json:"Executable,omitempty"`
 
 	// MemorySize AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type PrincipalPermissions_LFTag[T any] struct {
 	// TagKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-lftag.html#cfn-lakeformation-principalpermissions-lftag-tagkey
-	TagKey *string `json:"TagKey,omitempty"`
+	TagKey *T `json:"TagKey,omitempty"`
 
 	// TagValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-lftag.html#cfn-lakeformation-principalpermissions-lftag-tagvalues
-	TagValues []string `json:"TagValues,omitempty"`
+	TagValues []T `json:"TagValues,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

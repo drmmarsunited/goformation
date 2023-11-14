@@ -18,12 +18,12 @@ type Service_ImageRepository[T any] struct {
 	// ImageIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imagerepository.html#cfn-apprunner-service-imagerepository-imageidentifier
-	ImageIdentifier string `json:"ImageIdentifier"`
+	ImageIdentifier T `json:"ImageIdentifier"`
 
 	// ImageRepositoryType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imagerepository.html#cfn-apprunner-service-imagerepository-imagerepositorytype
-	ImageRepositoryType string `json:"ImageRepositoryType"`
+	ImageRepositoryType T `json:"ImageRepositoryType"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

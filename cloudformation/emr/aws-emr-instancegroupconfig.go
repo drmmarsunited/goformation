@@ -21,7 +21,7 @@ type InstanceGroupConfig[T any] struct {
 	// BidPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-bidprice
-	BidPrice *string `json:"BidPrice,omitempty"`
+	BidPrice *T `json:"BidPrice,omitempty"`
 
 	// Configurations AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type InstanceGroupConfig[T any] struct {
 	// CustomAmiId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-customamiid
-	CustomAmiId *string `json:"CustomAmiId,omitempty"`
+	CustomAmiId *T `json:"CustomAmiId,omitempty"`
 
 	// EbsConfiguration AWS CloudFormation Property
 	// Required: false
@@ -46,27 +46,27 @@ type InstanceGroupConfig[T any] struct {
 	// InstanceRole AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancerole
-	InstanceRole string `json:"InstanceRole"`
+	InstanceRole T `json:"InstanceRole"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancetype
-	InstanceType string `json:"InstanceType"`
+	InstanceType T `json:"InstanceType"`
 
 	// JobFlowId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-jobflowid
-	JobFlowId string `json:"JobFlowId"`
+	JobFlowId T `json:"JobFlowId"`
 
 	// Market AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-market
-	Market *string `json:"Market,omitempty"`
+	Market *T `json:"Market,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

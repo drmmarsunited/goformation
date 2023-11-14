@@ -32,22 +32,22 @@ type MatchmakingConfiguration[T any] struct {
 	// BackfillMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-backfillmode
-	BackfillMode *string `json:"BackfillMode,omitempty"`
+	BackfillMode *T `json:"BackfillMode,omitempty"`
 
 	// CustomEventData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-customeventdata
-	CustomEventData *string `json:"CustomEventData,omitempty"`
+	CustomEventData *T `json:"CustomEventData,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// FlexMatchMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-flexmatchmode
-	FlexMatchMode *string `json:"FlexMatchMode,omitempty"`
+	FlexMatchMode *T `json:"FlexMatchMode,omitempty"`
 
 	// GameProperties AWS CloudFormation Property
 	// Required: false
@@ -57,22 +57,22 @@ type MatchmakingConfiguration[T any] struct {
 	// GameSessionData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-gamesessiondata
-	GameSessionData *string `json:"GameSessionData,omitempty"`
+	GameSessionData *T `json:"GameSessionData,omitempty"`
 
 	// GameSessionQueueArns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-gamesessionqueuearns
-	GameSessionQueueArns []string `json:"GameSessionQueueArns,omitempty"`
+	GameSessionQueueArns []T `json:"GameSessionQueueArns,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// NotificationTarget AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-notificationtarget
-	NotificationTarget *string `json:"NotificationTarget,omitempty"`
+	NotificationTarget *T `json:"NotificationTarget,omitempty"`
 
 	// RequestTimeoutSeconds AWS CloudFormation Property
 	// Required: true
@@ -82,7 +82,7 @@ type MatchmakingConfiguration[T any] struct {
 	// RuleSetName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-rulesetname
-	RuleSetName string `json:"RuleSetName"`
+	RuleSetName T `json:"RuleSetName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

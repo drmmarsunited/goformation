@@ -13,37 +13,37 @@ type VerifiedAccessTrustProvider_OidcOptions[T any] struct {
 	// AuthorizationEndpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccesstrustprovider-oidcoptions.html#cfn-ec2-verifiedaccesstrustprovider-oidcoptions-authorizationendpoint
-	AuthorizationEndpoint *string `json:"AuthorizationEndpoint,omitempty"`
+	AuthorizationEndpoint *T `json:"AuthorizationEndpoint,omitempty"`
 
 	// ClientId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccesstrustprovider-oidcoptions.html#cfn-ec2-verifiedaccesstrustprovider-oidcoptions-clientid
-	ClientId *string `json:"ClientId,omitempty"`
+	ClientId *T `json:"ClientId,omitempty"`
 
 	// ClientSecret AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccesstrustprovider-oidcoptions.html#cfn-ec2-verifiedaccesstrustprovider-oidcoptions-clientsecret
-	ClientSecret *string `json:"ClientSecret,omitempty"`
+	ClientSecret *T `json:"ClientSecret,omitempty"`
 
 	// Issuer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccesstrustprovider-oidcoptions.html#cfn-ec2-verifiedaccesstrustprovider-oidcoptions-issuer
-	Issuer *string `json:"Issuer,omitempty"`
+	Issuer *T `json:"Issuer,omitempty"`
 
 	// Scope AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccesstrustprovider-oidcoptions.html#cfn-ec2-verifiedaccesstrustprovider-oidcoptions-scope
-	Scope *string `json:"Scope,omitempty"`
+	Scope *T `json:"Scope,omitempty"`
 
 	// TokenEndpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccesstrustprovider-oidcoptions.html#cfn-ec2-verifiedaccesstrustprovider-oidcoptions-tokenendpoint
-	TokenEndpoint *string `json:"TokenEndpoint,omitempty"`
+	TokenEndpoint *T `json:"TokenEndpoint,omitempty"`
 
 	// UserInfoEndpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccesstrustprovider-oidcoptions.html#cfn-ec2-verifiedaccesstrustprovider-oidcoptions-userinfoendpoint
-	UserInfoEndpoint *string `json:"UserInfoEndpoint,omitempty"`
+	UserInfoEndpoint *T `json:"UserInfoEndpoint,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

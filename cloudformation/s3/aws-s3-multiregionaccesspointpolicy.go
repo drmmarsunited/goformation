@@ -16,7 +16,7 @@ type MultiRegionAccessPointPolicy[T any] struct {
 	// MrapName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-multiregionaccesspointpolicy.html#cfn-s3-multiregionaccesspointpolicy-mrapname
-	MrapName string `json:"MrapName"`
+	MrapName T `json:"MrapName"`
 
 	// Policy AWS CloudFormation Property
 	// Required: true

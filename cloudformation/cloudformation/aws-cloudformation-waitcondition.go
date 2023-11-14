@@ -21,12 +21,12 @@ type WaitCondition[T any] struct {
 	// Handle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-handle
-	Handle *string `json:"Handle,omitempty"`
+	Handle *T `json:"Handle,omitempty"`
 
 	// Timeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-timeout
-	Timeout *string `json:"Timeout,omitempty"`
+	Timeout *T `json:"Timeout,omitempty"`
 
 	// AWSCloudFormationCreationPolicy represents a CloudFormation CreationPolicy
 	AWSCloudFormationCreationPolicy *policies.CreationPolicy `json:"-"`

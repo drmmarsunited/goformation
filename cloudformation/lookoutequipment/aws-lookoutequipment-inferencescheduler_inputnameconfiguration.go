@@ -13,12 +13,12 @@ type InferenceScheduler_InputNameConfiguration[T any] struct {
 	// ComponentTimestampDelimiter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-inputnameconfiguration.html#cfn-lookoutequipment-inferencescheduler-inputnameconfiguration-componenttimestampdelimiter
-	ComponentTimestampDelimiter *string `json:"ComponentTimestampDelimiter,omitempty"`
+	ComponentTimestampDelimiter *T `json:"ComponentTimestampDelimiter,omitempty"`
 
 	// TimestampFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-inputnameconfiguration.html#cfn-lookoutequipment-inferencescheduler-inputnameconfiguration-timestampformat
-	TimestampFormat *string `json:"TimestampFormat,omitempty"`
+	TimestampFormat *T `json:"TimestampFormat,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

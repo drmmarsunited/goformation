@@ -13,7 +13,7 @@ type Crawler_DeltaTarget[T any] struct {
 	// ConnectionName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-deltatarget.html#cfn-glue-crawler-deltatarget-connectionname
-	ConnectionName *string `json:"ConnectionName,omitempty"`
+	ConnectionName *T `json:"ConnectionName,omitempty"`
 
 	// CreateNativeDeltaTable AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Crawler_DeltaTarget[T any] struct {
 	// DeltaTables AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-deltatarget.html#cfn-glue-crawler-deltatarget-deltatables
-	DeltaTables []string `json:"DeltaTables,omitempty"`
+	DeltaTables []T `json:"DeltaTables,omitempty"`
 
 	// WriteManifest AWS CloudFormation Property
 	// Required: false

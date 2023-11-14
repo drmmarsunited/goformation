@@ -13,7 +13,7 @@ type Analysis_PivotTableFieldSubtotalOptions[T any] struct {
 	// FieldId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottablefieldsubtotaloptions.html#cfn-quicksight-analysis-pivottablefieldsubtotaloptions-fieldid
-	FieldId *string `json:"FieldId,omitempty"`
+	FieldId *T `json:"FieldId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

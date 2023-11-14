@@ -13,17 +13,17 @@ type ApiGatewayManagedOverrides_IntegrationOverrides[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-integrationoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-integrationoverrides-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// IntegrationMethod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-integrationoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-integrationoverrides-integrationmethod
-	IntegrationMethod *string `json:"IntegrationMethod,omitempty"`
+	IntegrationMethod *T `json:"IntegrationMethod,omitempty"`
 
 	// PayloadFormatVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-integrationoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-integrationoverrides-payloadformatversion
-	PayloadFormatVersion *string `json:"PayloadFormatVersion,omitempty"`
+	PayloadFormatVersion *T `json:"PayloadFormatVersion,omitempty"`
 
 	// TimeoutInMillis AWS CloudFormation Property
 	// Required: false

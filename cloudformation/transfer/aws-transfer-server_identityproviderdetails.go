@@ -13,27 +13,27 @@ type Server_IdentityProviderDetails[T any] struct {
 	// DirectoryId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-directoryid
-	DirectoryId *string `json:"DirectoryId,omitempty"`
+	DirectoryId *T `json:"DirectoryId,omitempty"`
 
 	// Function AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-function
-	Function *string `json:"Function,omitempty"`
+	Function *T `json:"Function,omitempty"`
 
 	// InvocationRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-invocationrole
-	InvocationRole *string `json:"InvocationRole,omitempty"`
+	InvocationRole *T `json:"InvocationRole,omitempty"`
 
 	// SftpAuthenticationMethods AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-sftpauthenticationmethods
-	SftpAuthenticationMethods *string `json:"SftpAuthenticationMethods,omitempty"`
+	SftpAuthenticationMethods *T `json:"SftpAuthenticationMethods,omitempty"`
 
 	// Url AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-url
-	Url *string `json:"Url,omitempty"`
+	Url *T `json:"Url,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

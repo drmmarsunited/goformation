@@ -13,7 +13,7 @@ type Flow_CustomConnectorSourceProperties[T any] struct {
 	// CustomProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-customconnectorsourceproperties.html#cfn-appflow-flow-customconnectorsourceproperties-customproperties
-	CustomProperties map[string]string `json:"CustomProperties,omitempty"`
+	CustomProperties map[string]T `json:"CustomProperties,omitempty"`
 
 	// DataTransferApi AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Flow_CustomConnectorSourceProperties[T any] struct {
 	// EntityName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-customconnectorsourceproperties.html#cfn-appflow-flow-customconnectorsourceproperties-entityname
-	EntityName string `json:"EntityName"`
+	EntityName T `json:"EntityName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Bot_SlotValueOverrideMap[T any] struct {
 	// SlotName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueoverridemap.html#cfn-lex-bot-slotvalueoverridemap-slotname
-	SlotName *string `json:"SlotName,omitempty"`
+	SlotName *T `json:"SlotName,omitempty"`
 
 	// SlotValueOverride AWS CloudFormation Property
 	// Required: false

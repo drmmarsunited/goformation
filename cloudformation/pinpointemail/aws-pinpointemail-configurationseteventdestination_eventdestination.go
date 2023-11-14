@@ -28,7 +28,7 @@ type ConfigurationSetEventDestination_EventDestination[T any] struct {
 	// MatchingEventTypes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination-matchingeventtypes
-	MatchingEventTypes []string `json:"MatchingEventTypes"`
+	MatchingEventTypes []T `json:"MatchingEventTypes"`
 
 	// PinpointDestination AWS CloudFormation Property
 	// Required: false

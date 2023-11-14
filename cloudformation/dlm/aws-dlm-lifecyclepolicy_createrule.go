@@ -13,7 +13,7 @@ type LifecyclePolicy_CreateRule[T any] struct {
 	// CronExpression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-createrule.html#cfn-dlm-lifecyclepolicy-createrule-cronexpression
-	CronExpression *string `json:"CronExpression,omitempty"`
+	CronExpression *T `json:"CronExpression,omitempty"`
 
 	// Interval AWS CloudFormation Property
 	// Required: false
@@ -23,17 +23,22 @@ type LifecyclePolicy_CreateRule[T any] struct {
 	// IntervalUnit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-createrule.html#cfn-dlm-lifecyclepolicy-createrule-intervalunit
-	IntervalUnit *string `json:"IntervalUnit,omitempty"`
+	IntervalUnit *T `json:"IntervalUnit,omitempty"`
 
 	// Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-createrule.html#cfn-dlm-lifecyclepolicy-createrule-location
-	Location *string `json:"Location,omitempty"`
+	Location *T `json:"Location,omitempty"`
+
+	// Scripts AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-createrule.html#cfn-dlm-lifecyclepolicy-createrule-scripts
+	Scripts []LifecyclePolicy_Script[any] `json:"Scripts,omitempty"`
 
 	// Times AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-createrule.html#cfn-dlm-lifecyclepolicy-createrule-times
-	Times []string `json:"Times,omitempty"`
+	Times []T `json:"Times,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

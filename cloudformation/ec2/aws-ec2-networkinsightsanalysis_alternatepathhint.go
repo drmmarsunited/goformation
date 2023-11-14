@@ -13,12 +13,12 @@ type NetworkInsightsAnalysis_AlternatePathHint[T any] struct {
 	// ComponentArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-alternatepathhint.html#cfn-ec2-networkinsightsanalysis-alternatepathhint-componentarn
-	ComponentArn *string `json:"ComponentArn,omitempty"`
+	ComponentArn *T `json:"ComponentArn,omitempty"`
 
 	// ComponentId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-alternatepathhint.html#cfn-ec2-networkinsightsanalysis-alternatepathhint-componentid
-	ComponentId *string `json:"ComponentId,omitempty"`
+	ComponentId *T `json:"ComponentId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

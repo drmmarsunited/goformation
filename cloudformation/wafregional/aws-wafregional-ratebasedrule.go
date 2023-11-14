@@ -21,17 +21,17 @@ type RateBasedRule[T any] struct {
 	// MetricName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ratebasedrule.html#cfn-wafregional-ratebasedrule-metricname
-	MetricName string `json:"MetricName"`
+	MetricName T `json:"MetricName"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ratebasedrule.html#cfn-wafregional-ratebasedrule-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// RateKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ratebasedrule.html#cfn-wafregional-ratebasedrule-ratekey
-	RateKey string `json:"RateKey"`
+	RateKey T `json:"RateKey"`
 
 	// RateLimit AWS CloudFormation Property
 	// Required: true

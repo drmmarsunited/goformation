@@ -18,7 +18,7 @@ type Analysis_HeaderFooterSectionConfiguration[T any] struct {
 	// SectionId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-headerfootersectionconfiguration.html#cfn-quicksight-analysis-headerfootersectionconfiguration-sectionid
-	SectionId string `json:"SectionId"`
+	SectionId T `json:"SectionId"`
 
 	// Style AWS CloudFormation Property
 	// Required: false

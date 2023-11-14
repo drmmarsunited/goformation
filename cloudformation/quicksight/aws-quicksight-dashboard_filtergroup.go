@@ -13,12 +13,12 @@ type Dashboard_FilterGroup[T any] struct {
 	// CrossDataset AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filtergroup.html#cfn-quicksight-dashboard-filtergroup-crossdataset
-	CrossDataset string `json:"CrossDataset"`
+	CrossDataset T `json:"CrossDataset"`
 
 	// FilterGroupId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filtergroup.html#cfn-quicksight-dashboard-filtergroup-filtergroupid
-	FilterGroupId string `json:"FilterGroupId"`
+	FilterGroupId T `json:"FilterGroupId"`
 
 	// Filters AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type Dashboard_FilterGroup[T any] struct {
 	// Status AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filtergroup.html#cfn-quicksight-dashboard-filtergroup-status
-	Status *string `json:"Status,omitempty"`
+	Status *T `json:"Status,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

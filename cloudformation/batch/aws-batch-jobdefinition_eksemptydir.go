@@ -13,12 +13,12 @@ type JobDefinition_EksEmptyDir[T any] struct {
 	// Medium AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-eksemptydir.html#cfn-batch-jobdefinition-eksemptydir-medium
-	Medium *string `json:"Medium,omitempty"`
+	Medium *T `json:"Medium,omitempty"`
 
 	// SizeLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-eksemptydir.html#cfn-batch-jobdefinition-eksemptydir-sizelimit
-	SizeLimit *string `json:"SizeLimit,omitempty"`
+	SizeLimit *T `json:"SizeLimit,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

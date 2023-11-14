@@ -17,47 +17,47 @@ type Studio[T any] struct {
 	// AuthMode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studio.html#cfn-emr-studio-authmode
-	AuthMode string `json:"AuthMode"`
+	AuthMode T `json:"AuthMode"`
 
 	// DefaultS3Location AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studio.html#cfn-emr-studio-defaults3location
-	DefaultS3Location string `json:"DefaultS3Location"`
+	DefaultS3Location T `json:"DefaultS3Location"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studio.html#cfn-emr-studio-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EngineSecurityGroupId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studio.html#cfn-emr-studio-enginesecuritygroupid
-	EngineSecurityGroupId string `json:"EngineSecurityGroupId"`
+	EngineSecurityGroupId T `json:"EngineSecurityGroupId"`
 
 	// IdpAuthUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studio.html#cfn-emr-studio-idpauthurl
-	IdpAuthUrl *string `json:"IdpAuthUrl,omitempty"`
+	IdpAuthUrl *T `json:"IdpAuthUrl,omitempty"`
 
 	// IdpRelayStateParameterName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studio.html#cfn-emr-studio-idprelaystateparametername
-	IdpRelayStateParameterName *string `json:"IdpRelayStateParameterName,omitempty"`
+	IdpRelayStateParameterName *T `json:"IdpRelayStateParameterName,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studio.html#cfn-emr-studio-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ServiceRole AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studio.html#cfn-emr-studio-servicerole
-	ServiceRole string `json:"ServiceRole"`
+	ServiceRole T `json:"ServiceRole"`
 
 	// SubnetIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studio.html#cfn-emr-studio-subnetids
-	SubnetIds []string `json:"SubnetIds"`
+	SubnetIds []T `json:"SubnetIds"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -67,17 +67,17 @@ type Studio[T any] struct {
 	// UserRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studio.html#cfn-emr-studio-userrole
-	UserRole *string `json:"UserRole,omitempty"`
+	UserRole *T `json:"UserRole,omitempty"`
 
 	// VpcId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studio.html#cfn-emr-studio-vpcid
-	VpcId string `json:"VpcId"`
+	VpcId T `json:"VpcId"`
 
 	// WorkspaceSecurityGroupId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studio.html#cfn-emr-studio-workspacesecuritygroupid
-	WorkspaceSecurityGroupId string `json:"WorkspaceSecurityGroupId"`
+	WorkspaceSecurityGroupId T `json:"WorkspaceSecurityGroupId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Method_MethodResponse[T any] struct {
 	// ResponseModels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-methodresponse.html#cfn-apigateway-method-methodresponse-responsemodels
-	ResponseModels map[string]string `json:"ResponseModels,omitempty"`
+	ResponseModels map[string]T `json:"ResponseModels,omitempty"`
 
 	// ResponseParameters AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Method_MethodResponse[T any] struct {
 	// StatusCode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-methodresponse.html#cfn-apigateway-method-methodresponse-statuscode
-	StatusCode string `json:"StatusCode"`
+	StatusCode T `json:"StatusCode"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

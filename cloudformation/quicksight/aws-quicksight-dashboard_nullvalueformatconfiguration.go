@@ -13,7 +13,7 @@ type Dashboard_NullValueFormatConfiguration[T any] struct {
 	// NullString AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-nullvalueformatconfiguration.html#cfn-quicksight-dashboard-nullvalueformatconfiguration-nullstring
-	NullString string `json:"NullString"`
+	NullString T `json:"NullString"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

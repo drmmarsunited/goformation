@@ -22,12 +22,12 @@ type ReportPlan[T any] struct {
 	// ReportPlanDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-reportplan.html#cfn-backup-reportplan-reportplandescription
-	ReportPlanDescription *string `json:"ReportPlanDescription,omitempty"`
+	ReportPlanDescription *T `json:"ReportPlanDescription,omitempty"`
 
 	// ReportPlanName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-reportplan.html#cfn-backup-reportplan-reportplanname
-	ReportPlanName *string `json:"ReportPlanName,omitempty"`
+	ReportPlanName *T `json:"ReportPlanName,omitempty"`
 
 	// ReportPlanTags AWS CloudFormation Property
 	// Required: false

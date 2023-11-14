@@ -13,37 +13,37 @@ type NetworkInsightsAnalysis_TransitGatewayRouteTableRoute[T any] struct {
 	// AttachmentId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-attachmentid
-	AttachmentId *string `json:"AttachmentId,omitempty"`
+	AttachmentId *T `json:"AttachmentId,omitempty"`
 
 	// DestinationCidr AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-destinationcidr
-	DestinationCidr *string `json:"DestinationCidr,omitempty"`
+	DestinationCidr *T `json:"DestinationCidr,omitempty"`
 
 	// PrefixListId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-prefixlistid
-	PrefixListId *string `json:"PrefixListId,omitempty"`
+	PrefixListId *T `json:"PrefixListId,omitempty"`
 
 	// ResourceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-resourceid
-	ResourceId *string `json:"ResourceId,omitempty"`
+	ResourceId *T `json:"ResourceId,omitempty"`
 
 	// ResourceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-resourcetype
-	ResourceType *string `json:"ResourceType,omitempty"`
+	ResourceType *T `json:"ResourceType,omitempty"`
 
 	// RouteOrigin AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-routeorigin
-	RouteOrigin *string `json:"RouteOrigin,omitempty"`
+	RouteOrigin *T `json:"RouteOrigin,omitempty"`
 
 	// State AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-state
-	State *string `json:"State,omitempty"`
+	State *T `json:"State,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

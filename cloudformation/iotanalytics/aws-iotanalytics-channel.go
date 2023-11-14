@@ -17,7 +17,7 @@ type Channel[T any] struct {
 	// ChannelName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-channel.html#cfn-iotanalytics-channel-channelname
-	ChannelName *string `json:"ChannelName,omitempty"`
+	ChannelName *T `json:"ChannelName,omitempty"`
 
 	// ChannelStorage AWS CloudFormation Property
 	// Required: false

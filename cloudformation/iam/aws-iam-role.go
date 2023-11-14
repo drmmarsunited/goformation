@@ -22,12 +22,12 @@ type Role[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// ManagedPolicyArns AWS CloudFormation Property
 	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-managepolicyarns
-	ManagedPolicyArns []string `json:"ManagedPolicyArns,omitempty"`
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-managedpolicyarns
+	ManagedPolicyArns []T `json:"ManagedPolicyArns,omitempty"`
 
 	// MaxSessionDuration AWS CloudFormation Property
 	// Required: false
@@ -37,12 +37,12 @@ type Role[T any] struct {
 	// Path AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-path
-	Path *string `json:"Path,omitempty"`
+	Path *T `json:"Path,omitempty"`
 
 	// PermissionsBoundary AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-permissionsboundary
-	PermissionsBoundary *string `json:"PermissionsBoundary,omitempty"`
+	PermissionsBoundary *T `json:"PermissionsBoundary,omitempty"`
 
 	// Policies AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type Role[T any] struct {
 	// RoleName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-rolename
-	RoleName *string `json:"RoleName,omitempty"`
+	RoleName *T `json:"RoleName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

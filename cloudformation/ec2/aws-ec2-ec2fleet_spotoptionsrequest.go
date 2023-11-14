@@ -13,12 +13,12 @@ type EC2Fleet_SpotOptionsRequest[T any] struct {
 	// AllocationStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-allocationstrategy
-	AllocationStrategy *string `json:"AllocationStrategy,omitempty"`
+	AllocationStrategy *T `json:"AllocationStrategy,omitempty"`
 
 	// InstanceInterruptionBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-instanceinterruptionbehavior
-	InstanceInterruptionBehavior *string `json:"InstanceInterruptionBehavior,omitempty"`
+	InstanceInterruptionBehavior *T `json:"InstanceInterruptionBehavior,omitempty"`
 
 	// InstancePoolsToUseCount AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type EC2Fleet_SpotOptionsRequest[T any] struct {
 	// MaxTotalPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-maxtotalprice
-	MaxTotalPrice *string `json:"MaxTotalPrice,omitempty"`
+	MaxTotalPrice *T `json:"MaxTotalPrice,omitempty"`
 
 	// MinTargetCapacity AWS CloudFormation Property
 	// Required: false

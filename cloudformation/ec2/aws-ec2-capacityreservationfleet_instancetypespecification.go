@@ -13,12 +13,12 @@ type CapacityReservationFleet_InstanceTypeSpecification[T any] struct {
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservationfleet-instancetypespecification.html#cfn-ec2-capacityreservationfleet-instancetypespecification-availabilityzone
-	AvailabilityZone *string `json:"AvailabilityZone,omitempty"`
+	AvailabilityZone *T `json:"AvailabilityZone,omitempty"`
 
 	// AvailabilityZoneId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservationfleet-instancetypespecification.html#cfn-ec2-capacityreservationfleet-instancetypespecification-availabilityzoneid
-	AvailabilityZoneId *string `json:"AvailabilityZoneId,omitempty"`
+	AvailabilityZoneId *T `json:"AvailabilityZoneId,omitempty"`
 
 	// EbsOptimized AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type CapacityReservationFleet_InstanceTypeSpecification[T any] struct {
 	// InstancePlatform AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservationfleet-instancetypespecification.html#cfn-ec2-capacityreservationfleet-instancetypespecification-instanceplatform
-	InstancePlatform *string `json:"InstancePlatform,omitempty"`
+	InstancePlatform *T `json:"InstancePlatform,omitempty"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservationfleet-instancetypespecification.html#cfn-ec2-capacityreservationfleet-instancetypespecification-instancetype
-	InstanceType *string `json:"InstanceType,omitempty"`
+	InstanceType *T `json:"InstanceType,omitempty"`
 
 	// Priority AWS CloudFormation Property
 	// Required: false

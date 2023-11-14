@@ -13,7 +13,12 @@ type Dashboard_RelativeDateTimeControlDisplayOptions[T any] struct {
 	// DateTimeFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-relativedatetimecontroldisplayoptions.html#cfn-quicksight-dashboard-relativedatetimecontroldisplayoptions-datetimeformat
-	DateTimeFormat *string `json:"DateTimeFormat,omitempty"`
+	DateTimeFormat *T `json:"DateTimeFormat,omitempty"`
+
+	// InfoIconLabelOptions AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-relativedatetimecontroldisplayoptions.html#cfn-quicksight-dashboard-relativedatetimecontroldisplayoptions-infoiconlabeloptions
+	InfoIconLabelOptions *Dashboard_SheetControlInfoIconLabelOptions[any] `json:"InfoIconLabelOptions,omitempty"`
 
 	// TitleOptions AWS CloudFormation Property
 	// Required: false

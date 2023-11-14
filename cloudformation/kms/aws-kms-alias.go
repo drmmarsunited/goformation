@@ -16,12 +16,12 @@ type Alias[T any] struct {
 	// AliasName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-alias.html#cfn-kms-alias-aliasname
-	AliasName string `json:"AliasName"`
+	AliasName T `json:"AliasName"`
 
 	// TargetKeyId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-alias.html#cfn-kms-alias-targetkeyid
-	TargetKeyId string `json:"TargetKeyId"`
+	TargetKeyId T `json:"TargetKeyId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

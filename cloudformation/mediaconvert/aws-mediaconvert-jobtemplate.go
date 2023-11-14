@@ -21,12 +21,12 @@ type JobTemplate[T any] struct {
 	// Category AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-category
-	Category *string `json:"Category,omitempty"`
+	Category *T `json:"Category,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// HopDestinations AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type JobTemplate[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Priority AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type JobTemplate[T any] struct {
 	// Queue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-queue
-	Queue *string `json:"Queue,omitempty"`
+	Queue *T `json:"Queue,omitempty"`
 
 	// SettingsJson AWS CloudFormation Property
 	// Required: true
@@ -56,7 +56,7 @@ type JobTemplate[T any] struct {
 	// StatusUpdateInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-statusupdateinterval
-	StatusUpdateInterval *string `json:"StatusUpdateInterval,omitempty"`
+	StatusUpdateInterval *T `json:"StatusUpdateInterval,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

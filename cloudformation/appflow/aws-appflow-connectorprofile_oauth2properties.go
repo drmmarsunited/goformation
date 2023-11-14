@@ -13,17 +13,17 @@ type ConnectorProfile_OAuth2Properties[T any] struct {
 	// OAuth2GrantType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-oauth2properties.html#cfn-appflow-connectorprofile-oauth2properties-oauth2granttype
-	OAuth2GrantType *string `json:"OAuth2GrantType,omitempty"`
+	OAuth2GrantType *T `json:"OAuth2GrantType,omitempty"`
 
 	// TokenUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-oauth2properties.html#cfn-appflow-connectorprofile-oauth2properties-tokenurl
-	TokenUrl *string `json:"TokenUrl,omitempty"`
+	TokenUrl *T `json:"TokenUrl,omitempty"`
 
 	// TokenUrlCustomProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-oauth2properties.html#cfn-appflow-connectorprofile-oauth2properties-tokenurlcustomproperties
-	TokenUrlCustomProperties map[string]string `json:"TokenUrlCustomProperties,omitempty"`
+	TokenUrlCustomProperties map[string]T `json:"TokenUrlCustomProperties,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

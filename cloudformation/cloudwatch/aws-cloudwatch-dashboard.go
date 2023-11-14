@@ -16,12 +16,12 @@ type Dashboard[T any] struct {
 	// DashboardBody AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-dashboard.html#cfn-cloudwatch-dashboard-dashboardbody
-	DashboardBody string `json:"DashboardBody"`
+	DashboardBody T `json:"DashboardBody"`
 
 	// DashboardName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-dashboard.html#cfn-cloudwatch-dashboard-dashboardname
-	DashboardName *string `json:"DashboardName,omitempty"`
+	DashboardName *T `json:"DashboardName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

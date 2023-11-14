@@ -13,12 +13,12 @@ type Flow_CustomConnectorDestinationProperties[T any] struct {
 	// CustomProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-customconnectordestinationproperties.html#cfn-appflow-flow-customconnectordestinationproperties-customproperties
-	CustomProperties map[string]string `json:"CustomProperties,omitempty"`
+	CustomProperties map[string]T `json:"CustomProperties,omitempty"`
 
 	// EntityName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-customconnectordestinationproperties.html#cfn-appflow-flow-customconnectordestinationproperties-entityname
-	EntityName string `json:"EntityName"`
+	EntityName T `json:"EntityName"`
 
 	// ErrorHandlingConfig AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Flow_CustomConnectorDestinationProperties[T any] struct {
 	// IdFieldNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-customconnectordestinationproperties.html#cfn-appflow-flow-customconnectordestinationproperties-idfieldnames
-	IdFieldNames []string `json:"IdFieldNames,omitempty"`
+	IdFieldNames []T `json:"IdFieldNames,omitempty"`
 
 	// WriteOperationType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-customconnectordestinationproperties.html#cfn-appflow-flow-customconnectordestinationproperties-writeoperationtype
-	WriteOperationType *string `json:"WriteOperationType,omitempty"`
+	WriteOperationType *T `json:"WriteOperationType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

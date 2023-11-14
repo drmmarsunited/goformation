@@ -16,42 +16,42 @@ type Host[T any] struct {
 	// AssetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-assetid
-	AssetId *string `json:"AssetId,omitempty"`
+	AssetId *T `json:"AssetId,omitempty"`
 
 	// AutoPlacement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-autoplacement
-	AutoPlacement *string `json:"AutoPlacement,omitempty"`
+	AutoPlacement *T `json:"AutoPlacement,omitempty"`
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-availabilityzone
-	AvailabilityZone string `json:"AvailabilityZone"`
+	AvailabilityZone T `json:"AvailabilityZone"`
 
 	// HostMaintenance AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-hostmaintenance
-	HostMaintenance *string `json:"HostMaintenance,omitempty"`
+	HostMaintenance *T `json:"HostMaintenance,omitempty"`
 
 	// HostRecovery AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-hostrecovery
-	HostRecovery *string `json:"HostRecovery,omitempty"`
+	HostRecovery *T `json:"HostRecovery,omitempty"`
 
 	// InstanceFamily AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-instancefamily
-	InstanceFamily *string `json:"InstanceFamily,omitempty"`
+	InstanceFamily *T `json:"InstanceFamily,omitempty"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-instancetype
-	InstanceType *string `json:"InstanceType,omitempty"`
+	InstanceType *T `json:"InstanceType,omitempty"`
 
 	// OutpostArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-outpostarn
-	OutpostArn *string `json:"OutpostArn,omitempty"`
+	OutpostArn *T `json:"OutpostArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

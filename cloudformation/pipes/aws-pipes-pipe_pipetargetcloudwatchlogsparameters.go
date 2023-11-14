@@ -13,12 +13,12 @@ type Pipe_PipeTargetCloudWatchLogsParameters[T any] struct {
 	// LogStreamName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetcloudwatchlogsparameters.html#cfn-pipes-pipe-pipetargetcloudwatchlogsparameters-logstreamname
-	LogStreamName *string `json:"LogStreamName,omitempty"`
+	LogStreamName *T `json:"LogStreamName,omitempty"`
 
 	// Timestamp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetcloudwatchlogsparameters.html#cfn-pipes-pipe-pipetargetcloudwatchlogsparameters-timestamp
-	Timestamp *string `json:"Timestamp,omitempty"`
+	Timestamp *T `json:"Timestamp,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

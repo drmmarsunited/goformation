@@ -16,12 +16,12 @@ type Gateway[T any] struct {
 	// EgressCidrBlocks AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-gateway.html#cfn-mediaconnect-gateway-egresscidrblocks
-	EgressCidrBlocks []string `json:"EgressCidrBlocks"`
+	EgressCidrBlocks []T `json:"EgressCidrBlocks"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-gateway.html#cfn-mediaconnect-gateway-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Networks AWS CloudFormation Property
 	// Required: true

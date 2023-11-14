@@ -13,12 +13,12 @@ type Certificate_EdiPartyName[T any] struct {
 	// NameAssigner AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-edipartyname.html#cfn-acmpca-certificate-edipartyname-nameassigner
-	NameAssigner string `json:"NameAssigner"`
+	NameAssigner T `json:"NameAssigner"`
 
 	// PartyName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-edipartyname.html#cfn-acmpca-certificate-edipartyname-partyname
-	PartyName string `json:"PartyName"`
+	PartyName T `json:"PartyName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

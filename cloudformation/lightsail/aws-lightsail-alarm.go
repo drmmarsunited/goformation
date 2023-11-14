@@ -16,17 +16,17 @@ type Alarm[T any] struct {
 	// AlarmName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-alarmname
-	AlarmName string `json:"AlarmName"`
+	AlarmName T `json:"AlarmName"`
 
 	// ComparisonOperator AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-comparisonoperator
-	ComparisonOperator string `json:"ComparisonOperator"`
+	ComparisonOperator T `json:"ComparisonOperator"`
 
 	// ContactProtocols AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-contactprotocols
-	ContactProtocols []string `json:"ContactProtocols,omitempty"`
+	ContactProtocols []T `json:"ContactProtocols,omitempty"`
 
 	// DatapointsToAlarm AWS CloudFormation Property
 	// Required: false
@@ -41,12 +41,12 @@ type Alarm[T any] struct {
 	// MetricName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-metricname
-	MetricName string `json:"MetricName"`
+	MetricName T `json:"MetricName"`
 
 	// MonitoredResourceName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-monitoredresourcename
-	MonitoredResourceName string `json:"MonitoredResourceName"`
+	MonitoredResourceName T `json:"MonitoredResourceName"`
 
 	// NotificationEnabled AWS CloudFormation Property
 	// Required: false
@@ -56,7 +56,7 @@ type Alarm[T any] struct {
 	// NotificationTriggers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-notificationtriggers
-	NotificationTriggers []string `json:"NotificationTriggers,omitempty"`
+	NotificationTriggers []T `json:"NotificationTriggers,omitempty"`
 
 	// Threshold AWS CloudFormation Property
 	// Required: true
@@ -66,7 +66,7 @@ type Alarm[T any] struct {
 	// TreatMissingData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-treatmissingdata
-	TreatMissingData *string `json:"TreatMissingData,omitempty"`
+	TreatMissingData *T `json:"TreatMissingData,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

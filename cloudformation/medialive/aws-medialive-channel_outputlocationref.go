@@ -13,7 +13,7 @@ type Channel_OutputLocationRef[T any] struct {
 	// DestinationRefId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputlocationref.html#cfn-medialive-channel-outputlocationref-destinationrefid
-	DestinationRefId *string `json:"DestinationRefId,omitempty"`
+	DestinationRefId *T `json:"DestinationRefId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -16,7 +16,7 @@ type Connection[T any] struct {
 	// CatalogId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html#cfn-glue-connection-catalogid
-	CatalogId string `json:"CatalogId"`
+	CatalogId T `json:"CatalogId"`
 
 	// ConnectionInput AWS CloudFormation Property
 	// Required: true

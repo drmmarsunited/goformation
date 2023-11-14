@@ -13,7 +13,7 @@ type TopicRuleDestination_HttpUrlDestinationSummary[T any] struct {
 	// ConfirmationUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicruledestination-httpurldestinationsummary.html#cfn-iot-topicruledestination-httpurldestinationsummary-confirmationurl
-	ConfirmationUrl *string `json:"ConfirmationUrl,omitempty"`
+	ConfirmationUrl *T `json:"ConfirmationUrl,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

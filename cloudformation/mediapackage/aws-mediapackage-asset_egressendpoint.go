@@ -13,12 +13,12 @@ type Asset_EgressEndpoint[T any] struct {
 	// PackagingConfigurationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-asset-egressendpoint.html#cfn-mediapackage-asset-egressendpoint-packagingconfigurationid
-	PackagingConfigurationId string `json:"PackagingConfigurationId"`
+	PackagingConfigurationId T `json:"PackagingConfigurationId"`
 
 	// Url AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-asset-egressendpoint.html#cfn-mediapackage-asset-egressendpoint-url
-	Url string `json:"Url"`
+	Url T `json:"Url"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

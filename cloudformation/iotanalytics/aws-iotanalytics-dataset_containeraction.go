@@ -13,12 +13,12 @@ type Dataset_ContainerAction[T any] struct {
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-containeraction.html#cfn-iotanalytics-dataset-containeraction-executionrolearn
-	ExecutionRoleArn string `json:"ExecutionRoleArn"`
+	ExecutionRoleArn T `json:"ExecutionRoleArn"`
 
 	// Image AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-containeraction.html#cfn-iotanalytics-dataset-containeraction-image
-	Image string `json:"Image"`
+	Image T `json:"Image"`
 
 	// ResourceConfiguration AWS CloudFormation Property
 	// Required: true

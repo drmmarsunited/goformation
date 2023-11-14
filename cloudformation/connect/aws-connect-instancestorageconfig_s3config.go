@@ -13,12 +13,12 @@ type InstanceStorageConfig_S3Config[T any] struct {
 	// BucketName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instancestorageconfig-s3config.html#cfn-connect-instancestorageconfig-s3config-bucketname
-	BucketName string `json:"BucketName"`
+	BucketName T `json:"BucketName"`
 
 	// BucketPrefix AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instancestorageconfig-s3config.html#cfn-connect-instancestorageconfig-s3config-bucketprefix
-	BucketPrefix string `json:"BucketPrefix"`
+	BucketPrefix T `json:"BucketPrefix"`
 
 	// EncryptionConfig AWS CloudFormation Property
 	// Required: false

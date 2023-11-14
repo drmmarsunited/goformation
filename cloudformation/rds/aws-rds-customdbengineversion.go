@@ -17,42 +17,42 @@ type CustomDBEngineVersion[T any] struct {
 	// DatabaseInstallationFilesS3BucketName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-databaseinstallationfiless3bucketname
-	DatabaseInstallationFilesS3BucketName string `json:"DatabaseInstallationFilesS3BucketName"`
+	DatabaseInstallationFilesS3BucketName T `json:"DatabaseInstallationFilesS3BucketName"`
 
 	// DatabaseInstallationFilesS3Prefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-databaseinstallationfiless3prefix
-	DatabaseInstallationFilesS3Prefix *string `json:"DatabaseInstallationFilesS3Prefix,omitempty"`
+	DatabaseInstallationFilesS3Prefix *T `json:"DatabaseInstallationFilesS3Prefix,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Engine AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-engine
-	Engine string `json:"Engine"`
+	Engine T `json:"Engine"`
 
 	// EngineVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-engineversion
-	EngineVersion string `json:"EngineVersion"`
+	EngineVersion T `json:"EngineVersion"`
 
 	// KMSKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-kmskeyid
-	KMSKeyId *string `json:"KMSKeyId,omitempty"`
+	KMSKeyId *T `json:"KMSKeyId,omitempty"`
 
 	// Manifest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-manifest
-	Manifest *string `json:"Manifest,omitempty"`
+	Manifest *T `json:"Manifest,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-status
-	Status *string `json:"Status,omitempty"`
+	Status *T `json:"Status,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

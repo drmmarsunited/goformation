@@ -13,22 +13,22 @@ type DataSource_GoogleDriveConfiguration[T any] struct {
 	// ExcludeMimeTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-googledriveconfiguration.html#cfn-kendra-datasource-googledriveconfiguration-excludemimetypes
-	ExcludeMimeTypes []string `json:"ExcludeMimeTypes,omitempty"`
+	ExcludeMimeTypes []T `json:"ExcludeMimeTypes,omitempty"`
 
 	// ExcludeSharedDrives AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-googledriveconfiguration.html#cfn-kendra-datasource-googledriveconfiguration-excludeshareddrives
-	ExcludeSharedDrives []string `json:"ExcludeSharedDrives,omitempty"`
+	ExcludeSharedDrives []T `json:"ExcludeSharedDrives,omitempty"`
 
 	// ExcludeUserAccounts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-googledriveconfiguration.html#cfn-kendra-datasource-googledriveconfiguration-excludeuseraccounts
-	ExcludeUserAccounts []string `json:"ExcludeUserAccounts,omitempty"`
+	ExcludeUserAccounts []T `json:"ExcludeUserAccounts,omitempty"`
 
 	// ExclusionPatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-googledriveconfiguration.html#cfn-kendra-datasource-googledriveconfiguration-exclusionpatterns
-	ExclusionPatterns []string `json:"ExclusionPatterns,omitempty"`
+	ExclusionPatterns []T `json:"ExclusionPatterns,omitempty"`
 
 	// FieldMappings AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type DataSource_GoogleDriveConfiguration[T any] struct {
 	// InclusionPatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-googledriveconfiguration.html#cfn-kendra-datasource-googledriveconfiguration-inclusionpatterns
-	InclusionPatterns []string `json:"InclusionPatterns,omitempty"`
+	InclusionPatterns []T `json:"InclusionPatterns,omitempty"`
 
 	// SecretArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-googledriveconfiguration.html#cfn-kendra-datasource-googledriveconfiguration-secretarn
-	SecretArn string `json:"SecretArn"`
+	SecretArn T `json:"SecretArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

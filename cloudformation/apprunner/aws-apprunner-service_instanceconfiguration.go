@@ -13,17 +13,17 @@ type Service_InstanceConfiguration[T any] struct {
 	// Cpu AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-instanceconfiguration.html#cfn-apprunner-service-instanceconfiguration-cpu
-	Cpu *string `json:"Cpu,omitempty"`
+	Cpu *T `json:"Cpu,omitempty"`
 
 	// InstanceRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-instanceconfiguration.html#cfn-apprunner-service-instanceconfiguration-instancerolearn
-	InstanceRoleArn *string `json:"InstanceRoleArn,omitempty"`
+	InstanceRoleArn *T `json:"InstanceRoleArn,omitempty"`
 
 	// Memory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-instanceconfiguration.html#cfn-apprunner-service-instanceconfiguration-memory
-	Memory *string `json:"Memory,omitempty"`
+	Memory *T `json:"Memory,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

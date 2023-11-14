@@ -13,7 +13,7 @@ type DataLakeSettings_DataLakePrincipal[T any] struct {
 	// DataLakePrincipalIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datalakesettings-datalakeprincipal.html#cfn-lakeformation-datalakesettings-datalakeprincipal-datalakeprincipalidentifier
-	DataLakePrincipalIdentifier string `json:"DataLakePrincipalIdentifier"`
+	DataLakePrincipalIdentifier T `json:"DataLakePrincipalIdentifier"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

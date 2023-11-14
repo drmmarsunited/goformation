@@ -13,47 +13,47 @@ type Connector_As2Config[T any] struct {
 	// BasicAuthSecretId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-as2config.html#cfn-transfer-connector-as2config-basicauthsecretid
-	BasicAuthSecretId *string `json:"BasicAuthSecretId,omitempty"`
+	BasicAuthSecretId *T `json:"BasicAuthSecretId,omitempty"`
 
 	// Compression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-as2config.html#cfn-transfer-connector-as2config-compression
-	Compression *string `json:"Compression,omitempty"`
+	Compression *T `json:"Compression,omitempty"`
 
 	// EncryptionAlgorithm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-as2config.html#cfn-transfer-connector-as2config-encryptionalgorithm
-	EncryptionAlgorithm *string `json:"EncryptionAlgorithm,omitempty"`
+	EncryptionAlgorithm *T `json:"EncryptionAlgorithm,omitempty"`
 
 	// LocalProfileId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-as2config.html#cfn-transfer-connector-as2config-localprofileid
-	LocalProfileId *string `json:"LocalProfileId,omitempty"`
+	LocalProfileId *T `json:"LocalProfileId,omitempty"`
 
 	// MdnResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-as2config.html#cfn-transfer-connector-as2config-mdnresponse
-	MdnResponse *string `json:"MdnResponse,omitempty"`
+	MdnResponse *T `json:"MdnResponse,omitempty"`
 
 	// MdnSigningAlgorithm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-as2config.html#cfn-transfer-connector-as2config-mdnsigningalgorithm
-	MdnSigningAlgorithm *string `json:"MdnSigningAlgorithm,omitempty"`
+	MdnSigningAlgorithm *T `json:"MdnSigningAlgorithm,omitempty"`
 
 	// MessageSubject AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-as2config.html#cfn-transfer-connector-as2config-messagesubject
-	MessageSubject *string `json:"MessageSubject,omitempty"`
+	MessageSubject *T `json:"MessageSubject,omitempty"`
 
 	// PartnerProfileId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-as2config.html#cfn-transfer-connector-as2config-partnerprofileid
-	PartnerProfileId *string `json:"PartnerProfileId,omitempty"`
+	PartnerProfileId *T `json:"PartnerProfileId,omitempty"`
 
 	// SigningAlgorithm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-as2config.html#cfn-transfer-connector-as2config-signingalgorithm
-	SigningAlgorithm *string `json:"SigningAlgorithm,omitempty"`
+	SigningAlgorithm *T `json:"SigningAlgorithm,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

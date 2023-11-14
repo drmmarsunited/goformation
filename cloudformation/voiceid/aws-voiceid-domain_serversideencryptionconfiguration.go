@@ -13,7 +13,7 @@ type Domain_ServerSideEncryptionConfiguration[T any] struct {
 	// KmsKeyId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-voiceid-domain-serversideencryptionconfiguration.html#cfn-voiceid-domain-serversideencryptionconfiguration-kmskeyid
-	KmsKeyId string `json:"KmsKeyId"`
+	KmsKeyId T `json:"KmsKeyId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

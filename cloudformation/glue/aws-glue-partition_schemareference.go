@@ -18,7 +18,7 @@ type Partition_SchemaReference[T any] struct {
 	// SchemaVersionId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schemaversionid
-	SchemaVersionId *string `json:"SchemaVersionId,omitempty"`
+	SchemaVersionId *T `json:"SchemaVersionId,omitempty"`
 
 	// SchemaVersionNumber AWS CloudFormation Property
 	// Required: false

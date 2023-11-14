@@ -21,7 +21,7 @@ type MicrosoftAD[T any] struct {
 	// Edition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-edition
-	Edition *string `json:"Edition,omitempty"`
+	Edition *T `json:"Edition,omitempty"`
 
 	// EnableSso AWS CloudFormation Property
 	// Required: false
@@ -31,17 +31,17 @@ type MicrosoftAD[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Password AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-password
-	Password string `json:"Password"`
+	Password T `json:"Password"`
 
 	// ShortName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-shortname
-	ShortName *string `json:"ShortName,omitempty"`
+	ShortName *T `json:"ShortName,omitempty"`
 
 	// VpcSettings AWS CloudFormation Property
 	// Required: true

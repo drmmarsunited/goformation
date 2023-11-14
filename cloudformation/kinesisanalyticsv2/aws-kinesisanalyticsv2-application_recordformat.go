@@ -18,7 +18,7 @@ type Application_RecordFormat[T any] struct {
 	// RecordFormatType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-recordformat.html#cfn-kinesisanalyticsv2-application-recordformat-recordformattype
-	RecordFormatType string `json:"RecordFormatType"`
+	RecordFormatType T `json:"RecordFormatType"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

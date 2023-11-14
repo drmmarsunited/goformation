@@ -13,12 +13,12 @@ type TrustAnchor_SourceData[T any] struct {
 	// AcmPcaArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rolesanywhere-trustanchor-sourcedata.html#cfn-rolesanywhere-trustanchor-sourcedata-acmpcaarn
-	AcmPcaArn *string `json:"AcmPcaArn,omitempty"`
+	AcmPcaArn *T `json:"AcmPcaArn,omitempty"`
 
 	// X509CertificateData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rolesanywhere-trustanchor-sourcedata.html#cfn-rolesanywhere-trustanchor-sourcedata-x509certificatedata
-	X509CertificateData *string `json:"X509CertificateData,omitempty"`
+	X509CertificateData *T `json:"X509CertificateData,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

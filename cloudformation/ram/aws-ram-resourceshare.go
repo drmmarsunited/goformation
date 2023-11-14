@@ -22,27 +22,27 @@ type ResourceShare[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html#cfn-ram-resourceshare-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// PermissionArns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html#cfn-ram-resourceshare-permissionarns
-	PermissionArns []string `json:"PermissionArns,omitempty"`
+	PermissionArns []T `json:"PermissionArns,omitempty"`
 
 	// Principals AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html#cfn-ram-resourceshare-principals
-	Principals []string `json:"Principals,omitempty"`
+	Principals []T `json:"Principals,omitempty"`
 
 	// ResourceArns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html#cfn-ram-resourceshare-resourcearns
-	ResourceArns []string `json:"ResourceArns,omitempty"`
+	ResourceArns []T `json:"ResourceArns,omitempty"`
 
 	// Sources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html#cfn-ram-resourceshare-sources
-	Sources []string `json:"Sources,omitempty"`
+	Sources []T `json:"Sources,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -13,37 +13,37 @@ type DecoderManifest_ObdInterface[T any] struct {
 	// DtcRequestIntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdinterface.html#cfn-iotfleetwise-decodermanifest-obdinterface-dtcrequestintervalseconds
-	DtcRequestIntervalSeconds *string `json:"DtcRequestIntervalSeconds,omitempty"`
+	DtcRequestIntervalSeconds *T `json:"DtcRequestIntervalSeconds,omitempty"`
 
 	// HasTransmissionEcu AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdinterface.html#cfn-iotfleetwise-decodermanifest-obdinterface-hastransmissionecu
-	HasTransmissionEcu *string `json:"HasTransmissionEcu,omitempty"`
+	HasTransmissionEcu *T `json:"HasTransmissionEcu,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdinterface.html#cfn-iotfleetwise-decodermanifest-obdinterface-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ObdStandard AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdinterface.html#cfn-iotfleetwise-decodermanifest-obdinterface-obdstandard
-	ObdStandard *string `json:"ObdStandard,omitempty"`
+	ObdStandard *T `json:"ObdStandard,omitempty"`
 
 	// PidRequestIntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdinterface.html#cfn-iotfleetwise-decodermanifest-obdinterface-pidrequestintervalseconds
-	PidRequestIntervalSeconds *string `json:"PidRequestIntervalSeconds,omitempty"`
+	PidRequestIntervalSeconds *T `json:"PidRequestIntervalSeconds,omitempty"`
 
 	// RequestMessageId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdinterface.html#cfn-iotfleetwise-decodermanifest-obdinterface-requestmessageid
-	RequestMessageId string `json:"RequestMessageId"`
+	RequestMessageId T `json:"RequestMessageId"`
 
 	// UseExtendedIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdinterface.html#cfn-iotfleetwise-decodermanifest-obdinterface-useextendedids
-	UseExtendedIds *string `json:"UseExtendedIds,omitempty"`
+	UseExtendedIds *T `json:"UseExtendedIds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,12 +13,17 @@ type Analysis_ReferenceLineDataConfiguration[T any] struct {
 	// AxisBinding AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-referencelinedataconfiguration.html#cfn-quicksight-analysis-referencelinedataconfiguration-axisbinding
-	AxisBinding *string `json:"AxisBinding,omitempty"`
+	AxisBinding *T `json:"AxisBinding,omitempty"`
 
 	// DynamicConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-referencelinedataconfiguration.html#cfn-quicksight-analysis-referencelinedataconfiguration-dynamicconfiguration
 	DynamicConfiguration *Analysis_ReferenceLineDynamicDataConfiguration[any] `json:"DynamicConfiguration,omitempty"`
+
+	// SeriesType AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-referencelinedataconfiguration.html#cfn-quicksight-analysis-referencelinedataconfiguration-seriestype
+	SeriesType *T `json:"SeriesType,omitempty"`
 
 	// StaticConfiguration AWS CloudFormation Property
 	// Required: false

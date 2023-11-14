@@ -16,17 +16,17 @@ type Theme[T any] struct {
 	// AppId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-theme.html#cfn-amplifyuibuilder-theme-appid
-	AppId *string `json:"AppId,omitempty"`
+	AppId *T `json:"AppId,omitempty"`
 
 	// EnvironmentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-theme.html#cfn-amplifyuibuilder-theme-environmentname
-	EnvironmentName *string `json:"EnvironmentName,omitempty"`
+	EnvironmentName *T `json:"EnvironmentName,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-theme.html#cfn-amplifyuibuilder-theme-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Overrides AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type Theme[T any] struct {
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-theme.html#cfn-amplifyuibuilder-theme-tags
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// Values AWS CloudFormation Property
 	// Required: true

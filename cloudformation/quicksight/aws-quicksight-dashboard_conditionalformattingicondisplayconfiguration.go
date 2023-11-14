@@ -13,7 +13,7 @@ type Dashboard_ConditionalFormattingIconDisplayConfiguration[T any] struct {
 	// IconDisplayOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-conditionalformattingicondisplayconfiguration.html#cfn-quicksight-dashboard-conditionalformattingicondisplayconfiguration-icondisplayoption
-	IconDisplayOption *string `json:"IconDisplayOption,omitempty"`
+	IconDisplayOption *T `json:"IconDisplayOption,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

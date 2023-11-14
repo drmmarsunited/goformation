@@ -13,12 +13,12 @@ type DocumentClassifier_DocumentClassifierDocuments[T any] struct {
 	// S3Uri AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-documentclassifier-documentclassifierdocuments.html#cfn-comprehend-documentclassifier-documentclassifierdocuments-s3uri
-	S3Uri string `json:"S3Uri"`
+	S3Uri T `json:"S3Uri"`
 
 	// TestS3Uri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-documentclassifier-documentclassifierdocuments.html#cfn-comprehend-documentclassifier-documentclassifierdocuments-tests3uri
-	TestS3Uri *string `json:"TestS3Uri,omitempty"`
+	TestS3Uri *T `json:"TestS3Uri,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

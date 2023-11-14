@@ -18,7 +18,7 @@ type BillingGroup_AccountGrouping[T any] struct {
 	// LinkedAccountIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-billinggroup-accountgrouping.html#cfn-billingconductor-billinggroup-accountgrouping-linkedaccountids
-	LinkedAccountIds []string `json:"LinkedAccountIds"`
+	LinkedAccountIds []T `json:"LinkedAccountIds"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

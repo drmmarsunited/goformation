@@ -21,27 +21,27 @@ type PackageVersion[T any] struct {
 	// OwnerAccount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#cfn-panorama-packageversion-owneraccount
-	OwnerAccount *string `json:"OwnerAccount,omitempty"`
+	OwnerAccount *T `json:"OwnerAccount,omitempty"`
 
 	// PackageId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#cfn-panorama-packageversion-packageid
-	PackageId string `json:"PackageId"`
+	PackageId T `json:"PackageId"`
 
 	// PackageVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#cfn-panorama-packageversion-packageversion
-	PackageVersion string `json:"PackageVersion"`
+	PackageVersion T `json:"PackageVersion"`
 
 	// PatchVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#cfn-panorama-packageversion-patchversion
-	PatchVersion string `json:"PatchVersion"`
+	PatchVersion T `json:"PatchVersion"`
 
 	// UpdatedLatestPatchVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#cfn-panorama-packageversion-updatedlatestpatchversion
-	UpdatedLatestPatchVersion *string `json:"UpdatedLatestPatchVersion,omitempty"`
+	UpdatedLatestPatchVersion *T `json:"UpdatedLatestPatchVersion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

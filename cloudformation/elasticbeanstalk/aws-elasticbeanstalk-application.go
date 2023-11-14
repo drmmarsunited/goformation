@@ -16,12 +16,12 @@ type Application[T any] struct {
 	// ApplicationName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-application.html#cfn-elasticbeanstalk-application-applicationname
-	ApplicationName *string `json:"ApplicationName,omitempty"`
+	ApplicationName *T `json:"ApplicationName,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-application.html#cfn-elasticbeanstalk-application-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// ResourceLifecycleConfig AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type UserPool_StringAttributeConstraints[T any] struct {
 	// MaxLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-stringattributeconstraints.html#cfn-cognito-userpool-stringattributeconstraints-maxlength
-	MaxLength *string `json:"MaxLength,omitempty"`
+	MaxLength *T `json:"MaxLength,omitempty"`
 
 	// MinLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-stringattributeconstraints.html#cfn-cognito-userpool-stringattributeconstraints-minlength
-	MinLength *string `json:"MinLength,omitempty"`
+	MinLength *T `json:"MinLength,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -18,27 +18,27 @@ type Channel_M3u8Settings[T any] struct {
 	// AudioPids AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-audiopids
-	AudioPids *string `json:"AudioPids,omitempty"`
+	AudioPids *T `json:"AudioPids,omitempty"`
 
 	// EcmPid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-ecmpid
-	EcmPid *string `json:"EcmPid,omitempty"`
+	EcmPid *T `json:"EcmPid,omitempty"`
 
 	// KlvBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-klvbehavior
-	KlvBehavior *string `json:"KlvBehavior,omitempty"`
+	KlvBehavior *T `json:"KlvBehavior,omitempty"`
 
 	// KlvDataPids AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-klvdatapids
-	KlvDataPids *string `json:"KlvDataPids,omitempty"`
+	KlvDataPids *T `json:"KlvDataPids,omitempty"`
 
 	// NielsenId3Behavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-nielsenid3behavior
-	NielsenId3Behavior *string `json:"NielsenId3Behavior,omitempty"`
+	NielsenId3Behavior *T `json:"NielsenId3Behavior,omitempty"`
 
 	// PatInterval AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Channel_M3u8Settings[T any] struct {
 	// PcrControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-pcrcontrol
-	PcrControl *string `json:"PcrControl,omitempty"`
+	PcrControl *T `json:"PcrControl,omitempty"`
 
 	// PcrPeriod AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type Channel_M3u8Settings[T any] struct {
 	// PcrPid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-pcrpid
-	PcrPid *string `json:"PcrPid,omitempty"`
+	PcrPid *T `json:"PcrPid,omitempty"`
 
 	// PmtInterval AWS CloudFormation Property
 	// Required: false
@@ -68,7 +68,7 @@ type Channel_M3u8Settings[T any] struct {
 	// PmtPid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-pmtpid
-	PmtPid *string `json:"PmtPid,omitempty"`
+	PmtPid *T `json:"PmtPid,omitempty"`
 
 	// ProgramNum AWS CloudFormation Property
 	// Required: false
@@ -78,22 +78,22 @@ type Channel_M3u8Settings[T any] struct {
 	// Scte35Behavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-scte35behavior
-	Scte35Behavior *string `json:"Scte35Behavior,omitempty"`
+	Scte35Behavior *T `json:"Scte35Behavior,omitempty"`
 
 	// Scte35Pid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-scte35pid
-	Scte35Pid *string `json:"Scte35Pid,omitempty"`
+	Scte35Pid *T `json:"Scte35Pid,omitempty"`
 
 	// TimedMetadataBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-timedmetadatabehavior
-	TimedMetadataBehavior *string `json:"TimedMetadataBehavior,omitempty"`
+	TimedMetadataBehavior *T `json:"TimedMetadataBehavior,omitempty"`
 
 	// TimedMetadataPid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-timedmetadatapid
-	TimedMetadataPid *string `json:"TimedMetadataPid,omitempty"`
+	TimedMetadataPid *T `json:"TimedMetadataPid,omitempty"`
 
 	// TransportStreamId AWS CloudFormation Property
 	// Required: false
@@ -103,7 +103,7 @@ type Channel_M3u8Settings[T any] struct {
 	// VideoPid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-videopid
-	VideoPid *string `json:"VideoPid,omitempty"`
+	VideoPid *T `json:"VideoPid,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

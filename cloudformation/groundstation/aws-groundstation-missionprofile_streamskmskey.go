@@ -13,12 +13,12 @@ type MissionProfile_StreamsKmsKey[T any] struct {
 	// KmsAliasArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-missionprofile-streamskmskey.html#cfn-groundstation-missionprofile-streamskmskey-kmsaliasarn
-	KmsAliasArn *string `json:"KmsAliasArn,omitempty"`
+	KmsAliasArn *T `json:"KmsAliasArn,omitempty"`
 
 	// KmsKeyArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-missionprofile-streamskmskey.html#cfn-groundstation-missionprofile-streamskmskey-kmskeyarn
-	KmsKeyArn *string `json:"KmsKeyArn,omitempty"`
+	KmsKeyArn *T `json:"KmsKeyArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

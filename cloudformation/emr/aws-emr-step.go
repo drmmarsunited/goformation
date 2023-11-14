@@ -15,23 +15,23 @@ type Step[T any] struct {
 
 	// ActionOnFailure AWS CloudFormation Property
 	// Required: true
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-actiononfailure
-	ActionOnFailure string `json:"ActionOnFailure"`
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-emr-step-actiononfailure
+	ActionOnFailure T `json:"ActionOnFailure"`
 
 	// HadoopJarStep AWS CloudFormation Property
 	// Required: true
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-hadoopjarstep
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-emr-step-hadoopjarstep
 	HadoopJarStep *Step_HadoopJarStepConfig[any] `json:"HadoopJarStep"`
 
 	// JobFlowId AWS CloudFormation Property
 	// Required: true
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-jobflowid
-	JobFlowId string `json:"JobFlowId"`
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-emr-step-jobflowid
+	JobFlowId T `json:"JobFlowId"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-name
-	Name string `json:"Name"`
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-emr-step-name
+	Name T `json:"Name"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,17 +13,17 @@ type Topic_SemanticEntityType[T any] struct {
 	// SubTypeName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-semanticentitytype.html#cfn-quicksight-topic-semanticentitytype-subtypename
-	SubTypeName *string `json:"SubTypeName,omitempty"`
+	SubTypeName *T `json:"SubTypeName,omitempty"`
 
 	// TypeName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-semanticentitytype.html#cfn-quicksight-topic-semanticentitytype-typename
-	TypeName *string `json:"TypeName,omitempty"`
+	TypeName *T `json:"TypeName,omitempty"`
 
 	// TypeParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-semanticentitytype.html#cfn-quicksight-topic-semanticentitytype-typeparameters
-	TypeParameters map[string]string `json:"TypeParameters,omitempty"`
+	TypeParameters map[string]T `json:"TypeParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

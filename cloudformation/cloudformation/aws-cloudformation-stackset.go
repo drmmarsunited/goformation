@@ -17,7 +17,7 @@ type StackSet[T any] struct {
 	// AdministrationRoleARN AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-administrationrolearn
-	AdministrationRoleARN *string `json:"AdministrationRoleARN,omitempty"`
+	AdministrationRoleARN *T `json:"AdministrationRoleARN,omitempty"`
 
 	// AutoDeployment AWS CloudFormation Property
 	// Required: false
@@ -27,22 +27,22 @@ type StackSet[T any] struct {
 	// CallAs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-callas
-	CallAs *string `json:"CallAs,omitempty"`
+	CallAs *T `json:"CallAs,omitempty"`
 
 	// Capabilities AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-capabilities
-	Capabilities []string `json:"Capabilities,omitempty"`
+	Capabilities []T `json:"Capabilities,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// ExecutionRoleName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-executionrolename
-	ExecutionRoleName *string `json:"ExecutionRoleName,omitempty"`
+	ExecutionRoleName *T `json:"ExecutionRoleName,omitempty"`
 
 	// ManagedExecution AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,7 @@ type StackSet[T any] struct {
 	// PermissionModel AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-permissionmodel
-	PermissionModel string `json:"PermissionModel"`
+	PermissionModel T `json:"PermissionModel"`
 
 	// StackInstancesGroup AWS CloudFormation Property
 	// Required: false
@@ -72,7 +72,7 @@ type StackSet[T any] struct {
 	// StackSetName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-stacksetname
-	StackSetName string `json:"StackSetName"`
+	StackSetName T `json:"StackSetName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -82,12 +82,12 @@ type StackSet[T any] struct {
 	// TemplateBody AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-templatebody
-	TemplateBody *string `json:"TemplateBody,omitempty"`
+	TemplateBody *T `json:"TemplateBody,omitempty"`
 
 	// TemplateURL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-templateurl
-	TemplateURL *string `json:"TemplateURL,omitempty"`
+	TemplateURL *T `json:"TemplateURL,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

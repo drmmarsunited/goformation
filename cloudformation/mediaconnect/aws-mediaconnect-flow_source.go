@@ -18,12 +18,12 @@ type Flow_Source[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EntitlementArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-entitlementarn
-	EntitlementArn *string `json:"EntitlementArn,omitempty"`
+	EntitlementArn *T `json:"EntitlementArn,omitempty"`
 
 	// GatewayBridgeSource AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Flow_Source[T any] struct {
 	// IngestIp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-ingestip
-	IngestIp *string `json:"IngestIp,omitempty"`
+	IngestIp *T `json:"IngestIp,omitempty"`
 
 	// IngestPort AWS CloudFormation Property
 	// Required: false
@@ -58,12 +58,12 @@ type Flow_Source[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-protocol
-	Protocol *string `json:"Protocol,omitempty"`
+	Protocol *T `json:"Protocol,omitempty"`
 
 	// SenderControlPort AWS CloudFormation Property
 	// Required: false
@@ -73,22 +73,22 @@ type Flow_Source[T any] struct {
 	// SenderIpAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-senderipaddress
-	SenderIpAddress *string `json:"SenderIpAddress,omitempty"`
+	SenderIpAddress *T `json:"SenderIpAddress,omitempty"`
 
 	// SourceArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourcearn
-	SourceArn *string `json:"SourceArn,omitempty"`
+	SourceArn *T `json:"SourceArn,omitempty"`
 
 	// SourceIngestPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourceingestport
-	SourceIngestPort *string `json:"SourceIngestPort,omitempty"`
+	SourceIngestPort *T `json:"SourceIngestPort,omitempty"`
 
 	// SourceListenerAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourcelisteneraddress
-	SourceListenerAddress *string `json:"SourceListenerAddress,omitempty"`
+	SourceListenerAddress *T `json:"SourceListenerAddress,omitempty"`
 
 	// SourceListenerPort AWS CloudFormation Property
 	// Required: false
@@ -98,17 +98,17 @@ type Flow_Source[T any] struct {
 	// StreamId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-streamid
-	StreamId *string `json:"StreamId,omitempty"`
+	StreamId *T `json:"StreamId,omitempty"`
 
 	// VpcInterfaceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-vpcinterfacename
-	VpcInterfaceName *string `json:"VpcInterfaceName,omitempty"`
+	VpcInterfaceName *T `json:"VpcInterfaceName,omitempty"`
 
 	// WhitelistCidr AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-whitelistcidr
-	WhitelistCidr *string `json:"WhitelistCidr,omitempty"`
+	WhitelistCidr *T `json:"WhitelistCidr,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

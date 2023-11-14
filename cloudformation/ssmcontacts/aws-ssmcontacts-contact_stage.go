@@ -18,7 +18,7 @@ type Contact_Stage[T any] struct {
 	// RotationIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-stage.html#cfn-ssmcontacts-contact-stage-rotationids
-	RotationIds []string `json:"RotationIds,omitempty"`
+	RotationIds []T `json:"RotationIds,omitempty"`
 
 	// Targets AWS CloudFormation Property
 	// Required: false

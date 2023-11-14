@@ -13,7 +13,7 @@ type Bot_SlotValueOverride[T any] struct {
 	// Shape AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueoverride.html#cfn-lex-bot-slotvalueoverride-shape
-	Shape *string `json:"Shape,omitempty"`
+	Shape *T `json:"Shape,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: false

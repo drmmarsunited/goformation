@@ -16,7 +16,7 @@ type Segment[T any] struct {
 	// ApplicationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-segment.html#cfn-pinpoint-segment-applicationid
-	ApplicationId string `json:"ApplicationId"`
+	ApplicationId T `json:"ApplicationId"`
 
 	// Dimensions AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type Segment[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-segment.html#cfn-pinpoint-segment-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// SegmentGroups AWS CloudFormation Property
 	// Required: false

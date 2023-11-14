@@ -28,7 +28,7 @@ type DataSource_DatabaseConfiguration[T any] struct {
 	// DatabaseEngineType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-databaseconfiguration.html#cfn-kendra-datasource-databaseconfiguration-databaseenginetype
-	DatabaseEngineType string `json:"DatabaseEngineType"`
+	DatabaseEngineType T `json:"DatabaseEngineType"`
 
 	// SqlConfiguration AWS CloudFormation Property
 	// Required: false

@@ -17,7 +17,7 @@ type ReplicaKey[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html#cfn-kms-replicakey-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type ReplicaKey[T any] struct {
 	// PrimaryKeyArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html#cfn-kms-replicakey-primarykeyarn
-	PrimaryKeyArn string `json:"PrimaryKeyArn"`
+	PrimaryKeyArn T `json:"PrimaryKeyArn"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

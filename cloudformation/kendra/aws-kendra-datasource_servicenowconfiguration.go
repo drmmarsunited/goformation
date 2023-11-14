@@ -13,12 +13,12 @@ type DataSource_ServiceNowConfiguration[T any] struct {
 	// AuthenticationType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowconfiguration.html#cfn-kendra-datasource-servicenowconfiguration-authenticationtype
-	AuthenticationType *string `json:"AuthenticationType,omitempty"`
+	AuthenticationType *T `json:"AuthenticationType,omitempty"`
 
 	// HostUrl AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowconfiguration.html#cfn-kendra-datasource-servicenowconfiguration-hosturl
-	HostUrl string `json:"HostUrl"`
+	HostUrl T `json:"HostUrl"`
 
 	// KnowledgeArticleConfiguration AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type DataSource_ServiceNowConfiguration[T any] struct {
 	// SecretArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowconfiguration.html#cfn-kendra-datasource-servicenowconfiguration-secretarn
-	SecretArn string `json:"SecretArn"`
+	SecretArn T `json:"SecretArn"`
 
 	// ServiceCatalogConfiguration AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type DataSource_ServiceNowConfiguration[T any] struct {
 	// ServiceNowBuildVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowconfiguration.html#cfn-kendra-datasource-servicenowconfiguration-servicenowbuildversion
-	ServiceNowBuildVersion string `json:"ServiceNowBuildVersion"`
+	ServiceNowBuildVersion T `json:"ServiceNowBuildVersion"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

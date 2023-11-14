@@ -18,7 +18,7 @@ type SecurityProfile_Behavior[T any] struct {
 	// Metric AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-behavior.html#cfn-iot-securityprofile-behavior-metric
-	Metric *string `json:"Metric,omitempty"`
+	Metric *T `json:"Metric,omitempty"`
 
 	// MetricDimension AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type SecurityProfile_Behavior[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-behavior.html#cfn-iot-securityprofile-behavior-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// SuppressAlerts AWS CloudFormation Property
 	// Required: false

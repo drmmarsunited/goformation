@@ -13,27 +13,27 @@ type VerifiedAccessInstance_VerifiedAccessTrustProvider[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessinstance-verifiedaccesstrustprovider.html#cfn-ec2-verifiedaccessinstance-verifiedaccesstrustprovider-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DeviceTrustProviderType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessinstance-verifiedaccesstrustprovider.html#cfn-ec2-verifiedaccessinstance-verifiedaccesstrustprovider-devicetrustprovidertype
-	DeviceTrustProviderType *string `json:"DeviceTrustProviderType,omitempty"`
+	DeviceTrustProviderType *T `json:"DeviceTrustProviderType,omitempty"`
 
 	// TrustProviderType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessinstance-verifiedaccesstrustprovider.html#cfn-ec2-verifiedaccessinstance-verifiedaccesstrustprovider-trustprovidertype
-	TrustProviderType *string `json:"TrustProviderType,omitempty"`
+	TrustProviderType *T `json:"TrustProviderType,omitempty"`
 
 	// UserTrustProviderType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessinstance-verifiedaccesstrustprovider.html#cfn-ec2-verifiedaccessinstance-verifiedaccesstrustprovider-usertrustprovidertype
-	UserTrustProviderType *string `json:"UserTrustProviderType,omitempty"`
+	UserTrustProviderType *T `json:"UserTrustProviderType,omitempty"`
 
 	// VerifiedAccessTrustProviderId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessinstance-verifiedaccesstrustprovider.html#cfn-ec2-verifiedaccessinstance-verifiedaccesstrustprovider-verifiedaccesstrustproviderid
-	VerifiedAccessTrustProviderId *string `json:"VerifiedAccessTrustProviderId,omitempty"`
+	VerifiedAccessTrustProviderId *T `json:"VerifiedAccessTrustProviderId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

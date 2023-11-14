@@ -13,57 +13,57 @@ type OrganizationConfigRule_OrganizationCustomPolicyRuleMetadata[T any] struct {
 	// DebugLogDeliveryAccounts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustompolicyrulemetadata.html#cfn-config-organizationconfigrule-organizationcustompolicyrulemetadata-debuglogdeliveryaccounts
-	DebugLogDeliveryAccounts []string `json:"DebugLogDeliveryAccounts,omitempty"`
+	DebugLogDeliveryAccounts []T `json:"DebugLogDeliveryAccounts,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustompolicyrulemetadata.html#cfn-config-organizationconfigrule-organizationcustompolicyrulemetadata-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// InputParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustompolicyrulemetadata.html#cfn-config-organizationconfigrule-organizationcustompolicyrulemetadata-inputparameters
-	InputParameters *string `json:"InputParameters,omitempty"`
+	InputParameters *T `json:"InputParameters,omitempty"`
 
 	// MaximumExecutionFrequency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustompolicyrulemetadata.html#cfn-config-organizationconfigrule-organizationcustompolicyrulemetadata-maximumexecutionfrequency
-	MaximumExecutionFrequency *string `json:"MaximumExecutionFrequency,omitempty"`
+	MaximumExecutionFrequency *T `json:"MaximumExecutionFrequency,omitempty"`
 
 	// OrganizationConfigRuleTriggerTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustompolicyrulemetadata.html#cfn-config-organizationconfigrule-organizationcustompolicyrulemetadata-organizationconfigruletriggertypes
-	OrganizationConfigRuleTriggerTypes []string `json:"OrganizationConfigRuleTriggerTypes,omitempty"`
+	OrganizationConfigRuleTriggerTypes []T `json:"OrganizationConfigRuleTriggerTypes,omitempty"`
 
 	// PolicyText AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustompolicyrulemetadata.html#cfn-config-organizationconfigrule-organizationcustompolicyrulemetadata-policytext
-	PolicyText string `json:"PolicyText"`
+	PolicyText T `json:"PolicyText"`
 
 	// ResourceIdScope AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustompolicyrulemetadata.html#cfn-config-organizationconfigrule-organizationcustompolicyrulemetadata-resourceidscope
-	ResourceIdScope *string `json:"ResourceIdScope,omitempty"`
+	ResourceIdScope *T `json:"ResourceIdScope,omitempty"`
 
 	// ResourceTypesScope AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustompolicyrulemetadata.html#cfn-config-organizationconfigrule-organizationcustompolicyrulemetadata-resourcetypesscope
-	ResourceTypesScope []string `json:"ResourceTypesScope,omitempty"`
+	ResourceTypesScope []T `json:"ResourceTypesScope,omitempty"`
 
 	// Runtime AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustompolicyrulemetadata.html#cfn-config-organizationconfigrule-organizationcustompolicyrulemetadata-runtime
-	Runtime string `json:"Runtime"`
+	Runtime T `json:"Runtime"`
 
 	// TagKeyScope AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustompolicyrulemetadata.html#cfn-config-organizationconfigrule-organizationcustompolicyrulemetadata-tagkeyscope
-	TagKeyScope *string `json:"TagKeyScope,omitempty"`
+	TagKeyScope *T `json:"TagKeyScope,omitempty"`
 
 	// TagValueScope AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustompolicyrulemetadata.html#cfn-config-organizationconfigrule-organizationcustompolicyrulemetadata-tagvaluescope
-	TagValueScope *string `json:"TagValueScope,omitempty"`
+	TagValueScope *T `json:"TagValueScope,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

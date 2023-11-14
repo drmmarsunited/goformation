@@ -18,7 +18,7 @@ type JobTemplate_MaintenanceWindow[T any] struct {
 	// StartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-maintenancewindow.html#cfn-iot-jobtemplate-maintenancewindow-starttime
-	StartTime *string `json:"StartTime,omitempty"`
+	StartTime *T `json:"StartTime,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

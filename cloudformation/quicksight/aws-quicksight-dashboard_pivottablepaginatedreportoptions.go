@@ -13,12 +13,12 @@ type Dashboard_PivotTablePaginatedReportOptions[T any] struct {
 	// OverflowColumnHeaderVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottablepaginatedreportoptions.html#cfn-quicksight-dashboard-pivottablepaginatedreportoptions-overflowcolumnheadervisibility
-	OverflowColumnHeaderVisibility *string `json:"OverflowColumnHeaderVisibility,omitempty"`
+	OverflowColumnHeaderVisibility *T `json:"OverflowColumnHeaderVisibility,omitempty"`
 
 	// VerticalOverflowVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottablepaginatedreportoptions.html#cfn-quicksight-dashboard-pivottablepaginatedreportoptions-verticaloverflowvisibility
-	VerticalOverflowVisibility *string `json:"VerticalOverflowVisibility,omitempty"`
+	VerticalOverflowVisibility *T `json:"VerticalOverflowVisibility,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

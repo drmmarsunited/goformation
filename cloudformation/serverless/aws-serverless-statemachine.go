@@ -21,7 +21,7 @@ type StateMachine[T any] struct {
 	// DefinitionSubstitutions AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html
-	DefinitionSubstitutions map[string]string `json:"DefinitionSubstitutions,omitempty"`
+	DefinitionSubstitutions map[string]T `json:"DefinitionSubstitutions,omitempty"`
 
 	// DefinitionUri AWS CloudFormation Property
 	// Required: false
@@ -41,12 +41,12 @@ type StateMachine[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// PermissionsBoundaries AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html#sam-statemachine-permissionsboundary
-	PermissionsBoundaries *string `json:"PermissionsBoundaries,omitempty"`
+	PermissionsBoundaries *T `json:"PermissionsBoundaries,omitempty"`
 
 	// Policies AWS CloudFormation Property
 	// Required: false
@@ -56,12 +56,12 @@ type StateMachine[T any] struct {
 	// Role AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html
-	Role *string `json:"Role,omitempty"`
+	Role *T `json:"Role,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// Tracing AWS CloudFormation Property
 	// Required: false
@@ -71,7 +71,7 @@ type StateMachine[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html
-	Type *string `json:"Type,omitempty"`
+	Type *T `json:"Type,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

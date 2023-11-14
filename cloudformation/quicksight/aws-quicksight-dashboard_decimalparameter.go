@@ -13,7 +13,7 @@ type Dashboard_DecimalParameter[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-decimalparameter.html#cfn-quicksight-dashboard-decimalparameter-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Values AWS CloudFormation Property
 	// Required: true

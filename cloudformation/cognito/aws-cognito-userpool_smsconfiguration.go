@@ -13,17 +13,17 @@ type UserPool_SmsConfiguration[T any] struct {
 	// ExternalId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-smsconfiguration.html#cfn-cognito-userpool-smsconfiguration-externalid
-	ExternalId *string `json:"ExternalId,omitempty"`
+	ExternalId *T `json:"ExternalId,omitempty"`
 
 	// SnsCallerArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-smsconfiguration.html#cfn-cognito-userpool-smsconfiguration-snscallerarn
-	SnsCallerArn *string `json:"SnsCallerArn,omitempty"`
+	SnsCallerArn *T `json:"SnsCallerArn,omitempty"`
 
 	// SnsRegion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-smsconfiguration.html#cfn-cognito-userpool-smsconfiguration-snsregion
-	SnsRegion *string `json:"SnsRegion,omitempty"`
+	SnsRegion *T `json:"SnsRegion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

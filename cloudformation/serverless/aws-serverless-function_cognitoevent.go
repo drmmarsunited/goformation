@@ -18,7 +18,7 @@ type Function_CognitoEvent[T any] struct {
 	// UserPool AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#cognito
-	UserPool string `json:"UserPool"`
+	UserPool T `json:"UserPool"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

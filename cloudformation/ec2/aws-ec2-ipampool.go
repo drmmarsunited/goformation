@@ -17,7 +17,7 @@ type IPAMPool[T any] struct {
 	// AddressFamily AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-addressfamily
-	AddressFamily string `json:"AddressFamily"`
+	AddressFamily T `json:"AddressFamily"`
 
 	// AllocationDefaultNetmaskLength AWS CloudFormation Property
 	// Required: false
@@ -47,22 +47,22 @@ type IPAMPool[T any] struct {
 	// AwsService AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-awsservice
-	AwsService *string `json:"AwsService,omitempty"`
+	AwsService *T `json:"AwsService,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// IpamScopeId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-ipamscopeid
-	IpamScopeId string `json:"IpamScopeId"`
+	IpamScopeId T `json:"IpamScopeId"`
 
 	// Locale AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-locale
-	Locale *string `json:"Locale,omitempty"`
+	Locale *T `json:"Locale,omitempty"`
 
 	// ProvisionedCidrs AWS CloudFormation Property
 	// Required: false
@@ -72,7 +72,7 @@ type IPAMPool[T any] struct {
 	// PublicIpSource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-publicipsource
-	PublicIpSource *string `json:"PublicIpSource,omitempty"`
+	PublicIpSource *T `json:"PublicIpSource,omitempty"`
 
 	// PubliclyAdvertisable AWS CloudFormation Property
 	// Required: false
@@ -82,7 +82,7 @@ type IPAMPool[T any] struct {
 	// SourceIpamPoolId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-sourceipampoolid
-	SourceIpamPoolId *string `json:"SourceIpamPoolId,omitempty"`
+	SourceIpamPoolId *T `json:"SourceIpamPoolId,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

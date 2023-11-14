@@ -18,7 +18,7 @@ type Bucket_Rule[T any] struct {
 	// ExpirationDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-expirationdate
-	ExpirationDate *string `json:"ExpirationDate,omitempty"`
+	ExpirationDate *T `json:"ExpirationDate,omitempty"`
 
 	// ExpirationInDays AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type Bucket_Rule[T any] struct {
 	// Id AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-id
-	Id *string `json:"Id,omitempty"`
+	Id *T `json:"Id,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-status
-	Status string `json:"Status"`
+	Status T `json:"Status"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

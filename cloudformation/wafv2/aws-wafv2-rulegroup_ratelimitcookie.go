@@ -13,7 +13,7 @@ type RuleGroup_RateLimitCookie[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ratelimitcookie.html#cfn-wafv2-rulegroup-ratelimitcookie-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// TextTransformations AWS CloudFormation Property
 	// Required: true

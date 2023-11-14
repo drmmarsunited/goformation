@@ -13,7 +13,7 @@ type Function_S3Event[T any] struct {
 	// Bucket AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#s3
-	Bucket string `json:"Bucket"`
+	Bucket T `json:"Bucket"`
 
 	// Events AWS CloudFormation Property
 	// Required: true

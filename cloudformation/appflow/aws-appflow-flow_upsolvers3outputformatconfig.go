@@ -18,7 +18,7 @@ type Flow_UpsolverS3OutputFormatConfig[T any] struct {
 	// FileType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolvers3outputformatconfig.html#cfn-appflow-flow-upsolvers3outputformatconfig-filetype
-	FileType *string `json:"FileType,omitempty"`
+	FileType *T `json:"FileType,omitempty"`
 
 	// PrefixConfig AWS CloudFormation Property
 	// Required: true

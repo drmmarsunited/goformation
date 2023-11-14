@@ -13,7 +13,7 @@ type EvaluationForm_EvaluationFormSection[T any] struct {
 	// Instructions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformsection.html#cfn-connect-evaluationform-evaluationformsection-instructions
-	Instructions *string `json:"Instructions,omitempty"`
+	Instructions *T `json:"Instructions,omitempty"`
 
 	// Items AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type EvaluationForm_EvaluationFormSection[T any] struct {
 	// RefId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformsection.html#cfn-connect-evaluationform-evaluationformsection-refid
-	RefId string `json:"RefId"`
+	RefId T `json:"RefId"`
 
 	// Title AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformsection.html#cfn-connect-evaluationform-evaluationformsection-title
-	Title string `json:"Title"`
+	Title T `json:"Title"`
 
 	// Weight AWS CloudFormation Property
 	// Required: false

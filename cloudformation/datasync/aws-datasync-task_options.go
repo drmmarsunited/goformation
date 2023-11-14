@@ -13,7 +13,7 @@ type Task_Options[T any] struct {
 	// Atime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-atime
-	Atime *string `json:"Atime,omitempty"`
+	Atime *T `json:"Atime,omitempty"`
 
 	// BytesPerSecond AWS CloudFormation Property
 	// Required: false
@@ -23,67 +23,67 @@ type Task_Options[T any] struct {
 	// Gid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-gid
-	Gid *string `json:"Gid,omitempty"`
+	Gid *T `json:"Gid,omitempty"`
 
 	// LogLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-loglevel
-	LogLevel *string `json:"LogLevel,omitempty"`
+	LogLevel *T `json:"LogLevel,omitempty"`
 
 	// Mtime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-mtime
-	Mtime *string `json:"Mtime,omitempty"`
+	Mtime *T `json:"Mtime,omitempty"`
 
 	// ObjectTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-objecttags
-	ObjectTags *string `json:"ObjectTags,omitempty"`
+	ObjectTags *T `json:"ObjectTags,omitempty"`
 
 	// OverwriteMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-overwritemode
-	OverwriteMode *string `json:"OverwriteMode,omitempty"`
+	OverwriteMode *T `json:"OverwriteMode,omitempty"`
 
 	// PosixPermissions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-posixpermissions
-	PosixPermissions *string `json:"PosixPermissions,omitempty"`
+	PosixPermissions *T `json:"PosixPermissions,omitempty"`
 
 	// PreserveDeletedFiles AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-preservedeletedfiles
-	PreserveDeletedFiles *string `json:"PreserveDeletedFiles,omitempty"`
+	PreserveDeletedFiles *T `json:"PreserveDeletedFiles,omitempty"`
 
 	// PreserveDevices AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-preservedevices
-	PreserveDevices *string `json:"PreserveDevices,omitempty"`
+	PreserveDevices *T `json:"PreserveDevices,omitempty"`
 
 	// SecurityDescriptorCopyFlags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-securitydescriptorcopyflags
-	SecurityDescriptorCopyFlags *string `json:"SecurityDescriptorCopyFlags,omitempty"`
+	SecurityDescriptorCopyFlags *T `json:"SecurityDescriptorCopyFlags,omitempty"`
 
 	// TaskQueueing AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-taskqueueing
-	TaskQueueing *string `json:"TaskQueueing,omitempty"`
+	TaskQueueing *T `json:"TaskQueueing,omitempty"`
 
 	// TransferMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-transfermode
-	TransferMode *string `json:"TransferMode,omitempty"`
+	TransferMode *T `json:"TransferMode,omitempty"`
 
 	// Uid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-uid
-	Uid *string `json:"Uid,omitempty"`
+	Uid *T `json:"Uid,omitempty"`
 
 	// VerifyMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-verifymode
-	VerifyMode *string `json:"VerifyMode,omitempty"`
+	VerifyMode *T `json:"VerifyMode,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

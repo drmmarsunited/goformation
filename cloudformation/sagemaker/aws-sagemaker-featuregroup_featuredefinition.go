@@ -13,12 +13,12 @@ type FeatureGroup_FeatureDefinition[T any] struct {
 	// FeatureName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-featuredefinition.html#cfn-sagemaker-featuregroup-featuredefinition-featurename
-	FeatureName string `json:"FeatureName"`
+	FeatureName T `json:"FeatureName"`
 
 	// FeatureType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-featuredefinition.html#cfn-sagemaker-featuregroup-featuredefinition-featuretype
-	FeatureType string `json:"FeatureType"`
+	FeatureType T `json:"FeatureType"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

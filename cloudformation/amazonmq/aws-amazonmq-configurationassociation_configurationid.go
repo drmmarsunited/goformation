@@ -13,7 +13,7 @@ type ConfigurationAssociation_ConfigurationId[T any] struct {
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-configurationassociation-configurationid.html#cfn-amazonmq-configurationassociation-configurationid-id
-	Id string `json:"Id"`
+	Id T `json:"Id"`
 
 	// Revision AWS CloudFormation Property
 	// Required: true

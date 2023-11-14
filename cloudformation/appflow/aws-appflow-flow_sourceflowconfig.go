@@ -13,17 +13,17 @@ type Flow_SourceFlowConfig[T any] struct {
 	// ApiVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceflowconfig.html#cfn-appflow-flow-sourceflowconfig-apiversion
-	ApiVersion *string `json:"ApiVersion,omitempty"`
+	ApiVersion *T `json:"ApiVersion,omitempty"`
 
 	// ConnectorProfileName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceflowconfig.html#cfn-appflow-flow-sourceflowconfig-connectorprofilename
-	ConnectorProfileName *string `json:"ConnectorProfileName,omitempty"`
+	ConnectorProfileName *T `json:"ConnectorProfileName,omitempty"`
 
 	// ConnectorType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceflowconfig.html#cfn-appflow-flow-sourceflowconfig-connectortype
-	ConnectorType string `json:"ConnectorType"`
+	ConnectorType T `json:"ConnectorType"`
 
 	// IncrementalPullConfig AWS CloudFormation Property
 	// Required: false

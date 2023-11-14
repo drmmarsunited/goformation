@@ -16,12 +16,12 @@ type EC2Fleet[T any] struct {
 	// Context AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-context
-	Context *string `json:"Context,omitempty"`
+	Context *T `json:"Context,omitempty"`
 
 	// ExcessCapacityTerminationPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-excesscapacityterminationpolicy
-	ExcessCapacityTerminationPolicy *string `json:"ExcessCapacityTerminationPolicy,omitempty"`
+	ExcessCapacityTerminationPolicy *T `json:"ExcessCapacityTerminationPolicy,omitempty"`
 
 	// LaunchTemplateConfigs AWS CloudFormation Property
 	// Required: true
@@ -61,17 +61,17 @@ type EC2Fleet[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-type
-	Type *string `json:"Type,omitempty"`
+	Type *T `json:"Type,omitempty"`
 
 	// ValidFrom AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-validfrom
-	ValidFrom *string `json:"ValidFrom,omitempty"`
+	ValidFrom *T `json:"ValidFrom,omitempty"`
 
 	// ValidUntil AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-validuntil
-	ValidUntil *string `json:"ValidUntil,omitempty"`
+	ValidUntil *T `json:"ValidUntil,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

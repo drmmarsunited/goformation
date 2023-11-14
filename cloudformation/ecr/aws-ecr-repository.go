@@ -32,7 +32,7 @@ type Repository[T any] struct {
 	// ImageTagMutability AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagetagmutability
-	ImageTagMutability *string `json:"ImageTagMutability,omitempty"`
+	ImageTagMutability *T `json:"ImageTagMutability,omitempty"`
 
 	// LifecyclePolicy AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type Repository[T any] struct {
 	// RepositoryName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname
-	RepositoryName *string `json:"RepositoryName,omitempty"`
+	RepositoryName *T `json:"RepositoryName,omitempty"`
 
 	// RepositoryPolicyText AWS CloudFormation Property
 	// Required: false

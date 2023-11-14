@@ -13,7 +13,7 @@ type Flow_AggregationConfig[T any] struct {
 	// AggregationType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-aggregationconfig.html#cfn-appflow-flow-aggregationconfig-aggregationtype
-	AggregationType *string `json:"AggregationType,omitempty"`
+	AggregationType *T `json:"AggregationType,omitempty"`
 
 	// TargetFileSize AWS CloudFormation Property
 	// Required: false

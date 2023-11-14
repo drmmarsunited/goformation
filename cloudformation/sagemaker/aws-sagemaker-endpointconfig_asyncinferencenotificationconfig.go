@@ -13,17 +13,17 @@ type EndpointConfig_AsyncInferenceNotificationConfig[T any] struct {
 	// ErrorTopic AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferencenotificationconfig.html#cfn-sagemaker-endpointconfig-asyncinferencenotificationconfig-errortopic
-	ErrorTopic *string `json:"ErrorTopic,omitempty"`
+	ErrorTopic *T `json:"ErrorTopic,omitempty"`
 
 	// IncludeInferenceResponseIn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferencenotificationconfig.html#cfn-sagemaker-endpointconfig-asyncinferencenotificationconfig-includeinferenceresponsein
-	IncludeInferenceResponseIn []string `json:"IncludeInferenceResponseIn,omitempty"`
+	IncludeInferenceResponseIn []T `json:"IncludeInferenceResponseIn,omitempty"`
 
 	// SuccessTopic AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferencenotificationconfig.html#cfn-sagemaker-endpointconfig-asyncinferencenotificationconfig-successtopic
-	SuccessTopic *string `json:"SuccessTopic,omitempty"`
+	SuccessTopic *T `json:"SuccessTopic,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

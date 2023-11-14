@@ -18,12 +18,12 @@ type Function_Auth[T any] struct {
 	// AuthorizationScopes AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
-	AuthorizationScopes []string `json:"AuthorizationScopes,omitempty"`
+	AuthorizationScopes []T `json:"AuthorizationScopes,omitempty"`
 
 	// Authorizer AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
-	Authorizer *string `json:"Authorizer,omitempty"`
+	Authorizer *T `json:"Authorizer,omitempty"`
 
 	// ResourcePolicy AWS CloudFormation Property
 	// Required: false

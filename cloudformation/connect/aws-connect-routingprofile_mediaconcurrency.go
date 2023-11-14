@@ -13,7 +13,7 @@ type RoutingProfile_MediaConcurrency[T any] struct {
 	// Channel AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-routingprofile-mediaconcurrency.html#cfn-connect-routingprofile-mediaconcurrency-channel
-	Channel string `json:"Channel"`
+	Channel T `json:"Channel"`
 
 	// Concurrency AWS CloudFormation Property
 	// Required: true

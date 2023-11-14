@@ -21,17 +21,17 @@ type Connector[T any] struct {
 	// ConnectorConfiguration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-connectorconfiguration
-	ConnectorConfiguration map[string]string `json:"ConnectorConfiguration"`
+	ConnectorConfiguration map[string]T `json:"ConnectorConfiguration"`
 
 	// ConnectorDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-connectordescription
-	ConnectorDescription *string `json:"ConnectorDescription,omitempty"`
+	ConnectorDescription *T `json:"ConnectorDescription,omitempty"`
 
 	// ConnectorName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-connectorname
-	ConnectorName string `json:"ConnectorName"`
+	ConnectorName T `json:"ConnectorName"`
 
 	// KafkaCluster AWS CloudFormation Property
 	// Required: true
@@ -51,7 +51,7 @@ type Connector[T any] struct {
 	// KafkaConnectVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-kafkaconnectversion
-	KafkaConnectVersion string `json:"KafkaConnectVersion"`
+	KafkaConnectVersion T `json:"KafkaConnectVersion"`
 
 	// LogDelivery AWS CloudFormation Property
 	// Required: false
@@ -66,7 +66,7 @@ type Connector[T any] struct {
 	// ServiceExecutionRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-serviceexecutionrolearn
-	ServiceExecutionRoleArn string `json:"ServiceExecutionRoleArn"`
+	ServiceExecutionRoleArn T `json:"ServiceExecutionRoleArn"`
 
 	// WorkerConfiguration AWS CloudFormation Property
 	// Required: false

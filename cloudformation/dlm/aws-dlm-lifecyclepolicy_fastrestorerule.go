@@ -13,7 +13,7 @@ type LifecyclePolicy_FastRestoreRule[T any] struct {
 	// AvailabilityZones AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-fastrestorerule.html#cfn-dlm-lifecyclepolicy-fastrestorerule-availabilityzones
-	AvailabilityZones []string `json:"AvailabilityZones,omitempty"`
+	AvailabilityZones []T `json:"AvailabilityZones,omitempty"`
 
 	// Count AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type LifecyclePolicy_FastRestoreRule[T any] struct {
 	// IntervalUnit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-fastrestorerule.html#cfn-dlm-lifecyclepolicy-fastrestorerule-intervalunit
-	IntervalUnit *string `json:"IntervalUnit,omitempty"`
+	IntervalUnit *T `json:"IntervalUnit,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

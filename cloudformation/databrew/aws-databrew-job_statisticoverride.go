@@ -13,12 +13,12 @@ type Job_StatisticOverride[T any] struct {
 	// Parameters AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-statisticoverride.html#cfn-databrew-job-statisticoverride-parameters
-	Parameters map[string]string `json:"Parameters"`
+	Parameters map[string]T `json:"Parameters"`
 
 	// Statistic AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-statisticoverride.html#cfn-databrew-job-statisticoverride-statistic
-	Statistic string `json:"Statistic"`
+	Statistic T `json:"Statistic"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

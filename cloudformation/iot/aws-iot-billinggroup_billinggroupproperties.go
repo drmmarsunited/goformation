@@ -13,7 +13,7 @@ type BillingGroup_BillingGroupProperties[T any] struct {
 	// BillingGroupDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-billinggroup-billinggroupproperties.html#cfn-iot-billinggroup-billinggroupproperties-billinggroupdescription
-	BillingGroupDescription *string `json:"BillingGroupDescription,omitempty"`
+	BillingGroupDescription *T `json:"BillingGroupDescription,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

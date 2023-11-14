@@ -13,12 +13,12 @@ type Domain_Idp[T any] struct {
 	// EntityId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-idp.html#cfn-opensearchservice-domain-idp-entityid
-	EntityId string `json:"EntityId"`
+	EntityId T `json:"EntityId"`
 
 	// MetadataContent AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-idp.html#cfn-opensearchservice-domain-idp-metadatacontent
-	MetadataContent string `json:"MetadataContent"`
+	MetadataContent T `json:"MetadataContent"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

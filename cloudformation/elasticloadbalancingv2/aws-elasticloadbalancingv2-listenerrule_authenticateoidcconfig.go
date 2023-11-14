@@ -13,42 +13,42 @@ type ListenerRule_AuthenticateOidcConfig[T any] struct {
 	// AuthenticationRequestExtraParams AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-authenticationrequestextraparams
-	AuthenticationRequestExtraParams map[string]string `json:"AuthenticationRequestExtraParams,omitempty"`
+	AuthenticationRequestExtraParams map[string]T `json:"AuthenticationRequestExtraParams,omitempty"`
 
 	// AuthorizationEndpoint AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-authorizationendpoint
-	AuthorizationEndpoint string `json:"AuthorizationEndpoint"`
+	AuthorizationEndpoint T `json:"AuthorizationEndpoint"`
 
 	// ClientId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-clientid
-	ClientId string `json:"ClientId"`
+	ClientId T `json:"ClientId"`
 
 	// ClientSecret AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-clientsecret
-	ClientSecret *string `json:"ClientSecret,omitempty"`
+	ClientSecret *T `json:"ClientSecret,omitempty"`
 
 	// Issuer AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-issuer
-	Issuer string `json:"Issuer"`
+	Issuer T `json:"Issuer"`
 
 	// OnUnauthenticatedRequest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-onunauthenticatedrequest
-	OnUnauthenticatedRequest *string `json:"OnUnauthenticatedRequest,omitempty"`
+	OnUnauthenticatedRequest *T `json:"OnUnauthenticatedRequest,omitempty"`
 
 	// Scope AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-scope
-	Scope *string `json:"Scope,omitempty"`
+	Scope *T `json:"Scope,omitempty"`
 
 	// SessionCookieName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-sessioncookiename
-	SessionCookieName *string `json:"SessionCookieName,omitempty"`
+	SessionCookieName *T `json:"SessionCookieName,omitempty"`
 
 	// SessionTimeout AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type ListenerRule_AuthenticateOidcConfig[T any] struct {
 	// TokenEndpoint AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-tokenendpoint
-	TokenEndpoint string `json:"TokenEndpoint"`
+	TokenEndpoint T `json:"TokenEndpoint"`
 
 	// UseExistingClientSecret AWS CloudFormation Property
 	// Required: false
@@ -68,7 +68,7 @@ type ListenerRule_AuthenticateOidcConfig[T any] struct {
 	// UserInfoEndpoint AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-userinfoendpoint
-	UserInfoEndpoint string `json:"UserInfoEndpoint"`
+	UserInfoEndpoint T `json:"UserInfoEndpoint"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

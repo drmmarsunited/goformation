@@ -13,7 +13,7 @@ type DataSource_DatabricksParameters[T any] struct {
 	// Host AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-databricksparameters.html#cfn-quicksight-datasource-databricksparameters-host
-	Host string `json:"Host"`
+	Host T `json:"Host"`
 
 	// Port AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type DataSource_DatabricksParameters[T any] struct {
 	// SqlEndpointPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-databricksparameters.html#cfn-quicksight-datasource-databricksparameters-sqlendpointpath
-	SqlEndpointPath string `json:"SqlEndpointPath"`
+	SqlEndpointPath T `json:"SqlEndpointPath"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type EventSourceMapping_Filter[T any] struct {
 	// Pattern AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-filter.html#cfn-lambda-eventsourcemapping-filter-pattern
-	Pattern *string `json:"Pattern,omitempty"`
+	Pattern *T `json:"Pattern,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

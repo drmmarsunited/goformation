@@ -13,12 +13,12 @@ type Server_WorkflowDetail[T any] struct {
 	// ExecutionRole AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-workflowdetail.html#cfn-transfer-server-workflowdetail-executionrole
-	ExecutionRole string `json:"ExecutionRole"`
+	ExecutionRole T `json:"ExecutionRole"`
 
 	// WorkflowId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-workflowdetail.html#cfn-transfer-server-workflowdetail-workflowid
-	WorkflowId string `json:"WorkflowId"`
+	WorkflowId T `json:"WorkflowId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

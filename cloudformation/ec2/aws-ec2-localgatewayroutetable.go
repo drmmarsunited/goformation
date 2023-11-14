@@ -17,12 +17,12 @@ type LocalGatewayRouteTable[T any] struct {
 	// LocalGatewayId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetable.html#cfn-ec2-localgatewayroutetable-localgatewayid
-	LocalGatewayId string `json:"LocalGatewayId"`
+	LocalGatewayId T `json:"LocalGatewayId"`
 
 	// Mode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetable.html#cfn-ec2-localgatewayroutetable-mode
-	Mode *string `json:"Mode,omitempty"`
+	Mode *T `json:"Mode,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

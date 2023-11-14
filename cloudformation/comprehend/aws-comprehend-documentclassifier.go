@@ -17,12 +17,12 @@ type DocumentClassifier[T any] struct {
 	// DataAccessRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-documentclassifier.html#cfn-comprehend-documentclassifier-dataaccessrolearn
-	DataAccessRoleArn string `json:"DataAccessRoleArn"`
+	DataAccessRoleArn T `json:"DataAccessRoleArn"`
 
 	// DocumentClassifierName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-documentclassifier.html#cfn-comprehend-documentclassifier-documentclassifiername
-	DocumentClassifierName string `json:"DocumentClassifierName"`
+	DocumentClassifierName T `json:"DocumentClassifierName"`
 
 	// InputDataConfig AWS CloudFormation Property
 	// Required: true
@@ -32,22 +32,22 @@ type DocumentClassifier[T any] struct {
 	// LanguageCode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-documentclassifier.html#cfn-comprehend-documentclassifier-languagecode
-	LanguageCode string `json:"LanguageCode"`
+	LanguageCode T `json:"LanguageCode"`
 
 	// Mode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-documentclassifier.html#cfn-comprehend-documentclassifier-mode
-	Mode *string `json:"Mode,omitempty"`
+	Mode *T `json:"Mode,omitempty"`
 
 	// ModelKmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-documentclassifier.html#cfn-comprehend-documentclassifier-modelkmskeyid
-	ModelKmsKeyId *string `json:"ModelKmsKeyId,omitempty"`
+	ModelKmsKeyId *T `json:"ModelKmsKeyId,omitempty"`
 
 	// ModelPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-documentclassifier.html#cfn-comprehend-documentclassifier-modelpolicy
-	ModelPolicy *string `json:"ModelPolicy,omitempty"`
+	ModelPolicy *T `json:"ModelPolicy,omitempty"`
 
 	// OutputDataConfig AWS CloudFormation Property
 	// Required: false
@@ -62,12 +62,12 @@ type DocumentClassifier[T any] struct {
 	// VersionName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-documentclassifier.html#cfn-comprehend-documentclassifier-versionname
-	VersionName *string `json:"VersionName,omitempty"`
+	VersionName *T `json:"VersionName,omitempty"`
 
 	// VolumeKmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-documentclassifier.html#cfn-comprehend-documentclassifier-volumekmskeyid
-	VolumeKmsKeyId *string `json:"VolumeKmsKeyId,omitempty"`
+	VolumeKmsKeyId *T `json:"VolumeKmsKeyId,omitempty"`
 
 	// VpcConfig AWS CloudFormation Property
 	// Required: false

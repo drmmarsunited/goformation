@@ -18,7 +18,7 @@ type Dataset_QueryAction[T any] struct {
 	// SqlQuery AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-queryaction.html#cfn-iotanalytics-dataset-queryaction-sqlquery
-	SqlQuery string `json:"SqlQuery"`
+	SqlQuery T `json:"SqlQuery"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

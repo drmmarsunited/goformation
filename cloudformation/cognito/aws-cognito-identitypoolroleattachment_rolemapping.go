@@ -13,12 +13,12 @@ type IdentityPoolRoleAttachment_RoleMapping[T any] struct {
 	// AmbiguousRoleResolution AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-ambiguousroleresolution
-	AmbiguousRoleResolution *string `json:"AmbiguousRoleResolution,omitempty"`
+	AmbiguousRoleResolution *T `json:"AmbiguousRoleResolution,omitempty"`
 
 	// IdentityProvider AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-identityprovider
-	IdentityProvider *string `json:"IdentityProvider,omitempty"`
+	IdentityProvider *T `json:"IdentityProvider,omitempty"`
 
 	// RulesConfiguration AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type IdentityPoolRoleAttachment_RoleMapping[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

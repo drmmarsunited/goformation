@@ -22,32 +22,32 @@ type EventSubscription[T any] struct {
 	// EventCategories AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#cfn-redshift-eventsubscription-eventcategories
-	EventCategories []string `json:"EventCategories,omitempty"`
+	EventCategories []T `json:"EventCategories,omitempty"`
 
 	// Severity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#cfn-redshift-eventsubscription-severity
-	Severity *string `json:"Severity,omitempty"`
+	Severity *T `json:"Severity,omitempty"`
 
 	// SnsTopicArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#cfn-redshift-eventsubscription-snstopicarn
-	SnsTopicArn *string `json:"SnsTopicArn,omitempty"`
+	SnsTopicArn *T `json:"SnsTopicArn,omitempty"`
 
 	// SourceIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#cfn-redshift-eventsubscription-sourceids
-	SourceIds []string `json:"SourceIds,omitempty"`
+	SourceIds []T `json:"SourceIds,omitempty"`
 
 	// SourceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#cfn-redshift-eventsubscription-sourcetype
-	SourceType *string `json:"SourceType,omitempty"`
+	SourceType *T `json:"SourceType,omitempty"`
 
 	// SubscriptionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#cfn-redshift-eventsubscription-subscriptionname
-	SubscriptionName string `json:"SubscriptionName"`
+	SubscriptionName T `json:"SubscriptionName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

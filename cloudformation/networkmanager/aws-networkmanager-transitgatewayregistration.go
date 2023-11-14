@@ -16,12 +16,12 @@ type TransitGatewayRegistration[T any] struct {
 	// GlobalNetworkId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayregistration.html#cfn-networkmanager-transitgatewayregistration-globalnetworkid
-	GlobalNetworkId string `json:"GlobalNetworkId"`
+	GlobalNetworkId T `json:"GlobalNetworkId"`
 
 	// TransitGatewayArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayregistration.html#cfn-networkmanager-transitgatewayregistration-transitgatewayarn
-	TransitGatewayArn string `json:"TransitGatewayArn"`
+	TransitGatewayArn T `json:"TransitGatewayArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

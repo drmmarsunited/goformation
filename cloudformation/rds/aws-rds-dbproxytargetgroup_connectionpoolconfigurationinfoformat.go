@@ -18,7 +18,7 @@ type DBProxyTargetGroup_ConnectionPoolConfigurationInfoFormat[T any] struct {
 	// InitQuery AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat.html#cfn-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat-initquery
-	InitQuery *string `json:"InitQuery,omitempty"`
+	InitQuery *T `json:"InitQuery,omitempty"`
 
 	// MaxConnectionsPercent AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type DBProxyTargetGroup_ConnectionPoolConfigurationInfoFormat[T any] struct {
 	// SessionPinningFilters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat.html#cfn-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat-sessionpinningfilters
-	SessionPinningFilters []string `json:"SessionPinningFilters,omitempty"`
+	SessionPinningFilters []T `json:"SessionPinningFilters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

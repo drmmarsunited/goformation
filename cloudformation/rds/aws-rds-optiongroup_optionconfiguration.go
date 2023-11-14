@@ -13,12 +13,12 @@ type OptionGroup_OptionConfiguration[T any] struct {
 	// DBSecurityGroupMemberships AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfiguration.html#cfn-rds-optiongroup-optionconfiguration-dbsecuritygroupmemberships
-	DBSecurityGroupMemberships []string `json:"DBSecurityGroupMemberships,omitempty"`
+	DBSecurityGroupMemberships []T `json:"DBSecurityGroupMemberships,omitempty"`
 
 	// OptionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfiguration.html#cfn-rds-optiongroup-optionconfiguration-optionname
-	OptionName string `json:"OptionName"`
+	OptionName T `json:"OptionName"`
 
 	// OptionSettings AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type OptionGroup_OptionConfiguration[T any] struct {
 	// OptionVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfiguration.html#cfn-rds-optiongroup-optionconfiguration-optionversion
-	OptionVersion *string `json:"OptionVersion,omitempty"`
+	OptionVersion *T `json:"OptionVersion,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type OptionGroup_OptionConfiguration[T any] struct {
 	// VpcSecurityGroupMemberships AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfiguration.html#cfn-rds-optiongroup-optionconfiguration-vpcsecuritygroupmemberships
-	VpcSecurityGroupMemberships []string `json:"VpcSecurityGroupMemberships,omitempty"`
+	VpcSecurityGroupMemberships []T `json:"VpcSecurityGroupMemberships,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,12 +13,12 @@ type ReceiptRule_AddHeaderAction[T any] struct {
 	// HeaderName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html#cfn-ses-receiptrule-addheaderaction-headername
-	HeaderName string `json:"HeaderName"`
+	HeaderName T `json:"HeaderName"`
 
 	// HeaderValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html#cfn-ses-receiptrule-addheaderaction-headervalue
-	HeaderValue string `json:"HeaderValue"`
+	HeaderValue T `json:"HeaderValue"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

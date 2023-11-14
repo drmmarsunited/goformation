@@ -17,12 +17,12 @@ type OrganizationalUnit[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-organizationalunit.html#cfn-organizations-organizationalunit-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ParentId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-organizationalunit.html#cfn-organizations-organizationalunit-parentid
-	ParentId string `json:"ParentId"`
+	ParentId T `json:"ParentId"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

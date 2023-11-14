@@ -18,7 +18,7 @@ type Channel_BlackoutSlate[T any] struct {
 	// NetworkEndBlackout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-blackoutslate.html#cfn-medialive-channel-blackoutslate-networkendblackout
-	NetworkEndBlackout *string `json:"NetworkEndBlackout,omitempty"`
+	NetworkEndBlackout *T `json:"NetworkEndBlackout,omitempty"`
 
 	// NetworkEndBlackoutImage AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Channel_BlackoutSlate[T any] struct {
 	// NetworkId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-blackoutslate.html#cfn-medialive-channel-blackoutslate-networkid
-	NetworkId *string `json:"NetworkId,omitempty"`
+	NetworkId *T `json:"NetworkId,omitempty"`
 
 	// State AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-blackoutslate.html#cfn-medialive-channel-blackoutslate-state
-	State *string `json:"State,omitempty"`
+	State *T `json:"State,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

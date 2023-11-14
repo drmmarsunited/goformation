@@ -23,7 +23,7 @@ type ModelCard_TrainingDetails[T any] struct {
 	// TrainingObservations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingdetails.html#cfn-sagemaker-modelcard-trainingdetails-trainingobservations
-	TrainingObservations *string `json:"TrainingObservations,omitempty"`
+	TrainingObservations *T `json:"TrainingObservations,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

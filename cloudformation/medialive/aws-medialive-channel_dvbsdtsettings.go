@@ -13,7 +13,7 @@ type Channel_DvbSdtSettings[T any] struct {
 	// OutputSdt AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsdtsettings.html#cfn-medialive-channel-dvbsdtsettings-outputsdt
-	OutputSdt *string `json:"OutputSdt,omitempty"`
+	OutputSdt *T `json:"OutputSdt,omitempty"`
 
 	// RepInterval AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type Channel_DvbSdtSettings[T any] struct {
 	// ServiceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsdtsettings.html#cfn-medialive-channel-dvbsdtsettings-servicename
-	ServiceName *string `json:"ServiceName,omitempty"`
+	ServiceName *T `json:"ServiceName,omitempty"`
 
 	// ServiceProviderName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsdtsettings.html#cfn-medialive-channel-dvbsdtsettings-serviceprovidername
-	ServiceProviderName *string `json:"ServiceProviderName,omitempty"`
+	ServiceProviderName *T `json:"ServiceProviderName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -36,12 +36,12 @@ type Policy[T any] struct {
 	// PolicyDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-policydescription
-	PolicyDescription *string `json:"PolicyDescription,omitempty"`
+	PolicyDescription *T `json:"PolicyDescription,omitempty"`
 
 	// PolicyName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-policyname
-	PolicyName string `json:"PolicyName"`
+	PolicyName T `json:"PolicyName"`
 
 	// RemediationEnabled AWS CloudFormation Property
 	// Required: true
@@ -51,7 +51,7 @@ type Policy[T any] struct {
 	// ResourceSetIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcesetids
-	ResourceSetIds []string `json:"ResourceSetIds,omitempty"`
+	ResourceSetIds []T `json:"ResourceSetIds,omitempty"`
 
 	// ResourceTags AWS CloudFormation Property
 	// Required: false
@@ -61,12 +61,12 @@ type Policy[T any] struct {
 	// ResourceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcetype
-	ResourceType *string `json:"ResourceType,omitempty"`
+	ResourceType *T `json:"ResourceType,omitempty"`
 
 	// ResourceTypeList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcetypelist
-	ResourceTypeList []string `json:"ResourceTypeList,omitempty"`
+	ResourceTypeList []T `json:"ResourceTypeList,omitempty"`
 
 	// ResourcesCleanUp AWS CloudFormation Property
 	// Required: false

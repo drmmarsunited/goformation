@@ -13,22 +13,22 @@ type StudioComponent_StudioComponentInitializationScript[T any] struct {
 	// LaunchProfileProtocolVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-studiocomponentinitializationscript.html#cfn-nimblestudio-studiocomponent-studiocomponentinitializationscript-launchprofileprotocolversion
-	LaunchProfileProtocolVersion *string `json:"LaunchProfileProtocolVersion,omitempty"`
+	LaunchProfileProtocolVersion *T `json:"LaunchProfileProtocolVersion,omitempty"`
 
 	// Platform AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-studiocomponentinitializationscript.html#cfn-nimblestudio-studiocomponent-studiocomponentinitializationscript-platform
-	Platform *string `json:"Platform,omitempty"`
+	Platform *T `json:"Platform,omitempty"`
 
 	// RunContext AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-studiocomponentinitializationscript.html#cfn-nimblestudio-studiocomponent-studiocomponentinitializationscript-runcontext
-	RunContext *string `json:"RunContext,omitempty"`
+	RunContext *T `json:"RunContext,omitempty"`
 
 	// Script AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-studiocomponentinitializationscript.html#cfn-nimblestudio-studiocomponent-studiocomponentinitializationscript-script
-	Script *string `json:"Script,omitempty"`
+	Script *T `json:"Script,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

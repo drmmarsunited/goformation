@@ -37,7 +37,7 @@ type SourceLocation[T any] struct {
 	// SourceLocationName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-sourcelocation.html#cfn-mediatailor-sourcelocation-sourcelocationname
-	SourceLocationName string `json:"SourceLocationName"`
+	SourceLocationName T `json:"SourceLocationName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

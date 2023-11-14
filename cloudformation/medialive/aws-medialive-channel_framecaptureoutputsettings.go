@@ -13,7 +13,7 @@ type Channel_FrameCaptureOutputSettings[T any] struct {
 	// NameModifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecaptureoutputsettings.html#cfn-medialive-channel-framecaptureoutputsettings-namemodifier
-	NameModifier *string `json:"NameModifier,omitempty"`
+	NameModifier *T `json:"NameModifier,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

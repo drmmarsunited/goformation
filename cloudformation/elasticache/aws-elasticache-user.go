@@ -17,7 +17,7 @@ type User[T any] struct {
 	// AccessString AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-accessstring
-	AccessString *string `json:"AccessString,omitempty"`
+	AccessString *T `json:"AccessString,omitempty"`
 
 	// AuthenticationMode AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type User[T any] struct {
 	// Engine AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-engine
-	Engine string `json:"Engine"`
+	Engine T `json:"Engine"`
 
 	// NoPasswordRequired AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type User[T any] struct {
 	// Passwords AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-passwords
-	Passwords []string `json:"Passwords,omitempty"`
+	Passwords []T `json:"Passwords,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -47,12 +47,12 @@ type User[T any] struct {
 	// UserId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-userid
-	UserId string `json:"UserId"`
+	UserId T `json:"UserId"`
 
 	// UserName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-username
-	UserName string `json:"UserName"`
+	UserName T `json:"UserName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

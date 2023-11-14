@@ -17,12 +17,12 @@ type ConfiguredTable[T any] struct {
 	// AllowedColumns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-configuredtable.html#cfn-cleanrooms-configuredtable-allowedcolumns
-	AllowedColumns []string `json:"AllowedColumns"`
+	AllowedColumns []T `json:"AllowedColumns"`
 
 	// AnalysisMethod AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-configuredtable.html#cfn-cleanrooms-configuredtable-analysismethod
-	AnalysisMethod string `json:"AnalysisMethod"`
+	AnalysisMethod T `json:"AnalysisMethod"`
 
 	// AnalysisRules AWS CloudFormation Property
 	// Required: false
@@ -32,12 +32,12 @@ type ConfiguredTable[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-configuredtable.html#cfn-cleanrooms-configuredtable-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-configuredtable.html#cfn-cleanrooms-configuredtable-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// TableReference AWS CloudFormation Property
 	// Required: true

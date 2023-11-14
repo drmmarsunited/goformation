@@ -21,17 +21,17 @@ type Application[T any] struct {
 	// NotificationArns AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapplication
-	NotificationArns []string `json:"NotificationArns,omitempty"`
+	NotificationArns []T `json:"NotificationArns,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapplication
-	Parameters map[string]string `json:"Parameters,omitempty"`
+	Parameters map[string]T `json:"Parameters,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapplication
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// TimeoutInMinutes AWS CloudFormation Property
 	// Required: false

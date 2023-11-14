@@ -17,12 +17,12 @@ type OptionGroup[T any] struct {
 	// EngineName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-enginename
-	EngineName string `json:"EngineName"`
+	EngineName T `json:"EngineName"`
 
 	// MajorEngineVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-majorengineversion
-	MajorEngineVersion string `json:"MajorEngineVersion"`
+	MajorEngineVersion T `json:"MajorEngineVersion"`
 
 	// OptionConfigurations AWS CloudFormation Property
 	// Required: false
@@ -32,12 +32,12 @@ type OptionGroup[T any] struct {
 	// OptionGroupDescription AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-optiongroupdescription
-	OptionGroupDescription string `json:"OptionGroupDescription"`
+	OptionGroupDescription T `json:"OptionGroupDescription"`
 
 	// OptionGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-optiongroupname
-	OptionGroupName *string `json:"OptionGroupName,omitempty"`
+	OptionGroupName *T `json:"OptionGroupName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

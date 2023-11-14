@@ -23,7 +23,7 @@ type QuickConnect_QuickConnectConfig[T any] struct {
 	// QuickConnectType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-quickconnectconfig.html#cfn-connect-quickconnect-quickconnectconfig-quickconnecttype
-	QuickConnectType string `json:"QuickConnectType"`
+	QuickConnectType T `json:"QuickConnectType"`
 
 	// UserConfig AWS CloudFormation Property
 	// Required: false

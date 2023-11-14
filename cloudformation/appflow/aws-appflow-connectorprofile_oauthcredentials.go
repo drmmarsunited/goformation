@@ -13,17 +13,17 @@ type ConnectorProfile_OAuthCredentials[T any] struct {
 	// AccessToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-oauthcredentials.html#cfn-appflow-connectorprofile-oauthcredentials-accesstoken
-	AccessToken *string `json:"AccessToken,omitempty"`
+	AccessToken *T `json:"AccessToken,omitempty"`
 
 	// ClientId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-oauthcredentials.html#cfn-appflow-connectorprofile-oauthcredentials-clientid
-	ClientId *string `json:"ClientId,omitempty"`
+	ClientId *T `json:"ClientId,omitempty"`
 
 	// ClientSecret AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-oauthcredentials.html#cfn-appflow-connectorprofile-oauthcredentials-clientsecret
-	ClientSecret *string `json:"ClientSecret,omitempty"`
+	ClientSecret *T `json:"ClientSecret,omitempty"`
 
 	// ConnectorOAuthRequest AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type ConnectorProfile_OAuthCredentials[T any] struct {
 	// RefreshToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-oauthcredentials.html#cfn-appflow-connectorprofile-oauthcredentials-refreshtoken
-	RefreshToken *string `json:"RefreshToken,omitempty"`
+	RefreshToken *T `json:"RefreshToken,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

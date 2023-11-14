@@ -13,7 +13,7 @@ type Volume_SnaplockConfiguration[T any] struct {
 	// AuditLogVolume AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-snaplockconfiguration.html#cfn-fsx-volume-ontapconfiguration-snaplockconfiguration-auditlogvolume
-	AuditLogVolume *string `json:"AuditLogVolume,omitempty"`
+	AuditLogVolume *T `json:"AuditLogVolume,omitempty"`
 
 	// AutocommitPeriod AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Volume_SnaplockConfiguration[T any] struct {
 	// PrivilegedDelete AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-snaplockconfiguration.html#cfn-fsx-volume-ontapconfiguration-snaplockconfiguration-privilegeddelete
-	PrivilegedDelete *string `json:"PrivilegedDelete,omitempty"`
+	PrivilegedDelete *T `json:"PrivilegedDelete,omitempty"`
 
 	// RetentionPeriod AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type Volume_SnaplockConfiguration[T any] struct {
 	// SnaplockType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-snaplockconfiguration.html#cfn-fsx-volume-ontapconfiguration-snaplockconfiguration-snaplocktype
-	SnaplockType string `json:"SnaplockType"`
+	SnaplockType T `json:"SnaplockType"`
 
 	// VolumeAppendModeEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-snaplockconfiguration.html#cfn-fsx-volume-ontapconfiguration-snaplockconfiguration-volumeappendmodeenabled
-	VolumeAppendModeEnabled *string `json:"VolumeAppendModeEnabled,omitempty"`
+	VolumeAppendModeEnabled *T `json:"VolumeAppendModeEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

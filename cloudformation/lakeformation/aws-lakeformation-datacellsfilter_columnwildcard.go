@@ -13,7 +13,7 @@ type DataCellsFilter_ColumnWildcard[T any] struct {
 	// ExcludedColumnNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datacellsfilter-columnwildcard.html#cfn-lakeformation-datacellsfilter-columnwildcard-excludedcolumnnames
-	ExcludedColumnNames []string `json:"ExcludedColumnNames,omitempty"`
+	ExcludedColumnNames []T `json:"ExcludedColumnNames,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

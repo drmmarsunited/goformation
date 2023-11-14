@@ -17,7 +17,7 @@ type PrefixList[T any] struct {
 	// AddressFamily AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#cfn-ec2-prefixlist-addressfamily
-	AddressFamily string `json:"AddressFamily"`
+	AddressFamily T `json:"AddressFamily"`
 
 	// Entries AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type PrefixList[T any] struct {
 	// PrefixListName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#cfn-ec2-prefixlist-prefixlistname
-	PrefixListName string `json:"PrefixListName"`
+	PrefixListName T `json:"PrefixListName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

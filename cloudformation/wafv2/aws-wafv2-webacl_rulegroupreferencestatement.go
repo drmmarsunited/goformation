@@ -13,7 +13,7 @@ type WebACL_RuleGroupReferenceStatement[T any] struct {
 	// Arn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rulegroupreferencestatement.html#cfn-wafv2-webacl-rulegroupreferencestatement-arn
-	Arn string `json:"Arn"`
+	Arn T `json:"Arn"`
 
 	// ExcludedRules AWS CloudFormation Property
 	// Required: false

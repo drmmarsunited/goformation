@@ -13,12 +13,12 @@ type SecurityProfile_MetricValue[T any] struct {
 	// Cidrs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metricvalue.html#cfn-iot-securityprofile-metricvalue-cidrs
-	Cidrs []string `json:"Cidrs,omitempty"`
+	Cidrs []T `json:"Cidrs,omitempty"`
 
 	// Count AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metricvalue.html#cfn-iot-securityprofile-metricvalue-count
-	Count *string `json:"Count,omitempty"`
+	Count *T `json:"Count,omitempty"`
 
 	// Number AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type SecurityProfile_MetricValue[T any] struct {
 	// Strings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metricvalue.html#cfn-iot-securityprofile-metricvalue-strings
-	Strings []string `json:"Strings,omitempty"`
+	Strings []T `json:"Strings,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

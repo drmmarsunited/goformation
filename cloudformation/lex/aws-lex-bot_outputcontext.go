@@ -13,7 +13,7 @@ type Bot_OutputContext[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// TimeToLiveInSeconds AWS CloudFormation Property
 	// Required: true

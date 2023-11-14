@@ -13,7 +13,7 @@ type MatchingWorkflow_RuleBasedProperties[T any] struct {
 	// AttributeMatchingModel AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-matchingworkflow-rulebasedproperties.html#cfn-entityresolution-matchingworkflow-rulebasedproperties-attributematchingmodel
-	AttributeMatchingModel string `json:"AttributeMatchingModel"`
+	AttributeMatchingModel T `json:"AttributeMatchingModel"`
 
 	// Rules AWS CloudFormation Property
 	// Required: true

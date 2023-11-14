@@ -17,7 +17,7 @@ type CustomActionType[T any] struct {
 	// Category AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-category
-	Category string `json:"Category"`
+	Category T `json:"Category"`
 
 	// ConfigurationProperties AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type CustomActionType[T any] struct {
 	// Provider AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-provider
-	Provider string `json:"Provider"`
+	Provider T `json:"Provider"`
 
 	// Settings AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type CustomActionType[T any] struct {
 	// Version AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-version
-	Version string `json:"Version"`
+	Version T `json:"Version"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

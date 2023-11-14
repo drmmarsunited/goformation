@@ -13,7 +13,7 @@ type PrincipalPermissions_DataLakePrincipal[T any] struct {
 	// DataLakePrincipalIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-datalakeprincipal.html#cfn-lakeformation-principalpermissions-datalakeprincipal-datalakeprincipalidentifier
-	DataLakePrincipalIdentifier *string `json:"DataLakePrincipalIdentifier,omitempty"`
+	DataLakePrincipalIdentifier *T `json:"DataLakePrincipalIdentifier,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

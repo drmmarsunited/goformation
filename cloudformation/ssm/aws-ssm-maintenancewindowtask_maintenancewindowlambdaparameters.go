@@ -13,17 +13,17 @@ type MaintenanceWindowTask_MaintenanceWindowLambdaParameters[T any] struct {
 	// ClientContext AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowlambdaparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowlambdaparameters-clientcontext
-	ClientContext *string `json:"ClientContext,omitempty"`
+	ClientContext *T `json:"ClientContext,omitempty"`
 
 	// Payload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowlambdaparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowlambdaparameters-payload
-	Payload *string `json:"Payload,omitempty"`
+	Payload *T `json:"Payload,omitempty"`
 
 	// Qualifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowlambdaparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowlambdaparameters-qualifier
-	Qualifier *string `json:"Qualifier,omitempty"`
+	Qualifier *T `json:"Qualifier,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

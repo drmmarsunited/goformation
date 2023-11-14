@@ -13,7 +13,7 @@ type Cluster_ConfigurationInfo[T any] struct {
 	// Arn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-configurationinfo.html#cfn-msk-cluster-configurationinfo-arn
-	Arn string `json:"Arn"`
+	Arn T `json:"Arn"`
 
 	// Revision AWS CloudFormation Property
 	// Required: true

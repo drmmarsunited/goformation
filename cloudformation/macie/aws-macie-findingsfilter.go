@@ -17,12 +17,12 @@ type FindingsFilter[T any] struct {
 	// Action AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-findingsfilter.html#cfn-macie-findingsfilter-action
-	Action *string `json:"Action,omitempty"`
+	Action *T `json:"Action,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-findingsfilter.html#cfn-macie-findingsfilter-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// FindingCriteria AWS CloudFormation Property
 	// Required: true
@@ -32,7 +32,7 @@ type FindingsFilter[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-findingsfilter.html#cfn-macie-findingsfilter-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Position AWS CloudFormation Property
 	// Required: false

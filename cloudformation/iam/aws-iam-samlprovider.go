@@ -17,12 +17,12 @@ type SAMLProvider[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-samlprovider.html#cfn-iam-samlprovider-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// SamlMetadataDocument AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-samlprovider.html#cfn-iam-samlprovider-samlmetadatadocument
-	SamlMetadataDocument string `json:"SamlMetadataDocument"`
+	SamlMetadataDocument T `json:"SamlMetadataDocument"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

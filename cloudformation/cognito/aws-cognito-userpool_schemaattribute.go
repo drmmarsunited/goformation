@@ -13,7 +13,7 @@ type UserPool_SchemaAttribute[T any] struct {
 	// AttributeDataType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-attributedatatype
-	AttributeDataType *string `json:"AttributeDataType,omitempty"`
+	AttributeDataType *T `json:"AttributeDataType,omitempty"`
 
 	// DeveloperOnlyAttribute AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type UserPool_SchemaAttribute[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// NumberAttributeConstraints AWS CloudFormation Property
 	// Required: false

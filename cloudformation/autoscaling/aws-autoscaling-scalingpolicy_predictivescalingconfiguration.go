@@ -13,7 +13,7 @@ type ScalingPolicy_PredictiveScalingConfiguration[T any] struct {
 	// MaxCapacityBreachBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingconfiguration.html#cfn-autoscaling-scalingpolicy-predictivescalingconfiguration-maxcapacitybreachbehavior
-	MaxCapacityBreachBehavior *string `json:"MaxCapacityBreachBehavior,omitempty"`
+	MaxCapacityBreachBehavior *T `json:"MaxCapacityBreachBehavior,omitempty"`
 
 	// MaxCapacityBuffer AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type ScalingPolicy_PredictiveScalingConfiguration[T any] struct {
 	// Mode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingconfiguration.html#cfn-autoscaling-scalingpolicy-predictivescalingconfiguration-mode
-	Mode *string `json:"Mode,omitempty"`
+	Mode *T `json:"Mode,omitempty"`
 
 	// SchedulingBufferTime AWS CloudFormation Property
 	// Required: false

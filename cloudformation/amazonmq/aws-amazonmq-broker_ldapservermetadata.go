@@ -13,22 +13,22 @@ type Broker_LdapServerMetadata[T any] struct {
 	// Hosts AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-ldapservermetadata.html#cfn-amazonmq-broker-ldapservermetadata-hosts
-	Hosts []string `json:"Hosts"`
+	Hosts []T `json:"Hosts"`
 
 	// RoleBase AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-ldapservermetadata.html#cfn-amazonmq-broker-ldapservermetadata-rolebase
-	RoleBase string `json:"RoleBase"`
+	RoleBase T `json:"RoleBase"`
 
 	// RoleName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-ldapservermetadata.html#cfn-amazonmq-broker-ldapservermetadata-rolename
-	RoleName *string `json:"RoleName,omitempty"`
+	RoleName *T `json:"RoleName,omitempty"`
 
 	// RoleSearchMatching AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-ldapservermetadata.html#cfn-amazonmq-broker-ldapservermetadata-rolesearchmatching
-	RoleSearchMatching string `json:"RoleSearchMatching"`
+	RoleSearchMatching T `json:"RoleSearchMatching"`
 
 	// RoleSearchSubtree AWS CloudFormation Property
 	// Required: false
@@ -38,27 +38,27 @@ type Broker_LdapServerMetadata[T any] struct {
 	// ServiceAccountPassword AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-ldapservermetadata.html#cfn-amazonmq-broker-ldapservermetadata-serviceaccountpassword
-	ServiceAccountPassword string `json:"ServiceAccountPassword"`
+	ServiceAccountPassword T `json:"ServiceAccountPassword"`
 
 	// ServiceAccountUsername AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-ldapservermetadata.html#cfn-amazonmq-broker-ldapservermetadata-serviceaccountusername
-	ServiceAccountUsername string `json:"ServiceAccountUsername"`
+	ServiceAccountUsername T `json:"ServiceAccountUsername"`
 
 	// UserBase AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-ldapservermetadata.html#cfn-amazonmq-broker-ldapservermetadata-userbase
-	UserBase string `json:"UserBase"`
+	UserBase T `json:"UserBase"`
 
 	// UserRoleName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-ldapservermetadata.html#cfn-amazonmq-broker-ldapservermetadata-userrolename
-	UserRoleName *string `json:"UserRoleName,omitempty"`
+	UserRoleName *T `json:"UserRoleName,omitempty"`
 
 	// UserSearchMatching AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-ldapservermetadata.html#cfn-amazonmq-broker-ldapservermetadata-usersearchmatching
-	UserSearchMatching string `json:"UserSearchMatching"`
+	UserSearchMatching T `json:"UserSearchMatching"`
 
 	// UserSearchSubtree AWS CloudFormation Property
 	// Required: false

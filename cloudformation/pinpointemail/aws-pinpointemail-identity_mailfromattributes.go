@@ -13,12 +13,12 @@ type Identity_MailFromAttributes[T any] struct {
 	// BehaviorOnMxFailure AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-identity-mailfromattributes.html#cfn-pinpointemail-identity-mailfromattributes-behavioronmxfailure
-	BehaviorOnMxFailure *string `json:"BehaviorOnMxFailure,omitempty"`
+	BehaviorOnMxFailure *T `json:"BehaviorOnMxFailure,omitempty"`
 
 	// MailFromDomain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-identity-mailfromattributes.html#cfn-pinpointemail-identity-mailfromattributes-mailfromdomain
-	MailFromDomain *string `json:"MailFromDomain,omitempty"`
+	MailFromDomain *T `json:"MailFromDomain,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

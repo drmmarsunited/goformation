@@ -17,17 +17,17 @@ type MulticastGroup[T any] struct {
 	// AssociateWirelessDevice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-multicastgroup.html#cfn-iotwireless-multicastgroup-associatewirelessdevice
-	AssociateWirelessDevice *string `json:"AssociateWirelessDevice,omitempty"`
+	AssociateWirelessDevice *T `json:"AssociateWirelessDevice,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-multicastgroup.html#cfn-iotwireless-multicastgroup-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DisassociateWirelessDevice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-multicastgroup.html#cfn-iotwireless-multicastgroup-disassociatewirelessdevice
-	DisassociateWirelessDevice *string `json:"DisassociateWirelessDevice,omitempty"`
+	DisassociateWirelessDevice *T `json:"DisassociateWirelessDevice,omitempty"`
 
 	// LoRaWAN AWS CloudFormation Property
 	// Required: true
@@ -37,7 +37,7 @@ type MulticastGroup[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-multicastgroup.html#cfn-iotwireless-multicastgroup-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -17,17 +17,17 @@ type ClusterParameterGroup[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-description
-	Description string `json:"Description"`
+	Description T `json:"Description"`
 
 	// ParameterGroupFamily AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parametergroupfamily
-	ParameterGroupFamily string `json:"ParameterGroupFamily"`
+	ParameterGroupFamily T `json:"ParameterGroupFamily"`
 
 	// ParameterGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parametergroupname
-	ParameterGroupName *string `json:"ParameterGroupName,omitempty"`
+	ParameterGroupName *T `json:"ParameterGroupName,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false

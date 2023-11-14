@@ -16,7 +16,7 @@ type DataCellsFilter[T any] struct {
 	// ColumnNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datacellsfilter.html#cfn-lakeformation-datacellsfilter-columnnames
-	ColumnNames []string `json:"ColumnNames,omitempty"`
+	ColumnNames []T `json:"ColumnNames,omitempty"`
 
 	// ColumnWildcard AWS CloudFormation Property
 	// Required: false
@@ -26,12 +26,12 @@ type DataCellsFilter[T any] struct {
 	// DatabaseName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datacellsfilter.html#cfn-lakeformation-datacellsfilter-databasename
-	DatabaseName string `json:"DatabaseName"`
+	DatabaseName T `json:"DatabaseName"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datacellsfilter.html#cfn-lakeformation-datacellsfilter-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// RowFilter AWS CloudFormation Property
 	// Required: false
@@ -41,12 +41,12 @@ type DataCellsFilter[T any] struct {
 	// TableCatalogId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datacellsfilter.html#cfn-lakeformation-datacellsfilter-tablecatalogid
-	TableCatalogId string `json:"TableCatalogId"`
+	TableCatalogId T `json:"TableCatalogId"`
 
 	// TableName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datacellsfilter.html#cfn-lakeformation-datacellsfilter-tablename
-	TableName string `json:"TableName"`
+	TableName T `json:"TableName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -17,7 +17,7 @@ type SigningProfile[T any] struct {
 	// PlatformId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-signingprofile.html#cfn-signer-signingprofile-platformid
-	PlatformId string `json:"PlatformId"`
+	PlatformId T `json:"PlatformId"`
 
 	// SignatureValidityPeriod AWS CloudFormation Property
 	// Required: false

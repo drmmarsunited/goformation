@@ -13,17 +13,17 @@ type Task_S3[T any] struct {
 	// BucketAccessRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-s3.html#cfn-datasync-task-s3-bucketaccessrolearn
-	BucketAccessRoleArn *string `json:"BucketAccessRoleArn,omitempty"`
+	BucketAccessRoleArn *T `json:"BucketAccessRoleArn,omitempty"`
 
 	// S3BucketArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-s3.html#cfn-datasync-task-s3-s3bucketarn
-	S3BucketArn *string `json:"S3BucketArn,omitempty"`
+	S3BucketArn *T `json:"S3BucketArn,omitempty"`
 
 	// Subdirectory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-s3.html#cfn-datasync-task-s3-subdirectory
-	Subdirectory *string `json:"Subdirectory,omitempty"`
+	Subdirectory *T `json:"Subdirectory,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

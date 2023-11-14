@@ -13,7 +13,7 @@ type Dataset_Metadata[T any] struct {
 	// SourceArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-metadata.html#cfn-databrew-dataset-metadata-sourcearn
-	SourceArn *string `json:"SourceArn,omitempty"`
+	SourceArn *T `json:"SourceArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

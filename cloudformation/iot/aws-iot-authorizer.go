@@ -17,12 +17,12 @@ type Authorizer[T any] struct {
 	// AuthorizerFunctionArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-authorizer.html#cfn-iot-authorizer-authorizerfunctionarn
-	AuthorizerFunctionArn string `json:"AuthorizerFunctionArn"`
+	AuthorizerFunctionArn T `json:"AuthorizerFunctionArn"`
 
 	// AuthorizerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-authorizer.html#cfn-iot-authorizer-authorizername
-	AuthorizerName *string `json:"AuthorizerName,omitempty"`
+	AuthorizerName *T `json:"AuthorizerName,omitempty"`
 
 	// EnableCachingForHttp AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Authorizer[T any] struct {
 	// Status AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-authorizer.html#cfn-iot-authorizer-status
-	Status *string `json:"Status,omitempty"`
+	Status *T `json:"Status,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -47,12 +47,12 @@ type Authorizer[T any] struct {
 	// TokenKeyName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-authorizer.html#cfn-iot-authorizer-tokenkeyname
-	TokenKeyName *string `json:"TokenKeyName,omitempty"`
+	TokenKeyName *T `json:"TokenKeyName,omitempty"`
 
 	// TokenSigningPublicKeys AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-authorizer.html#cfn-iot-authorizer-tokensigningpublickeys
-	TokenSigningPublicKeys map[string]string `json:"TokenSigningPublicKeys,omitempty"`
+	TokenSigningPublicKeys map[string]T `json:"TokenSigningPublicKeys,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

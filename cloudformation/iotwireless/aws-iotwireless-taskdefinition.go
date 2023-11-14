@@ -27,7 +27,7 @@ type TaskDefinition[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-taskdefinition.html#cfn-iotwireless-taskdefinition-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type TaskDefinition[T any] struct {
 	// TaskDefinitionType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-taskdefinition.html#cfn-iotwireless-taskdefinition-taskdefinitiontype
-	TaskDefinitionType *string `json:"TaskDefinitionType,omitempty"`
+	TaskDefinitionType *T `json:"TaskDefinitionType,omitempty"`
 
 	// Update AWS CloudFormation Property
 	// Required: false

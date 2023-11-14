@@ -13,7 +13,7 @@ type DeliveryStream_DocumentIdOptions[T any] struct {
 	// DefaultDocumentIdFormat AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-documentidoptions.html#cfn-kinesisfirehose-deliverystream-documentidoptions-defaultdocumentidformat
-	DefaultDocumentIdFormat string `json:"DefaultDocumentIdFormat"`
+	DefaultDocumentIdFormat T `json:"DefaultDocumentIdFormat"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

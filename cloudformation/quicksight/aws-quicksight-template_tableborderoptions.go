@@ -13,12 +13,12 @@ type Template_TableBorderOptions[T any] struct {
 	// Color AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tableborderoptions.html#cfn-quicksight-template-tableborderoptions-color
-	Color *string `json:"Color,omitempty"`
+	Color *T `json:"Color,omitempty"`
 
 	// Style AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-tableborderoptions.html#cfn-quicksight-template-tableborderoptions-style
-	Style *string `json:"Style,omitempty"`
+	Style *T `json:"Style,omitempty"`
 
 	// Thickness AWS CloudFormation Property
 	// Required: false

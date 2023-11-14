@@ -18,7 +18,7 @@ type PermissionSet_PermissionsBoundary[T any] struct {
 	// ManagedPolicyArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-permissionset-permissionsboundary.html#cfn-sso-permissionset-permissionsboundary-managedpolicyarn
-	ManagedPolicyArn *string `json:"ManagedPolicyArn,omitempty"`
+	ManagedPolicyArn *T `json:"ManagedPolicyArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

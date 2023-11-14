@@ -28,17 +28,17 @@ type Distribution_Origin[T any] struct {
 	// DomainName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-domainname
-	DomainName string `json:"DomainName"`
+	DomainName T `json:"DomainName"`
 
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-id
-	Id string `json:"Id"`
+	Id T `json:"Id"`
 
 	// OriginAccessControlId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-originaccesscontrolid
-	OriginAccessControlId *string `json:"OriginAccessControlId,omitempty"`
+	OriginAccessControlId *T `json:"OriginAccessControlId,omitempty"`
 
 	// OriginCustomHeaders AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Distribution_Origin[T any] struct {
 	// OriginPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-originpath
-	OriginPath *string `json:"OriginPath,omitempty"`
+	OriginPath *T `json:"OriginPath,omitempty"`
 
 	// OriginShield AWS CloudFormation Property
 	// Required: false

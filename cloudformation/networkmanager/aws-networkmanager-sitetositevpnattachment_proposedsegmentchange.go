@@ -19,7 +19,7 @@ type SiteToSiteVpnAttachment_ProposedSegmentChange[T any] struct {
 	// SegmentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-sitetositevpnattachment-proposedsegmentchange.html#cfn-networkmanager-sitetositevpnattachment-proposedsegmentchange-segmentname
-	SegmentName *string `json:"SegmentName,omitempty"`
+	SegmentName *T `json:"SegmentName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

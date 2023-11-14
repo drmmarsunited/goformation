@@ -13,7 +13,7 @@ type AnalysisTemplate_AnalysisSchema[T any] struct {
 	// ReferencedTables AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-analysistemplate-analysisschema.html#cfn-cleanrooms-analysistemplate-analysisschema-referencedtables
-	ReferencedTables []string `json:"ReferencedTables"`
+	ReferencedTables []T `json:"ReferencedTables"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

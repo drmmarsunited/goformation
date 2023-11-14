@@ -13,12 +13,12 @@ type ResponsePlan_SsmAutomation[T any] struct {
 	// DocumentName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-ssmautomation.html#cfn-ssmincidents-responseplan-ssmautomation-documentname
-	DocumentName string `json:"DocumentName"`
+	DocumentName T `json:"DocumentName"`
 
 	// DocumentVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-ssmautomation.html#cfn-ssmincidents-responseplan-ssmautomation-documentversion
-	DocumentVersion *string `json:"DocumentVersion,omitempty"`
+	DocumentVersion *T `json:"DocumentVersion,omitempty"`
 
 	// DynamicParameters AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type ResponsePlan_SsmAutomation[T any] struct {
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-ssmautomation.html#cfn-ssmincidents-responseplan-ssmautomation-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// TargetAccount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-ssmautomation.html#cfn-ssmincidents-responseplan-ssmautomation-targetaccount
-	TargetAccount *string `json:"TargetAccount,omitempty"`
+	TargetAccount *T `json:"TargetAccount,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

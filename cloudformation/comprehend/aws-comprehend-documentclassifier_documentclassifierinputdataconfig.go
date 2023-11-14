@@ -18,7 +18,7 @@ type DocumentClassifier_DocumentClassifierInputDataConfig[T any] struct {
 	// DataFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-documentclassifier-documentclassifierinputdataconfig.html#cfn-comprehend-documentclassifier-documentclassifierinputdataconfig-dataformat
-	DataFormat *string `json:"DataFormat,omitempty"`
+	DataFormat *T `json:"DataFormat,omitempty"`
 
 	// DocumentReaderConfig AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type DocumentClassifier_DocumentClassifierInputDataConfig[T any] struct {
 	// DocumentType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-documentclassifier-documentclassifierinputdataconfig.html#cfn-comprehend-documentclassifier-documentclassifierinputdataconfig-documenttype
-	DocumentType *string `json:"DocumentType,omitempty"`
+	DocumentType *T `json:"DocumentType,omitempty"`
 
 	// Documents AWS CloudFormation Property
 	// Required: false
@@ -38,17 +38,17 @@ type DocumentClassifier_DocumentClassifierInputDataConfig[T any] struct {
 	// LabelDelimiter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-documentclassifier-documentclassifierinputdataconfig.html#cfn-comprehend-documentclassifier-documentclassifierinputdataconfig-labeldelimiter
-	LabelDelimiter *string `json:"LabelDelimiter,omitempty"`
+	LabelDelimiter *T `json:"LabelDelimiter,omitempty"`
 
 	// S3Uri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-documentclassifier-documentclassifierinputdataconfig.html#cfn-comprehend-documentclassifier-documentclassifierinputdataconfig-s3uri
-	S3Uri *string `json:"S3Uri,omitempty"`
+	S3Uri *T `json:"S3Uri,omitempty"`
 
 	// TestS3Uri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-comprehend-documentclassifier-documentclassifierinputdataconfig.html#cfn-comprehend-documentclassifier-documentclassifierinputdataconfig-tests3uri
-	TestS3Uri *string `json:"TestS3Uri,omitempty"`
+	TestS3Uri *T `json:"TestS3Uri,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

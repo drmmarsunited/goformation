@@ -18,7 +18,7 @@ type EvaluationForm_EvaluationFormSingleSelectQuestionOption[T any] struct {
 	// RefId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformsingleselectquestionoption.html#cfn-connect-evaluationform-evaluationformsingleselectquestionoption-refid
-	RefId string `json:"RefId"`
+	RefId T `json:"RefId"`
 
 	// Score AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type EvaluationForm_EvaluationFormSingleSelectQuestionOption[T any] struct {
 	// Text AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-evaluationform-evaluationformsingleselectquestionoption.html#cfn-connect-evaluationform-evaluationformsingleselectquestionoption-text
-	Text string `json:"Text"`
+	Text T `json:"Text"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

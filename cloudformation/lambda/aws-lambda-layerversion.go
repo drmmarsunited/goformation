@@ -16,12 +16,12 @@ type LayerVersion[T any] struct {
 	// CompatibleArchitectures AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-compatiblearchitectures
-	CompatibleArchitectures []string `json:"CompatibleArchitectures,omitempty"`
+	CompatibleArchitectures []T `json:"CompatibleArchitectures,omitempty"`
 
 	// CompatibleRuntimes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-compatibleruntimes
-	CompatibleRuntimes []string `json:"CompatibleRuntimes,omitempty"`
+	CompatibleRuntimes []T `json:"CompatibleRuntimes,omitempty"`
 
 	// Content AWS CloudFormation Property
 	// Required: true
@@ -31,17 +31,17 @@ type LayerVersion[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// LayerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-layername
-	LayerName *string `json:"LayerName,omitempty"`
+	LayerName *T `json:"LayerName,omitempty"`
 
 	// LicenseInfo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-licenseinfo
-	LicenseInfo *string `json:"LicenseInfo,omitempty"`
+	LicenseInfo *T `json:"LicenseInfo,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

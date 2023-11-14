@@ -13,27 +13,27 @@ type SpotFleet_SpotFleetRequestConfigData[T any] struct {
 	// AllocationStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-allocationstrategy
-	AllocationStrategy *string `json:"AllocationStrategy,omitempty"`
+	AllocationStrategy *T `json:"AllocationStrategy,omitempty"`
 
 	// Context AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-context
-	Context *string `json:"Context,omitempty"`
+	Context *T `json:"Context,omitempty"`
 
 	// ExcessCapacityTerminationPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-excesscapacityterminationpolicy
-	ExcessCapacityTerminationPolicy *string `json:"ExcessCapacityTerminationPolicy,omitempty"`
+	ExcessCapacityTerminationPolicy *T `json:"ExcessCapacityTerminationPolicy,omitempty"`
 
 	// IamFleetRole AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-iamfleetrole
-	IamFleetRole string `json:"IamFleetRole"`
+	IamFleetRole T `json:"IamFleetRole"`
 
 	// InstanceInterruptionBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-instanceinterruptionbehavior
-	InstanceInterruptionBehavior *string `json:"InstanceInterruptionBehavior,omitempty"`
+	InstanceInterruptionBehavior *T `json:"InstanceInterruptionBehavior,omitempty"`
 
 	// InstancePoolsToUseCount AWS CloudFormation Property
 	// Required: false
@@ -58,12 +58,12 @@ type SpotFleet_SpotFleetRequestConfigData[T any] struct {
 	// OnDemandAllocationStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-ondemandallocationstrategy
-	OnDemandAllocationStrategy *string `json:"OnDemandAllocationStrategy,omitempty"`
+	OnDemandAllocationStrategy *T `json:"OnDemandAllocationStrategy,omitempty"`
 
 	// OnDemandMaxTotalPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-ondemandmaxtotalprice
-	OnDemandMaxTotalPrice *string `json:"OnDemandMaxTotalPrice,omitempty"`
+	OnDemandMaxTotalPrice *T `json:"OnDemandMaxTotalPrice,omitempty"`
 
 	// OnDemandTargetCapacity AWS CloudFormation Property
 	// Required: false
@@ -83,12 +83,12 @@ type SpotFleet_SpotFleetRequestConfigData[T any] struct {
 	// SpotMaxTotalPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-spotmaxtotalprice
-	SpotMaxTotalPrice *string `json:"SpotMaxTotalPrice,omitempty"`
+	SpotMaxTotalPrice *T `json:"SpotMaxTotalPrice,omitempty"`
 
 	// SpotPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-spotprice
-	SpotPrice *string `json:"SpotPrice,omitempty"`
+	SpotPrice *T `json:"SpotPrice,omitempty"`
 
 	// TagSpecifications AWS CloudFormation Property
 	// Required: false
@@ -103,7 +103,7 @@ type SpotFleet_SpotFleetRequestConfigData[T any] struct {
 	// TargetCapacityUnitType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-targetcapacityunittype
-	TargetCapacityUnitType *string `json:"TargetCapacityUnitType,omitempty"`
+	TargetCapacityUnitType *T `json:"TargetCapacityUnitType,omitempty"`
 
 	// TerminateInstancesWithExpiration AWS CloudFormation Property
 	// Required: false
@@ -113,17 +113,17 @@ type SpotFleet_SpotFleetRequestConfigData[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-type
-	Type *string `json:"Type,omitempty"`
+	Type *T `json:"Type,omitempty"`
 
 	// ValidFrom AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-validfrom
-	ValidFrom *string `json:"ValidFrom,omitempty"`
+	ValidFrom *T `json:"ValidFrom,omitempty"`
 
 	// ValidUntil AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-validuntil
-	ValidUntil *string `json:"ValidUntil,omitempty"`
+	ValidUntil *T `json:"ValidUntil,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

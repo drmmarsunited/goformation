@@ -13,7 +13,7 @@ type DataSet_LogicalTable[T any] struct {
 	// Alias AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltable.html#cfn-quicksight-dataset-logicaltable-alias
-	Alias string `json:"Alias"`
+	Alias T `json:"Alias"`
 
 	// DataTransforms AWS CloudFormation Property
 	// Required: false

@@ -38,7 +38,7 @@ type Pipe_PipeSourceDynamoDBStreamParameters[T any] struct {
 	// OnPartialBatchItemFailure AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcedynamodbstreamparameters.html#cfn-pipes-pipe-pipesourcedynamodbstreamparameters-onpartialbatchitemfailure
-	OnPartialBatchItemFailure *string `json:"OnPartialBatchItemFailure,omitempty"`
+	OnPartialBatchItemFailure *T `json:"OnPartialBatchItemFailure,omitempty"`
 
 	// ParallelizationFactor AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Pipe_PipeSourceDynamoDBStreamParameters[T any] struct {
 	// StartingPosition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcedynamodbstreamparameters.html#cfn-pipes-pipe-pipesourcedynamodbstreamparameters-startingposition
-	StartingPosition string `json:"StartingPosition"`
+	StartingPosition T `json:"StartingPosition"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

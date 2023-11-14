@@ -13,7 +13,7 @@ type Function_BucketSAMPT[T any] struct {
 	// BucketName AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst
-	BucketName string `json:"BucketName"`
+	BucketName T `json:"BucketName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

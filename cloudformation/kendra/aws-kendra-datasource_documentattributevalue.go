@@ -13,7 +13,7 @@ type DataSource_DocumentAttributeValue[T any] struct {
 	// DateValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributevalue.html#cfn-kendra-datasource-documentattributevalue-datevalue
-	DateValue *string `json:"DateValue,omitempty"`
+	DateValue *T `json:"DateValue,omitempty"`
 
 	// LongValue AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type DataSource_DocumentAttributeValue[T any] struct {
 	// StringListValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributevalue.html#cfn-kendra-datasource-documentattributevalue-stringlistvalue
-	StringListValue []string `json:"StringListValue,omitempty"`
+	StringListValue []T `json:"StringListValue,omitempty"`
 
 	// StringValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributevalue.html#cfn-kendra-datasource-documentattributevalue-stringvalue
-	StringValue *string `json:"StringValue,omitempty"`
+	StringValue *T `json:"StringValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

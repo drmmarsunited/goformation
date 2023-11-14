@@ -13,7 +13,7 @@ type Flow_VpcInterfaceAttachment[T any] struct {
 	// VpcInterfaceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-vpcinterfaceattachment.html#cfn-mediaconnect-flow-vpcinterfaceattachment-vpcinterfacename
-	VpcInterfaceName *string `json:"VpcInterfaceName,omitempty"`
+	VpcInterfaceName *T `json:"VpcInterfaceName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

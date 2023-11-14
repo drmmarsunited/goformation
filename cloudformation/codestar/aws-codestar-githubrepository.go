@@ -21,7 +21,7 @@ type GitHubRepository[T any] struct {
 	// ConnectionArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-connectionarn
-	ConnectionArn *string `json:"ConnectionArn,omitempty"`
+	ConnectionArn *T `json:"ConnectionArn,omitempty"`
 
 	// EnableIssues AWS CloudFormation Property
 	// Required: false
@@ -36,22 +36,22 @@ type GitHubRepository[T any] struct {
 	// RepositoryAccessToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositoryaccesstoken
-	RepositoryAccessToken *string `json:"RepositoryAccessToken,omitempty"`
+	RepositoryAccessToken *T `json:"RepositoryAccessToken,omitempty"`
 
 	// RepositoryDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositorydescription
-	RepositoryDescription *string `json:"RepositoryDescription,omitempty"`
+	RepositoryDescription *T `json:"RepositoryDescription,omitempty"`
 
 	// RepositoryName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositoryname
-	RepositoryName string `json:"RepositoryName"`
+	RepositoryName T `json:"RepositoryName"`
 
 	// RepositoryOwner AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositoryowner
-	RepositoryOwner string `json:"RepositoryOwner"`
+	RepositoryOwner T `json:"RepositoryOwner"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

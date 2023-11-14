@@ -17,12 +17,12 @@ type Server[T any] struct {
 	// Certificate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-certificate
-	Certificate *string `json:"Certificate,omitempty"`
+	Certificate *T `json:"Certificate,omitempty"`
 
 	// Domain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-domain
-	Domain *string `json:"Domain,omitempty"`
+	Domain *T `json:"Domain,omitempty"`
 
 	// EndpointDetails AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type Server[T any] struct {
 	// EndpointType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-endpointtype
-	EndpointType *string `json:"EndpointType,omitempty"`
+	EndpointType *T `json:"EndpointType,omitempty"`
 
 	// IdentityProviderDetails AWS CloudFormation Property
 	// Required: false
@@ -42,22 +42,22 @@ type Server[T any] struct {
 	// IdentityProviderType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-identityprovidertype
-	IdentityProviderType *string `json:"IdentityProviderType,omitempty"`
+	IdentityProviderType *T `json:"IdentityProviderType,omitempty"`
 
 	// LoggingRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-loggingrole
-	LoggingRole *string `json:"LoggingRole,omitempty"`
+	LoggingRole *T `json:"LoggingRole,omitempty"`
 
 	// PostAuthenticationLoginBanner AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-postauthenticationloginbanner
-	PostAuthenticationLoginBanner *string `json:"PostAuthenticationLoginBanner,omitempty"`
+	PostAuthenticationLoginBanner *T `json:"PostAuthenticationLoginBanner,omitempty"`
 
 	// PreAuthenticationLoginBanner AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-preauthenticationloginbanner
-	PreAuthenticationLoginBanner *string `json:"PreAuthenticationLoginBanner,omitempty"`
+	PreAuthenticationLoginBanner *T `json:"PreAuthenticationLoginBanner,omitempty"`
 
 	// ProtocolDetails AWS CloudFormation Property
 	// Required: false
@@ -72,7 +72,7 @@ type Server[T any] struct {
 	// SecurityPolicyName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-securitypolicyname
-	SecurityPolicyName *string `json:"SecurityPolicyName,omitempty"`
+	SecurityPolicyName *T `json:"SecurityPolicyName,omitempty"`
 
 	// StructuredLogDestinations AWS CloudFormation Property
 	// Required: false

@@ -38,7 +38,7 @@ type Endpoint_KinesisSettings[T any] struct {
 	// MessageFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kinesissettings.html#cfn-dms-endpoint-kinesissettings-messageformat
-	MessageFormat *string `json:"MessageFormat,omitempty"`
+	MessageFormat *T `json:"MessageFormat,omitempty"`
 
 	// NoHexPrefix AWS CloudFormation Property
 	// Required: false
@@ -53,12 +53,12 @@ type Endpoint_KinesisSettings[T any] struct {
 	// ServiceAccessRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kinesissettings.html#cfn-dms-endpoint-kinesissettings-serviceaccessrolearn
-	ServiceAccessRoleArn *string `json:"ServiceAccessRoleArn,omitempty"`
+	ServiceAccessRoleArn *T `json:"ServiceAccessRoleArn,omitempty"`
 
 	// StreamArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kinesissettings.html#cfn-dms-endpoint-kinesissettings-streamarn
-	StreamArn *string `json:"StreamArn,omitempty"`
+	StreamArn *T `json:"StreamArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

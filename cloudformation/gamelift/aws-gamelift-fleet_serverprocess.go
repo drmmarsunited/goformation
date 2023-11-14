@@ -18,12 +18,12 @@ type Fleet_ServerProcess[T any] struct {
 	// LaunchPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-serverprocess.html#cfn-gamelift-fleet-serverprocess-launchpath
-	LaunchPath string `json:"LaunchPath"`
+	LaunchPath T `json:"LaunchPath"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-serverprocess.html#cfn-gamelift-fleet-serverprocess-parameters
-	Parameters *string `json:"Parameters,omitempty"`
+	Parameters *T `json:"Parameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

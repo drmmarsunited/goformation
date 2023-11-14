@@ -16,7 +16,7 @@ type ReceiptRuleSet[T any] struct {
 	// RuleSetName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptruleset.html#cfn-ses-receiptruleset-rulesetname
-	RuleSetName *string `json:"RuleSetName,omitempty"`
+	RuleSetName *T `json:"RuleSetName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

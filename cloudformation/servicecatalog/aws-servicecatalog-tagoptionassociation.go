@@ -16,12 +16,12 @@ type TagOptionAssociation[T any] struct {
 	// ResourceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoptionassociation.html#cfn-servicecatalog-tagoptionassociation-resourceid
-	ResourceId string `json:"ResourceId"`
+	ResourceId T `json:"ResourceId"`
 
 	// TagOptionId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoptionassociation.html#cfn-servicecatalog-tagoptionassociation-tagoptionid
-	TagOptionId string `json:"TagOptionId"`
+	TagOptionId T `json:"TagOptionId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

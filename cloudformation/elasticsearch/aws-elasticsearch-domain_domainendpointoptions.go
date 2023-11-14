@@ -13,12 +13,12 @@ type Domain_DomainEndpointOptions[T any] struct {
 	// CustomEndpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html#cfn-elasticsearch-domain-domainendpointoptions-customendpoint
-	CustomEndpoint *string `json:"CustomEndpoint,omitempty"`
+	CustomEndpoint *T `json:"CustomEndpoint,omitempty"`
 
 	// CustomEndpointCertificateArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html#cfn-elasticsearch-domain-domainendpointoptions-customendpointcertificatearn
-	CustomEndpointCertificateArn *string `json:"CustomEndpointCertificateArn,omitempty"`
+	CustomEndpointCertificateArn *T `json:"CustomEndpointCertificateArn,omitempty"`
 
 	// CustomEndpointEnabled AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Domain_DomainEndpointOptions[T any] struct {
 	// TLSSecurityPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html#cfn-elasticsearch-domain-domainendpointoptions-tlssecuritypolicy
-	TLSSecurityPolicy *string `json:"TLSSecurityPolicy,omitempty"`
+	TLSSecurityPolicy *T `json:"TLSSecurityPolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

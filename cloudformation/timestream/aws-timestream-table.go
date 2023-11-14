@@ -17,7 +17,7 @@ type Table[T any] struct {
 	// DatabaseName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#cfn-timestream-table-databasename
-	DatabaseName string `json:"DatabaseName"`
+	DatabaseName T `json:"DatabaseName"`
 
 	// MagneticStoreWriteProperties AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Table[T any] struct {
 	// TableName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#cfn-timestream-table-tablename
-	TableName *string `json:"TableName,omitempty"`
+	TableName *T `json:"TableName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

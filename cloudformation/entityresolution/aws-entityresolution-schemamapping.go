@@ -17,7 +17,7 @@ type SchemaMapping[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-schemamapping.html#cfn-entityresolution-schemamapping-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// MappedInputFields AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type SchemaMapping[T any] struct {
 	// SchemaName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-schemamapping.html#cfn-entityresolution-schemamapping-schemaname
-	SchemaName string `json:"SchemaName"`
+	SchemaName T `json:"SchemaName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

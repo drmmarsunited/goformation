@@ -18,7 +18,7 @@ type GraphQLApi_OpenIDConnectConfig[T any] struct {
 	// ClientId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-clientid
-	ClientId *string `json:"ClientId,omitempty"`
+	ClientId *T `json:"ClientId,omitempty"`
 
 	// IatTTL AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type GraphQLApi_OpenIDConnectConfig[T any] struct {
 	// Issuer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-issuer
-	Issuer *string `json:"Issuer,omitempty"`
+	Issuer *T `json:"Issuer,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

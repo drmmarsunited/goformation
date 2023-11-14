@@ -17,7 +17,7 @@ type MitigationAction[T any] struct {
 	// ActionName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-mitigationaction.html#cfn-iot-mitigationaction-actionname
-	ActionName *string `json:"ActionName,omitempty"`
+	ActionName *T `json:"ActionName,omitempty"`
 
 	// ActionParams AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type MitigationAction[T any] struct {
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-mitigationaction.html#cfn-iot-mitigationaction-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -13,7 +13,7 @@ type VirtualNode_TlsValidationContextAcmTrust[T any] struct {
 	// CertificateAuthorityArns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextacmtrust.html#cfn-appmesh-virtualnode-tlsvalidationcontextacmtrust-certificateauthorityarns
-	CertificateAuthorityArns []string `json:"CertificateAuthorityArns"`
+	CertificateAuthorityArns []T `json:"CertificateAuthorityArns"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

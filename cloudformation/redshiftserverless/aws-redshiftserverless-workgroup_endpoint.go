@@ -13,7 +13,7 @@ type Workgroup_Endpoint[T any] struct {
 	// Address AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-endpoint.html#cfn-redshiftserverless-workgroup-endpoint-address
-	Address *string `json:"Address,omitempty"`
+	Address *T `json:"Address,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false

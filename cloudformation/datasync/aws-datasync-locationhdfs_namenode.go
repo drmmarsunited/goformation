@@ -13,7 +13,7 @@ type LocationHDFS_NameNode[T any] struct {
 	// Hostname AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationhdfs-namenode.html#cfn-datasync-locationhdfs-namenode-hostname
-	Hostname string `json:"Hostname"`
+	Hostname T `json:"Hostname"`
 
 	// Port AWS CloudFormation Property
 	// Required: true

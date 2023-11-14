@@ -13,12 +13,12 @@ type ScalingPolicy_PredefinedMetricSpecification[T any] struct {
 	// PredefinedMetricType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predefinedmetricspecification.html#cfn-autoscaling-scalingpolicy-predefinedmetricspecification-predefinedmetrictype
-	PredefinedMetricType string `json:"PredefinedMetricType"`
+	PredefinedMetricType T `json:"PredefinedMetricType"`
 
 	// ResourceLabel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predefinedmetricspecification.html#cfn-autoscaling-scalingpolicy-predefinedmetricspecification-resourcelabel
-	ResourceLabel *string `json:"ResourceLabel,omitempty"`
+	ResourceLabel *T `json:"ResourceLabel,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -18,7 +18,7 @@ type ModelPackage_ValidationSpecification[T any] struct {
 	// ValidationRole AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-validationspecification.html#cfn-sagemaker-modelpackage-validationspecification-validationrole
-	ValidationRole string `json:"ValidationRole"`
+	ValidationRole T `json:"ValidationRole"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,17 +13,17 @@ type Stack_RdsDbInstance[T any] struct {
 	// DbPassword AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbpassword
-	DbPassword string `json:"DbPassword"`
+	DbPassword T `json:"DbPassword"`
 
 	// DbUser AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbuser
-	DbUser string `json:"DbUser"`
+	DbUser T `json:"DbUser"`
 
 	// RdsDbInstanceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-rdsdbinstancearn
-	RdsDbInstanceArn string `json:"RdsDbInstanceArn"`
+	RdsDbInstanceArn T `json:"RdsDbInstanceArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

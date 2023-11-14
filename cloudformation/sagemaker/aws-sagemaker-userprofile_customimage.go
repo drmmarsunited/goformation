@@ -13,12 +13,12 @@ type UserProfile_CustomImage[T any] struct {
 	// AppImageConfigName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-customimage.html#cfn-sagemaker-userprofile-customimage-appimageconfigname
-	AppImageConfigName string `json:"AppImageConfigName"`
+	AppImageConfigName T `json:"AppImageConfigName"`
 
 	// ImageName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-customimage.html#cfn-sagemaker-userprofile-customimage-imagename
-	ImageName string `json:"ImageName"`
+	ImageName T `json:"ImageName"`
 
 	// ImageVersionNumber AWS CloudFormation Property
 	// Required: false

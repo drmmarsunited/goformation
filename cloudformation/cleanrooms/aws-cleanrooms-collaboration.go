@@ -17,12 +17,12 @@ type Collaboration[T any] struct {
 	// CreatorDisplayName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-collaboration.html#cfn-cleanrooms-collaboration-creatordisplayname
-	CreatorDisplayName string `json:"CreatorDisplayName"`
+	CreatorDisplayName T `json:"CreatorDisplayName"`
 
 	// CreatorMemberAbilities AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-collaboration.html#cfn-cleanrooms-collaboration-creatormemberabilities
-	CreatorMemberAbilities []string `json:"CreatorMemberAbilities"`
+	CreatorMemberAbilities []T `json:"CreatorMemberAbilities"`
 
 	// DataEncryptionMetadata AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type Collaboration[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-collaboration.html#cfn-cleanrooms-collaboration-description
-	Description string `json:"Description"`
+	Description T `json:"Description"`
 
 	// Members AWS CloudFormation Property
 	// Required: true
@@ -42,12 +42,12 @@ type Collaboration[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-collaboration.html#cfn-cleanrooms-collaboration-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// QueryLogStatus AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-collaboration.html#cfn-cleanrooms-collaboration-querylogstatus
-	QueryLogStatus string `json:"QueryLogStatus"`
+	QueryLogStatus T `json:"QueryLogStatus"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

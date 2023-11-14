@@ -13,7 +13,7 @@ type ConfigurationRecorder_RecordingStrategy[T any] struct {
 	// UseOnly AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordingstrategy.html#cfn-config-configurationrecorder-recordingstrategy-useonly
-	UseOnly string `json:"UseOnly"`
+	UseOnly T `json:"UseOnly"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

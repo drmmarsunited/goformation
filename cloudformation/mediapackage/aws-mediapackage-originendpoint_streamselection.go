@@ -23,7 +23,7 @@ type OriginEndpoint_StreamSelection[T any] struct {
 	// StreamOrder AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-streamselection.html#cfn-mediapackage-originendpoint-streamselection-streamorder
-	StreamOrder *string `json:"StreamOrder,omitempty"`
+	StreamOrder *T `json:"StreamOrder,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

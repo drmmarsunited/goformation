@@ -11,19 +11,19 @@ import (
 type Dashboard_TopBottomRankedComputation[T any] struct {
 
 	// Category AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottomrankedcomputation.html#cfn-quicksight-dashboard-topbottomrankedcomputation-category
-	Category *Dashboard_DimensionField[any] `json:"Category"`
+	Category *Dashboard_DimensionField[any] `json:"Category,omitempty"`
 
 	// ComputationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottomrankedcomputation.html#cfn-quicksight-dashboard-topbottomrankedcomputation-computationid
-	ComputationId string `json:"ComputationId"`
+	ComputationId T `json:"ComputationId"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottomrankedcomputation.html#cfn-quicksight-dashboard-topbottomrankedcomputation-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// ResultSize AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Dashboard_TopBottomRankedComputation[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-topbottomrankedcomputation.html#cfn-quicksight-dashboard-topbottomrankedcomputation-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// Value AWS CloudFormation Property
 	// Required: false

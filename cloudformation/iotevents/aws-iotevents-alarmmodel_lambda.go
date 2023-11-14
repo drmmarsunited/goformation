@@ -13,7 +13,7 @@ type AlarmModel_Lambda[T any] struct {
 	// FunctionArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-lambda.html#cfn-iotevents-alarmmodel-lambda-functionarn
-	FunctionArn string `json:"FunctionArn"`
+	FunctionArn T `json:"FunctionArn"`
 
 	// Payload AWS CloudFormation Property
 	// Required: false

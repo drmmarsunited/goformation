@@ -18,7 +18,7 @@ type Dashboard_ColumnSort[T any] struct {
 	// Direction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-columnsort.html#cfn-quicksight-dashboard-columnsort-direction
-	Direction string `json:"Direction"`
+	Direction T `json:"Direction"`
 
 	// SortBy AWS CloudFormation Property
 	// Required: true

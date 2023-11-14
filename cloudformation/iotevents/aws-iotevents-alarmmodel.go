@@ -27,12 +27,12 @@ type AlarmModel[T any] struct {
 	// AlarmModelDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-alarmmodel.html#cfn-iotevents-alarmmodel-alarmmodeldescription
-	AlarmModelDescription *string `json:"AlarmModelDescription,omitempty"`
+	AlarmModelDescription *T `json:"AlarmModelDescription,omitempty"`
 
 	// AlarmModelName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-alarmmodel.html#cfn-iotevents-alarmmodel-alarmmodelname
-	AlarmModelName *string `json:"AlarmModelName,omitempty"`
+	AlarmModelName *T `json:"AlarmModelName,omitempty"`
 
 	// AlarmRule AWS CloudFormation Property
 	// Required: true
@@ -42,12 +42,12 @@ type AlarmModel[T any] struct {
 	// Key AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-alarmmodel.html#cfn-iotevents-alarmmodel-key
-	Key *string `json:"Key,omitempty"`
+	Key *T `json:"Key,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-alarmmodel.html#cfn-iotevents-alarmmodel-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// Severity AWS CloudFormation Property
 	// Required: false

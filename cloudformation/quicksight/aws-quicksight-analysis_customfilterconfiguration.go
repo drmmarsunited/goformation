@@ -13,27 +13,27 @@ type Analysis_CustomFilterConfiguration[T any] struct {
 	// CategoryValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customfilterconfiguration.html#cfn-quicksight-analysis-customfilterconfiguration-categoryvalue
-	CategoryValue *string `json:"CategoryValue,omitempty"`
+	CategoryValue *T `json:"CategoryValue,omitempty"`
 
 	// MatchOperator AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customfilterconfiguration.html#cfn-quicksight-analysis-customfilterconfiguration-matchoperator
-	MatchOperator string `json:"MatchOperator"`
+	MatchOperator T `json:"MatchOperator"`
 
 	// NullOption AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customfilterconfiguration.html#cfn-quicksight-analysis-customfilterconfiguration-nulloption
-	NullOption string `json:"NullOption"`
+	NullOption T `json:"NullOption"`
 
 	// ParameterName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customfilterconfiguration.html#cfn-quicksight-analysis-customfilterconfiguration-parametername
-	ParameterName *string `json:"ParameterName,omitempty"`
+	ParameterName *T `json:"ParameterName,omitempty"`
 
 	// SelectAllOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customfilterconfiguration.html#cfn-quicksight-analysis-customfilterconfiguration-selectalloptions
-	SelectAllOptions *string `json:"SelectAllOptions,omitempty"`
+	SelectAllOptions *T `json:"SelectAllOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

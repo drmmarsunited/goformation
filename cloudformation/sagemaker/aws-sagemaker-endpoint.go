@@ -22,12 +22,12 @@ type Endpoint[T any] struct {
 	// EndpointConfigName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-endpointconfigname
-	EndpointConfigName string `json:"EndpointConfigName"`
+	EndpointConfigName T `json:"EndpointConfigName"`
 
 	// EndpointName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-endpointname
-	EndpointName *string `json:"EndpointName,omitempty"`
+	EndpointName *T `json:"EndpointName,omitempty"`
 
 	// ExcludeRetainedVariantProperties AWS CloudFormation Property
 	// Required: false

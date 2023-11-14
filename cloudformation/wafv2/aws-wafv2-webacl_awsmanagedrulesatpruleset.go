@@ -18,7 +18,7 @@ type WebACL_AWSManagedRulesATPRuleSet[T any] struct {
 	// LoginPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-awsmanagedrulesatpruleset.html#cfn-wafv2-webacl-awsmanagedrulesatpruleset-loginpath
-	LoginPath string `json:"LoginPath"`
+	LoginPath T `json:"LoginPath"`
 
 	// RequestInspection AWS CloudFormation Property
 	// Required: false

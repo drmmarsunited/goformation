@@ -16,7 +16,7 @@ type ConfigurationSetEventDestination[T any] struct {
 	// ConfigurationSetName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationseteventdestination.html#cfn-pinpointemail-configurationseteventdestination-configurationsetname
-	ConfigurationSetName string `json:"ConfigurationSetName"`
+	ConfigurationSetName T `json:"ConfigurationSetName"`
 
 	// EventDestination AWS CloudFormation Property
 	// Required: false
@@ -26,7 +26,7 @@ type ConfigurationSetEventDestination[T any] struct {
 	// EventDestinationName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationseteventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestinationname
-	EventDestinationName string `json:"EventDestinationName"`
+	EventDestinationName T `json:"EventDestinationName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,12 +13,12 @@ type Bot_VoiceSettings[T any] struct {
 	// Engine AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-voicesettings.html#cfn-lex-bot-voicesettings-engine
-	Engine *string `json:"Engine,omitempty"`
+	Engine *T `json:"Engine,omitempty"`
 
 	// VoiceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-voicesettings.html#cfn-lex-bot-voicesettings-voiceid
-	VoiceId string `json:"VoiceId"`
+	VoiceId T `json:"VoiceId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

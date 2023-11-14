@@ -13,7 +13,7 @@ type EndpointConfig_ProductionVariant[T any] struct {
 	// AcceleratorType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-acceleratortype
-	AcceleratorType *string `json:"AcceleratorType,omitempty"`
+	AcceleratorType *T `json:"AcceleratorType,omitempty"`
 
 	// ContainerStartupHealthCheckTimeoutInSeconds AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type EndpointConfig_ProductionVariant[T any] struct {
 	// InstanceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-instancetype
-	InstanceType *string `json:"InstanceType,omitempty"`
+	InstanceType *T `json:"InstanceType,omitempty"`
 
 	// ModelDataDownloadTimeoutInSeconds AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type EndpointConfig_ProductionVariant[T any] struct {
 	// ModelName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-modelname
-	ModelName string `json:"ModelName"`
+	ModelName T `json:"ModelName"`
 
 	// ServerlessConfig AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type EndpointConfig_ProductionVariant[T any] struct {
 	// VariantName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-variantname
-	VariantName string `json:"VariantName"`
+	VariantName T `json:"VariantName"`
 
 	// VolumeSizeInGB AWS CloudFormation Property
 	// Required: false

@@ -23,7 +23,7 @@ type Deployment_DeploymentPolicies[T any] struct {
 	// FailureHandlingPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-deploymentpolicies.html#cfn-greengrassv2-deployment-deploymentpolicies-failurehandlingpolicy
-	FailureHandlingPolicy *string `json:"FailureHandlingPolicy,omitempty"`
+	FailureHandlingPolicy *T `json:"FailureHandlingPolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

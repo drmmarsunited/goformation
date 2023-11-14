@@ -13,37 +13,37 @@ type Topic_SemanticType[T any] struct {
 	// FalseyCellValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-semantictype.html#cfn-quicksight-topic-semantictype-falseycellvalue
-	FalseyCellValue *string `json:"FalseyCellValue,omitempty"`
+	FalseyCellValue *T `json:"FalseyCellValue,omitempty"`
 
 	// FalseyCellValueSynonyms AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-semantictype.html#cfn-quicksight-topic-semantictype-falseycellvaluesynonyms
-	FalseyCellValueSynonyms []string `json:"FalseyCellValueSynonyms,omitempty"`
+	FalseyCellValueSynonyms []T `json:"FalseyCellValueSynonyms,omitempty"`
 
 	// SubTypeName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-semantictype.html#cfn-quicksight-topic-semantictype-subtypename
-	SubTypeName *string `json:"SubTypeName,omitempty"`
+	SubTypeName *T `json:"SubTypeName,omitempty"`
 
 	// TruthyCellValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-semantictype.html#cfn-quicksight-topic-semantictype-truthycellvalue
-	TruthyCellValue *string `json:"TruthyCellValue,omitempty"`
+	TruthyCellValue *T `json:"TruthyCellValue,omitempty"`
 
 	// TruthyCellValueSynonyms AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-semantictype.html#cfn-quicksight-topic-semantictype-truthycellvaluesynonyms
-	TruthyCellValueSynonyms []string `json:"TruthyCellValueSynonyms,omitempty"`
+	TruthyCellValueSynonyms []T `json:"TruthyCellValueSynonyms,omitempty"`
 
 	// TypeName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-semantictype.html#cfn-quicksight-topic-semantictype-typename
-	TypeName *string `json:"TypeName,omitempty"`
+	TypeName *T `json:"TypeName,omitempty"`
 
 	// TypeParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-semantictype.html#cfn-quicksight-topic-semantictype-typeparameters
-	TypeParameters map[string]string `json:"TypeParameters,omitempty"`
+	TypeParameters map[string]T `json:"TypeParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

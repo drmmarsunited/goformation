@@ -33,7 +33,7 @@ type HttpApi[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DisableExecuteApiEndpoint AWS CloudFormation Property
 	// Required: false
@@ -58,12 +58,12 @@ type HttpApi[T any] struct {
 	// StageVariables AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	StageVariables *map[string]string `json:"StageVariables,omitempty"`
+	StageVariables *map[string]T `json:"StageVariables,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	Tags *map[string]string `json:"Tags,omitempty"`
+	Tags *map[string]T `json:"Tags,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

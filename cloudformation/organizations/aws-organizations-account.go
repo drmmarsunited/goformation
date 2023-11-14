@@ -17,22 +17,22 @@ type Account[T any] struct {
 	// AccountName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-account.html#cfn-organizations-account-accountname
-	AccountName string `json:"AccountName"`
+	AccountName T `json:"AccountName"`
 
 	// Email AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-account.html#cfn-organizations-account-email
-	Email string `json:"Email"`
+	Email T `json:"Email"`
 
 	// ParentIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-account.html#cfn-organizations-account-parentids
-	ParentIds []string `json:"ParentIds,omitempty"`
+	ParentIds []T `json:"ParentIds,omitempty"`
 
 	// RoleName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-account.html#cfn-organizations-account-rolename
-	RoleName *string `json:"RoleName,omitempty"`
+	RoleName *T `json:"RoleName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

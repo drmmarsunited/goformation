@@ -13,7 +13,7 @@ type Topic_TopicRangeFilterConstant[T any] struct {
 	// ConstantType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topicrangefilterconstant.html#cfn-quicksight-topic-topicrangefilterconstant-constanttype
-	ConstantType *string `json:"ConstantType,omitempty"`
+	ConstantType *T `json:"ConstantType,omitempty"`
 
 	// RangeConstant AWS CloudFormation Property
 	// Required: false

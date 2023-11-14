@@ -16,7 +16,7 @@ type LoggerDefinitionVersion[T any] struct {
 	// LoggerDefinitionId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinitionversion.html#cfn-greengrass-loggerdefinitionversion-loggerdefinitionid
-	LoggerDefinitionId string `json:"LoggerDefinitionId"`
+	LoggerDefinitionId T `json:"LoggerDefinitionId"`
 
 	// Loggers AWS CloudFormation Property
 	// Required: true

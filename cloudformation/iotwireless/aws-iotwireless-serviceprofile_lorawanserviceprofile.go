@@ -18,7 +18,7 @@ type ServiceProfile_LoRaWANServiceProfile[T any] struct {
 	// ChannelMask AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-channelmask
-	ChannelMask *string `json:"ChannelMask,omitempty"`
+	ChannelMask *T `json:"ChannelMask,omitempty"`
 
 	// DevStatusReqFreq AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type ServiceProfile_LoRaWANServiceProfile[T any] struct {
 	// DlRatePolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-dlratepolicy
-	DlRatePolicy *string `json:"DlRatePolicy,omitempty"`
+	DlRatePolicy *T `json:"DlRatePolicy,omitempty"`
 
 	// DrMax AWS CloudFormation Property
 	// Required: false
@@ -103,7 +103,7 @@ type ServiceProfile_LoRaWANServiceProfile[T any] struct {
 	// UlRatePolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-ulratepolicy
-	UlRatePolicy *string `json:"UlRatePolicy,omitempty"`
+	UlRatePolicy *T `json:"UlRatePolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

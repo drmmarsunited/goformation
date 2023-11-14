@@ -13,7 +13,7 @@ type EC2Fleet_OnDemandOptionsRequest[T any] struct {
 	// AllocationStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-allocationstrategy
-	AllocationStrategy *string `json:"AllocationStrategy,omitempty"`
+	AllocationStrategy *T `json:"AllocationStrategy,omitempty"`
 
 	// CapacityReservationOptions AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type EC2Fleet_OnDemandOptionsRequest[T any] struct {
 	// MaxTotalPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-maxtotalprice
-	MaxTotalPrice *string `json:"MaxTotalPrice,omitempty"`
+	MaxTotalPrice *T `json:"MaxTotalPrice,omitempty"`
 
 	// MinTargetCapacity AWS CloudFormation Property
 	// Required: false

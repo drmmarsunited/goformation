@@ -17,7 +17,7 @@ type FleetMetric[T any] struct {
 	// AggregationField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-fleetmetric.html#cfn-iot-fleetmetric-aggregationfield
-	AggregationField *string `json:"AggregationField,omitempty"`
+	AggregationField *T `json:"AggregationField,omitempty"`
 
 	// AggregationType AWS CloudFormation Property
 	// Required: false
@@ -27,17 +27,17 @@ type FleetMetric[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-fleetmetric.html#cfn-iot-fleetmetric-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// IndexName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-fleetmetric.html#cfn-iot-fleetmetric-indexname
-	IndexName *string `json:"IndexName,omitempty"`
+	IndexName *T `json:"IndexName,omitempty"`
 
 	// MetricName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-fleetmetric.html#cfn-iot-fleetmetric-metricname
-	MetricName string `json:"MetricName"`
+	MetricName T `json:"MetricName"`
 
 	// Period AWS CloudFormation Property
 	// Required: false
@@ -47,12 +47,12 @@ type FleetMetric[T any] struct {
 	// QueryString AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-fleetmetric.html#cfn-iot-fleetmetric-querystring
-	QueryString *string `json:"QueryString,omitempty"`
+	QueryString *T `json:"QueryString,omitempty"`
 
 	// QueryVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-fleetmetric.html#cfn-iot-fleetmetric-queryversion
-	QueryVersion *string `json:"QueryVersion,omitempty"`
+	QueryVersion *T `json:"QueryVersion,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,7 @@ type FleetMetric[T any] struct {
 	// Unit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-fleetmetric.html#cfn-iot-fleetmetric-unit
-	Unit *string `json:"Unit,omitempty"`
+	Unit *T `json:"Unit,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

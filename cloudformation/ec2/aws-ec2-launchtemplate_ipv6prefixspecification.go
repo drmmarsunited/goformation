@@ -13,7 +13,7 @@ type LaunchTemplate_Ipv6PrefixSpecification[T any] struct {
 	// Ipv6Prefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv6prefixspecification.html#cfn-ec2-launchtemplate-ipv6prefixspecification-ipv6prefix
-	Ipv6Prefix *string `json:"Ipv6Prefix,omitempty"`
+	Ipv6Prefix *T `json:"Ipv6Prefix,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

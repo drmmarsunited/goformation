@@ -13,7 +13,7 @@ type EndpointConfig_AsyncInferenceOutputConfig[T any] struct {
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferenceoutputconfig.html#cfn-sagemaker-endpointconfig-asyncinferenceoutputconfig-kmskeyid
-	KmsKeyId *string `json:"KmsKeyId,omitempty"`
+	KmsKeyId *T `json:"KmsKeyId,omitempty"`
 
 	// NotificationConfig AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type EndpointConfig_AsyncInferenceOutputConfig[T any] struct {
 	// S3FailurePath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferenceoutputconfig.html#cfn-sagemaker-endpointconfig-asyncinferenceoutputconfig-s3failurepath
-	S3FailurePath *string `json:"S3FailurePath,omitempty"`
+	S3FailurePath *T `json:"S3FailurePath,omitempty"`
 
 	// S3OutputPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferenceoutputconfig.html#cfn-sagemaker-endpointconfig-asyncinferenceoutputconfig-s3outputpath
-	S3OutputPath *string `json:"S3OutputPath,omitempty"`
+	S3OutputPath *T `json:"S3OutputPath,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

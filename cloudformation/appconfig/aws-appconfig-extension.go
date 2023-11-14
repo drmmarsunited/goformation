@@ -22,7 +22,7 @@ type Extension[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-extension.html#cfn-appconfig-extension-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// LatestVersionNumber AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type Extension[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-extension.html#cfn-appconfig-extension-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false

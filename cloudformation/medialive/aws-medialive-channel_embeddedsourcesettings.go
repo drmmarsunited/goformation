@@ -13,12 +13,12 @@ type Channel_EmbeddedSourceSettings[T any] struct {
 	// Convert608To708 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddedsourcesettings.html#cfn-medialive-channel-embeddedsourcesettings-convert608to708
-	Convert608To708 *string `json:"Convert608To708,omitempty"`
+	Convert608To708 *T `json:"Convert608To708,omitempty"`
 
 	// Scte20Detection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddedsourcesettings.html#cfn-medialive-channel-embeddedsourcesettings-scte20detection
-	Scte20Detection *string `json:"Scte20Detection,omitempty"`
+	Scte20Detection *T `json:"Scte20Detection,omitempty"`
 
 	// Source608ChannelNumber AWS CloudFormation Property
 	// Required: false

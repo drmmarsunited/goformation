@@ -17,12 +17,12 @@ type ThingGroup[T any] struct {
 	// ParentGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thinggroup.html#cfn-iot-thinggroup-parentgroupname
-	ParentGroupName *string `json:"ParentGroupName,omitempty"`
+	ParentGroupName *T `json:"ParentGroupName,omitempty"`
 
 	// QueryString AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thinggroup.html#cfn-iot-thinggroup-querystring
-	QueryString *string `json:"QueryString,omitempty"`
+	QueryString *T `json:"QueryString,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type ThingGroup[T any] struct {
 	// ThingGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thinggroup.html#cfn-iot-thinggroup-thinggroupname
-	ThingGroupName *string `json:"ThingGroupName,omitempty"`
+	ThingGroupName *T `json:"ThingGroupName,omitempty"`
 
 	// ThingGroupProperties AWS CloudFormation Property
 	// Required: false

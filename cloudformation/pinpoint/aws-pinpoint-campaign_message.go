@@ -13,42 +13,42 @@ type Campaign_Message[T any] struct {
 	// Action AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-action
-	Action *string `json:"Action,omitempty"`
+	Action *T `json:"Action,omitempty"`
 
 	// Body AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-body
-	Body *string `json:"Body,omitempty"`
+	Body *T `json:"Body,omitempty"`
 
 	// ImageIconUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-imageiconurl
-	ImageIconUrl *string `json:"ImageIconUrl,omitempty"`
+	ImageIconUrl *T `json:"ImageIconUrl,omitempty"`
 
 	// ImageSmallIconUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-imagesmalliconurl
-	ImageSmallIconUrl *string `json:"ImageSmallIconUrl,omitempty"`
+	ImageSmallIconUrl *T `json:"ImageSmallIconUrl,omitempty"`
 
 	// ImageUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-imageurl
-	ImageUrl *string `json:"ImageUrl,omitempty"`
+	ImageUrl *T `json:"ImageUrl,omitempty"`
 
 	// JsonBody AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-jsonbody
-	JsonBody *string `json:"JsonBody,omitempty"`
+	JsonBody *T `json:"JsonBody,omitempty"`
 
 	// MediaUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-mediaurl
-	MediaUrl *string `json:"MediaUrl,omitempty"`
+	MediaUrl *T `json:"MediaUrl,omitempty"`
 
 	// RawContent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-rawcontent
-	RawContent *string `json:"RawContent,omitempty"`
+	RawContent *T `json:"RawContent,omitempty"`
 
 	// SilentPush AWS CloudFormation Property
 	// Required: false
@@ -63,12 +63,12 @@ type Campaign_Message[T any] struct {
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-title
-	Title *string `json:"Title,omitempty"`
+	Title *T `json:"Title,omitempty"`
 
 	// Url AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-url
-	Url *string `json:"Url,omitempty"`
+	Url *T `json:"Url,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

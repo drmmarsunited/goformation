@@ -13,37 +13,37 @@ type ModelPackage_ModelPackageContainerDefinition[T any] struct {
 	// ContainerHostname AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelpackagecontainerdefinition.html#cfn-sagemaker-modelpackage-modelpackagecontainerdefinition-containerhostname
-	ContainerHostname *string `json:"ContainerHostname,omitempty"`
+	ContainerHostname *T `json:"ContainerHostname,omitempty"`
 
 	// Environment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelpackagecontainerdefinition.html#cfn-sagemaker-modelpackage-modelpackagecontainerdefinition-environment
-	Environment map[string]string `json:"Environment,omitempty"`
+	Environment map[string]T `json:"Environment,omitempty"`
 
 	// Framework AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelpackagecontainerdefinition.html#cfn-sagemaker-modelpackage-modelpackagecontainerdefinition-framework
-	Framework *string `json:"Framework,omitempty"`
+	Framework *T `json:"Framework,omitempty"`
 
 	// FrameworkVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelpackagecontainerdefinition.html#cfn-sagemaker-modelpackage-modelpackagecontainerdefinition-frameworkversion
-	FrameworkVersion *string `json:"FrameworkVersion,omitempty"`
+	FrameworkVersion *T `json:"FrameworkVersion,omitempty"`
 
 	// Image AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelpackagecontainerdefinition.html#cfn-sagemaker-modelpackage-modelpackagecontainerdefinition-image
-	Image string `json:"Image"`
+	Image T `json:"Image"`
 
 	// ImageDigest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelpackagecontainerdefinition.html#cfn-sagemaker-modelpackage-modelpackagecontainerdefinition-imagedigest
-	ImageDigest *string `json:"ImageDigest,omitempty"`
+	ImageDigest *T `json:"ImageDigest,omitempty"`
 
 	// ModelDataUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelpackagecontainerdefinition.html#cfn-sagemaker-modelpackage-modelpackagecontainerdefinition-modeldataurl
-	ModelDataUrl *string `json:"ModelDataUrl,omitempty"`
+	ModelDataUrl *T `json:"ModelDataUrl,omitempty"`
 
 	// ModelInput AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type ModelPackage_ModelPackageContainerDefinition[T any] struct {
 	// NearestModelName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelpackagecontainerdefinition.html#cfn-sagemaker-modelpackage-modelpackagecontainerdefinition-nearestmodelname
-	NearestModelName *string `json:"NearestModelName,omitempty"`
+	NearestModelName *T `json:"NearestModelName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

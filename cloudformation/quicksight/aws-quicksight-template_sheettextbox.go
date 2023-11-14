@@ -13,12 +13,12 @@ type Template_SheetTextBox[T any] struct {
 	// Content AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheettextbox.html#cfn-quicksight-template-sheettextbox-content
-	Content *string `json:"Content,omitempty"`
+	Content *T `json:"Content,omitempty"`
 
 	// SheetTextBoxId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheettextbox.html#cfn-quicksight-template-sheettextbox-sheettextboxid
-	SheetTextBoxId string `json:"SheetTextBoxId"`
+	SheetTextBoxId T `json:"SheetTextBoxId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

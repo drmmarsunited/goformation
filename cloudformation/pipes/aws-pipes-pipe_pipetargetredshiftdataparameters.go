@@ -13,27 +13,27 @@ type Pipe_PipeTargetRedshiftDataParameters[T any] struct {
 	// Database AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetredshiftdataparameters.html#cfn-pipes-pipe-pipetargetredshiftdataparameters-database
-	Database string `json:"Database"`
+	Database T `json:"Database"`
 
 	// DbUser AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetredshiftdataparameters.html#cfn-pipes-pipe-pipetargetredshiftdataparameters-dbuser
-	DbUser *string `json:"DbUser,omitempty"`
+	DbUser *T `json:"DbUser,omitempty"`
 
 	// SecretManagerArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetredshiftdataparameters.html#cfn-pipes-pipe-pipetargetredshiftdataparameters-secretmanagerarn
-	SecretManagerArn *string `json:"SecretManagerArn,omitempty"`
+	SecretManagerArn *T `json:"SecretManagerArn,omitempty"`
 
 	// Sqls AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetredshiftdataparameters.html#cfn-pipes-pipe-pipetargetredshiftdataparameters-sqls
-	Sqls []string `json:"Sqls"`
+	Sqls []T `json:"Sqls"`
 
 	// StatementName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetredshiftdataparameters.html#cfn-pipes-pipe-pipetargetredshiftdataparameters-statementname
-	StatementName *string `json:"StatementName,omitempty"`
+	StatementName *T `json:"StatementName,omitempty"`
 
 	// WithEvent AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type DataSource_SalesforceCustomKnowledgeArticleTypeConfiguration[T any] struct 
 	// DocumentDataFieldName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration.html#cfn-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration-documentdatafieldname
-	DocumentDataFieldName string `json:"DocumentDataFieldName"`
+	DocumentDataFieldName T `json:"DocumentDataFieldName"`
 
 	// DocumentTitleFieldName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration.html#cfn-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration-documenttitlefieldname
-	DocumentTitleFieldName *string `json:"DocumentTitleFieldName,omitempty"`
+	DocumentTitleFieldName *T `json:"DocumentTitleFieldName,omitempty"`
 
 	// FieldMappings AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type DataSource_SalesforceCustomKnowledgeArticleTypeConfiguration[T any] struct 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration.html#cfn-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

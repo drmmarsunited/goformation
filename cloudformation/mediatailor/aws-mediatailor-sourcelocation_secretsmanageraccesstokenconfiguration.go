@@ -13,17 +13,17 @@ type SourceLocation_SecretsManagerAccessTokenConfiguration[T any] struct {
 	// HeaderName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-sourcelocation-secretsmanageraccesstokenconfiguration.html#cfn-mediatailor-sourcelocation-secretsmanageraccesstokenconfiguration-headername
-	HeaderName *string `json:"HeaderName,omitempty"`
+	HeaderName *T `json:"HeaderName,omitempty"`
 
 	// SecretArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-sourcelocation-secretsmanageraccesstokenconfiguration.html#cfn-mediatailor-sourcelocation-secretsmanageraccesstokenconfiguration-secretarn
-	SecretArn *string `json:"SecretArn,omitempty"`
+	SecretArn *T `json:"SecretArn,omitempty"`
 
 	// SecretStringKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-sourcelocation-secretsmanageraccesstokenconfiguration.html#cfn-mediatailor-sourcelocation-secretsmanageraccesstokenconfiguration-secretstringkey
-	SecretStringKey *string `json:"SecretStringKey,omitempty"`
+	SecretStringKey *T `json:"SecretStringKey,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

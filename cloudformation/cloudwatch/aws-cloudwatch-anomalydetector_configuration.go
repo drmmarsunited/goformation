@@ -18,7 +18,7 @@ type AnomalyDetector_Configuration[T any] struct {
 	// MetricTimeZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-configuration.html#cfn-cloudwatch-anomalydetector-configuration-metrictimezone
-	MetricTimeZone *string `json:"MetricTimeZone,omitempty"`
+	MetricTimeZone *T `json:"MetricTimeZone,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

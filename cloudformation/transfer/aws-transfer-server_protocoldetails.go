@@ -18,17 +18,17 @@ type Server_ProtocolDetails[T any] struct {
 	// PassiveIp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-protocoldetails.html#cfn-transfer-server-protocoldetails-passiveip
-	PassiveIp *string `json:"PassiveIp,omitempty"`
+	PassiveIp *T `json:"PassiveIp,omitempty"`
 
 	// SetStatOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-protocoldetails.html#cfn-transfer-server-protocoldetails-setstatoption
-	SetStatOption *string `json:"SetStatOption,omitempty"`
+	SetStatOption *T `json:"SetStatOption,omitempty"`
 
 	// TlsSessionResumptionMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-protocoldetails.html#cfn-transfer-server-protocoldetails-tlssessionresumptionmode
-	TlsSessionResumptionMode *string `json:"TlsSessionResumptionMode,omitempty"`
+	TlsSessionResumptionMode *T `json:"TlsSessionResumptionMode,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

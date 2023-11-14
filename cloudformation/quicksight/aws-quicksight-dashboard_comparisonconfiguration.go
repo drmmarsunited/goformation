@@ -18,7 +18,7 @@ type Dashboard_ComparisonConfiguration[T any] struct {
 	// ComparisonMethod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-comparisonconfiguration.html#cfn-quicksight-dashboard-comparisonconfiguration-comparisonmethod
-	ComparisonMethod *string `json:"ComparisonMethod,omitempty"`
+	ComparisonMethod *T `json:"ComparisonMethod,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

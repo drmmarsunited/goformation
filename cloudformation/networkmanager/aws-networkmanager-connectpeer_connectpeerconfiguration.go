@@ -18,22 +18,22 @@ type ConnectPeer_ConnectPeerConfiguration[T any] struct {
 	// CoreNetworkAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerconfiguration.html#cfn-networkmanager-connectpeer-connectpeerconfiguration-corenetworkaddress
-	CoreNetworkAddress *string `json:"CoreNetworkAddress,omitempty"`
+	CoreNetworkAddress *T `json:"CoreNetworkAddress,omitempty"`
 
 	// InsideCidrBlocks AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerconfiguration.html#cfn-networkmanager-connectpeer-connectpeerconfiguration-insidecidrblocks
-	InsideCidrBlocks []string `json:"InsideCidrBlocks,omitempty"`
+	InsideCidrBlocks []T `json:"InsideCidrBlocks,omitempty"`
 
 	// PeerAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerconfiguration.html#cfn-networkmanager-connectpeer-connectpeerconfiguration-peeraddress
-	PeerAddress *string `json:"PeerAddress,omitempty"`
+	PeerAddress *T `json:"PeerAddress,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerconfiguration.html#cfn-networkmanager-connectpeer-connectpeerconfiguration-protocol
-	Protocol *string `json:"Protocol,omitempty"`
+	Protocol *T `json:"Protocol,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,17 +13,17 @@ type Dashboard_DataPathLabelType[T any] struct {
 	// FieldId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datapathlabeltype.html#cfn-quicksight-dashboard-datapathlabeltype-fieldid
-	FieldId *string `json:"FieldId,omitempty"`
+	FieldId *T `json:"FieldId,omitempty"`
 
 	// FieldValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datapathlabeltype.html#cfn-quicksight-dashboard-datapathlabeltype-fieldvalue
-	FieldValue *string `json:"FieldValue,omitempty"`
+	FieldValue *T `json:"FieldValue,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datapathlabeltype.html#cfn-quicksight-dashboard-datapathlabeltype-visibility
-	Visibility *string `json:"Visibility,omitempty"`
+	Visibility *T `json:"Visibility,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

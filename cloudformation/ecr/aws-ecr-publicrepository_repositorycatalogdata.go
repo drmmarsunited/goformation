@@ -13,27 +13,27 @@ type PublicRepository_RepositoryCatalogData[T any] struct {
 	// AboutText AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-publicrepository-repositorycatalogdata.html#cfn-ecr-publicrepository-repositorycatalogdata-abouttext
-	AboutText *string `json:"AboutText,omitempty"`
+	AboutText *T `json:"AboutText,omitempty"`
 
 	// Architectures AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-publicrepository-repositorycatalogdata.html#cfn-ecr-publicrepository-repositorycatalogdata-architectures
-	Architectures []string `json:"Architectures,omitempty"`
+	Architectures []T `json:"Architectures,omitempty"`
 
 	// OperatingSystems AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-publicrepository-repositorycatalogdata.html#cfn-ecr-publicrepository-repositorycatalogdata-operatingsystems
-	OperatingSystems []string `json:"OperatingSystems,omitempty"`
+	OperatingSystems []T `json:"OperatingSystems,omitempty"`
 
 	// RepositoryDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-publicrepository-repositorycatalogdata.html#cfn-ecr-publicrepository-repositorycatalogdata-repositorydescription
-	RepositoryDescription *string `json:"RepositoryDescription,omitempty"`
+	RepositoryDescription *T `json:"RepositoryDescription,omitempty"`
 
 	// UsageText AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-publicrepository-repositorycatalogdata.html#cfn-ecr-publicrepository-repositorycatalogdata-usagetext
-	UsageText *string `json:"UsageText,omitempty"`
+	UsageText *T `json:"UsageText,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

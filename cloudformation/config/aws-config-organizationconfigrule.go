@@ -16,12 +16,12 @@ type OrganizationConfigRule[T any] struct {
 	// ExcludedAccounts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html#cfn-config-organizationconfigrule-excludedaccounts
-	ExcludedAccounts []string `json:"ExcludedAccounts,omitempty"`
+	ExcludedAccounts []T `json:"ExcludedAccounts,omitempty"`
 
 	// OrganizationConfigRuleName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html#cfn-config-organizationconfigrule-organizationconfigrulename
-	OrganizationConfigRuleName string `json:"OrganizationConfigRuleName"`
+	OrganizationConfigRuleName T `json:"OrganizationConfigRuleName"`
 
 	// OrganizationCustomPolicyRuleMetadata AWS CloudFormation Property
 	// Required: false

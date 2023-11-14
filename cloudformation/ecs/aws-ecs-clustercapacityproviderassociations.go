@@ -16,12 +16,12 @@ type ClusterCapacityProviderAssociations[T any] struct {
 	// CapacityProviders AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-clustercapacityproviderassociations.html#cfn-ecs-clustercapacityproviderassociations-capacityproviders
-	CapacityProviders []string `json:"CapacityProviders"`
+	CapacityProviders []T `json:"CapacityProviders"`
 
 	// Cluster AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-clustercapacityproviderassociations.html#cfn-ecs-clustercapacityproviderassociations-cluster
-	Cluster string `json:"Cluster"`
+	Cluster T `json:"Cluster"`
 
 	// DefaultCapacityProviderStrategy AWS CloudFormation Property
 	// Required: true

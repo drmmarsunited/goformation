@@ -23,7 +23,7 @@ type Channel_HlsWebdavSettings[T any] struct {
 	// HttpTransferMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlswebdavsettings.html#cfn-medialive-channel-hlswebdavsettings-httptransfermode
-	HttpTransferMode *string `json:"HttpTransferMode,omitempty"`
+	HttpTransferMode *T `json:"HttpTransferMode,omitempty"`
 
 	// NumRetries AWS CloudFormation Property
 	// Required: false

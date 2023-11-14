@@ -28,12 +28,12 @@ type Template_CurrencyDisplayFormatConfiguration[T any] struct {
 	// NumberScale AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-currencydisplayformatconfiguration.html#cfn-quicksight-template-currencydisplayformatconfiguration-numberscale
-	NumberScale *string `json:"NumberScale,omitempty"`
+	NumberScale *T `json:"NumberScale,omitempty"`
 
 	// Prefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-currencydisplayformatconfiguration.html#cfn-quicksight-template-currencydisplayformatconfiguration-prefix
-	Prefix *string `json:"Prefix,omitempty"`
+	Prefix *T `json:"Prefix,omitempty"`
 
 	// SeparatorConfiguration AWS CloudFormation Property
 	// Required: false
@@ -43,12 +43,12 @@ type Template_CurrencyDisplayFormatConfiguration[T any] struct {
 	// Suffix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-currencydisplayformatconfiguration.html#cfn-quicksight-template-currencydisplayformatconfiguration-suffix
-	Suffix *string `json:"Suffix,omitempty"`
+	Suffix *T `json:"Suffix,omitempty"`
 
 	// Symbol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-currencydisplayformatconfiguration.html#cfn-quicksight-template-currencydisplayformatconfiguration-symbol
-	Symbol *string `json:"Symbol,omitempty"`
+	Symbol *T `json:"Symbol,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

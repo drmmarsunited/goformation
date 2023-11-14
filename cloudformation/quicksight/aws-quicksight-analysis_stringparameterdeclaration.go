@@ -23,12 +23,12 @@ type Analysis_StringParameterDeclaration[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-stringparameterdeclaration.html#cfn-quicksight-analysis-stringparameterdeclaration-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ParameterValueType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-stringparameterdeclaration.html#cfn-quicksight-analysis-stringparameterdeclaration-parametervaluetype
-	ParameterValueType string `json:"ParameterValueType"`
+	ParameterValueType T `json:"ParameterValueType"`
 
 	// ValueWhenUnset AWS CloudFormation Property
 	// Required: false

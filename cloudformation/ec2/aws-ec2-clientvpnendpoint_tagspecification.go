@@ -14,7 +14,7 @@ type ClientVpnEndpoint_TagSpecification[T any] struct {
 	// ResourceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html#cfn-ec2-clientvpnendpoint-tagspecification-resourcetype
-	ResourceType string `json:"ResourceType"`
+	ResourceType T `json:"ResourceType"`
 
 	// Tags AWS CloudFormation Property
 	// Required: true

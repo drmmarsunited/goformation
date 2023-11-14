@@ -13,7 +13,7 @@ type TopicRule_LambdaAction[T any] struct {
 	// FunctionArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-lambdaaction.html#cfn-iot-topicrule-lambdaaction-functionarn
-	FunctionArn *string `json:"FunctionArn,omitempty"`
+	FunctionArn *T `json:"FunctionArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

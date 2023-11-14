@@ -13,7 +13,7 @@ type Channel_NielsenNaesIiNw[T any] struct {
 	// CheckDigitString AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsennaesiinw.html#cfn-medialive-channel-nielsennaesiinw-checkdigitstring
-	CheckDigitString *string `json:"CheckDigitString,omitempty"`
+	CheckDigitString *T `json:"CheckDigitString,omitempty"`
 
 	// Sid AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Channel_NielsenNaesIiNw[T any] struct {
 	// Timezone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsennaesiinw.html#cfn-medialive-channel-nielsennaesiinw-timezone
-	Timezone *string `json:"Timezone,omitempty"`
+	Timezone *T `json:"Timezone,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

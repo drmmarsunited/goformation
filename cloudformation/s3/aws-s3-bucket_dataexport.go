@@ -18,7 +18,7 @@ type Bucket_DataExport[T any] struct {
 	// OutputSchemaVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-dataexport.html#cfn-s3-bucket-dataexport-outputschemaversion
-	OutputSchemaVersion string `json:"OutputSchemaVersion"`
+	OutputSchemaVersion T `json:"OutputSchemaVersion"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

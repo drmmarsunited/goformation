@@ -18,22 +18,22 @@ type Application_HANAPrometheusExporter[T any] struct {
 	// HANAPort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-hanaport
-	HANAPort string `json:"HANAPort"`
+	HANAPort T `json:"HANAPort"`
 
 	// HANASID AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-hanasid
-	HANASID string `json:"HANASID"`
+	HANASID T `json:"HANASID"`
 
 	// HANASecretName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-hanasecretname
-	HANASecretName string `json:"HANASecretName"`
+	HANASecretName T `json:"HANASecretName"`
 
 	// PrometheusPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-prometheusport
-	PrometheusPort *string `json:"PrometheusPort,omitempty"`
+	PrometheusPort *T `json:"PrometheusPort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

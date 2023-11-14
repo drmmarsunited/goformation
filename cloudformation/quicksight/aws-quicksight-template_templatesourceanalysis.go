@@ -13,7 +13,7 @@ type Template_TemplateSourceAnalysis[T any] struct {
 	// Arn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templatesourceanalysis.html#cfn-quicksight-template-templatesourceanalysis-arn
-	Arn string `json:"Arn"`
+	Arn T `json:"Arn"`
 
 	// DataSetReferences AWS CloudFormation Property
 	// Required: true

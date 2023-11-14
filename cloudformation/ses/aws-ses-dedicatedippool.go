@@ -16,12 +16,12 @@ type DedicatedIpPool[T any] struct {
 	// PoolName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-dedicatedippool.html#cfn-ses-dedicatedippool-poolname
-	PoolName *string `json:"PoolName,omitempty"`
+	PoolName *T `json:"PoolName,omitempty"`
 
 	// ScalingMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-dedicatedippool.html#cfn-ses-dedicatedippool-scalingmode
-	ScalingMode *string `json:"ScalingMode,omitempty"`
+	ScalingMode *T `json:"ScalingMode,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

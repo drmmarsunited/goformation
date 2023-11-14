@@ -13,12 +13,12 @@ type Dashboard_FieldSeriesItem[T any] struct {
 	// AxisBinding AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fieldseriesitem.html#cfn-quicksight-dashboard-fieldseriesitem-axisbinding
-	AxisBinding string `json:"AxisBinding"`
+	AxisBinding T `json:"AxisBinding"`
 
 	// FieldId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fieldseriesitem.html#cfn-quicksight-dashboard-fieldseriesitem-fieldid
-	FieldId string `json:"FieldId"`
+	FieldId T `json:"FieldId"`
 
 	// Settings AWS CloudFormation Property
 	// Required: false

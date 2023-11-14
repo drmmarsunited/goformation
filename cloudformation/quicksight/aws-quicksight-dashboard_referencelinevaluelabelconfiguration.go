@@ -18,7 +18,7 @@ type Dashboard_ReferenceLineValueLabelConfiguration[T any] struct {
 	// RelativePosition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinevaluelabelconfiguration.html#cfn-quicksight-dashboard-referencelinevaluelabelconfiguration-relativeposition
-	RelativePosition *string `json:"RelativePosition,omitempty"`
+	RelativePosition *T `json:"RelativePosition,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -21,12 +21,12 @@ type VPCCidrBlock[T any] struct {
 	// CidrBlock AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-cidrblock
-	CidrBlock *string `json:"CidrBlock,omitempty"`
+	CidrBlock *T `json:"CidrBlock,omitempty"`
 
 	// Ipv4IpamPoolId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv4ipampoolid
-	Ipv4IpamPoolId *string `json:"Ipv4IpamPoolId,omitempty"`
+	Ipv4IpamPoolId *T `json:"Ipv4IpamPoolId,omitempty"`
 
 	// Ipv4NetmaskLength AWS CloudFormation Property
 	// Required: false
@@ -36,12 +36,12 @@ type VPCCidrBlock[T any] struct {
 	// Ipv6CidrBlock AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv6cidrblock
-	Ipv6CidrBlock *string `json:"Ipv6CidrBlock,omitempty"`
+	Ipv6CidrBlock *T `json:"Ipv6CidrBlock,omitempty"`
 
 	// Ipv6IpamPoolId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv6ipampoolid
-	Ipv6IpamPoolId *string `json:"Ipv6IpamPoolId,omitempty"`
+	Ipv6IpamPoolId *T `json:"Ipv6IpamPoolId,omitempty"`
 
 	// Ipv6NetmaskLength AWS CloudFormation Property
 	// Required: false
@@ -51,12 +51,12 @@ type VPCCidrBlock[T any] struct {
 	// Ipv6Pool AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv6pool
-	Ipv6Pool *string `json:"Ipv6Pool,omitempty"`
+	Ipv6Pool *T `json:"Ipv6Pool,omitempty"`
 
 	// VpcId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-vpcid
-	VpcId string `json:"VpcId"`
+	VpcId T `json:"VpcId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

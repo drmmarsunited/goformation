@@ -22,7 +22,7 @@ type Canary[T any] struct {
 	// ArtifactS3Location AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-artifacts3location
-	ArtifactS3Location string `json:"ArtifactS3Location"`
+	ArtifactS3Location T `json:"ArtifactS3Location"`
 
 	// Code AWS CloudFormation Property
 	// Required: true
@@ -32,7 +32,7 @@ type Canary[T any] struct {
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-executionrolearn
-	ExecutionRoleArn string `json:"ExecutionRoleArn"`
+	ExecutionRoleArn T `json:"ExecutionRoleArn"`
 
 	// FailureRetentionPeriod AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type Canary[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// RunConfig AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type Canary[T any] struct {
 	// RuntimeVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-runtimeversion
-	RuntimeVersion string `json:"RuntimeVersion"`
+	RuntimeVersion T `json:"RuntimeVersion"`
 
 	// Schedule AWS CloudFormation Property
 	// Required: true

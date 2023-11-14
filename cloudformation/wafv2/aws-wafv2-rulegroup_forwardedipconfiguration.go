@@ -13,12 +13,12 @@ type RuleGroup_ForwardedIPConfiguration[T any] struct {
 	// FallbackBehavior AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-forwardedipconfiguration.html#cfn-wafv2-rulegroup-forwardedipconfiguration-fallbackbehavior
-	FallbackBehavior string `json:"FallbackBehavior"`
+	FallbackBehavior T `json:"FallbackBehavior"`
 
 	// HeaderName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-forwardedipconfiguration.html#cfn-wafv2-rulegroup-forwardedipconfiguration-headername
-	HeaderName string `json:"HeaderName"`
+	HeaderName T `json:"HeaderName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

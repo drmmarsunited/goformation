@@ -16,7 +16,7 @@ type ClusterPolicy[T any] struct {
 	// ClusterArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-clusterpolicy.html#cfn-msk-clusterpolicy-clusterarn
-	ClusterArn string `json:"ClusterArn"`
+	ClusterArn T `json:"ClusterArn"`
 
 	// Policy AWS CloudFormation Property
 	// Required: true

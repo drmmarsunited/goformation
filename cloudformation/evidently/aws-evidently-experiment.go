@@ -17,7 +17,7 @@ type Experiment[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// MetricGoals AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type Experiment[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// OnlineAbConfig AWS CloudFormation Property
 	// Required: true
@@ -37,12 +37,12 @@ type Experiment[T any] struct {
 	// Project AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-project
-	Project string `json:"Project"`
+	Project T `json:"Project"`
 
 	// RandomizationSalt AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-randomizationsalt
-	RandomizationSalt *string `json:"RandomizationSalt,omitempty"`
+	RandomizationSalt *T `json:"RandomizationSalt,omitempty"`
 
 	// RemoveSegment AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,7 @@ type Experiment[T any] struct {
 	// Segment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-segment
-	Segment *string `json:"Segment,omitempty"`
+	Segment *T `json:"Segment,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type CachePolicy_CookiesConfig[T any] struct {
 	// CookieBehavior AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-cookiesconfig.html#cfn-cloudfront-cachepolicy-cookiesconfig-cookiebehavior
-	CookieBehavior string `json:"CookieBehavior"`
+	CookieBehavior T `json:"CookieBehavior"`
 
 	// Cookies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-cookiesconfig.html#cfn-cloudfront-cachepolicy-cookiesconfig-cookies
-	Cookies []string `json:"Cookies,omitempty"`
+	Cookies []T `json:"Cookies,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

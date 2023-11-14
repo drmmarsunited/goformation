@@ -22,7 +22,7 @@ type Volume[T any] struct {
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-availabilityzone
-	AvailabilityZone string `json:"AvailabilityZone"`
+	AvailabilityZone T `json:"AvailabilityZone"`
 
 	// Encrypted AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Volume[T any] struct {
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-kmskeyid
-	KmsKeyId *string `json:"KmsKeyId,omitempty"`
+	KmsKeyId *T `json:"KmsKeyId,omitempty"`
 
 	// MultiAttachEnabled AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type Volume[T any] struct {
 	// OutpostArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-outpostarn
-	OutpostArn *string `json:"OutpostArn,omitempty"`
+	OutpostArn *T `json:"OutpostArn,omitempty"`
 
 	// Size AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type Volume[T any] struct {
 	// SnapshotId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-snapshotid
-	SnapshotId *string `json:"SnapshotId,omitempty"`
+	SnapshotId *T `json:"SnapshotId,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -72,7 +72,7 @@ type Volume[T any] struct {
 	// VolumeType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-volumetype
-	VolumeType *string `json:"VolumeType,omitempty"`
+	VolumeType *T `json:"VolumeType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

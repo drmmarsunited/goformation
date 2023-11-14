@@ -13,22 +13,22 @@ type StackSet_DeploymentTargets[T any] struct {
 	// AccountFilterType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-deploymenttargets.html#cfn-cloudformation-stackset-deploymenttargets-accountfiltertype
-	AccountFilterType *string `json:"AccountFilterType,omitempty"`
+	AccountFilterType *T `json:"AccountFilterType,omitempty"`
 
 	// Accounts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-deploymenttargets.html#cfn-cloudformation-stackset-deploymenttargets-accounts
-	Accounts []string `json:"Accounts,omitempty"`
+	Accounts []T `json:"Accounts,omitempty"`
 
 	// AccountsUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-deploymenttargets.html#cfn-cloudformation-stackset-deploymenttargets-accountsurl
-	AccountsUrl *string `json:"AccountsUrl,omitempty"`
+	AccountsUrl *T `json:"AccountsUrl,omitempty"`
 
 	// OrganizationalUnitIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-deploymenttargets.html#cfn-cloudformation-stackset-deploymenttargets-organizationalunitids
-	OrganizationalUnitIds []string `json:"OrganizationalUnitIds,omitempty"`
+	OrganizationalUnitIds []T `json:"OrganizationalUnitIds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -33,7 +33,7 @@ type StorageLens_StorageLensConfiguration[T any] struct {
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-id
-	Id string `json:"Id"`
+	Id T `json:"Id"`
 
 	// Include AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type StorageLens_StorageLensConfiguration[T any] struct {
 	// StorageLensArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-storagelensarn
-	StorageLensArn *string `json:"StorageLensArn,omitempty"`
+	StorageLensArn *T `json:"StorageLensArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

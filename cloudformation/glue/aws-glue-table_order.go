@@ -13,7 +13,7 @@ type Table_Order[T any] struct {
 	// Column AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-order.html#cfn-glue-table-order-column
-	Column string `json:"Column"`
+	Column T `json:"Column"`
 
 	// SortOrder AWS CloudFormation Property
 	// Required: true

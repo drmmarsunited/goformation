@@ -18,7 +18,7 @@ type HttpApi_HttpApiAuth[T any] struct {
 	// DefaultAuthorizer AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-httpapi-httpapiauth.html#sam-httpapi-httpapiauth-authorizers
-	DefaultAuthorizer *string `json:"DefaultAuthorizer,omitempty"`
+	DefaultAuthorizer *T `json:"DefaultAuthorizer,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

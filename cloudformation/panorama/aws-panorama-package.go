@@ -17,7 +17,7 @@ type Package[T any] struct {
 	// PackageName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html#cfn-panorama-package-packagename
-	PackageName string `json:"PackageName"`
+	PackageName T `json:"PackageName"`
 
 	// StorageLocation AWS CloudFormation Property
 	// Required: false

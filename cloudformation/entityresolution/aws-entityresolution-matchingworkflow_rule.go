@@ -13,12 +13,12 @@ type MatchingWorkflow_Rule[T any] struct {
 	// MatchingKeys AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-matchingworkflow-rule.html#cfn-entityresolution-matchingworkflow-rule-matchingkeys
-	MatchingKeys []string `json:"MatchingKeys"`
+	MatchingKeys []T `json:"MatchingKeys"`
 
 	// RuleName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-matchingworkflow-rule.html#cfn-entityresolution-matchingworkflow-rule-rulename
-	RuleName string `json:"RuleName"`
+	RuleName T `json:"RuleName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

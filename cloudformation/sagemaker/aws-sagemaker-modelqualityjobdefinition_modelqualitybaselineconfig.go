@@ -13,7 +13,7 @@ type ModelQualityJobDefinition_ModelQualityBaselineConfig[T any] struct {
 	// BaseliningJobName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig.html#cfn-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig-baseliningjobname
-	BaseliningJobName *string `json:"BaseliningJobName,omitempty"`
+	BaseliningJobName *T `json:"BaseliningJobName,omitempty"`
 
 	// ConstraintsResource AWS CloudFormation Property
 	// Required: false

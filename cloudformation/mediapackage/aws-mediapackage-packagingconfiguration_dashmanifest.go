@@ -13,12 +13,12 @@ type PackagingConfiguration_DashManifest[T any] struct {
 	// ManifestLayout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashmanifest.html#cfn-mediapackage-packagingconfiguration-dashmanifest-manifestlayout
-	ManifestLayout *string `json:"ManifestLayout,omitempty"`
+	ManifestLayout *T `json:"ManifestLayout,omitempty"`
 
 	// ManifestName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashmanifest.html#cfn-mediapackage-packagingconfiguration-dashmanifest-manifestname
-	ManifestName *string `json:"ManifestName,omitempty"`
+	ManifestName *T `json:"ManifestName,omitempty"`
 
 	// MinBufferTimeSeconds AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type PackagingConfiguration_DashManifest[T any] struct {
 	// Profile AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashmanifest.html#cfn-mediapackage-packagingconfiguration-dashmanifest-profile
-	Profile *string `json:"Profile,omitempty"`
+	Profile *T `json:"Profile,omitempty"`
 
 	// ScteMarkersSource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashmanifest.html#cfn-mediapackage-packagingconfiguration-dashmanifest-sctemarkerssource
-	ScteMarkersSource *string `json:"ScteMarkersSource,omitempty"`
+	ScteMarkersSource *T `json:"ScteMarkersSource,omitempty"`
 
 	// StreamSelection AWS CloudFormation Property
 	// Required: false

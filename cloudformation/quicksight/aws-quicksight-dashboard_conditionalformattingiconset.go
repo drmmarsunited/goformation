@@ -13,12 +13,12 @@ type Dashboard_ConditionalFormattingIconSet[T any] struct {
 	// Expression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-conditionalformattingiconset.html#cfn-quicksight-dashboard-conditionalformattingiconset-expression
-	Expression string `json:"Expression"`
+	Expression T `json:"Expression"`
 
 	// IconSetType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-conditionalformattingiconset.html#cfn-quicksight-dashboard-conditionalformattingiconset-iconsettype
-	IconSetType *string `json:"IconSetType,omitempty"`
+	IconSetType *T `json:"IconSetType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

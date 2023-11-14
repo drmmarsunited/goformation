@@ -13,7 +13,7 @@ type Template_BarChartConfiguration[T any] struct {
 	// BarsArrangement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-barchartconfiguration.html#cfn-quicksight-template-barchartconfiguration-barsarrangement
-	BarsArrangement *string `json:"BarsArrangement,omitempty"`
+	BarsArrangement *T `json:"BarsArrangement,omitempty"`
 
 	// CategoryAxis AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Template_BarChartConfiguration[T any] struct {
 	// Orientation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-barchartconfiguration.html#cfn-quicksight-template-barchartconfiguration-orientation
-	Orientation *string `json:"Orientation,omitempty"`
+	Orientation *T `json:"Orientation,omitempty"`
 
 	// ReferenceLines AWS CloudFormation Property
 	// Required: false

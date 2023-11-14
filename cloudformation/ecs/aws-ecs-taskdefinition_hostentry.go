@@ -13,12 +13,12 @@ type TaskDefinition_HostEntry[T any] struct {
 	// Hostname AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-hostentry.html#cfn-ecs-taskdefinition-hostentry-hostname
-	Hostname *string `json:"Hostname,omitempty"`
+	Hostname *T `json:"Hostname,omitempty"`
 
 	// IpAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-hostentry.html#cfn-ecs-taskdefinition-hostentry-ipaddress
-	IpAddress *string `json:"IpAddress,omitempty"`
+	IpAddress *T `json:"IpAddress,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

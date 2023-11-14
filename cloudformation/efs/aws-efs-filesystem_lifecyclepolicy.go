@@ -13,12 +13,12 @@ type FileSystem_LifecyclePolicy[T any] struct {
 	// TransitionToIA AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-lifecyclepolicy.html#cfn-efs-filesystem-lifecyclepolicy-transitiontoia
-	TransitionToIA *string `json:"TransitionToIA,omitempty"`
+	TransitionToIA *T `json:"TransitionToIA,omitempty"`
 
 	// TransitionToPrimaryStorageClass AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-lifecyclepolicy.html#cfn-efs-filesystem-lifecyclepolicy-transitiontoprimarystorageclass
-	TransitionToPrimaryStorageClass *string `json:"TransitionToPrimaryStorageClass,omitempty"`
+	TransitionToPrimaryStorageClass *T `json:"TransitionToPrimaryStorageClass,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

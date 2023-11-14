@@ -16,17 +16,17 @@ type VolumeAttachment[T any] struct {
 	// Device AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volumeattachment.html#cfn-ec2-volumeattachment-device
-	Device *string `json:"Device,omitempty"`
+	Device *T `json:"Device,omitempty"`
 
 	// InstanceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volumeattachment.html#cfn-ec2-volumeattachment-instanceid
-	InstanceId string `json:"InstanceId"`
+	InstanceId T `json:"InstanceId"`
 
 	// VolumeId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volumeattachment.html#cfn-ec2-volumeattachment-volumeid
-	VolumeId string `json:"VolumeId"`
+	VolumeId T `json:"VolumeId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

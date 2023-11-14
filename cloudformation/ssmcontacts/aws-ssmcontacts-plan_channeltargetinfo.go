@@ -13,7 +13,7 @@ type Plan_ChannelTargetInfo[T any] struct {
 	// ChannelId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-plan-channeltargetinfo.html#cfn-ssmcontacts-plan-channeltargetinfo-channelid
-	ChannelId string `json:"ChannelId"`
+	ChannelId T `json:"ChannelId"`
 
 	// RetryIntervalInMinutes AWS CloudFormation Property
 	// Required: true

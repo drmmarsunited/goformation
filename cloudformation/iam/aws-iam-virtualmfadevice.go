@@ -17,7 +17,7 @@ type VirtualMFADevice[T any] struct {
 	// Path AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-virtualmfadevice.html#cfn-iam-virtualmfadevice-path
-	Path *string `json:"Path,omitempty"`
+	Path *T `json:"Path,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type VirtualMFADevice[T any] struct {
 	// Users AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-virtualmfadevice.html#cfn-iam-virtualmfadevice-users
-	Users []string `json:"Users"`
+	Users []T `json:"Users"`
 
 	// VirtualMfaDeviceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-virtualmfadevice.html#cfn-iam-virtualmfadevice-virtualmfadevicename
-	VirtualMfaDeviceName *string `json:"VirtualMfaDeviceName,omitempty"`
+	VirtualMfaDeviceName *T `json:"VirtualMfaDeviceName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -21,7 +21,7 @@ type ProactiveEngagement[T any] struct {
 	// ProactiveEngagementStatus AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-shield-proactiveengagement.html#cfn-shield-proactiveengagement-proactiveengagementstatus
-	ProactiveEngagementStatus string `json:"ProactiveEngagementStatus"`
+	ProactiveEngagementStatus T `json:"ProactiveEngagementStatus"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

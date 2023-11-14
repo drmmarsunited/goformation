@@ -18,7 +18,7 @@ type Pipe_CapacityProviderStrategyItem[T any] struct {
 	// CapacityProvider AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-capacityproviderstrategyitem.html#cfn-pipes-pipe-capacityproviderstrategyitem-capacityprovider
-	CapacityProvider string `json:"CapacityProvider"`
+	CapacityProvider T `json:"CapacityProvider"`
 
 	// Weight AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type Dashboard_GrowthRateComputation[T any] struct {
 	// ComputationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-growthratecomputation.html#cfn-quicksight-dashboard-growthratecomputation-computationid
-	ComputationId string `json:"ComputationId"`
+	ComputationId T `json:"ComputationId"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-growthratecomputation.html#cfn-quicksight-dashboard-growthratecomputation-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// PeriodSize AWS CloudFormation Property
 	// Required: false
@@ -26,9 +26,9 @@ type Dashboard_GrowthRateComputation[T any] struct {
 	PeriodSize *T `json:"PeriodSize,omitempty"`
 
 	// Time AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-growthratecomputation.html#cfn-quicksight-dashboard-growthratecomputation-time
-	Time *Dashboard_DimensionField[any] `json:"Time"`
+	Time *Dashboard_DimensionField[any] `json:"Time,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: false

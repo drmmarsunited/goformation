@@ -13,7 +13,7 @@ type JobDefinition_MountPoints[T any] struct {
 	// ContainerPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-containerpath
-	ContainerPath *string `json:"ContainerPath,omitempty"`
+	ContainerPath *T `json:"ContainerPath,omitempty"`
 
 	// ReadOnly AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type JobDefinition_MountPoints[T any] struct {
 	// SourceVolume AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-sourcevolume
-	SourceVolume *string `json:"SourceVolume,omitempty"`
+	SourceVolume *T `json:"SourceVolume,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

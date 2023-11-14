@@ -28,7 +28,7 @@ type DeviceProfile_LoRaWANDeviceProfile[T any] struct {
 	// MacVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-macversion
-	MacVersion *string `json:"MacVersion,omitempty"`
+	MacVersion *T `json:"MacVersion,omitempty"`
 
 	// MaxDutyCycle AWS CloudFormation Property
 	// Required: false
@@ -58,12 +58,12 @@ type DeviceProfile_LoRaWANDeviceProfile[T any] struct {
 	// RegParamsRevision AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-regparamsrevision
-	RegParamsRevision *string `json:"RegParamsRevision,omitempty"`
+	RegParamsRevision *T `json:"RegParamsRevision,omitempty"`
 
 	// RfRegion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-rfregion
-	RfRegion *string `json:"RfRegion,omitempty"`
+	RfRegion *T `json:"RfRegion,omitempty"`
 
 	// RxDataRate2 AWS CloudFormation Property
 	// Required: false

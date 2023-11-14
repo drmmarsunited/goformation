@@ -28,7 +28,7 @@ type LaunchTemplate_NetworkInterface[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DeviceIndex AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type LaunchTemplate_NetworkInterface[T any] struct {
 	// Groups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-groups
-	Groups []string `json:"Groups,omitempty"`
+	Groups []T `json:"Groups,omitempty"`
 
 	// InterfaceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-interfacetype
-	InterfaceType *string `json:"InterfaceType,omitempty"`
+	InterfaceType *T `json:"InterfaceType,omitempty"`
 
 	// Ipv4PrefixCount AWS CloudFormation Property
 	// Required: false
@@ -83,7 +83,7 @@ type LaunchTemplate_NetworkInterface[T any] struct {
 	// NetworkInterfaceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-networkinterfaceid
-	NetworkInterfaceId *string `json:"NetworkInterfaceId,omitempty"`
+	NetworkInterfaceId *T `json:"NetworkInterfaceId,omitempty"`
 
 	// PrimaryIpv6 AWS CloudFormation Property
 	// Required: false
@@ -93,7 +93,7 @@ type LaunchTemplate_NetworkInterface[T any] struct {
 	// PrivateIpAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-privateipaddress
-	PrivateIpAddress *string `json:"PrivateIpAddress,omitempty"`
+	PrivateIpAddress *T `json:"PrivateIpAddress,omitempty"`
 
 	// PrivateIpAddresses AWS CloudFormation Property
 	// Required: false
@@ -108,7 +108,7 @@ type LaunchTemplate_NetworkInterface[T any] struct {
 	// SubnetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-subnetid
-	SubnetId *string `json:"SubnetId,omitempty"`
+	SubnetId *T `json:"SubnetId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

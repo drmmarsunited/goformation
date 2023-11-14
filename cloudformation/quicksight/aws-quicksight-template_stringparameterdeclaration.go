@@ -23,12 +23,12 @@ type Template_StringParameterDeclaration[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-stringparameterdeclaration.html#cfn-quicksight-template-stringparameterdeclaration-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ParameterValueType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-stringparameterdeclaration.html#cfn-quicksight-template-stringparameterdeclaration-parametervaluetype
-	ParameterValueType string `json:"ParameterValueType"`
+	ParameterValueType T `json:"ParameterValueType"`
 
 	// ValueWhenUnset AWS CloudFormation Property
 	// Required: false

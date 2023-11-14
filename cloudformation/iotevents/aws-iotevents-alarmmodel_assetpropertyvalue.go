@@ -13,7 +13,7 @@ type AlarmModel_AssetPropertyValue[T any] struct {
 	// Quality AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-assetpropertyvalue.html#cfn-iotevents-alarmmodel-assetpropertyvalue-quality
-	Quality *string `json:"Quality,omitempty"`
+	Quality *T `json:"Quality,omitempty"`
 
 	// Timestamp AWS CloudFormation Property
 	// Required: false

@@ -16,17 +16,17 @@ type HookDefaultVersion[T any] struct {
 	// TypeName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hookdefaultversion.html#cfn-cloudformation-hookdefaultversion-typename
-	TypeName *string `json:"TypeName,omitempty"`
+	TypeName *T `json:"TypeName,omitempty"`
 
 	// TypeVersionArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hookdefaultversion.html#cfn-cloudformation-hookdefaultversion-typeversionarn
-	TypeVersionArn *string `json:"TypeVersionArn,omitempty"`
+	TypeVersionArn *T `json:"TypeVersionArn,omitempty"`
 
 	// VersionId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hookdefaultversion.html#cfn-cloudformation-hookdefaultversion-versionid
-	VersionId *string `json:"VersionId,omitempty"`
+	VersionId *T `json:"VersionId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

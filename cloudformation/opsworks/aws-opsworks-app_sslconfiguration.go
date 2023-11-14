@@ -13,17 +13,17 @@ type App_SslConfiguration[T any] struct {
 	// Certificate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-sslconfiguration.html#cfn-opsworks-app-sslconfig-certificate
-	Certificate *string `json:"Certificate,omitempty"`
+	Certificate *T `json:"Certificate,omitempty"`
 
 	// Chain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-sslconfiguration.html#cfn-opsworks-app-sslconfig-chain
-	Chain *string `json:"Chain,omitempty"`
+	Chain *T `json:"Chain,omitempty"`
 
 	// PrivateKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-sslconfiguration.html#cfn-opsworks-app-sslconfig-privatekey
-	PrivateKey *string `json:"PrivateKey,omitempty"`
+	PrivateKey *T `json:"PrivateKey,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

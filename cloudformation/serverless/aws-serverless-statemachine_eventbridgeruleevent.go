@@ -13,17 +13,17 @@ type StateMachine_EventBridgeRuleEvent[T any] struct {
 	// EventBusName AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-statemachine-cloudwatchevent.html
-	EventBusName *string `json:"EventBusName,omitempty"`
+	EventBusName *T `json:"EventBusName,omitempty"`
 
 	// Input AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-statemachine-cloudwatchevent.html
-	Input *string `json:"Input,omitempty"`
+	Input *T `json:"Input,omitempty"`
 
 	// InputPath AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-statemachine-cloudwatchevent.html
-	InputPath *string `json:"InputPath,omitempty"`
+	InputPath *T `json:"InputPath,omitempty"`
 
 	// Pattern AWS CloudFormation Property
 	// Required: true

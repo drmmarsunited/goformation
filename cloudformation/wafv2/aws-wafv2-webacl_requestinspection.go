@@ -18,7 +18,7 @@ type WebACL_RequestInspection[T any] struct {
 	// PayloadType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-requestinspection.html#cfn-wafv2-webacl-requestinspection-payloadtype
-	PayloadType string `json:"PayloadType"`
+	PayloadType T `json:"PayloadType"`
 
 	// UsernameField AWS CloudFormation Property
 	// Required: true

@@ -13,7 +13,7 @@ type SuiteDefinition_SuiteDefinitionConfiguration[T any] struct {
 	// DevicePermissionRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotcoredeviceadvisor-suitedefinition-suitedefinitionconfiguration.html#cfn-iotcoredeviceadvisor-suitedefinition-suitedefinitionconfiguration-devicepermissionrolearn
-	DevicePermissionRoleArn string `json:"DevicePermissionRoleArn"`
+	DevicePermissionRoleArn T `json:"DevicePermissionRoleArn"`
 
 	// Devices AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type SuiteDefinition_SuiteDefinitionConfiguration[T any] struct {
 	// RootGroup AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotcoredeviceadvisor-suitedefinition-suitedefinitionconfiguration.html#cfn-iotcoredeviceadvisor-suitedefinition-suitedefinitionconfiguration-rootgroup
-	RootGroup string `json:"RootGroup"`
+	RootGroup T `json:"RootGroup"`
 
 	// SuiteDefinitionName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotcoredeviceadvisor-suitedefinition-suitedefinitionconfiguration.html#cfn-iotcoredeviceadvisor-suitedefinition-suitedefinitionconfiguration-suitedefinitionname
-	SuiteDefinitionName *string `json:"SuiteDefinitionName,omitempty"`
+	SuiteDefinitionName *T `json:"SuiteDefinitionName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

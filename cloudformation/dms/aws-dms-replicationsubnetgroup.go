@@ -17,17 +17,17 @@ type ReplicationSubnetGroup[T any] struct {
 	// ReplicationSubnetGroupDescription AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnetgroup.html#cfn-dms-replicationsubnetgroup-replicationsubnetgroupdescription
-	ReplicationSubnetGroupDescription string `json:"ReplicationSubnetGroupDescription"`
+	ReplicationSubnetGroupDescription T `json:"ReplicationSubnetGroupDescription"`
 
 	// ReplicationSubnetGroupIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnetgroup.html#cfn-dms-replicationsubnetgroup-replicationsubnetgroupidentifier
-	ReplicationSubnetGroupIdentifier *string `json:"ReplicationSubnetGroupIdentifier,omitempty"`
+	ReplicationSubnetGroupIdentifier *T `json:"ReplicationSubnetGroupIdentifier,omitempty"`
 
 	// SubnetIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnetgroup.html#cfn-dms-replicationsubnetgroup-subnetids
-	SubnetIds []string `json:"SubnetIds"`
+	SubnetIds []T `json:"SubnetIds"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

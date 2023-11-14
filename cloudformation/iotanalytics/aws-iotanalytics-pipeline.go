@@ -22,7 +22,7 @@ type Pipeline[T any] struct {
 	// PipelineName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-pipeline.html#cfn-iotanalytics-pipeline-pipelinename
-	PipelineName *string `json:"PipelineName,omitempty"`
+	PipelineName *T `json:"PipelineName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

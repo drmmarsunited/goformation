@@ -13,7 +13,7 @@ type Dashboard_TableCellStyle[T any] struct {
 	// BackgroundColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablecellstyle.html#cfn-quicksight-dashboard-tablecellstyle-backgroundcolor
-	BackgroundColor *string `json:"BackgroundColor,omitempty"`
+	BackgroundColor *T `json:"BackgroundColor,omitempty"`
 
 	// Border AWS CloudFormation Property
 	// Required: false
@@ -33,22 +33,22 @@ type Dashboard_TableCellStyle[T any] struct {
 	// HorizontalTextAlignment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablecellstyle.html#cfn-quicksight-dashboard-tablecellstyle-horizontaltextalignment
-	HorizontalTextAlignment *string `json:"HorizontalTextAlignment,omitempty"`
+	HorizontalTextAlignment *T `json:"HorizontalTextAlignment,omitempty"`
 
 	// TextWrap AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablecellstyle.html#cfn-quicksight-dashboard-tablecellstyle-textwrap
-	TextWrap *string `json:"TextWrap,omitempty"`
+	TextWrap *T `json:"TextWrap,omitempty"`
 
 	// VerticalTextAlignment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablecellstyle.html#cfn-quicksight-dashboard-tablecellstyle-verticaltextalignment
-	VerticalTextAlignment *string `json:"VerticalTextAlignment,omitempty"`
+	VerticalTextAlignment *T `json:"VerticalTextAlignment,omitempty"`
 
 	// Visibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablecellstyle.html#cfn-quicksight-dashboard-tablecellstyle-visibility
-	Visibility *string `json:"Visibility,omitempty"`
+	Visibility *T `json:"Visibility,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

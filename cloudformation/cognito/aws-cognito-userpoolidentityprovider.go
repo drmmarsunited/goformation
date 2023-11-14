@@ -21,7 +21,7 @@ type UserPoolIdentityProvider[T any] struct {
 	// IdpIdentifiers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html#cfn-cognito-userpoolidentityprovider-idpidentifiers
-	IdpIdentifiers []string `json:"IdpIdentifiers,omitempty"`
+	IdpIdentifiers []T `json:"IdpIdentifiers,omitempty"`
 
 	// ProviderDetails AWS CloudFormation Property
 	// Required: false
@@ -31,17 +31,17 @@ type UserPoolIdentityProvider[T any] struct {
 	// ProviderName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html#cfn-cognito-userpoolidentityprovider-providername
-	ProviderName string `json:"ProviderName"`
+	ProviderName T `json:"ProviderName"`
 
 	// ProviderType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html#cfn-cognito-userpoolidentityprovider-providertype
-	ProviderType string `json:"ProviderType"`
+	ProviderType T `json:"ProviderType"`
 
 	// UserPoolId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html#cfn-cognito-userpoolidentityprovider-userpoolid
-	UserPoolId string `json:"UserPoolId"`
+	UserPoolId T `json:"UserPoolId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

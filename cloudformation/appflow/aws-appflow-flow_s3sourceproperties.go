@@ -13,12 +13,12 @@ type Flow_S3SourceProperties[T any] struct {
 	// BucketName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3sourceproperties.html#cfn-appflow-flow-s3sourceproperties-bucketname
-	BucketName string `json:"BucketName"`
+	BucketName T `json:"BucketName"`
 
 	// BucketPrefix AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3sourceproperties.html#cfn-appflow-flow-s3sourceproperties-bucketprefix
-	BucketPrefix string `json:"BucketPrefix"`
+	BucketPrefix T `json:"BucketPrefix"`
 
 	// S3InputFormatConfig AWS CloudFormation Property
 	// Required: false

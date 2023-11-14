@@ -13,7 +13,7 @@ type FileSystem_LustreConfiguration[T any] struct {
 	// AutoImportPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-autoimportpolicy
-	AutoImportPolicy *string `json:"AutoImportPolicy,omitempty"`
+	AutoImportPolicy *T `json:"AutoImportPolicy,omitempty"`
 
 	// AutomaticBackupRetentionDays AWS CloudFormation Property
 	// Required: false
@@ -28,32 +28,32 @@ type FileSystem_LustreConfiguration[T any] struct {
 	// DailyAutomaticBackupStartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-dailyautomaticbackupstarttime
-	DailyAutomaticBackupStartTime *string `json:"DailyAutomaticBackupStartTime,omitempty"`
+	DailyAutomaticBackupStartTime *T `json:"DailyAutomaticBackupStartTime,omitempty"`
 
 	// DataCompressionType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-datacompressiontype
-	DataCompressionType *string `json:"DataCompressionType,omitempty"`
+	DataCompressionType *T `json:"DataCompressionType,omitempty"`
 
 	// DeploymentType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-deploymenttype
-	DeploymentType *string `json:"DeploymentType,omitempty"`
+	DeploymentType *T `json:"DeploymentType,omitempty"`
 
 	// DriveCacheType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-drivecachetype
-	DriveCacheType *string `json:"DriveCacheType,omitempty"`
+	DriveCacheType *T `json:"DriveCacheType,omitempty"`
 
 	// ExportPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-exportpath
-	ExportPath *string `json:"ExportPath,omitempty"`
+	ExportPath *T `json:"ExportPath,omitempty"`
 
 	// ImportPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-importpath
-	ImportPath *string `json:"ImportPath,omitempty"`
+	ImportPath *T `json:"ImportPath,omitempty"`
 
 	// ImportedFileChunkSize AWS CloudFormation Property
 	// Required: false
@@ -68,7 +68,7 @@ type FileSystem_LustreConfiguration[T any] struct {
 	// WeeklyMaintenanceStartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-weeklymaintenancestarttime
-	WeeklyMaintenanceStartTime *string `json:"WeeklyMaintenanceStartTime,omitempty"`
+	WeeklyMaintenanceStartTime *T `json:"WeeklyMaintenanceStartTime,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

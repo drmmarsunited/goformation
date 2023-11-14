@@ -18,7 +18,7 @@ type Project_DeviceTemplate[T any] struct {
 	// DeviceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-devicetemplate.html#cfn-iot1click-project-devicetemplate-devicetype
-	DeviceType *string `json:"DeviceType,omitempty"`
+	DeviceType *T `json:"DeviceType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,17 +13,17 @@ type DataSource_ConfluenceSpaceToIndexFieldMapping[T any] struct {
 	// DataSourceFieldName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespacetoindexfieldmapping.html#cfn-kendra-datasource-confluencespacetoindexfieldmapping-datasourcefieldname
-	DataSourceFieldName string `json:"DataSourceFieldName"`
+	DataSourceFieldName T `json:"DataSourceFieldName"`
 
 	// DateFieldFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespacetoindexfieldmapping.html#cfn-kendra-datasource-confluencespacetoindexfieldmapping-datefieldformat
-	DateFieldFormat *string `json:"DateFieldFormat,omitempty"`
+	DateFieldFormat *T `json:"DateFieldFormat,omitempty"`
 
 	// IndexFieldName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespacetoindexfieldmapping.html#cfn-kendra-datasource-confluencespacetoindexfieldmapping-indexfieldname
-	IndexFieldName string `json:"IndexFieldName"`
+	IndexFieldName T `json:"IndexFieldName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

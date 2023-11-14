@@ -13,17 +13,17 @@ type Template_PrivateKeyAttributesV3[T any] struct {
 	// Algorithm AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-template-privatekeyattributesv3.html#cfn-pcaconnectorad-template-privatekeyattributesv3-algorithm
-	Algorithm string `json:"Algorithm"`
+	Algorithm T `json:"Algorithm"`
 
 	// CryptoProviders AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-template-privatekeyattributesv3.html#cfn-pcaconnectorad-template-privatekeyattributesv3-cryptoproviders
-	CryptoProviders []string `json:"CryptoProviders,omitempty"`
+	CryptoProviders []T `json:"CryptoProviders,omitempty"`
 
 	// KeySpec AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-template-privatekeyattributesv3.html#cfn-pcaconnectorad-template-privatekeyattributesv3-keyspec
-	KeySpec string `json:"KeySpec"`
+	KeySpec T `json:"KeySpec"`
 
 	// KeyUsageProperty AWS CloudFormation Property
 	// Required: true

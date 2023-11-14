@@ -13,7 +13,7 @@ type DataSet_S3Source[T any] struct {
 	// DataSourceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-s3source.html#cfn-quicksight-dataset-s3source-datasourcearn
-	DataSourceArn string `json:"DataSourceArn"`
+	DataSourceArn T `json:"DataSourceArn"`
 
 	// InputColumns AWS CloudFormation Property
 	// Required: true

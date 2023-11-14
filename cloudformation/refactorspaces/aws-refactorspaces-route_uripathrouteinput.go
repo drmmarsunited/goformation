@@ -13,7 +13,7 @@ type Route_UriPathRouteInput[T any] struct {
 	// ActivationState AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-route-uripathrouteinput.html#cfn-refactorspaces-route-uripathrouteinput-activationstate
-	ActivationState string `json:"ActivationState"`
+	ActivationState T `json:"ActivationState"`
 
 	// AppendSourcePath AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Route_UriPathRouteInput[T any] struct {
 	// Methods AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-route-uripathrouteinput.html#cfn-refactorspaces-route-uripathrouteinput-methods
-	Methods []string `json:"Methods,omitempty"`
+	Methods []T `json:"Methods,omitempty"`
 
 	// SourcePath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-route-uripathrouteinput.html#cfn-refactorspaces-route-uripathrouteinput-sourcepath
-	SourcePath *string `json:"SourcePath,omitempty"`
+	SourcePath *T `json:"SourcePath,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

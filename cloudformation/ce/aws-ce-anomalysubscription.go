@@ -16,12 +16,12 @@ type AnomalySubscription[T any] struct {
 	// Frequency AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-frequency
-	Frequency string `json:"Frequency"`
+	Frequency T `json:"Frequency"`
 
 	// MonitorArnList AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-monitorarnlist
-	MonitorArnList []string `json:"MonitorArnList"`
+	MonitorArnList []T `json:"MonitorArnList"`
 
 	// ResourceTags AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type AnomalySubscription[T any] struct {
 	// SubscriptionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-subscriptionname
-	SubscriptionName string `json:"SubscriptionName"`
+	SubscriptionName T `json:"SubscriptionName"`
 
 	// Threshold AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type AnomalySubscription[T any] struct {
 	// ThresholdExpression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-thresholdexpression
-	ThresholdExpression *string `json:"ThresholdExpression,omitempty"`
+	ThresholdExpression *T `json:"ThresholdExpression,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

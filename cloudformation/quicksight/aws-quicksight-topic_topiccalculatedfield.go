@@ -13,27 +13,27 @@ type Topic_TopicCalculatedField[T any] struct {
 	// Aggregation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccalculatedfield.html#cfn-quicksight-topic-topiccalculatedfield-aggregation
-	Aggregation *string `json:"Aggregation,omitempty"`
+	Aggregation *T `json:"Aggregation,omitempty"`
 
 	// AllowedAggregations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccalculatedfield.html#cfn-quicksight-topic-topiccalculatedfield-allowedaggregations
-	AllowedAggregations []string `json:"AllowedAggregations,omitempty"`
+	AllowedAggregations []T `json:"AllowedAggregations,omitempty"`
 
 	// CalculatedFieldDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccalculatedfield.html#cfn-quicksight-topic-topiccalculatedfield-calculatedfielddescription
-	CalculatedFieldDescription *string `json:"CalculatedFieldDescription,omitempty"`
+	CalculatedFieldDescription *T `json:"CalculatedFieldDescription,omitempty"`
 
 	// CalculatedFieldName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccalculatedfield.html#cfn-quicksight-topic-topiccalculatedfield-calculatedfieldname
-	CalculatedFieldName string `json:"CalculatedFieldName"`
+	CalculatedFieldName T `json:"CalculatedFieldName"`
 
 	// CalculatedFieldSynonyms AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccalculatedfield.html#cfn-quicksight-topic-topiccalculatedfield-calculatedfieldsynonyms
-	CalculatedFieldSynonyms []string `json:"CalculatedFieldSynonyms,omitempty"`
+	CalculatedFieldSynonyms []T `json:"CalculatedFieldSynonyms,omitempty"`
 
 	// CellValueSynonyms AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Topic_TopicCalculatedField[T any] struct {
 	// ColumnDataRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccalculatedfield.html#cfn-quicksight-topic-topiccalculatedfield-columndatarole
-	ColumnDataRole *string `json:"ColumnDataRole,omitempty"`
+	ColumnDataRole *T `json:"ColumnDataRole,omitempty"`
 
 	// ComparativeOrder AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type Topic_TopicCalculatedField[T any] struct {
 	// Expression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccalculatedfield.html#cfn-quicksight-topic-topiccalculatedfield-expression
-	Expression string `json:"Expression"`
+	Expression T `json:"Expression"`
 
 	// IsIncludedInTopic AWS CloudFormation Property
 	// Required: false
@@ -70,10 +70,15 @@ type Topic_TopicCalculatedField[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccalculatedfield.html#cfn-quicksight-topic-topiccalculatedfield-neveraggregateinfilter
 	NeverAggregateInFilter *T `json:"NeverAggregateInFilter,omitempty"`
 
+	// NonAdditive AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccalculatedfield.html#cfn-quicksight-topic-topiccalculatedfield-nonadditive
+	NonAdditive *T `json:"NonAdditive,omitempty"`
+
 	// NotAllowedAggregations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccalculatedfield.html#cfn-quicksight-topic-topiccalculatedfield-notallowedaggregations
-	NotAllowedAggregations []string `json:"NotAllowedAggregations,omitempty"`
+	NotAllowedAggregations []T `json:"NotAllowedAggregations,omitempty"`
 
 	// SemanticType AWS CloudFormation Property
 	// Required: false
@@ -83,7 +88,7 @@ type Topic_TopicCalculatedField[T any] struct {
 	// TimeGranularity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccalculatedfield.html#cfn-quicksight-topic-topiccalculatedfield-timegranularity
-	TimeGranularity *string `json:"TimeGranularity,omitempty"`
+	TimeGranularity *T `json:"TimeGranularity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

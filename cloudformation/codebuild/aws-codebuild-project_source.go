@@ -18,7 +18,7 @@ type Project_Source[T any] struct {
 	// BuildSpec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-buildspec
-	BuildSpec *string `json:"BuildSpec,omitempty"`
+	BuildSpec *T `json:"BuildSpec,omitempty"`
 
 	// BuildStatusConfig AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Project_Source[T any] struct {
 	// Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-location
-	Location *string `json:"Location,omitempty"`
+	Location *T `json:"Location,omitempty"`
 
 	// ReportBuildStatus AWS CloudFormation Property
 	// Required: false
@@ -53,12 +53,12 @@ type Project_Source[T any] struct {
 	// SourceIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-sourceidentifier
-	SourceIdentifier *string `json:"SourceIdentifier,omitempty"`
+	SourceIdentifier *T `json:"SourceIdentifier,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

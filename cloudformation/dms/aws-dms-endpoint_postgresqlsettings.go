@@ -13,12 +13,12 @@ type Endpoint_PostgreSqlSettings[T any] struct {
 	// AfterConnectScript AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-afterconnectscript
-	AfterConnectScript *string `json:"AfterConnectScript,omitempty"`
+	AfterConnectScript *T `json:"AfterConnectScript,omitempty"`
 
 	// BabelfishDatabaseName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-babelfishdatabasename
-	BabelfishDatabaseName *string `json:"BabelfishDatabaseName,omitempty"`
+	BabelfishDatabaseName *T `json:"BabelfishDatabaseName,omitempty"`
 
 	// CaptureDdls AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Endpoint_PostgreSqlSettings[T any] struct {
 	// DatabaseMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-databasemode
-	DatabaseMode *string `json:"DatabaseMode,omitempty"`
+	DatabaseMode *T `json:"DatabaseMode,omitempty"`
 
 	// DdlArtifactsSchema AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-ddlartifactsschema
-	DdlArtifactsSchema *string `json:"DdlArtifactsSchema,omitempty"`
+	DdlArtifactsSchema *T `json:"DdlArtifactsSchema,omitempty"`
 
 	// ExecuteTimeout AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type Endpoint_PostgreSqlSettings[T any] struct {
 	// HeartbeatSchema AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-heartbeatschema
-	HeartbeatSchema *string `json:"HeartbeatSchema,omitempty"`
+	HeartbeatSchema *T `json:"HeartbeatSchema,omitempty"`
 
 	// MapBooleanAsBoolean AWS CloudFormation Property
 	// Required: false
@@ -73,22 +73,22 @@ type Endpoint_PostgreSqlSettings[T any] struct {
 	// PluginName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-pluginname
-	PluginName *string `json:"PluginName,omitempty"`
+	PluginName *T `json:"PluginName,omitempty"`
 
 	// SecretsManagerAccessRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-secretsmanageraccessrolearn
-	SecretsManagerAccessRoleArn *string `json:"SecretsManagerAccessRoleArn,omitempty"`
+	SecretsManagerAccessRoleArn *T `json:"SecretsManagerAccessRoleArn,omitempty"`
 
 	// SecretsManagerSecretId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-secretsmanagersecretid
-	SecretsManagerSecretId *string `json:"SecretsManagerSecretId,omitempty"`
+	SecretsManagerSecretId *T `json:"SecretsManagerSecretId,omitempty"`
 
 	// SlotName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-slotname
-	SlotName *string `json:"SlotName,omitempty"`
+	SlotName *T `json:"SlotName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

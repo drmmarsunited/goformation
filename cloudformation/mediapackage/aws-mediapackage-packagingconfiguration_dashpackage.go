@@ -33,7 +33,7 @@ type PackagingConfiguration_DashPackage[T any] struct {
 	// PeriodTriggers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashpackage.html#cfn-mediapackage-packagingconfiguration-dashpackage-periodtriggers
-	PeriodTriggers []string `json:"PeriodTriggers,omitempty"`
+	PeriodTriggers []T `json:"PeriodTriggers,omitempty"`
 
 	// SegmentDurationSeconds AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type PackagingConfiguration_DashPackage[T any] struct {
 	// SegmentTemplateFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashpackage.html#cfn-mediapackage-packagingconfiguration-dashpackage-segmenttemplateformat
-	SegmentTemplateFormat *string `json:"SegmentTemplateFormat,omitempty"`
+	SegmentTemplateFormat *T `json:"SegmentTemplateFormat,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -16,12 +16,12 @@ type DBProxyEndpoint[T any] struct {
 	// DBProxyEndpointName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxyendpoint.html#cfn-rds-dbproxyendpoint-dbproxyendpointname
-	DBProxyEndpointName string `json:"DBProxyEndpointName"`
+	DBProxyEndpointName T `json:"DBProxyEndpointName"`
 
 	// DBProxyName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxyendpoint.html#cfn-rds-dbproxyendpoint-dbproxyname
-	DBProxyName string `json:"DBProxyName"`
+	DBProxyName T `json:"DBProxyName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -31,17 +31,17 @@ type DBProxyEndpoint[T any] struct {
 	// TargetRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxyendpoint.html#cfn-rds-dbproxyendpoint-targetrole
-	TargetRole *string `json:"TargetRole,omitempty"`
+	TargetRole *T `json:"TargetRole,omitempty"`
 
 	// VpcSecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxyendpoint.html#cfn-rds-dbproxyendpoint-vpcsecuritygroupids
-	VpcSecurityGroupIds []string `json:"VpcSecurityGroupIds,omitempty"`
+	VpcSecurityGroupIds []T `json:"VpcSecurityGroupIds,omitempty"`
 
 	// VpcSubnetIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxyendpoint.html#cfn-rds-dbproxyendpoint-vpcsubnetids
-	VpcSubnetIds []string `json:"VpcSubnetIds"`
+	VpcSubnetIds []T `json:"VpcSubnetIds"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

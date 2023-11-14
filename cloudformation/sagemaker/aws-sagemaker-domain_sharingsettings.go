@@ -13,17 +13,17 @@ type Domain_SharingSettings[T any] struct {
 	// NotebookOutputOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-sharingsettings.html#cfn-sagemaker-domain-sharingsettings-notebookoutputoption
-	NotebookOutputOption *string `json:"NotebookOutputOption,omitempty"`
+	NotebookOutputOption *T `json:"NotebookOutputOption,omitempty"`
 
 	// S3KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-sharingsettings.html#cfn-sagemaker-domain-sharingsettings-s3kmskeyid
-	S3KmsKeyId *string `json:"S3KmsKeyId,omitempty"`
+	S3KmsKeyId *T `json:"S3KmsKeyId,omitempty"`
 
 	// S3OutputPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-sharingsettings.html#cfn-sagemaker-domain-sharingsettings-s3outputpath
-	S3OutputPath *string `json:"S3OutputPath,omitempty"`
+	S3OutputPath *T `json:"S3OutputPath,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

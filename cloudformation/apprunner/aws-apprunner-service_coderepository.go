@@ -18,12 +18,17 @@ type Service_CodeRepository[T any] struct {
 	// RepositoryUrl AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-coderepository.html#cfn-apprunner-service-coderepository-repositoryurl
-	RepositoryUrl string `json:"RepositoryUrl"`
+	RepositoryUrl T `json:"RepositoryUrl"`
 
 	// SourceCodeVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-coderepository.html#cfn-apprunner-service-coderepository-sourcecodeversion
 	SourceCodeVersion *Service_SourceCodeVersion[any] `json:"SourceCodeVersion"`
+
+	// SourceDirectory AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-coderepository.html#cfn-apprunner-service-coderepository-sourcedirectory
+	SourceDirectory *T `json:"SourceDirectory,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

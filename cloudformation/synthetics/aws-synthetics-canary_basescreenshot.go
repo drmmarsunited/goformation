@@ -13,12 +13,12 @@ type Canary_BaseScreenshot[T any] struct {
 	// IgnoreCoordinates AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-basescreenshot.html#cfn-synthetics-canary-basescreenshot-ignorecoordinates
-	IgnoreCoordinates []string `json:"IgnoreCoordinates,omitempty"`
+	IgnoreCoordinates []T `json:"IgnoreCoordinates,omitempty"`
 
 	// ScreenshotName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-basescreenshot.html#cfn-synthetics-canary-basescreenshot-screenshotname
-	ScreenshotName string `json:"ScreenshotName"`
+	ScreenshotName T `json:"ScreenshotName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

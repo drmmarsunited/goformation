@@ -21,7 +21,7 @@ type ResourcePolicy[T any] struct {
 	// ResourceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-resourcepolicy.html#cfn-lex-resourcepolicy-resourcearn
-	ResourceArn string `json:"ResourceArn"`
+	ResourceArn T `json:"ResourceArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

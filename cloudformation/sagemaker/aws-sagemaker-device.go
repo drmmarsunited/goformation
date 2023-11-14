@@ -22,7 +22,7 @@ type Device[T any] struct {
 	// DeviceFleetName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-device.html#cfn-sagemaker-device-devicefleetname
-	DeviceFleetName string `json:"DeviceFleetName"`
+	DeviceFleetName T `json:"DeviceFleetName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

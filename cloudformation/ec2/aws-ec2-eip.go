@@ -17,22 +17,22 @@ type EIP[T any] struct {
 	// Domain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-domain
-	Domain *string `json:"Domain,omitempty"`
+	Domain *T `json:"Domain,omitempty"`
 
 	// InstanceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-instanceid
-	InstanceId *string `json:"InstanceId,omitempty"`
+	InstanceId *T `json:"InstanceId,omitempty"`
 
 	// NetworkBorderGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-networkbordergroup
-	NetworkBorderGroup *string `json:"NetworkBorderGroup,omitempty"`
+	NetworkBorderGroup *T `json:"NetworkBorderGroup,omitempty"`
 
 	// PublicIpv4Pool AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-publicipv4pool
-	PublicIpv4Pool *string `json:"PublicIpv4Pool,omitempty"`
+	PublicIpv4Pool *T `json:"PublicIpv4Pool,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type EIP[T any] struct {
 	// TransferAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-transferaddress
-	TransferAddress *string `json:"TransferAddress,omitempty"`
+	TransferAddress *T `json:"TransferAddress,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

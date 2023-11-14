@@ -13,22 +13,27 @@ type DataQualityJobDefinition_EndpointInput[T any] struct {
 	// EndpointName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-endpointinput.html#cfn-sagemaker-dataqualityjobdefinition-endpointinput-endpointname
-	EndpointName string `json:"EndpointName"`
+	EndpointName T `json:"EndpointName"`
+
+	// ExcludeFeaturesAttribute AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-endpointinput.html#cfn-sagemaker-dataqualityjobdefinition-endpointinput-excludefeaturesattribute
+	ExcludeFeaturesAttribute *T `json:"ExcludeFeaturesAttribute,omitempty"`
 
 	// LocalPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-endpointinput.html#cfn-sagemaker-dataqualityjobdefinition-endpointinput-localpath
-	LocalPath string `json:"LocalPath"`
+	LocalPath T `json:"LocalPath"`
 
 	// S3DataDistributionType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-endpointinput.html#cfn-sagemaker-dataqualityjobdefinition-endpointinput-s3datadistributiontype
-	S3DataDistributionType *string `json:"S3DataDistributionType,omitempty"`
+	S3DataDistributionType *T `json:"S3DataDistributionType,omitempty"`
 
 	// S3InputMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-endpointinput.html#cfn-sagemaker-dataqualityjobdefinition-endpointinput-s3inputmode
-	S3InputMode *string `json:"S3InputMode,omitempty"`
+	S3InputMode *T `json:"S3InputMode,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

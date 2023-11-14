@@ -13,7 +13,7 @@ type InstanceStorageConfig_KinesisFirehoseConfig[T any] struct {
 	// FirehoseArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instancestorageconfig-kinesisfirehoseconfig.html#cfn-connect-instancestorageconfig-kinesisfirehoseconfig-firehosearn
-	FirehoseArn string `json:"FirehoseArn"`
+	FirehoseArn T `json:"FirehoseArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

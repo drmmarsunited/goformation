@@ -23,7 +23,7 @@ type StateMachine_LoggingConfiguration[T any] struct {
 	// Level AWS CloudFormation Property
 	// Required: true
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-loggingconfiguration.html
-	Level string `json:"Level"`
+	Level T `json:"Level"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,87 +13,87 @@ type Flow_ConnectorOperator[T any] struct {
 	// Amplitude AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-amplitude
-	Amplitude *string `json:"Amplitude,omitempty"`
+	Amplitude *T `json:"Amplitude,omitempty"`
 
 	// CustomConnector AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-customconnector
-	CustomConnector *string `json:"CustomConnector,omitempty"`
+	CustomConnector *T `json:"CustomConnector,omitempty"`
 
 	// Datadog AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-datadog
-	Datadog *string `json:"Datadog,omitempty"`
+	Datadog *T `json:"Datadog,omitempty"`
 
 	// Dynatrace AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-dynatrace
-	Dynatrace *string `json:"Dynatrace,omitempty"`
+	Dynatrace *T `json:"Dynatrace,omitempty"`
 
 	// GoogleAnalytics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-googleanalytics
-	GoogleAnalytics *string `json:"GoogleAnalytics,omitempty"`
+	GoogleAnalytics *T `json:"GoogleAnalytics,omitempty"`
 
 	// InforNexus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-infornexus
-	InforNexus *string `json:"InforNexus,omitempty"`
+	InforNexus *T `json:"InforNexus,omitempty"`
 
 	// Marketo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-marketo
-	Marketo *string `json:"Marketo,omitempty"`
+	Marketo *T `json:"Marketo,omitempty"`
 
 	// Pardot AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-pardot
-	Pardot *string `json:"Pardot,omitempty"`
+	Pardot *T `json:"Pardot,omitempty"`
 
 	// S3 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-s3
-	S3 *string `json:"S3,omitempty"`
+	S3 *T `json:"S3,omitempty"`
 
 	// SAPOData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-sapodata
-	SAPOData *string `json:"SAPOData,omitempty"`
+	SAPOData *T `json:"SAPOData,omitempty"`
 
 	// Salesforce AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-salesforce
-	Salesforce *string `json:"Salesforce,omitempty"`
+	Salesforce *T `json:"Salesforce,omitempty"`
 
 	// ServiceNow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-servicenow
-	ServiceNow *string `json:"ServiceNow,omitempty"`
+	ServiceNow *T `json:"ServiceNow,omitempty"`
 
 	// Singular AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-singular
-	Singular *string `json:"Singular,omitempty"`
+	Singular *T `json:"Singular,omitempty"`
 
 	// Slack AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-slack
-	Slack *string `json:"Slack,omitempty"`
+	Slack *T `json:"Slack,omitempty"`
 
 	// Trendmicro AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-trendmicro
-	Trendmicro *string `json:"Trendmicro,omitempty"`
+	Trendmicro *T `json:"Trendmicro,omitempty"`
 
 	// Veeva AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-veeva
-	Veeva *string `json:"Veeva,omitempty"`
+	Veeva *T `json:"Veeva,omitempty"`
 
 	// Zendesk AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-zendesk
-	Zendesk *string `json:"Zendesk,omitempty"`
+	Zendesk *T `json:"Zendesk,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

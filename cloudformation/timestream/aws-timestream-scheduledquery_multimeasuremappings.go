@@ -18,7 +18,7 @@ type ScheduledQuery_MultiMeasureMappings[T any] struct {
 	// TargetMultiMeasureName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-multimeasuremappings.html#cfn-timestream-scheduledquery-multimeasuremappings-targetmultimeasurename
-	TargetMultiMeasureName *string `json:"TargetMultiMeasureName,omitempty"`
+	TargetMultiMeasureName *T `json:"TargetMultiMeasureName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

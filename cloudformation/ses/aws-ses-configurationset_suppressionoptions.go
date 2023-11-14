@@ -13,7 +13,7 @@ type ConfigurationSet_SuppressionOptions[T any] struct {
 	// SuppressedReasons AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-suppressionoptions.html#cfn-ses-configurationset-suppressionoptions-suppressedreasons
-	SuppressedReasons []string `json:"SuppressedReasons,omitempty"`
+	SuppressedReasons []T `json:"SuppressedReasons,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

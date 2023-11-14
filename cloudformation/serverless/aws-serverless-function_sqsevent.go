@@ -23,7 +23,7 @@ type Function_SQSEvent[T any] struct {
 	// Queue AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#sqs
-	Queue string `json:"Queue"`
+	Queue T `json:"Queue"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,12 +13,12 @@ type Keyspace_ReplicationSpecification[T any] struct {
 	// RegionList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-keyspace-replicationspecification.html#cfn-cassandra-keyspace-replicationspecification-regionlist
-	RegionList []string `json:"RegionList,omitempty"`
+	RegionList []T `json:"RegionList,omitempty"`
 
 	// ReplicationStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-keyspace-replicationspecification.html#cfn-cassandra-keyspace-replicationspecification-replicationstrategy
-	ReplicationStrategy *string `json:"ReplicationStrategy,omitempty"`
+	ReplicationStrategy *T `json:"ReplicationStrategy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

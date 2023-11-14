@@ -22,7 +22,7 @@ type Domain[T any] struct {
 	// AdvancedOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-advancedoptions
-	AdvancedOptions map[string]string `json:"AdvancedOptions,omitempty"`
+	AdvancedOptions map[string]T `json:"AdvancedOptions,omitempty"`
 
 	// AdvancedSecurityOptions AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type Domain[T any] struct {
 	// DomainName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-domainname
-	DomainName *string `json:"DomainName,omitempty"`
+	DomainName *T `json:"DomainName,omitempty"`
 
 	// EBSOptions AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type Domain[T any] struct {
 	// ElasticsearchVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-elasticsearchversion
-	ElasticsearchVersion *string `json:"ElasticsearchVersion,omitempty"`
+	ElasticsearchVersion *T `json:"ElasticsearchVersion,omitempty"`
 
 	// EncryptionAtRestOptions AWS CloudFormation Property
 	// Required: false

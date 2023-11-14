@@ -18,7 +18,7 @@ type DetectorModel_Sqs[T any] struct {
 	// QueueUrl AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sqs.html#cfn-iotevents-detectormodel-sqs-queueurl
-	QueueUrl string `json:"QueueUrl"`
+	QueueUrl T `json:"QueueUrl"`
 
 	// UseBase64 AWS CloudFormation Property
 	// Required: false

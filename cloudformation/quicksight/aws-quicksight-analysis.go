@@ -17,12 +17,12 @@ type Analysis[T any] struct {
 	// AnalysisId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-analysisid
-	AnalysisId string `json:"AnalysisId"`
+	AnalysisId T `json:"AnalysisId"`
 
 	// AwsAccountId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-awsaccountid
-	AwsAccountId string `json:"AwsAccountId"`
+	AwsAccountId T `json:"AwsAccountId"`
 
 	// Definition AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type Analysis[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type Analysis[T any] struct {
 	// Status AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-status
-	Status *string `json:"Status,omitempty"`
+	Status *T `json:"Status,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,12 @@ type Analysis[T any] struct {
 	// ThemeArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-themearn
-	ThemeArn *string `json:"ThemeArn,omitempty"`
+	ThemeArn *T `json:"ThemeArn,omitempty"`
+
+	// ValidationStrategy AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-validationstrategy
+	ValidationStrategy *Analysis_ValidationStrategy[any] `json:"ValidationStrategy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

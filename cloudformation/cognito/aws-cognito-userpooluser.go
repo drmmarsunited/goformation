@@ -16,12 +16,12 @@ type UserPoolUser[T any] struct {
 	// ClientMetadata AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-clientmetadata
-	ClientMetadata interface{} `json:"ClientMetadata,omitempty"`
+	ClientMetadata map[string]T `json:"ClientMetadata,omitempty"`
 
 	// DesiredDeliveryMediums AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-desireddeliverymediums
-	DesiredDeliveryMediums []string `json:"DesiredDeliveryMediums,omitempty"`
+	DesiredDeliveryMediums []T `json:"DesiredDeliveryMediums,omitempty"`
 
 	// ForceAliasCreation AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type UserPoolUser[T any] struct {
 	// MessageAction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-messageaction
-	MessageAction *string `json:"MessageAction,omitempty"`
+	MessageAction *T `json:"MessageAction,omitempty"`
 
 	// UserAttributes AWS CloudFormation Property
 	// Required: false
@@ -41,12 +41,12 @@ type UserPoolUser[T any] struct {
 	// UserPoolId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-userpoolid
-	UserPoolId string `json:"UserPoolId"`
+	UserPoolId T `json:"UserPoolId"`
 
 	// Username AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-username
-	Username *string `json:"Username,omitempty"`
+	Username *T `json:"Username,omitempty"`
 
 	// ValidationData AWS CloudFormation Property
 	// Required: false

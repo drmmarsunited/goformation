@@ -16,42 +16,42 @@ type Permission[T any] struct {
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-action
-	Action string `json:"Action"`
+	Action T `json:"Action"`
 
 	// EventSourceToken AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-eventsourcetoken
-	EventSourceToken *string `json:"EventSourceToken,omitempty"`
+	EventSourceToken *T `json:"EventSourceToken,omitempty"`
 
 	// FunctionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-functionname
-	FunctionName string `json:"FunctionName"`
+	FunctionName T `json:"FunctionName"`
 
 	// FunctionUrlAuthType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-functionurlauthtype
-	FunctionUrlAuthType *string `json:"FunctionUrlAuthType,omitempty"`
+	FunctionUrlAuthType *T `json:"FunctionUrlAuthType,omitempty"`
 
 	// Principal AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-principal
-	Principal string `json:"Principal"`
+	Principal T `json:"Principal"`
 
 	// PrincipalOrgID AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-principalorgid
-	PrincipalOrgID *string `json:"PrincipalOrgID,omitempty"`
+	PrincipalOrgID *T `json:"PrincipalOrgID,omitempty"`
 
 	// SourceAccount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourceaccount
-	SourceAccount *string `json:"SourceAccount,omitempty"`
+	SourceAccount *T `json:"SourceAccount,omitempty"`
 
 	// SourceArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourcearn
-	SourceArn *string `json:"SourceArn,omitempty"`
+	SourceArn *T `json:"SourceArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

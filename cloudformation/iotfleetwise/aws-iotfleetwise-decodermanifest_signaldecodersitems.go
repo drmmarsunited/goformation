@@ -18,12 +18,12 @@ type DecoderManifest_SignalDecodersItems[T any] struct {
 	// FullyQualifiedName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html#cfn-iotfleetwise-decodermanifest-signaldecodersitems-fullyqualifiedname
-	FullyQualifiedName string `json:"FullyQualifiedName"`
+	FullyQualifiedName T `json:"FullyQualifiedName"`
 
 	// InterfaceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html#cfn-iotfleetwise-decodermanifest-signaldecodersitems-interfaceid
-	InterfaceId string `json:"InterfaceId"`
+	InterfaceId T `json:"InterfaceId"`
 
 	// ObdSignal AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type DecoderManifest_SignalDecodersItems[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html#cfn-iotfleetwise-decodermanifest-signaldecodersitems-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type AccessPoint_TransformationConfiguration[T any] struct {
 	// Actions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-transformationconfiguration.html#cfn-s3objectlambda-accesspoint-transformationconfiguration-actions
-	Actions []string `json:"Actions"`
+	Actions []T `json:"Actions"`
 
 	// ContentTransformation AWS CloudFormation Property
 	// Required: true

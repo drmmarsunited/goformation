@@ -13,22 +13,22 @@ type Campaign_CampaignEmailMessage[T any] struct {
 	// Body AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html#cfn-pinpoint-campaign-campaignemailmessage-body
-	Body *string `json:"Body,omitempty"`
+	Body *T `json:"Body,omitempty"`
 
 	// FromAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html#cfn-pinpoint-campaign-campaignemailmessage-fromaddress
-	FromAddress *string `json:"FromAddress,omitempty"`
+	FromAddress *T `json:"FromAddress,omitempty"`
 
 	// HtmlBody AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html#cfn-pinpoint-campaign-campaignemailmessage-htmlbody
-	HtmlBody *string `json:"HtmlBody,omitempty"`
+	HtmlBody *T `json:"HtmlBody,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html#cfn-pinpoint-campaign-campaignemailmessage-title
-	Title *string `json:"Title,omitempty"`
+	Title *T `json:"Title,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

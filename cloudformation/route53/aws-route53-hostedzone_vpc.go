@@ -13,12 +13,12 @@ type HostedZone_VPC[T any] struct {
 	// VPCId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-vpc.html#cfn-route53-hostedzone-vpc-vpcid
-	VPCId string `json:"VPCId"`
+	VPCId T `json:"VPCId"`
 
 	// VPCRegion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-vpc.html#cfn-route53-hostedzone-vpc-vpcregion
-	VPCRegion string `json:"VPCRegion"`
+	VPCRegion T `json:"VPCRegion"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -17,7 +17,7 @@ type ProvisioningTemplate[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-provisioningtemplate.html#cfn-iot-provisioningtemplate-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type ProvisioningTemplate[T any] struct {
 	// ProvisioningRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-provisioningtemplate.html#cfn-iot-provisioningtemplate-provisioningrolearn
-	ProvisioningRoleArn string `json:"ProvisioningRoleArn"`
+	ProvisioningRoleArn T `json:"ProvisioningRoleArn"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -42,17 +42,17 @@ type ProvisioningTemplate[T any] struct {
 	// TemplateBody AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-provisioningtemplate.html#cfn-iot-provisioningtemplate-templatebody
-	TemplateBody string `json:"TemplateBody"`
+	TemplateBody T `json:"TemplateBody"`
 
 	// TemplateName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-provisioningtemplate.html#cfn-iot-provisioningtemplate-templatename
-	TemplateName *string `json:"TemplateName,omitempty"`
+	TemplateName *T `json:"TemplateName,omitempty"`
 
 	// TemplateType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-provisioningtemplate.html#cfn-iot-provisioningtemplate-templatetype
-	TemplateType *string `json:"TemplateType,omitempty"`
+	TemplateType *T `json:"TemplateType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

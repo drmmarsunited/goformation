@@ -13,7 +13,7 @@ type Dashboard_DateAxisOptions[T any] struct {
 	// MissingDateVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dateaxisoptions.html#cfn-quicksight-dashboard-dateaxisoptions-missingdatevisibility
-	MissingDateVisibility *string `json:"MissingDateVisibility,omitempty"`
+	MissingDateVisibility *T `json:"MissingDateVisibility,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type MetricStream_MetricStreamStatisticsConfiguration[T any] struct {
 	// AdditionalStatistics AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-metricstream-metricstreamstatisticsconfiguration.html#cfn-cloudwatch-metricstream-metricstreamstatisticsconfiguration-additionalstatistics
-	AdditionalStatistics []string `json:"AdditionalStatistics"`
+	AdditionalStatistics []T `json:"AdditionalStatistics"`
 
 	// IncludeMetrics AWS CloudFormation Property
 	// Required: true

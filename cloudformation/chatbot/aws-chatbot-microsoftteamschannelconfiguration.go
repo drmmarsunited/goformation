@@ -16,42 +16,42 @@ type MicrosoftTeamsChannelConfiguration[T any] struct {
 	// ConfigurationName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-microsoftteamschannelconfiguration.html#cfn-chatbot-microsoftteamschannelconfiguration-configurationname
-	ConfigurationName string `json:"ConfigurationName"`
+	ConfigurationName T `json:"ConfigurationName"`
 
 	// GuardrailPolicies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-microsoftteamschannelconfiguration.html#cfn-chatbot-microsoftteamschannelconfiguration-guardrailpolicies
-	GuardrailPolicies []string `json:"GuardrailPolicies,omitempty"`
+	GuardrailPolicies []T `json:"GuardrailPolicies,omitempty"`
 
 	// IamRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-microsoftteamschannelconfiguration.html#cfn-chatbot-microsoftteamschannelconfiguration-iamrolearn
-	IamRoleArn string `json:"IamRoleArn"`
+	IamRoleArn T `json:"IamRoleArn"`
 
 	// LoggingLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-microsoftteamschannelconfiguration.html#cfn-chatbot-microsoftteamschannelconfiguration-logginglevel
-	LoggingLevel *string `json:"LoggingLevel,omitempty"`
+	LoggingLevel *T `json:"LoggingLevel,omitempty"`
 
 	// SnsTopicArns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-microsoftteamschannelconfiguration.html#cfn-chatbot-microsoftteamschannelconfiguration-snstopicarns
-	SnsTopicArns []string `json:"SnsTopicArns,omitempty"`
+	SnsTopicArns []T `json:"SnsTopicArns,omitempty"`
 
 	// TeamId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-microsoftteamschannelconfiguration.html#cfn-chatbot-microsoftteamschannelconfiguration-teamid
-	TeamId string `json:"TeamId"`
+	TeamId T `json:"TeamId"`
 
 	// TeamsChannelId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-microsoftteamschannelconfiguration.html#cfn-chatbot-microsoftteamschannelconfiguration-teamschannelid
-	TeamsChannelId string `json:"TeamsChannelId"`
+	TeamsChannelId T `json:"TeamsChannelId"`
 
 	// TeamsTenantId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-microsoftteamschannelconfiguration.html#cfn-chatbot-microsoftteamschannelconfiguration-teamstenantid
-	TeamsTenantId string `json:"TeamsTenantId"`
+	TeamsTenantId T `json:"TeamsTenantId"`
 
 	// UserRoleRequired AWS CloudFormation Property
 	// Required: false

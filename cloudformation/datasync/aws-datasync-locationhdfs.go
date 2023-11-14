@@ -17,12 +17,12 @@ type LocationHDFS[T any] struct {
 	// AgentArns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-agentarns
-	AgentArns []string `json:"AgentArns"`
+	AgentArns []T `json:"AgentArns"`
 
 	// AuthenticationType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-authenticationtype
-	AuthenticationType string `json:"AuthenticationType"`
+	AuthenticationType T `json:"AuthenticationType"`
 
 	// BlockSize AWS CloudFormation Property
 	// Required: false
@@ -32,22 +32,22 @@ type LocationHDFS[T any] struct {
 	// KerberosKeytab AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-kerberoskeytab
-	KerberosKeytab *string `json:"KerberosKeytab,omitempty"`
+	KerberosKeytab *T `json:"KerberosKeytab,omitempty"`
 
 	// KerberosKrb5Conf AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-kerberoskrb5conf
-	KerberosKrb5Conf *string `json:"KerberosKrb5Conf,omitempty"`
+	KerberosKrb5Conf *T `json:"KerberosKrb5Conf,omitempty"`
 
 	// KerberosPrincipal AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-kerberosprincipal
-	KerberosPrincipal *string `json:"KerberosPrincipal,omitempty"`
+	KerberosPrincipal *T `json:"KerberosPrincipal,omitempty"`
 
 	// KmsKeyProviderUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-kmskeyprovideruri
-	KmsKeyProviderUri *string `json:"KmsKeyProviderUri,omitempty"`
+	KmsKeyProviderUri *T `json:"KmsKeyProviderUri,omitempty"`
 
 	// NameNodes AWS CloudFormation Property
 	// Required: true
@@ -67,12 +67,12 @@ type LocationHDFS[T any] struct {
 	// SimpleUser AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-simpleuser
-	SimpleUser *string `json:"SimpleUser,omitempty"`
+	SimpleUser *T `json:"SimpleUser,omitempty"`
 
 	// Subdirectory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-subdirectory
-	Subdirectory *string `json:"Subdirectory,omitempty"`
+	Subdirectory *T `json:"Subdirectory,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

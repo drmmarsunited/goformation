@@ -17,12 +17,12 @@ type Task[T any] struct {
 	// CloudWatchLogGroupArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#cfn-datasync-task-cloudwatchloggrouparn
-	CloudWatchLogGroupArn *string `json:"CloudWatchLogGroupArn,omitempty"`
+	CloudWatchLogGroupArn *T `json:"CloudWatchLogGroupArn,omitempty"`
 
 	// DestinationLocationArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#cfn-datasync-task-destinationlocationarn
-	DestinationLocationArn string `json:"DestinationLocationArn"`
+	DestinationLocationArn T `json:"DestinationLocationArn"`
 
 	// Excludes AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Task[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#cfn-datasync-task-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Options AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type Task[T any] struct {
 	// SourceLocationArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#cfn-datasync-task-sourcelocationarn
-	SourceLocationArn string `json:"SourceLocationArn"`
+	SourceLocationArn T `json:"SourceLocationArn"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

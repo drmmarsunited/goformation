@@ -23,7 +23,7 @@ type Analysis_HistogramBinOptions[T any] struct {
 	// SelectedBinType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-histogrambinoptions.html#cfn-quicksight-analysis-histogrambinoptions-selectedbintype
-	SelectedBinType *string `json:"SelectedBinType,omitempty"`
+	SelectedBinType *T `json:"SelectedBinType,omitempty"`
 
 	// StartValue AWS CloudFormation Property
 	// Required: false

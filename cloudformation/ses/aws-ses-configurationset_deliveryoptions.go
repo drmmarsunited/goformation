@@ -13,12 +13,12 @@ type ConfigurationSet_DeliveryOptions[T any] struct {
 	// SendingPoolName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-deliveryoptions.html#cfn-ses-configurationset-deliveryoptions-sendingpoolname
-	SendingPoolName *string `json:"SendingPoolName,omitempty"`
+	SendingPoolName *T `json:"SendingPoolName,omitempty"`
 
 	// TlsPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-deliveryoptions.html#cfn-ses-configurationset-deliveryoptions-tlspolicy
-	TlsPolicy *string `json:"TlsPolicy,omitempty"`
+	TlsPolicy *T `json:"TlsPolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -18,7 +18,7 @@ type MonitoringSchedule_MonitoringJobDefinition[T any] struct {
 	// Environment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-environment
-	Environment map[string]string `json:"Environment,omitempty"`
+	Environment map[string]T `json:"Environment,omitempty"`
 
 	// MonitoringAppSpecification AWS CloudFormation Property
 	// Required: true
@@ -48,7 +48,7 @@ type MonitoringSchedule_MonitoringJobDefinition[T any] struct {
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// StoppingCondition AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type TemplateGroupAccessControlEntry_AccessRights[T any] struct {
 	// AutoEnroll AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-templategroupaccesscontrolentry-accessrights.html#cfn-pcaconnectorad-templategroupaccesscontrolentry-accessrights-autoenroll
-	AutoEnroll *string `json:"AutoEnroll,omitempty"`
+	AutoEnroll *T `json:"AutoEnroll,omitempty"`
 
 	// Enroll AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-templategroupaccesscontrolentry-accessrights.html#cfn-pcaconnectorad-templategroupaccesscontrolentry-accessrights-enroll
-	Enroll *string `json:"Enroll,omitempty"`
+	Enroll *T `json:"Enroll,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

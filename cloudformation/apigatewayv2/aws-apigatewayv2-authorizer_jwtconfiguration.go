@@ -13,12 +13,12 @@ type Authorizer_JWTConfiguration[T any] struct {
 	// Audience AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-authorizer-jwtconfiguration.html#cfn-apigatewayv2-authorizer-jwtconfiguration-audience
-	Audience []string `json:"Audience,omitempty"`
+	Audience []T `json:"Audience,omitempty"`
 
 	// Issuer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-authorizer-jwtconfiguration.html#cfn-apigatewayv2-authorizer-jwtconfiguration-issuer
-	Issuer *string `json:"Issuer,omitempty"`
+	Issuer *T `json:"Issuer,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

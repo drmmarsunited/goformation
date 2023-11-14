@@ -22,7 +22,7 @@ type Index[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DocumentMetadataConfigurations AWS CloudFormation Property
 	// Required: false
@@ -32,17 +32,17 @@ type Index[T any] struct {
 	// Edition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-edition
-	Edition string `json:"Edition"`
+	Edition T `json:"Edition"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// ServerSideEncryptionConfiguration AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type Index[T any] struct {
 	// UserContextPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-usercontextpolicy
-	UserContextPolicy *string `json:"UserContextPolicy,omitempty"`
+	UserContextPolicy *T `json:"UserContextPolicy,omitempty"`
 
 	// UserTokenConfigurations AWS CloudFormation Property
 	// Required: false

@@ -18,7 +18,7 @@ type JobDefinition_Ulimit[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ulimit.html#cfn-batch-jobdefinition-ulimit-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// SoftLimit AWS CloudFormation Property
 	// Required: true

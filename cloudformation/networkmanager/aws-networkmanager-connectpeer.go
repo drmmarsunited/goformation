@@ -22,22 +22,27 @@ type ConnectPeer[T any] struct {
 	// ConnectAttachmentId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-connectattachmentid
-	ConnectAttachmentId string `json:"ConnectAttachmentId"`
+	ConnectAttachmentId T `json:"ConnectAttachmentId"`
 
 	// CoreNetworkAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-corenetworkaddress
-	CoreNetworkAddress *string `json:"CoreNetworkAddress,omitempty"`
+	CoreNetworkAddress *T `json:"CoreNetworkAddress,omitempty"`
 
 	// InsideCidrBlocks AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-insidecidrblocks
-	InsideCidrBlocks []string `json:"InsideCidrBlocks,omitempty"`
+	InsideCidrBlocks []T `json:"InsideCidrBlocks,omitempty"`
 
 	// PeerAddress AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-peeraddress
-	PeerAddress string `json:"PeerAddress"`
+	PeerAddress T `json:"PeerAddress"`
+
+	// SubnetArn AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-subnetarn
+	SubnetArn *T `json:"SubnetArn,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

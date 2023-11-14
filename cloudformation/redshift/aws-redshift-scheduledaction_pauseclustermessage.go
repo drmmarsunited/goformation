@@ -13,7 +13,7 @@ type ScheduledAction_PauseClusterMessage[T any] struct {
 	// ClusterIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-scheduledaction-pauseclustermessage.html#cfn-redshift-scheduledaction-pauseclustermessage-clusteridentifier
-	ClusterIdentifier string `json:"ClusterIdentifier"`
+	ClusterIdentifier T `json:"ClusterIdentifier"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,12 +13,12 @@ type DBInstance_CertificateDetails[T any] struct {
 	// CAIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-certificatedetails.html#cfn-rds-dbinstance-certificatedetails-caidentifier
-	CAIdentifier *string `json:"CAIdentifier,omitempty"`
+	CAIdentifier *T `json:"CAIdentifier,omitempty"`
 
 	// ValidTill AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-certificatedetails.html#cfn-rds-dbinstance-certificatedetails-validtill
-	ValidTill *string `json:"ValidTill,omitempty"`
+	ValidTill *T `json:"ValidTill,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,12 +13,12 @@ type Device_AWSLocation[T any] struct {
 	// SubnetArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-device-awslocation.html#cfn-networkmanager-device-awslocation-subnetarn
-	SubnetArn *string `json:"SubnetArn,omitempty"`
+	SubnetArn *T `json:"SubnetArn,omitempty"`
 
 	// Zone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-device-awslocation.html#cfn-networkmanager-device-awslocation-zone
-	Zone *string `json:"Zone,omitempty"`
+	Zone *T `json:"Zone,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

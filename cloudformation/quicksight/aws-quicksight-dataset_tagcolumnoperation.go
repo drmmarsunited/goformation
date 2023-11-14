@@ -13,7 +13,7 @@ type DataSet_TagColumnOperation[T any] struct {
 	// ColumnName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-tagcolumnoperation.html#cfn-quicksight-dataset-tagcolumnoperation-columnname
-	ColumnName string `json:"ColumnName"`
+	ColumnName T `json:"ColumnName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: true

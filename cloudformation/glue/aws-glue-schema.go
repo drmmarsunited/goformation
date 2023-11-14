@@ -22,22 +22,22 @@ type Schema[T any] struct {
 	// Compatibility AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#cfn-glue-schema-compatibility
-	Compatibility string `json:"Compatibility"`
+	Compatibility T `json:"Compatibility"`
 
 	// DataFormat AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#cfn-glue-schema-dataformat
-	DataFormat string `json:"DataFormat"`
+	DataFormat T `json:"DataFormat"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#cfn-glue-schema-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#cfn-glue-schema-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Registry AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type Schema[T any] struct {
 	// SchemaDefinition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#cfn-glue-schema-schemadefinition
-	SchemaDefinition string `json:"SchemaDefinition"`
+	SchemaDefinition T `json:"SchemaDefinition"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -13,7 +13,7 @@ type PlaceIndex_DataSourceConfiguration[T any] struct {
 	// IntendedUse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-location-placeindex-datasourceconfiguration.html#cfn-location-placeindex-datasourceconfiguration-intendeduse
-	IntendedUse *string `json:"IntendedUse,omitempty"`
+	IntendedUse *T `json:"IntendedUse,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

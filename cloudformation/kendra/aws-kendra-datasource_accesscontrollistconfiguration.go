@@ -13,7 +13,7 @@ type DataSource_AccessControlListConfiguration[T any] struct {
 	// KeyPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-accesscontrollistconfiguration.html#cfn-kendra-datasource-accesscontrollistconfiguration-keypath
-	KeyPath *string `json:"KeyPath,omitempty"`
+	KeyPath *T `json:"KeyPath,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

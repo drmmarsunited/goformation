@@ -23,7 +23,7 @@ type Instance_EbsBlockDevice[T any] struct {
 	// SnapshotId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-ebsblockdevice.html#cfn-opsworks-instance-ebsblockdevice-snapshotid
-	SnapshotId *string `json:"SnapshotId,omitempty"`
+	SnapshotId *T `json:"SnapshotId,omitempty"`
 
 	// VolumeSize AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Instance_EbsBlockDevice[T any] struct {
 	// VolumeType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-ebsblockdevice.html#cfn-opsworks-instance-ebsblockdevice-volumetype
-	VolumeType *string `json:"VolumeType,omitempty"`
+	VolumeType *T `json:"VolumeType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -18,7 +18,7 @@ type ResponseHeadersPolicy_ReferrerPolicy[T any] struct {
 	// ReferrerPolicy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-referrerpolicy.html#cfn-cloudfront-responseheaderspolicy-referrerpolicy-referrerpolicy
-	ReferrerPolicy string `json:"ReferrerPolicy"`
+	ReferrerPolicy T `json:"ReferrerPolicy"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

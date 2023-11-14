@@ -16,12 +16,12 @@ type NotificationChannel[T any] struct {
 	// SnsRoleName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-notificationchannel.html#cfn-fms-notificationchannel-snsrolename
-	SnsRoleName string `json:"SnsRoleName"`
+	SnsRoleName T `json:"SnsRoleName"`
 
 	// SnsTopicArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-notificationchannel.html#cfn-fms-notificationchannel-snstopicarn
-	SnsTopicArn string `json:"SnsTopicArn"`
+	SnsTopicArn T `json:"SnsTopicArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

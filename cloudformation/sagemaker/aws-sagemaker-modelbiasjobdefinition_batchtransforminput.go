@@ -13,7 +13,7 @@ type ModelBiasJobDefinition_BatchTransformInput[T any] struct {
 	// DataCapturedDestinationS3Uri AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-batchtransforminput.html#cfn-sagemaker-modelbiasjobdefinition-batchtransforminput-datacaptureddestinations3uri
-	DataCapturedDestinationS3Uri string `json:"DataCapturedDestinationS3Uri"`
+	DataCapturedDestinationS3Uri T `json:"DataCapturedDestinationS3Uri"`
 
 	// DatasetFormat AWS CloudFormation Property
 	// Required: true
@@ -23,27 +23,27 @@ type ModelBiasJobDefinition_BatchTransformInput[T any] struct {
 	// EndTimeOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-batchtransforminput.html#cfn-sagemaker-modelbiasjobdefinition-batchtransforminput-endtimeoffset
-	EndTimeOffset *string `json:"EndTimeOffset,omitempty"`
+	EndTimeOffset *T `json:"EndTimeOffset,omitempty"`
 
 	// FeaturesAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-batchtransforminput.html#cfn-sagemaker-modelbiasjobdefinition-batchtransforminput-featuresattribute
-	FeaturesAttribute *string `json:"FeaturesAttribute,omitempty"`
+	FeaturesAttribute *T `json:"FeaturesAttribute,omitempty"`
 
 	// InferenceAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-batchtransforminput.html#cfn-sagemaker-modelbiasjobdefinition-batchtransforminput-inferenceattribute
-	InferenceAttribute *string `json:"InferenceAttribute,omitempty"`
+	InferenceAttribute *T `json:"InferenceAttribute,omitempty"`
 
 	// LocalPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-batchtransforminput.html#cfn-sagemaker-modelbiasjobdefinition-batchtransforminput-localpath
-	LocalPath string `json:"LocalPath"`
+	LocalPath T `json:"LocalPath"`
 
 	// ProbabilityAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-batchtransforminput.html#cfn-sagemaker-modelbiasjobdefinition-batchtransforminput-probabilityattribute
-	ProbabilityAttribute *string `json:"ProbabilityAttribute,omitempty"`
+	ProbabilityAttribute *T `json:"ProbabilityAttribute,omitempty"`
 
 	// ProbabilityThresholdAttribute AWS CloudFormation Property
 	// Required: false
@@ -53,17 +53,17 @@ type ModelBiasJobDefinition_BatchTransformInput[T any] struct {
 	// S3DataDistributionType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-batchtransforminput.html#cfn-sagemaker-modelbiasjobdefinition-batchtransforminput-s3datadistributiontype
-	S3DataDistributionType *string `json:"S3DataDistributionType,omitempty"`
+	S3DataDistributionType *T `json:"S3DataDistributionType,omitempty"`
 
 	// S3InputMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-batchtransforminput.html#cfn-sagemaker-modelbiasjobdefinition-batchtransforminput-s3inputmode
-	S3InputMode *string `json:"S3InputMode,omitempty"`
+	S3InputMode *T `json:"S3InputMode,omitempty"`
 
 	// StartTimeOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-batchtransforminput.html#cfn-sagemaker-modelbiasjobdefinition-batchtransforminput-starttimeoffset
-	StartTimeOffset *string `json:"StartTimeOffset,omitempty"`
+	StartTimeOffset *T `json:"StartTimeOffset,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Project_ProjectTriggers[T any] struct {
 	// BuildType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-buildtype
-	BuildType *string `json:"BuildType,omitempty"`
+	BuildType *T `json:"BuildType,omitempty"`
 
 	// FilterGroups AWS CloudFormation Property
 	// Required: false

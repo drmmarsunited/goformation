@@ -13,7 +13,7 @@ type WirelessDevice_AbpV11[T any] struct {
 	// DevAddr AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-abpv11.html#cfn-iotwireless-wirelessdevice-abpv11-devaddr
-	DevAddr string `json:"DevAddr"`
+	DevAddr T `json:"DevAddr"`
 
 	// SessionKeys AWS CloudFormation Property
 	// Required: true

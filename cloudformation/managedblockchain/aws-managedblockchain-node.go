@@ -16,12 +16,12 @@ type Node[T any] struct {
 	// MemberId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html#cfn-managedblockchain-node-memberid
-	MemberId *string `json:"MemberId,omitempty"`
+	MemberId *T `json:"MemberId,omitempty"`
 
 	// NetworkId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html#cfn-managedblockchain-node-networkid
-	NetworkId string `json:"NetworkId"`
+	NetworkId T `json:"NetworkId"`
 
 	// NodeConfiguration AWS CloudFormation Property
 	// Required: true

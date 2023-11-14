@@ -13,22 +13,22 @@ type IdentitySource_IdentitySourceDetails[T any] struct {
 	// ClientIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-verifiedpermissions-identitysource-identitysourcedetails.html#cfn-verifiedpermissions-identitysource-identitysourcedetails-clientids
-	ClientIds []string `json:"ClientIds,omitempty"`
+	ClientIds []T `json:"ClientIds,omitempty"`
 
 	// DiscoveryUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-verifiedpermissions-identitysource-identitysourcedetails.html#cfn-verifiedpermissions-identitysource-identitysourcedetails-discoveryurl
-	DiscoveryUrl *string `json:"DiscoveryUrl,omitempty"`
+	DiscoveryUrl *T `json:"DiscoveryUrl,omitempty"`
 
 	// OpenIdIssuer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-verifiedpermissions-identitysource-identitysourcedetails.html#cfn-verifiedpermissions-identitysource-identitysourcedetails-openidissuer
-	OpenIdIssuer *string `json:"OpenIdIssuer,omitempty"`
+	OpenIdIssuer *T `json:"OpenIdIssuer,omitempty"`
 
 	// UserPoolArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-verifiedpermissions-identitysource-identitysourcedetails.html#cfn-verifiedpermissions-identitysource-identitysourcedetails-userpoolarn
-	UserPoolArn *string `json:"UserPoolArn,omitempty"`
+	UserPoolArn *T `json:"UserPoolArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

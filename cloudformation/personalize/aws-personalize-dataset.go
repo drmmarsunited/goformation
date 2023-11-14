@@ -16,7 +16,7 @@ type Dataset[T any] struct {
 	// DatasetGroupArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-dataset.html#cfn-personalize-dataset-datasetgrouparn
-	DatasetGroupArn string `json:"DatasetGroupArn"`
+	DatasetGroupArn T `json:"DatasetGroupArn"`
 
 	// DatasetImportJob AWS CloudFormation Property
 	// Required: false
@@ -26,17 +26,17 @@ type Dataset[T any] struct {
 	// DatasetType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-dataset.html#cfn-personalize-dataset-datasettype
-	DatasetType string `json:"DatasetType"`
+	DatasetType T `json:"DatasetType"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-dataset.html#cfn-personalize-dataset-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// SchemaArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-dataset.html#cfn-personalize-dataset-schemaarn
-	SchemaArn string `json:"SchemaArn"`
+	SchemaArn T `json:"SchemaArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

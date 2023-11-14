@@ -13,7 +13,7 @@ type Channel_AudioDolbyEDecode[T any] struct {
 	// ProgramSelection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodolbyedecode.html#cfn-medialive-channel-audiodolbyedecode-programselection
-	ProgramSelection *string `json:"ProgramSelection,omitempty"`
+	ProgramSelection *T `json:"ProgramSelection,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,12 +13,12 @@ type Deployment_IoTJobAbortCriteria[T any] struct {
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobabortcriteria.html#cfn-greengrassv2-deployment-iotjobabortcriteria-action
-	Action string `json:"Action"`
+	Action T `json:"Action"`
 
 	// FailureType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-iotjobabortcriteria.html#cfn-greengrassv2-deployment-iotjobabortcriteria-failuretype
-	FailureType string `json:"FailureType"`
+	FailureType T `json:"FailureType"`
 
 	// MinNumberOfExecutedThings AWS CloudFormation Property
 	// Required: true

@@ -13,7 +13,7 @@ type Analysis_DateTimePickerControlDisplayOptions[T any] struct {
 	// DateTimeFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimepickercontroldisplayoptions.html#cfn-quicksight-analysis-datetimepickercontroldisplayoptions-datetimeformat
-	DateTimeFormat *string `json:"DateTimeFormat,omitempty"`
+	DateTimeFormat *T `json:"DateTimeFormat,omitempty"`
 
 	// InfoIconLabelOptions AWS CloudFormation Property
 	// Required: false

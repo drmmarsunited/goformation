@@ -17,27 +17,27 @@ type Namespace[T any] struct {
 	// AdminUserPassword AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-namespace.html#cfn-redshiftserverless-namespace-adminuserpassword
-	AdminUserPassword *string `json:"AdminUserPassword,omitempty"`
+	AdminUserPassword *T `json:"AdminUserPassword,omitempty"`
 
 	// AdminUsername AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-namespace.html#cfn-redshiftserverless-namespace-adminusername
-	AdminUsername *string `json:"AdminUsername,omitempty"`
+	AdminUsername *T `json:"AdminUsername,omitempty"`
 
 	// DbName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-namespace.html#cfn-redshiftserverless-namespace-dbname
-	DbName *string `json:"DbName,omitempty"`
+	DbName *T `json:"DbName,omitempty"`
 
 	// DefaultIamRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-namespace.html#cfn-redshiftserverless-namespace-defaultiamrolearn
-	DefaultIamRoleArn *string `json:"DefaultIamRoleArn,omitempty"`
+	DefaultIamRoleArn *T `json:"DefaultIamRoleArn,omitempty"`
 
 	// FinalSnapshotName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-namespace.html#cfn-redshiftserverless-namespace-finalsnapshotname
-	FinalSnapshotName *string `json:"FinalSnapshotName,omitempty"`
+	FinalSnapshotName *T `json:"FinalSnapshotName,omitempty"`
 
 	// FinalSnapshotRetentionPeriod AWS CloudFormation Property
 	// Required: false
@@ -47,22 +47,22 @@ type Namespace[T any] struct {
 	// IamRoles AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-namespace.html#cfn-redshiftserverless-namespace-iamroles
-	IamRoles []string `json:"IamRoles,omitempty"`
+	IamRoles []T `json:"IamRoles,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-namespace.html#cfn-redshiftserverless-namespace-kmskeyid
-	KmsKeyId *string `json:"KmsKeyId,omitempty"`
+	KmsKeyId *T `json:"KmsKeyId,omitempty"`
 
 	// LogExports AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-namespace.html#cfn-redshiftserverless-namespace-logexports
-	LogExports []string `json:"LogExports,omitempty"`
+	LogExports []T `json:"LogExports,omitempty"`
 
 	// NamespaceName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-namespace.html#cfn-redshiftserverless-namespace-namespacename
-	NamespaceName string `json:"NamespaceName"`
+	NamespaceName T `json:"NamespaceName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -13,12 +13,12 @@ type Channel_SlateSource[T any] struct {
 	// SourceLocationName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-channel-slatesource.html#cfn-mediatailor-channel-slatesource-sourcelocationname
-	SourceLocationName *string `json:"SourceLocationName,omitempty"`
+	SourceLocationName *T `json:"SourceLocationName,omitempty"`
 
 	// VodSourceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-channel-slatesource.html#cfn-mediatailor-channel-slatesource-vodsourcename
-	VodSourceName *string `json:"VodSourceName,omitempty"`
+	VodSourceName *T `json:"VodSourceName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

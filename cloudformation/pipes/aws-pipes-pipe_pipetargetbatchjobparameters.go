@@ -28,17 +28,17 @@ type Pipe_PipeTargetBatchJobParameters[T any] struct {
 	// JobDefinition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetbatchjobparameters.html#cfn-pipes-pipe-pipetargetbatchjobparameters-jobdefinition
-	JobDefinition string `json:"JobDefinition"`
+	JobDefinition T `json:"JobDefinition"`
 
 	// JobName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetbatchjobparameters.html#cfn-pipes-pipe-pipetargetbatchjobparameters-jobname
-	JobName string `json:"JobName"`
+	JobName T `json:"JobName"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetbatchjobparameters.html#cfn-pipes-pipe-pipetargetbatchjobparameters-parameters
-	Parameters map[string]string `json:"Parameters,omitempty"`
+	Parameters map[string]T `json:"Parameters,omitempty"`
 
 	// RetryStrategy AWS CloudFormation Property
 	// Required: false

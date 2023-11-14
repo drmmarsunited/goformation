@@ -13,7 +13,7 @@ type MitigationAction_ReplaceDefaultPolicyVersionParams[T any] struct {
 	// TemplateName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-replacedefaultpolicyversionparams.html#cfn-iot-mitigationaction-replacedefaultpolicyversionparams-templatename
-	TemplateName string `json:"TemplateName"`
+	TemplateName T `json:"TemplateName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

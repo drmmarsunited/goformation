@@ -23,7 +23,7 @@ type GatewayRoute_HttpGatewayRouteMatch[T any] struct {
 	// Method AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutematch.html#cfn-appmesh-gatewayroute-httpgatewayroutematch-method
-	Method *string `json:"Method,omitempty"`
+	Method *T `json:"Method,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type GatewayRoute_HttpGatewayRouteMatch[T any] struct {
 	// Prefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutematch.html#cfn-appmesh-gatewayroute-httpgatewayroutematch-prefix
-	Prefix *string `json:"Prefix,omitempty"`
+	Prefix *T `json:"Prefix,omitempty"`
 
 	// QueryParameters AWS CloudFormation Property
 	// Required: false

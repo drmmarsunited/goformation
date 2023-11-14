@@ -18,7 +18,7 @@ type HealthCheck_HealthCheckConfig[T any] struct {
 	// ChildHealthChecks AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-childhealthchecks
-	ChildHealthChecks []string `json:"ChildHealthChecks,omitempty"`
+	ChildHealthChecks []T `json:"ChildHealthChecks,omitempty"`
 
 	// EnableSNI AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type HealthCheck_HealthCheckConfig[T any] struct {
 	// FullyQualifiedDomainName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-fullyqualifieddomainname
-	FullyQualifiedDomainName *string `json:"FullyQualifiedDomainName,omitempty"`
+	FullyQualifiedDomainName *T `json:"FullyQualifiedDomainName,omitempty"`
 
 	// HealthThreshold AWS CloudFormation Property
 	// Required: false
@@ -43,12 +43,12 @@ type HealthCheck_HealthCheckConfig[T any] struct {
 	// IPAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-ipaddress
-	IPAddress *string `json:"IPAddress,omitempty"`
+	IPAddress *T `json:"IPAddress,omitempty"`
 
 	// InsufficientDataHealthStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-insufficientdatahealthstatus
-	InsufficientDataHealthStatus *string `json:"InsufficientDataHealthStatus,omitempty"`
+	InsufficientDataHealthStatus *T `json:"InsufficientDataHealthStatus,omitempty"`
 
 	// Inverted AWS CloudFormation Property
 	// Required: false
@@ -68,7 +68,7 @@ type HealthCheck_HealthCheckConfig[T any] struct {
 	// Regions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-regions
-	Regions []string `json:"Regions,omitempty"`
+	Regions []T `json:"Regions,omitempty"`
 
 	// RequestInterval AWS CloudFormation Property
 	// Required: false
@@ -78,22 +78,22 @@ type HealthCheck_HealthCheckConfig[T any] struct {
 	// ResourcePath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-resourcepath
-	ResourcePath *string `json:"ResourcePath,omitempty"`
+	ResourcePath *T `json:"ResourcePath,omitempty"`
 
 	// RoutingControlArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-routingcontrolarn
-	RoutingControlArn *string `json:"RoutingControlArn,omitempty"`
+	RoutingControlArn *T `json:"RoutingControlArn,omitempty"`
 
 	// SearchString AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-searchstring
-	SearchString *string `json:"SearchString,omitempty"`
+	SearchString *T `json:"SearchString,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

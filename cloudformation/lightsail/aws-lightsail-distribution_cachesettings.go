@@ -13,12 +13,12 @@ type Distribution_CacheSettings[T any] struct {
 	// AllowedHTTPMethods AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-allowedhttpmethods
-	AllowedHTTPMethods *string `json:"AllowedHTTPMethods,omitempty"`
+	AllowedHTTPMethods *T `json:"AllowedHTTPMethods,omitempty"`
 
 	// CachedHTTPMethods AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-cachedhttpmethods
-	CachedHTTPMethods *string `json:"CachedHTTPMethods,omitempty"`
+	CachedHTTPMethods *T `json:"CachedHTTPMethods,omitempty"`
 
 	// DefaultTTL AWS CloudFormation Property
 	// Required: false

@@ -22,7 +22,7 @@ type Fleet[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DisconnectTimeoutInSeconds AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type Fleet[T any] struct {
 	// DisplayName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-displayname
-	DisplayName *string `json:"DisplayName,omitempty"`
+	DisplayName *T `json:"DisplayName,omitempty"`
 
 	// DomainJoinInfo AWS CloudFormation Property
 	// Required: false
@@ -47,12 +47,12 @@ type Fleet[T any] struct {
 	// FleetType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-fleettype
-	FleetType *string `json:"FleetType,omitempty"`
+	FleetType *T `json:"FleetType,omitempty"`
 
 	// IamRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-iamrolearn
-	IamRoleArn *string `json:"IamRoleArn,omitempty"`
+	IamRoleArn *T `json:"IamRoleArn,omitempty"`
 
 	// IdleDisconnectTimeoutInSeconds AWS CloudFormation Property
 	// Required: false
@@ -62,17 +62,17 @@ type Fleet[T any] struct {
 	// ImageArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-imagearn
-	ImageArn *string `json:"ImageArn,omitempty"`
+	ImageArn *T `json:"ImageArn,omitempty"`
 
 	// ImageName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-imagename
-	ImageName *string `json:"ImageName,omitempty"`
+	ImageName *T `json:"ImageName,omitempty"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-instancetype
-	InstanceType string `json:"InstanceType"`
+	InstanceType T `json:"InstanceType"`
 
 	// MaxConcurrentSessions AWS CloudFormation Property
 	// Required: false
@@ -92,12 +92,12 @@ type Fleet[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Platform AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-platform
-	Platform *string `json:"Platform,omitempty"`
+	Platform *T `json:"Platform,omitempty"`
 
 	// SessionScriptS3Location AWS CloudFormation Property
 	// Required: false
@@ -107,7 +107,7 @@ type Fleet[T any] struct {
 	// StreamView AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-streamview
-	StreamView *string `json:"StreamView,omitempty"`
+	StreamView *T `json:"StreamView,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -117,7 +117,7 @@ type Fleet[T any] struct {
 	// UsbDeviceFilterStrings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-usbdevicefilterstrings
-	UsbDeviceFilterStrings []string `json:"UsbDeviceFilterStrings,omitempty"`
+	UsbDeviceFilterStrings []T `json:"UsbDeviceFilterStrings,omitempty"`
 
 	// VpcConfig AWS CloudFormation Property
 	// Required: false

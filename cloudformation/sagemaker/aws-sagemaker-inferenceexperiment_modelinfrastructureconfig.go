@@ -13,7 +13,7 @@ type InferenceExperiment_ModelInfrastructureConfig[T any] struct {
 	// InfrastructureType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-modelinfrastructureconfig.html#cfn-sagemaker-inferenceexperiment-modelinfrastructureconfig-infrastructuretype
-	InfrastructureType string `json:"InfrastructureType"`
+	InfrastructureType T `json:"InfrastructureType"`
 
 	// RealTimeInferenceConfig AWS CloudFormation Property
 	// Required: true

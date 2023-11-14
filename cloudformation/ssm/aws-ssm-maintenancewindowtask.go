@@ -16,12 +16,12 @@ type MaintenanceWindowTask[T any] struct {
 	// CutoffBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-cutoffbehavior
-	CutoffBehavior *string `json:"CutoffBehavior,omitempty"`
+	CutoffBehavior *T `json:"CutoffBehavior,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// LoggingInfo AWS CloudFormation Property
 	// Required: false
@@ -31,17 +31,17 @@ type MaintenanceWindowTask[T any] struct {
 	// MaxConcurrency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-maxconcurrency
-	MaxConcurrency *string `json:"MaxConcurrency,omitempty"`
+	MaxConcurrency *T `json:"MaxConcurrency,omitempty"`
 
 	// MaxErrors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-maxerrors
-	MaxErrors *string `json:"MaxErrors,omitempty"`
+	MaxErrors *T `json:"MaxErrors,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Priority AWS CloudFormation Property
 	// Required: true
@@ -51,7 +51,7 @@ type MaintenanceWindowTask[T any] struct {
 	// ServiceRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-servicerolearn
-	ServiceRoleArn *string `json:"ServiceRoleArn,omitempty"`
+	ServiceRoleArn *T `json:"ServiceRoleArn,omitempty"`
 
 	// Targets AWS CloudFormation Property
 	// Required: false
@@ -61,7 +61,7 @@ type MaintenanceWindowTask[T any] struct {
 	// TaskArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-taskarn
-	TaskArn string `json:"TaskArn"`
+	TaskArn T `json:"TaskArn"`
 
 	// TaskInvocationParameters AWS CloudFormation Property
 	// Required: false
@@ -76,12 +76,12 @@ type MaintenanceWindowTask[T any] struct {
 	// TaskType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-tasktype
-	TaskType string `json:"TaskType"`
+	TaskType T `json:"TaskType"`
 
 	// WindowId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-windowid
-	WindowId string `json:"WindowId"`
+	WindowId T `json:"WindowId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

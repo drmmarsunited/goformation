@@ -13,17 +13,17 @@ type EndpointConfig_ClarifyShapBaselineConfig[T any] struct {
 	// MimeType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyshapbaselineconfig.html#cfn-sagemaker-endpointconfig-clarifyshapbaselineconfig-mimetype
-	MimeType *string `json:"MimeType,omitempty"`
+	MimeType *T `json:"MimeType,omitempty"`
 
 	// ShapBaseline AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyshapbaselineconfig.html#cfn-sagemaker-endpointconfig-clarifyshapbaselineconfig-shapbaseline
-	ShapBaseline *string `json:"ShapBaseline,omitempty"`
+	ShapBaseline *T `json:"ShapBaseline,omitempty"`
 
 	// ShapBaselineUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyshapbaselineconfig.html#cfn-sagemaker-endpointconfig-clarifyshapbaselineconfig-shapbaselineuri
-	ShapBaselineUri *string `json:"ShapBaselineUri,omitempty"`
+	ShapBaselineUri *T `json:"ShapBaselineUri,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

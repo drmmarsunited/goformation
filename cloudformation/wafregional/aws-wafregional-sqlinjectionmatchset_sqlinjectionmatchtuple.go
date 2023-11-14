@@ -18,7 +18,7 @@ type SqlInjectionMatchSet_SqlInjectionMatchTuple[T any] struct {
 	// TextTransformation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuple.html#cfn-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuple-texttransformation
-	TextTransformation string `json:"TextTransformation"`
+	TextTransformation T `json:"TextTransformation"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

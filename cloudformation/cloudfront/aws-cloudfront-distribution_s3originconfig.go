@@ -13,7 +13,7 @@ type Distribution_S3OriginConfig[T any] struct {
 	// OriginAccessIdentity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-s3originconfig.html#cfn-cloudfront-distribution-s3originconfig-originaccessidentity
-	OriginAccessIdentity *string `json:"OriginAccessIdentity,omitempty"`
+	OriginAccessIdentity *T `json:"OriginAccessIdentity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

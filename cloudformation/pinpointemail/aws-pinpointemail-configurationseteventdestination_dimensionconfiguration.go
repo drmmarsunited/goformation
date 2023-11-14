@@ -13,17 +13,17 @@ type ConfigurationSetEventDestination_DimensionConfiguration[T any] struct {
 	// DefaultDimensionValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-dimensionconfiguration.html#cfn-pinpointemail-configurationseteventdestination-dimensionconfiguration-defaultdimensionvalue
-	DefaultDimensionValue string `json:"DefaultDimensionValue"`
+	DefaultDimensionValue T `json:"DefaultDimensionValue"`
 
 	// DimensionName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-dimensionconfiguration.html#cfn-pinpointemail-configurationseteventdestination-dimensionconfiguration-dimensionname
-	DimensionName string `json:"DimensionName"`
+	DimensionName T `json:"DimensionName"`
 
 	// DimensionValueSource AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-dimensionconfiguration.html#cfn-pinpointemail-configurationseteventdestination-dimensionconfiguration-dimensionvaluesource
-	DimensionValueSource string `json:"DimensionValueSource"`
+	DimensionValueSource T `json:"DimensionValueSource"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

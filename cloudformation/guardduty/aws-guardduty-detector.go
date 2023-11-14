@@ -31,7 +31,7 @@ type Detector[T any] struct {
 	// FindingPublishingFrequency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html#cfn-guardduty-detector-findingpublishingfrequency
-	FindingPublishingFrequency *string `json:"FindingPublishingFrequency,omitempty"`
+	FindingPublishingFrequency *T `json:"FindingPublishingFrequency,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

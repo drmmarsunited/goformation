@@ -13,12 +13,12 @@ type Bot_CustomVocabularyItem[T any] struct {
 	// DisplayAs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-customvocabularyitem.html#cfn-lex-bot-customvocabularyitem-displayas
-	DisplayAs *string `json:"DisplayAs,omitempty"`
+	DisplayAs *T `json:"DisplayAs,omitempty"`
 
 	// Phrase AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-customvocabularyitem.html#cfn-lex-bot-customvocabularyitem-phrase
-	Phrase string `json:"Phrase"`
+	Phrase T `json:"Phrase"`
 
 	// Weight AWS CloudFormation Property
 	// Required: false

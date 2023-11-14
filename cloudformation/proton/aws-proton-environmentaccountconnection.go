@@ -17,32 +17,32 @@ type EnvironmentAccountConnection[T any] struct {
 	// CodebuildRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-proton-environmentaccountconnection.html#cfn-proton-environmentaccountconnection-codebuildrolearn
-	CodebuildRoleArn *string `json:"CodebuildRoleArn,omitempty"`
+	CodebuildRoleArn *T `json:"CodebuildRoleArn,omitempty"`
 
 	// ComponentRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-proton-environmentaccountconnection.html#cfn-proton-environmentaccountconnection-componentrolearn
-	ComponentRoleArn *string `json:"ComponentRoleArn,omitempty"`
+	ComponentRoleArn *T `json:"ComponentRoleArn,omitempty"`
 
 	// EnvironmentAccountId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-proton-environmentaccountconnection.html#cfn-proton-environmentaccountconnection-environmentaccountid
-	EnvironmentAccountId *string `json:"EnvironmentAccountId,omitempty"`
+	EnvironmentAccountId *T `json:"EnvironmentAccountId,omitempty"`
 
 	// EnvironmentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-proton-environmentaccountconnection.html#cfn-proton-environmentaccountconnection-environmentname
-	EnvironmentName *string `json:"EnvironmentName,omitempty"`
+	EnvironmentName *T `json:"EnvironmentName,omitempty"`
 
 	// ManagementAccountId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-proton-environmentaccountconnection.html#cfn-proton-environmentaccountconnection-managementaccountid
-	ManagementAccountId *string `json:"ManagementAccountId,omitempty"`
+	ManagementAccountId *T `json:"ManagementAccountId,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-proton-environmentaccountconnection.html#cfn-proton-environmentaccountconnection-rolearn
-	RoleArn *string `json:"RoleArn,omitempty"`
+	RoleArn *T `json:"RoleArn,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

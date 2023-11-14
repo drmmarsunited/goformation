@@ -13,7 +13,7 @@ type AutomationRule_SeverityUpdate[T any] struct {
 	// Label AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-automationrule-severityupdate.html#cfn-securityhub-automationrule-severityupdate-label
-	Label *string `json:"Label,omitempty"`
+	Label *T `json:"Label,omitempty"`
 
 	// Normalized AWS CloudFormation Property
 	// Required: false

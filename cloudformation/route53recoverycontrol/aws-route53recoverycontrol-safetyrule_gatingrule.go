@@ -13,12 +13,12 @@ type SafetyRule_GatingRule[T any] struct {
 	// GatingControls AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-gatingrule.html#cfn-route53recoverycontrol-safetyrule-gatingrule-gatingcontrols
-	GatingControls []string `json:"GatingControls"`
+	GatingControls []T `json:"GatingControls"`
 
 	// TargetControls AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-gatingrule.html#cfn-route53recoverycontrol-safetyrule-gatingrule-targetcontrols
-	TargetControls []string `json:"TargetControls"`
+	TargetControls []T `json:"TargetControls"`
 
 	// WaitPeriodMs AWS CloudFormation Property
 	// Required: true

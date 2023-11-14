@@ -17,7 +17,7 @@ type Connector[T any] struct {
 	// AccessRole AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-connector.html#cfn-transfer-connector-accessrole
-	AccessRole string `json:"AccessRole"`
+	AccessRole T `json:"AccessRole"`
 
 	// As2Config AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Connector[T any] struct {
 	// LoggingRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-connector.html#cfn-transfer-connector-loggingrole
-	LoggingRole *string `json:"LoggingRole,omitempty"`
+	LoggingRole *T `json:"LoggingRole,omitempty"`
 
 	// SftpConfig AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type Connector[T any] struct {
 	// Url AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-connector.html#cfn-transfer-connector-url
-	Url string `json:"Url"`
+	Url T `json:"Url"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

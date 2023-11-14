@@ -28,12 +28,12 @@ type Analysis_ParameterSliderControl[T any] struct {
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterslidercontrol.html#cfn-quicksight-analysis-parameterslidercontrol-parametercontrolid
-	ParameterControlId string `json:"ParameterControlId"`
+	ParameterControlId T `json:"ParameterControlId"`
 
 	// SourceParameterName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterslidercontrol.html#cfn-quicksight-analysis-parameterslidercontrol-sourceparametername
-	SourceParameterName string `json:"SourceParameterName"`
+	SourceParameterName T `json:"SourceParameterName"`
 
 	// StepSize AWS CloudFormation Property
 	// Required: true
@@ -43,7 +43,7 @@ type Analysis_ParameterSliderControl[T any] struct {
 	// Title AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterslidercontrol.html#cfn-quicksight-analysis-parameterslidercontrol-title
-	Title string `json:"Title"`
+	Title T `json:"Title"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

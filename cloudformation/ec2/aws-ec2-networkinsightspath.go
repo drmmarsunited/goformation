@@ -17,12 +17,12 @@ type NetworkInsightsPath[T any] struct {
 	// Destination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-destination
-	Destination *string `json:"Destination,omitempty"`
+	Destination *T `json:"Destination,omitempty"`
 
 	// DestinationIp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-destinationip
-	DestinationIp *string `json:"DestinationIp,omitempty"`
+	DestinationIp *T `json:"DestinationIp,omitempty"`
 
 	// DestinationPort AWS CloudFormation Property
 	// Required: false
@@ -42,17 +42,17 @@ type NetworkInsightsPath[T any] struct {
 	// Protocol AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-protocol
-	Protocol string `json:"Protocol"`
+	Protocol T `json:"Protocol"`
 
 	// Source AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-source
-	Source string `json:"Source"`
+	Source T `json:"Source"`
 
 	// SourceIp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-sourceip
-	SourceIp *string `json:"SourceIp,omitempty"`
+	SourceIp *T `json:"SourceIp,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

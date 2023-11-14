@@ -16,17 +16,17 @@ type ScalingPolicy[T any] struct {
 	// AdjustmentType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scalingpolicy.html#cfn-autoscaling-scalingpolicy-adjustmenttype
-	AdjustmentType *string `json:"AdjustmentType,omitempty"`
+	AdjustmentType *T `json:"AdjustmentType,omitempty"`
 
 	// AutoScalingGroupName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scalingpolicy.html#cfn-autoscaling-scalingpolicy-autoscalinggroupname
-	AutoScalingGroupName string `json:"AutoScalingGroupName"`
+	AutoScalingGroupName T `json:"AutoScalingGroupName"`
 
 	// Cooldown AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scalingpolicy.html#cfn-autoscaling-scalingpolicy-cooldown
-	Cooldown *string `json:"Cooldown,omitempty"`
+	Cooldown *T `json:"Cooldown,omitempty"`
 
 	// EstimatedInstanceWarmup AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type ScalingPolicy[T any] struct {
 	// MetricAggregationType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scalingpolicy.html#cfn-autoscaling-scalingpolicy-metricaggregationtype
-	MetricAggregationType *string `json:"MetricAggregationType,omitempty"`
+	MetricAggregationType *T `json:"MetricAggregationType,omitempty"`
 
 	// MinAdjustmentMagnitude AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type ScalingPolicy[T any] struct {
 	// PolicyType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scalingpolicy.html#cfn-autoscaling-scalingpolicy-policytype
-	PolicyType *string `json:"PolicyType,omitempty"`
+	PolicyType *T `json:"PolicyType,omitempty"`
 
 	// PredictiveScalingConfiguration AWS CloudFormation Property
 	// Required: false

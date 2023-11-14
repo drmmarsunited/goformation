@@ -17,17 +17,17 @@ type Channel[T any] struct {
 	// ChannelGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-channel.html#cfn-mediapackagev2-channel-channelgroupname
-	ChannelGroupName *string `json:"ChannelGroupName,omitempty"`
+	ChannelGroupName *T `json:"ChannelGroupName,omitempty"`
 
 	// ChannelName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-channel.html#cfn-mediapackagev2-channel-channelname
-	ChannelName *string `json:"ChannelName,omitempty"`
+	ChannelName *T `json:"ChannelName,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-channel.html#cfn-mediapackagev2-channel-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

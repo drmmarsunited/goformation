@@ -13,12 +13,12 @@ type DistributionConfiguration_LaunchTemplateConfiguration[T any] struct {
 	// AccountId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-launchtemplateconfiguration.html#cfn-imagebuilder-distributionconfiguration-launchtemplateconfiguration-accountid
-	AccountId *string `json:"AccountId,omitempty"`
+	AccountId *T `json:"AccountId,omitempty"`
 
 	// LaunchTemplateId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-launchtemplateconfiguration.html#cfn-imagebuilder-distributionconfiguration-launchtemplateconfiguration-launchtemplateid
-	LaunchTemplateId *string `json:"LaunchTemplateId,omitempty"`
+	LaunchTemplateId *T `json:"LaunchTemplateId,omitempty"`
 
 	// SetDefaultVersion AWS CloudFormation Property
 	// Required: false

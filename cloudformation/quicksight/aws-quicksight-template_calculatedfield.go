@@ -13,17 +13,17 @@ type Template_CalculatedField[T any] struct {
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-calculatedfield.html#cfn-quicksight-template-calculatedfield-datasetidentifier
-	DataSetIdentifier string `json:"DataSetIdentifier"`
+	DataSetIdentifier T `json:"DataSetIdentifier"`
 
 	// Expression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-calculatedfield.html#cfn-quicksight-template-calculatedfield-expression
-	Expression string `json:"Expression"`
+	Expression T `json:"Expression"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-calculatedfield.html#cfn-quicksight-template-calculatedfield-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

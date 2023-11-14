@@ -13,7 +13,7 @@ type Canary_VisualReference[T any] struct {
 	// BaseCanaryRunId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-visualreference.html#cfn-synthetics-canary-visualreference-basecanaryrunid
-	BaseCanaryRunId string `json:"BaseCanaryRunId"`
+	BaseCanaryRunId T `json:"BaseCanaryRunId"`
 
 	// BaseScreenshots AWS CloudFormation Property
 	// Required: false

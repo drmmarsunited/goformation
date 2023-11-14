@@ -13,12 +13,12 @@ type AssetModel_VariableValue[T any] struct {
 	// HierarchyLogicalId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-variablevalue.html#cfn-iotsitewise-assetmodel-variablevalue-hierarchylogicalid
-	HierarchyLogicalId *string `json:"HierarchyLogicalId,omitempty"`
+	HierarchyLogicalId *T `json:"HierarchyLogicalId,omitempty"`
 
 	// PropertyLogicalId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-variablevalue.html#cfn-iotsitewise-assetmodel-variablevalue-propertylogicalid
-	PropertyLogicalId string `json:"PropertyLogicalId"`
+	PropertyLogicalId T `json:"PropertyLogicalId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

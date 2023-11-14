@@ -18,17 +18,17 @@ type Dashboard_ParameterTextFieldControl[T any] struct {
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parametertextfieldcontrol.html#cfn-quicksight-dashboard-parametertextfieldcontrol-parametercontrolid
-	ParameterControlId string `json:"ParameterControlId"`
+	ParameterControlId T `json:"ParameterControlId"`
 
 	// SourceParameterName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parametertextfieldcontrol.html#cfn-quicksight-dashboard-parametertextfieldcontrol-sourceparametername
-	SourceParameterName string `json:"SourceParameterName"`
+	SourceParameterName T `json:"SourceParameterName"`
 
 	// Title AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parametertextfieldcontrol.html#cfn-quicksight-dashboard-parametertextfieldcontrol-title
-	Title string `json:"Title"`
+	Title T `json:"Title"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,27 +13,27 @@ type Package_StorageLocation[T any] struct {
 	// BinaryPrefixLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-panorama-package-storagelocation.html#cfn-panorama-package-storagelocation-binaryprefixlocation
-	BinaryPrefixLocation *string `json:"BinaryPrefixLocation,omitempty"`
+	BinaryPrefixLocation *T `json:"BinaryPrefixLocation,omitempty"`
 
 	// Bucket AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-panorama-package-storagelocation.html#cfn-panorama-package-storagelocation-bucket
-	Bucket *string `json:"Bucket,omitempty"`
+	Bucket *T `json:"Bucket,omitempty"`
 
 	// GeneratedPrefixLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-panorama-package-storagelocation.html#cfn-panorama-package-storagelocation-generatedprefixlocation
-	GeneratedPrefixLocation *string `json:"GeneratedPrefixLocation,omitempty"`
+	GeneratedPrefixLocation *T `json:"GeneratedPrefixLocation,omitempty"`
 
 	// ManifestPrefixLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-panorama-package-storagelocation.html#cfn-panorama-package-storagelocation-manifestprefixlocation
-	ManifestPrefixLocation *string `json:"ManifestPrefixLocation,omitempty"`
+	ManifestPrefixLocation *T `json:"ManifestPrefixLocation,omitempty"`
 
 	// RepoPrefixLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-panorama-package-storagelocation.html#cfn-panorama-package-storagelocation-repoprefixlocation
-	RepoPrefixLocation *string `json:"RepoPrefixLocation,omitempty"`
+	RepoPrefixLocation *T `json:"RepoPrefixLocation,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

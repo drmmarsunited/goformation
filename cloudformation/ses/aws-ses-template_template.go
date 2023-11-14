@@ -13,22 +13,22 @@ type Template_Template[T any] struct {
 	// HtmlPart AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-htmlpart
-	HtmlPart *string `json:"HtmlPart,omitempty"`
+	HtmlPart *T `json:"HtmlPart,omitempty"`
 
 	// SubjectPart AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-subjectpart
-	SubjectPart string `json:"SubjectPart"`
+	SubjectPart T `json:"SubjectPart"`
 
 	// TemplateName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-templatename
-	TemplateName *string `json:"TemplateName,omitempty"`
+	TemplateName *T `json:"TemplateName,omitempty"`
 
 	// TextPart AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-textpart
-	TextPart *string `json:"TextPart,omitempty"`
+	TextPart *T `json:"TextPart,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

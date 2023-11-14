@@ -13,7 +13,7 @@ type Instance_MonthlyTransfer[T any] struct {
 	// GbPerMonthAllocated AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-monthlytransfer.html#cfn-lightsail-instance-monthlytransfer-gbpermonthallocated
-	GbPerMonthAllocated *string `json:"GbPerMonthAllocated,omitempty"`
+	GbPerMonthAllocated *T `json:"GbPerMonthAllocated,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

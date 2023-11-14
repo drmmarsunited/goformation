@@ -16,12 +16,12 @@ type LoggingConfiguration[T any] struct {
 	// FirewallArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-loggingconfiguration.html#cfn-networkfirewall-loggingconfiguration-firewallarn
-	FirewallArn string `json:"FirewallArn"`
+	FirewallArn T `json:"FirewallArn"`
 
 	// FirewallName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-loggingconfiguration.html#cfn-networkfirewall-loggingconfiguration-firewallname
-	FirewallName *string `json:"FirewallName,omitempty"`
+	FirewallName *T `json:"FirewallName,omitempty"`
 
 	// LoggingConfiguration AWS CloudFormation Property
 	// Required: true

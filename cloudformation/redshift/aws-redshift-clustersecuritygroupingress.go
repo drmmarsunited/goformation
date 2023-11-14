@@ -16,22 +16,22 @@ type ClusterSecurityGroupIngress[T any] struct {
 	// CIDRIP AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-cidrip
-	CIDRIP *string `json:"CIDRIP,omitempty"`
+	CIDRIP *T `json:"CIDRIP,omitempty"`
 
 	// ClusterSecurityGroupName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-clustersecuritygroupname
-	ClusterSecurityGroupName string `json:"ClusterSecurityGroupName"`
+	ClusterSecurityGroupName T `json:"ClusterSecurityGroupName"`
 
 	// EC2SecurityGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-ec2securitygroupname
-	EC2SecurityGroupName *string `json:"EC2SecurityGroupName,omitempty"`
+	EC2SecurityGroupName *T `json:"EC2SecurityGroupName,omitempty"`
 
 	// EC2SecurityGroupOwnerId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-ec2securitygroupownerid
-	EC2SecurityGroupOwnerId *string `json:"EC2SecurityGroupOwnerId,omitempty"`
+	EC2SecurityGroupOwnerId *T `json:"EC2SecurityGroupOwnerId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

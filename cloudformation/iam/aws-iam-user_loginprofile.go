@@ -13,7 +13,7 @@ type User_LoginProfile[T any] struct {
 	// Password AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html#cfn-iam-user-loginprofile-password
-	Password string `json:"Password"`
+	Password T `json:"Password"`
 
 	// PasswordResetRequired AWS CloudFormation Property
 	// Required: false

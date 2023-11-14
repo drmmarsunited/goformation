@@ -18,7 +18,7 @@ type LifecyclePolicy_CrossRegionCopyDeprecateRule[T any] struct {
 	// IntervalUnit AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopydeprecaterule.html#cfn-dlm-lifecyclepolicy-crossregioncopydeprecaterule-intervalunit
-	IntervalUnit string `json:"IntervalUnit"`
+	IntervalUnit T `json:"IntervalUnit"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

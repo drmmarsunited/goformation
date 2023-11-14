@@ -13,7 +13,7 @@ type ModelCard_InferenceEnvironment[T any] struct {
 	// ContainerImage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-inferenceenvironment.html#cfn-sagemaker-modelcard-inferenceenvironment-containerimage
-	ContainerImage []string `json:"ContainerImage,omitempty"`
+	ContainerImage []T `json:"ContainerImage,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

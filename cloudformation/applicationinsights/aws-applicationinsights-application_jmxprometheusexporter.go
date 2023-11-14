@@ -13,17 +13,17 @@ type Application_JMXPrometheusExporter[T any] struct {
 	// HostPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-jmxprometheusexporter.html#cfn-applicationinsights-application-jmxprometheusexporter-hostport
-	HostPort *string `json:"HostPort,omitempty"`
+	HostPort *T `json:"HostPort,omitempty"`
 
 	// JMXURL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-jmxprometheusexporter.html#cfn-applicationinsights-application-jmxprometheusexporter-jmxurl
-	JMXURL *string `json:"JMXURL,omitempty"`
+	JMXURL *T `json:"JMXURL,omitempty"`
 
 	// PrometheusPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-jmxprometheusexporter.html#cfn-applicationinsights-application-jmxprometheusexporter-prometheusport
-	PrometheusPort *string `json:"PrometheusPort,omitempty"`
+	PrometheusPort *T `json:"PrometheusPort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

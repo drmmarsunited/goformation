@@ -13,12 +13,12 @@ type Fleet_DomainJoinInfo[T any] struct {
 	// DirectoryName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-domainjoininfo.html#cfn-appstream-fleet-domainjoininfo-directoryname
-	DirectoryName *string `json:"DirectoryName,omitempty"`
+	DirectoryName *T `json:"DirectoryName,omitempty"`
 
 	// OrganizationalUnitDistinguishedName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-domainjoininfo.html#cfn-appstream-fleet-domainjoininfo-organizationalunitdistinguishedname
-	OrganizationalUnitDistinguishedName *string `json:"OrganizationalUnitDistinguishedName,omitempty"`
+	OrganizationalUnitDistinguishedName *T `json:"OrganizationalUnitDistinguishedName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

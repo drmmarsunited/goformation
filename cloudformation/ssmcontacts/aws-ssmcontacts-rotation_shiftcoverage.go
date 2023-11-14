@@ -18,7 +18,7 @@ type Rotation_ShiftCoverage[T any] struct {
 	// DayOfWeek AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-rotation-shiftcoverage.html#cfn-ssmcontacts-rotation-shiftcoverage-dayofweek
-	DayOfWeek string `json:"DayOfWeek"`
+	DayOfWeek T `json:"DayOfWeek"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

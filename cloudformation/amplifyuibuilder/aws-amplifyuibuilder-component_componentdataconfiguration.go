@@ -13,12 +13,12 @@ type Component_ComponentDataConfiguration[T any] struct {
 	// Identifiers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentdataconfiguration.html#cfn-amplifyuibuilder-component-componentdataconfiguration-identifiers
-	Identifiers []string `json:"Identifiers,omitempty"`
+	Identifiers []T `json:"Identifiers,omitempty"`
 
 	// Model AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentdataconfiguration.html#cfn-amplifyuibuilder-component-componentdataconfiguration-model
-	Model string `json:"Model"`
+	Model T `json:"Model"`
 
 	// Predicate AWS CloudFormation Property
 	// Required: false

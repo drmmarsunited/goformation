@@ -13,7 +13,7 @@ type Template_MissingDataConfiguration[T any] struct {
 	// TreatmentOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-missingdataconfiguration.html#cfn-quicksight-template-missingdataconfiguration-treatmentoption
-	TreatmentOption *string `json:"TreatmentOption,omitempty"`
+	TreatmentOption *T `json:"TreatmentOption,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

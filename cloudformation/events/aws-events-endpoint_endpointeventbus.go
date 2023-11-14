@@ -13,7 +13,7 @@ type Endpoint_EndpointEventBus[T any] struct {
 	// EventBusArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-endpoint-endpointeventbus.html#cfn-events-endpoint-endpointeventbus-eventbusarn
-	EventBusArn string `json:"EventBusArn"`
+	EventBusArn T `json:"EventBusArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -17,7 +17,7 @@ type ClusterSecurityGroup[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroup.html#cfn-redshift-clustersecuritygroup-description
-	Description string `json:"Description"`
+	Description T `json:"Description"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

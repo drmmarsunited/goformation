@@ -17,7 +17,7 @@ type Service[T any] struct {
 	// AutoScalingConfigurationArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#cfn-apprunner-service-autoscalingconfigurationarn
-	AutoScalingConfigurationArn *string `json:"AutoScalingConfigurationArn,omitempty"`
+	AutoScalingConfigurationArn *T `json:"AutoScalingConfigurationArn,omitempty"`
 
 	// EncryptionConfiguration AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type Service[T any] struct {
 	// ServiceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#cfn-apprunner-service-servicename
-	ServiceName *string `json:"ServiceName,omitempty"`
+	ServiceName *T `json:"ServiceName,omitempty"`
 
 	// SourceConfiguration AWS CloudFormation Property
 	// Required: true

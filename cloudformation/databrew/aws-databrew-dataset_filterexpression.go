@@ -13,7 +13,7 @@ type Dataset_FilterExpression[T any] struct {
 	// Expression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filterexpression.html#cfn-databrew-dataset-filterexpression-expression
-	Expression string `json:"Expression"`
+	Expression T `json:"Expression"`
 
 	// ValuesMap AWS CloudFormation Property
 	// Required: true

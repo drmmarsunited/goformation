@@ -13,12 +13,12 @@ type Connector_SftpConfig[T any] struct {
 	// TrustedHostKeys AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-sftpconfig.html#cfn-transfer-connector-sftpconfig-trustedhostkeys
-	TrustedHostKeys []string `json:"TrustedHostKeys,omitempty"`
+	TrustedHostKeys []T `json:"TrustedHostKeys,omitempty"`
 
 	// UserSecretId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-sftpconfig.html#cfn-transfer-connector-sftpconfig-usersecretid
-	UserSecretId *string `json:"UserSecretId,omitempty"`
+	UserSecretId *T `json:"UserSecretId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

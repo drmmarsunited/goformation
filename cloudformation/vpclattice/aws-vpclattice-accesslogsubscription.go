@@ -17,12 +17,12 @@ type AccessLogSubscription[T any] struct {
 	// DestinationArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-accesslogsubscription.html#cfn-vpclattice-accesslogsubscription-destinationarn
-	DestinationArn string `json:"DestinationArn"`
+	DestinationArn T `json:"DestinationArn"`
 
 	// ResourceIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-accesslogsubscription.html#cfn-vpclattice-accesslogsubscription-resourceidentifier
-	ResourceIdentifier *string `json:"ResourceIdentifier,omitempty"`
+	ResourceIdentifier *T `json:"ResourceIdentifier,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

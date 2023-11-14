@@ -13,7 +13,7 @@ type HostedZone_QueryLoggingConfig[T any] struct {
 	// CloudWatchLogsLogGroupArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-queryloggingconfig.html#cfn-route53-hostedzone-queryloggingconfig-cloudwatchlogsloggrouparn
-	CloudWatchLogsLogGroupArn string `json:"CloudWatchLogsLogGroupArn"`
+	CloudWatchLogsLogGroupArn T `json:"CloudWatchLogsLogGroupArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

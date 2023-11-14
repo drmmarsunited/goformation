@@ -16,12 +16,12 @@ type Studio[T any] struct {
 	// AdminRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studio.html#cfn-nimblestudio-studio-adminrolearn
-	AdminRoleArn string `json:"AdminRoleArn"`
+	AdminRoleArn T `json:"AdminRoleArn"`
 
 	// DisplayName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studio.html#cfn-nimblestudio-studio-displayname
-	DisplayName string `json:"DisplayName"`
+	DisplayName T `json:"DisplayName"`
 
 	// StudioEncryptionConfiguration AWS CloudFormation Property
 	// Required: false
@@ -31,17 +31,17 @@ type Studio[T any] struct {
 	// StudioName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studio.html#cfn-nimblestudio-studio-studioname
-	StudioName string `json:"StudioName"`
+	StudioName T `json:"StudioName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studio.html#cfn-nimblestudio-studio-tags
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// UserRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studio.html#cfn-nimblestudio-studio-userrolearn
-	UserRoleArn string `json:"UserRoleArn"`
+	UserRoleArn T `json:"UserRoleArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -18,7 +18,7 @@ type JobDefinition_PodProperties[T any] struct {
 	// DnsPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-podproperties.html#cfn-batch-jobdefinition-podproperties-dnspolicy
-	DnsPolicy *string `json:"DnsPolicy,omitempty"`
+	DnsPolicy *T `json:"DnsPolicy,omitempty"`
 
 	// HostNetwork AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type JobDefinition_PodProperties[T any] struct {
 	// ServiceAccountName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-podproperties.html#cfn-batch-jobdefinition-podproperties-serviceaccountname
-	ServiceAccountName *string `json:"ServiceAccountName,omitempty"`
+	ServiceAccountName *T `json:"ServiceAccountName,omitempty"`
 
 	// Volumes AWS CloudFormation Property
 	// Required: false

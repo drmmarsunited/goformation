@@ -13,12 +13,12 @@ type Function_SnapStartResponse[T any] struct {
 	// ApplyOn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-snapstartresponse.html#cfn-lambda-function-snapstartresponse-applyon
-	ApplyOn *string `json:"ApplyOn,omitempty"`
+	ApplyOn *T `json:"ApplyOn,omitempty"`
 
 	// OptimizationStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-snapstartresponse.html#cfn-lambda-function-snapstartresponse-optimizationstatus
-	OptimizationStatus *string `json:"OptimizationStatus,omitempty"`
+	OptimizationStatus *T `json:"OptimizationStatus,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

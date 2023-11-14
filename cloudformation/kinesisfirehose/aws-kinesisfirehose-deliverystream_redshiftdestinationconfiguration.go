@@ -18,7 +18,7 @@ type DeliveryStream_RedshiftDestinationConfiguration[T any] struct {
 	// ClusterJDBCURL AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-clusterjdbcurl
-	ClusterJDBCURL string `json:"ClusterJDBCURL"`
+	ClusterJDBCURL T `json:"ClusterJDBCURL"`
 
 	// CopyCommand AWS CloudFormation Property
 	// Required: true
@@ -28,7 +28,7 @@ type DeliveryStream_RedshiftDestinationConfiguration[T any] struct {
 	// Password AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-password
-	Password string `json:"Password"`
+	Password T `json:"Password"`
 
 	// ProcessingConfiguration AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type DeliveryStream_RedshiftDestinationConfiguration[T any] struct {
 	// RoleARN AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-rolearn
-	RoleARN string `json:"RoleARN"`
+	RoleARN T `json:"RoleARN"`
 
 	// S3BackupConfiguration AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type DeliveryStream_RedshiftDestinationConfiguration[T any] struct {
 	// S3BackupMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-s3backupmode
-	S3BackupMode *string `json:"S3BackupMode,omitempty"`
+	S3BackupMode *T `json:"S3BackupMode,omitempty"`
 
 	// S3Configuration AWS CloudFormation Property
 	// Required: true
@@ -63,7 +63,7 @@ type DeliveryStream_RedshiftDestinationConfiguration[T any] struct {
 	// Username AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-username
-	Username string `json:"Username"`
+	Username T `json:"Username"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

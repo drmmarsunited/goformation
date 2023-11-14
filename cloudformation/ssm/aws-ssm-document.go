@@ -27,17 +27,17 @@ type Document[T any] struct {
 	// DocumentFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-documentformat
-	DocumentFormat *string `json:"DocumentFormat,omitempty"`
+	DocumentFormat *T `json:"DocumentFormat,omitempty"`
 
 	// DocumentType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-documenttype
-	DocumentType *string `json:"DocumentType,omitempty"`
+	DocumentType *T `json:"DocumentType,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Requires AWS CloudFormation Property
 	// Required: false
@@ -52,17 +52,17 @@ type Document[T any] struct {
 	// TargetType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-targettype
-	TargetType *string `json:"TargetType,omitempty"`
+	TargetType *T `json:"TargetType,omitempty"`
 
 	// UpdateMethod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-updatemethod
-	UpdateMethod *string `json:"UpdateMethod,omitempty"`
+	UpdateMethod *T `json:"UpdateMethod,omitempty"`
 
 	// VersionName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-versionname
-	VersionName *string `json:"VersionName,omitempty"`
+	VersionName *T `json:"VersionName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

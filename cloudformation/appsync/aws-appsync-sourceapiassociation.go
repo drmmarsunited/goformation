@@ -16,12 +16,12 @@ type SourceApiAssociation[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-sourceapiassociation.html#cfn-appsync-sourceapiassociation-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// MergedApiIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-sourceapiassociation.html#cfn-appsync-sourceapiassociation-mergedapiidentifier
-	MergedApiIdentifier *string `json:"MergedApiIdentifier,omitempty"`
+	MergedApiIdentifier *T `json:"MergedApiIdentifier,omitempty"`
 
 	// SourceApiAssociationConfig AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type SourceApiAssociation[T any] struct {
 	// SourceApiIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-sourceapiassociation.html#cfn-appsync-sourceapiassociation-sourceapiidentifier
-	SourceApiIdentifier *string `json:"SourceApiIdentifier,omitempty"`
+	SourceApiIdentifier *T `json:"SourceApiIdentifier,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

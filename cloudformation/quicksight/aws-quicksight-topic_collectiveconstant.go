@@ -13,7 +13,7 @@ type Topic_CollectiveConstant[T any] struct {
 	// ValueList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-collectiveconstant.html#cfn-quicksight-topic-collectiveconstant-valuelist
-	ValueList []string `json:"ValueList,omitempty"`
+	ValueList []T `json:"ValueList,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

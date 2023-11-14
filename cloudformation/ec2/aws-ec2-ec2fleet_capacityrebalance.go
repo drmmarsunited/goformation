@@ -13,7 +13,7 @@ type EC2Fleet_CapacityRebalance[T any] struct {
 	// ReplacementStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-capacityrebalance.html#cfn-ec2-ec2fleet-capacityrebalance-replacementstrategy
-	ReplacementStrategy *string `json:"ReplacementStrategy,omitempty"`
+	ReplacementStrategy *T `json:"ReplacementStrategy,omitempty"`
 
 	// TerminationDelay AWS CloudFormation Property
 	// Required: false

@@ -13,7 +13,7 @@ import (
 
 // Application_Location is a helper struct that can hold either a String or ApplicationLocation value
 type Application_Location[T any] struct {
-	String *string
+	String *T
 
 	ApplicationLocation *Application_ApplicationLocation[any]
 }
@@ -52,7 +52,7 @@ func (r *Application_Location[any]) UnmarshalJSON(b []byte) error {
 
 	switch val := typecheck.(type) {
 
-	case string:
+	case any:
 		r.String = &val
 
 	case map[string]interface{}:

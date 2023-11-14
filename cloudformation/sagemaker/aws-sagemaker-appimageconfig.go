@@ -17,7 +17,7 @@ type AppImageConfig[T any] struct {
 	// AppImageConfigName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-appimageconfig.html#cfn-sagemaker-appimageconfig-appimageconfigname
-	AppImageConfigName string `json:"AppImageConfigName"`
+	AppImageConfigName T `json:"AppImageConfigName"`
 
 	// KernelGatewayImageConfig AWS CloudFormation Property
 	// Required: false

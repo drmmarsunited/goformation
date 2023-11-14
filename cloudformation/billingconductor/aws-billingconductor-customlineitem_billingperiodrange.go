@@ -13,12 +13,12 @@ type CustomLineItem_BillingPeriodRange[T any] struct {
 	// ExclusiveEndBillingPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-billingperiodrange.html#cfn-billingconductor-customlineitem-billingperiodrange-exclusiveendbillingperiod
-	ExclusiveEndBillingPeriod *string `json:"ExclusiveEndBillingPeriod,omitempty"`
+	ExclusiveEndBillingPeriod *T `json:"ExclusiveEndBillingPeriod,omitempty"`
 
 	// InclusiveStartBillingPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-billingperiodrange.html#cfn-billingconductor-customlineitem-billingperiodrange-inclusivestartbillingperiod
-	InclusiveStartBillingPeriod *string `json:"InclusiveStartBillingPeriod,omitempty"`
+	InclusiveStartBillingPeriod *T `json:"InclusiveStartBillingPeriod,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

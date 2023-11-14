@@ -22,12 +22,12 @@ type CustomerGateway[T any] struct {
 	// DeviceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-devicename
-	DeviceName *string `json:"DeviceName,omitempty"`
+	DeviceName *T `json:"DeviceName,omitempty"`
 
 	// IpAddress AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-ipaddress
-	IpAddress string `json:"IpAddress"`
+	IpAddress T `json:"IpAddress"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type CustomerGateway[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

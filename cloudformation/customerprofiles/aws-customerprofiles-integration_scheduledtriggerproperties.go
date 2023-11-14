@@ -13,7 +13,7 @@ type Integration_ScheduledTriggerProperties[T any] struct {
 	// DataPullMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-scheduledtriggerproperties.html#cfn-customerprofiles-integration-scheduledtriggerproperties-datapullmode
-	DataPullMode *string `json:"DataPullMode,omitempty"`
+	DataPullMode *T `json:"DataPullMode,omitempty"`
 
 	// FirstExecutionFrom AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Integration_ScheduledTriggerProperties[T any] struct {
 	// ScheduleExpression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-scheduledtriggerproperties.html#cfn-customerprofiles-integration-scheduledtriggerproperties-scheduleexpression
-	ScheduleExpression string `json:"ScheduleExpression"`
+	ScheduleExpression T `json:"ScheduleExpression"`
 
 	// ScheduleOffset AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Integration_ScheduledTriggerProperties[T any] struct {
 	// Timezone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-scheduledtriggerproperties.html#cfn-customerprofiles-integration-scheduledtriggerproperties-timezone
-	Timezone *string `json:"Timezone,omitempty"`
+	Timezone *T `json:"Timezone,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

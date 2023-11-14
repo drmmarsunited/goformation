@@ -22,22 +22,22 @@ type GameServerGroup[T any] struct {
 	// BalancingStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-balancingstrategy
-	BalancingStrategy *string `json:"BalancingStrategy,omitempty"`
+	BalancingStrategy *T `json:"BalancingStrategy,omitempty"`
 
 	// DeleteOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-deleteoption
-	DeleteOption *string `json:"DeleteOption,omitempty"`
+	DeleteOption *T `json:"DeleteOption,omitempty"`
 
 	// GameServerGroupName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-gameservergroupname
-	GameServerGroupName string `json:"GameServerGroupName"`
+	GameServerGroupName T `json:"GameServerGroupName"`
 
 	// GameServerProtectionPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-gameserverprotectionpolicy
-	GameServerProtectionPolicy *string `json:"GameServerProtectionPolicy,omitempty"`
+	GameServerProtectionPolicy *T `json:"GameServerProtectionPolicy,omitempty"`
 
 	// InstanceDefinitions AWS CloudFormation Property
 	// Required: true
@@ -62,7 +62,7 @@ type GameServerGroup[T any] struct {
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -72,7 +72,7 @@ type GameServerGroup[T any] struct {
 	// VpcSubnets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-vpcsubnets
-	VpcSubnets []string `json:"VpcSubnets,omitempty"`
+	VpcSubnets []T `json:"VpcSubnets,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

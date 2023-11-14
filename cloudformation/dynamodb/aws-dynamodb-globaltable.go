@@ -21,7 +21,7 @@ type GlobalTable[T any] struct {
 	// BillingMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-billingmode
-	BillingMode *string `json:"BillingMode,omitempty"`
+	BillingMode *T `json:"BillingMode,omitempty"`
 
 	// GlobalSecondaryIndexes AWS CloudFormation Property
 	// Required: false
@@ -56,7 +56,7 @@ type GlobalTable[T any] struct {
 	// TableName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-tablename
-	TableName *string `json:"TableName,omitempty"`
+	TableName *T `json:"TableName,omitempty"`
 
 	// TimeToLiveSpecification AWS CloudFormation Property
 	// Required: false

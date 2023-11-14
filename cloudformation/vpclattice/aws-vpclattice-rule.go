@@ -22,7 +22,7 @@ type Rule[T any] struct {
 	// ListenerIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-rule.html#cfn-vpclattice-rule-listeneridentifier
-	ListenerIdentifier *string `json:"ListenerIdentifier,omitempty"`
+	ListenerIdentifier *T `json:"ListenerIdentifier,omitempty"`
 
 	// Match AWS CloudFormation Property
 	// Required: true
@@ -32,7 +32,7 @@ type Rule[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-rule.html#cfn-vpclattice-rule-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Priority AWS CloudFormation Property
 	// Required: true
@@ -42,7 +42,7 @@ type Rule[T any] struct {
 	// ServiceIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-rule.html#cfn-vpclattice-rule-serviceidentifier
-	ServiceIdentifier *string `json:"ServiceIdentifier,omitempty"`
+	ServiceIdentifier *T `json:"ServiceIdentifier,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

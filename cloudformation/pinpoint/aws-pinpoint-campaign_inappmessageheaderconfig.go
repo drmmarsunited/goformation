@@ -13,17 +13,17 @@ type Campaign_InAppMessageHeaderConfig[T any] struct {
 	// Alignment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessageheaderconfig.html#cfn-pinpoint-campaign-inappmessageheaderconfig-alignment
-	Alignment *string `json:"Alignment,omitempty"`
+	Alignment *T `json:"Alignment,omitempty"`
 
 	// Header AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessageheaderconfig.html#cfn-pinpoint-campaign-inappmessageheaderconfig-header
-	Header *string `json:"Header,omitempty"`
+	Header *T `json:"Header,omitempty"`
 
 	// TextColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessageheaderconfig.html#cfn-pinpoint-campaign-inappmessageheaderconfig-textcolor
-	TextColor *string `json:"TextColor,omitempty"`
+	TextColor *T `json:"TextColor,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

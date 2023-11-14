@@ -13,7 +13,7 @@ type LocationAzureBlob_AzureBlobSasConfiguration[T any] struct {
 	// AzureBlobSasToken AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationazureblob-azureblobsasconfiguration.html#cfn-datasync-locationazureblob-azureblobsasconfiguration-azureblobsastoken
-	AzureBlobSasToken string `json:"AzureBlobSasToken"`
+	AzureBlobSasToken T `json:"AzureBlobSasToken"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

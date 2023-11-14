@@ -18,7 +18,7 @@ type Dashboard_GeospatialWindowOptions[T any] struct {
 	// MapZoomMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialwindowoptions.html#cfn-quicksight-dashboard-geospatialwindowoptions-mapzoommode
-	MapZoomMode *string `json:"MapZoomMode,omitempty"`
+	MapZoomMode *T `json:"MapZoomMode,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

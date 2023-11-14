@@ -13,7 +13,7 @@ type ReportGroup_ReportExportConfig[T any] struct {
 	// ExportConfigType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-reportexportconfig.html#cfn-codebuild-reportgroup-reportexportconfig-exportconfigtype
-	ExportConfigType string `json:"ExportConfigType"`
+	ExportConfigType T `json:"ExportConfigType"`
 
 	// S3Destination AWS CloudFormation Property
 	// Required: false

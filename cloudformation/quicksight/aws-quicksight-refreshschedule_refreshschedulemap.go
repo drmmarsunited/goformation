@@ -13,7 +13,7 @@ type RefreshSchedule_RefreshScheduleMap[T any] struct {
 	// RefreshType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-refreshschedule-refreshschedulemap.html#cfn-quicksight-refreshschedule-refreshschedulemap-refreshtype
-	RefreshType *string `json:"RefreshType,omitempty"`
+	RefreshType *T `json:"RefreshType,omitempty"`
 
 	// ScheduleFrequency AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type RefreshSchedule_RefreshScheduleMap[T any] struct {
 	// ScheduleId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-refreshschedule-refreshschedulemap.html#cfn-quicksight-refreshschedule-refreshschedulemap-scheduleid
-	ScheduleId *string `json:"ScheduleId,omitempty"`
+	ScheduleId *T `json:"ScheduleId,omitempty"`
 
 	// StartAfterDateTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-refreshschedule-refreshschedulemap.html#cfn-quicksight-refreshschedule-refreshschedulemap-startafterdatetime
-	StartAfterDateTime *string `json:"StartAfterDateTime,omitempty"`
+	StartAfterDateTime *T `json:"StartAfterDateTime,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

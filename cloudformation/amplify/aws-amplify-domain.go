@@ -16,22 +16,22 @@ type Domain[T any] struct {
 	// AppId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#cfn-amplify-domain-appid
-	AppId string `json:"AppId"`
+	AppId T `json:"AppId"`
 
 	// AutoSubDomainCreationPatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#cfn-amplify-domain-autosubdomaincreationpatterns
-	AutoSubDomainCreationPatterns []string `json:"AutoSubDomainCreationPatterns,omitempty"`
+	AutoSubDomainCreationPatterns []T `json:"AutoSubDomainCreationPatterns,omitempty"`
 
 	// AutoSubDomainIAMRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#cfn-amplify-domain-autosubdomainiamrole
-	AutoSubDomainIAMRole *string `json:"AutoSubDomainIAMRole,omitempty"`
+	AutoSubDomainIAMRole *T `json:"AutoSubDomainIAMRole,omitempty"`
 
 	// DomainName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#cfn-amplify-domain-domainname
-	DomainName string `json:"DomainName"`
+	DomainName T `json:"DomainName"`
 
 	// EnableAutoSubDomain AWS CloudFormation Property
 	// Required: false

@@ -13,22 +13,22 @@ type DataSource_ColumnConfiguration[T any] struct {
 	// ChangeDetectingColumns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-columnconfiguration.html#cfn-kendra-datasource-columnconfiguration-changedetectingcolumns
-	ChangeDetectingColumns []string `json:"ChangeDetectingColumns"`
+	ChangeDetectingColumns []T `json:"ChangeDetectingColumns"`
 
 	// DocumentDataColumnName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-columnconfiguration.html#cfn-kendra-datasource-columnconfiguration-documentdatacolumnname
-	DocumentDataColumnName string `json:"DocumentDataColumnName"`
+	DocumentDataColumnName T `json:"DocumentDataColumnName"`
 
 	// DocumentIdColumnName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-columnconfiguration.html#cfn-kendra-datasource-columnconfiguration-documentidcolumnname
-	DocumentIdColumnName string `json:"DocumentIdColumnName"`
+	DocumentIdColumnName T `json:"DocumentIdColumnName"`
 
 	// DocumentTitleColumnName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-columnconfiguration.html#cfn-kendra-datasource-columnconfiguration-documenttitlecolumnname
-	DocumentTitleColumnName *string `json:"DocumentTitleColumnName,omitempty"`
+	DocumentTitleColumnName *T `json:"DocumentTitleColumnName,omitempty"`
 
 	// FieldMappings AWS CloudFormation Property
 	// Required: false

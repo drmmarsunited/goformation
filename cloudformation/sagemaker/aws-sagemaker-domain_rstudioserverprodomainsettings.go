@@ -18,17 +18,17 @@ type Domain_RStudioServerProDomainSettings[T any] struct {
 	// DomainExecutionRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-rstudioserverprodomainsettings.html#cfn-sagemaker-domain-rstudioserverprodomainsettings-domainexecutionrolearn
-	DomainExecutionRoleArn string `json:"DomainExecutionRoleArn"`
+	DomainExecutionRoleArn T `json:"DomainExecutionRoleArn"`
 
 	// RStudioConnectUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-rstudioserverprodomainsettings.html#cfn-sagemaker-domain-rstudioserverprodomainsettings-rstudioconnecturl
-	RStudioConnectUrl *string `json:"RStudioConnectUrl,omitempty"`
+	RStudioConnectUrl *T `json:"RStudioConnectUrl,omitempty"`
 
 	// RStudioPackageManagerUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-rstudioserverprodomainsettings.html#cfn-sagemaker-domain-rstudioserverprodomainsettings-rstudiopackagemanagerurl
-	RStudioPackageManagerUrl *string `json:"RStudioPackageManagerUrl,omitempty"`
+	RStudioPackageManagerUrl *T `json:"RStudioPackageManagerUrl,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

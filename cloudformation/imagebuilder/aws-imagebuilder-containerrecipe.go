@@ -21,27 +21,27 @@ type ContainerRecipe[T any] struct {
 	// ContainerType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-containertype
-	ContainerType string `json:"ContainerType"`
+	ContainerType T `json:"ContainerType"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DockerfileTemplateData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-dockerfiletemplatedata
-	DockerfileTemplateData *string `json:"DockerfileTemplateData,omitempty"`
+	DockerfileTemplateData *T `json:"DockerfileTemplateData,omitempty"`
 
 	// DockerfileTemplateUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-dockerfiletemplateuri
-	DockerfileTemplateUri *string `json:"DockerfileTemplateUri,omitempty"`
+	DockerfileTemplateUri *T `json:"DockerfileTemplateUri,omitempty"`
 
 	// ImageOsVersionOverride AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-imageosversionoverride
-	ImageOsVersionOverride *string `json:"ImageOsVersionOverride,omitempty"`
+	ImageOsVersionOverride *T `json:"ImageOsVersionOverride,omitempty"`
 
 	// InstanceConfiguration AWS CloudFormation Property
 	// Required: false
@@ -51,27 +51,27 @@ type ContainerRecipe[T any] struct {
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-kmskeyid
-	KmsKeyId *string `json:"KmsKeyId,omitempty"`
+	KmsKeyId *T `json:"KmsKeyId,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ParentImage AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-parentimage
-	ParentImage string `json:"ParentImage"`
+	ParentImage T `json:"ParentImage"`
 
 	// PlatformOverride AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-platformoverride
-	PlatformOverride *string `json:"PlatformOverride,omitempty"`
+	PlatformOverride *T `json:"PlatformOverride,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-tags
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// TargetRepository AWS CloudFormation Property
 	// Required: true
@@ -81,12 +81,12 @@ type ContainerRecipe[T any] struct {
 	// Version AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-version
-	Version string `json:"Version"`
+	Version T `json:"Version"`
 
 	// WorkingDirectory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-workingdirectory
-	WorkingDirectory *string `json:"WorkingDirectory,omitempty"`
+	WorkingDirectory *T `json:"WorkingDirectory,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

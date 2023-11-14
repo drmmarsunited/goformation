@@ -23,7 +23,7 @@ type Template_ParameterListControl[T any] struct {
 	// ParameterControlId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterlistcontrol.html#cfn-quicksight-template-parameterlistcontrol-parametercontrolid
-	ParameterControlId string `json:"ParameterControlId"`
+	ParameterControlId T `json:"ParameterControlId"`
 
 	// SelectableValues AWS CloudFormation Property
 	// Required: false
@@ -33,17 +33,17 @@ type Template_ParameterListControl[T any] struct {
 	// SourceParameterName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterlistcontrol.html#cfn-quicksight-template-parameterlistcontrol-sourceparametername
-	SourceParameterName string `json:"SourceParameterName"`
+	SourceParameterName T `json:"SourceParameterName"`
 
 	// Title AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterlistcontrol.html#cfn-quicksight-template-parameterlistcontrol-title
-	Title string `json:"Title"`
+	Title T `json:"Title"`
 
 	// Type AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-parameterlistcontrol.html#cfn-quicksight-template-parameterlistcontrol-type
-	Type *string `json:"Type,omitempty"`
+	Type *T `json:"Type,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

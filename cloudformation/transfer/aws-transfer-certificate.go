@@ -17,32 +17,32 @@ type Certificate[T any] struct {
 	// ActiveDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-certificate.html#cfn-transfer-certificate-activedate
-	ActiveDate *string `json:"ActiveDate,omitempty"`
+	ActiveDate *T `json:"ActiveDate,omitempty"`
 
 	// Certificate AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-certificate.html#cfn-transfer-certificate-certificate
-	Certificate string `json:"Certificate"`
+	Certificate T `json:"Certificate"`
 
 	// CertificateChain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-certificate.html#cfn-transfer-certificate-certificatechain
-	CertificateChain *string `json:"CertificateChain,omitempty"`
+	CertificateChain *T `json:"CertificateChain,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-certificate.html#cfn-transfer-certificate-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// InactiveDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-certificate.html#cfn-transfer-certificate-inactivedate
-	InactiveDate *string `json:"InactiveDate,omitempty"`
+	InactiveDate *T `json:"InactiveDate,omitempty"`
 
 	// PrivateKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-certificate.html#cfn-transfer-certificate-privatekey
-	PrivateKey *string `json:"PrivateKey,omitempty"`
+	PrivateKey *T `json:"PrivateKey,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type Certificate[T any] struct {
 	// Usage AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-certificate.html#cfn-transfer-certificate-usage
-	Usage string `json:"Usage"`
+	Usage T `json:"Usage"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

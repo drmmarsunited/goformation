@@ -13,12 +13,12 @@ type Distribution_DistributionConfig[T any] struct {
 	// Aliases AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-aliases
-	Aliases []string `json:"Aliases,omitempty"`
+	Aliases []T `json:"Aliases,omitempty"`
 
 	// CNAMEs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-cnames
-	CNAMEs []string `json:"CNAMEs,omitempty"`
+	CNAMEs []T `json:"CNAMEs,omitempty"`
 
 	// CacheBehaviors AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Distribution_DistributionConfig[T any] struct {
 	// Comment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-comment
-	Comment *string `json:"Comment,omitempty"`
+	Comment *T `json:"Comment,omitempty"`
 
 	// ContinuousDeploymentPolicyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-continuousdeploymentpolicyid
-	ContinuousDeploymentPolicyId *string `json:"ContinuousDeploymentPolicyId,omitempty"`
+	ContinuousDeploymentPolicyId *T `json:"ContinuousDeploymentPolicyId,omitempty"`
 
 	// CustomErrorResponses AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Distribution_DistributionConfig[T any] struct {
 	// DefaultRootObject AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-defaultrootobject
-	DefaultRootObject *string `json:"DefaultRootObject,omitempty"`
+	DefaultRootObject *T `json:"DefaultRootObject,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
@@ -63,7 +63,7 @@ type Distribution_DistributionConfig[T any] struct {
 	// HttpVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-httpversion
-	HttpVersion *string `json:"HttpVersion,omitempty"`
+	HttpVersion *T `json:"HttpVersion,omitempty"`
 
 	// IPV6Enabled AWS CloudFormation Property
 	// Required: false
@@ -88,7 +88,7 @@ type Distribution_DistributionConfig[T any] struct {
 	// PriceClass AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-priceclass
-	PriceClass *string `json:"PriceClass,omitempty"`
+	PriceClass *T `json:"PriceClass,omitempty"`
 
 	// Restrictions AWS CloudFormation Property
 	// Required: false
@@ -113,7 +113,7 @@ type Distribution_DistributionConfig[T any] struct {
 	// WebACLId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-webaclid
-	WebACLId *string `json:"WebACLId,omitempty"`
+	WebACLId *T `json:"WebACLId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

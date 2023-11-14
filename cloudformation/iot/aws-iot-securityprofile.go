@@ -32,12 +32,12 @@ type SecurityProfile[T any] struct {
 	// SecurityProfileDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-securityprofile.html#cfn-iot-securityprofile-securityprofiledescription
-	SecurityProfileDescription *string `json:"SecurityProfileDescription,omitempty"`
+	SecurityProfileDescription *T `json:"SecurityProfileDescription,omitempty"`
 
 	// SecurityProfileName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-securityprofile.html#cfn-iot-securityprofile-securityprofilename
-	SecurityProfileName *string `json:"SecurityProfileName,omitempty"`
+	SecurityProfileName *T `json:"SecurityProfileName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type SecurityProfile[T any] struct {
 	// TargetArns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-securityprofile.html#cfn-iot-securityprofile-targetarns
-	TargetArns []string `json:"TargetArns,omitempty"`
+	TargetArns []T `json:"TargetArns,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

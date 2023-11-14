@@ -21,7 +21,7 @@ type AuthPolicy[T any] struct {
 	// ResourceIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-authpolicy.html#cfn-vpclattice-authpolicy-resourceidentifier
-	ResourceIdentifier string `json:"ResourceIdentifier"`
+	ResourceIdentifier T `json:"ResourceIdentifier"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

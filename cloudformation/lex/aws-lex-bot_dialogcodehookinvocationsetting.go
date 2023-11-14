@@ -18,7 +18,7 @@ type Bot_DialogCodeHookInvocationSetting[T any] struct {
 	// InvocationLabel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogcodehookinvocationsetting.html#cfn-lex-bot-dialogcodehookinvocationsetting-invocationlabel
-	InvocationLabel *string `json:"InvocationLabel,omitempty"`
+	InvocationLabel *T `json:"InvocationLabel,omitempty"`
 
 	// IsActive AWS CloudFormation Property
 	// Required: true

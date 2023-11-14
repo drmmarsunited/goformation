@@ -16,22 +16,22 @@ type IntegrationResponse[T any] struct {
 	// ApiId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html#cfn-apigatewayv2-integrationresponse-apiid
-	ApiId string `json:"ApiId"`
+	ApiId T `json:"ApiId"`
 
 	// ContentHandlingStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html#cfn-apigatewayv2-integrationresponse-contenthandlingstrategy
-	ContentHandlingStrategy *string `json:"ContentHandlingStrategy,omitempty"`
+	ContentHandlingStrategy *T `json:"ContentHandlingStrategy,omitempty"`
 
 	// IntegrationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html#cfn-apigatewayv2-integrationresponse-integrationid
-	IntegrationId string `json:"IntegrationId"`
+	IntegrationId T `json:"IntegrationId"`
 
 	// IntegrationResponseKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html#cfn-apigatewayv2-integrationresponse-integrationresponsekey
-	IntegrationResponseKey string `json:"IntegrationResponseKey"`
+	IntegrationResponseKey T `json:"IntegrationResponseKey"`
 
 	// ResponseParameters AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type IntegrationResponse[T any] struct {
 	// TemplateSelectionExpression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html#cfn-apigatewayv2-integrationresponse-templateselectionexpression
-	TemplateSelectionExpression *string `json:"TemplateSelectionExpression,omitempty"`
+	TemplateSelectionExpression *T `json:"TemplateSelectionExpression,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

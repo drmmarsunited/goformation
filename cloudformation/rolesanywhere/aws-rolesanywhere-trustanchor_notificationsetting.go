@@ -13,7 +13,7 @@ type TrustAnchor_NotificationSetting[T any] struct {
 	// Channel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rolesanywhere-trustanchor-notificationsetting.html#cfn-rolesanywhere-trustanchor-notificationsetting-channel
-	Channel *string `json:"Channel,omitempty"`
+	Channel *T `json:"Channel,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type TrustAnchor_NotificationSetting[T any] struct {
 	// Event AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rolesanywhere-trustanchor-notificationsetting.html#cfn-rolesanywhere-trustanchor-notificationsetting-event
-	Event string `json:"Event"`
+	Event T `json:"Event"`
 
 	// Threshold AWS CloudFormation Property
 	// Required: false

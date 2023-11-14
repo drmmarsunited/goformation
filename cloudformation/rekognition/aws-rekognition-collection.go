@@ -17,7 +17,7 @@ type Collection[T any] struct {
 	// CollectionId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-collection.html#cfn-rekognition-collection-collectionid
-	CollectionId string `json:"CollectionId"`
+	CollectionId T `json:"CollectionId"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

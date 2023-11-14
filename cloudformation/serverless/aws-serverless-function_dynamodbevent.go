@@ -53,12 +53,12 @@ type Function_DynamoDBEvent[T any] struct {
 	// StartingPosition AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#dynamodb
-	StartingPosition string `json:"StartingPosition"`
+	StartingPosition T `json:"StartingPosition"`
 
 	// Stream AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#dynamodb
-	Stream string `json:"Stream"`
+	Stream T `json:"Stream"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

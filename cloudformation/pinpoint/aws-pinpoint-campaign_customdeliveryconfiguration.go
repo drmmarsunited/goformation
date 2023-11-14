@@ -13,12 +13,12 @@ type Campaign_CustomDeliveryConfiguration[T any] struct {
 	// DeliveryUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-customdeliveryconfiguration.html#cfn-pinpoint-campaign-customdeliveryconfiguration-deliveryuri
-	DeliveryUri *string `json:"DeliveryUri,omitempty"`
+	DeliveryUri *T `json:"DeliveryUri,omitempty"`
 
 	// EndpointTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-customdeliveryconfiguration.html#cfn-pinpoint-campaign-customdeliveryconfiguration-endpointtypes
-	EndpointTypes []string `json:"EndpointTypes,omitempty"`
+	EndpointTypes []T `json:"EndpointTypes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

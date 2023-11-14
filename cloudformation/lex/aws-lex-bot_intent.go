@@ -13,7 +13,7 @@ type Bot_Intent[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DialogCodeHook AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Bot_Intent[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// OutputContexts AWS CloudFormation Property
 	// Required: false
@@ -63,7 +63,7 @@ type Bot_Intent[T any] struct {
 	// ParentIntentSignature AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-parentintentsignature
-	ParentIntentSignature *string `json:"ParentIntentSignature,omitempty"`
+	ParentIntentSignature *T `json:"ParentIntentSignature,omitempty"`
 
 	// SampleUtterances AWS CloudFormation Property
 	// Required: false

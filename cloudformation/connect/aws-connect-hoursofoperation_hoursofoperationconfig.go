@@ -13,7 +13,7 @@ type HoursOfOperation_HoursOfOperationConfig[T any] struct {
 	// Day AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-hoursofoperationconfig.html#cfn-connect-hoursofoperation-hoursofoperationconfig-day
-	Day string `json:"Day"`
+	Day T `json:"Day"`
 
 	// EndTime AWS CloudFormation Property
 	// Required: true

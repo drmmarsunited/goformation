@@ -13,7 +13,7 @@ type Bucket_EncryptionConfiguration[T any] struct {
 	// ReplicaKmsKeyID AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-encryptionconfiguration.html#cfn-s3-bucket-encryptionconfiguration-replicakmskeyid
-	ReplicaKmsKeyID string `json:"ReplicaKmsKeyID"`
+	ReplicaKmsKeyID T `json:"ReplicaKmsKeyID"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

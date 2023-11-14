@@ -13,7 +13,7 @@ type JobTemplate_RetryCriteria[T any] struct {
 	// FailureType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-retrycriteria.html#cfn-iot-jobtemplate-retrycriteria-failuretype
-	FailureType *string `json:"FailureType,omitempty"`
+	FailureType *T `json:"FailureType,omitempty"`
 
 	// NumberOfRetries AWS CloudFormation Property
 	// Required: false

@@ -13,32 +13,32 @@ type Instance_Port[T any] struct {
 	// AccessDirection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-accessdirection
-	AccessDirection *string `json:"AccessDirection,omitempty"`
+	AccessDirection *T `json:"AccessDirection,omitempty"`
 
 	// AccessFrom AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-accessfrom
-	AccessFrom *string `json:"AccessFrom,omitempty"`
+	AccessFrom *T `json:"AccessFrom,omitempty"`
 
 	// AccessType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-accesstype
-	AccessType *string `json:"AccessType,omitempty"`
+	AccessType *T `json:"AccessType,omitempty"`
 
 	// CidrListAliases AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-cidrlistaliases
-	CidrListAliases []string `json:"CidrListAliases,omitempty"`
+	CidrListAliases []T `json:"CidrListAliases,omitempty"`
 
 	// Cidrs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-cidrs
-	Cidrs []string `json:"Cidrs,omitempty"`
+	Cidrs []T `json:"Cidrs,omitempty"`
 
 	// CommonName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-commonname
-	CommonName *string `json:"CommonName,omitempty"`
+	CommonName *T `json:"CommonName,omitempty"`
 
 	// FromPort AWS CloudFormation Property
 	// Required: false
@@ -48,12 +48,12 @@ type Instance_Port[T any] struct {
 	// Ipv6Cidrs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-ipv6cidrs
-	Ipv6Cidrs []string `json:"Ipv6Cidrs,omitempty"`
+	Ipv6Cidrs []T `json:"Ipv6Cidrs,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-protocol
-	Protocol *string `json:"Protocol,omitempty"`
+	Protocol *T `json:"Protocol,omitempty"`
 
 	// ToPort AWS CloudFormation Property
 	// Required: false

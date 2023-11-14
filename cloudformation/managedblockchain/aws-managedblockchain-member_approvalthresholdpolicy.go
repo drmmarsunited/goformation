@@ -18,7 +18,7 @@ type Member_ApprovalThresholdPolicy[T any] struct {
 	// ThresholdComparator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-approvalthresholdpolicy.html#cfn-managedblockchain-member-approvalthresholdpolicy-thresholdcomparator
-	ThresholdComparator *string `json:"ThresholdComparator,omitempty"`
+	ThresholdComparator *T `json:"ThresholdComparator,omitempty"`
 
 	// ThresholdPercentage AWS CloudFormation Property
 	// Required: false

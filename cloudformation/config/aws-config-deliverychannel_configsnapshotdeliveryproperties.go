@@ -13,7 +13,7 @@ type DeliveryChannel_ConfigSnapshotDeliveryProperties[T any] struct {
 	// DeliveryFrequency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-deliverychannel-configsnapshotdeliveryproperties.html#cfn-config-deliverychannel-configsnapshotdeliveryproperties-deliveryfrequency
-	DeliveryFrequency *string `json:"DeliveryFrequency,omitempty"`
+	DeliveryFrequency *T `json:"DeliveryFrequency,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

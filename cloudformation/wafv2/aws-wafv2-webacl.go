@@ -42,12 +42,12 @@ type WebACL[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Rules AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type WebACL[T any] struct {
 	// Scope AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-scope
-	Scope string `json:"Scope"`
+	Scope T `json:"Scope"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -67,7 +67,7 @@ type WebACL[T any] struct {
 	// TokenDomains AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-tokendomains
-	TokenDomains []string `json:"TokenDomains,omitempty"`
+	TokenDomains []T `json:"TokenDomains,omitempty"`
 
 	// VisibilityConfig AWS CloudFormation Property
 	// Required: true

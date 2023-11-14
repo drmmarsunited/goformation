@@ -13,7 +13,7 @@ type WorkGroup_CustomerContentEncryptionConfiguration[T any] struct {
 	// KmsKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-customercontentencryptionconfiguration.html#cfn-athena-workgroup-customercontentencryptionconfiguration-kmskey
-	KmsKey string `json:"KmsKey"`
+	KmsKey T `json:"KmsKey"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Job_AllowedStatistics[T any] struct {
 	// Statistics AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-allowedstatistics.html#cfn-databrew-job-allowedstatistics-statistics
-	Statistics []string `json:"Statistics"`
+	Statistics []T `json:"Statistics"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

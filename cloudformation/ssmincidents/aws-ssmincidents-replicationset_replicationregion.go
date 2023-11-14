@@ -18,7 +18,7 @@ type ReplicationSet_ReplicationRegion[T any] struct {
 	// RegionName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-replicationset-replicationregion.html#cfn-ssmincidents-replicationset-replicationregion-regionname
-	RegionName *string `json:"RegionName,omitempty"`
+	RegionName *T `json:"RegionName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

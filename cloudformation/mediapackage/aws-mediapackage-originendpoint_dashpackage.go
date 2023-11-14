@@ -13,12 +13,12 @@ type OriginEndpoint_DashPackage[T any] struct {
 	// AdTriggers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-adtriggers
-	AdTriggers []string `json:"AdTriggers,omitempty"`
+	AdTriggers []T `json:"AdTriggers,omitempty"`
 
 	// AdsOnDeliveryRestrictions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-adsondeliveryrestrictions
-	AdsOnDeliveryRestrictions *string `json:"AdsOnDeliveryRestrictions,omitempty"`
+	AdsOnDeliveryRestrictions *T `json:"AdsOnDeliveryRestrictions,omitempty"`
 
 	// Encryption AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type OriginEndpoint_DashPackage[T any] struct {
 	// ManifestLayout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-manifestlayout
-	ManifestLayout *string `json:"ManifestLayout,omitempty"`
+	ManifestLayout *T `json:"ManifestLayout,omitempty"`
 
 	// ManifestWindowSeconds AWS CloudFormation Property
 	// Required: false
@@ -53,12 +53,12 @@ type OriginEndpoint_DashPackage[T any] struct {
 	// PeriodTriggers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-periodtriggers
-	PeriodTriggers []string `json:"PeriodTriggers,omitempty"`
+	PeriodTriggers []T `json:"PeriodTriggers,omitempty"`
 
 	// Profile AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-profile
-	Profile *string `json:"Profile,omitempty"`
+	Profile *T `json:"Profile,omitempty"`
 
 	// SegmentDurationSeconds AWS CloudFormation Property
 	// Required: false
@@ -68,7 +68,7 @@ type OriginEndpoint_DashPackage[T any] struct {
 	// SegmentTemplateFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-segmenttemplateformat
-	SegmentTemplateFormat *string `json:"SegmentTemplateFormat,omitempty"`
+	SegmentTemplateFormat *T `json:"SegmentTemplateFormat,omitempty"`
 
 	// StreamSelection AWS CloudFormation Property
 	// Required: false
@@ -83,12 +83,12 @@ type OriginEndpoint_DashPackage[T any] struct {
 	// UtcTiming AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-utctiming
-	UtcTiming *string `json:"UtcTiming,omitempty"`
+	UtcTiming *T `json:"UtcTiming,omitempty"`
 
 	// UtcTimingUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-utctiminguri
-	UtcTimingUri *string `json:"UtcTimingUri,omitempty"`
+	UtcTimingUri *T `json:"UtcTimingUri,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,17 +13,17 @@ type Table_SchemaId[T any] struct {
 	// RegistryName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-registryname
-	RegistryName *string `json:"RegistryName,omitempty"`
+	RegistryName *T `json:"RegistryName,omitempty"`
 
 	// SchemaArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-schemaarn
-	SchemaArn *string `json:"SchemaArn,omitempty"`
+	SchemaArn *T `json:"SchemaArn,omitempty"`
 
 	// SchemaName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-schemaname
-	SchemaName *string `json:"SchemaName,omitempty"`
+	SchemaName *T `json:"SchemaName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

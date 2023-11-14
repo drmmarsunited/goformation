@@ -18,17 +18,17 @@ type RuleGroup_ByteMatchStatement[T any] struct {
 	// PositionalConstraint AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-bytematchstatement.html#cfn-wafv2-rulegroup-bytematchstatement-positionalconstraint
-	PositionalConstraint string `json:"PositionalConstraint"`
+	PositionalConstraint T `json:"PositionalConstraint"`
 
 	// SearchString AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-bytematchstatement.html#cfn-wafv2-rulegroup-bytematchstatement-searchstring
-	SearchString *string `json:"SearchString,omitempty"`
+	SearchString *T `json:"SearchString,omitempty"`
 
 	// SearchStringBase64 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-bytematchstatement.html#cfn-wafv2-rulegroup-bytematchstatement-searchstringbase64
-	SearchStringBase64 *string `json:"SearchStringBase64,omitempty"`
+	SearchStringBase64 *T `json:"SearchStringBase64,omitempty"`
 
 	// TextTransformations AWS CloudFormation Property
 	// Required: true

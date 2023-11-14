@@ -13,12 +13,12 @@ type Analysis_LongFormatText[T any] struct {
 	// PlainText AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-longformattext.html#cfn-quicksight-analysis-longformattext-plaintext
-	PlainText *string `json:"PlainText,omitempty"`
+	PlainText *T `json:"PlainText,omitempty"`
 
 	// RichText AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-longformattext.html#cfn-quicksight-analysis-longformattext-richtext
-	RichText *string `json:"RichText,omitempty"`
+	RichText *T `json:"RichText,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

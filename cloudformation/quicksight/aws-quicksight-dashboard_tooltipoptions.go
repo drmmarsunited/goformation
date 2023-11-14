@@ -18,12 +18,12 @@ type Dashboard_TooltipOptions[T any] struct {
 	// SelectedTooltipType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tooltipoptions.html#cfn-quicksight-dashboard-tooltipoptions-selectedtooltiptype
-	SelectedTooltipType *string `json:"SelectedTooltipType,omitempty"`
+	SelectedTooltipType *T `json:"SelectedTooltipType,omitempty"`
 
 	// TooltipVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tooltipoptions.html#cfn-quicksight-dashboard-tooltipoptions-tooltipvisibility
-	TooltipVisibility *string `json:"TooltipVisibility,omitempty"`
+	TooltipVisibility *T `json:"TooltipVisibility,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

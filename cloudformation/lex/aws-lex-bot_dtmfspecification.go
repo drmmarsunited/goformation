@@ -13,12 +13,12 @@ type Bot_DTMFSpecification[T any] struct {
 	// DeletionCharacter AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dtmfspecification.html#cfn-lex-bot-dtmfspecification-deletioncharacter
-	DeletionCharacter string `json:"DeletionCharacter"`
+	DeletionCharacter T `json:"DeletionCharacter"`
 
 	// EndCharacter AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dtmfspecification.html#cfn-lex-bot-dtmfspecification-endcharacter
-	EndCharacter string `json:"EndCharacter"`
+	EndCharacter T `json:"EndCharacter"`
 
 	// EndTimeoutMs AWS CloudFormation Property
 	// Required: true

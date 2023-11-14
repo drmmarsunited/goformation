@@ -18,7 +18,7 @@ type Dashboard_DestinationParameterValueConfiguration[T any] struct {
 	// SelectAllValueOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-destinationparametervalueconfiguration.html#cfn-quicksight-dashboard-destinationparametervalueconfiguration-selectallvalueoptions
-	SelectAllValueOptions *string `json:"SelectAllValueOptions,omitempty"`
+	SelectAllValueOptions *T `json:"SelectAllValueOptions,omitempty"`
 
 	// SourceColumn AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type Dashboard_DestinationParameterValueConfiguration[T any] struct {
 	// SourceField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-destinationparametervalueconfiguration.html#cfn-quicksight-dashboard-destinationparametervalueconfiguration-sourcefield
-	SourceField *string `json:"SourceField,omitempty"`
+	SourceField *T `json:"SourceField,omitempty"`
 
 	// SourceParameterName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-destinationparametervalueconfiguration.html#cfn-quicksight-dashboard-destinationparametervalueconfiguration-sourceparametername
-	SourceParameterName *string `json:"SourceParameterName,omitempty"`
+	SourceParameterName *T `json:"SourceParameterName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

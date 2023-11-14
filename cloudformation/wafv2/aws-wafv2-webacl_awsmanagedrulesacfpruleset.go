@@ -13,7 +13,7 @@ type WebACL_AWSManagedRulesACFPRuleSet[T any] struct {
 	// CreationPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-awsmanagedrulesacfpruleset.html#cfn-wafv2-webacl-awsmanagedrulesacfpruleset-creationpath
-	CreationPath string `json:"CreationPath"`
+	CreationPath T `json:"CreationPath"`
 
 	// EnableRegexInPath AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type WebACL_AWSManagedRulesACFPRuleSet[T any] struct {
 	// RegistrationPagePath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-awsmanagedrulesacfpruleset.html#cfn-wafv2-webacl-awsmanagedrulesacfpruleset-registrationpagepath
-	RegistrationPagePath string `json:"RegistrationPagePath"`
+	RegistrationPagePath T `json:"RegistrationPagePath"`
 
 	// RequestInspection AWS CloudFormation Property
 	// Required: true

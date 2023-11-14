@@ -13,7 +13,7 @@ type Segment_SourceSegments[T any] struct {
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups-sourcesegments.html#cfn-pinpoint-segment-segmentgroups-groups-sourcesegments-id
-	Id string `json:"Id"`
+	Id T `json:"Id"`
 
 	// Version AWS CloudFormation Property
 	// Required: false

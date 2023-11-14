@@ -17,12 +17,12 @@ type VirtualNode[T any] struct {
 	// MeshName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-meshname
-	MeshName string `json:"MeshName"`
+	MeshName T `json:"MeshName"`
 
 	// MeshOwner AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-meshowner
-	MeshOwner *string `json:"MeshOwner,omitempty"`
+	MeshOwner *T `json:"MeshOwner,omitempty"`
 
 	// Spec AWS CloudFormation Property
 	// Required: true
@@ -37,7 +37,7 @@ type VirtualNode[T any] struct {
 	// VirtualNodeName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-virtualnodename
-	VirtualNodeName *string `json:"VirtualNodeName,omitempty"`
+	VirtualNodeName *T `json:"VirtualNodeName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

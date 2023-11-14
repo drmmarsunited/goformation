@@ -13,12 +13,12 @@ type WebACL_ResponseInspectionBodyContains[T any] struct {
 	// FailureStrings AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspectionbodycontains.html#cfn-wafv2-webacl-responseinspectionbodycontains-failurestrings
-	FailureStrings []string `json:"FailureStrings"`
+	FailureStrings []T `json:"FailureStrings"`
 
 	// SuccessStrings AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspectionbodycontains.html#cfn-wafv2-webacl-responseinspectionbodycontains-successstrings
-	SuccessStrings []string `json:"SuccessStrings"`
+	SuccessStrings []T `json:"SuccessStrings"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

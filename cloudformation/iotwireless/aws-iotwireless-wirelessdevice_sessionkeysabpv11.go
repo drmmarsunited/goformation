@@ -13,22 +13,22 @@ type WirelessDevice_SessionKeysAbpV11[T any] struct {
 	// AppSKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-sessionkeysabpv11.html#cfn-iotwireless-wirelessdevice-sessionkeysabpv11-appskey
-	AppSKey string `json:"AppSKey"`
+	AppSKey T `json:"AppSKey"`
 
 	// FNwkSIntKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-sessionkeysabpv11.html#cfn-iotwireless-wirelessdevice-sessionkeysabpv11-fnwksintkey
-	FNwkSIntKey string `json:"FNwkSIntKey"`
+	FNwkSIntKey T `json:"FNwkSIntKey"`
 
 	// NwkSEncKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-sessionkeysabpv11.html#cfn-iotwireless-wirelessdevice-sessionkeysabpv11-nwksenckey
-	NwkSEncKey string `json:"NwkSEncKey"`
+	NwkSEncKey T `json:"NwkSEncKey"`
 
 	// SNwkSIntKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-sessionkeysabpv11.html#cfn-iotwireless-wirelessdevice-sessionkeysabpv11-snwksintkey
-	SNwkSIntKey string `json:"SNwkSIntKey"`
+	SNwkSIntKey T `json:"SNwkSIntKey"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

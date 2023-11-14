@@ -28,7 +28,7 @@ type GatewayRoute_GrpcGatewayRouteMatch[T any] struct {
 	// ServiceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutematch.html#cfn-appmesh-gatewayroute-grpcgatewayroutematch-servicename
-	ServiceName *string `json:"ServiceName,omitempty"`
+	ServiceName *T `json:"ServiceName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

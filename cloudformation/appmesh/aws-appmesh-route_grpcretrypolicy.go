@@ -13,12 +13,12 @@ type Route_GrpcRetryPolicy[T any] struct {
 	// GrpcRetryEvents AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-grpcretryevents
-	GrpcRetryEvents []string `json:"GrpcRetryEvents,omitempty"`
+	GrpcRetryEvents []T `json:"GrpcRetryEvents,omitempty"`
 
 	// HttpRetryEvents AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-httpretryevents
-	HttpRetryEvents []string `json:"HttpRetryEvents,omitempty"`
+	HttpRetryEvents []T `json:"HttpRetryEvents,omitempty"`
 
 	// MaxRetries AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type Route_GrpcRetryPolicy[T any] struct {
 	// TcpRetryEvents AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-tcpretryevents
-	TcpRetryEvents []string `json:"TcpRetryEvents,omitempty"`
+	TcpRetryEvents []T `json:"TcpRetryEvents,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

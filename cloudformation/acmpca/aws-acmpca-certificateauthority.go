@@ -22,12 +22,12 @@ type CertificateAuthority[T any] struct {
 	// KeyAlgorithm AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-keyalgorithm
-	KeyAlgorithm string `json:"KeyAlgorithm"`
+	KeyAlgorithm T `json:"KeyAlgorithm"`
 
 	// KeyStorageSecurityStandard AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-keystoragesecuritystandard
-	KeyStorageSecurityStandard *string `json:"KeyStorageSecurityStandard,omitempty"`
+	KeyStorageSecurityStandard *T `json:"KeyStorageSecurityStandard,omitempty"`
 
 	// RevocationConfiguration AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type CertificateAuthority[T any] struct {
 	// SigningAlgorithm AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-signingalgorithm
-	SigningAlgorithm string `json:"SigningAlgorithm"`
+	SigningAlgorithm T `json:"SigningAlgorithm"`
 
 	// Subject AWS CloudFormation Property
 	// Required: true
@@ -52,12 +52,12 @@ type CertificateAuthority[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// UsageMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-usagemode
-	UsageMode *string `json:"UsageMode,omitempty"`
+	UsageMode *T `json:"UsageMode,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

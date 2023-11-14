@@ -13,22 +13,22 @@ type WirelessDeviceImportTask_Sidewalk[T any] struct {
 	// DeviceCreationFile AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdeviceimporttask-sidewalk.html#cfn-iotwireless-wirelessdeviceimporttask-sidewalk-devicecreationfile
-	DeviceCreationFile *string `json:"DeviceCreationFile,omitempty"`
+	DeviceCreationFile *T `json:"DeviceCreationFile,omitempty"`
 
 	// DeviceCreationFileList AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdeviceimporttask-sidewalk.html#cfn-iotwireless-wirelessdeviceimporttask-sidewalk-devicecreationfilelist
-	DeviceCreationFileList []string `json:"DeviceCreationFileList,omitempty"`
+	DeviceCreationFileList []T `json:"DeviceCreationFileList,omitempty"`
 
 	// Role AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdeviceimporttask-sidewalk.html#cfn-iotwireless-wirelessdeviceimporttask-sidewalk-role
-	Role *string `json:"Role,omitempty"`
+	Role *T `json:"Role,omitempty"`
 
 	// SidewalkManufacturingSn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdeviceimporttask-sidewalk.html#cfn-iotwireless-wirelessdeviceimporttask-sidewalk-sidewalkmanufacturingsn
-	SidewalkManufacturingSn *string `json:"SidewalkManufacturingSn,omitempty"`
+	SidewalkManufacturingSn *T `json:"SidewalkManufacturingSn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

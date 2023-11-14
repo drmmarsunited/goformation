@@ -13,12 +13,12 @@ type DataSource_OpenSearchServiceConfig[T any] struct {
 	// AwsRegion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-opensearchserviceconfig.html#cfn-appsync-datasource-opensearchserviceconfig-awsregion
-	AwsRegion string `json:"AwsRegion"`
+	AwsRegion T `json:"AwsRegion"`
 
 	// Endpoint AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-opensearchserviceconfig.html#cfn-appsync-datasource-opensearchserviceconfig-endpoint
-	Endpoint string `json:"Endpoint"`
+	Endpoint T `json:"Endpoint"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

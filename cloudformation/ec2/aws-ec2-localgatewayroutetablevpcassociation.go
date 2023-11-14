@@ -17,7 +17,7 @@ type LocalGatewayRouteTableVPCAssociation[T any] struct {
 	// LocalGatewayRouteTableId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevpcassociation.html#cfn-ec2-localgatewayroutetablevpcassociation-localgatewayroutetableid
-	LocalGatewayRouteTableId string `json:"LocalGatewayRouteTableId"`
+	LocalGatewayRouteTableId T `json:"LocalGatewayRouteTableId"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type LocalGatewayRouteTableVPCAssociation[T any] struct {
 	// VpcId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevpcassociation.html#cfn-ec2-localgatewayroutetablevpcassociation-vpcid
-	VpcId string `json:"VpcId"`
+	VpcId T `json:"VpcId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

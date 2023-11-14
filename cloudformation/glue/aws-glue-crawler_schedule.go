@@ -13,7 +13,7 @@ type Crawler_Schedule[T any] struct {
 	// ScheduleExpression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schedule.html#cfn-glue-crawler-schedule-scheduleexpression
-	ScheduleExpression *string `json:"ScheduleExpression,omitempty"`
+	ScheduleExpression *T `json:"ScheduleExpression,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

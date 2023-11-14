@@ -17,12 +17,12 @@ type Feature[T any] struct {
 	// DefaultVariation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-feature.html#cfn-evidently-feature-defaultvariation
-	DefaultVariation *string `json:"DefaultVariation,omitempty"`
+	DefaultVariation *T `json:"DefaultVariation,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-feature.html#cfn-evidently-feature-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EntityOverrides AWS CloudFormation Property
 	// Required: false
@@ -32,17 +32,17 @@ type Feature[T any] struct {
 	// EvaluationStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-feature.html#cfn-evidently-feature-evaluationstrategy
-	EvaluationStrategy *string `json:"EvaluationStrategy,omitempty"`
+	EvaluationStrategy *T `json:"EvaluationStrategy,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-feature.html#cfn-evidently-feature-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Project AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-feature.html#cfn-evidently-feature-project
-	Project string `json:"Project"`
+	Project T `json:"Project"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

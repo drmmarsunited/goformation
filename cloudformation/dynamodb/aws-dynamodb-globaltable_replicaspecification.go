@@ -44,7 +44,7 @@ type GlobalTable_ReplicaSpecification[T any] struct {
 	// Region AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-region
-	Region string `json:"Region"`
+	Region T `json:"Region"`
 
 	// SSESpecification AWS CloudFormation Property
 	// Required: false
@@ -54,7 +54,7 @@ type GlobalTable_ReplicaSpecification[T any] struct {
 	// TableClass AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-tableclass
-	TableClass *string `json:"TableClass,omitempty"`
+	TableClass *T `json:"TableClass,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

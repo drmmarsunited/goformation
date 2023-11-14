@@ -13,57 +13,57 @@ type NetworkInsightsAnalysis_AnalysisRouteTableRoute[T any] struct {
 	// NatGatewayId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-natgatewayid
-	NatGatewayId *string `json:"NatGatewayId,omitempty"`
+	NatGatewayId *T `json:"NatGatewayId,omitempty"`
 
 	// NetworkInterfaceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-networkinterfaceid
-	NetworkInterfaceId *string `json:"NetworkInterfaceId,omitempty"`
+	NetworkInterfaceId *T `json:"NetworkInterfaceId,omitempty"`
 
 	// Origin AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-origin
-	Origin *string `json:"Origin,omitempty"`
+	Origin *T `json:"Origin,omitempty"`
 
 	// State AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-state
-	State *string `json:"State,omitempty"`
+	State *T `json:"State,omitempty"`
 
 	// TransitGatewayId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-transitgatewayid
-	TransitGatewayId *string `json:"TransitGatewayId,omitempty"`
+	TransitGatewayId *T `json:"TransitGatewayId,omitempty"`
 
 	// VpcPeeringConnectionId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-vpcpeeringconnectionid
-	VpcPeeringConnectionId *string `json:"VpcPeeringConnectionId,omitempty"`
+	VpcPeeringConnectionId *T `json:"VpcPeeringConnectionId,omitempty"`
 
 	// destinationCidr AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-destinationcidr
-	destinationCidr *string `json:"destinationCidr,omitempty"`
+	destinationCidr *T `json:"destinationCidr,omitempty"`
 
 	// destinationPrefixListId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-destinationprefixlistid
-	destinationPrefixListId *string `json:"destinationPrefixListId,omitempty"`
+	destinationPrefixListId *T `json:"destinationPrefixListId,omitempty"`
 
 	// egressOnlyInternetGatewayId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-egressonlyinternetgatewayid
-	egressOnlyInternetGatewayId *string `json:"egressOnlyInternetGatewayId,omitempty"`
+	egressOnlyInternetGatewayId *T `json:"egressOnlyInternetGatewayId,omitempty"`
 
 	// gatewayId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-gatewayid
-	gatewayId *string `json:"gatewayId,omitempty"`
+	gatewayId *T `json:"gatewayId,omitempty"`
 
 	// instanceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-instanceid
-	instanceId *string `json:"instanceId,omitempty"`
+	instanceId *T `json:"instanceId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

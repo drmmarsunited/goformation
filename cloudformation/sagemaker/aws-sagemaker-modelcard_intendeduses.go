@@ -13,27 +13,27 @@ type ModelCard_IntendedUses[T any] struct {
 	// ExplanationsForRiskRating AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-intendeduses.html#cfn-sagemaker-modelcard-intendeduses-explanationsforriskrating
-	ExplanationsForRiskRating *string `json:"ExplanationsForRiskRating,omitempty"`
+	ExplanationsForRiskRating *T `json:"ExplanationsForRiskRating,omitempty"`
 
 	// FactorsAffectingModelEfficiency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-intendeduses.html#cfn-sagemaker-modelcard-intendeduses-factorsaffectingmodelefficiency
-	FactorsAffectingModelEfficiency *string `json:"FactorsAffectingModelEfficiency,omitempty"`
+	FactorsAffectingModelEfficiency *T `json:"FactorsAffectingModelEfficiency,omitempty"`
 
 	// IntendedUses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-intendeduses.html#cfn-sagemaker-modelcard-intendeduses-intendeduses
-	IntendedUses *string `json:"IntendedUses,omitempty"`
+	IntendedUses *T `json:"IntendedUses,omitempty"`
 
 	// PurposeOfModel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-intendeduses.html#cfn-sagemaker-modelcard-intendeduses-purposeofmodel
-	PurposeOfModel *string `json:"PurposeOfModel,omitempty"`
+	PurposeOfModel *T `json:"PurposeOfModel,omitempty"`
 
 	// RiskRating AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-intendeduses.html#cfn-sagemaker-modelcard-intendeduses-riskrating
-	RiskRating *string `json:"RiskRating,omitempty"`
+	RiskRating *T `json:"RiskRating,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

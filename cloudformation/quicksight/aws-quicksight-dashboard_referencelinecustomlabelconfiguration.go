@@ -13,7 +13,7 @@ type Dashboard_ReferenceLineCustomLabelConfiguration[T any] struct {
 	// CustomLabel AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-referencelinecustomlabelconfiguration.html#cfn-quicksight-dashboard-referencelinecustomlabelconfiguration-customlabel
-	CustomLabel string `json:"CustomLabel"`
+	CustomLabel T `json:"CustomLabel"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

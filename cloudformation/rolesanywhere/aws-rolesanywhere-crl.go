@@ -17,7 +17,7 @@ type CRL[T any] struct {
 	// CrlData AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-crl.html#cfn-rolesanywhere-crl-crldata
-	CrlData string `json:"CrlData"`
+	CrlData T `json:"CrlData"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type CRL[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-crl.html#cfn-rolesanywhere-crl-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type CRL[T any] struct {
 	// TrustAnchorArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-crl.html#cfn-rolesanywhere-crl-trustanchorarn
-	TrustAnchorArn *string `json:"TrustAnchorArn,omitempty"`
+	TrustAnchorArn *T `json:"TrustAnchorArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

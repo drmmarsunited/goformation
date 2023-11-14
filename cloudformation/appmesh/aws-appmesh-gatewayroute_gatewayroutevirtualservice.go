@@ -13,7 +13,7 @@ type GatewayRoute_GatewayRouteVirtualService[T any] struct {
 	// VirtualServiceName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutevirtualservice.html#cfn-appmesh-gatewayroute-gatewayroutevirtualservice-virtualservicename
-	VirtualServiceName string `json:"VirtualServiceName"`
+	VirtualServiceName T `json:"VirtualServiceName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

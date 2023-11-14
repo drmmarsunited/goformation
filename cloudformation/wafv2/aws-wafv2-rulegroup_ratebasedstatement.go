@@ -13,7 +13,7 @@ type RuleGroup_RateBasedStatement[T any] struct {
 	// AggregateKeyType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ratebasedstatement.html#cfn-wafv2-rulegroup-ratebasedstatement-aggregatekeytype
-	AggregateKeyType string `json:"AggregateKeyType"`
+	AggregateKeyType T `json:"AggregateKeyType"`
 
 	// CustomKeys AWS CloudFormation Property
 	// Required: false

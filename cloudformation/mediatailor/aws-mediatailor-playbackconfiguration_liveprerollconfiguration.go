@@ -13,7 +13,7 @@ type PlaybackConfiguration_LivePreRollConfiguration[T any] struct {
 	// AdDecisionServerUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-liveprerollconfiguration.html#cfn-mediatailor-playbackconfiguration-liveprerollconfiguration-addecisionserverurl
-	AdDecisionServerUrl *string `json:"AdDecisionServerUrl,omitempty"`
+	AdDecisionServerUrl *T `json:"AdDecisionServerUrl,omitempty"`
 
 	// MaxDurationSeconds AWS CloudFormation Property
 	// Required: false

@@ -22,12 +22,12 @@ type PlacementGroup[T any] struct {
 	// SpreadLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-spreadlevel
-	SpreadLevel *string `json:"SpreadLevel,omitempty"`
+	SpreadLevel *T `json:"SpreadLevel,omitempty"`
 
 	// Strategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-strategy
-	Strategy *string `json:"Strategy,omitempty"`
+	Strategy *T `json:"Strategy,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

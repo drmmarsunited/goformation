@@ -13,7 +13,7 @@ type DetectorModel_Firehose[T any] struct {
 	// DeliveryStreamName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html#cfn-iotevents-detectormodel-firehose-deliverystreamname
-	DeliveryStreamName string `json:"DeliveryStreamName"`
+	DeliveryStreamName T `json:"DeliveryStreamName"`
 
 	// Payload AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type DetectorModel_Firehose[T any] struct {
 	// Separator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html#cfn-iotevents-detectormodel-firehose-separator
-	Separator *string `json:"Separator,omitempty"`
+	Separator *T `json:"Separator,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

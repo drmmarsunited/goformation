@@ -13,7 +13,7 @@ type EmailIdentity_ConfigurationSetAttributes[T any] struct {
 	// ConfigurationSetName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-emailidentity-configurationsetattributes.html#cfn-ses-emailidentity-configurationsetattributes-configurationsetname
-	ConfigurationSetName *string `json:"ConfigurationSetName,omitempty"`
+	ConfigurationSetName *T `json:"ConfigurationSetName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

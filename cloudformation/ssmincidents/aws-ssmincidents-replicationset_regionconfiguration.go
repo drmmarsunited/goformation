@@ -13,7 +13,7 @@ type ReplicationSet_RegionConfiguration[T any] struct {
 	// SseKmsKeyId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-replicationset-regionconfiguration.html#cfn-ssmincidents-replicationset-regionconfiguration-ssekmskeyid
-	SseKmsKeyId string `json:"SseKmsKeyId"`
+	SseKmsKeyId T `json:"SseKmsKeyId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

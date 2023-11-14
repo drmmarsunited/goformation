@@ -13,12 +13,12 @@ type EndpointConfig_CaptureContentTypeHeader[T any] struct {
 	// CsvContentTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig-capturecontenttypeheader.html#cfn-sagemaker-endpointconfig-datacaptureconfig-capturecontenttypeheader-csvcontenttypes
-	CsvContentTypes []string `json:"CsvContentTypes,omitempty"`
+	CsvContentTypes []T `json:"CsvContentTypes,omitempty"`
 
 	// JsonContentTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig-capturecontenttypeheader.html#cfn-sagemaker-endpointconfig-datacaptureconfig-capturecontenttypeheader-jsoncontenttypes
-	JsonContentTypes []string `json:"JsonContentTypes,omitempty"`
+	JsonContentTypes []T `json:"JsonContentTypes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

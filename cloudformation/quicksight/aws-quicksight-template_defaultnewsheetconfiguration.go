@@ -23,7 +23,7 @@ type Template_DefaultNewSheetConfiguration[T any] struct {
 	// SheetContentType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-defaultnewsheetconfiguration.html#cfn-quicksight-template-defaultnewsheetconfiguration-sheetcontenttype
-	SheetContentType *string `json:"SheetContentType,omitempty"`
+	SheetContentType *T `json:"SheetContentType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

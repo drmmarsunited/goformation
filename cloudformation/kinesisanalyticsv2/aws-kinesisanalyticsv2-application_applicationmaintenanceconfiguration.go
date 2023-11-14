@@ -13,7 +13,7 @@ type Application_ApplicationMaintenanceConfiguration[T any] struct {
 	// ApplicationMaintenanceWindowStartTime AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationmaintenanceconfiguration.html#cfn-kinesisanalyticsv2-application-applicationmaintenanceconfiguration-applicationmaintenancewindowstarttime
-	ApplicationMaintenanceWindowStartTime string `json:"ApplicationMaintenanceWindowStartTime"`
+	ApplicationMaintenanceWindowStartTime T `json:"ApplicationMaintenanceWindowStartTime"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -17,12 +17,12 @@ type LocalGatewayRouteTableVirtualInterfaceGroupAssociation[T any] struct {
 	// LocalGatewayRouteTableId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation.html#cfn-ec2-localgatewayroutetablevirtualinterfacegroupassociation-localgatewayroutetableid
-	LocalGatewayRouteTableId string `json:"LocalGatewayRouteTableId"`
+	LocalGatewayRouteTableId T `json:"LocalGatewayRouteTableId"`
 
 	// LocalGatewayVirtualInterfaceGroupId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation.html#cfn-ec2-localgatewayroutetablevirtualinterfacegroupassociation-localgatewayvirtualinterfacegroupid
-	LocalGatewayVirtualInterfaceGroupId string `json:"LocalGatewayVirtualInterfaceGroupId"`
+	LocalGatewayVirtualInterfaceGroupId T `json:"LocalGatewayVirtualInterfaceGroupId"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

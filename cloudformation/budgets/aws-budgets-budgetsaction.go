@@ -21,17 +21,17 @@ type BudgetsAction[T any] struct {
 	// ActionType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-actiontype
-	ActionType string `json:"ActionType"`
+	ActionType T `json:"ActionType"`
 
 	// ApprovalModel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-approvalmodel
-	ApprovalModel *string `json:"ApprovalModel,omitempty"`
+	ApprovalModel *T `json:"ApprovalModel,omitempty"`
 
 	// BudgetName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-budgetname
-	BudgetName string `json:"BudgetName"`
+	BudgetName T `json:"BudgetName"`
 
 	// Definition AWS CloudFormation Property
 	// Required: true
@@ -41,12 +41,12 @@ type BudgetsAction[T any] struct {
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-executionrolearn
-	ExecutionRoleArn string `json:"ExecutionRoleArn"`
+	ExecutionRoleArn T `json:"ExecutionRoleArn"`
 
 	// NotificationType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-notificationtype
-	NotificationType string `json:"NotificationType"`
+	NotificationType T `json:"NotificationType"`
 
 	// Subscribers AWS CloudFormation Property
 	// Required: true

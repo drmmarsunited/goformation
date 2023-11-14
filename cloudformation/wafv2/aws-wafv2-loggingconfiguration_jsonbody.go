@@ -13,7 +13,7 @@ type LoggingConfiguration_JsonBody[T any] struct {
 	// InvalidFallbackBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-jsonbody.html#cfn-wafv2-loggingconfiguration-jsonbody-invalidfallbackbehavior
-	InvalidFallbackBehavior *string `json:"InvalidFallbackBehavior,omitempty"`
+	InvalidFallbackBehavior *T `json:"InvalidFallbackBehavior,omitempty"`
 
 	// MatchPattern AWS CloudFormation Property
 	// Required: true
@@ -23,7 +23,7 @@ type LoggingConfiguration_JsonBody[T any] struct {
 	// MatchScope AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-jsonbody.html#cfn-wafv2-loggingconfiguration-jsonbody-matchscope
-	MatchScope string `json:"MatchScope"`
+	MatchScope T `json:"MatchScope"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

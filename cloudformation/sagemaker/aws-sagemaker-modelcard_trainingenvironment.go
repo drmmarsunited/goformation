@@ -13,7 +13,7 @@ type ModelCard_TrainingEnvironment[T any] struct {
 	// ContainerImage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingenvironment.html#cfn-sagemaker-modelcard-trainingenvironment-containerimage
-	ContainerImage []string `json:"ContainerImage,omitempty"`
+	ContainerImage []T `json:"ContainerImage,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

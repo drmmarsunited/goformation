@@ -17,12 +17,12 @@ type NatGateway[T any] struct {
 	// AllocationId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-allocationid
-	AllocationId *string `json:"AllocationId,omitempty"`
+	AllocationId *T `json:"AllocationId,omitempty"`
 
 	// ConnectivityType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-connectivitytype
-	ConnectivityType *string `json:"ConnectivityType,omitempty"`
+	ConnectivityType *T `json:"ConnectivityType,omitempty"`
 
 	// MaxDrainDurationSeconds AWS CloudFormation Property
 	// Required: false
@@ -32,12 +32,12 @@ type NatGateway[T any] struct {
 	// PrivateIpAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-privateipaddress
-	PrivateIpAddress *string `json:"PrivateIpAddress,omitempty"`
+	PrivateIpAddress *T `json:"PrivateIpAddress,omitempty"`
 
 	// SecondaryAllocationIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-secondaryallocationids
-	SecondaryAllocationIds []string `json:"SecondaryAllocationIds,omitempty"`
+	SecondaryAllocationIds []T `json:"SecondaryAllocationIds,omitempty"`
 
 	// SecondaryPrivateIpAddressCount AWS CloudFormation Property
 	// Required: false
@@ -47,12 +47,12 @@ type NatGateway[T any] struct {
 	// SecondaryPrivateIpAddresses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-secondaryprivateipaddresses
-	SecondaryPrivateIpAddresses []string `json:"SecondaryPrivateIpAddresses,omitempty"`
+	SecondaryPrivateIpAddresses []T `json:"SecondaryPrivateIpAddresses,omitempty"`
 
 	// SubnetId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-subnetid
-	SubnetId string `json:"SubnetId"`
+	SubnetId T `json:"SubnetId"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

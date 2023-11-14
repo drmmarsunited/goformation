@@ -28,12 +28,12 @@ type Pipe_PipeSourceRabbitMQBrokerParameters[T any] struct {
 	// QueueName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcerabbitmqbrokerparameters.html#cfn-pipes-pipe-pipesourcerabbitmqbrokerparameters-queuename
-	QueueName string `json:"QueueName"`
+	QueueName T `json:"QueueName"`
 
 	// VirtualHost AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourcerabbitmqbrokerparameters.html#cfn-pipes-pipe-pipesourcerabbitmqbrokerparameters-virtualhost
-	VirtualHost *string `json:"VirtualHost,omitempty"`
+	VirtualHost *T `json:"VirtualHost,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,12 +13,12 @@ type Topic_CellValueSynonym[T any] struct {
 	// CellValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-cellvaluesynonym.html#cfn-quicksight-topic-cellvaluesynonym-cellvalue
-	CellValue *string `json:"CellValue,omitempty"`
+	CellValue *T `json:"CellValue,omitempty"`
 
 	// Synonyms AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-cellvaluesynonym.html#cfn-quicksight-topic-cellvaluesynonym-synonyms
-	Synonyms []string `json:"Synonyms,omitempty"`
+	Synonyms []T `json:"Synonyms,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

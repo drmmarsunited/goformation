@@ -16,22 +16,22 @@ type ContactChannel[T any] struct {
 	// ChannelAddress AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contactchannel.html#cfn-ssmcontacts-contactchannel-channeladdress
-	ChannelAddress string `json:"ChannelAddress"`
+	ChannelAddress T `json:"ChannelAddress"`
 
 	// ChannelName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contactchannel.html#cfn-ssmcontacts-contactchannel-channelname
-	ChannelName string `json:"ChannelName"`
+	ChannelName T `json:"ChannelName"`
 
 	// ChannelType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contactchannel.html#cfn-ssmcontacts-contactchannel-channeltype
-	ChannelType string `json:"ChannelType"`
+	ChannelType T `json:"ChannelType"`
 
 	// ContactId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contactchannel.html#cfn-ssmcontacts-contactchannel-contactid
-	ContactId string `json:"ContactId"`
+	ContactId T `json:"ContactId"`
 
 	// DeferActivation AWS CloudFormation Property
 	// Required: false

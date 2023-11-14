@@ -18,12 +18,12 @@ type Cluster_ExecuteCommandLogConfiguration[T any] struct {
 	// CloudWatchLogGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-executecommandlogconfiguration.html#cfn-ecs-cluster-executecommandlogconfiguration-cloudwatchloggroupname
-	CloudWatchLogGroupName *string `json:"CloudWatchLogGroupName,omitempty"`
+	CloudWatchLogGroupName *T `json:"CloudWatchLogGroupName,omitempty"`
 
 	// S3BucketName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-executecommandlogconfiguration.html#cfn-ecs-cluster-executecommandlogconfiguration-s3bucketname
-	S3BucketName *string `json:"S3BucketName,omitempty"`
+	S3BucketName *T `json:"S3BucketName,omitempty"`
 
 	// S3EncryptionEnabled AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Cluster_ExecuteCommandLogConfiguration[T any] struct {
 	// S3KeyPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-executecommandlogconfiguration.html#cfn-ecs-cluster-executecommandlogconfiguration-s3keyprefix
-	S3KeyPrefix *string `json:"S3KeyPrefix,omitempty"`
+	S3KeyPrefix *T `json:"S3KeyPrefix,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

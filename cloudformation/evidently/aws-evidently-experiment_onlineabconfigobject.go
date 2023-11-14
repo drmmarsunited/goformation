@@ -13,7 +13,7 @@ type Experiment_OnlineAbConfigObject[T any] struct {
 	// ControlTreatmentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-onlineabconfigobject.html#cfn-evidently-experiment-onlineabconfigobject-controltreatmentname
-	ControlTreatmentName *string `json:"ControlTreatmentName,omitempty"`
+	ControlTreatmentName *T `json:"ControlTreatmentName,omitempty"`
 
 	// TreatmentWeights AWS CloudFormation Property
 	// Required: false

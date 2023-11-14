@@ -23,17 +23,17 @@ type Channel_VideoDescription[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html#cfn-medialive-channel-videodescription-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// RespondToAfd AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html#cfn-medialive-channel-videodescription-respondtoafd
-	RespondToAfd *string `json:"RespondToAfd,omitempty"`
+	RespondToAfd *T `json:"RespondToAfd,omitempty"`
 
 	// ScalingBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html#cfn-medialive-channel-videodescription-scalingbehavior
-	ScalingBehavior *string `json:"ScalingBehavior,omitempty"`
+	ScalingBehavior *T `json:"ScalingBehavior,omitempty"`
 
 	// Sharpness AWS CloudFormation Property
 	// Required: false

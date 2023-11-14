@@ -13,12 +13,12 @@ type Topic_NamedEntityDefinitionMetric[T any] struct {
 	// Aggregation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-namedentitydefinitionmetric.html#cfn-quicksight-topic-namedentitydefinitionmetric-aggregation
-	Aggregation *string `json:"Aggregation,omitempty"`
+	Aggregation *T `json:"Aggregation,omitempty"`
 
 	// AggregationFunctionParameters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-namedentitydefinitionmetric.html#cfn-quicksight-topic-namedentitydefinitionmetric-aggregationfunctionparameters
-	AggregationFunctionParameters map[string]string `json:"AggregationFunctionParameters,omitempty"`
+	AggregationFunctionParameters map[string]T `json:"AggregationFunctionParameters,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

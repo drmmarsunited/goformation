@@ -13,7 +13,7 @@ type Analysis_DataPathSort[T any] struct {
 	// Direction AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datapathsort.html#cfn-quicksight-analysis-datapathsort-direction
-	Direction string `json:"Direction"`
+	Direction T `json:"Direction"`
 
 	// SortPaths AWS CloudFormation Property
 	// Required: true

@@ -27,42 +27,42 @@ type DBInstance[T any] struct {
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-availabilityzone
-	AvailabilityZone *string `json:"AvailabilityZone,omitempty"`
+	AvailabilityZone *T `json:"AvailabilityZone,omitempty"`
 
 	// DBClusterIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbclusteridentifier
-	DBClusterIdentifier *string `json:"DBClusterIdentifier,omitempty"`
+	DBClusterIdentifier *T `json:"DBClusterIdentifier,omitempty"`
 
 	// DBInstanceClass AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbinstanceclass
-	DBInstanceClass string `json:"DBInstanceClass"`
+	DBInstanceClass T `json:"DBInstanceClass"`
 
 	// DBInstanceIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbinstanceidentifier
-	DBInstanceIdentifier *string `json:"DBInstanceIdentifier,omitempty"`
+	DBInstanceIdentifier *T `json:"DBInstanceIdentifier,omitempty"`
 
 	// DBParameterGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbparametergroupname
-	DBParameterGroupName *string `json:"DBParameterGroupName,omitempty"`
+	DBParameterGroupName *T `json:"DBParameterGroupName,omitempty"`
 
 	// DBSnapshotIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbsnapshotidentifier
-	DBSnapshotIdentifier *string `json:"DBSnapshotIdentifier,omitempty"`
+	DBSnapshotIdentifier *T `json:"DBSnapshotIdentifier,omitempty"`
 
 	// DBSubnetGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbsubnetgroupname
-	DBSubnetGroupName *string `json:"DBSubnetGroupName,omitempty"`
+	DBSubnetGroupName *T `json:"DBSubnetGroupName,omitempty"`
 
 	// PreferredMaintenanceWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-preferredmaintenancewindow
-	PreferredMaintenanceWindow *string `json:"PreferredMaintenanceWindow,omitempty"`
+	PreferredMaintenanceWindow *T `json:"PreferredMaintenanceWindow,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

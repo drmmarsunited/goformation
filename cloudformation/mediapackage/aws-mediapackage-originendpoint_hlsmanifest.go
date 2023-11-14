@@ -13,22 +13,22 @@ type OriginEndpoint_HlsManifest[T any] struct {
 	// AdMarkers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsmanifest.html#cfn-mediapackage-originendpoint-hlsmanifest-admarkers
-	AdMarkers *string `json:"AdMarkers,omitempty"`
+	AdMarkers *T `json:"AdMarkers,omitempty"`
 
 	// AdTriggers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsmanifest.html#cfn-mediapackage-originendpoint-hlsmanifest-adtriggers
-	AdTriggers []string `json:"AdTriggers,omitempty"`
+	AdTriggers []T `json:"AdTriggers,omitempty"`
 
 	// AdsOnDeliveryRestrictions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsmanifest.html#cfn-mediapackage-originendpoint-hlsmanifest-adsondeliveryrestrictions
-	AdsOnDeliveryRestrictions *string `json:"AdsOnDeliveryRestrictions,omitempty"`
+	AdsOnDeliveryRestrictions *T `json:"AdsOnDeliveryRestrictions,omitempty"`
 
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsmanifest.html#cfn-mediapackage-originendpoint-hlsmanifest-id
-	Id string `json:"Id"`
+	Id T `json:"Id"`
 
 	// IncludeIframeOnlyStream AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type OriginEndpoint_HlsManifest[T any] struct {
 	// ManifestName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsmanifest.html#cfn-mediapackage-originendpoint-hlsmanifest-manifestname
-	ManifestName *string `json:"ManifestName,omitempty"`
+	ManifestName *T `json:"ManifestName,omitempty"`
 
 	// PlaylistType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsmanifest.html#cfn-mediapackage-originendpoint-hlsmanifest-playlisttype
-	PlaylistType *string `json:"PlaylistType,omitempty"`
+	PlaylistType *T `json:"PlaylistType,omitempty"`
 
 	// PlaylistWindowSeconds AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type OriginEndpoint_HlsManifest[T any] struct {
 	// Url AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsmanifest.html#cfn-mediapackage-originendpoint-hlsmanifest-url
-	Url *string `json:"Url,omitempty"`
+	Url *T `json:"Url,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

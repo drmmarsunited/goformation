@@ -13,7 +13,7 @@ type Analysis_CustomNarrativeOptions[T any] struct {
 	// Narrative AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customnarrativeoptions.html#cfn-quicksight-analysis-customnarrativeoptions-narrative
-	Narrative string `json:"Narrative"`
+	Narrative T `json:"Narrative"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -18,7 +18,7 @@ type Channel_InputLossBehavior[T any] struct {
 	// InputLossImageColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossbehavior.html#cfn-medialive-channel-inputlossbehavior-inputlossimagecolor
-	InputLossImageColor *string `json:"InputLossImageColor,omitempty"`
+	InputLossImageColor *T `json:"InputLossImageColor,omitempty"`
 
 	// InputLossImageSlate AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Channel_InputLossBehavior[T any] struct {
 	// InputLossImageType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossbehavior.html#cfn-medialive-channel-inputlossbehavior-inputlossimagetype
-	InputLossImageType *string `json:"InputLossImageType,omitempty"`
+	InputLossImageType *T `json:"InputLossImageType,omitempty"`
 
 	// RepeatFrameMsec AWS CloudFormation Property
 	// Required: false

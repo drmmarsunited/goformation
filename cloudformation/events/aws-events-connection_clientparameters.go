@@ -13,12 +13,12 @@ type Connection_ClientParameters[T any] struct {
 	// ClientID AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-clientparameters.html#cfn-events-connection-clientparameters-clientid
-	ClientID string `json:"ClientID"`
+	ClientID T `json:"ClientID"`
 
 	// ClientSecret AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-clientparameters.html#cfn-events-connection-clientparameters-clientsecret
-	ClientSecret string `json:"ClientSecret"`
+	ClientSecret T `json:"ClientSecret"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

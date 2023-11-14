@@ -13,7 +13,7 @@ type Channel_WebvttDestinationSettings[T any] struct {
 	// StyleControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-webvttdestinationsettings.html#cfn-medialive-channel-webvttdestinationsettings-stylecontrol
-	StyleControl *string `json:"StyleControl,omitempty"`
+	StyleControl *T `json:"StyleControl,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

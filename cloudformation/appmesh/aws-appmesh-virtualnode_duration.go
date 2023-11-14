@@ -13,7 +13,7 @@ type VirtualNode_Duration[T any] struct {
 	// Unit AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-duration.html#cfn-appmesh-virtualnode-duration-unit
-	Unit string `json:"Unit"`
+	Unit T `json:"Unit"`
 
 	// Value AWS CloudFormation Property
 	// Required: true

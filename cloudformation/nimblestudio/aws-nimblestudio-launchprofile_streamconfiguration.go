@@ -13,17 +13,17 @@ type LaunchProfile_StreamConfiguration[T any] struct {
 	// AutomaticTerminationMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-automaticterminationmode
-	AutomaticTerminationMode *string `json:"AutomaticTerminationMode,omitempty"`
+	AutomaticTerminationMode *T `json:"AutomaticTerminationMode,omitempty"`
 
 	// ClipboardMode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-clipboardmode
-	ClipboardMode string `json:"ClipboardMode"`
+	ClipboardMode T `json:"ClipboardMode"`
 
 	// Ec2InstanceTypes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-ec2instancetypes
-	Ec2InstanceTypes []string `json:"Ec2InstanceTypes"`
+	Ec2InstanceTypes []T `json:"Ec2InstanceTypes"`
 
 	// MaxSessionLengthInMinutes AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type LaunchProfile_StreamConfiguration[T any] struct {
 	// SessionPersistenceMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-sessionpersistencemode
-	SessionPersistenceMode *string `json:"SessionPersistenceMode,omitempty"`
+	SessionPersistenceMode *T `json:"SessionPersistenceMode,omitempty"`
 
 	// SessionStorage AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type LaunchProfile_StreamConfiguration[T any] struct {
 	// StreamingImageIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-streamingimageids
-	StreamingImageIds []string `json:"StreamingImageIds"`
+	StreamingImageIds []T `json:"StreamingImageIds"`
 
 	// VolumeConfiguration AWS CloudFormation Property
 	// Required: false

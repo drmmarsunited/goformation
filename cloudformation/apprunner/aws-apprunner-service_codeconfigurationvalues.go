@@ -13,17 +13,17 @@ type Service_CodeConfigurationValues[T any] struct {
 	// BuildCommand AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfigurationvalues.html#cfn-apprunner-service-codeconfigurationvalues-buildcommand
-	BuildCommand *string `json:"BuildCommand,omitempty"`
+	BuildCommand *T `json:"BuildCommand,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfigurationvalues.html#cfn-apprunner-service-codeconfigurationvalues-port
-	Port *string `json:"Port,omitempty"`
+	Port *T `json:"Port,omitempty"`
 
 	// Runtime AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfigurationvalues.html#cfn-apprunner-service-codeconfigurationvalues-runtime
-	Runtime string `json:"Runtime"`
+	Runtime T `json:"Runtime"`
 
 	// RuntimeEnvironmentSecrets AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Service_CodeConfigurationValues[T any] struct {
 	// StartCommand AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfigurationvalues.html#cfn-apprunner-service-codeconfigurationvalues-startcommand
-	StartCommand *string `json:"StartCommand,omitempty"`
+	StartCommand *T `json:"StartCommand,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

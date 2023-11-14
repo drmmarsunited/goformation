@@ -13,7 +13,7 @@ type ConfigurationRecorder_ExclusionByResourceTypes[T any] struct {
 	// ResourceTypes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-exclusionbyresourcetypes.html#cfn-config-configurationrecorder-exclusionbyresourcetypes-resourcetypes
-	ResourceTypes []string `json:"ResourceTypes"`
+	ResourceTypes []T `json:"ResourceTypes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

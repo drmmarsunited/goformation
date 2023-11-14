@@ -23,7 +23,7 @@ type ComponentType_DataValue[T any] struct {
 	// Expression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-datavalue.html#cfn-iottwinmaker-componenttype-datavalue-expression
-	Expression *string `json:"Expression,omitempty"`
+	Expression *T `json:"Expression,omitempty"`
 
 	// IntegerValue AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type ComponentType_DataValue[T any] struct {
 	// StringValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-datavalue.html#cfn-iottwinmaker-componenttype-datavalue-stringvalue
-	StringValue *string `json:"StringValue,omitempty"`
+	StringValue *T `json:"StringValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

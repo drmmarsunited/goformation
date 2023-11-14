@@ -13,7 +13,7 @@ type DataSet_LogicalTableSource[T any] struct {
 	// DataSetArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltablesource.html#cfn-quicksight-dataset-logicaltablesource-datasetarn
-	DataSetArn *string `json:"DataSetArn,omitempty"`
+	DataSetArn *T `json:"DataSetArn,omitempty"`
 
 	// JoinInstruction AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type DataSet_LogicalTableSource[T any] struct {
 	// PhysicalTableId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltablesource.html#cfn-quicksight-dataset-logicaltablesource-physicaltableid
-	PhysicalTableId *string `json:"PhysicalTableId,omitempty"`
+	PhysicalTableId *T `json:"PhysicalTableId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

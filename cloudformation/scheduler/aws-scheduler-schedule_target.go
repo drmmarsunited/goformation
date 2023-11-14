@@ -13,7 +13,7 @@ type Schedule_Target[T any] struct {
 	// Arn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html#cfn-scheduler-schedule-target-arn
-	Arn string `json:"Arn"`
+	Arn T `json:"Arn"`
 
 	// DeadLetterConfig AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Schedule_Target[T any] struct {
 	// Input AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html#cfn-scheduler-schedule-target-input
-	Input *string `json:"Input,omitempty"`
+	Input *T `json:"Input,omitempty"`
 
 	// KinesisParameters AWS CloudFormation Property
 	// Required: false
@@ -48,7 +48,7 @@ type Schedule_Target[T any] struct {
 	// RoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html#cfn-scheduler-schedule-target-rolearn
-	RoleArn string `json:"RoleArn"`
+	RoleArn T `json:"RoleArn"`
 
 	// SageMakerPipelineParameters AWS CloudFormation Property
 	// Required: false

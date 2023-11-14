@@ -16,17 +16,17 @@ type ConfigurationTemplate[T any] struct {
 	// ApplicationName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-applicationname
-	ApplicationName string `json:"ApplicationName"`
+	ApplicationName T `json:"ApplicationName"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EnvironmentId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-environmentid
-	EnvironmentId *string `json:"EnvironmentId,omitempty"`
+	EnvironmentId *T `json:"EnvironmentId,omitempty"`
 
 	// OptionSettings AWS CloudFormation Property
 	// Required: false
@@ -36,12 +36,12 @@ type ConfigurationTemplate[T any] struct {
 	// PlatformArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-platformarn
-	PlatformArn *string `json:"PlatformArn,omitempty"`
+	PlatformArn *T `json:"PlatformArn,omitempty"`
 
 	// SolutionStackName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-solutionstackname
-	SolutionStackName *string `json:"SolutionStackName,omitempty"`
+	SolutionStackName *T `json:"SolutionStackName,omitempty"`
 
 	// SourceConfiguration AWS CloudFormation Property
 	// Required: false

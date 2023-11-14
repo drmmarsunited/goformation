@@ -13,12 +13,12 @@ type DataSource_ElasticsearchConfig[T any] struct {
 	// AwsRegion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-elasticsearchconfig.html#cfn-appsync-datasource-elasticsearchconfig-awsregion
-	AwsRegion string `json:"AwsRegion"`
+	AwsRegion T `json:"AwsRegion"`
 
 	// Endpoint AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-elasticsearchconfig.html#cfn-appsync-datasource-elasticsearchconfig-endpoint
-	Endpoint string `json:"Endpoint"`
+	Endpoint T `json:"Endpoint"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

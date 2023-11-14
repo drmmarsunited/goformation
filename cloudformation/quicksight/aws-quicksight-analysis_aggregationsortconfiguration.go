@@ -23,7 +23,7 @@ type Analysis_AggregationSortConfiguration[T any] struct {
 	// SortDirection AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-aggregationsortconfiguration.html#cfn-quicksight-analysis-aggregationsortconfiguration-sortdirection
-	SortDirection string `json:"SortDirection"`
+	SortDirection T `json:"SortDirection"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

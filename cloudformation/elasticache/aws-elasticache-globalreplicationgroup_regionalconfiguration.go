@@ -13,12 +13,12 @@ type GlobalReplicationGroup_RegionalConfiguration[T any] struct {
 	// ReplicationGroupId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-regionalconfiguration.html#cfn-elasticache-globalreplicationgroup-regionalconfiguration-replicationgroupid
-	ReplicationGroupId *string `json:"ReplicationGroupId,omitempty"`
+	ReplicationGroupId *T `json:"ReplicationGroupId,omitempty"`
 
 	// ReplicationGroupRegion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-regionalconfiguration.html#cfn-elasticache-globalreplicationgroup-regionalconfiguration-replicationgroupregion
-	ReplicationGroupRegion *string `json:"ReplicationGroupRegion,omitempty"`
+	ReplicationGroupRegion *T `json:"ReplicationGroupRegion,omitempty"`
 
 	// ReshardingConfigurations AWS CloudFormation Property
 	// Required: false

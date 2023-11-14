@@ -13,7 +13,7 @@ type Channel_ThumbnailConfiguration[T any] struct {
 	// State AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-thumbnailconfiguration.html#cfn-medialive-channel-thumbnailconfiguration-state
-	State *string `json:"State,omitempty"`
+	State *T `json:"State,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

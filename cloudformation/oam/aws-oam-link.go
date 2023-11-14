@@ -16,22 +16,22 @@ type Link[T any] struct {
 	// LabelTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-oam-link.html#cfn-oam-link-labeltemplate
-	LabelTemplate *string `json:"LabelTemplate,omitempty"`
+	LabelTemplate *T `json:"LabelTemplate,omitempty"`
 
 	// ResourceTypes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-oam-link.html#cfn-oam-link-resourcetypes
-	ResourceTypes []string `json:"ResourceTypes"`
+	ResourceTypes []T `json:"ResourceTypes"`
 
 	// SinkIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-oam-link.html#cfn-oam-link-sinkidentifier
-	SinkIdentifier string `json:"SinkIdentifier"`
+	SinkIdentifier T `json:"SinkIdentifier"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-oam-link.html#cfn-oam-link-tags
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,17 +13,17 @@ type WebACL_ResponseInspectionJson[T any] struct {
 	// FailureValues AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspectionjson.html#cfn-wafv2-webacl-responseinspectionjson-failurevalues
-	FailureValues []string `json:"FailureValues"`
+	FailureValues []T `json:"FailureValues"`
 
 	// Identifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspectionjson.html#cfn-wafv2-webacl-responseinspectionjson-identifier
-	Identifier string `json:"Identifier"`
+	Identifier T `json:"Identifier"`
 
 	// SuccessValues AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspectionjson.html#cfn-wafv2-webacl-responseinspectionjson-successvalues
-	SuccessValues []string `json:"SuccessValues"`
+	SuccessValues []T `json:"SuccessValues"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

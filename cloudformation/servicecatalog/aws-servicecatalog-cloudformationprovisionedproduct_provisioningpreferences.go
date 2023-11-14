@@ -13,7 +13,7 @@ type CloudFormationProvisionedProduct_ProvisioningPreferences[T any] struct {
 	// StackSetAccounts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetaccounts
-	StackSetAccounts []string `json:"StackSetAccounts,omitempty"`
+	StackSetAccounts []T `json:"StackSetAccounts,omitempty"`
 
 	// StackSetFailureToleranceCount AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type CloudFormationProvisionedProduct_ProvisioningPreferences[T any] struct {
 	// StackSetOperationType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetoperationtype
-	StackSetOperationType *string `json:"StackSetOperationType,omitempty"`
+	StackSetOperationType *T `json:"StackSetOperationType,omitempty"`
 
 	// StackSetRegions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetregions
-	StackSetRegions []string `json:"StackSetRegions,omitempty"`
+	StackSetRegions []T `json:"StackSetRegions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

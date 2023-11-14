@@ -18,12 +18,12 @@ type CoreNetwork_CoreNetworkEdge[T any] struct {
 	// EdgeLocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-corenetwork-corenetworkedge.html#cfn-networkmanager-corenetwork-corenetworkedge-edgelocation
-	EdgeLocation *string `json:"EdgeLocation,omitempty"`
+	EdgeLocation *T `json:"EdgeLocation,omitempty"`
 
 	// InsideCidrBlocks AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-corenetwork-corenetworkedge.html#cfn-networkmanager-corenetwork-corenetworkedge-insidecidrblocks
-	InsideCidrBlocks []string `json:"InsideCidrBlocks,omitempty"`
+	InsideCidrBlocks []T `json:"InsideCidrBlocks,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Certificate_PolicyInformation[T any] struct {
 	// CertPolicyId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-policyinformation.html#cfn-acmpca-certificate-policyinformation-certpolicyid
-	CertPolicyId string `json:"CertPolicyId"`
+	CertPolicyId T `json:"CertPolicyId"`
 
 	// PolicyQualifiers AWS CloudFormation Property
 	// Required: false

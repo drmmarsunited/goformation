@@ -13,7 +13,7 @@ type NetworkInterface_Ipv6PrefixSpecification[T any] struct {
 	// Ipv6Prefix AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-ipv6prefixspecification.html#cfn-ec2-networkinterface-ipv6prefixspecification-ipv6prefix
-	Ipv6Prefix string `json:"Ipv6Prefix"`
+	Ipv6Prefix T `json:"Ipv6Prefix"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

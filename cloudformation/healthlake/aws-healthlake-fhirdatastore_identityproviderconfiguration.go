@@ -13,7 +13,7 @@ type FHIRDatastore_IdentityProviderConfiguration[T any] struct {
 	// AuthorizationStrategy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-identityproviderconfiguration.html#cfn-healthlake-fhirdatastore-identityproviderconfiguration-authorizationstrategy
-	AuthorizationStrategy string `json:"AuthorizationStrategy"`
+	AuthorizationStrategy T `json:"AuthorizationStrategy"`
 
 	// FineGrainedAuthorizationEnabled AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type FHIRDatastore_IdentityProviderConfiguration[T any] struct {
 	// IdpLambdaArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-identityproviderconfiguration.html#cfn-healthlake-fhirdatastore-identityproviderconfiguration-idplambdaarn
-	IdpLambdaArn *string `json:"IdpLambdaArn,omitempty"`
+	IdpLambdaArn *T `json:"IdpLambdaArn,omitempty"`
 
 	// Metadata AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-identityproviderconfiguration.html#cfn-healthlake-fhirdatastore-identityproviderconfiguration-metadata
-	Metadata *string `json:"Metadata,omitempty"`
+	Metadata *T `json:"Metadata,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

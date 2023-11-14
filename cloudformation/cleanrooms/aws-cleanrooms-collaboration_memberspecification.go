@@ -13,17 +13,17 @@ type Collaboration_MemberSpecification[T any] struct {
 	// AccountId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-collaboration-memberspecification.html#cfn-cleanrooms-collaboration-memberspecification-accountid
-	AccountId string `json:"AccountId"`
+	AccountId T `json:"AccountId"`
 
 	// DisplayName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-collaboration-memberspecification.html#cfn-cleanrooms-collaboration-memberspecification-displayname
-	DisplayName string `json:"DisplayName"`
+	DisplayName T `json:"DisplayName"`
 
 	// MemberAbilities AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-collaboration-memberspecification.html#cfn-cleanrooms-collaboration-memberspecification-memberabilities
-	MemberAbilities []string `json:"MemberAbilities"`
+	MemberAbilities []T `json:"MemberAbilities"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

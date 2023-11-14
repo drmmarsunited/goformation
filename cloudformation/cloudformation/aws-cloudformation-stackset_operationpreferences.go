@@ -33,12 +33,12 @@ type StackSet_OperationPreferences[T any] struct {
 	// RegionConcurrencyType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-operationpreferences.html#cfn-cloudformation-stackset-operationpreferences-regionconcurrencytype
-	RegionConcurrencyType *string `json:"RegionConcurrencyType,omitempty"`
+	RegionConcurrencyType *T `json:"RegionConcurrencyType,omitempty"`
 
 	// RegionOrder AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-operationpreferences.html#cfn-cloudformation-stackset-operationpreferences-regionorder
-	RegionOrder []string `json:"RegionOrder,omitempty"`
+	RegionOrder []T `json:"RegionOrder,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -18,7 +18,7 @@ type BackupPlan_BackupPlanResourceType[T any] struct {
 	// BackupPlanName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupplanresourcetype.html#cfn-backup-backupplan-backupplanresourcetype-backupplanname
-	BackupPlanName string `json:"BackupPlanName"`
+	BackupPlanName T `json:"BackupPlanName"`
 
 	// BackupPlanRule AWS CloudFormation Property
 	// Required: true

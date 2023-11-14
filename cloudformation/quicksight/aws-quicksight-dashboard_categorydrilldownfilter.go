@@ -13,7 +13,7 @@ type Dashboard_CategoryDrillDownFilter[T any] struct {
 	// CategoryValues AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-categorydrilldownfilter.html#cfn-quicksight-dashboard-categorydrilldownfilter-categoryvalues
-	CategoryValues []string `json:"CategoryValues"`
+	CategoryValues []T `json:"CategoryValues"`
 
 	// Column AWS CloudFormation Property
 	// Required: true

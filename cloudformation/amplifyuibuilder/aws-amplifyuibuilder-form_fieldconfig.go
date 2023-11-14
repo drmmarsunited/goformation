@@ -23,7 +23,7 @@ type Form_FieldConfig[T any] struct {
 	// Label AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-fieldconfig.html#cfn-amplifyuibuilder-form-fieldconfig-label
-	Label *string `json:"Label,omitempty"`
+	Label *T `json:"Label,omitempty"`
 
 	// Position AWS CloudFormation Property
 	// Required: false

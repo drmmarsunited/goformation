@@ -17,7 +17,7 @@ type Template[T any] struct {
 	// AwsAccountId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-awsaccountid
-	AwsAccountId string `json:"AwsAccountId"`
+	AwsAccountId T `json:"AwsAccountId"`
 
 	// Definition AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Template[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Permissions AWS CloudFormation Property
 	// Required: false
@@ -47,12 +47,17 @@ type Template[T any] struct {
 	// TemplateId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-templateid
-	TemplateId string `json:"TemplateId"`
+	TemplateId T `json:"TemplateId"`
+
+	// ValidationStrategy AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-validationstrategy
+	ValidationStrategy *Template_ValidationStrategy[any] `json:"ValidationStrategy,omitempty"`
 
 	// VersionDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-versiondescription
-	VersionDescription *string `json:"VersionDescription,omitempty"`
+	VersionDescription *T `json:"VersionDescription,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

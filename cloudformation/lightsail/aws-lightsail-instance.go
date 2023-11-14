@@ -22,17 +22,17 @@ type Instance[T any] struct {
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-availabilityzone
-	AvailabilityZone *string `json:"AvailabilityZone,omitempty"`
+	AvailabilityZone *T `json:"AvailabilityZone,omitempty"`
 
 	// BlueprintId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-blueprintid
-	BlueprintId string `json:"BlueprintId"`
+	BlueprintId T `json:"BlueprintId"`
 
 	// BundleId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-bundleid
-	BundleId string `json:"BundleId"`
+	BundleId T `json:"BundleId"`
 
 	// Hardware AWS CloudFormation Property
 	// Required: false
@@ -42,12 +42,12 @@ type Instance[T any] struct {
 	// InstanceName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-instancename
-	InstanceName string `json:"InstanceName"`
+	InstanceName T `json:"InstanceName"`
 
 	// KeyPairName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-keypairname
-	KeyPairName *string `json:"KeyPairName,omitempty"`
+	KeyPairName *T `json:"KeyPairName,omitempty"`
 
 	// Location AWS CloudFormation Property
 	// Required: false
@@ -72,7 +72,7 @@ type Instance[T any] struct {
 	// UserData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-userdata
-	UserData *string `json:"UserData,omitempty"`
+	UserData *T `json:"UserData,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

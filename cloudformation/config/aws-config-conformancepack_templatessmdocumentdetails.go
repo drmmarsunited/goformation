@@ -13,12 +13,12 @@ type ConformancePack_TemplateSSMDocumentDetails[T any] struct {
 	// DocumentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-templatessmdocumentdetails.html#cfn-config-conformancepack-templatessmdocumentdetails-documentname
-	DocumentName *string `json:"DocumentName,omitempty"`
+	DocumentName *T `json:"DocumentName,omitempty"`
 
 	// DocumentVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-templatessmdocumentdetails.html#cfn-config-conformancepack-templatessmdocumentdetails-documentversion
-	DocumentVersion *string `json:"DocumentVersion,omitempty"`
+	DocumentVersion *T `json:"DocumentVersion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -17,7 +17,7 @@ type BillingGroup[T any] struct {
 	// BillingGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-billinggroup.html#cfn-iot-billinggroup-billinggroupname
-	BillingGroupName *string `json:"BillingGroupName,omitempty"`
+	BillingGroupName *T `json:"BillingGroupName,omitempty"`
 
 	// BillingGroupProperties AWS CloudFormation Property
 	// Required: false

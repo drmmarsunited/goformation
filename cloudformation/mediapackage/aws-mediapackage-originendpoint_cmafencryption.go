@@ -13,12 +13,12 @@ type OriginEndpoint_CmafEncryption[T any] struct {
 	// ConstantInitializationVector AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-cmafencryption.html#cfn-mediapackage-originendpoint-cmafencryption-constantinitializationvector
-	ConstantInitializationVector *string `json:"ConstantInitializationVector,omitempty"`
+	ConstantInitializationVector *T `json:"ConstantInitializationVector,omitempty"`
 
 	// EncryptionMethod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-cmafencryption.html#cfn-mediapackage-originendpoint-cmafencryption-encryptionmethod
-	EncryptionMethod *string `json:"EncryptionMethod,omitempty"`
+	EncryptionMethod *T `json:"EncryptionMethod,omitempty"`
 
 	// KeyRotationIntervalSeconds AWS CloudFormation Property
 	// Required: false

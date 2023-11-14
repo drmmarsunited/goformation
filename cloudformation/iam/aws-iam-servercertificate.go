@@ -17,27 +17,27 @@ type ServerCertificate[T any] struct {
 	// CertificateBody AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servercertificate.html#cfn-iam-servercertificate-certificatebody
-	CertificateBody *string `json:"CertificateBody,omitempty"`
+	CertificateBody *T `json:"CertificateBody,omitempty"`
 
 	// CertificateChain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servercertificate.html#cfn-iam-servercertificate-certificatechain
-	CertificateChain *string `json:"CertificateChain,omitempty"`
+	CertificateChain *T `json:"CertificateChain,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servercertificate.html#cfn-iam-servercertificate-path
-	Path *string `json:"Path,omitempty"`
+	Path *T `json:"Path,omitempty"`
 
 	// PrivateKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servercertificate.html#cfn-iam-servercertificate-privatekey
-	PrivateKey *string `json:"PrivateKey,omitempty"`
+	PrivateKey *T `json:"PrivateKey,omitempty"`
 
 	// ServerCertificateName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servercertificate.html#cfn-iam-servercertificate-servercertificatename
-	ServerCertificateName *string `json:"ServerCertificateName,omitempty"`
+	ServerCertificateName *T `json:"ServerCertificateName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

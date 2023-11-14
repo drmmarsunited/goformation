@@ -13,17 +13,17 @@ type Channel_MsSmoothGroupSettings[T any] struct {
 	// AcquisitionPointId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-acquisitionpointid
-	AcquisitionPointId *string `json:"AcquisitionPointId,omitempty"`
+	AcquisitionPointId *T `json:"AcquisitionPointId,omitempty"`
 
 	// AudioOnlyTimecodeControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-audioonlytimecodecontrol
-	AudioOnlyTimecodeControl *string `json:"AudioOnlyTimecodeControl,omitempty"`
+	AudioOnlyTimecodeControl *T `json:"AudioOnlyTimecodeControl,omitempty"`
 
 	// CertificateMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-certificatemode
-	CertificateMode *string `json:"CertificateMode,omitempty"`
+	CertificateMode *T `json:"CertificateMode,omitempty"`
 
 	// ConnectionRetryInterval AWS CloudFormation Property
 	// Required: false
@@ -38,17 +38,17 @@ type Channel_MsSmoothGroupSettings[T any] struct {
 	// EventId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-eventid
-	EventId *string `json:"EventId,omitempty"`
+	EventId *T `json:"EventId,omitempty"`
 
 	// EventIdMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-eventidmode
-	EventIdMode *string `json:"EventIdMode,omitempty"`
+	EventIdMode *T `json:"EventIdMode,omitempty"`
 
 	// EventStopBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-eventstopbehavior
-	EventStopBehavior *string `json:"EventStopBehavior,omitempty"`
+	EventStopBehavior *T `json:"EventStopBehavior,omitempty"`
 
 	// FilecacheDuration AWS CloudFormation Property
 	// Required: false
@@ -63,7 +63,7 @@ type Channel_MsSmoothGroupSettings[T any] struct {
 	// InputLossAction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-inputlossaction
-	InputLossAction *string `json:"InputLossAction,omitempty"`
+	InputLossAction *T `json:"InputLossAction,omitempty"`
 
 	// NumRetries AWS CloudFormation Property
 	// Required: false
@@ -78,7 +78,7 @@ type Channel_MsSmoothGroupSettings[T any] struct {
 	// SegmentationMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-segmentationmode
-	SegmentationMode *string `json:"SegmentationMode,omitempty"`
+	SegmentationMode *T `json:"SegmentationMode,omitempty"`
 
 	// SendDelayMs AWS CloudFormation Property
 	// Required: false
@@ -88,22 +88,22 @@ type Channel_MsSmoothGroupSettings[T any] struct {
 	// SparseTrackType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-sparsetracktype
-	SparseTrackType *string `json:"SparseTrackType,omitempty"`
+	SparseTrackType *T `json:"SparseTrackType,omitempty"`
 
 	// StreamManifestBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-streammanifestbehavior
-	StreamManifestBehavior *string `json:"StreamManifestBehavior,omitempty"`
+	StreamManifestBehavior *T `json:"StreamManifestBehavior,omitempty"`
 
 	// TimestampOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-timestampoffset
-	TimestampOffset *string `json:"TimestampOffset,omitempty"`
+	TimestampOffset *T `json:"TimestampOffset,omitempty"`
 
 	// TimestampOffsetMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-timestampoffsetmode
-	TimestampOffsetMode *string `json:"TimestampOffsetMode,omitempty"`
+	TimestampOffsetMode *T `json:"TimestampOffsetMode,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

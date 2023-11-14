@@ -13,7 +13,7 @@ type ConfigurationSet_GuardianOptions[T any] struct {
 	// OptimizedSharedDelivery AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-guardianoptions.html#cfn-ses-configurationset-guardianoptions-optimizedshareddelivery
-	OptimizedSharedDelivery string `json:"OptimizedSharedDelivery"`
+	OptimizedSharedDelivery T `json:"OptimizedSharedDelivery"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

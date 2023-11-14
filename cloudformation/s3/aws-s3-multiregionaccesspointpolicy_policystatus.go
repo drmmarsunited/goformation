@@ -13,7 +13,7 @@ type MultiRegionAccessPointPolicy_PolicyStatus[T any] struct {
 	// IsPublic AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-multiregionaccesspointpolicy-policystatus.html#cfn-s3-multiregionaccesspointpolicy-policystatus-ispublic
-	IsPublic string `json:"IsPublic"`
+	IsPublic T `json:"IsPublic"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

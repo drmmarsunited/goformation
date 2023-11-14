@@ -13,7 +13,7 @@ type Analysis_PivotTotalOptions[T any] struct {
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottotaloptions.html#cfn-quicksight-analysis-pivottotaloptions-customlabel
-	CustomLabel *string `json:"CustomLabel,omitempty"`
+	CustomLabel *T `json:"CustomLabel,omitempty"`
 
 	// MetricHeaderCellStyle AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,17 @@ type Analysis_PivotTotalOptions[T any] struct {
 	// Placement AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottotaloptions.html#cfn-quicksight-analysis-pivottotaloptions-placement
-	Placement *string `json:"Placement,omitempty"`
+	Placement *T `json:"Placement,omitempty"`
 
 	// ScrollStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottotaloptions.html#cfn-quicksight-analysis-pivottotaloptions-scrollstatus
-	ScrollStatus *string `json:"ScrollStatus,omitempty"`
+	ScrollStatus *T `json:"ScrollStatus,omitempty"`
+
+	// TotalAggregationOptions AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottotaloptions.html#cfn-quicksight-analysis-pivottotaloptions-totalaggregationoptions
+	TotalAggregationOptions []Analysis_TotalAggregationOption[any] `json:"TotalAggregationOptions,omitempty"`
 
 	// TotalCellStyle AWS CloudFormation Property
 	// Required: false
@@ -38,7 +43,7 @@ type Analysis_PivotTotalOptions[T any] struct {
 	// TotalsVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottotaloptions.html#cfn-quicksight-analysis-pivottotaloptions-totalsvisibility
-	TotalsVisibility *string `json:"TotalsVisibility,omitempty"`
+	TotalsVisibility *T `json:"TotalsVisibility,omitempty"`
 
 	// ValueCellStyle AWS CloudFormation Property
 	// Required: false

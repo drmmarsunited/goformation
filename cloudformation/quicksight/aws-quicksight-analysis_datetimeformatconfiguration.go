@@ -13,7 +13,7 @@ type Analysis_DateTimeFormatConfiguration[T any] struct {
 	// DateTimeFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimeformatconfiguration.html#cfn-quicksight-analysis-datetimeformatconfiguration-datetimeformat
-	DateTimeFormat *string `json:"DateTimeFormat,omitempty"`
+	DateTimeFormat *T `json:"DateTimeFormat,omitempty"`
 
 	// NullValueFormatConfiguration AWS CloudFormation Property
 	// Required: false

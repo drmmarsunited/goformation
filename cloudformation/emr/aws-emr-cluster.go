@@ -27,7 +27,7 @@ type Cluster[T any] struct {
 	// AutoScalingRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-autoscalingrole
-	AutoScalingRole *string `json:"AutoScalingRole,omitempty"`
+	AutoScalingRole *T `json:"AutoScalingRole,omitempty"`
 
 	// AutoTerminationPolicy AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type Cluster[T any] struct {
 	// CustomAmiId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-customamiid
-	CustomAmiId *string `json:"CustomAmiId,omitempty"`
+	CustomAmiId *T `json:"CustomAmiId,omitempty"`
 
 	// EbsRootVolumeSize AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,7 @@ type Cluster[T any] struct {
 	// JobFlowRole AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-jobflowrole
-	JobFlowRole string `json:"JobFlowRole"`
+	JobFlowRole T `json:"JobFlowRole"`
 
 	// KerberosAttributes AWS CloudFormation Property
 	// Required: false
@@ -72,12 +72,12 @@ type Cluster[T any] struct {
 	// LogEncryptionKmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-logencryptionkmskeyid
-	LogEncryptionKmsKeyId *string `json:"LogEncryptionKmsKeyId,omitempty"`
+	LogEncryptionKmsKeyId *T `json:"LogEncryptionKmsKeyId,omitempty"`
 
 	// LogUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-loguri
-	LogUri *string `json:"LogUri,omitempty"`
+	LogUri *T `json:"LogUri,omitempty"`
 
 	// ManagedScalingPolicy AWS CloudFormation Property
 	// Required: false
@@ -87,32 +87,32 @@ type Cluster[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// OSReleaseLabel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-osreleaselabel
-	OSReleaseLabel *string `json:"OSReleaseLabel,omitempty"`
+	OSReleaseLabel *T `json:"OSReleaseLabel,omitempty"`
 
 	// ReleaseLabel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-releaselabel
-	ReleaseLabel *string `json:"ReleaseLabel,omitempty"`
+	ReleaseLabel *T `json:"ReleaseLabel,omitempty"`
 
 	// ScaleDownBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-scaledownbehavior
-	ScaleDownBehavior *string `json:"ScaleDownBehavior,omitempty"`
+	ScaleDownBehavior *T `json:"ScaleDownBehavior,omitempty"`
 
 	// SecurityConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-securityconfiguration
-	SecurityConfiguration *string `json:"SecurityConfiguration,omitempty"`
+	SecurityConfiguration *T `json:"SecurityConfiguration,omitempty"`
 
 	// ServiceRole AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-servicerole
-	ServiceRole string `json:"ServiceRole"`
+	ServiceRole T `json:"ServiceRole"`
 
 	// StepConcurrencyLevel AWS CloudFormation Property
 	// Required: false

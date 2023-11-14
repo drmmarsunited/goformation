@@ -18,22 +18,22 @@ type ConfiguredTable_AnalysisRuleAggregation[T any] struct {
 	// AllowedJoinOperators AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisruleaggregation.html#cfn-cleanrooms-configuredtable-analysisruleaggregation-allowedjoinoperators
-	AllowedJoinOperators []string `json:"AllowedJoinOperators,omitempty"`
+	AllowedJoinOperators []T `json:"AllowedJoinOperators,omitempty"`
 
 	// DimensionColumns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisruleaggregation.html#cfn-cleanrooms-configuredtable-analysisruleaggregation-dimensioncolumns
-	DimensionColumns []string `json:"DimensionColumns"`
+	DimensionColumns []T `json:"DimensionColumns"`
 
 	// JoinColumns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisruleaggregation.html#cfn-cleanrooms-configuredtable-analysisruleaggregation-joincolumns
-	JoinColumns []string `json:"JoinColumns"`
+	JoinColumns []T `json:"JoinColumns"`
 
 	// JoinRequired AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisruleaggregation.html#cfn-cleanrooms-configuredtable-analysisruleaggregation-joinrequired
-	JoinRequired *string `json:"JoinRequired,omitempty"`
+	JoinRequired *T `json:"JoinRequired,omitempty"`
 
 	// OutputConstraints AWS CloudFormation Property
 	// Required: true
@@ -43,7 +43,7 @@ type ConfiguredTable_AnalysisRuleAggregation[T any] struct {
 	// ScalarFunctions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisruleaggregation.html#cfn-cleanrooms-configuredtable-analysisruleaggregation-scalarfunctions
-	ScalarFunctions []string `json:"ScalarFunctions"`
+	ScalarFunctions []T `json:"ScalarFunctions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

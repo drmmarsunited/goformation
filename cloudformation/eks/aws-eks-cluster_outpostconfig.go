@@ -13,7 +13,7 @@ type Cluster_OutpostConfig[T any] struct {
 	// ControlPlaneInstanceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-outpostconfig.html#cfn-eks-cluster-outpostconfig-controlplaneinstancetype
-	ControlPlaneInstanceType string `json:"ControlPlaneInstanceType"`
+	ControlPlaneInstanceType T `json:"ControlPlaneInstanceType"`
 
 	// ControlPlanePlacement AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Cluster_OutpostConfig[T any] struct {
 	// OutpostArns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-outpostconfig.html#cfn-eks-cluster-outpostconfig-outpostarns
-	OutpostArns []string `json:"OutpostArns"`
+	OutpostArns []T `json:"OutpostArns"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

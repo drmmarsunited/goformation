@@ -13,7 +13,7 @@ type Bridge_SourcePriority[T any] struct {
 	// PrimarySource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-bridge-sourcepriority.html#cfn-mediaconnect-bridge-sourcepriority-primarysource
-	PrimarySource *string `json:"PrimarySource,omitempty"`
+	PrimarySource *T `json:"PrimarySource,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

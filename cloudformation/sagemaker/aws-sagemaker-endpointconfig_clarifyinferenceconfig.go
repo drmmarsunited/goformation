@@ -13,7 +13,7 @@ type EndpointConfig_ClarifyInferenceConfig[T any] struct {
 	// ContentTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html#cfn-sagemaker-endpointconfig-clarifyinferenceconfig-contenttemplate
-	ContentTemplate *string `json:"ContentTemplate,omitempty"`
+	ContentTemplate *T `json:"ContentTemplate,omitempty"`
 
 	// FeatureHeaders AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type EndpointConfig_ClarifyInferenceConfig[T any] struct {
 	// FeaturesAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html#cfn-sagemaker-endpointconfig-clarifyinferenceconfig-featuresattribute
-	FeaturesAttribute *string `json:"FeaturesAttribute,omitempty"`
+	FeaturesAttribute *T `json:"FeaturesAttribute,omitempty"`
 
 	// LabelAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html#cfn-sagemaker-endpointconfig-clarifyinferenceconfig-labelattribute
-	LabelAttribute *string `json:"LabelAttribute,omitempty"`
+	LabelAttribute *T `json:"LabelAttribute,omitempty"`
 
 	// LabelHeaders AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type EndpointConfig_ClarifyInferenceConfig[T any] struct {
 	// ProbabilityAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html#cfn-sagemaker-endpointconfig-clarifyinferenceconfig-probabilityattribute
-	ProbabilityAttribute *string `json:"ProbabilityAttribute,omitempty"`
+	ProbabilityAttribute *T `json:"ProbabilityAttribute,omitempty"`
 
 	// ProbabilityIndex AWS CloudFormation Property
 	// Required: false

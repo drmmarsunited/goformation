@@ -23,12 +23,12 @@ type User_UserPhoneConfig[T any] struct {
 	// DeskPhoneNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-userphoneconfig.html#cfn-connect-user-userphoneconfig-deskphonenumber
-	DeskPhoneNumber *string `json:"DeskPhoneNumber,omitempty"`
+	DeskPhoneNumber *T `json:"DeskPhoneNumber,omitempty"`
 
 	// PhoneType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-userphoneconfig.html#cfn-connect-user-userphoneconfig-phonetype
-	PhoneType string `json:"PhoneType"`
+	PhoneType T `json:"PhoneType"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

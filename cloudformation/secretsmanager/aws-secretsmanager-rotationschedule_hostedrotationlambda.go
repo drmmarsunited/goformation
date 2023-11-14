@@ -13,57 +13,57 @@ type RotationSchedule_HostedRotationLambda[T any] struct {
 	// ExcludeCharacters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-excludecharacters
-	ExcludeCharacters *string `json:"ExcludeCharacters,omitempty"`
+	ExcludeCharacters *T `json:"ExcludeCharacters,omitempty"`
 
 	// KmsKeyArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-kmskeyarn
-	KmsKeyArn *string `json:"KmsKeyArn,omitempty"`
+	KmsKeyArn *T `json:"KmsKeyArn,omitempty"`
 
 	// MasterSecretArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-mastersecretarn
-	MasterSecretArn *string `json:"MasterSecretArn,omitempty"`
+	MasterSecretArn *T `json:"MasterSecretArn,omitempty"`
 
 	// MasterSecretKmsKeyArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-mastersecretkmskeyarn
-	MasterSecretKmsKeyArn *string `json:"MasterSecretKmsKeyArn,omitempty"`
+	MasterSecretKmsKeyArn *T `json:"MasterSecretKmsKeyArn,omitempty"`
 
 	// RotationLambdaName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-rotationlambdaname
-	RotationLambdaName *string `json:"RotationLambdaName,omitempty"`
+	RotationLambdaName *T `json:"RotationLambdaName,omitempty"`
 
 	// RotationType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-rotationtype
-	RotationType string `json:"RotationType"`
+	RotationType T `json:"RotationType"`
 
 	// Runtime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-runtime
-	Runtime *string `json:"Runtime,omitempty"`
+	Runtime *T `json:"Runtime,omitempty"`
 
 	// SuperuserSecretArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-superusersecretarn
-	SuperuserSecretArn *string `json:"SuperuserSecretArn,omitempty"`
+	SuperuserSecretArn *T `json:"SuperuserSecretArn,omitempty"`
 
 	// SuperuserSecretKmsKeyArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-superusersecretkmskeyarn
-	SuperuserSecretKmsKeyArn *string `json:"SuperuserSecretKmsKeyArn,omitempty"`
+	SuperuserSecretKmsKeyArn *T `json:"SuperuserSecretKmsKeyArn,omitempty"`
 
 	// VpcSecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-vpcsecuritygroupids
-	VpcSecurityGroupIds *string `json:"VpcSecurityGroupIds,omitempty"`
+	VpcSecurityGroupIds *T `json:"VpcSecurityGroupIds,omitempty"`
 
 	// VpcSubnetIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-vpcsubnetids
-	VpcSubnetIds *string `json:"VpcSubnetIds,omitempty"`
+	VpcSubnetIds *T `json:"VpcSubnetIds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

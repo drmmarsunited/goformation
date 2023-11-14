@@ -13,42 +13,42 @@ type Listener_AuthenticateCognitoConfig[T any] struct {
 	// AuthenticationRequestExtraParams AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listener-authenticatecognitoconfig-authenticationrequestextraparams
-	AuthenticationRequestExtraParams map[string]string `json:"AuthenticationRequestExtraParams,omitempty"`
+	AuthenticationRequestExtraParams map[string]T `json:"AuthenticationRequestExtraParams,omitempty"`
 
 	// OnUnauthenticatedRequest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listener-authenticatecognitoconfig-onunauthenticatedrequest
-	OnUnauthenticatedRequest *string `json:"OnUnauthenticatedRequest,omitempty"`
+	OnUnauthenticatedRequest *T `json:"OnUnauthenticatedRequest,omitempty"`
 
 	// Scope AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listener-authenticatecognitoconfig-scope
-	Scope *string `json:"Scope,omitempty"`
+	Scope *T `json:"Scope,omitempty"`
 
 	// SessionCookieName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listener-authenticatecognitoconfig-sessioncookiename
-	SessionCookieName *string `json:"SessionCookieName,omitempty"`
+	SessionCookieName *T `json:"SessionCookieName,omitempty"`
 
 	// SessionTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listener-authenticatecognitoconfig-sessiontimeout
-	SessionTimeout *string `json:"SessionTimeout,omitempty"`
+	SessionTimeout *T `json:"SessionTimeout,omitempty"`
 
 	// UserPoolArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listener-authenticatecognitoconfig-userpoolarn
-	UserPoolArn string `json:"UserPoolArn"`
+	UserPoolArn T `json:"UserPoolArn"`
 
 	// UserPoolClientId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listener-authenticatecognitoconfig-userpoolclientid
-	UserPoolClientId string `json:"UserPoolClientId"`
+	UserPoolClientId T `json:"UserPoolClientId"`
 
 	// UserPoolDomain AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listener-authenticatecognitoconfig-userpooldomain
-	UserPoolDomain string `json:"UserPoolDomain"`
+	UserPoolDomain T `json:"UserPoolDomain"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

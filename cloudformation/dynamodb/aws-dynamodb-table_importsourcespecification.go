@@ -13,12 +13,12 @@ type Table_ImportSourceSpecification[T any] struct {
 	// InputCompressionType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-importsourcespecification.html#cfn-dynamodb-table-importsourcespecification-inputcompressiontype
-	InputCompressionType *string `json:"InputCompressionType,omitempty"`
+	InputCompressionType *T `json:"InputCompressionType,omitempty"`
 
 	// InputFormat AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-importsourcespecification.html#cfn-dynamodb-table-importsourcespecification-inputformat
-	InputFormat string `json:"InputFormat"`
+	InputFormat T `json:"InputFormat"`
 
 	// InputFormatOptions AWS CloudFormation Property
 	// Required: false

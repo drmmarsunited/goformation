@@ -13,27 +13,27 @@ type Channel_Mpeg2Settings[T any] struct {
 	// AdaptiveQuantization AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-adaptivequantization
-	AdaptiveQuantization *string `json:"AdaptiveQuantization,omitempty"`
+	AdaptiveQuantization *T `json:"AdaptiveQuantization,omitempty"`
 
 	// AfdSignaling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-afdsignaling
-	AfdSignaling *string `json:"AfdSignaling,omitempty"`
+	AfdSignaling *T `json:"AfdSignaling,omitempty"`
 
 	// ColorMetadata AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-colormetadata
-	ColorMetadata *string `json:"ColorMetadata,omitempty"`
+	ColorMetadata *T `json:"ColorMetadata,omitempty"`
 
 	// ColorSpace AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-colorspace
-	ColorSpace *string `json:"ColorSpace,omitempty"`
+	ColorSpace *T `json:"ColorSpace,omitempty"`
 
 	// DisplayAspectRatio AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-displayaspectratio
-	DisplayAspectRatio *string `json:"DisplayAspectRatio,omitempty"`
+	DisplayAspectRatio *T `json:"DisplayAspectRatio,omitempty"`
 
 	// FilterSettings AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Channel_Mpeg2Settings[T any] struct {
 	// FixedAfd AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-fixedafd
-	FixedAfd *string `json:"FixedAfd,omitempty"`
+	FixedAfd *T `json:"FixedAfd,omitempty"`
 
 	// FramerateDenominator AWS CloudFormation Property
 	// Required: false
@@ -73,17 +73,17 @@ type Channel_Mpeg2Settings[T any] struct {
 	// GopSizeUnits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-gopsizeunits
-	GopSizeUnits *string `json:"GopSizeUnits,omitempty"`
+	GopSizeUnits *T `json:"GopSizeUnits,omitempty"`
 
 	// ScanType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-scantype
-	ScanType *string `json:"ScanType,omitempty"`
+	ScanType *T `json:"ScanType,omitempty"`
 
 	// SubgopLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-subgoplength
-	SubgopLength *string `json:"SubgopLength,omitempty"`
+	SubgopLength *T `json:"SubgopLength,omitempty"`
 
 	// TimecodeBurninSettings AWS CloudFormation Property
 	// Required: false
@@ -93,7 +93,7 @@ type Channel_Mpeg2Settings[T any] struct {
 	// TimecodeInsertion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-timecodeinsertion
-	TimecodeInsertion *string `json:"TimecodeInsertion,omitempty"`
+	TimecodeInsertion *T `json:"TimecodeInsertion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

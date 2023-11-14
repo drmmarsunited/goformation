@@ -13,12 +13,12 @@ type Bucket_ServerSideEncryptionByDefault[T any] struct {
 	// KMSMasterKeyID AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionbydefault.html#cfn-s3-bucket-serversideencryptionbydefault-kmsmasterkeyid
-	KMSMasterKeyID *string `json:"KMSMasterKeyID,omitempty"`
+	KMSMasterKeyID *T `json:"KMSMasterKeyID,omitempty"`
 
 	// SSEAlgorithm AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionbydefault.html#cfn-s3-bucket-serversideencryptionbydefault-ssealgorithm
-	SSEAlgorithm string `json:"SSEAlgorithm"`
+	SSEAlgorithm T `json:"SSEAlgorithm"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

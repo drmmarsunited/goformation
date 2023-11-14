@@ -16,27 +16,27 @@ type Instance[T any] struct {
 	// AgentVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-agentversion
-	AgentVersion *string `json:"AgentVersion,omitempty"`
+	AgentVersion *T `json:"AgentVersion,omitempty"`
 
 	// AmiId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-amiid
-	AmiId *string `json:"AmiId,omitempty"`
+	AmiId *T `json:"AmiId,omitempty"`
 
 	// Architecture AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-architecture
-	Architecture *string `json:"Architecture,omitempty"`
+	Architecture *T `json:"Architecture,omitempty"`
 
 	// AutoScalingType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-autoscalingtype
-	AutoScalingType *string `json:"AutoScalingType,omitempty"`
+	AutoScalingType *T `json:"AutoScalingType,omitempty"`
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-availabilityzone
-	AvailabilityZone *string `json:"AvailabilityZone,omitempty"`
+	AvailabilityZone *T `json:"AvailabilityZone,omitempty"`
 
 	// BlockDeviceMappings AWS CloudFormation Property
 	// Required: false
@@ -51,12 +51,12 @@ type Instance[T any] struct {
 	// ElasticIps AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-elasticips
-	ElasticIps []string `json:"ElasticIps,omitempty"`
+	ElasticIps []T `json:"ElasticIps,omitempty"`
 
 	// Hostname AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-hostname
-	Hostname *string `json:"Hostname,omitempty"`
+	Hostname *T `json:"Hostname,omitempty"`
 
 	// InstallUpdatesOnBoot AWS CloudFormation Property
 	// Required: false
@@ -66,42 +66,42 @@ type Instance[T any] struct {
 	// InstanceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-instancetype
-	InstanceType string `json:"InstanceType"`
+	InstanceType T `json:"InstanceType"`
 
 	// LayerIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-layerids
-	LayerIds []string `json:"LayerIds"`
+	LayerIds []T `json:"LayerIds"`
 
 	// Os AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-os
-	Os *string `json:"Os,omitempty"`
+	Os *T `json:"Os,omitempty"`
 
 	// RootDeviceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-rootdevicetype
-	RootDeviceType *string `json:"RootDeviceType,omitempty"`
+	RootDeviceType *T `json:"RootDeviceType,omitempty"`
 
 	// SshKeyName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-sshkeyname
-	SshKeyName *string `json:"SshKeyName,omitempty"`
+	SshKeyName *T `json:"SshKeyName,omitempty"`
 
 	// StackId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-stackid
-	StackId string `json:"StackId"`
+	StackId T `json:"StackId"`
 
 	// SubnetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-subnetid
-	SubnetId *string `json:"SubnetId,omitempty"`
+	SubnetId *T `json:"SubnetId,omitempty"`
 
 	// Tenancy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-tenancy
-	Tenancy *string `json:"Tenancy,omitempty"`
+	Tenancy *T `json:"Tenancy,omitempty"`
 
 	// TimeBasedAutoScaling AWS CloudFormation Property
 	// Required: false
@@ -111,12 +111,12 @@ type Instance[T any] struct {
 	// VirtualizationType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-virtualizationtype
-	VirtualizationType *string `json:"VirtualizationType,omitempty"`
+	VirtualizationType *T `json:"VirtualizationType,omitempty"`
 
 	// Volumes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-volumes
-	Volumes []string `json:"Volumes,omitempty"`
+	Volumes []T `json:"Volumes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

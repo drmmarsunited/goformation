@@ -16,17 +16,17 @@ type LoadBalancerTlsCertificate[T any] struct {
 	// CertificateAlternativeNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html#cfn-lightsail-loadbalancertlscertificate-certificatealternativenames
-	CertificateAlternativeNames []string `json:"CertificateAlternativeNames,omitempty"`
+	CertificateAlternativeNames []T `json:"CertificateAlternativeNames,omitempty"`
 
 	// CertificateDomainName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html#cfn-lightsail-loadbalancertlscertificate-certificatedomainname
-	CertificateDomainName string `json:"CertificateDomainName"`
+	CertificateDomainName T `json:"CertificateDomainName"`
 
 	// CertificateName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html#cfn-lightsail-loadbalancertlscertificate-certificatename
-	CertificateName string `json:"CertificateName"`
+	CertificateName T `json:"CertificateName"`
 
 	// HttpsRedirectionEnabled AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type LoadBalancerTlsCertificate[T any] struct {
 	// LoadBalancerName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html#cfn-lightsail-loadbalancertlscertificate-loadbalancername
-	LoadBalancerName string `json:"LoadBalancerName"`
+	LoadBalancerName T `json:"LoadBalancerName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

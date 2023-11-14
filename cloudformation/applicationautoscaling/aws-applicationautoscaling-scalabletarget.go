@@ -26,17 +26,17 @@ type ScalableTarget[T any] struct {
 	// ResourceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-resourceid
-	ResourceId string `json:"ResourceId"`
+	ResourceId T `json:"ResourceId"`
 
 	// RoleARN AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-rolearn
-	RoleARN *string `json:"RoleARN,omitempty"`
+	RoleARN *T `json:"RoleARN,omitempty"`
 
 	// ScalableDimension AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-scalabledimension
-	ScalableDimension string `json:"ScalableDimension"`
+	ScalableDimension T `json:"ScalableDimension"`
 
 	// ScheduledActions AWS CloudFormation Property
 	// Required: false
@@ -46,7 +46,7 @@ type ScalableTarget[T any] struct {
 	// ServiceNamespace AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-servicenamespace
-	ServiceNamespace string `json:"ServiceNamespace"`
+	ServiceNamespace T `json:"ServiceNamespace"`
 
 	// SuspendedState AWS CloudFormation Property
 	// Required: false

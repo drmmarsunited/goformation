@@ -17,7 +17,7 @@ type Application[T any] struct {
 	// Architecture AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-architecture
-	Architecture *string `json:"Architecture,omitempty"`
+	Architecture *T `json:"Architecture,omitempty"`
 
 	// AutoStartConfiguration AWS CloudFormation Property
 	// Required: false
@@ -44,10 +44,15 @@ type Application[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-maximumcapacity
 	MaximumCapacity *Application_MaximumAllowedResources[any] `json:"MaximumCapacity,omitempty"`
 
+	// MonitoringConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-monitoringconfiguration
+	MonitoringConfiguration *Application_MonitoringConfiguration[any] `json:"MonitoringConfiguration,omitempty"`
+
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// NetworkConfiguration AWS CloudFormation Property
 	// Required: false
@@ -57,7 +62,12 @@ type Application[T any] struct {
 	// ReleaseLabel AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-releaselabel
-	ReleaseLabel string `json:"ReleaseLabel"`
+	ReleaseLabel T `json:"ReleaseLabel"`
+
+	// RuntimeConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-runtimeconfiguration
+	RuntimeConfiguration []Application_ConfigurationObject[any] `json:"RuntimeConfiguration,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -67,7 +77,7 @@ type Application[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// WorkerTypeSpecifications AWS CloudFormation Property
 	// Required: false

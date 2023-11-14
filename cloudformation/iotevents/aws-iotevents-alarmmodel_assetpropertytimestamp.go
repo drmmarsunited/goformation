@@ -13,12 +13,12 @@ type AlarmModel_AssetPropertyTimestamp[T any] struct {
 	// OffsetInNanos AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-assetpropertytimestamp.html#cfn-iotevents-alarmmodel-assetpropertytimestamp-offsetinnanos
-	OffsetInNanos *string `json:"OffsetInNanos,omitempty"`
+	OffsetInNanos *T `json:"OffsetInNanos,omitempty"`
 
 	// TimeInSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-assetpropertytimestamp.html#cfn-iotevents-alarmmodel-assetpropertytimestamp-timeinseconds
-	TimeInSeconds string `json:"TimeInSeconds"`
+	TimeInSeconds T `json:"TimeInSeconds"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

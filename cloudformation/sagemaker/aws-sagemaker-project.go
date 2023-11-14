@@ -17,12 +17,12 @@ type Project[T any] struct {
 	// ProjectDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#cfn-sagemaker-project-projectdescription
-	ProjectDescription *string `json:"ProjectDescription,omitempty"`
+	ProjectDescription *T `json:"ProjectDescription,omitempty"`
 
 	// ProjectName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#cfn-sagemaker-project-projectname
-	ProjectName string `json:"ProjectName"`
+	ProjectName T `json:"ProjectName"`
 
 	// ServiceCatalogProvisionedProductDetails AWS CloudFormation Property
 	// Required: false

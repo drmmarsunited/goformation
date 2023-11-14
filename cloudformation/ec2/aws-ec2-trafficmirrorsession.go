@@ -17,12 +17,12 @@ type TrafficMirrorSession[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// NetworkInterfaceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-networkinterfaceid
-	NetworkInterfaceId string `json:"NetworkInterfaceId"`
+	NetworkInterfaceId T `json:"NetworkInterfaceId"`
 
 	// PacketLength AWS CloudFormation Property
 	// Required: false
@@ -42,12 +42,12 @@ type TrafficMirrorSession[T any] struct {
 	// TrafficMirrorFilterId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-trafficmirrorfilterid
-	TrafficMirrorFilterId string `json:"TrafficMirrorFilterId"`
+	TrafficMirrorFilterId T `json:"TrafficMirrorFilterId"`
 
 	// TrafficMirrorTargetId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-trafficmirrortargetid
-	TrafficMirrorTargetId string `json:"TrafficMirrorTargetId"`
+	TrafficMirrorTargetId T `json:"TrafficMirrorTargetId"`
 
 	// VirtualNetworkId AWS CloudFormation Property
 	// Required: false

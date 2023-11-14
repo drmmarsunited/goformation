@@ -13,7 +13,7 @@ type GraphQLApi_LogConfig[T any] struct {
 	// CloudWatchLogsRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-cloudwatchlogsrolearn
-	CloudWatchLogsRoleArn *string `json:"CloudWatchLogsRoleArn,omitempty"`
+	CloudWatchLogsRoleArn *T `json:"CloudWatchLogsRoleArn,omitempty"`
 
 	// ExcludeVerboseContent AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type GraphQLApi_LogConfig[T any] struct {
 	// FieldLogLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-fieldloglevel
-	FieldLogLevel *string `json:"FieldLogLevel,omitempty"`
+	FieldLogLevel *T `json:"FieldLogLevel,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

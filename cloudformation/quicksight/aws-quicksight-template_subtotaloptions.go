@@ -13,12 +13,12 @@ type Template_SubtotalOptions[T any] struct {
 	// CustomLabel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-subtotaloptions.html#cfn-quicksight-template-subtotaloptions-customlabel
-	CustomLabel *string `json:"CustomLabel,omitempty"`
+	CustomLabel *T `json:"CustomLabel,omitempty"`
 
 	// FieldLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-subtotaloptions.html#cfn-quicksight-template-subtotaloptions-fieldlevel
-	FieldLevel *string `json:"FieldLevel,omitempty"`
+	FieldLevel *T `json:"FieldLevel,omitempty"`
 
 	// FieldLevelOptions AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Template_SubtotalOptions[T any] struct {
 	// TotalsVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-subtotaloptions.html#cfn-quicksight-template-subtotaloptions-totalsvisibility
-	TotalsVisibility *string `json:"TotalsVisibility,omitempty"`
+	TotalsVisibility *T `json:"TotalsVisibility,omitempty"`
 
 	// ValueCellStyle AWS CloudFormation Property
 	// Required: false

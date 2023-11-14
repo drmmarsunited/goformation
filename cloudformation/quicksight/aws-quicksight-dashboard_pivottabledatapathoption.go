@@ -18,7 +18,7 @@ type Dashboard_PivotTableDataPathOption[T any] struct {
 	// Width AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottabledatapathoption.html#cfn-quicksight-dashboard-pivottabledatapathoption-width
-	Width *string `json:"Width,omitempty"`
+	Width *T `json:"Width,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

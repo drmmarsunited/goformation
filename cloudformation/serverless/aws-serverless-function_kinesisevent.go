@@ -23,17 +23,17 @@ type Function_KinesisEvent[T any] struct {
 	// FunctionResponseTypes AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#kinesis
-	FunctionResponseTypes []string `json:"FunctionResponseTypes,omitempty"`
+	FunctionResponseTypes []T `json:"FunctionResponseTypes,omitempty"`
 
 	// StartingPosition AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#kinesis
-	StartingPosition string `json:"StartingPosition"`
+	StartingPosition T `json:"StartingPosition"`
 
 	// Stream AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#kinesis
-	Stream string `json:"Stream"`
+	Stream T `json:"Stream"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

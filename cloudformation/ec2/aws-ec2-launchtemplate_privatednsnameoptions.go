@@ -23,7 +23,7 @@ type LaunchTemplate_PrivateDnsNameOptions[T any] struct {
 	// HostnameType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-privatednsnameoptions.html#cfn-ec2-launchtemplate-privatednsnameoptions-hostnametype
-	HostnameType *string `json:"HostnameType,omitempty"`
+	HostnameType *T `json:"HostnameType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type Bridge_FailoverConfig[T any] struct {
 	// FailoverMode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-bridge-failoverconfig.html#cfn-mediaconnect-bridge-failoverconfig-failovermode
-	FailoverMode string `json:"FailoverMode"`
+	FailoverMode T `json:"FailoverMode"`
 
 	// SourcePriority AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Bridge_FailoverConfig[T any] struct {
 	// State AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-bridge-failoverconfig.html#cfn-mediaconnect-bridge-failoverconfig-state
-	State *string `json:"State,omitempty"`
+	State *T `json:"State,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

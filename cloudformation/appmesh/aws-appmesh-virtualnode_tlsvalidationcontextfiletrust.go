@@ -13,7 +13,7 @@ type VirtualNode_TlsValidationContextFileTrust[T any] struct {
 	// CertificateChain AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextfiletrust.html#cfn-appmesh-virtualnode-tlsvalidationcontextfiletrust-certificatechain
-	CertificateChain string `json:"CertificateChain"`
+	CertificateChain T `json:"CertificateChain"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

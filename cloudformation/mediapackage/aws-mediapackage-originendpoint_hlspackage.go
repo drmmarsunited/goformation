@@ -13,17 +13,17 @@ type OriginEndpoint_HlsPackage[T any] struct {
 	// AdMarkers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-admarkers
-	AdMarkers *string `json:"AdMarkers,omitempty"`
+	AdMarkers *T `json:"AdMarkers,omitempty"`
 
 	// AdTriggers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-adtriggers
-	AdTriggers []string `json:"AdTriggers,omitempty"`
+	AdTriggers []T `json:"AdTriggers,omitempty"`
 
 	// AdsOnDeliveryRestrictions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-adsondeliveryrestrictions
-	AdsOnDeliveryRestrictions *string `json:"AdsOnDeliveryRestrictions,omitempty"`
+	AdsOnDeliveryRestrictions *T `json:"AdsOnDeliveryRestrictions,omitempty"`
 
 	// Encryption AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type OriginEndpoint_HlsPackage[T any] struct {
 	// PlaylistType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-playlisttype
-	PlaylistType *string `json:"PlaylistType,omitempty"`
+	PlaylistType *T `json:"PlaylistType,omitempty"`
 
 	// PlaylistWindowSeconds AWS CloudFormation Property
 	// Required: false

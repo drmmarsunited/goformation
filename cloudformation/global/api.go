@@ -23,7 +23,7 @@ type Api[T any] struct {
 	// BinaryMediaTypes AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi
-	BinaryMediaTypes *[]string `json:"BinaryMediaTypes,omitempty"`
+	BinaryMediaTypes *[]T `json:"BinaryMediaTypes,omitempty"`
 
 	// CacheClusterEnabled AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Api[T any] struct {
 	// CacheClusterSize AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi
-	CacheClusterSize *string `json:"CacheClusterSize,omitempty"`
+	CacheClusterSize *T `json:"CacheClusterSize,omitempty"`
 
 	// CanarySetting AWS CloudFormation Property
 	// Required: false
@@ -53,7 +53,7 @@ type Api[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-api.html#sam-api-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DisableExecuteApiEndpoint AWS CloudFormation Property
 	// Required: false
@@ -73,7 +73,7 @@ type Api[T any] struct {
 	// GatewayResponses AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-api.html#sam-api-gatewayresponses
-	GatewayResponses *map[string]string `json:"GatewayResponses,omitempty"`
+	GatewayResponses *map[string]T `json:"GatewayResponses,omitempty"`
 
 	// MethodSettings AWS CloudFormation Property
 	// Required: false
@@ -93,17 +93,17 @@ type Api[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// OpenApiVersion AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi
-	OpenApiVersion *string `json:"OpenApiVersion,omitempty"`
+	OpenApiVersion *T `json:"OpenApiVersion,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	Tags *map[string]string `json:"Tags,omitempty"`
+	Tags *map[string]T `json:"Tags,omitempty"`
 
 	// TracingEnabled AWS CloudFormation Property
 	// Required: false
@@ -113,7 +113,7 @@ type Api[T any] struct {
 	// Variables AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi
-	Variables *map[string]string `json:"Variables,omitempty"`
+	Variables *map[string]T `json:"Variables,omitempty"`
 }
 
 // AWSCloudFormationType returns the AWS CloudFormation resource type

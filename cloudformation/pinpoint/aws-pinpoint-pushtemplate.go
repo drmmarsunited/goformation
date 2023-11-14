@@ -36,7 +36,7 @@ type PushTemplate[T any] struct {
 	// DefaultSubstitutions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-defaultsubstitutions
-	DefaultSubstitutions *string `json:"DefaultSubstitutions,omitempty"`
+	DefaultSubstitutions *T `json:"DefaultSubstitutions,omitempty"`
 
 	// GCM AWS CloudFormation Property
 	// Required: false
@@ -51,12 +51,12 @@ type PushTemplate[T any] struct {
 	// TemplateDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-templatedescription
-	TemplateDescription *string `json:"TemplateDescription,omitempty"`
+	TemplateDescription *T `json:"TemplateDescription,omitempty"`
 
 	// TemplateName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-templatename
-	TemplateName string `json:"TemplateName"`
+	TemplateName T `json:"TemplateName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -18,7 +18,7 @@ type TopicRule_HttpAction[T any] struct {
 	// ConfirmationUrl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpaction.html#cfn-iot-topicrule-httpaction-confirmationurl
-	ConfirmationUrl *string `json:"ConfirmationUrl,omitempty"`
+	ConfirmationUrl *T `json:"ConfirmationUrl,omitempty"`
 
 	// Headers AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type TopicRule_HttpAction[T any] struct {
 	// Url AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpaction.html#cfn-iot-topicrule-httpaction-url
-	Url string `json:"Url"`
+	Url T `json:"Url"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

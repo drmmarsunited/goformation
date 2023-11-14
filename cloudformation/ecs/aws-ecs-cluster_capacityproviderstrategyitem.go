@@ -18,7 +18,7 @@ type Cluster_CapacityProviderStrategyItem[T any] struct {
 	// CapacityProvider AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-capacityproviderstrategyitem.html#cfn-ecs-cluster-capacityproviderstrategyitem-capacityprovider
-	CapacityProvider *string `json:"CapacityProvider,omitempty"`
+	CapacityProvider *T `json:"CapacityProvider,omitempty"`
 
 	// Weight AWS CloudFormation Property
 	// Required: false

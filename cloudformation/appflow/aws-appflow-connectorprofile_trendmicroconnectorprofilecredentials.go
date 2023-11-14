@@ -13,7 +13,7 @@ type ConnectorProfile_TrendmicroConnectorProfileCredentials[T any] struct {
 	// ApiSecretKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-trendmicroconnectorprofilecredentials.html#cfn-appflow-connectorprofile-trendmicroconnectorprofilecredentials-apisecretkey
-	ApiSecretKey string `json:"ApiSecretKey"`
+	ApiSecretKey T `json:"ApiSecretKey"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

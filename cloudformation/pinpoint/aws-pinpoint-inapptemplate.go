@@ -26,7 +26,7 @@ type InAppTemplate[T any] struct {
 	// Layout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-inapptemplate.html#cfn-pinpoint-inapptemplate-layout
-	Layout *string `json:"Layout,omitempty"`
+	Layout *T `json:"Layout,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -36,12 +36,12 @@ type InAppTemplate[T any] struct {
 	// TemplateDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-inapptemplate.html#cfn-pinpoint-inapptemplate-templatedescription
-	TemplateDescription *string `json:"TemplateDescription,omitempty"`
+	TemplateDescription *T `json:"TemplateDescription,omitempty"`
 
 	// TemplateName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-inapptemplate.html#cfn-pinpoint-inapptemplate-templatename
-	TemplateName string `json:"TemplateName"`
+	TemplateName T `json:"TemplateName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

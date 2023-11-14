@@ -13,7 +13,7 @@ type Channel_TimecodeConfig[T any] struct {
 	// Source AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-timecodeconfig.html#cfn-medialive-channel-timecodeconfig-source
-	Source *string `json:"Source,omitempty"`
+	Source *T `json:"Source,omitempty"`
 
 	// SyncThreshold AWS CloudFormation Property
 	// Required: false

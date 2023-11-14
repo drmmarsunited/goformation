@@ -13,7 +13,7 @@ type StreamProcessor_ConnectedHomeSettings[T any] struct {
 	// Labels AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-connectedhomesettings.html#cfn-rekognition-streamprocessor-connectedhomesettings-labels
-	Labels []string `json:"Labels"`
+	Labels []T `json:"Labels"`
 
 	// MinConfidence AWS CloudFormation Property
 	// Required: false

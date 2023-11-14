@@ -13,27 +13,27 @@ type Volume_OntapConfiguration[T any] struct {
 	// CopyTagsToBackups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration.html#cfn-fsx-volume-ontapconfiguration-copytagstobackups
-	CopyTagsToBackups *string `json:"CopyTagsToBackups,omitempty"`
+	CopyTagsToBackups *T `json:"CopyTagsToBackups,omitempty"`
 
 	// JunctionPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration.html#cfn-fsx-volume-ontapconfiguration-junctionpath
-	JunctionPath *string `json:"JunctionPath,omitempty"`
+	JunctionPath *T `json:"JunctionPath,omitempty"`
 
 	// OntapVolumeType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration.html#cfn-fsx-volume-ontapconfiguration-ontapvolumetype
-	OntapVolumeType *string `json:"OntapVolumeType,omitempty"`
+	OntapVolumeType *T `json:"OntapVolumeType,omitempty"`
 
 	// SecurityStyle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration.html#cfn-fsx-volume-ontapconfiguration-securitystyle
-	SecurityStyle *string `json:"SecurityStyle,omitempty"`
+	SecurityStyle *T `json:"SecurityStyle,omitempty"`
 
 	// SizeInMegabytes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration.html#cfn-fsx-volume-ontapconfiguration-sizeinmegabytes
-	SizeInMegabytes string `json:"SizeInMegabytes"`
+	SizeInMegabytes T `json:"SizeInMegabytes"`
 
 	// SnaplockConfiguration AWS CloudFormation Property
 	// Required: false
@@ -43,17 +43,17 @@ type Volume_OntapConfiguration[T any] struct {
 	// SnapshotPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration.html#cfn-fsx-volume-ontapconfiguration-snapshotpolicy
-	SnapshotPolicy *string `json:"SnapshotPolicy,omitempty"`
+	SnapshotPolicy *T `json:"SnapshotPolicy,omitempty"`
 
 	// StorageEfficiencyEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration.html#cfn-fsx-volume-ontapconfiguration-storageefficiencyenabled
-	StorageEfficiencyEnabled *string `json:"StorageEfficiencyEnabled,omitempty"`
+	StorageEfficiencyEnabled *T `json:"StorageEfficiencyEnabled,omitempty"`
 
 	// StorageVirtualMachineId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration.html#cfn-fsx-volume-ontapconfiguration-storagevirtualmachineid
-	StorageVirtualMachineId string `json:"StorageVirtualMachineId"`
+	StorageVirtualMachineId T `json:"StorageVirtualMachineId"`
 
 	// TieringPolicy AWS CloudFormation Property
 	// Required: false

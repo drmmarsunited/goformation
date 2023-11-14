@@ -13,7 +13,7 @@ type Form_FormButton[T any] struct {
 	// Children AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-formbutton.html#cfn-amplifyuibuilder-form-formbutton-children
-	Children *string `json:"Children,omitempty"`
+	Children *T `json:"Children,omitempty"`
 
 	// Excluded AWS CloudFormation Property
 	// Required: false

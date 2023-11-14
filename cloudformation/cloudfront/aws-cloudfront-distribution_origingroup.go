@@ -18,7 +18,7 @@ type Distribution_OriginGroup[T any] struct {
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroup.html#cfn-cloudfront-distribution-origingroup-id
-	Id string `json:"Id"`
+	Id T `json:"Id"`
 
 	// Members AWS CloudFormation Property
 	// Required: true

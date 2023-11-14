@@ -17,22 +17,22 @@ type KeyPair[T any] struct {
 	// KeyFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html#cfn-ec2-keypair-keyformat
-	KeyFormat *string `json:"KeyFormat,omitempty"`
+	KeyFormat *T `json:"KeyFormat,omitempty"`
 
 	// KeyName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html#cfn-ec2-keypair-keyname
-	KeyName string `json:"KeyName"`
+	KeyName T `json:"KeyName"`
 
 	// KeyType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html#cfn-ec2-keypair-keytype
-	KeyType *string `json:"KeyType,omitempty"`
+	KeyType *T `json:"KeyType,omitempty"`
 
 	// PublicKeyMaterial AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html#cfn-ec2-keypair-publickeymaterial
-	PublicKeyMaterial *string `json:"PublicKeyMaterial,omitempty"`
+	PublicKeyMaterial *T `json:"PublicKeyMaterial,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

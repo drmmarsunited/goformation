@@ -13,7 +13,7 @@ type Channel_Esam[T any] struct {
 	// AcquisitionPointId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-esam.html#cfn-medialive-channel-esam-acquisitionpointid
-	AcquisitionPointId *string `json:"AcquisitionPointId,omitempty"`
+	AcquisitionPointId *T `json:"AcquisitionPointId,omitempty"`
 
 	// AdAvailOffset AWS CloudFormation Property
 	// Required: false
@@ -23,22 +23,22 @@ type Channel_Esam[T any] struct {
 	// PasswordParam AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-esam.html#cfn-medialive-channel-esam-passwordparam
-	PasswordParam *string `json:"PasswordParam,omitempty"`
+	PasswordParam *T `json:"PasswordParam,omitempty"`
 
 	// PoisEndpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-esam.html#cfn-medialive-channel-esam-poisendpoint
-	PoisEndpoint *string `json:"PoisEndpoint,omitempty"`
+	PoisEndpoint *T `json:"PoisEndpoint,omitempty"`
 
 	// Username AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-esam.html#cfn-medialive-channel-esam-username
-	Username *string `json:"Username,omitempty"`
+	Username *T `json:"Username,omitempty"`
 
 	// ZoneIdentity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-esam.html#cfn-medialive-channel-esam-zoneidentity
-	ZoneIdentity *string `json:"ZoneIdentity,omitempty"`
+	ZoneIdentity *T `json:"ZoneIdentity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

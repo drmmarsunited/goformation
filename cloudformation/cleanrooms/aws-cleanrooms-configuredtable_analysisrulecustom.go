@@ -13,12 +13,12 @@ type ConfiguredTable_AnalysisRuleCustom[T any] struct {
 	// AllowedAnalyses AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisrulecustom.html#cfn-cleanrooms-configuredtable-analysisrulecustom-allowedanalyses
-	AllowedAnalyses []string `json:"AllowedAnalyses"`
+	AllowedAnalyses []T `json:"AllowedAnalyses"`
 
 	// AllowedAnalysisProviders AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisrulecustom.html#cfn-cleanrooms-configuredtable-analysisrulecustom-allowedanalysisproviders
-	AllowedAnalysisProviders []string `json:"AllowedAnalysisProviders,omitempty"`
+	AllowedAnalysisProviders []T `json:"AllowedAnalysisProviders,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

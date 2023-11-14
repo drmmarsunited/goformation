@@ -18,7 +18,7 @@ type ConnectorProfile_CustomConnectorProfileCredentials[T any] struct {
 	// AuthenticationType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-customconnectorprofilecredentials.html#cfn-appflow-connectorprofile-customconnectorprofilecredentials-authenticationtype
-	AuthenticationType string `json:"AuthenticationType"`
+	AuthenticationType T `json:"AuthenticationType"`
 
 	// Basic AWS CloudFormation Property
 	// Required: false

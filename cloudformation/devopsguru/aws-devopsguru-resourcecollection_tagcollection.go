@@ -13,12 +13,12 @@ type ResourceCollection_TagCollection[T any] struct {
 	// AppBoundaryKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-tagcollection.html#cfn-devopsguru-resourcecollection-tagcollection-appboundarykey
-	AppBoundaryKey *string `json:"AppBoundaryKey,omitempty"`
+	AppBoundaryKey *T `json:"AppBoundaryKey,omitempty"`
 
 	// TagValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-tagcollection.html#cfn-devopsguru-resourcecollection-tagcollection-tagvalues
-	TagValues []string `json:"TagValues,omitempty"`
+	TagValues []T `json:"TagValues,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

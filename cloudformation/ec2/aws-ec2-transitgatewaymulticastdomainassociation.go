@@ -16,17 +16,17 @@ type TransitGatewayMulticastDomainAssociation[T any] struct {
 	// SubnetId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomainassociation.html#cfn-ec2-transitgatewaymulticastdomainassociation-subnetid
-	SubnetId string `json:"SubnetId"`
+	SubnetId T `json:"SubnetId"`
 
 	// TransitGatewayAttachmentId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomainassociation.html#cfn-ec2-transitgatewaymulticastdomainassociation-transitgatewayattachmentid
-	TransitGatewayAttachmentId string `json:"TransitGatewayAttachmentId"`
+	TransitGatewayAttachmentId T `json:"TransitGatewayAttachmentId"`
 
 	// TransitGatewayMulticastDomainId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomainassociation.html#cfn-ec2-transitgatewaymulticastdomainassociation-transitgatewaymulticastdomainid
-	TransitGatewayMulticastDomainId string `json:"TransitGatewayMulticastDomainId"`
+	TransitGatewayMulticastDomainId T `json:"TransitGatewayMulticastDomainId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

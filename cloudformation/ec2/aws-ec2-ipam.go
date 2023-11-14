@@ -14,20 +14,10 @@ import (
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html
 type IPAM[T any] struct {
 
-	// DefaultResourceDiscoveryAssociationId AWS CloudFormation Property
-	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-defaultresourcediscoveryassociationid
-	DefaultResourceDiscoveryAssociationId *string `json:"DefaultResourceDiscoveryAssociationId,omitempty"`
-
-	// DefaultResourceDiscoveryId AWS CloudFormation Property
-	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-defaultresourcediscoveryid
-	DefaultResourceDiscoveryId *string `json:"DefaultResourceDiscoveryId,omitempty"`
-
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// OperatingRegions AWS CloudFormation Property
 	// Required: false
@@ -38,6 +28,11 @@ type IPAM[T any] struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-tags
 	Tags []tags.Tag `json:"Tags,omitempty"`
+
+	// Tier AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-tier
+	Tier *T `json:"Tier,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

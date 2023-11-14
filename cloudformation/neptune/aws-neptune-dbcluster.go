@@ -22,7 +22,7 @@ type DBCluster[T any] struct {
 	// AvailabilityZones AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-availabilityzones
-	AvailabilityZones []string `json:"AvailabilityZones,omitempty"`
+	AvailabilityZones []T `json:"AvailabilityZones,omitempty"`
 
 	// BackupRetentionPeriod AWS CloudFormation Property
 	// Required: false
@@ -37,17 +37,17 @@ type DBCluster[T any] struct {
 	// DBClusterIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbclusteridentifier
-	DBClusterIdentifier *string `json:"DBClusterIdentifier,omitempty"`
+	DBClusterIdentifier *T `json:"DBClusterIdentifier,omitempty"`
 
 	// DBClusterParameterGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbclusterparametergroupname
-	DBClusterParameterGroupName *string `json:"DBClusterParameterGroupName,omitempty"`
+	DBClusterParameterGroupName *T `json:"DBClusterParameterGroupName,omitempty"`
 
 	// DBInstanceParameterGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbinstanceparametergroupname
-	DBInstanceParameterGroupName *string `json:"DBInstanceParameterGroupName,omitempty"`
+	DBInstanceParameterGroupName *T `json:"DBInstanceParameterGroupName,omitempty"`
 
 	// DBPort AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type DBCluster[T any] struct {
 	// DBSubnetGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbsubnetgroupname
-	DBSubnetGroupName *string `json:"DBSubnetGroupName,omitempty"`
+	DBSubnetGroupName *T `json:"DBSubnetGroupName,omitempty"`
 
 	// DeletionProtection AWS CloudFormation Property
 	// Required: false
@@ -67,12 +67,12 @@ type DBCluster[T any] struct {
 	// EnableCloudwatchLogsExports AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-enablecloudwatchlogsexports
-	EnableCloudwatchLogsExports []string `json:"EnableCloudwatchLogsExports,omitempty"`
+	EnableCloudwatchLogsExports []T `json:"EnableCloudwatchLogsExports,omitempty"`
 
 	// EngineVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-engineversion
-	EngineVersion *string `json:"EngineVersion,omitempty"`
+	EngineVersion *T `json:"EngineVersion,omitempty"`
 
 	// IamAuthEnabled AWS CloudFormation Property
 	// Required: false
@@ -82,27 +82,27 @@ type DBCluster[T any] struct {
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-kmskeyid
-	KmsKeyId *string `json:"KmsKeyId,omitempty"`
+	KmsKeyId *T `json:"KmsKeyId,omitempty"`
 
 	// PreferredBackupWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-preferredbackupwindow
-	PreferredBackupWindow *string `json:"PreferredBackupWindow,omitempty"`
+	PreferredBackupWindow *T `json:"PreferredBackupWindow,omitempty"`
 
 	// PreferredMaintenanceWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-preferredmaintenancewindow
-	PreferredMaintenanceWindow *string `json:"PreferredMaintenanceWindow,omitempty"`
+	PreferredMaintenanceWindow *T `json:"PreferredMaintenanceWindow,omitempty"`
 
 	// RestoreToTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-restoretotime
-	RestoreToTime *string `json:"RestoreToTime,omitempty"`
+	RestoreToTime *T `json:"RestoreToTime,omitempty"`
 
 	// RestoreType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-restoretype
-	RestoreType *string `json:"RestoreType,omitempty"`
+	RestoreType *T `json:"RestoreType,omitempty"`
 
 	// ServerlessScalingConfiguration AWS CloudFormation Property
 	// Required: false
@@ -112,12 +112,12 @@ type DBCluster[T any] struct {
 	// SnapshotIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-snapshotidentifier
-	SnapshotIdentifier *string `json:"SnapshotIdentifier,omitempty"`
+	SnapshotIdentifier *T `json:"SnapshotIdentifier,omitempty"`
 
 	// SourceDBClusterIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-sourcedbclusteridentifier
-	SourceDBClusterIdentifier *string `json:"SourceDBClusterIdentifier,omitempty"`
+	SourceDBClusterIdentifier *T `json:"SourceDBClusterIdentifier,omitempty"`
 
 	// StorageEncrypted AWS CloudFormation Property
 	// Required: false
@@ -137,7 +137,7 @@ type DBCluster[T any] struct {
 	// VpcSecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-vpcsecuritygroupids
-	VpcSecurityGroupIds []string `json:"VpcSecurityGroupIds,omitempty"`
+	VpcSecurityGroupIds []T `json:"VpcSecurityGroupIds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

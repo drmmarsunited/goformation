@@ -13,17 +13,17 @@ type TransitGatewayMulticastDomain_Options[T any] struct {
 	// AutoAcceptSharedAssociations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaymulticastdomain-options.html#cfn-ec2-transitgatewaymulticastdomain-options-autoacceptsharedassociations
-	AutoAcceptSharedAssociations *string `json:"AutoAcceptSharedAssociations,omitempty"`
+	AutoAcceptSharedAssociations *T `json:"AutoAcceptSharedAssociations,omitempty"`
 
 	// Igmpv2Support AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaymulticastdomain-options.html#cfn-ec2-transitgatewaymulticastdomain-options-igmpv2support
-	Igmpv2Support *string `json:"Igmpv2Support,omitempty"`
+	Igmpv2Support *T `json:"Igmpv2Support,omitempty"`
 
 	// StaticSourcesSupport AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaymulticastdomain-options.html#cfn-ec2-transitgatewaymulticastdomain-options-staticsourcessupport
-	StaticSourcesSupport *string `json:"StaticSourcesSupport,omitempty"`
+	StaticSourcesSupport *T `json:"StaticSourcesSupport,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

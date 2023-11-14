@@ -13,7 +13,7 @@ type DataLakeSettings_PrincipalPermissions[T any] struct {
 	// Permissions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datalakesettings-principalpermissions.html#cfn-lakeformation-datalakesettings-principalpermissions-permissions
-	Permissions []string `json:"Permissions"`
+	Permissions []T `json:"Permissions"`
 
 	// Principal AWS CloudFormation Property
 	// Required: true

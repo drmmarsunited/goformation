@@ -16,7 +16,7 @@ type AccessPointPolicy[T any] struct {
 	// ObjectLambdaAccessPoint AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3objectlambda-accesspointpolicy.html#cfn-s3objectlambda-accesspointpolicy-objectlambdaaccesspoint
-	ObjectLambdaAccessPoint string `json:"ObjectLambdaAccessPoint"`
+	ObjectLambdaAccessPoint T `json:"ObjectLambdaAccessPoint"`
 
 	// PolicyDocument AWS CloudFormation Property
 	// Required: true

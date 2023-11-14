@@ -18,7 +18,7 @@ type DomainConfiguration_AuthorizerConfig[T any] struct {
 	// DefaultAuthorizerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-domainconfiguration-authorizerconfig.html#cfn-iot-domainconfiguration-authorizerconfig-defaultauthorizername
-	DefaultAuthorizerName *string `json:"DefaultAuthorizerName,omitempty"`
+	DefaultAuthorizerName *T `json:"DefaultAuthorizerName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

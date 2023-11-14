@@ -16,12 +16,12 @@ type RefreshSchedule[T any] struct {
 	// AwsAccountId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-refreshschedule.html#cfn-quicksight-refreshschedule-awsaccountid
-	AwsAccountId *string `json:"AwsAccountId,omitempty"`
+	AwsAccountId *T `json:"AwsAccountId,omitempty"`
 
 	// DataSetId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-refreshschedule.html#cfn-quicksight-refreshschedule-datasetid
-	DataSetId *string `json:"DataSetId,omitempty"`
+	DataSetId *T `json:"DataSetId,omitempty"`
 
 	// Schedule AWS CloudFormation Property
 	// Required: false

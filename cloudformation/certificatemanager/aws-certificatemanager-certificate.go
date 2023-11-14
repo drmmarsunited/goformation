@@ -17,17 +17,17 @@ type Certificate[T any] struct {
 	// CertificateAuthorityArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-certificateauthorityarn
-	CertificateAuthorityArn *string `json:"CertificateAuthorityArn,omitempty"`
+	CertificateAuthorityArn *T `json:"CertificateAuthorityArn,omitempty"`
 
 	// CertificateTransparencyLoggingPreference AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-certificatetransparencyloggingpreference
-	CertificateTransparencyLoggingPreference *string `json:"CertificateTransparencyLoggingPreference,omitempty"`
+	CertificateTransparencyLoggingPreference *T `json:"CertificateTransparencyLoggingPreference,omitempty"`
 
 	// DomainName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-domainname
-	DomainName string `json:"DomainName"`
+	DomainName T `json:"DomainName"`
 
 	// DomainValidationOptions AWS CloudFormation Property
 	// Required: false
@@ -37,12 +37,12 @@ type Certificate[T any] struct {
 	// KeyAlgorithm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-keyalgorithm
-	KeyAlgorithm *string `json:"KeyAlgorithm,omitempty"`
+	KeyAlgorithm *T `json:"KeyAlgorithm,omitempty"`
 
 	// SubjectAlternativeNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-subjectalternativenames
-	SubjectAlternativeNames []string `json:"SubjectAlternativeNames,omitempty"`
+	SubjectAlternativeNames []T `json:"SubjectAlternativeNames,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type Certificate[T any] struct {
 	// ValidationMethod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-validationmethod
-	ValidationMethod *string `json:"ValidationMethod,omitempty"`
+	ValidationMethod *T `json:"ValidationMethod,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -16,12 +16,12 @@ type IPAMPoolCidr[T any] struct {
 	// Cidr AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampoolcidr.html#cfn-ec2-ipampoolcidr-cidr
-	Cidr *string `json:"Cidr,omitempty"`
+	Cidr *T `json:"Cidr,omitempty"`
 
 	// IpamPoolId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampoolcidr.html#cfn-ec2-ipampoolcidr-ipampoolid
-	IpamPoolId string `json:"IpamPoolId"`
+	IpamPoolId T `json:"IpamPoolId"`
 
 	// NetmaskLength AWS CloudFormation Property
 	// Required: false

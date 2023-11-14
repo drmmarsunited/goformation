@@ -16,7 +16,7 @@ type Resolver[T any] struct {
 	// ApiId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-apiid
-	ApiId string `json:"ApiId"`
+	ApiId T `json:"ApiId"`
 
 	// CachingConfig AWS CloudFormation Property
 	// Required: false
@@ -26,27 +26,27 @@ type Resolver[T any] struct {
 	// Code AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-code
-	Code *string `json:"Code,omitempty"`
+	Code *T `json:"Code,omitempty"`
 
 	// CodeS3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-codes3location
-	CodeS3Location *string `json:"CodeS3Location,omitempty"`
+	CodeS3Location *T `json:"CodeS3Location,omitempty"`
 
 	// DataSourceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-datasourcename
-	DataSourceName *string `json:"DataSourceName,omitempty"`
+	DataSourceName *T `json:"DataSourceName,omitempty"`
 
 	// FieldName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-fieldname
-	FieldName string `json:"FieldName"`
+	FieldName T `json:"FieldName"`
 
 	// Kind AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-kind
-	Kind *string `json:"Kind,omitempty"`
+	Kind *T `json:"Kind,omitempty"`
 
 	// MaxBatchSize AWS CloudFormation Property
 	// Required: false
@@ -61,22 +61,22 @@ type Resolver[T any] struct {
 	// RequestMappingTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplate
-	RequestMappingTemplate *string `json:"RequestMappingTemplate,omitempty"`
+	RequestMappingTemplate *T `json:"RequestMappingTemplate,omitempty"`
 
 	// RequestMappingTemplateS3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplates3location
-	RequestMappingTemplateS3Location *string `json:"RequestMappingTemplateS3Location,omitempty"`
+	RequestMappingTemplateS3Location *T `json:"RequestMappingTemplateS3Location,omitempty"`
 
 	// ResponseMappingTemplate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplate
-	ResponseMappingTemplate *string `json:"ResponseMappingTemplate,omitempty"`
+	ResponseMappingTemplate *T `json:"ResponseMappingTemplate,omitempty"`
 
 	// ResponseMappingTemplateS3Location AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplates3location
-	ResponseMappingTemplateS3Location *string `json:"ResponseMappingTemplateS3Location,omitempty"`
+	ResponseMappingTemplateS3Location *T `json:"ResponseMappingTemplateS3Location,omitempty"`
 
 	// Runtime AWS CloudFormation Property
 	// Required: false
@@ -91,7 +91,7 @@ type Resolver[T any] struct {
 	// TypeName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-typename
-	TypeName string `json:"TypeName"`
+	TypeName T `json:"TypeName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -17,22 +17,22 @@ type Image[T any] struct {
 	// ImageDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-image.html#cfn-sagemaker-image-imagedescription
-	ImageDescription *string `json:"ImageDescription,omitempty"`
+	ImageDescription *T `json:"ImageDescription,omitempty"`
 
 	// ImageDisplayName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-image.html#cfn-sagemaker-image-imagedisplayname
-	ImageDisplayName *string `json:"ImageDisplayName,omitempty"`
+	ImageDisplayName *T `json:"ImageDisplayName,omitempty"`
 
 	// ImageName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-image.html#cfn-sagemaker-image-imagename
-	ImageName string `json:"ImageName"`
+	ImageName T `json:"ImageName"`
 
 	// ImageRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-image.html#cfn-sagemaker-image-imagerolearn
-	ImageRoleArn string `json:"ImageRoleArn"`
+	ImageRoleArn T `json:"ImageRoleArn"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

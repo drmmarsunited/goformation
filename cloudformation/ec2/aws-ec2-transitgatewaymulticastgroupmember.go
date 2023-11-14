@@ -16,17 +16,17 @@ type TransitGatewayMulticastGroupMember[T any] struct {
 	// GroupIpAddress AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupmember.html#cfn-ec2-transitgatewaymulticastgroupmember-groupipaddress
-	GroupIpAddress string `json:"GroupIpAddress"`
+	GroupIpAddress T `json:"GroupIpAddress"`
 
 	// NetworkInterfaceId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupmember.html#cfn-ec2-transitgatewaymulticastgroupmember-networkinterfaceid
-	NetworkInterfaceId string `json:"NetworkInterfaceId"`
+	NetworkInterfaceId T `json:"NetworkInterfaceId"`
 
 	// TransitGatewayMulticastDomainId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupmember.html#cfn-ec2-transitgatewaymulticastgroupmember-transitgatewaymulticastdomainid
-	TransitGatewayMulticastDomainId string `json:"TransitGatewayMulticastDomainId"`
+	TransitGatewayMulticastDomainId T `json:"TransitGatewayMulticastDomainId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

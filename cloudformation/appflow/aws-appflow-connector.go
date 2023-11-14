@@ -16,7 +16,7 @@ type Connector[T any] struct {
 	// ConnectorLabel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-connector.html#cfn-appflow-connector-connectorlabel
-	ConnectorLabel *string `json:"ConnectorLabel,omitempty"`
+	ConnectorLabel *T `json:"ConnectorLabel,omitempty"`
 
 	// ConnectorProvisioningConfig AWS CloudFormation Property
 	// Required: true
@@ -26,12 +26,12 @@ type Connector[T any] struct {
 	// ConnectorProvisioningType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-connector.html#cfn-appflow-connector-connectorprovisioningtype
-	ConnectorProvisioningType string `json:"ConnectorProvisioningType"`
+	ConnectorProvisioningType T `json:"ConnectorProvisioningType"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-connector.html#cfn-appflow-connector-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

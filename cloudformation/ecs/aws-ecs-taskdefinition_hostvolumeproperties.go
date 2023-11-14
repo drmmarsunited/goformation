@@ -13,7 +13,7 @@ type TaskDefinition_HostVolumeProperties[T any] struct {
 	// SourcePath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-hostvolumeproperties.html#cfn-ecs-taskdefinition-hostvolumeproperties-sourcepath
-	SourcePath *string `json:"SourcePath,omitempty"`
+	SourcePath *T `json:"SourcePath,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

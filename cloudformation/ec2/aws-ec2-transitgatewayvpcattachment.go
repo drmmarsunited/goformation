@@ -17,7 +17,7 @@ type TransitGatewayVpcAttachment[T any] struct {
 	// AddSubnetIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayvpcattachment.html#cfn-ec2-transitgatewayvpcattachment-addsubnetids
-	AddSubnetIds []string `json:"AddSubnetIds,omitempty"`
+	AddSubnetIds []T `json:"AddSubnetIds,omitempty"`
 
 	// Options AWS CloudFormation Property
 	// Required: false
@@ -27,12 +27,12 @@ type TransitGatewayVpcAttachment[T any] struct {
 	// RemoveSubnetIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayvpcattachment.html#cfn-ec2-transitgatewayvpcattachment-removesubnetids
-	RemoveSubnetIds []string `json:"RemoveSubnetIds,omitempty"`
+	RemoveSubnetIds []T `json:"RemoveSubnetIds,omitempty"`
 
 	// SubnetIds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayvpcattachment.html#cfn-ec2-transitgatewayvpcattachment-subnetids
-	SubnetIds []string `json:"SubnetIds"`
+	SubnetIds []T `json:"SubnetIds"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -42,12 +42,12 @@ type TransitGatewayVpcAttachment[T any] struct {
 	// TransitGatewayId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayvpcattachment.html#cfn-ec2-transitgatewayvpcattachment-transitgatewayid
-	TransitGatewayId string `json:"TransitGatewayId"`
+	TransitGatewayId T `json:"TransitGatewayId"`
 
 	// VpcId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayvpcattachment.html#cfn-ec2-transitgatewayvpcattachment-vpcid
-	VpcId string `json:"VpcId"`
+	VpcId T `json:"VpcId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

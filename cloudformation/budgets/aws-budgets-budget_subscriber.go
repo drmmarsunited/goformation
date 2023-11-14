@@ -13,12 +13,12 @@ type Budget_Subscriber[T any] struct {
 	// Address AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html#cfn-budgets-budget-subscriber-address
-	Address string `json:"Address"`
+	Address T `json:"Address"`
 
 	// SubscriptionType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html#cfn-budgets-budget-subscriber-subscriptiontype
-	SubscriptionType string `json:"SubscriptionType"`
+	SubscriptionType T `json:"SubscriptionType"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

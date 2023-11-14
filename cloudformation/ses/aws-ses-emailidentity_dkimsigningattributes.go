@@ -13,17 +13,17 @@ type EmailIdentity_DkimSigningAttributes[T any] struct {
 	// DomainSigningPrivateKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-emailidentity-dkimsigningattributes.html#cfn-ses-emailidentity-dkimsigningattributes-domainsigningprivatekey
-	DomainSigningPrivateKey *string `json:"DomainSigningPrivateKey,omitempty"`
+	DomainSigningPrivateKey *T `json:"DomainSigningPrivateKey,omitempty"`
 
 	// DomainSigningSelector AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-emailidentity-dkimsigningattributes.html#cfn-ses-emailidentity-dkimsigningattributes-domainsigningselector
-	DomainSigningSelector *string `json:"DomainSigningSelector,omitempty"`
+	DomainSigningSelector *T `json:"DomainSigningSelector,omitempty"`
 
 	// NextSigningKeyLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-emailidentity-dkimsigningattributes.html#cfn-ses-emailidentity-dkimsigningattributes-nextsigningkeylength
-	NextSigningKeyLength *string `json:"NextSigningKeyLength,omitempty"`
+	NextSigningKeyLength *T `json:"NextSigningKeyLength,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

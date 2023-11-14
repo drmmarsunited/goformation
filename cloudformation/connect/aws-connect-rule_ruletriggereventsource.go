@@ -13,12 +13,12 @@ type Rule_RuleTriggerEventSource[T any] struct {
 	// EventSourceName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-ruletriggereventsource.html#cfn-connect-rule-ruletriggereventsource-eventsourcename
-	EventSourceName string `json:"EventSourceName"`
+	EventSourceName T `json:"EventSourceName"`
 
 	// IntegrationAssociationArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-ruletriggereventsource.html#cfn-connect-rule-ruletriggereventsource-integrationassociationarn
-	IntegrationAssociationArn *string `json:"IntegrationAssociationArn,omitempty"`
+	IntegrationAssociationArn *T `json:"IntegrationAssociationArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

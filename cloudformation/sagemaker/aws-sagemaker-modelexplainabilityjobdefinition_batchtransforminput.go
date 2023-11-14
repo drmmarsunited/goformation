@@ -13,7 +13,7 @@ type ModelExplainabilityJobDefinition_BatchTransformInput[T any] struct {
 	// DataCapturedDestinationS3Uri AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-batchtransforminput.html#cfn-sagemaker-modelexplainabilityjobdefinition-batchtransforminput-datacaptureddestinations3uri
-	DataCapturedDestinationS3Uri string `json:"DataCapturedDestinationS3Uri"`
+	DataCapturedDestinationS3Uri T `json:"DataCapturedDestinationS3Uri"`
 
 	// DatasetFormat AWS CloudFormation Property
 	// Required: true
@@ -23,32 +23,32 @@ type ModelExplainabilityJobDefinition_BatchTransformInput[T any] struct {
 	// FeaturesAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-batchtransforminput.html#cfn-sagemaker-modelexplainabilityjobdefinition-batchtransforminput-featuresattribute
-	FeaturesAttribute *string `json:"FeaturesAttribute,omitempty"`
+	FeaturesAttribute *T `json:"FeaturesAttribute,omitempty"`
 
 	// InferenceAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-batchtransforminput.html#cfn-sagemaker-modelexplainabilityjobdefinition-batchtransforminput-inferenceattribute
-	InferenceAttribute *string `json:"InferenceAttribute,omitempty"`
+	InferenceAttribute *T `json:"InferenceAttribute,omitempty"`
 
 	// LocalPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-batchtransforminput.html#cfn-sagemaker-modelexplainabilityjobdefinition-batchtransforminput-localpath
-	LocalPath string `json:"LocalPath"`
+	LocalPath T `json:"LocalPath"`
 
 	// ProbabilityAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-batchtransforminput.html#cfn-sagemaker-modelexplainabilityjobdefinition-batchtransforminput-probabilityattribute
-	ProbabilityAttribute *string `json:"ProbabilityAttribute,omitempty"`
+	ProbabilityAttribute *T `json:"ProbabilityAttribute,omitempty"`
 
 	// S3DataDistributionType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-batchtransforminput.html#cfn-sagemaker-modelexplainabilityjobdefinition-batchtransforminput-s3datadistributiontype
-	S3DataDistributionType *string `json:"S3DataDistributionType,omitempty"`
+	S3DataDistributionType *T `json:"S3DataDistributionType,omitempty"`
 
 	// S3InputMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-batchtransforminput.html#cfn-sagemaker-modelexplainabilityjobdefinition-batchtransforminput-s3inputmode
-	S3InputMode *string `json:"S3InputMode,omitempty"`
+	S3InputMode *T `json:"S3InputMode,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

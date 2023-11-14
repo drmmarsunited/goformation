@@ -22,12 +22,12 @@ type GraphQLApi[T any] struct {
 	// ApiType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-apitype
-	ApiType *string `json:"ApiType,omitempty"`
+	ApiType *T `json:"ApiType,omitempty"`
 
 	// AuthenticationType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-authenticationtype
-	AuthenticationType string `json:"AuthenticationType"`
+	AuthenticationType T `json:"AuthenticationType"`
 
 	// LambdaAuthorizerConfig AWS CloudFormation Property
 	// Required: false
@@ -42,12 +42,12 @@ type GraphQLApi[T any] struct {
 	// MergedApiExecutionRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-mergedapiexecutionrolearn
-	MergedApiExecutionRoleArn *string `json:"MergedApiExecutionRoleArn,omitempty"`
+	MergedApiExecutionRoleArn *T `json:"MergedApiExecutionRoleArn,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// OpenIDConnectConfig AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type GraphQLApi[T any] struct {
 	// OwnerContact AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-ownercontact
-	OwnerContact *string `json:"OwnerContact,omitempty"`
+	OwnerContact *T `json:"OwnerContact,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -72,7 +72,7 @@ type GraphQLApi[T any] struct {
 	// Visibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-visibility
-	Visibility *string `json:"Visibility,omitempty"`
+	Visibility *T `json:"Visibility,omitempty"`
 
 	// XrayEnabled AWS CloudFormation Property
 	// Required: false

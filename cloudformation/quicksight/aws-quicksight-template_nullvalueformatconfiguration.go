@@ -13,7 +13,7 @@ type Template_NullValueFormatConfiguration[T any] struct {
 	// NullString AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-nullvalueformatconfiguration.html#cfn-quicksight-template-nullvalueformatconfiguration-nullstring
-	NullString string `json:"NullString"`
+	NullString T `json:"NullString"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

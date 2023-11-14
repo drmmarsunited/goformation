@@ -13,12 +13,12 @@ type Pipe_EcsInferenceAcceleratorOverride[T any] struct {
 	// DeviceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecsinferenceacceleratoroverride.html#cfn-pipes-pipe-ecsinferenceacceleratoroverride-devicename
-	DeviceName *string `json:"DeviceName,omitempty"`
+	DeviceName *T `json:"DeviceName,omitempty"`
 
 	// DeviceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecsinferenceacceleratoroverride.html#cfn-pipes-pipe-ecsinferenceacceleratoroverride-devicetype
-	DeviceType *string `json:"DeviceType,omitempty"`
+	DeviceType *T `json:"DeviceType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

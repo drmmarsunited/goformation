@@ -17,7 +17,7 @@ type Bucket[T any] struct {
 	// BucketName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-bucket.html#cfn-s3outposts-bucket-bucketname
-	BucketName string `json:"BucketName"`
+	BucketName T `json:"BucketName"`
 
 	// LifecycleConfiguration AWS CloudFormation Property
 	// Required: false
@@ -27,7 +27,7 @@ type Bucket[T any] struct {
 	// OutpostId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-bucket.html#cfn-s3outposts-bucket-outpostid
-	OutpostId string `json:"OutpostId"`
+	OutpostId T `json:"OutpostId"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

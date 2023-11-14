@@ -13,7 +13,7 @@ type Schedule_KinesisParameters[T any] struct {
 	// PartitionKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-kinesisparameters.html#cfn-scheduler-schedule-kinesisparameters-partitionkey
-	PartitionKey string `json:"PartitionKey"`
+	PartitionKey T `json:"PartitionKey"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

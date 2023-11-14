@@ -13,7 +13,7 @@ type TaskDefinition_ProxyConfiguration[T any] struct {
 	// ContainerName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-proxyconfiguration.html#cfn-ecs-taskdefinition-proxyconfiguration-containername
-	ContainerName string `json:"ContainerName"`
+	ContainerName T `json:"ContainerName"`
 
 	// ProxyConfigurationProperties AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type TaskDefinition_ProxyConfiguration[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-proxyconfiguration.html#cfn-ecs-taskdefinition-proxyconfiguration-type
-	Type *string `json:"Type,omitempty"`
+	Type *T `json:"Type,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

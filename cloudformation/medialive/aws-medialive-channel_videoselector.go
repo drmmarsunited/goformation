@@ -13,7 +13,7 @@ type Channel_VideoSelector[T any] struct {
 	// ColorSpace AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselector.html#cfn-medialive-channel-videoselector-colorspace
-	ColorSpace *string `json:"ColorSpace,omitempty"`
+	ColorSpace *T `json:"ColorSpace,omitempty"`
 
 	// ColorSpaceSettings AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Channel_VideoSelector[T any] struct {
 	// ColorSpaceUsage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselector.html#cfn-medialive-channel-videoselector-colorspaceusage
-	ColorSpaceUsage *string `json:"ColorSpaceUsage,omitempty"`
+	ColorSpaceUsage *T `json:"ColorSpaceUsage,omitempty"`
 
 	// SelectorSettings AWS CloudFormation Property
 	// Required: false

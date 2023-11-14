@@ -17,32 +17,32 @@ type VerifiedAccessEndpoint[T any] struct {
 	// ApplicationDomain AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-applicationdomain
-	ApplicationDomain string `json:"ApplicationDomain"`
+	ApplicationDomain T `json:"ApplicationDomain"`
 
 	// AttachmentType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-attachmenttype
-	AttachmentType string `json:"AttachmentType"`
+	AttachmentType T `json:"AttachmentType"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DomainCertificateArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-domaincertificatearn
-	DomainCertificateArn string `json:"DomainCertificateArn"`
+	DomainCertificateArn T `json:"DomainCertificateArn"`
 
 	// EndpointDomainPrefix AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-endpointdomainprefix
-	EndpointDomainPrefix string `json:"EndpointDomainPrefix"`
+	EndpointDomainPrefix T `json:"EndpointDomainPrefix"`
 
 	// EndpointType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-endpointtype
-	EndpointType string `json:"EndpointType"`
+	EndpointType T `json:"EndpointType"`
 
 	// LoadBalancerOptions AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type VerifiedAccessEndpoint[T any] struct {
 	// PolicyDocument AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-policydocument
-	PolicyDocument *string `json:"PolicyDocument,omitempty"`
+	PolicyDocument *T `json:"PolicyDocument,omitempty"`
 
 	// PolicyEnabled AWS CloudFormation Property
 	// Required: false
@@ -67,7 +67,12 @@ type VerifiedAccessEndpoint[T any] struct {
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-securitygroupids
-	SecurityGroupIds []string `json:"SecurityGroupIds,omitempty"`
+	SecurityGroupIds []T `json:"SecurityGroupIds,omitempty"`
+
+	// SseSpecification AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-ssespecification
+	SseSpecification *VerifiedAccessEndpoint_SseSpecification[any] `json:"SseSpecification,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -77,7 +82,7 @@ type VerifiedAccessEndpoint[T any] struct {
 	// VerifiedAccessGroupId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-verifiedaccessgroupid
-	VerifiedAccessGroupId string `json:"VerifiedAccessGroupId"`
+	VerifiedAccessGroupId T `json:"VerifiedAccessGroupId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -14,37 +14,37 @@ type Detector_Rule[T any] struct {
 	// Arn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-rule.html#cfn-frauddetector-detector-rule-arn
-	Arn *string `json:"Arn,omitempty"`
+	Arn *T `json:"Arn,omitempty"`
 
 	// CreatedTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-rule.html#cfn-frauddetector-detector-rule-createdtime
-	CreatedTime *string `json:"CreatedTime,omitempty"`
+	CreatedTime *T `json:"CreatedTime,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-rule.html#cfn-frauddetector-detector-rule-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DetectorId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-rule.html#cfn-frauddetector-detector-rule-detectorid
-	DetectorId *string `json:"DetectorId,omitempty"`
+	DetectorId *T `json:"DetectorId,omitempty"`
 
 	// Expression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-rule.html#cfn-frauddetector-detector-rule-expression
-	Expression *string `json:"Expression,omitempty"`
+	Expression *T `json:"Expression,omitempty"`
 
 	// Language AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-rule.html#cfn-frauddetector-detector-rule-language
-	Language *string `json:"Language,omitempty"`
+	Language *T `json:"Language,omitempty"`
 
 	// LastUpdatedTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-rule.html#cfn-frauddetector-detector-rule-lastupdatedtime
-	LastUpdatedTime *string `json:"LastUpdatedTime,omitempty"`
+	LastUpdatedTime *T `json:"LastUpdatedTime,omitempty"`
 
 	// Outcomes AWS CloudFormation Property
 	// Required: false
@@ -54,12 +54,12 @@ type Detector_Rule[T any] struct {
 	// RuleId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-rule.html#cfn-frauddetector-detector-rule-ruleid
-	RuleId *string `json:"RuleId,omitempty"`
+	RuleId *T `json:"RuleId,omitempty"`
 
 	// RuleVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-rule.html#cfn-frauddetector-detector-rule-ruleversion
-	RuleVersion *string `json:"RuleVersion,omitempty"`
+	RuleVersion *T `json:"RuleVersion,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -13,7 +13,7 @@ type Mesh_MeshServiceDiscovery[T any] struct {
 	// IpPreference AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshservicediscovery.html#cfn-appmesh-mesh-meshservicediscovery-ippreference
-	IpPreference *string `json:"IpPreference,omitempty"`
+	IpPreference *T `json:"IpPreference,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

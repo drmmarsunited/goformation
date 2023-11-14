@@ -22,7 +22,7 @@ type Queue[T any] struct {
 	// DeduplicationScope AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html#cfn-sqs-queue-deduplicationscope
-	DeduplicationScope *string `json:"DeduplicationScope,omitempty"`
+	DeduplicationScope *T `json:"DeduplicationScope,omitempty"`
 
 	// DelaySeconds AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Queue[T any] struct {
 	// FifoThroughputLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html#cfn-sqs-queue-fifothroughputlimit
-	FifoThroughputLimit *string `json:"FifoThroughputLimit,omitempty"`
+	FifoThroughputLimit *T `json:"FifoThroughputLimit,omitempty"`
 
 	// KmsDataKeyReusePeriodSeconds AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type Queue[T any] struct {
 	// KmsMasterKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html#cfn-sqs-queue-kmsmasterkeyid
-	KmsMasterKeyId *string `json:"KmsMasterKeyId,omitempty"`
+	KmsMasterKeyId *T `json:"KmsMasterKeyId,omitempty"`
 
 	// MaximumMessageSize AWS CloudFormation Property
 	// Required: false
@@ -62,7 +62,7 @@ type Queue[T any] struct {
 	// QueueName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html#cfn-sqs-queue-queuename
-	QueueName *string `json:"QueueName,omitempty"`
+	QueueName *T `json:"QueueName,omitempty"`
 
 	// ReceiveMessageWaitTimeSeconds AWS CloudFormation Property
 	// Required: false

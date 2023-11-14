@@ -13,7 +13,7 @@ type ModelQualityJobDefinition_BatchTransformInput[T any] struct {
 	// DataCapturedDestinationS3Uri AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-batchtransforminput.html#cfn-sagemaker-modelqualityjobdefinition-batchtransforminput-datacaptureddestinations3uri
-	DataCapturedDestinationS3Uri string `json:"DataCapturedDestinationS3Uri"`
+	DataCapturedDestinationS3Uri T `json:"DataCapturedDestinationS3Uri"`
 
 	// DatasetFormat AWS CloudFormation Property
 	// Required: true
@@ -23,22 +23,22 @@ type ModelQualityJobDefinition_BatchTransformInput[T any] struct {
 	// EndTimeOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-batchtransforminput.html#cfn-sagemaker-modelqualityjobdefinition-batchtransforminput-endtimeoffset
-	EndTimeOffset *string `json:"EndTimeOffset,omitempty"`
+	EndTimeOffset *T `json:"EndTimeOffset,omitempty"`
 
 	// InferenceAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-batchtransforminput.html#cfn-sagemaker-modelqualityjobdefinition-batchtransforminput-inferenceattribute
-	InferenceAttribute *string `json:"InferenceAttribute,omitempty"`
+	InferenceAttribute *T `json:"InferenceAttribute,omitempty"`
 
 	// LocalPath AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-batchtransforminput.html#cfn-sagemaker-modelqualityjobdefinition-batchtransforminput-localpath
-	LocalPath string `json:"LocalPath"`
+	LocalPath T `json:"LocalPath"`
 
 	// ProbabilityAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-batchtransforminput.html#cfn-sagemaker-modelqualityjobdefinition-batchtransforminput-probabilityattribute
-	ProbabilityAttribute *string `json:"ProbabilityAttribute,omitempty"`
+	ProbabilityAttribute *T `json:"ProbabilityAttribute,omitempty"`
 
 	// ProbabilityThresholdAttribute AWS CloudFormation Property
 	// Required: false
@@ -48,17 +48,17 @@ type ModelQualityJobDefinition_BatchTransformInput[T any] struct {
 	// S3DataDistributionType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-batchtransforminput.html#cfn-sagemaker-modelqualityjobdefinition-batchtransforminput-s3datadistributiontype
-	S3DataDistributionType *string `json:"S3DataDistributionType,omitempty"`
+	S3DataDistributionType *T `json:"S3DataDistributionType,omitempty"`
 
 	// S3InputMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-batchtransforminput.html#cfn-sagemaker-modelqualityjobdefinition-batchtransforminput-s3inputmode
-	S3InputMode *string `json:"S3InputMode,omitempty"`
+	S3InputMode *T `json:"S3InputMode,omitempty"`
 
 	// StartTimeOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-batchtransforminput.html#cfn-sagemaker-modelqualityjobdefinition-batchtransforminput-starttimeoffset
-	StartTimeOffset *string `json:"StartTimeOffset,omitempty"`
+	StartTimeOffset *T `json:"StartTimeOffset,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

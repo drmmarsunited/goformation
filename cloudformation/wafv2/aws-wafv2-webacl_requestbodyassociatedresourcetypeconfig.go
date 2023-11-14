@@ -13,7 +13,7 @@ type WebACL_RequestBodyAssociatedResourceTypeConfig[T any] struct {
 	// DefaultSizeInspectionLimit AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-requestbodyassociatedresourcetypeconfig.html#cfn-wafv2-webacl-requestbodyassociatedresourcetypeconfig-defaultsizeinspectionlimit
-	DefaultSizeInspectionLimit string `json:"DefaultSizeInspectionLimit"`
+	DefaultSizeInspectionLimit T `json:"DefaultSizeInspectionLimit"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

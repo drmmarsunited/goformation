@@ -21,7 +21,7 @@ type FunctionDefinitionVersion[T any] struct {
 	// FunctionDefinitionId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html#cfn-greengrass-functiondefinitionversion-functiondefinitionid
-	FunctionDefinitionId string `json:"FunctionDefinitionId"`
+	FunctionDefinitionId T `json:"FunctionDefinitionId"`
 
 	// Functions AWS CloudFormation Property
 	// Required: true

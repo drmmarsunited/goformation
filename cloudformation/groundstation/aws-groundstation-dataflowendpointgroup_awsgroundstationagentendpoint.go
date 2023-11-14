@@ -13,12 +13,12 @@ type DataflowEndpointGroup_AwsGroundStationAgentEndpoint[T any] struct {
 	// AgentStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint.html#cfn-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint-agentstatus
-	AgentStatus *string `json:"AgentStatus,omitempty"`
+	AgentStatus *T `json:"AgentStatus,omitempty"`
 
 	// AuditResults AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint.html#cfn-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint-auditresults
-	AuditResults *string `json:"AuditResults,omitempty"`
+	AuditResults *T `json:"AuditResults,omitempty"`
 
 	// EgressAddress AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type DataflowEndpointGroup_AwsGroundStationAgentEndpoint[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint.html#cfn-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

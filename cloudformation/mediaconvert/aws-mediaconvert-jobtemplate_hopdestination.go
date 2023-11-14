@@ -18,7 +18,7 @@ type JobTemplate_HopDestination[T any] struct {
 	// Queue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconvert-jobtemplate-hopdestination.html#cfn-mediaconvert-jobtemplate-hopdestination-queue
-	Queue *string `json:"Queue,omitempty"`
+	Queue *T `json:"Queue,omitempty"`
 
 	// WaitMinutes AWS CloudFormation Property
 	// Required: false

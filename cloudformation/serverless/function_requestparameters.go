@@ -13,7 +13,7 @@ import (
 
 // Function_RequestParameters is a helper struct that can hold either a String or RequestParameter value
 type Function_RequestParameters[T any] struct {
-	StringArray *[]string
+	StringArray *[]T
 
 	RequestParameterArray *[]Function_RequestParameter[any]
 }
@@ -52,7 +52,7 @@ func (r *Function_RequestParameters[any]) UnmarshalJSON(b []byte) error {
 
 	switch val := typecheck.(type) {
 
-	case []string:
+	case []any:
 		r.StringArray = &val
 
 	case map[string]interface{}:

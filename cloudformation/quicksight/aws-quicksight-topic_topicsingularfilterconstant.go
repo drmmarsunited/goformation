@@ -13,12 +13,12 @@ type Topic_TopicSingularFilterConstant[T any] struct {
 	// ConstantType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topicsingularfilterconstant.html#cfn-quicksight-topic-topicsingularfilterconstant-constanttype
-	ConstantType *string `json:"ConstantType,omitempty"`
+	ConstantType *T `json:"ConstantType,omitempty"`
 
 	// SingularConstant AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topicsingularfilterconstant.html#cfn-quicksight-topic-topicsingularfilterconstant-singularconstant
-	SingularConstant *string `json:"SingularConstant,omitempty"`
+	SingularConstant *T `json:"SingularConstant,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

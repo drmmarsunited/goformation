@@ -13,17 +13,17 @@ type FirewallRuleGroup_FirewallRule[T any] struct {
 	// Action AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-action
-	Action string `json:"Action"`
+	Action T `json:"Action"`
 
 	// BlockOverrideDnsType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-blockoverridednstype
-	BlockOverrideDnsType *string `json:"BlockOverrideDnsType,omitempty"`
+	BlockOverrideDnsType *T `json:"BlockOverrideDnsType,omitempty"`
 
 	// BlockOverrideDomain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-blockoverridedomain
-	BlockOverrideDomain *string `json:"BlockOverrideDomain,omitempty"`
+	BlockOverrideDomain *T `json:"BlockOverrideDomain,omitempty"`
 
 	// BlockOverrideTtl AWS CloudFormation Property
 	// Required: false
@@ -33,12 +33,12 @@ type FirewallRuleGroup_FirewallRule[T any] struct {
 	// BlockResponse AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-blockresponse
-	BlockResponse *string `json:"BlockResponse,omitempty"`
+	BlockResponse *T `json:"BlockResponse,omitempty"`
 
 	// FirewallDomainListId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-firewalldomainlistid
-	FirewallDomainListId string `json:"FirewallDomainListId"`
+	FirewallDomainListId T `json:"FirewallDomainListId"`
 
 	// Priority AWS CloudFormation Property
 	// Required: true

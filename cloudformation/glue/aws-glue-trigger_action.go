@@ -18,12 +18,12 @@ type Trigger_Action[T any] struct {
 	// CrawlerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html#cfn-glue-trigger-action-crawlername
-	CrawlerName *string `json:"CrawlerName,omitempty"`
+	CrawlerName *T `json:"CrawlerName,omitempty"`
 
 	// JobName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html#cfn-glue-trigger-action-jobname
-	JobName *string `json:"JobName,omitempty"`
+	JobName *T `json:"JobName,omitempty"`
 
 	// NotificationProperty AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Trigger_Action[T any] struct {
 	// SecurityConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html#cfn-glue-trigger-action-securityconfiguration
-	SecurityConfiguration *string `json:"SecurityConfiguration,omitempty"`
+	SecurityConfiguration *T `json:"SecurityConfiguration,omitempty"`
 
 	// Timeout AWS CloudFormation Property
 	// Required: false

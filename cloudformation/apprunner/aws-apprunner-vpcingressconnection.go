@@ -22,7 +22,7 @@ type VpcIngressConnection[T any] struct {
 	// ServiceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-vpcingressconnection.html#cfn-apprunner-vpcingressconnection-servicearn
-	ServiceArn string `json:"ServiceArn"`
+	ServiceArn T `json:"ServiceArn"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type VpcIngressConnection[T any] struct {
 	// VpcIngressConnectionName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-vpcingressconnection.html#cfn-apprunner-vpcingressconnection-vpcingressconnectionname
-	VpcIngressConnectionName *string `json:"VpcIngressConnectionName,omitempty"`
+	VpcIngressConnectionName *T `json:"VpcIngressConnectionName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -21,7 +21,7 @@ type EndpointGroup[T any] struct {
 	// EndpointGroupRegion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-endpointgroupregion
-	EndpointGroupRegion string `json:"EndpointGroupRegion"`
+	EndpointGroupRegion T `json:"EndpointGroupRegion"`
 
 	// HealthCheckIntervalSeconds AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type EndpointGroup[T any] struct {
 	// HealthCheckPath AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-healthcheckpath
-	HealthCheckPath *string `json:"HealthCheckPath,omitempty"`
+	HealthCheckPath *T `json:"HealthCheckPath,omitempty"`
 
 	// HealthCheckPort AWS CloudFormation Property
 	// Required: false
@@ -41,12 +41,12 @@ type EndpointGroup[T any] struct {
 	// HealthCheckProtocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-healthcheckprotocol
-	HealthCheckProtocol *string `json:"HealthCheckProtocol,omitempty"`
+	HealthCheckProtocol *T `json:"HealthCheckProtocol,omitempty"`
 
 	// ListenerArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-listenerarn
-	ListenerArn string `json:"ListenerArn"`
+	ListenerArn T `json:"ListenerArn"`
 
 	// PortOverrides AWS CloudFormation Property
 	// Required: false

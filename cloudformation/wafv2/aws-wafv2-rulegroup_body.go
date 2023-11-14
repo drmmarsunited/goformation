@@ -13,7 +13,7 @@ type RuleGroup_Body[T any] struct {
 	// OversizeHandling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-body.html#cfn-wafv2-rulegroup-body-oversizehandling
-	OversizeHandling *string `json:"OversizeHandling,omitempty"`
+	OversizeHandling *T `json:"OversizeHandling,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

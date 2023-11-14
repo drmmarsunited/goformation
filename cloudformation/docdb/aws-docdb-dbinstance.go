@@ -22,22 +22,22 @@ type DBInstance[T any] struct {
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-availabilityzone
-	AvailabilityZone *string `json:"AvailabilityZone,omitempty"`
+	AvailabilityZone *T `json:"AvailabilityZone,omitempty"`
 
 	// DBClusterIdentifier AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-dbclusteridentifier
-	DBClusterIdentifier string `json:"DBClusterIdentifier"`
+	DBClusterIdentifier T `json:"DBClusterIdentifier"`
 
 	// DBInstanceClass AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-dbinstanceclass
-	DBInstanceClass string `json:"DBInstanceClass"`
+	DBInstanceClass T `json:"DBInstanceClass"`
 
 	// DBInstanceIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-dbinstanceidentifier
-	DBInstanceIdentifier *string `json:"DBInstanceIdentifier,omitempty"`
+	DBInstanceIdentifier *T `json:"DBInstanceIdentifier,omitempty"`
 
 	// EnablePerformanceInsights AWS CloudFormation Property
 	// Required: false
@@ -47,7 +47,7 @@ type DBInstance[T any] struct {
 	// PreferredMaintenanceWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-preferredmaintenancewindow
-	PreferredMaintenanceWindow *string `json:"PreferredMaintenanceWindow,omitempty"`
+	PreferredMaintenanceWindow *T `json:"PreferredMaintenanceWindow,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

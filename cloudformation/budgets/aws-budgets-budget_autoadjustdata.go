@@ -13,7 +13,7 @@ type Budget_AutoAdjustData[T any] struct {
 	// AutoAdjustType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-autoadjustdata.html#cfn-budgets-budget-autoadjustdata-autoadjusttype
-	AutoAdjustType string `json:"AutoAdjustType"`
+	AutoAdjustType T `json:"AutoAdjustType"`
 
 	// HistoricalOptions AWS CloudFormation Property
 	// Required: false

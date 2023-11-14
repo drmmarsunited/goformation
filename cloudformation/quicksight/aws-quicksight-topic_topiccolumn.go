@@ -13,12 +13,12 @@ type Topic_TopicColumn[T any] struct {
 	// Aggregation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccolumn.html#cfn-quicksight-topic-topiccolumn-aggregation
-	Aggregation *string `json:"Aggregation,omitempty"`
+	Aggregation *T `json:"Aggregation,omitempty"`
 
 	// AllowedAggregations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccolumn.html#cfn-quicksight-topic-topiccolumn-allowedaggregations
-	AllowedAggregations []string `json:"AllowedAggregations,omitempty"`
+	AllowedAggregations []T `json:"AllowedAggregations,omitempty"`
 
 	// CellValueSynonyms AWS CloudFormation Property
 	// Required: false
@@ -28,27 +28,27 @@ type Topic_TopicColumn[T any] struct {
 	// ColumnDataRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccolumn.html#cfn-quicksight-topic-topiccolumn-columndatarole
-	ColumnDataRole *string `json:"ColumnDataRole,omitempty"`
+	ColumnDataRole *T `json:"ColumnDataRole,omitempty"`
 
 	// ColumnDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccolumn.html#cfn-quicksight-topic-topiccolumn-columndescription
-	ColumnDescription *string `json:"ColumnDescription,omitempty"`
+	ColumnDescription *T `json:"ColumnDescription,omitempty"`
 
 	// ColumnFriendlyName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccolumn.html#cfn-quicksight-topic-topiccolumn-columnfriendlyname
-	ColumnFriendlyName *string `json:"ColumnFriendlyName,omitempty"`
+	ColumnFriendlyName *T `json:"ColumnFriendlyName,omitempty"`
 
 	// ColumnName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccolumn.html#cfn-quicksight-topic-topiccolumn-columnname
-	ColumnName string `json:"ColumnName"`
+	ColumnName T `json:"ColumnName"`
 
 	// ColumnSynonyms AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccolumn.html#cfn-quicksight-topic-topiccolumn-columnsynonyms
-	ColumnSynonyms []string `json:"ColumnSynonyms,omitempty"`
+	ColumnSynonyms []T `json:"ColumnSynonyms,omitempty"`
 
 	// ComparativeOrder AWS CloudFormation Property
 	// Required: false
@@ -70,10 +70,15 @@ type Topic_TopicColumn[T any] struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccolumn.html#cfn-quicksight-topic-topiccolumn-neveraggregateinfilter
 	NeverAggregateInFilter *T `json:"NeverAggregateInFilter,omitempty"`
 
+	// NonAdditive AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccolumn.html#cfn-quicksight-topic-topiccolumn-nonadditive
+	NonAdditive *T `json:"NonAdditive,omitempty"`
+
 	// NotAllowedAggregations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccolumn.html#cfn-quicksight-topic-topiccolumn-notallowedaggregations
-	NotAllowedAggregations []string `json:"NotAllowedAggregations,omitempty"`
+	NotAllowedAggregations []T `json:"NotAllowedAggregations,omitempty"`
 
 	// SemanticType AWS CloudFormation Property
 	// Required: false
@@ -83,7 +88,7 @@ type Topic_TopicColumn[T any] struct {
 	// TimeGranularity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topiccolumn.html#cfn-quicksight-topic-topiccolumn-timegranularity
-	TimeGranularity *string `json:"TimeGranularity,omitempty"`
+	TimeGranularity *T `json:"TimeGranularity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

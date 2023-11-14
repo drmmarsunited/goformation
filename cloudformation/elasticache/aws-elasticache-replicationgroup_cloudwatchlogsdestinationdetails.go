@@ -13,7 +13,7 @@ type ReplicationGroup_CloudWatchLogsDestinationDetails[T any] struct {
 	// LogGroup AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-cloudwatchlogsdestinationdetails.html#cfn-elasticache-replicationgroup-cloudwatchlogsdestinationdetails-loggroup
-	LogGroup string `json:"LogGroup"`
+	LogGroup T `json:"LogGroup"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

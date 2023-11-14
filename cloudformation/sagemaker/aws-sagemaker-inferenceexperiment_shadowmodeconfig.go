@@ -18,7 +18,7 @@ type InferenceExperiment_ShadowModeConfig[T any] struct {
 	// SourceModelVariantName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferenceexperiment-shadowmodeconfig.html#cfn-sagemaker-inferenceexperiment-shadowmodeconfig-sourcemodelvariantname
-	SourceModelVariantName string `json:"SourceModelVariantName"`
+	SourceModelVariantName T `json:"SourceModelVariantName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

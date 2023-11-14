@@ -13,17 +13,17 @@ type Channel_NielsenCBET[T any] struct {
 	// CbetCheckDigitString AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsencbet.html#cfn-medialive-channel-nielsencbet-cbetcheckdigitstring
-	CbetCheckDigitString *string `json:"CbetCheckDigitString,omitempty"`
+	CbetCheckDigitString *T `json:"CbetCheckDigitString,omitempty"`
 
 	// CbetStepaside AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsencbet.html#cfn-medialive-channel-nielsencbet-cbetstepaside
-	CbetStepaside *string `json:"CbetStepaside,omitempty"`
+	CbetStepaside *T `json:"CbetStepaside,omitempty"`
 
 	// Csid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsencbet.html#cfn-medialive-channel-nielsencbet-csid
-	Csid *string `json:"Csid,omitempty"`
+	Csid *T `json:"Csid,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

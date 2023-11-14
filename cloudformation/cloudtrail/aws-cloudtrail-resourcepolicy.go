@@ -16,7 +16,7 @@ type ResourcePolicy[T any] struct {
 	// ResourceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-resourcepolicy.html#cfn-cloudtrail-resourcepolicy-resourcearn
-	ResourceArn string `json:"ResourceArn"`
+	ResourceArn T `json:"ResourceArn"`
 
 	// ResourcePolicy AWS CloudFormation Property
 	// Required: true

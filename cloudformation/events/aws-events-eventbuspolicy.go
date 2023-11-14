@@ -16,7 +16,7 @@ type EventBusPolicy[T any] struct {
 	// Action AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-action
-	Action *string `json:"Action,omitempty"`
+	Action *T `json:"Action,omitempty"`
 
 	// Condition AWS CloudFormation Property
 	// Required: false
@@ -26,12 +26,12 @@ type EventBusPolicy[T any] struct {
 	// EventBusName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-eventbusname
-	EventBusName *string `json:"EventBusName,omitempty"`
+	EventBusName *T `json:"EventBusName,omitempty"`
 
 	// Principal AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-principal
-	Principal *string `json:"Principal,omitempty"`
+	Principal *T `json:"Principal,omitempty"`
 
 	// Statement AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type EventBusPolicy[T any] struct {
 	// StatementId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-statementid
-	StatementId string `json:"StatementId"`
+	StatementId T `json:"StatementId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

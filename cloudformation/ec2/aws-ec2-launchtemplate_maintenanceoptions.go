@@ -13,7 +13,7 @@ type LaunchTemplate_MaintenanceOptions[T any] struct {
 	// AutoRecovery AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-maintenanceoptions.html#cfn-ec2-launchtemplate-maintenanceoptions-autorecovery
-	AutoRecovery *string `json:"AutoRecovery,omitempty"`
+	AutoRecovery *T `json:"AutoRecovery,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

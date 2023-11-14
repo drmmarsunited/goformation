@@ -13,12 +13,12 @@ type Workgroup_ConfigParameter[T any] struct {
 	// ParameterKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-configparameter.html#cfn-redshiftserverless-workgroup-configparameter-parameterkey
-	ParameterKey *string `json:"ParameterKey,omitempty"`
+	ParameterKey *T `json:"ParameterKey,omitempty"`
 
 	// ParameterValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-configparameter.html#cfn-redshiftserverless-workgroup-configparameter-parametervalue
-	ParameterValue *string `json:"ParameterValue,omitempty"`
+	ParameterValue *T `json:"ParameterValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

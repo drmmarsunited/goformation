@@ -13,7 +13,7 @@ type Dashboard_TableFieldCustomIconContent[T any] struct {
 	// Icon AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablefieldcustomiconcontent.html#cfn-quicksight-dashboard-tablefieldcustomiconcontent-icon
-	Icon *string `json:"Icon,omitempty"`
+	Icon *T `json:"Icon,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

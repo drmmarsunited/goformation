@@ -24,7 +24,7 @@ type Deployment_StageDescription[T any] struct {
 	// CacheClusterSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cacheclustersize
-	CacheClusterSize *string `json:"CacheClusterSize,omitempty"`
+	CacheClusterSize *T `json:"CacheClusterSize,omitempty"`
 
 	// CacheDataEncrypted AWS CloudFormation Property
 	// Required: false
@@ -49,7 +49,7 @@ type Deployment_StageDescription[T any] struct {
 	// ClientCertificateId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-clientcertificateid
-	ClientCertificateId *string `json:"ClientCertificateId,omitempty"`
+	ClientCertificateId *T `json:"ClientCertificateId,omitempty"`
 
 	// DataTraceEnabled AWS CloudFormation Property
 	// Required: false
@@ -59,17 +59,17 @@ type Deployment_StageDescription[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DocumentationVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-documentationversion
-	DocumentationVersion *string `json:"DocumentationVersion,omitempty"`
+	DocumentationVersion *T `json:"DocumentationVersion,omitempty"`
 
 	// LoggingLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-logginglevel
-	LoggingLevel *string `json:"LoggingLevel,omitempty"`
+	LoggingLevel *T `json:"LoggingLevel,omitempty"`
 
 	// MethodSettings AWS CloudFormation Property
 	// Required: false
@@ -104,7 +104,7 @@ type Deployment_StageDescription[T any] struct {
 	// Variables AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-variables
-	Variables map[string]string `json:"Variables,omitempty"`
+	Variables map[string]T `json:"Variables,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

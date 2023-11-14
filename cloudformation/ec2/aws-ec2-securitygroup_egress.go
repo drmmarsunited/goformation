@@ -13,27 +13,27 @@ type SecurityGroup_Egress[T any] struct {
 	// CidrIp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidrip
-	CidrIp *string `json:"CidrIp,omitempty"`
+	CidrIp *T `json:"CidrIp,omitempty"`
 
 	// CidrIpv6 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidripv6
-	CidrIpv6 *string `json:"CidrIpv6,omitempty"`
+	CidrIpv6 *T `json:"CidrIpv6,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// DestinationPrefixListId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-destinationprefixlistid
-	DestinationPrefixListId *string `json:"DestinationPrefixListId,omitempty"`
+	DestinationPrefixListId *T `json:"DestinationPrefixListId,omitempty"`
 
 	// DestinationSecurityGroupId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-destsecgroupid
-	DestinationSecurityGroupId *string `json:"DestinationSecurityGroupId,omitempty"`
+	DestinationSecurityGroupId *T `json:"DestinationSecurityGroupId,omitempty"`
 
 	// FromPort AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type SecurityGroup_Egress[T any] struct {
 	// IpProtocol AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-ipprotocol
-	IpProtocol string `json:"IpProtocol"`
+	IpProtocol T `json:"IpProtocol"`
 
 	// ToPort AWS CloudFormation Property
 	// Required: false

@@ -13,22 +13,22 @@ type AlarmModel_DynamoDB[T any] struct {
 	// HashKeyField AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-dynamodb.html#cfn-iotevents-alarmmodel-dynamodb-hashkeyfield
-	HashKeyField string `json:"HashKeyField"`
+	HashKeyField T `json:"HashKeyField"`
 
 	// HashKeyType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-dynamodb.html#cfn-iotevents-alarmmodel-dynamodb-hashkeytype
-	HashKeyType *string `json:"HashKeyType,omitempty"`
+	HashKeyType *T `json:"HashKeyType,omitempty"`
 
 	// HashKeyValue AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-dynamodb.html#cfn-iotevents-alarmmodel-dynamodb-hashkeyvalue
-	HashKeyValue string `json:"HashKeyValue"`
+	HashKeyValue T `json:"HashKeyValue"`
 
 	// Operation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-dynamodb.html#cfn-iotevents-alarmmodel-dynamodb-operation
-	Operation *string `json:"Operation,omitempty"`
+	Operation *T `json:"Operation,omitempty"`
 
 	// Payload AWS CloudFormation Property
 	// Required: false
@@ -38,27 +38,27 @@ type AlarmModel_DynamoDB[T any] struct {
 	// PayloadField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-dynamodb.html#cfn-iotevents-alarmmodel-dynamodb-payloadfield
-	PayloadField *string `json:"PayloadField,omitempty"`
+	PayloadField *T `json:"PayloadField,omitempty"`
 
 	// RangeKeyField AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-dynamodb.html#cfn-iotevents-alarmmodel-dynamodb-rangekeyfield
-	RangeKeyField *string `json:"RangeKeyField,omitempty"`
+	RangeKeyField *T `json:"RangeKeyField,omitempty"`
 
 	// RangeKeyType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-dynamodb.html#cfn-iotevents-alarmmodel-dynamodb-rangekeytype
-	RangeKeyType *string `json:"RangeKeyType,omitempty"`
+	RangeKeyType *T `json:"RangeKeyType,omitempty"`
 
 	// RangeKeyValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-dynamodb.html#cfn-iotevents-alarmmodel-dynamodb-rangekeyvalue
-	RangeKeyValue *string `json:"RangeKeyValue,omitempty"`
+	RangeKeyValue *T `json:"RangeKeyValue,omitempty"`
 
 	// TableName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-dynamodb.html#cfn-iotevents-alarmmodel-dynamodb-tablename
-	TableName string `json:"TableName"`
+	TableName T `json:"TableName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

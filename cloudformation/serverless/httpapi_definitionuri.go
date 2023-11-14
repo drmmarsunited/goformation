@@ -13,7 +13,7 @@ import (
 
 // HttpApi_DefinitionUri is a helper struct that can hold either a String or S3Location value
 type HttpApi_DefinitionUri[T any] struct {
-	String *string
+	String *T
 
 	S3Location *HttpApi_S3Location[any]
 }
@@ -52,7 +52,7 @@ func (r *HttpApi_DefinitionUri[any]) UnmarshalJSON(b []byte) error {
 
 	switch val := typecheck.(type) {
 
-	case string:
+	case any:
 		r.String = &val
 
 	case map[string]interface{}:

@@ -13,22 +13,22 @@ type Template_RadarChartConfiguration[T any] struct {
 	// AlternateBandColorsVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-radarchartconfiguration.html#cfn-quicksight-template-radarchartconfiguration-alternatebandcolorsvisibility
-	AlternateBandColorsVisibility *string `json:"AlternateBandColorsVisibility,omitempty"`
+	AlternateBandColorsVisibility *T `json:"AlternateBandColorsVisibility,omitempty"`
 
 	// AlternateBandEvenColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-radarchartconfiguration.html#cfn-quicksight-template-radarchartconfiguration-alternatebandevencolor
-	AlternateBandEvenColor *string `json:"AlternateBandEvenColor,omitempty"`
+	AlternateBandEvenColor *T `json:"AlternateBandEvenColor,omitempty"`
 
 	// AlternateBandOddColor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-radarchartconfiguration.html#cfn-quicksight-template-radarchartconfiguration-alternatebandoddcolor
-	AlternateBandOddColor *string `json:"AlternateBandOddColor,omitempty"`
+	AlternateBandOddColor *T `json:"AlternateBandOddColor,omitempty"`
 
 	// AxesRangeScale AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-radarchartconfiguration.html#cfn-quicksight-template-radarchartconfiguration-axesrangescale
-	AxesRangeScale *string `json:"AxesRangeScale,omitempty"`
+	AxesRangeScale *T `json:"AxesRangeScale,omitempty"`
 
 	// BaseSeriesSettings AWS CloudFormation Property
 	// Required: false
@@ -68,7 +68,7 @@ type Template_RadarChartConfiguration[T any] struct {
 	// Shape AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-radarchartconfiguration.html#cfn-quicksight-template-radarchartconfiguration-shape
-	Shape *string `json:"Shape,omitempty"`
+	Shape *T `json:"Shape,omitempty"`
 
 	// SortConfiguration AWS CloudFormation Property
 	// Required: false

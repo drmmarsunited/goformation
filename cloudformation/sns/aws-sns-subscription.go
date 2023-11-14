@@ -21,7 +21,7 @@ type Subscription[T any] struct {
 	// Endpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-endpoint
-	Endpoint *string `json:"Endpoint,omitempty"`
+	Endpoint *T `json:"Endpoint,omitempty"`
 
 	// FilterPolicy AWS CloudFormation Property
 	// Required: false
@@ -31,12 +31,12 @@ type Subscription[T any] struct {
 	// FilterPolicyScope AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-filterpolicyscope
-	FilterPolicyScope *string `json:"FilterPolicyScope,omitempty"`
+	FilterPolicyScope *T `json:"FilterPolicyScope,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-protocol
-	Protocol string `json:"Protocol"`
+	Protocol T `json:"Protocol"`
 
 	// RawMessageDelivery AWS CloudFormation Property
 	// Required: false
@@ -51,17 +51,17 @@ type Subscription[T any] struct {
 	// Region AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-region
-	Region *string `json:"Region,omitempty"`
+	Region *T `json:"Region,omitempty"`
 
 	// SubscriptionRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-subscriptionrolearn
-	SubscriptionRoleArn *string `json:"SubscriptionRoleArn,omitempty"`
+	SubscriptionRoleArn *T `json:"SubscriptionRoleArn,omitempty"`
 
 	// TopicArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#topicarn
-	TopicArn string `json:"TopicArn"`
+	TopicArn T `json:"TopicArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

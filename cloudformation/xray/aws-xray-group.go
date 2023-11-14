@@ -17,12 +17,12 @@ type Group[T any] struct {
 	// FilterExpression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-group.html#cfn-xray-group-filterexpression
-	FilterExpression *string `json:"FilterExpression,omitempty"`
+	FilterExpression *T `json:"FilterExpression,omitempty"`
 
 	// GroupName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-group.html#cfn-xray-group-groupname
-	GroupName string `json:"GroupName"`
+	GroupName T `json:"GroupName"`
 
 	// InsightsConfiguration AWS CloudFormation Property
 	// Required: false

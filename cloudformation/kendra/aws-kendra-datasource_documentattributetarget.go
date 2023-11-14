@@ -13,7 +13,7 @@ type DataSource_DocumentAttributeTarget[T any] struct {
 	// TargetDocumentAttributeKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributetarget.html#cfn-kendra-datasource-documentattributetarget-targetdocumentattributekey
-	TargetDocumentAttributeKey string `json:"TargetDocumentAttributeKey"`
+	TargetDocumentAttributeKey T `json:"TargetDocumentAttributeKey"`
 
 	// TargetDocumentAttributeValue AWS CloudFormation Property
 	// Required: false

@@ -22,7 +22,7 @@ type Service[T any] struct {
 	// Cluster AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-cluster
-	Cluster *string `json:"Cluster,omitempty"`
+	Cluster *T `json:"Cluster,omitempty"`
 
 	// DeploymentConfiguration AWS CloudFormation Property
 	// Required: false
@@ -57,7 +57,7 @@ type Service[T any] struct {
 	// LaunchType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-launchtype
-	LaunchType *string `json:"LaunchType,omitempty"`
+	LaunchType *T `json:"LaunchType,omitempty"`
 
 	// LoadBalancers AWS CloudFormation Property
 	// Required: false
@@ -82,22 +82,22 @@ type Service[T any] struct {
 	// PlatformVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-platformversion
-	PlatformVersion *string `json:"PlatformVersion,omitempty"`
+	PlatformVersion *T `json:"PlatformVersion,omitempty"`
 
 	// PropagateTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-propagatetags
-	PropagateTags *string `json:"PropagateTags,omitempty"`
+	PropagateTags *T `json:"PropagateTags,omitempty"`
 
 	// Role AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-role
-	Role *string `json:"Role,omitempty"`
+	Role *T `json:"Role,omitempty"`
 
 	// SchedulingStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-schedulingstrategy
-	SchedulingStrategy *string `json:"SchedulingStrategy,omitempty"`
+	SchedulingStrategy *T `json:"SchedulingStrategy,omitempty"`
 
 	// ServiceConnectConfiguration AWS CloudFormation Property
 	// Required: false
@@ -107,7 +107,7 @@ type Service[T any] struct {
 	// ServiceName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-servicename
-	ServiceName *string `json:"ServiceName,omitempty"`
+	ServiceName *T `json:"ServiceName,omitempty"`
 
 	// ServiceRegistries AWS CloudFormation Property
 	// Required: false
@@ -122,7 +122,7 @@ type Service[T any] struct {
 	// TaskDefinition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-taskdefinition
-	TaskDefinition *string `json:"TaskDefinition,omitempty"`
+	TaskDefinition *T `json:"TaskDefinition,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

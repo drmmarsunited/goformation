@@ -13,7 +13,7 @@ type LifecyclePolicy_EncryptionConfiguration[T any] struct {
 	// CmkArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-encryptionconfiguration.html#cfn-dlm-lifecyclepolicy-encryptionconfiguration-cmkarn
-	CmkArn *string `json:"CmkArn,omitempty"`
+	CmkArn *T `json:"CmkArn,omitempty"`
 
 	// Encrypted AWS CloudFormation Property
 	// Required: true

@@ -13,12 +13,12 @@ type LaunchTemplate_MetadataOptions[T any] struct {
 	// HttpEndpoint AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-metadataoptions.html#cfn-ec2-launchtemplate-metadataoptions-httpendpoint
-	HttpEndpoint *string `json:"HttpEndpoint,omitempty"`
+	HttpEndpoint *T `json:"HttpEndpoint,omitempty"`
 
 	// HttpProtocolIpv6 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-metadataoptions.html#cfn-ec2-launchtemplate-metadataoptions-httpprotocolipv6
-	HttpProtocolIpv6 *string `json:"HttpProtocolIpv6,omitempty"`
+	HttpProtocolIpv6 *T `json:"HttpProtocolIpv6,omitempty"`
 
 	// HttpPutResponseHopLimit AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type LaunchTemplate_MetadataOptions[T any] struct {
 	// HttpTokens AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-metadataoptions.html#cfn-ec2-launchtemplate-metadataoptions-httptokens
-	HttpTokens *string `json:"HttpTokens,omitempty"`
+	HttpTokens *T `json:"HttpTokens,omitempty"`
 
 	// InstanceMetadataTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-metadataoptions.html#cfn-ec2-launchtemplate-metadataoptions-instancemetadatatags
-	InstanceMetadataTags *string `json:"InstanceMetadataTags,omitempty"`
+	InstanceMetadataTags *T `json:"InstanceMetadataTags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

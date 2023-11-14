@@ -13,7 +13,7 @@ type Application_ImageConfigurationInput[T any] struct {
 	// ImageUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-imageconfigurationinput.html#cfn-emrserverless-application-imageconfigurationinput-imageuri
-	ImageUri *string `json:"ImageUri,omitempty"`
+	ImageUri *T `json:"ImageUri,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

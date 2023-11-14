@@ -13,12 +13,12 @@ type QuickConnect_QueueQuickConnectConfig[T any] struct {
 	// ContactFlowArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-queuequickconnectconfig.html#cfn-connect-quickconnect-queuequickconnectconfig-contactflowarn
-	ContactFlowArn string `json:"ContactFlowArn"`
+	ContactFlowArn T `json:"ContactFlowArn"`
 
 	// QueueArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-queuequickconnectconfig.html#cfn-connect-quickconnect-queuequickconnectconfig-queuearn
-	QueueArn string `json:"QueueArn"`
+	QueueArn T `json:"QueueArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

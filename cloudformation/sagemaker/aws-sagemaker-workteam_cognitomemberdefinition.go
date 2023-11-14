@@ -13,17 +13,17 @@ type Workteam_CognitoMemberDefinition[T any] struct {
 	// CognitoClientId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html#cfn-sagemaker-workteam-cognitomemberdefinition-cognitoclientid
-	CognitoClientId string `json:"CognitoClientId"`
+	CognitoClientId T `json:"CognitoClientId"`
 
 	// CognitoUserGroup AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html#cfn-sagemaker-workteam-cognitomemberdefinition-cognitousergroup
-	CognitoUserGroup string `json:"CognitoUserGroup"`
+	CognitoUserGroup T `json:"CognitoUserGroup"`
 
 	// CognitoUserPool AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html#cfn-sagemaker-workteam-cognitomemberdefinition-cognitouserpool
-	CognitoUserPool string `json:"CognitoUserPool"`
+	CognitoUserPool T `json:"CognitoUserPool"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

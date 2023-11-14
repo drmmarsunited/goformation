@@ -13,12 +13,12 @@ type Analysis_SameSheetTargetVisualConfiguration[T any] struct {
 	// TargetVisualOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-samesheettargetvisualconfiguration.html#cfn-quicksight-analysis-samesheettargetvisualconfiguration-targetvisualoptions
-	TargetVisualOptions *string `json:"TargetVisualOptions,omitempty"`
+	TargetVisualOptions *T `json:"TargetVisualOptions,omitempty"`
 
 	// TargetVisuals AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-samesheettargetvisualconfiguration.html#cfn-quicksight-analysis-samesheettargetvisualconfiguration-targetvisuals
-	TargetVisuals []string `json:"TargetVisuals,omitempty"`
+	TargetVisuals []T `json:"TargetVisuals,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

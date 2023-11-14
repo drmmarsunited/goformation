@@ -13,7 +13,7 @@ type Flow_FailoverConfig[T any] struct {
 	// FailoverMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-failoverconfig.html#cfn-mediaconnect-flow-failoverconfig-failovermode
-	FailoverMode *string `json:"FailoverMode,omitempty"`
+	FailoverMode *T `json:"FailoverMode,omitempty"`
 
 	// RecoveryWindow AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Flow_FailoverConfig[T any] struct {
 	// State AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-failoverconfig.html#cfn-mediaconnect-flow-failoverconfig-state
-	State *string `json:"State,omitempty"`
+	State *T `json:"State,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

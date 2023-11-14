@@ -27,7 +27,7 @@ type Dataset[T any] struct {
 	// DatasetName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-datasetname
-	DatasetName *string `json:"DatasetName,omitempty"`
+	DatasetName *T `json:"DatasetName,omitempty"`
 
 	// LateDataRules AWS CloudFormation Property
 	// Required: false

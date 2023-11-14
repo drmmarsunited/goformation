@@ -10,6 +10,16 @@ import (
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpiconditionalformattingoption.html
 type Template_KPIConditionalFormattingOption[T any] struct {
 
+	// ActualValue AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpiconditionalformattingoption.html#cfn-quicksight-template-kpiconditionalformattingoption-actualvalue
+	ActualValue *Template_KPIActualValueConditionalFormatting[any] `json:"ActualValue,omitempty"`
+
+	// ComparisonValue AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpiconditionalformattingoption.html#cfn-quicksight-template-kpiconditionalformattingoption-comparisonvalue
+	ComparisonValue *Template_KPIComparisonValueConditionalFormatting[any] `json:"ComparisonValue,omitempty"`
+
 	// PrimaryValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-kpiconditionalformattingoption.html#cfn-quicksight-template-kpiconditionalformattingoption-primaryvalue

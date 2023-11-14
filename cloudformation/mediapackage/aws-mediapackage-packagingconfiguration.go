@@ -32,7 +32,7 @@ type PackagingConfiguration[T any] struct {
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-id
-	Id string `json:"Id"`
+	Id T `json:"Id"`
 
 	// MssPackage AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type PackagingConfiguration[T any] struct {
 	// PackagingGroupId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-packaginggroupid
-	PackagingGroupId string `json:"PackagingGroupId"`
+	PackagingGroupId T `json:"PackagingGroupId"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

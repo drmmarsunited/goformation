@@ -13,22 +13,22 @@ type Analysis_CustomFilterListConfiguration[T any] struct {
 	// CategoryValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customfilterlistconfiguration.html#cfn-quicksight-analysis-customfilterlistconfiguration-categoryvalues
-	CategoryValues []string `json:"CategoryValues,omitempty"`
+	CategoryValues []T `json:"CategoryValues,omitempty"`
 
 	// MatchOperator AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customfilterlistconfiguration.html#cfn-quicksight-analysis-customfilterlistconfiguration-matchoperator
-	MatchOperator string `json:"MatchOperator"`
+	MatchOperator T `json:"MatchOperator"`
 
 	// NullOption AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customfilterlistconfiguration.html#cfn-quicksight-analysis-customfilterlistconfiguration-nulloption
-	NullOption string `json:"NullOption"`
+	NullOption T `json:"NullOption"`
 
 	// SelectAllOptions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customfilterlistconfiguration.html#cfn-quicksight-analysis-customfilterlistconfiguration-selectalloptions
-	SelectAllOptions *string `json:"SelectAllOptions,omitempty"`
+	SelectAllOptions *T `json:"SelectAllOptions,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

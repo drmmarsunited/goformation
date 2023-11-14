@@ -21,47 +21,47 @@ type Association[T any] struct {
 	// AssociationName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-associationname
-	AssociationName *string `json:"AssociationName,omitempty"`
+	AssociationName *T `json:"AssociationName,omitempty"`
 
 	// AutomationTargetParameterName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-automationtargetparametername
-	AutomationTargetParameterName *string `json:"AutomationTargetParameterName,omitempty"`
+	AutomationTargetParameterName *T `json:"AutomationTargetParameterName,omitempty"`
 
 	// CalendarNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-calendarnames
-	CalendarNames []string `json:"CalendarNames,omitempty"`
+	CalendarNames []T `json:"CalendarNames,omitempty"`
 
 	// ComplianceSeverity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-complianceseverity
-	ComplianceSeverity *string `json:"ComplianceSeverity,omitempty"`
+	ComplianceSeverity *T `json:"ComplianceSeverity,omitempty"`
 
 	// DocumentVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-documentversion
-	DocumentVersion *string `json:"DocumentVersion,omitempty"`
+	DocumentVersion *T `json:"DocumentVersion,omitempty"`
 
 	// InstanceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-instanceid
-	InstanceId *string `json:"InstanceId,omitempty"`
+	InstanceId *T `json:"InstanceId,omitempty"`
 
 	// MaxConcurrency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-maxconcurrency
-	MaxConcurrency *string `json:"MaxConcurrency,omitempty"`
+	MaxConcurrency *T `json:"MaxConcurrency,omitempty"`
 
 	// MaxErrors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-maxerrors
-	MaxErrors *string `json:"MaxErrors,omitempty"`
+	MaxErrors *T `json:"MaxErrors,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// OutputLocation AWS CloudFormation Property
 	// Required: false
@@ -76,7 +76,7 @@ type Association[T any] struct {
 	// ScheduleExpression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-scheduleexpression
-	ScheduleExpression *string `json:"ScheduleExpression,omitempty"`
+	ScheduleExpression *T `json:"ScheduleExpression,omitempty"`
 
 	// ScheduleOffset AWS CloudFormation Property
 	// Required: false
@@ -86,7 +86,7 @@ type Association[T any] struct {
 	// SyncCompliance AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-synccompliance
-	SyncCompliance *string `json:"SyncCompliance,omitempty"`
+	SyncCompliance *T `json:"SyncCompliance,omitempty"`
 
 	// Targets AWS CloudFormation Property
 	// Required: false

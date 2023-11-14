@@ -22,12 +22,12 @@ type Trail[T any] struct {
 	// CloudWatchLogsLogGroupArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-cloudwatchlogsloggrouparn
-	CloudWatchLogsLogGroupArn *string `json:"CloudWatchLogsLogGroupArn,omitempty"`
+	CloudWatchLogsLogGroupArn *T `json:"CloudWatchLogsLogGroupArn,omitempty"`
 
 	// CloudWatchLogsRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-cloudwatchlogsrolearn
-	CloudWatchLogsRoleArn *string `json:"CloudWatchLogsRoleArn,omitempty"`
+	CloudWatchLogsRoleArn *T `json:"CloudWatchLogsRoleArn,omitempty"`
 
 	// EnableLogFileValidation AWS CloudFormation Property
 	// Required: false
@@ -67,22 +67,22 @@ type Trail[T any] struct {
 	// KMSKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-kmskeyid
-	KMSKeyId *string `json:"KMSKeyId,omitempty"`
+	KMSKeyId *T `json:"KMSKeyId,omitempty"`
 
 	// S3BucketName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-s3bucketname
-	S3BucketName string `json:"S3BucketName"`
+	S3BucketName T `json:"S3BucketName"`
 
 	// S3KeyPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-s3keyprefix
-	S3KeyPrefix *string `json:"S3KeyPrefix,omitempty"`
+	S3KeyPrefix *T `json:"S3KeyPrefix,omitempty"`
 
 	// SnsTopicName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-snstopicname
-	SnsTopicName *string `json:"SnsTopicName,omitempty"`
+	SnsTopicName *T `json:"SnsTopicName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -92,7 +92,7 @@ type Trail[T any] struct {
 	// TrailName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-trailname
-	TrailName *string `json:"TrailName,omitempty"`
+	TrailName *T `json:"TrailName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

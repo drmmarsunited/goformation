@@ -23,7 +23,7 @@ type Dataset_ExcelOptions[T any] struct {
 	// SheetNames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-exceloptions.html#cfn-databrew-dataset-exceloptions-sheetnames
-	SheetNames []string `json:"SheetNames,omitempty"`
+	SheetNames []T `json:"SheetNames,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

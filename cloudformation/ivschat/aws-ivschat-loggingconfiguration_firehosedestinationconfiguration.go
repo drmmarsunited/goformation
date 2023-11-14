@@ -13,7 +13,7 @@ type LoggingConfiguration_FirehoseDestinationConfiguration[T any] struct {
 	// DeliveryStreamName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivschat-loggingconfiguration-firehosedestinationconfiguration.html#cfn-ivschat-loggingconfiguration-firehosedestinationconfiguration-deliverystreamname
-	DeliveryStreamName string `json:"DeliveryStreamName"`
+	DeliveryStreamName T `json:"DeliveryStreamName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

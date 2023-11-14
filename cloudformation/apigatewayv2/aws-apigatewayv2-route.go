@@ -16,7 +16,7 @@ type Route[T any] struct {
 	// ApiId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-route.html#cfn-apigatewayv2-route-apiid
-	ApiId string `json:"ApiId"`
+	ApiId T `json:"ApiId"`
 
 	// ApiKeyRequired AWS CloudFormation Property
 	// Required: false
@@ -26,27 +26,27 @@ type Route[T any] struct {
 	// AuthorizationScopes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-route.html#cfn-apigatewayv2-route-authorizationscopes
-	AuthorizationScopes []string `json:"AuthorizationScopes,omitempty"`
+	AuthorizationScopes []T `json:"AuthorizationScopes,omitempty"`
 
 	// AuthorizationType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-route.html#cfn-apigatewayv2-route-authorizationtype
-	AuthorizationType *string `json:"AuthorizationType,omitempty"`
+	AuthorizationType *T `json:"AuthorizationType,omitempty"`
 
 	// AuthorizerId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-route.html#cfn-apigatewayv2-route-authorizerid
-	AuthorizerId *string `json:"AuthorizerId,omitempty"`
+	AuthorizerId *T `json:"AuthorizerId,omitempty"`
 
 	// ModelSelectionExpression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-route.html#cfn-apigatewayv2-route-modelselectionexpression
-	ModelSelectionExpression *string `json:"ModelSelectionExpression,omitempty"`
+	ModelSelectionExpression *T `json:"ModelSelectionExpression,omitempty"`
 
 	// OperationName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-route.html#cfn-apigatewayv2-route-operationname
-	OperationName *string `json:"OperationName,omitempty"`
+	OperationName *T `json:"OperationName,omitempty"`
 
 	// RequestModels AWS CloudFormation Property
 	// Required: false
@@ -61,17 +61,17 @@ type Route[T any] struct {
 	// RouteKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-route.html#cfn-apigatewayv2-route-routekey
-	RouteKey string `json:"RouteKey"`
+	RouteKey T `json:"RouteKey"`
 
 	// RouteResponseSelectionExpression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-route.html#cfn-apigatewayv2-route-routeresponseselectionexpression
-	RouteResponseSelectionExpression *string `json:"RouteResponseSelectionExpression,omitempty"`
+	RouteResponseSelectionExpression *T `json:"RouteResponseSelectionExpression,omitempty"`
 
 	// Target AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-route.html#cfn-apigatewayv2-route-target
-	Target *string `json:"Target,omitempty"`
+	Target *T `json:"Target,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -17,7 +17,7 @@ type Function[T any] struct {
 	// Architectures AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-architectures
-	Architectures []string `json:"Architectures,omitempty"`
+	Architectures []T `json:"Architectures,omitempty"`
 
 	// Code AWS CloudFormation Property
 	// Required: true
@@ -27,7 +27,7 @@ type Function[T any] struct {
 	// CodeSigningConfigArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-codesigningconfigarn
-	CodeSigningConfigArn *string `json:"CodeSigningConfigArn,omitempty"`
+	CodeSigningConfigArn *T `json:"CodeSigningConfigArn,omitempty"`
 
 	// DeadLetterConfig AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type Function[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// Environment AWS CloudFormation Property
 	// Required: false
@@ -57,12 +57,12 @@ type Function[T any] struct {
 	// FunctionName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-functionname
-	FunctionName *string `json:"FunctionName,omitempty"`
+	FunctionName *T `json:"FunctionName,omitempty"`
 
 	// Handler AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-handler
-	Handler *string `json:"Handler,omitempty"`
+	Handler *T `json:"Handler,omitempty"`
 
 	// ImageConfig AWS CloudFormation Property
 	// Required: false
@@ -72,12 +72,12 @@ type Function[T any] struct {
 	// KmsKeyArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-kmskeyarn
-	KmsKeyArn *string `json:"KmsKeyArn,omitempty"`
+	KmsKeyArn *T `json:"KmsKeyArn,omitempty"`
 
 	// Layers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-layers
-	Layers []string `json:"Layers,omitempty"`
+	Layers []T `json:"Layers,omitempty"`
 
 	// MemorySize AWS CloudFormation Property
 	// Required: false
@@ -87,7 +87,12 @@ type Function[T any] struct {
 	// PackageType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-packagetype
-	PackageType *string `json:"PackageType,omitempty"`
+	PackageType *T `json:"PackageType,omitempty"`
+
+	// Policy AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-policy
+	Policy interface{} `json:"Policy,omitempty"`
 
 	// ReservedConcurrentExecutions AWS CloudFormation Property
 	// Required: false
@@ -97,12 +102,12 @@ type Function[T any] struct {
 	// Role AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-role
-	Role string `json:"Role"`
+	Role T `json:"Role"`
 
 	// Runtime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtime
-	Runtime *string `json:"Runtime,omitempty"`
+	Runtime *T `json:"Runtime,omitempty"`
 
 	// RuntimeManagementConfig AWS CloudFormation Property
 	// Required: false

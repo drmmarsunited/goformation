@@ -17,12 +17,12 @@ type Application[T any] struct {
 	// ApplicationId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-systemsmanagersap-application.html#cfn-systemsmanagersap-application-applicationid
-	ApplicationId string `json:"ApplicationId"`
+	ApplicationId T `json:"ApplicationId"`
 
 	// ApplicationType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-systemsmanagersap-application.html#cfn-systemsmanagersap-application-applicationtype
-	ApplicationType string `json:"ApplicationType"`
+	ApplicationType T `json:"ApplicationType"`
 
 	// Credentials AWS CloudFormation Property
 	// Required: false
@@ -32,17 +32,17 @@ type Application[T any] struct {
 	// Instances AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-systemsmanagersap-application.html#cfn-systemsmanagersap-application-instances
-	Instances []string `json:"Instances,omitempty"`
+	Instances []T `json:"Instances,omitempty"`
 
 	// SapInstanceNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-systemsmanagersap-application.html#cfn-systemsmanagersap-application-sapinstancenumber
-	SapInstanceNumber *string `json:"SapInstanceNumber,omitempty"`
+	SapInstanceNumber *T `json:"SapInstanceNumber,omitempty"`
 
 	// Sid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-systemsmanagersap-application.html#cfn-systemsmanagersap-application-sid
-	Sid *string `json:"Sid,omitempty"`
+	Sid *T `json:"Sid,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

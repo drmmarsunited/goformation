@@ -13,7 +13,7 @@ type Task_Deleted[T any] struct {
 	// ReportLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-deleted.html#cfn-datasync-task-deleted-reportlevel
-	ReportLevel *string `json:"ReportLevel,omitempty"`
+	ReportLevel *T `json:"ReportLevel,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

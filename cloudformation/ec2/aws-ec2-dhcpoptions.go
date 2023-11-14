@@ -17,17 +17,17 @@ type DHCPOptions[T any] struct {
 	// DomainName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-domainname
-	DomainName *string `json:"DomainName,omitempty"`
+	DomainName *T `json:"DomainName,omitempty"`
 
 	// DomainNameServers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-domainnameservers
-	DomainNameServers []string `json:"DomainNameServers,omitempty"`
+	DomainNameServers []T `json:"DomainNameServers,omitempty"`
 
 	// NetbiosNameServers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-netbiosnameservers
-	NetbiosNameServers []string `json:"NetbiosNameServers,omitempty"`
+	NetbiosNameServers []T `json:"NetbiosNameServers,omitempty"`
 
 	// NetbiosNodeType AWS CloudFormation Property
 	// Required: false
@@ -37,7 +37,7 @@ type DHCPOptions[T any] struct {
 	// NtpServers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-ntpservers
-	NtpServers []string `json:"NtpServers,omitempty"`
+	NtpServers []T `json:"NtpServers,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

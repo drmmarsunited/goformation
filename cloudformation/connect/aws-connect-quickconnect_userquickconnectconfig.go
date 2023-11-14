@@ -13,12 +13,12 @@ type QuickConnect_UserQuickConnectConfig[T any] struct {
 	// ContactFlowArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-userquickconnectconfig.html#cfn-connect-quickconnect-userquickconnectconfig-contactflowarn
-	ContactFlowArn string `json:"ContactFlowArn"`
+	ContactFlowArn T `json:"ContactFlowArn"`
 
 	// UserArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-userquickconnectconfig.html#cfn-connect-quickconnect-userquickconnectconfig-userarn
-	UserArn string `json:"UserArn"`
+	UserArn T `json:"UserArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

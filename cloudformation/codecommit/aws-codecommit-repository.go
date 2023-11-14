@@ -22,12 +22,12 @@ type Repository[T any] struct {
 	// RepositoryDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-repositorydescription
-	RepositoryDescription *string `json:"RepositoryDescription,omitempty"`
+	RepositoryDescription *T `json:"RepositoryDescription,omitempty"`
 
 	// RepositoryName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-repositoryname
-	RepositoryName string `json:"RepositoryName"`
+	RepositoryName T `json:"RepositoryName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

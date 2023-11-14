@@ -16,7 +16,7 @@ type CapacityReservation[T any] struct {
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-availabilityzone
-	AvailabilityZone string `json:"AvailabilityZone"`
+	AvailabilityZone T `json:"AvailabilityZone"`
 
 	// EbsOptimized AWS CloudFormation Property
 	// Required: false
@@ -26,12 +26,12 @@ type CapacityReservation[T any] struct {
 	// EndDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-enddate
-	EndDate *string `json:"EndDate,omitempty"`
+	EndDate *T `json:"EndDate,omitempty"`
 
 	// EndDateType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-enddatetype
-	EndDateType *string `json:"EndDateType,omitempty"`
+	EndDateType *T `json:"EndDateType,omitempty"`
 
 	// EphemeralStorage AWS CloudFormation Property
 	// Required: false
@@ -46,27 +46,27 @@ type CapacityReservation[T any] struct {
 	// InstanceMatchCriteria AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-instancematchcriteria
-	InstanceMatchCriteria *string `json:"InstanceMatchCriteria,omitempty"`
+	InstanceMatchCriteria *T `json:"InstanceMatchCriteria,omitempty"`
 
 	// InstancePlatform AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-instanceplatform
-	InstancePlatform string `json:"InstancePlatform"`
+	InstancePlatform T `json:"InstancePlatform"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-instancetype
-	InstanceType string `json:"InstanceType"`
+	InstanceType T `json:"InstanceType"`
 
 	// OutPostArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-outpostarn
-	OutPostArn *string `json:"OutPostArn,omitempty"`
+	OutPostArn *T `json:"OutPostArn,omitempty"`
 
 	// PlacementGroupArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-placementgrouparn
-	PlacementGroupArn *string `json:"PlacementGroupArn,omitempty"`
+	PlacementGroupArn *T `json:"PlacementGroupArn,omitempty"`
 
 	// TagSpecifications AWS CloudFormation Property
 	// Required: false
@@ -76,7 +76,7 @@ type CapacityReservation[T any] struct {
 	// Tenancy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-tenancy
-	Tenancy *string `json:"Tenancy,omitempty"`
+	Tenancy *T `json:"Tenancy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

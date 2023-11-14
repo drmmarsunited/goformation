@@ -13,7 +13,7 @@ type RuleGroup_RateLimitQueryArgument[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ratelimitqueryargument.html#cfn-wafv2-rulegroup-ratelimitqueryargument-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// TextTransformations AWS CloudFormation Property
 	// Required: true

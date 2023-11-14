@@ -13,17 +13,17 @@ type ModelCard_UserContext[T any] struct {
 	// DomainId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-usercontext.html#cfn-sagemaker-modelcard-usercontext-domainid
-	DomainId *string `json:"DomainId,omitempty"`
+	DomainId *T `json:"DomainId,omitempty"`
 
 	// UserProfileArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-usercontext.html#cfn-sagemaker-modelcard-usercontext-userprofilearn
-	UserProfileArn *string `json:"UserProfileArn,omitempty"`
+	UserProfileArn *T `json:"UserProfileArn,omitempty"`
 
 	// UserProfileName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-usercontext.html#cfn-sagemaker-modelcard-usercontext-userprofilename
-	UserProfileName *string `json:"UserProfileName,omitempty"`
+	UserProfileName *T `json:"UserProfileName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,12 +13,12 @@ type Analysis_TablePaginatedReportOptions[T any] struct {
 	// OverflowColumnHeaderVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablepaginatedreportoptions.html#cfn-quicksight-analysis-tablepaginatedreportoptions-overflowcolumnheadervisibility
-	OverflowColumnHeaderVisibility *string `json:"OverflowColumnHeaderVisibility,omitempty"`
+	OverflowColumnHeaderVisibility *T `json:"OverflowColumnHeaderVisibility,omitempty"`
 
 	// VerticalOverflowVisibility AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablepaginatedreportoptions.html#cfn-quicksight-analysis-tablepaginatedreportoptions-verticaloverflowvisibility
-	VerticalOverflowVisibility *string `json:"VerticalOverflowVisibility,omitempty"`
+	VerticalOverflowVisibility *T `json:"VerticalOverflowVisibility,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

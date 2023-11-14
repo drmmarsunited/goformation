@@ -13,12 +13,12 @@ type Channel_MaintenanceCreateSettings[T any] struct {
 	// MaintenanceDay AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-maintenancecreatesettings.html#cfn-medialive-channel-maintenancecreatesettings-maintenanceday
-	MaintenanceDay *string `json:"MaintenanceDay,omitempty"`
+	MaintenanceDay *T `json:"MaintenanceDay,omitempty"`
 
 	// MaintenanceStartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-maintenancecreatesettings.html#cfn-medialive-channel-maintenancecreatesettings-maintenancestarttime
-	MaintenanceStartTime *string `json:"MaintenanceStartTime,omitempty"`
+	MaintenanceStartTime *T `json:"MaintenanceStartTime,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

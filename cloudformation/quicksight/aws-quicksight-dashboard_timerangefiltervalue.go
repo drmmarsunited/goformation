@@ -13,7 +13,7 @@ type Dashboard_TimeRangeFilterValue[T any] struct {
 	// Parameter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-timerangefiltervalue.html#cfn-quicksight-dashboard-timerangefiltervalue-parameter
-	Parameter *string `json:"Parameter,omitempty"`
+	Parameter *T `json:"Parameter,omitempty"`
 
 	// RollingDate AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Dashboard_TimeRangeFilterValue[T any] struct {
 	// StaticValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-timerangefiltervalue.html#cfn-quicksight-dashboard-timerangefiltervalue-staticvalue
-	StaticValue *string `json:"StaticValue,omitempty"`
+	StaticValue *T `json:"StaticValue,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

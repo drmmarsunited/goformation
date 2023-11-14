@@ -13,7 +13,7 @@ type Connector_ApacheKafkaCluster[T any] struct {
 	// BootstrapServers AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-apachekafkacluster.html#cfn-kafkaconnect-connector-apachekafkacluster-bootstrapservers
-	BootstrapServers string `json:"BootstrapServers"`
+	BootstrapServers T `json:"BootstrapServers"`
 
 	// Vpc AWS CloudFormation Property
 	// Required: true

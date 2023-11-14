@@ -18,12 +18,12 @@ type Dashboard_ExcludePeriodConfiguration[T any] struct {
 	// Granularity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-excludeperiodconfiguration.html#cfn-quicksight-dashboard-excludeperiodconfiguration-granularity
-	Granularity string `json:"Granularity"`
+	Granularity T `json:"Granularity"`
 
 	// Status AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-excludeperiodconfiguration.html#cfn-quicksight-dashboard-excludeperiodconfiguration-status
-	Status *string `json:"Status,omitempty"`
+	Status *T `json:"Status,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

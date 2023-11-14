@@ -18,7 +18,7 @@ type Connector_WorkerConfiguration[T any] struct {
 	// WorkerConfigurationArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html#cfn-kafkaconnect-connector-workerconfiguration-workerconfigurationarn
-	WorkerConfigurationArn string `json:"WorkerConfigurationArn"`
+	WorkerConfigurationArn T `json:"WorkerConfigurationArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

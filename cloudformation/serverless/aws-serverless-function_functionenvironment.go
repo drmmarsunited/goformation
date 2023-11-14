@@ -13,7 +13,7 @@ type Function_FunctionEnvironment[T any] struct {
 	// Variables AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
-	Variables map[string]string `json:"Variables"`
+	Variables map[string]T `json:"Variables"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

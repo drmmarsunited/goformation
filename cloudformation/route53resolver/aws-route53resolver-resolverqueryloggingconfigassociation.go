@@ -16,12 +16,12 @@ type ResolverQueryLoggingConfigAssociation[T any] struct {
 	// ResolverQueryLogConfigId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfigassociation.html#cfn-route53resolver-resolverqueryloggingconfigassociation-resolverquerylogconfigid
-	ResolverQueryLogConfigId *string `json:"ResolverQueryLogConfigId,omitempty"`
+	ResolverQueryLogConfigId *T `json:"ResolverQueryLogConfigId,omitempty"`
 
 	// ResourceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfigassociation.html#cfn-route53resolver-resolverqueryloggingconfigassociation-resourceid
-	ResourceId *string `json:"ResourceId,omitempty"`
+	ResourceId *T `json:"ResourceId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

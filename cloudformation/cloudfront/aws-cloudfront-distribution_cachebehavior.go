@@ -13,17 +13,17 @@ type Distribution_CacheBehavior[T any] struct {
 	// AllowedMethods AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-allowedmethods
-	AllowedMethods []string `json:"AllowedMethods,omitempty"`
+	AllowedMethods []T `json:"AllowedMethods,omitempty"`
 
 	// CachePolicyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-cachepolicyid
-	CachePolicyId *string `json:"CachePolicyId,omitempty"`
+	CachePolicyId *T `json:"CachePolicyId,omitempty"`
 
 	// CachedMethods AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-cachedmethods
-	CachedMethods []string `json:"CachedMethods,omitempty"`
+	CachedMethods []T `json:"CachedMethods,omitempty"`
 
 	// Compress AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Distribution_CacheBehavior[T any] struct {
 	// FieldLevelEncryptionId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-fieldlevelencryptionid
-	FieldLevelEncryptionId *string `json:"FieldLevelEncryptionId,omitempty"`
+	FieldLevelEncryptionId *T `json:"FieldLevelEncryptionId,omitempty"`
 
 	// ForwardedValues AWS CloudFormation Property
 	// Required: false
@@ -68,22 +68,22 @@ type Distribution_CacheBehavior[T any] struct {
 	// OriginRequestPolicyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-originrequestpolicyid
-	OriginRequestPolicyId *string `json:"OriginRequestPolicyId,omitempty"`
+	OriginRequestPolicyId *T `json:"OriginRequestPolicyId,omitempty"`
 
 	// PathPattern AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-pathpattern
-	PathPattern string `json:"PathPattern"`
+	PathPattern T `json:"PathPattern"`
 
 	// RealtimeLogConfigArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-realtimelogconfigarn
-	RealtimeLogConfigArn *string `json:"RealtimeLogConfigArn,omitempty"`
+	RealtimeLogConfigArn *T `json:"RealtimeLogConfigArn,omitempty"`
 
 	// ResponseHeadersPolicyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-responseheaderspolicyid
-	ResponseHeadersPolicyId *string `json:"ResponseHeadersPolicyId,omitempty"`
+	ResponseHeadersPolicyId *T `json:"ResponseHeadersPolicyId,omitempty"`
 
 	// SmoothStreaming AWS CloudFormation Property
 	// Required: false
@@ -93,22 +93,22 @@ type Distribution_CacheBehavior[T any] struct {
 	// TargetOriginId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-targetoriginid
-	TargetOriginId string `json:"TargetOriginId"`
+	TargetOriginId T `json:"TargetOriginId"`
 
 	// TrustedKeyGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-trustedkeygroups
-	TrustedKeyGroups []string `json:"TrustedKeyGroups,omitempty"`
+	TrustedKeyGroups []T `json:"TrustedKeyGroups,omitempty"`
 
 	// TrustedSigners AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-trustedsigners
-	TrustedSigners []string `json:"TrustedSigners,omitempty"`
+	TrustedSigners []T `json:"TrustedSigners,omitempty"`
 
 	// ViewerProtocolPolicy AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-viewerprotocolpolicy
-	ViewerProtocolPolicy string `json:"ViewerProtocolPolicy"`
+	ViewerProtocolPolicy T `json:"ViewerProtocolPolicy"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

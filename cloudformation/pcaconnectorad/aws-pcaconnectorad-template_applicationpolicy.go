@@ -13,12 +13,12 @@ type Template_ApplicationPolicy[T any] struct {
 	// PolicyObjectIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-template-applicationpolicy.html#cfn-pcaconnectorad-template-applicationpolicy-policyobjectidentifier
-	PolicyObjectIdentifier *string `json:"PolicyObjectIdentifier,omitempty"`
+	PolicyObjectIdentifier *T `json:"PolicyObjectIdentifier,omitempty"`
 
 	// PolicyType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-template-applicationpolicy.html#cfn-pcaconnectorad-template-applicationpolicy-policytype
-	PolicyType *string `json:"PolicyType,omitempty"`
+	PolicyType *T `json:"PolicyType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

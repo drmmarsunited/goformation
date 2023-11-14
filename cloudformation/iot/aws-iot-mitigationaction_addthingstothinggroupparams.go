@@ -18,7 +18,7 @@ type MitigationAction_AddThingsToThingGroupParams[T any] struct {
 	// ThingGroupNames AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-addthingstothinggroupparams.html#cfn-iot-mitigationaction-addthingstothinggroupparams-thinggroupnames
-	ThingGroupNames []string `json:"ThingGroupNames"`
+	ThingGroupNames []T `json:"ThingGroupNames"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

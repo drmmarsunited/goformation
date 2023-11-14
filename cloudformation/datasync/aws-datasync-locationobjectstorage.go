@@ -17,32 +17,32 @@ type LocationObjectStorage[T any] struct {
 	// AccessKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-accesskey
-	AccessKey *string `json:"AccessKey,omitempty"`
+	AccessKey *T `json:"AccessKey,omitempty"`
 
 	// AgentArns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-agentarns
-	AgentArns []string `json:"AgentArns"`
+	AgentArns []T `json:"AgentArns"`
 
 	// BucketName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-bucketname
-	BucketName *string `json:"BucketName,omitempty"`
+	BucketName *T `json:"BucketName,omitempty"`
 
 	// SecretKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-secretkey
-	SecretKey *string `json:"SecretKey,omitempty"`
+	SecretKey *T `json:"SecretKey,omitempty"`
 
 	// ServerCertificate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-servercertificate
-	ServerCertificate *string `json:"ServerCertificate,omitempty"`
+	ServerCertificate *T `json:"ServerCertificate,omitempty"`
 
 	// ServerHostname AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-serverhostname
-	ServerHostname *string `json:"ServerHostname,omitempty"`
+	ServerHostname *T `json:"ServerHostname,omitempty"`
 
 	// ServerPort AWS CloudFormation Property
 	// Required: false
@@ -52,12 +52,12 @@ type LocationObjectStorage[T any] struct {
 	// ServerProtocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-serverprotocol
-	ServerProtocol *string `json:"ServerProtocol,omitempty"`
+	ServerProtocol *T `json:"ServerProtocol,omitempty"`
 
 	// Subdirectory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-subdirectory
-	Subdirectory *string `json:"Subdirectory,omitempty"`
+	Subdirectory *T `json:"Subdirectory,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

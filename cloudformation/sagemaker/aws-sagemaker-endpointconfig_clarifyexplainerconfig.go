@@ -13,7 +13,7 @@ type EndpointConfig_ClarifyExplainerConfig[T any] struct {
 	// EnableExplanations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyexplainerconfig.html#cfn-sagemaker-endpointconfig-clarifyexplainerconfig-enableexplanations
-	EnableExplanations *string `json:"EnableExplanations,omitempty"`
+	EnableExplanations *T `json:"EnableExplanations,omitempty"`
 
 	// InferenceConfig AWS CloudFormation Property
 	// Required: false

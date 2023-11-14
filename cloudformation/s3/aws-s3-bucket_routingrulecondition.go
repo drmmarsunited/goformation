@@ -13,12 +13,12 @@ type Bucket_RoutingRuleCondition[T any] struct {
 	// HttpErrorCodeReturnedEquals AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-routingrulecondition.html#cfn-s3-websiteconfiguration-routingrules-routingrulecondition-httperrorcodereturnedequals
-	HttpErrorCodeReturnedEquals *string `json:"HttpErrorCodeReturnedEquals,omitempty"`
+	HttpErrorCodeReturnedEquals *T `json:"HttpErrorCodeReturnedEquals,omitempty"`
 
 	// KeyPrefixEquals AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-routingrulecondition.html#cfn-s3-websiteconfiguration-routingrules-routingrulecondition-keyprefixequals
-	KeyPrefixEquals *string `json:"KeyPrefixEquals,omitempty"`
+	KeyPrefixEquals *T `json:"KeyPrefixEquals,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

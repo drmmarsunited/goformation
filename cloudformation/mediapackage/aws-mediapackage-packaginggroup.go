@@ -27,7 +27,7 @@ type PackagingGroup[T any] struct {
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packaginggroup.html#cfn-mediapackage-packaginggroup-id
-	Id string `json:"Id"`
+	Id T `json:"Id"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

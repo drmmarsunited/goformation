@@ -18,7 +18,7 @@ type Service_ServiceConnectService[T any] struct {
 	// DiscoveryName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectservice.html#cfn-ecs-service-serviceconnectservice-discoveryname
-	DiscoveryName *string `json:"DiscoveryName,omitempty"`
+	DiscoveryName *T `json:"DiscoveryName,omitempty"`
 
 	// IngressPortOverride AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type Service_ServiceConnectService[T any] struct {
 	// PortName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectservice.html#cfn-ecs-service-serviceconnectservice-portname
-	PortName string `json:"PortName"`
+	PortName T `json:"PortName"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

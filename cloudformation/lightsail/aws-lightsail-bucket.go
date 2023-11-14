@@ -22,12 +22,12 @@ type Bucket[T any] struct {
 	// BucketName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html#cfn-lightsail-bucket-bucketname
-	BucketName string `json:"BucketName"`
+	BucketName T `json:"BucketName"`
 
 	// BundleId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html#cfn-lightsail-bucket-bundleid
-	BundleId string `json:"BundleId"`
+	BundleId T `json:"BundleId"`
 
 	// ObjectVersioning AWS CloudFormation Property
 	// Required: false
@@ -37,12 +37,12 @@ type Bucket[T any] struct {
 	// ReadOnlyAccessAccounts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html#cfn-lightsail-bucket-readonlyaccessaccounts
-	ReadOnlyAccessAccounts []string `json:"ReadOnlyAccessAccounts,omitempty"`
+	ReadOnlyAccessAccounts []T `json:"ReadOnlyAccessAccounts,omitempty"`
 
 	// ResourcesReceivingAccess AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html#cfn-lightsail-bucket-resourcesreceivingaccess
-	ResourcesReceivingAccess []string `json:"ResourcesReceivingAccess,omitempty"`
+	ResourcesReceivingAccess []T `json:"ResourcesReceivingAccess,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

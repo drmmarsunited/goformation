@@ -17,7 +17,7 @@ type Dataset[T any] struct {
 	// Format AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-format
-	Format *string `json:"Format,omitempty"`
+	Format *T `json:"Format,omitempty"`
 
 	// FormatOptions AWS CloudFormation Property
 	// Required: false
@@ -32,7 +32,7 @@ type Dataset[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// PathOptions AWS CloudFormation Property
 	// Required: false

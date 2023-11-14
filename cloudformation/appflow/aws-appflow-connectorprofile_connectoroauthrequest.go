@@ -13,12 +13,12 @@ type ConnectorProfile_ConnectorOAuthRequest[T any] struct {
 	// AuthCode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectoroauthrequest.html#cfn-appflow-connectorprofile-connectoroauthrequest-authcode
-	AuthCode *string `json:"AuthCode,omitempty"`
+	AuthCode *T `json:"AuthCode,omitempty"`
 
 	// RedirectUri AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectoroauthrequest.html#cfn-appflow-connectorprofile-connectoroauthrequest-redirecturi
-	RedirectUri *string `json:"RedirectUri,omitempty"`
+	RedirectUri *T `json:"RedirectUri,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

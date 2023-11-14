@@ -22,22 +22,27 @@ type JobTemplate[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-description
-	Description string `json:"Description"`
+	Description T `json:"Description"`
+
+	// DestinationPackageVersions AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-destinationpackageversions
+	DestinationPackageVersions []T `json:"DestinationPackageVersions,omitempty"`
 
 	// Document AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-document
-	Document *string `json:"Document,omitempty"`
+	Document *T `json:"Document,omitempty"`
 
 	// DocumentSource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-documentsource
-	DocumentSource *string `json:"DocumentSource,omitempty"`
+	DocumentSource *T `json:"DocumentSource,omitempty"`
 
 	// JobArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-jobarn
-	JobArn *string `json:"JobArn,omitempty"`
+	JobArn *T `json:"JobArn,omitempty"`
 
 	// JobExecutionsRetryConfig AWS CloudFormation Property
 	// Required: false
@@ -52,7 +57,7 @@ type JobTemplate[T any] struct {
 	// JobTemplateId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-jobtemplateid
-	JobTemplateId string `json:"JobTemplateId"`
+	JobTemplateId T `json:"JobTemplateId"`
 
 	// MaintenanceWindows AWS CloudFormation Property
 	// Required: false

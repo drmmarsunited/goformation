@@ -23,12 +23,12 @@ type WirelessDevice_LoRaWANDevice[T any] struct {
 	// DevEui AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-deveui
-	DevEui *string `json:"DevEui,omitempty"`
+	DevEui *T `json:"DevEui,omitempty"`
 
 	// DeviceProfileId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-deviceprofileid
-	DeviceProfileId *string `json:"DeviceProfileId,omitempty"`
+	DeviceProfileId *T `json:"DeviceProfileId,omitempty"`
 
 	// OtaaV10x AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type WirelessDevice_LoRaWANDevice[T any] struct {
 	// ServiceProfileId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-serviceprofileid
-	ServiceProfileId *string `json:"ServiceProfileId,omitempty"`
+	ServiceProfileId *T `json:"ServiceProfileId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

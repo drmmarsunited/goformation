@@ -28,7 +28,7 @@ type LaunchConfiguration_BlockDevice[T any] struct {
 	// SnapshotId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfiguration-blockdevice.html#cfn-autoscaling-launchconfiguration-blockdevice-snapshotid
-	SnapshotId *string `json:"SnapshotId,omitempty"`
+	SnapshotId *T `json:"SnapshotId,omitempty"`
 
 	// Throughput AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type LaunchConfiguration_BlockDevice[T any] struct {
 	// VolumeType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfiguration-blockdevice.html#cfn-autoscaling-launchconfiguration-blockdevice-volumetype
-	VolumeType *string `json:"VolumeType,omitempty"`
+	VolumeType *T `json:"VolumeType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -23,7 +23,7 @@ type Endpoint_TrafficRoutingConfig[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html#cfn-sagemaker-endpoint-trafficroutingconfig-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// WaitIntervalInSeconds AWS CloudFormation Property
 	// Required: false

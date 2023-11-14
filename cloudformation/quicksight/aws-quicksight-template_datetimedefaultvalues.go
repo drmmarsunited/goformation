@@ -23,7 +23,7 @@ type Template_DateTimeDefaultValues[T any] struct {
 	// StaticValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datetimedefaultvalues.html#cfn-quicksight-template-datetimedefaultvalues-staticvalues
-	StaticValues []string `json:"StaticValues,omitempty"`
+	StaticValues []T `json:"StaticValues,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

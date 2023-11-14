@@ -13,7 +13,7 @@ type PlaybackConfiguration_HlsConfiguration[T any] struct {
 	// ManifestEndpointPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-hlsconfiguration.html#cfn-mediatailor-playbackconfiguration-hlsconfiguration-manifestendpointprefix
-	ManifestEndpointPrefix *string `json:"ManifestEndpointPrefix,omitempty"`
+	ManifestEndpointPrefix *T `json:"ManifestEndpointPrefix,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

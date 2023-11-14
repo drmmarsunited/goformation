@@ -13,7 +13,7 @@ type Endpoint_KafkaSettings[T any] struct {
 	// Broker AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-broker
-	Broker *string `json:"Broker,omitempty"`
+	Broker *T `json:"Broker,omitempty"`
 
 	// IncludeControlDetails AWS CloudFormation Property
 	// Required: false
@@ -43,7 +43,7 @@ type Endpoint_KafkaSettings[T any] struct {
 	// MessageFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-messageformat
-	MessageFormat *string `json:"MessageFormat,omitempty"`
+	MessageFormat *T `json:"MessageFormat,omitempty"`
 
 	// MessageMaxBytes AWS CloudFormation Property
 	// Required: false
@@ -63,42 +63,42 @@ type Endpoint_KafkaSettings[T any] struct {
 	// SaslPassword AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-saslpassword
-	SaslPassword *string `json:"SaslPassword,omitempty"`
+	SaslPassword *T `json:"SaslPassword,omitempty"`
 
 	// SaslUserName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-saslusername
-	SaslUserName *string `json:"SaslUserName,omitempty"`
+	SaslUserName *T `json:"SaslUserName,omitempty"`
 
 	// SecurityProtocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-securityprotocol
-	SecurityProtocol *string `json:"SecurityProtocol,omitempty"`
+	SecurityProtocol *T `json:"SecurityProtocol,omitempty"`
 
 	// SslCaCertificateArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-sslcacertificatearn
-	SslCaCertificateArn *string `json:"SslCaCertificateArn,omitempty"`
+	SslCaCertificateArn *T `json:"SslCaCertificateArn,omitempty"`
 
 	// SslClientCertificateArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-sslclientcertificatearn
-	SslClientCertificateArn *string `json:"SslClientCertificateArn,omitempty"`
+	SslClientCertificateArn *T `json:"SslClientCertificateArn,omitempty"`
 
 	// SslClientKeyArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-sslclientkeyarn
-	SslClientKeyArn *string `json:"SslClientKeyArn,omitempty"`
+	SslClientKeyArn *T `json:"SslClientKeyArn,omitempty"`
 
 	// SslClientKeyPassword AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-sslclientkeypassword
-	SslClientKeyPassword *string `json:"SslClientKeyPassword,omitempty"`
+	SslClientKeyPassword *T `json:"SslClientKeyPassword,omitempty"`
 
 	// Topic AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-topic
-	Topic *string `json:"Topic,omitempty"`
+	Topic *T `json:"Topic,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

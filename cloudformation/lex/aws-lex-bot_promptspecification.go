@@ -28,7 +28,7 @@ type Bot_PromptSpecification[T any] struct {
 	// MessageSelectionStrategy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-messageselectionstrategy
-	MessageSelectionStrategy *string `json:"MessageSelectionStrategy,omitempty"`
+	MessageSelectionStrategy *T `json:"MessageSelectionStrategy,omitempty"`
 
 	// PromptAttemptsSpecification AWS CloudFormation Property
 	// Required: false

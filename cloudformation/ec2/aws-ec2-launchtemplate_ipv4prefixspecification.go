@@ -13,7 +13,7 @@ type LaunchTemplate_Ipv4PrefixSpecification[T any] struct {
 	// Ipv4Prefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv4prefixspecification.html#cfn-ec2-launchtemplate-ipv4prefixspecification-ipv4prefix
-	Ipv4Prefix *string `json:"Ipv4Prefix,omitempty"`
+	Ipv4Prefix *T `json:"Ipv4Prefix,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

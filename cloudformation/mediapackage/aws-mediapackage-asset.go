@@ -22,27 +22,27 @@ type Asset[T any] struct {
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-id
-	Id string `json:"Id"`
+	Id T `json:"Id"`
 
 	// PackagingGroupId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-packaginggroupid
-	PackagingGroupId string `json:"PackagingGroupId"`
+	PackagingGroupId T `json:"PackagingGroupId"`
 
 	// ResourceId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-resourceid
-	ResourceId *string `json:"ResourceId,omitempty"`
+	ResourceId *T `json:"ResourceId,omitempty"`
 
 	// SourceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-sourcearn
-	SourceArn string `json:"SourceArn"`
+	SourceArn T `json:"SourceArn"`
 
 	// SourceRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-sourcerolearn
-	SourceRoleArn string `json:"SourceRoleArn"`
+	SourceRoleArn T `json:"SourceRoleArn"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

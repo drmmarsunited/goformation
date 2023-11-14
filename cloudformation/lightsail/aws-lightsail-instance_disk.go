@@ -13,17 +13,17 @@ type Instance_Disk[T any] struct {
 	// AttachedTo AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-disk.html#cfn-lightsail-instance-disk-attachedto
-	AttachedTo *string `json:"AttachedTo,omitempty"`
+	AttachedTo *T `json:"AttachedTo,omitempty"`
 
 	// AttachmentState AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-disk.html#cfn-lightsail-instance-disk-attachmentstate
-	AttachmentState *string `json:"AttachmentState,omitempty"`
+	AttachmentState *T `json:"AttachmentState,omitempty"`
 
 	// DiskName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-disk.html#cfn-lightsail-instance-disk-diskname
-	DiskName string `json:"DiskName"`
+	DiskName T `json:"DiskName"`
 
 	// IOPS AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type Instance_Disk[T any] struct {
 	// Path AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-disk.html#cfn-lightsail-instance-disk-path
-	Path string `json:"Path"`
+	Path T `json:"Path"`
 
 	// SizeInGb AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-disk.html#cfn-lightsail-instance-disk-sizeingb
-	SizeInGb *string `json:"SizeInGb,omitempty"`
+	SizeInGb *T `json:"SizeInGb,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

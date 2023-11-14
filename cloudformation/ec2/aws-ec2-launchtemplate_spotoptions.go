@@ -18,22 +18,22 @@ type LaunchTemplate_SpotOptions[T any] struct {
 	// InstanceInterruptionBehavior AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-spotoptions.html#cfn-ec2-launchtemplate-spotoptions-instanceinterruptionbehavior
-	InstanceInterruptionBehavior *string `json:"InstanceInterruptionBehavior,omitempty"`
+	InstanceInterruptionBehavior *T `json:"InstanceInterruptionBehavior,omitempty"`
 
 	// MaxPrice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-spotoptions.html#cfn-ec2-launchtemplate-spotoptions-maxprice
-	MaxPrice *string `json:"MaxPrice,omitempty"`
+	MaxPrice *T `json:"MaxPrice,omitempty"`
 
 	// SpotInstanceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-spotoptions.html#cfn-ec2-launchtemplate-spotoptions-spotinstancetype
-	SpotInstanceType *string `json:"SpotInstanceType,omitempty"`
+	SpotInstanceType *T `json:"SpotInstanceType,omitempty"`
 
 	// ValidUntil AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-spotoptions.html#cfn-ec2-launchtemplate-spotoptions-validuntil
-	ValidUntil *string `json:"ValidUntil,omitempty"`
+	ValidUntil *T `json:"ValidUntil,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

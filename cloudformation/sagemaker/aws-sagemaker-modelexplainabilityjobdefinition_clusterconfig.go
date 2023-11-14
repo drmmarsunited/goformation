@@ -18,12 +18,12 @@ type ModelExplainabilityJobDefinition_ClusterConfig[T any] struct {
 	// InstanceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-clusterconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-clusterconfig-instancetype
-	InstanceType string `json:"InstanceType"`
+	InstanceType T `json:"InstanceType"`
 
 	// VolumeKmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-clusterconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-clusterconfig-volumekmskeyid
-	VolumeKmsKeyId *string `json:"VolumeKmsKeyId,omitempty"`
+	VolumeKmsKeyId *T `json:"VolumeKmsKeyId,omitempty"`
 
 	// VolumeSizeInGB AWS CloudFormation Property
 	// Required: true

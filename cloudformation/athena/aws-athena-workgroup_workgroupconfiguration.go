@@ -13,7 +13,7 @@ type WorkGroup_WorkGroupConfiguration[T any] struct {
 	// AdditionalConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-additionalconfiguration
-	AdditionalConfiguration *string `json:"AdditionalConfiguration,omitempty"`
+	AdditionalConfiguration *T `json:"AdditionalConfiguration,omitempty"`
 
 	// BytesScannedCutoffPerQuery AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type WorkGroup_WorkGroupConfiguration[T any] struct {
 	// ExecutionRole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-executionrole
-	ExecutionRole *string `json:"ExecutionRole,omitempty"`
+	ExecutionRole *T `json:"ExecutionRole,omitempty"`
 
 	// PublishCloudWatchMetricsEnabled AWS CloudFormation Property
 	// Required: false

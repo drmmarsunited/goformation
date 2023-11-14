@@ -17,22 +17,22 @@ type ScheduledAudit[T any] struct {
 	// DayOfMonth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-scheduledaudit.html#cfn-iot-scheduledaudit-dayofmonth
-	DayOfMonth *string `json:"DayOfMonth,omitempty"`
+	DayOfMonth *T `json:"DayOfMonth,omitempty"`
 
 	// DayOfWeek AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-scheduledaudit.html#cfn-iot-scheduledaudit-dayofweek
-	DayOfWeek *string `json:"DayOfWeek,omitempty"`
+	DayOfWeek *T `json:"DayOfWeek,omitempty"`
 
 	// Frequency AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-scheduledaudit.html#cfn-iot-scheduledaudit-frequency
-	Frequency string `json:"Frequency"`
+	Frequency T `json:"Frequency"`
 
 	// ScheduledAuditName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-scheduledaudit.html#cfn-iot-scheduledaudit-scheduledauditname
-	ScheduledAuditName *string `json:"ScheduledAuditName,omitempty"`
+	ScheduledAuditName *T `json:"ScheduledAuditName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -42,7 +42,7 @@ type ScheduledAudit[T any] struct {
 	// TargetCheckNames AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-scheduledaudit.html#cfn-iot-scheduledaudit-targetchecknames
-	TargetCheckNames []string `json:"TargetCheckNames"`
+	TargetCheckNames []T `json:"TargetCheckNames"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

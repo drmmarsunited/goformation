@@ -13,12 +13,12 @@ type PackagingConfiguration_HlsEncryption[T any] struct {
 	// ConstantInitializationVector AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsencryption.html#cfn-mediapackage-packagingconfiguration-hlsencryption-constantinitializationvector
-	ConstantInitializationVector *string `json:"ConstantInitializationVector,omitempty"`
+	ConstantInitializationVector *T `json:"ConstantInitializationVector,omitempty"`
 
 	// EncryptionMethod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsencryption.html#cfn-mediapackage-packagingconfiguration-hlsencryption-encryptionmethod
-	EncryptionMethod *string `json:"EncryptionMethod,omitempty"`
+	EncryptionMethod *T `json:"EncryptionMethod,omitempty"`
 
 	// SpekeKeyProvider AWS CloudFormation Property
 	// Required: true

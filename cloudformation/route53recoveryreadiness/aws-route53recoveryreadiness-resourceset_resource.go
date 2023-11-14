@@ -13,7 +13,7 @@ type ResourceSet_Resource[T any] struct {
 	// ComponentId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-resource.html#cfn-route53recoveryreadiness-resourceset-resource-componentid
-	ComponentId *string `json:"ComponentId,omitempty"`
+	ComponentId *T `json:"ComponentId,omitempty"`
 
 	// DnsTargetResource AWS CloudFormation Property
 	// Required: false
@@ -23,12 +23,12 @@ type ResourceSet_Resource[T any] struct {
 	// ReadinessScopes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-resource.html#cfn-route53recoveryreadiness-resourceset-resource-readinessscopes
-	ReadinessScopes []string `json:"ReadinessScopes,omitempty"`
+	ReadinessScopes []T `json:"ReadinessScopes,omitempty"`
 
 	// ResourceArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-resource.html#cfn-route53recoveryreadiness-resourceset-resource-resourcearn
-	ResourceArn *string `json:"ResourceArn,omitempty"`
+	ResourceArn *T `json:"ResourceArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type TaskSet_ServiceRegistry[T any] struct {
 	// ContainerName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-serviceregistry.html#cfn-ecs-taskset-serviceregistry-containername
-	ContainerName *string `json:"ContainerName,omitempty"`
+	ContainerName *T `json:"ContainerName,omitempty"`
 
 	// ContainerPort AWS CloudFormation Property
 	// Required: false
@@ -28,7 +28,7 @@ type TaskSet_ServiceRegistry[T any] struct {
 	// RegistryArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-serviceregistry.html#cfn-ecs-taskset-serviceregistry-registryarn
-	RegistryArn *string `json:"RegistryArn,omitempty"`
+	RegistryArn *T `json:"RegistryArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

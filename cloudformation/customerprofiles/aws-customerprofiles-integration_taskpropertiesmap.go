@@ -13,12 +13,12 @@ type Integration_TaskPropertiesMap[T any] struct {
 	// OperatorPropertyKey AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-taskpropertiesmap.html#cfn-customerprofiles-integration-taskpropertiesmap-operatorpropertykey
-	OperatorPropertyKey string `json:"OperatorPropertyKey"`
+	OperatorPropertyKey T `json:"OperatorPropertyKey"`
 
 	// Property AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-taskpropertiesmap.html#cfn-customerprofiles-integration-taskpropertiesmap-property
-	Property string `json:"Property"`
+	Property T `json:"Property"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

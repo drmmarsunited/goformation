@@ -13,12 +13,12 @@ type DataSet_RelationalTable[T any] struct {
 	// Catalog AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-relationaltable.html#cfn-quicksight-dataset-relationaltable-catalog
-	Catalog *string `json:"Catalog,omitempty"`
+	Catalog *T `json:"Catalog,omitempty"`
 
 	// DataSourceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-relationaltable.html#cfn-quicksight-dataset-relationaltable-datasourcearn
-	DataSourceArn string `json:"DataSourceArn"`
+	DataSourceArn T `json:"DataSourceArn"`
 
 	// InputColumns AWS CloudFormation Property
 	// Required: true
@@ -28,12 +28,12 @@ type DataSet_RelationalTable[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-relationaltable.html#cfn-quicksight-dataset-relationaltable-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// Schema AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-relationaltable.html#cfn-quicksight-dataset-relationaltable-schema
-	Schema *string `json:"Schema,omitempty"`
+	Schema *T `json:"Schema,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

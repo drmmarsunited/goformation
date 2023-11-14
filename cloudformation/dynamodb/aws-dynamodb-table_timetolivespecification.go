@@ -13,7 +13,7 @@ type Table_TimeToLiveSpecification[T any] struct {
 	// AttributeName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-timetolivespecification.html#cfn-dynamodb-table-timetolivespecification-attributename
-	AttributeName *string `json:"AttributeName,omitempty"`
+	AttributeName *T `json:"AttributeName,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: true

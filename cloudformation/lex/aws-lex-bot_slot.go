@@ -13,7 +13,7 @@ type Bot_Slot[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slot.html#cfn-lex-bot-slot-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// MultipleValuesSetting AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type Bot_Slot[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slot.html#cfn-lex-bot-slot-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ObfuscationSetting AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Bot_Slot[T any] struct {
 	// SlotTypeName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slot.html#cfn-lex-bot-slot-slottypename
-	SlotTypeName string `json:"SlotTypeName"`
+	SlotTypeName T `json:"SlotTypeName"`
 
 	// ValueElicitationSetting AWS CloudFormation Property
 	// Required: true

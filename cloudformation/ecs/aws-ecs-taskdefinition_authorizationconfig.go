@@ -13,12 +13,12 @@ type TaskDefinition_AuthorizationConfig[T any] struct {
 	// AccessPointId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-authorizationconfig.html#cfn-ecs-taskdefinition-authorizationconfig-accesspointid
-	AccessPointId *string `json:"AccessPointId,omitempty"`
+	AccessPointId *T `json:"AccessPointId,omitempty"`
 
 	// IAM AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-authorizationconfig.html#cfn-ecs-taskdefinition-authorizationconfig-iam
-	IAM *string `json:"IAM,omitempty"`
+	IAM *T `json:"IAM,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

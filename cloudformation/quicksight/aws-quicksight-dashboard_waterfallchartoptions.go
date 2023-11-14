@@ -13,7 +13,7 @@ type Dashboard_WaterfallChartOptions[T any] struct {
 	// TotalBarLabel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-waterfallchartoptions.html#cfn-quicksight-dashboard-waterfallchartoptions-totalbarlabel
-	TotalBarLabel *string `json:"TotalBarLabel,omitempty"`
+	TotalBarLabel *T `json:"TotalBarLabel,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,32 +13,32 @@ type LaunchTemplate_Placement[T any] struct {
 	// Affinity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-placement.html#cfn-ec2-launchtemplate-placement-affinity
-	Affinity *string `json:"Affinity,omitempty"`
+	Affinity *T `json:"Affinity,omitempty"`
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-placement.html#cfn-ec2-launchtemplate-placement-availabilityzone
-	AvailabilityZone *string `json:"AvailabilityZone,omitempty"`
+	AvailabilityZone *T `json:"AvailabilityZone,omitempty"`
 
 	// GroupId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-placement.html#cfn-ec2-launchtemplate-placement-groupid
-	GroupId *string `json:"GroupId,omitempty"`
+	GroupId *T `json:"GroupId,omitempty"`
 
 	// GroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-placement.html#cfn-ec2-launchtemplate-placement-groupname
-	GroupName *string `json:"GroupName,omitempty"`
+	GroupName *T `json:"GroupName,omitempty"`
 
 	// HostId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-placement.html#cfn-ec2-launchtemplate-placement-hostid
-	HostId *string `json:"HostId,omitempty"`
+	HostId *T `json:"HostId,omitempty"`
 
 	// HostResourceGroupArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-placement.html#cfn-ec2-launchtemplate-placement-hostresourcegrouparn
-	HostResourceGroupArn *string `json:"HostResourceGroupArn,omitempty"`
+	HostResourceGroupArn *T `json:"HostResourceGroupArn,omitempty"`
 
 	// PartitionNumber AWS CloudFormation Property
 	// Required: false
@@ -48,12 +48,12 @@ type LaunchTemplate_Placement[T any] struct {
 	// SpreadDomain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-placement.html#cfn-ec2-launchtemplate-placement-spreaddomain
-	SpreadDomain *string `json:"SpreadDomain,omitempty"`
+	SpreadDomain *T `json:"SpreadDomain,omitempty"`
 
 	// Tenancy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-placement.html#cfn-ec2-launchtemplate-placement-tenancy
-	Tenancy *string `json:"Tenancy,omitempty"`
+	Tenancy *T `json:"Tenancy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

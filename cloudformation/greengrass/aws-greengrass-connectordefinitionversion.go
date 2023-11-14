@@ -16,7 +16,7 @@ type ConnectorDefinitionVersion[T any] struct {
 	// ConnectorDefinitionId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinitionversion.html#cfn-greengrass-connectordefinitionversion-connectordefinitionid
-	ConnectorDefinitionId string `json:"ConnectorDefinitionId"`
+	ConnectorDefinitionId T `json:"ConnectorDefinitionId"`
 
 	// Connectors AWS CloudFormation Property
 	// Required: true

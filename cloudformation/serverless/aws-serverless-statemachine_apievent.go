@@ -13,17 +13,17 @@ type StateMachine_ApiEvent[T any] struct {
 	// Method AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
-	Method string `json:"Method"`
+	Method T `json:"Method"`
 
 	// Path AWS CloudFormation Property
 	// Required: true
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
-	Path string `json:"Path"`
+	Path T `json:"Path"`
 
 	// RestApiId AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
-	RestApiId *string `json:"RestApiId,omitempty"`
+	RestApiId *T `json:"RestApiId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

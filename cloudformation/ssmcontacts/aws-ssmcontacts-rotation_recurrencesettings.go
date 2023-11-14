@@ -13,7 +13,7 @@ type Rotation_RecurrenceSettings[T any] struct {
 	// DailySettings AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-rotation-recurrencesettings.html#cfn-ssmcontacts-rotation-recurrencesettings-dailysettings
-	DailySettings []string `json:"DailySettings,omitempty"`
+	DailySettings []T `json:"DailySettings,omitempty"`
 
 	// MonthlySettings AWS CloudFormation Property
 	// Required: false

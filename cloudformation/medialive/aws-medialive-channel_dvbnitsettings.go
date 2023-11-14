@@ -18,7 +18,7 @@ type Channel_DvbNitSettings[T any] struct {
 	// NetworkName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbnitsettings.html#cfn-medialive-channel-dvbnitsettings-networkname
-	NetworkName *string `json:"NetworkName,omitempty"`
+	NetworkName *T `json:"NetworkName,omitempty"`
 
 	// RepInterval AWS CloudFormation Property
 	// Required: false

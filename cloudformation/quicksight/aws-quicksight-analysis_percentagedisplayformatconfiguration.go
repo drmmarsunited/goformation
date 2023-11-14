@@ -28,7 +28,7 @@ type Analysis_PercentageDisplayFormatConfiguration[T any] struct {
 	// Prefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-percentagedisplayformatconfiguration.html#cfn-quicksight-analysis-percentagedisplayformatconfiguration-prefix
-	Prefix *string `json:"Prefix,omitempty"`
+	Prefix *T `json:"Prefix,omitempty"`
 
 	// SeparatorConfiguration AWS CloudFormation Property
 	// Required: false
@@ -38,7 +38,7 @@ type Analysis_PercentageDisplayFormatConfiguration[T any] struct {
 	// Suffix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-percentagedisplayformatconfiguration.html#cfn-quicksight-analysis-percentagedisplayformatconfiguration-suffix
-	Suffix *string `json:"Suffix,omitempty"`
+	Suffix *T `json:"Suffix,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

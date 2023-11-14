@@ -17,17 +17,17 @@ type Flywheel[T any] struct {
 	// ActiveModelArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-flywheel.html#cfn-comprehend-flywheel-activemodelarn
-	ActiveModelArn *string `json:"ActiveModelArn,omitempty"`
+	ActiveModelArn *T `json:"ActiveModelArn,omitempty"`
 
 	// DataAccessRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-flywheel.html#cfn-comprehend-flywheel-dataaccessrolearn
-	DataAccessRoleArn string `json:"DataAccessRoleArn"`
+	DataAccessRoleArn T `json:"DataAccessRoleArn"`
 
 	// DataLakeS3Uri AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-flywheel.html#cfn-comprehend-flywheel-datalakes3uri
-	DataLakeS3Uri string `json:"DataLakeS3Uri"`
+	DataLakeS3Uri T `json:"DataLakeS3Uri"`
 
 	// DataSecurityConfig AWS CloudFormation Property
 	// Required: false
@@ -37,12 +37,12 @@ type Flywheel[T any] struct {
 	// FlywheelName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-flywheel.html#cfn-comprehend-flywheel-flywheelname
-	FlywheelName string `json:"FlywheelName"`
+	FlywheelName T `json:"FlywheelName"`
 
 	// ModelType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-flywheel.html#cfn-comprehend-flywheel-modeltype
-	ModelType *string `json:"ModelType,omitempty"`
+	ModelType *T `json:"ModelType,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

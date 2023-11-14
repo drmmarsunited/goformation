@@ -19,7 +19,7 @@ type ConnectAttachment_ProposedSegmentChange[T any] struct {
 	// SegmentName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectattachment-proposedsegmentchange.html#cfn-networkmanager-connectattachment-proposedsegmentchange-segmentname
-	SegmentName *string `json:"SegmentName,omitempty"`
+	SegmentName *T `json:"SegmentName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

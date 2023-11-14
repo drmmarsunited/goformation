@@ -13,7 +13,7 @@ type Channel_Eac3Settings[T any] struct {
 	// AttenuationControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-attenuationcontrol
-	AttenuationControl *string `json:"AttenuationControl,omitempty"`
+	AttenuationControl *T `json:"AttenuationControl,omitempty"`
 
 	// Bitrate AWS CloudFormation Property
 	// Required: false
@@ -23,17 +23,17 @@ type Channel_Eac3Settings[T any] struct {
 	// BitstreamMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-bitstreammode
-	BitstreamMode *string `json:"BitstreamMode,omitempty"`
+	BitstreamMode *T `json:"BitstreamMode,omitempty"`
 
 	// CodingMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-codingmode
-	CodingMode *string `json:"CodingMode,omitempty"`
+	CodingMode *T `json:"CodingMode,omitempty"`
 
 	// DcFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-dcfilter
-	DcFilter *string `json:"DcFilter,omitempty"`
+	DcFilter *T `json:"DcFilter,omitempty"`
 
 	// Dialnorm AWS CloudFormation Property
 	// Required: false
@@ -43,22 +43,22 @@ type Channel_Eac3Settings[T any] struct {
 	// DrcLine AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-drcline
-	DrcLine *string `json:"DrcLine,omitempty"`
+	DrcLine *T `json:"DrcLine,omitempty"`
 
 	// DrcRf AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-drcrf
-	DrcRf *string `json:"DrcRf,omitempty"`
+	DrcRf *T `json:"DrcRf,omitempty"`
 
 	// LfeControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-lfecontrol
-	LfeControl *string `json:"LfeControl,omitempty"`
+	LfeControl *T `json:"LfeControl,omitempty"`
 
 	// LfeFilter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-lfefilter
-	LfeFilter *string `json:"LfeFilter,omitempty"`
+	LfeFilter *T `json:"LfeFilter,omitempty"`
 
 	// LoRoCenterMixLevel AWS CloudFormation Property
 	// Required: false
@@ -83,32 +83,32 @@ type Channel_Eac3Settings[T any] struct {
 	// MetadataControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-metadatacontrol
-	MetadataControl *string `json:"MetadataControl,omitempty"`
+	MetadataControl *T `json:"MetadataControl,omitempty"`
 
 	// PassthroughControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-passthroughcontrol
-	PassthroughControl *string `json:"PassthroughControl,omitempty"`
+	PassthroughControl *T `json:"PassthroughControl,omitempty"`
 
 	// PhaseControl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-phasecontrol
-	PhaseControl *string `json:"PhaseControl,omitempty"`
+	PhaseControl *T `json:"PhaseControl,omitempty"`
 
 	// StereoDownmix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-stereodownmix
-	StereoDownmix *string `json:"StereoDownmix,omitempty"`
+	StereoDownmix *T `json:"StereoDownmix,omitempty"`
 
 	// SurroundExMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-surroundexmode
-	SurroundExMode *string `json:"SurroundExMode,omitempty"`
+	SurroundExMode *T `json:"SurroundExMode,omitempty"`
 
 	// SurroundMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-surroundmode
-	SurroundMode *string `json:"SurroundMode,omitempty"`
+	SurroundMode *T `json:"SurroundMode,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

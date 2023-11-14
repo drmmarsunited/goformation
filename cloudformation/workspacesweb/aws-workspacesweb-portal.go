@@ -17,37 +17,37 @@ type Portal[T any] struct {
 	// AdditionalEncryptionContext AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-portal.html#cfn-workspacesweb-portal-additionalencryptioncontext
-	AdditionalEncryptionContext map[string]string `json:"AdditionalEncryptionContext,omitempty"`
+	AdditionalEncryptionContext map[string]T `json:"AdditionalEncryptionContext,omitempty"`
 
 	// AuthenticationType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-portal.html#cfn-workspacesweb-portal-authenticationtype
-	AuthenticationType *string `json:"AuthenticationType,omitempty"`
+	AuthenticationType *T `json:"AuthenticationType,omitempty"`
 
 	// BrowserSettingsArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-portal.html#cfn-workspacesweb-portal-browsersettingsarn
-	BrowserSettingsArn *string `json:"BrowserSettingsArn,omitempty"`
+	BrowserSettingsArn *T `json:"BrowserSettingsArn,omitempty"`
 
 	// CustomerManagedKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-portal.html#cfn-workspacesweb-portal-customermanagedkey
-	CustomerManagedKey *string `json:"CustomerManagedKey,omitempty"`
+	CustomerManagedKey *T `json:"CustomerManagedKey,omitempty"`
 
 	// DisplayName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-portal.html#cfn-workspacesweb-portal-displayname
-	DisplayName *string `json:"DisplayName,omitempty"`
+	DisplayName *T `json:"DisplayName,omitempty"`
 
 	// IpAccessSettingsArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-portal.html#cfn-workspacesweb-portal-ipaccesssettingsarn
-	IpAccessSettingsArn *string `json:"IpAccessSettingsArn,omitempty"`
+	IpAccessSettingsArn *T `json:"IpAccessSettingsArn,omitempty"`
 
 	// NetworkSettingsArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-portal.html#cfn-workspacesweb-portal-networksettingsarn
-	NetworkSettingsArn *string `json:"NetworkSettingsArn,omitempty"`
+	NetworkSettingsArn *T `json:"NetworkSettingsArn,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -57,17 +57,17 @@ type Portal[T any] struct {
 	// TrustStoreArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-portal.html#cfn-workspacesweb-portal-truststorearn
-	TrustStoreArn *string `json:"TrustStoreArn,omitempty"`
+	TrustStoreArn *T `json:"TrustStoreArn,omitempty"`
 
 	// UserAccessLoggingSettingsArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-portal.html#cfn-workspacesweb-portal-useraccessloggingsettingsarn
-	UserAccessLoggingSettingsArn *string `json:"UserAccessLoggingSettingsArn,omitempty"`
+	UserAccessLoggingSettingsArn *T `json:"UserAccessLoggingSettingsArn,omitempty"`
 
 	// UserSettingsArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-portal.html#cfn-workspacesweb-portal-usersettingsarn
-	UserSettingsArn *string `json:"UserSettingsArn,omitempty"`
+	UserSettingsArn *T `json:"UserSettingsArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

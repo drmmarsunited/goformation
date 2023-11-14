@@ -22,7 +22,7 @@ type Server[T any] struct {
 	// BackupId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-backupid
-	BackupId *string `json:"BackupId,omitempty"`
+	BackupId *T `json:"BackupId,omitempty"`
 
 	// BackupRetentionCount AWS CloudFormation Property
 	// Required: false
@@ -32,17 +32,17 @@ type Server[T any] struct {
 	// CustomCertificate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-customcertificate
-	CustomCertificate *string `json:"CustomCertificate,omitempty"`
+	CustomCertificate *T `json:"CustomCertificate,omitempty"`
 
 	// CustomDomain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-customdomain
-	CustomDomain *string `json:"CustomDomain,omitempty"`
+	CustomDomain *T `json:"CustomDomain,omitempty"`
 
 	// CustomPrivateKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-customprivatekey
-	CustomPrivateKey *string `json:"CustomPrivateKey,omitempty"`
+	CustomPrivateKey *T `json:"CustomPrivateKey,omitempty"`
 
 	// DisableAutomatedBackup AWS CloudFormation Property
 	// Required: false
@@ -52,7 +52,7 @@ type Server[T any] struct {
 	// Engine AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-engine
-	Engine *string `json:"Engine,omitempty"`
+	Engine *T `json:"Engine,omitempty"`
 
 	// EngineAttributes AWS CloudFormation Property
 	// Required: false
@@ -62,52 +62,52 @@ type Server[T any] struct {
 	// EngineModel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-enginemodel
-	EngineModel *string `json:"EngineModel,omitempty"`
+	EngineModel *T `json:"EngineModel,omitempty"`
 
 	// EngineVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-engineversion
-	EngineVersion *string `json:"EngineVersion,omitempty"`
+	EngineVersion *T `json:"EngineVersion,omitempty"`
 
 	// InstanceProfileArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-instanceprofilearn
-	InstanceProfileArn string `json:"InstanceProfileArn"`
+	InstanceProfileArn T `json:"InstanceProfileArn"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-instancetype
-	InstanceType string `json:"InstanceType"`
+	InstanceType T `json:"InstanceType"`
 
 	// KeyPair AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-keypair
-	KeyPair *string `json:"KeyPair,omitempty"`
+	KeyPair *T `json:"KeyPair,omitempty"`
 
 	// PreferredBackupWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-preferredbackupwindow
-	PreferredBackupWindow *string `json:"PreferredBackupWindow,omitempty"`
+	PreferredBackupWindow *T `json:"PreferredBackupWindow,omitempty"`
 
 	// PreferredMaintenanceWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-preferredmaintenancewindow
-	PreferredMaintenanceWindow *string `json:"PreferredMaintenanceWindow,omitempty"`
+	PreferredMaintenanceWindow *T `json:"PreferredMaintenanceWindow,omitempty"`
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-securitygroupids
-	SecurityGroupIds []string `json:"SecurityGroupIds,omitempty"`
+	SecurityGroupIds []T `json:"SecurityGroupIds,omitempty"`
 
 	// ServiceRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-servicerolearn
-	ServiceRoleArn string `json:"ServiceRoleArn"`
+	ServiceRoleArn T `json:"ServiceRoleArn"`
 
 	// SubnetIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-subnetids
-	SubnetIds []string `json:"SubnetIds,omitempty"`
+	SubnetIds []T `json:"SubnetIds,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

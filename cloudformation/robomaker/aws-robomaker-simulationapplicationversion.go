@@ -16,12 +16,12 @@ type SimulationApplicationVersion[T any] struct {
 	// Application AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplicationversion.html#cfn-robomaker-simulationapplicationversion-application
-	Application string `json:"Application"`
+	Application T `json:"Application"`
 
 	// CurrentRevisionId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplicationversion.html#cfn-robomaker-simulationapplicationversion-currentrevisionid
-	CurrentRevisionId *string `json:"CurrentRevisionId,omitempty"`
+	CurrentRevisionId *T `json:"CurrentRevisionId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

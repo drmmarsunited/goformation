@@ -17,7 +17,7 @@ type Datastore[T any] struct {
 	// DatastoreName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-datastore.html#cfn-iotanalytics-datastore-datastorename
-	DatastoreName *string `json:"DatastoreName,omitempty"`
+	DatastoreName *T `json:"DatastoreName,omitempty"`
 
 	// DatastorePartitions AWS CloudFormation Property
 	// Required: false

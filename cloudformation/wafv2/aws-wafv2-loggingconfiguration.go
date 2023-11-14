@@ -16,7 +16,7 @@ type LoggingConfiguration[T any] struct {
 	// LogDestinationConfigs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-loggingconfiguration.html#cfn-wafv2-loggingconfiguration-logdestinationconfigs
-	LogDestinationConfigs []string `json:"LogDestinationConfigs"`
+	LogDestinationConfigs []T `json:"LogDestinationConfigs"`
 
 	// LoggingFilter AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type LoggingConfiguration[T any] struct {
 	// ResourceArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-loggingconfiguration.html#cfn-wafv2-loggingconfiguration-resourcearn
-	ResourceArn string `json:"ResourceArn"`
+	ResourceArn T `json:"ResourceArn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

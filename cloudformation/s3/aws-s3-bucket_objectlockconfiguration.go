@@ -13,7 +13,7 @@ type Bucket_ObjectLockConfiguration[T any] struct {
 	// ObjectLockEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockconfiguration.html#cfn-s3-bucket-objectlockconfiguration-objectlockenabled
-	ObjectLockEnabled *string `json:"ObjectLockEnabled,omitempty"`
+	ObjectLockEnabled *T `json:"ObjectLockEnabled,omitempty"`
 
 	// Rule AWS CloudFormation Property
 	// Required: false

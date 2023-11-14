@@ -33,17 +33,17 @@ type Endpoint_NeptuneSettings[T any] struct {
 	// S3BucketFolder AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-neptunesettings.html#cfn-dms-endpoint-neptunesettings-s3bucketfolder
-	S3BucketFolder *string `json:"S3BucketFolder,omitempty"`
+	S3BucketFolder *T `json:"S3BucketFolder,omitempty"`
 
 	// S3BucketName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-neptunesettings.html#cfn-dms-endpoint-neptunesettings-s3bucketname
-	S3BucketName *string `json:"S3BucketName,omitempty"`
+	S3BucketName *T `json:"S3BucketName,omitempty"`
 
 	// ServiceAccessRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-neptunesettings.html#cfn-dms-endpoint-neptunesettings-serviceaccessrolearn
-	ServiceAccessRoleArn *string `json:"ServiceAccessRoleArn,omitempty"`
+	ServiceAccessRoleArn *T `json:"ServiceAccessRoleArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -42,7 +42,7 @@ type Table[T any] struct {
 	// KeyspaceName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-keyspacename
-	KeyspaceName string `json:"KeyspaceName"`
+	KeyspaceName T `json:"KeyspaceName"`
 
 	// PartitionKeyColumns AWS CloudFormation Property
 	// Required: true
@@ -62,7 +62,7 @@ type Table[T any] struct {
 	// TableName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-tablename
-	TableName *string `json:"TableName,omitempty"`
+	TableName *T `json:"TableName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

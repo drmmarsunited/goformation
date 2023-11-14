@@ -13,12 +13,12 @@ type Pipe_PipeTargetSqsQueueParameters[T any] struct {
 	// MessageDeduplicationId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetsqsqueueparameters.html#cfn-pipes-pipe-pipetargetsqsqueueparameters-messagededuplicationid
-	MessageDeduplicationId *string `json:"MessageDeduplicationId,omitempty"`
+	MessageDeduplicationId *T `json:"MessageDeduplicationId,omitempty"`
 
 	// MessageGroupId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetsqsqueueparameters.html#cfn-pipes-pipe-pipetargetsqsqueueparameters-messagegroupid
-	MessageGroupId *string `json:"MessageGroupId,omitempty"`
+	MessageGroupId *T `json:"MessageGroupId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,9 +13,9 @@ import (
 
 // Function_Events is a helper struct that can hold either a String or String value
 type Function_Events[T any] struct {
-	String *string
+	String *T
 
-	StringArray *[]string
+	StringArray *[]T
 }
 
 func (r Function_Events[any]) value() interface{} {
@@ -52,10 +52,10 @@ func (r *Function_Events[any]) UnmarshalJSON(b []byte) error {
 
 	switch val := typecheck.(type) {
 
-	case string:
+	case any:
 		r.String = &val
 
-	case []string:
+	case []any:
 		r.StringArray = &val
 
 	case map[string]interface{}:

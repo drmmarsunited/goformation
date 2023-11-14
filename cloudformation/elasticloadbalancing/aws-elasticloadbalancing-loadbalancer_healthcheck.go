@@ -13,27 +13,27 @@ type LoadBalancer_HealthCheck[T any] struct {
 	// HealthyThreshold AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-health-check.html#cfn-elb-healthcheck-healthythreshold
-	HealthyThreshold string `json:"HealthyThreshold"`
+	HealthyThreshold T `json:"HealthyThreshold"`
 
 	// Interval AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-health-check.html#cfn-elb-healthcheck-interval
-	Interval string `json:"Interval"`
+	Interval T `json:"Interval"`
 
 	// Target AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-health-check.html#cfn-elb-healthcheck-target
-	Target string `json:"Target"`
+	Target T `json:"Target"`
 
 	// Timeout AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-health-check.html#cfn-elb-healthcheck-timeout
-	Timeout string `json:"Timeout"`
+	Timeout T `json:"Timeout"`
 
 	// UnhealthyThreshold AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-health-check.html#cfn-elb-healthcheck-unhealthythreshold
-	UnhealthyThreshold string `json:"UnhealthyThreshold"`
+	UnhealthyThreshold T `json:"UnhealthyThreshold"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type PackagingConfiguration_HlsManifest[T any] struct {
 	// AdMarkers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsmanifest.html#cfn-mediapackage-packagingconfiguration-hlsmanifest-admarkers
-	AdMarkers *string `json:"AdMarkers,omitempty"`
+	AdMarkers *T `json:"AdMarkers,omitempty"`
 
 	// IncludeIframeOnlyStream AWS CloudFormation Property
 	// Required: false
@@ -23,7 +23,7 @@ type PackagingConfiguration_HlsManifest[T any] struct {
 	// ManifestName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsmanifest.html#cfn-mediapackage-packagingconfiguration-hlsmanifest-manifestname
-	ManifestName *string `json:"ManifestName,omitempty"`
+	ManifestName *T `json:"ManifestName,omitempty"`
 
 	// ProgramDateTimeIntervalSeconds AWS CloudFormation Property
 	// Required: false

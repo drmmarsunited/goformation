@@ -23,7 +23,7 @@ type Analysis_PredefinedHierarchy[T any] struct {
 	// HierarchyId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-predefinedhierarchy.html#cfn-quicksight-analysis-predefinedhierarchy-hierarchyid
-	HierarchyId string `json:"HierarchyId"`
+	HierarchyId T `json:"HierarchyId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

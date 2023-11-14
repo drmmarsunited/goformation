@@ -16,12 +16,12 @@ type AssessmentTarget[T any] struct {
 	// AssessmentTargetName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html#cfn-inspector-assessmenttarget-assessmenttargetname
-	AssessmentTargetName *string `json:"AssessmentTargetName,omitempty"`
+	AssessmentTargetName *T `json:"AssessmentTargetName,omitempty"`
 
 	// ResourceGroupArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html#cfn-inspector-assessmenttarget-resourcegrouparn
-	ResourceGroupArn *string `json:"ResourceGroupArn,omitempty"`
+	ResourceGroupArn *T `json:"ResourceGroupArn,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

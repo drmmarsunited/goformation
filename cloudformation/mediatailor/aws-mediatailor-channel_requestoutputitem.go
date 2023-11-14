@@ -23,12 +23,12 @@ type Channel_RequestOutputItem[T any] struct {
 	// ManifestName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-channel-requestoutputitem.html#cfn-mediatailor-channel-requestoutputitem-manifestname
-	ManifestName string `json:"ManifestName"`
+	ManifestName T `json:"ManifestName"`
 
 	// SourceGroup AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-channel-requestoutputitem.html#cfn-mediatailor-channel-requestoutputitem-sourcegroup
-	SourceGroup string `json:"SourceGroup"`
+	SourceGroup T `json:"SourceGroup"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

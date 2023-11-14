@@ -13,12 +13,12 @@ type JobDefinition_RuntimePlatform[T any] struct {
 	// CpuArchitecture AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-runtimeplatform.html#cfn-batch-jobdefinition-containerproperties-runtimeplatform-cpuarchitecture
-	CpuArchitecture *string `json:"CpuArchitecture,omitempty"`
+	CpuArchitecture *T `json:"CpuArchitecture,omitempty"`
 
 	// OperatingSystemFamily AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-runtimeplatform.html#cfn-batch-jobdefinition-containerproperties-runtimeplatform-operatingsystemfamily
-	OperatingSystemFamily *string `json:"OperatingSystemFamily,omitempty"`
+	OperatingSystemFamily *T `json:"OperatingSystemFamily,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

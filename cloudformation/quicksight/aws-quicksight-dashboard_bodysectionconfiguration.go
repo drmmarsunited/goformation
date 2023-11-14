@@ -23,7 +23,7 @@ type Dashboard_BodySectionConfiguration[T any] struct {
 	// SectionId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-bodysectionconfiguration.html#cfn-quicksight-dashboard-bodysectionconfiguration-sectionid
-	SectionId string `json:"SectionId"`
+	SectionId T `json:"SectionId"`
 
 	// Style AWS CloudFormation Property
 	// Required: false

@@ -13,7 +13,7 @@ type TargetGroup_Target[T any] struct {
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-targetgroup-target.html#cfn-vpclattice-targetgroup-target-id
-	Id string `json:"Id"`
+	Id T `json:"Id"`
 
 	// Port AWS CloudFormation Property
 	// Required: false

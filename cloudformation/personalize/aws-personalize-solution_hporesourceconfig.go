@@ -13,12 +13,12 @@ type Solution_HpoResourceConfig[T any] struct {
 	// MaxNumberOfTrainingJobs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-hporesourceconfig.html#cfn-personalize-solution-hporesourceconfig-maxnumberoftrainingjobs
-	MaxNumberOfTrainingJobs *string `json:"MaxNumberOfTrainingJobs,omitempty"`
+	MaxNumberOfTrainingJobs *T `json:"MaxNumberOfTrainingJobs,omitempty"`
 
 	// MaxParallelTrainingJobs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-personalize-solution-hporesourceconfig.html#cfn-personalize-solution-hporesourceconfig-maxparalleltrainingjobs
-	MaxParallelTrainingJobs *string `json:"MaxParallelTrainingJobs,omitempty"`
+	MaxParallelTrainingJobs *T `json:"MaxParallelTrainingJobs,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

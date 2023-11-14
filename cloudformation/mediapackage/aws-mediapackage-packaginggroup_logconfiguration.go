@@ -13,7 +13,7 @@ type PackagingGroup_LogConfiguration[T any] struct {
 	// LogGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packaginggroup-logconfiguration.html#cfn-mediapackage-packaginggroup-logconfiguration-loggroupname
-	LogGroupName *string `json:"LogGroupName,omitempty"`
+	LogGroupName *T `json:"LogGroupName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

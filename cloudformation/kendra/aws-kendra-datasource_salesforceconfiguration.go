@@ -23,12 +23,12 @@ type DataSource_SalesforceConfiguration[T any] struct {
 	// ExcludeAttachmentFilePatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-excludeattachmentfilepatterns
-	ExcludeAttachmentFilePatterns []string `json:"ExcludeAttachmentFilePatterns,omitempty"`
+	ExcludeAttachmentFilePatterns []T `json:"ExcludeAttachmentFilePatterns,omitempty"`
 
 	// IncludeAttachmentFilePatterns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-includeattachmentfilepatterns
-	IncludeAttachmentFilePatterns []string `json:"IncludeAttachmentFilePatterns,omitempty"`
+	IncludeAttachmentFilePatterns []T `json:"IncludeAttachmentFilePatterns,omitempty"`
 
 	// KnowledgeArticleConfiguration AWS CloudFormation Property
 	// Required: false
@@ -38,12 +38,12 @@ type DataSource_SalesforceConfiguration[T any] struct {
 	// SecretArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-secretarn
-	SecretArn string `json:"SecretArn"`
+	SecretArn T `json:"SecretArn"`
 
 	// ServerUrl AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-serverurl
-	ServerUrl string `json:"ServerUrl"`
+	ServerUrl T `json:"ServerUrl"`
 
 	// StandardObjectAttachmentConfiguration AWS CloudFormation Property
 	// Required: false

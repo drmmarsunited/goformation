@@ -13,12 +13,12 @@ type RefreshSchedule_RefreshOnDay[T any] struct {
 	// DayOfMonth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-refreshschedule-refreshonday.html#cfn-quicksight-refreshschedule-refreshonday-dayofmonth
-	DayOfMonth *string `json:"DayOfMonth,omitempty"`
+	DayOfMonth *T `json:"DayOfMonth,omitempty"`
 
 	// DayOfWeek AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-refreshschedule-refreshonday.html#cfn-quicksight-refreshschedule-refreshonday-dayofweek
-	DayOfWeek *string `json:"DayOfWeek,omitempty"`
+	DayOfWeek *T `json:"DayOfWeek,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -16,17 +16,17 @@ type Solution[T any] struct {
 	// DatasetGroupArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-solution.html#cfn-personalize-solution-datasetgrouparn
-	DatasetGroupArn string `json:"DatasetGroupArn"`
+	DatasetGroupArn T `json:"DatasetGroupArn"`
 
 	// EventType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-solution.html#cfn-personalize-solution-eventtype
-	EventType *string `json:"EventType,omitempty"`
+	EventType *T `json:"EventType,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-solution.html#cfn-personalize-solution-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// PerformAutoML AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type Solution[T any] struct {
 	// RecipeArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-solution.html#cfn-personalize-solution-recipearn
-	RecipeArn *string `json:"RecipeArn,omitempty"`
+	RecipeArn *T `json:"RecipeArn,omitempty"`
 
 	// SolutionConfig AWS CloudFormation Property
 	// Required: false

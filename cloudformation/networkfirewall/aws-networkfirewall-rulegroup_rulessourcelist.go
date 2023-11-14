@@ -13,17 +13,17 @@ type RuleGroup_RulesSourceList[T any] struct {
 	// GeneratedRulesType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulessourcelist.html#cfn-networkfirewall-rulegroup-rulessourcelist-generatedrulestype
-	GeneratedRulesType string `json:"GeneratedRulesType"`
+	GeneratedRulesType T `json:"GeneratedRulesType"`
 
 	// TargetTypes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulessourcelist.html#cfn-networkfirewall-rulegroup-rulessourcelist-targettypes
-	TargetTypes []string `json:"TargetTypes"`
+	TargetTypes []T `json:"TargetTypes"`
 
 	// Targets AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulessourcelist.html#cfn-networkfirewall-rulegroup-rulessourcelist-targets
-	Targets []string `json:"Targets"`
+	Targets []T `json:"Targets"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

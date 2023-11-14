@@ -13,12 +13,12 @@ type Analysis_RollingDateConfiguration[T any] struct {
 	// DataSetIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-rollingdateconfiguration.html#cfn-quicksight-analysis-rollingdateconfiguration-datasetidentifier
-	DataSetIdentifier *string `json:"DataSetIdentifier,omitempty"`
+	DataSetIdentifier *T `json:"DataSetIdentifier,omitempty"`
 
 	// Expression AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-rollingdateconfiguration.html#cfn-quicksight-analysis-rollingdateconfiguration-expression
-	Expression string `json:"Expression"`
+	Expression T `json:"Expression"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -16,22 +16,22 @@ type Dataset[T any] struct {
 	// DataFrequency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-datafrequency
-	DataFrequency *string `json:"DataFrequency,omitempty"`
+	DataFrequency *T `json:"DataFrequency,omitempty"`
 
 	// DatasetName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-datasetname
-	DatasetName string `json:"DatasetName"`
+	DatasetName T `json:"DatasetName"`
 
 	// DatasetType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-datasettype
-	DatasetType string `json:"DatasetType"`
+	DatasetType T `json:"DatasetType"`
 
 	// Domain AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-domain
-	Domain string `json:"Domain"`
+	Domain T `json:"Domain"`
 
 	// EncryptionConfig AWS CloudFormation Property
 	// Required: false

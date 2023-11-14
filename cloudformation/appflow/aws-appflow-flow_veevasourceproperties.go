@@ -13,7 +13,7 @@ type Flow_VeevaSourceProperties[T any] struct {
 	// DocumentType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-veevasourceproperties.html#cfn-appflow-flow-veevasourceproperties-documenttype
-	DocumentType *string `json:"DocumentType,omitempty"`
+	DocumentType *T `json:"DocumentType,omitempty"`
 
 	// IncludeAllVersions AWS CloudFormation Property
 	// Required: false
@@ -33,7 +33,7 @@ type Flow_VeevaSourceProperties[T any] struct {
 	// Object AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-veevasourceproperties.html#cfn-appflow-flow-veevasourceproperties-object
-	Object string `json:"Object"`
+	Object T `json:"Object"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

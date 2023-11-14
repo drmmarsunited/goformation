@@ -21,7 +21,7 @@ type Trigger[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// EventBatchingCondition AWS CloudFormation Property
 	// Required: false
@@ -31,7 +31,7 @@ type Trigger[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// Predicate AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type Trigger[T any] struct {
 	// Schedule AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-schedule
-	Schedule *string `json:"Schedule,omitempty"`
+	Schedule *T `json:"Schedule,omitempty"`
 
 	// StartOnCreation AWS CloudFormation Property
 	// Required: false
@@ -56,12 +56,12 @@ type Trigger[T any] struct {
 	// Type AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-type
-	Type string `json:"Type"`
+	Type T `json:"Type"`
 
 	// WorkflowName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-workflowname
-	WorkflowName *string `json:"WorkflowName,omitempty"`
+	WorkflowName *T `json:"WorkflowName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

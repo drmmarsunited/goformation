@@ -16,12 +16,12 @@ type Registry[T any] struct {
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-registry.html#cfn-eventschemas-registry-description
-	Description *string `json:"Description,omitempty"`
+	Description *T `json:"Description,omitempty"`
 
 	// RegistryName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-registry.html#cfn-eventschemas-registry-registryname
-	RegistryName *string `json:"RegistryName,omitempty"`
+	RegistryName *T `json:"RegistryName,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

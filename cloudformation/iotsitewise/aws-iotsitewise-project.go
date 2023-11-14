@@ -17,22 +17,22 @@ type Project[T any] struct {
 	// AssetIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#cfn-iotsitewise-project-assetids
-	AssetIds []string `json:"AssetIds,omitempty"`
+	AssetIds []T `json:"AssetIds,omitempty"`
 
 	// PortalId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#cfn-iotsitewise-project-portalid
-	PortalId string `json:"PortalId"`
+	PortalId T `json:"PortalId"`
 
 	// ProjectDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#cfn-iotsitewise-project-projectdescription
-	ProjectDescription *string `json:"ProjectDescription,omitempty"`
+	ProjectDescription *T `json:"ProjectDescription,omitempty"`
 
 	// ProjectName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#cfn-iotsitewise-project-projectname
-	ProjectName string `json:"ProjectName"`
+	ProjectName T `json:"ProjectName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

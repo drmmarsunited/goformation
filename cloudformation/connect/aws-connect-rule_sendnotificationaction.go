@@ -13,17 +13,17 @@ type Rule_SendNotificationAction[T any] struct {
 	// Content AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-sendnotificationaction.html#cfn-connect-rule-sendnotificationaction-content
-	Content string `json:"Content"`
+	Content T `json:"Content"`
 
 	// ContentType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-sendnotificationaction.html#cfn-connect-rule-sendnotificationaction-contenttype
-	ContentType string `json:"ContentType"`
+	ContentType T `json:"ContentType"`
 
 	// DeliveryMethod AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-sendnotificationaction.html#cfn-connect-rule-sendnotificationaction-deliverymethod
-	DeliveryMethod string `json:"DeliveryMethod"`
+	DeliveryMethod T `json:"DeliveryMethod"`
 
 	// Recipient AWS CloudFormation Property
 	// Required: true
@@ -33,7 +33,7 @@ type Rule_SendNotificationAction[T any] struct {
 	// Subject AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-sendnotificationaction.html#cfn-connect-rule-sendnotificationaction-subject
-	Subject *string `json:"Subject,omitempty"`
+	Subject *T `json:"Subject,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

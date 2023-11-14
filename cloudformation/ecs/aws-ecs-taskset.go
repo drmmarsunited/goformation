@@ -16,17 +16,17 @@ type TaskSet[T any] struct {
 	// Cluster AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-cluster
-	Cluster string `json:"Cluster"`
+	Cluster T `json:"Cluster"`
 
 	// ExternalId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-externalid
-	ExternalId *string `json:"ExternalId,omitempty"`
+	ExternalId *T `json:"ExternalId,omitempty"`
 
 	// LaunchType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-launchtype
-	LaunchType *string `json:"LaunchType,omitempty"`
+	LaunchType *T `json:"LaunchType,omitempty"`
 
 	// LoadBalancers AWS CloudFormation Property
 	// Required: false
@@ -41,7 +41,7 @@ type TaskSet[T any] struct {
 	// PlatformVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-platformversion
-	PlatformVersion *string `json:"PlatformVersion,omitempty"`
+	PlatformVersion *T `json:"PlatformVersion,omitempty"`
 
 	// Scale AWS CloudFormation Property
 	// Required: false
@@ -51,7 +51,7 @@ type TaskSet[T any] struct {
 	// Service AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-service
-	Service string `json:"Service"`
+	Service T `json:"Service"`
 
 	// ServiceRegistries AWS CloudFormation Property
 	// Required: false
@@ -61,7 +61,7 @@ type TaskSet[T any] struct {
 	// TaskDefinition AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-taskdefinition
-	TaskDefinition string `json:"TaskDefinition"`
+	TaskDefinition T `json:"TaskDefinition"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

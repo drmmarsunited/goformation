@@ -18,7 +18,7 @@ type Component_ComponentVariant[T any] struct {
 	// VariantValues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentvariant.html#cfn-amplifyuibuilder-component-componentvariant-variantvalues
-	VariantValues map[string]string `json:"VariantValues,omitempty"`
+	VariantValues map[string]T `json:"VariantValues,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

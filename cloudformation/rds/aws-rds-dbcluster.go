@@ -32,7 +32,7 @@ type DBCluster[T any] struct {
 	// AvailabilityZones AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-availabilityzones
-	AvailabilityZones []string `json:"AvailabilityZones,omitempty"`
+	AvailabilityZones []T `json:"AvailabilityZones,omitempty"`
 
 	// BacktrackWindow AWS CloudFormation Property
 	// Required: false
@@ -52,37 +52,37 @@ type DBCluster[T any] struct {
 	// DBClusterIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbclusteridentifier
-	DBClusterIdentifier *string `json:"DBClusterIdentifier,omitempty"`
+	DBClusterIdentifier *T `json:"DBClusterIdentifier,omitempty"`
 
 	// DBClusterInstanceClass AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbclusterinstanceclass
-	DBClusterInstanceClass *string `json:"DBClusterInstanceClass,omitempty"`
+	DBClusterInstanceClass *T `json:"DBClusterInstanceClass,omitempty"`
 
 	// DBClusterParameterGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbclusterparametergroupname
-	DBClusterParameterGroupName *string `json:"DBClusterParameterGroupName,omitempty"`
+	DBClusterParameterGroupName *T `json:"DBClusterParameterGroupName,omitempty"`
 
 	// DBInstanceParameterGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbinstanceparametergroupname
-	DBInstanceParameterGroupName *string `json:"DBInstanceParameterGroupName,omitempty"`
+	DBInstanceParameterGroupName *T `json:"DBInstanceParameterGroupName,omitempty"`
 
 	// DBSubnetGroupName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbsubnetgroupname
-	DBSubnetGroupName *string `json:"DBSubnetGroupName,omitempty"`
+	DBSubnetGroupName *T `json:"DBSubnetGroupName,omitempty"`
 
 	// DBSystemId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbsystemid
-	DBSystemId *string `json:"DBSystemId,omitempty"`
+	DBSystemId *T `json:"DBSystemId,omitempty"`
 
 	// DatabaseName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-databasename
-	DatabaseName *string `json:"DatabaseName,omitempty"`
+	DatabaseName *T `json:"DatabaseName,omitempty"`
 
 	// DeletionProtection AWS CloudFormation Property
 	// Required: false
@@ -92,17 +92,22 @@ type DBCluster[T any] struct {
 	// Domain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-domain
-	Domain *string `json:"Domain,omitempty"`
+	Domain *T `json:"Domain,omitempty"`
 
 	// DomainIAMRoleName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-domainiamrolename
-	DomainIAMRoleName *string `json:"DomainIAMRoleName,omitempty"`
+	DomainIAMRoleName *T `json:"DomainIAMRoleName,omitempty"`
 
 	// EnableCloudwatchLogsExports AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enablecloudwatchlogsexports
-	EnableCloudwatchLogsExports []string `json:"EnableCloudwatchLogsExports,omitempty"`
+	EnableCloudwatchLogsExports []T `json:"EnableCloudwatchLogsExports,omitempty"`
+
+	// EnableGlobalWriteForwarding AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enableglobalwriteforwarding
+	EnableGlobalWriteForwarding *T `json:"EnableGlobalWriteForwarding,omitempty"`
 
 	// EnableHttpEndpoint AWS CloudFormation Property
 	// Required: false
@@ -117,22 +122,22 @@ type DBCluster[T any] struct {
 	// Engine AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-engine
-	Engine *string `json:"Engine,omitempty"`
+	Engine *T `json:"Engine,omitempty"`
 
 	// EngineMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enginemode
-	EngineMode *string `json:"EngineMode,omitempty"`
+	EngineMode *T `json:"EngineMode,omitempty"`
 
 	// EngineVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-engineversion
-	EngineVersion *string `json:"EngineVersion,omitempty"`
+	EngineVersion *T `json:"EngineVersion,omitempty"`
 
 	// GlobalClusterIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-globalclusteridentifier
-	GlobalClusterIdentifier *string `json:"GlobalClusterIdentifier,omitempty"`
+	GlobalClusterIdentifier *T `json:"GlobalClusterIdentifier,omitempty"`
 
 	// Iops AWS CloudFormation Property
 	// Required: false
@@ -142,7 +147,7 @@ type DBCluster[T any] struct {
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-kmskeyid
-	KmsKeyId *string `json:"KmsKeyId,omitempty"`
+	KmsKeyId *T `json:"KmsKeyId,omitempty"`
 
 	// ManageMasterUserPassword AWS CloudFormation Property
 	// Required: false
@@ -152,7 +157,7 @@ type DBCluster[T any] struct {
 	// MasterUserPassword AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-masteruserpassword
-	MasterUserPassword *string `json:"MasterUserPassword,omitempty"`
+	MasterUserPassword *T `json:"MasterUserPassword,omitempty"`
 
 	// MasterUserSecret AWS CloudFormation Property
 	// Required: false
@@ -162,7 +167,7 @@ type DBCluster[T any] struct {
 	// MasterUsername AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-masterusername
-	MasterUsername *string `json:"MasterUsername,omitempty"`
+	MasterUsername *T `json:"MasterUsername,omitempty"`
 
 	// MonitoringInterval AWS CloudFormation Property
 	// Required: false
@@ -172,12 +177,12 @@ type DBCluster[T any] struct {
 	// MonitoringRoleArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-monitoringrolearn
-	MonitoringRoleArn *string `json:"MonitoringRoleArn,omitempty"`
+	MonitoringRoleArn *T `json:"MonitoringRoleArn,omitempty"`
 
 	// NetworkType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-networktype
-	NetworkType *string `json:"NetworkType,omitempty"`
+	NetworkType *T `json:"NetworkType,omitempty"`
 
 	// PerformanceInsightsEnabled AWS CloudFormation Property
 	// Required: false
@@ -187,7 +192,7 @@ type DBCluster[T any] struct {
 	// PerformanceInsightsKmsKeyId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-performanceinsightskmskeyid
-	PerformanceInsightsKmsKeyId *string `json:"PerformanceInsightsKmsKeyId,omitempty"`
+	PerformanceInsightsKmsKeyId *T `json:"PerformanceInsightsKmsKeyId,omitempty"`
 
 	// PerformanceInsightsRetentionPeriod AWS CloudFormation Property
 	// Required: false
@@ -202,12 +207,12 @@ type DBCluster[T any] struct {
 	// PreferredBackupWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-preferredbackupwindow
-	PreferredBackupWindow *string `json:"PreferredBackupWindow,omitempty"`
+	PreferredBackupWindow *T `json:"PreferredBackupWindow,omitempty"`
 
 	// PreferredMaintenanceWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-preferredmaintenancewindow
-	PreferredMaintenanceWindow *string `json:"PreferredMaintenanceWindow,omitempty"`
+	PreferredMaintenanceWindow *T `json:"PreferredMaintenanceWindow,omitempty"`
 
 	// PubliclyAccessible AWS CloudFormation Property
 	// Required: false
@@ -217,17 +222,17 @@ type DBCluster[T any] struct {
 	// ReplicationSourceIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-replicationsourceidentifier
-	ReplicationSourceIdentifier *string `json:"ReplicationSourceIdentifier,omitempty"`
+	ReplicationSourceIdentifier *T `json:"ReplicationSourceIdentifier,omitempty"`
 
 	// RestoreToTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-restoretotime
-	RestoreToTime *string `json:"RestoreToTime,omitempty"`
+	RestoreToTime *T `json:"RestoreToTime,omitempty"`
 
 	// RestoreType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-restoretype
-	RestoreType *string `json:"RestoreType,omitempty"`
+	RestoreType *T `json:"RestoreType,omitempty"`
 
 	// ScalingConfiguration AWS CloudFormation Property
 	// Required: false
@@ -242,17 +247,17 @@ type DBCluster[T any] struct {
 	// SnapshotIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-snapshotidentifier
-	SnapshotIdentifier *string `json:"SnapshotIdentifier,omitempty"`
+	SnapshotIdentifier *T `json:"SnapshotIdentifier,omitempty"`
 
 	// SourceDBClusterIdentifier AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-sourcedbclusteridentifier
-	SourceDBClusterIdentifier *string `json:"SourceDBClusterIdentifier,omitempty"`
+	SourceDBClusterIdentifier *T `json:"SourceDBClusterIdentifier,omitempty"`
 
 	// SourceRegion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-sourceregion
-	SourceRegion *string `json:"SourceRegion,omitempty"`
+	SourceRegion *T `json:"SourceRegion,omitempty"`
 
 	// StorageEncrypted AWS CloudFormation Property
 	// Required: false
@@ -262,7 +267,7 @@ type DBCluster[T any] struct {
 	// StorageType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-storagetype
-	StorageType *string `json:"StorageType,omitempty"`
+	StorageType *T `json:"StorageType,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -277,7 +282,7 @@ type DBCluster[T any] struct {
 	// VpcSecurityGroupIds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-vpcsecuritygroupids
-	VpcSecurityGroupIds []string `json:"VpcSecurityGroupIds,omitempty"`
+	VpcSecurityGroupIds []T `json:"VpcSecurityGroupIds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

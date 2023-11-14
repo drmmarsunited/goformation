@@ -17,17 +17,17 @@ type StorageSystem[T any] struct {
 	// AgentArns AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-storagesystem.html#cfn-datasync-storagesystem-agentarns
-	AgentArns []string `json:"AgentArns"`
+	AgentArns []T `json:"AgentArns"`
 
 	// CloudWatchLogGroupArn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-storagesystem.html#cfn-datasync-storagesystem-cloudwatchloggrouparn
-	CloudWatchLogGroupArn *string `json:"CloudWatchLogGroupArn,omitempty"`
+	CloudWatchLogGroupArn *T `json:"CloudWatchLogGroupArn,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-storagesystem.html#cfn-datasync-storagesystem-name
-	Name *string `json:"Name,omitempty"`
+	Name *T `json:"Name,omitempty"`
 
 	// ServerConfiguration AWS CloudFormation Property
 	// Required: true
@@ -42,7 +42,7 @@ type StorageSystem[T any] struct {
 	// SystemType AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-storagesystem.html#cfn-datasync-storagesystem-systemtype
-	SystemType string `json:"SystemType"`
+	SystemType T `json:"SystemType"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

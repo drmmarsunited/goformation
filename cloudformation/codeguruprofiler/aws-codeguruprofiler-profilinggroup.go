@@ -27,12 +27,12 @@ type ProfilingGroup[T any] struct {
 	// ComputePlatform AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeguruprofiler-profilinggroup.html#cfn-codeguruprofiler-profilinggroup-computeplatform
-	ComputePlatform *string `json:"ComputePlatform,omitempty"`
+	ComputePlatform *T `json:"ComputePlatform,omitempty"`
 
 	// ProfilingGroupName AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeguruprofiler-profilinggroup.html#cfn-codeguruprofiler-profilinggroup-profilinggroupname
-	ProfilingGroupName string `json:"ProfilingGroupName"`
+	ProfilingGroupName T `json:"ProfilingGroupName"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

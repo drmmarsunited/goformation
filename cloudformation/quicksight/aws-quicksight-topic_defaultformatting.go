@@ -13,7 +13,7 @@ type Topic_DefaultFormatting[T any] struct {
 	// DisplayFormat AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-defaultformatting.html#cfn-quicksight-topic-defaultformatting-displayformat
-	DisplayFormat *string `json:"DisplayFormat,omitempty"`
+	DisplayFormat *T `json:"DisplayFormat,omitempty"`
 
 	// DisplayFormatOptions AWS CloudFormation Property
 	// Required: false

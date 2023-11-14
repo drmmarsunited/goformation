@@ -13,7 +13,7 @@ type Container_MetricPolicy[T any] struct {
 	// ContainerLevelMetrics AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediastore-container-metricpolicy.html#cfn-mediastore-container-metricpolicy-containerlevelmetrics
-	ContainerLevelMetrics string `json:"ContainerLevelMetrics"`
+	ContainerLevelMetrics T `json:"ContainerLevelMetrics"`
 
 	// MetricPolicyRules AWS CloudFormation Property
 	// Required: false

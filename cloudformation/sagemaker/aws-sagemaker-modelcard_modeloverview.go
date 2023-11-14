@@ -13,7 +13,7 @@ type ModelCard_ModelOverview[T any] struct {
 	// AlgorithmType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-algorithmtype
-	AlgorithmType *string `json:"AlgorithmType,omitempty"`
+	AlgorithmType *T `json:"AlgorithmType,omitempty"`
 
 	// InferenceEnvironment AWS CloudFormation Property
 	// Required: false
@@ -23,32 +23,32 @@ type ModelCard_ModelOverview[T any] struct {
 	// ModelArtifact AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modelartifact
-	ModelArtifact []string `json:"ModelArtifact,omitempty"`
+	ModelArtifact []T `json:"ModelArtifact,omitempty"`
 
 	// ModelCreator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modelcreator
-	ModelCreator *string `json:"ModelCreator,omitempty"`
+	ModelCreator *T `json:"ModelCreator,omitempty"`
 
 	// ModelDescription AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modeldescription
-	ModelDescription *string `json:"ModelDescription,omitempty"`
+	ModelDescription *T `json:"ModelDescription,omitempty"`
 
 	// ModelId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modelid
-	ModelId *string `json:"ModelId,omitempty"`
+	ModelId *T `json:"ModelId,omitempty"`
 
 	// ModelName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modelname
-	ModelName *string `json:"ModelName,omitempty"`
+	ModelName *T `json:"ModelName,omitempty"`
 
 	// ModelOwner AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modelowner
-	ModelOwner *string `json:"ModelOwner,omitempty"`
+	ModelOwner *T `json:"ModelOwner,omitempty"`
 
 	// ModelVersion AWS CloudFormation Property
 	// Required: false
@@ -58,7 +58,7 @@ type ModelCard_ModelOverview[T any] struct {
 	// ProblemType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-problemtype
-	ProblemType *string `json:"ProblemType,omitempty"`
+	ProblemType *T `json:"ProblemType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

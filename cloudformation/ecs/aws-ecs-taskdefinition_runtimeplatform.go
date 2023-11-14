@@ -13,12 +13,12 @@ type TaskDefinition_RuntimePlatform[T any] struct {
 	// CpuArchitecture AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-runtimeplatform.html#cfn-ecs-taskdefinition-runtimeplatform-cpuarchitecture
-	CpuArchitecture *string `json:"CpuArchitecture,omitempty"`
+	CpuArchitecture *T `json:"CpuArchitecture,omitempty"`
 
 	// OperatingSystemFamily AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-runtimeplatform.html#cfn-ecs-taskdefinition-runtimeplatform-operatingsystemfamily
-	OperatingSystemFamily *string `json:"OperatingSystemFamily,omitempty"`
+	OperatingSystemFamily *T `json:"OperatingSystemFamily,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -13,7 +13,7 @@ type NetworkInsightsAnalysis_AnalysisAclRule[T any] struct {
 	// Cidr AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-cidr
-	Cidr *string `json:"Cidr,omitempty"`
+	Cidr *T `json:"Cidr,omitempty"`
 
 	// Egress AWS CloudFormation Property
 	// Required: false
@@ -28,12 +28,12 @@ type NetworkInsightsAnalysis_AnalysisAclRule[T any] struct {
 	// Protocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-protocol
-	Protocol *string `json:"Protocol,omitempty"`
+	Protocol *T `json:"Protocol,omitempty"`
 
 	// RuleAction AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-ruleaction
-	RuleAction *string `json:"RuleAction,omitempty"`
+	RuleAction *T `json:"RuleAction,omitempty"`
 
 	// RuleNumber AWS CloudFormation Property
 	// Required: false

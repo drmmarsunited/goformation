@@ -17,7 +17,7 @@ type TrustStore[T any] struct {
 	// CertificateList AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-truststore.html#cfn-workspacesweb-truststore-certificatelist
-	CertificateList []string `json:"CertificateList"`
+	CertificateList []T `json:"CertificateList"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

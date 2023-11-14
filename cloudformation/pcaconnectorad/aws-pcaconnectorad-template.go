@@ -16,7 +16,7 @@ type Template[T any] struct {
 	// ConnectorArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcaconnectorad-template.html#cfn-pcaconnectorad-template-connectorarn
-	ConnectorArn string `json:"ConnectorArn"`
+	ConnectorArn T `json:"ConnectorArn"`
 
 	// Definition AWS CloudFormation Property
 	// Required: true
@@ -26,7 +26,7 @@ type Template[T any] struct {
 	// Name AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcaconnectorad-template.html#cfn-pcaconnectorad-template-name
-	Name string `json:"Name"`
+	Name T `json:"Name"`
 
 	// ReenrollAllCertificateHolders AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type Template[T any] struct {
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcaconnectorad-template.html#cfn-pcaconnectorad-template-tags
-	Tags map[string]string `json:"Tags,omitempty"`
+	Tags map[string]T `json:"Tags,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

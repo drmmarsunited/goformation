@@ -23,7 +23,7 @@ type Template_DataSetConfiguration[T any] struct {
 	// Placeholder AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetconfiguration.html#cfn-quicksight-template-datasetconfiguration-placeholder
-	Placeholder *string `json:"Placeholder,omitempty"`
+	Placeholder *T `json:"Placeholder,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

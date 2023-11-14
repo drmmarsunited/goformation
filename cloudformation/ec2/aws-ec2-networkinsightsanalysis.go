@@ -17,17 +17,17 @@ type NetworkInsightsAnalysis[T any] struct {
 	// AdditionalAccounts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#cfn-ec2-networkinsightsanalysis-additionalaccounts
-	AdditionalAccounts []string `json:"AdditionalAccounts,omitempty"`
+	AdditionalAccounts []T `json:"AdditionalAccounts,omitempty"`
 
 	// FilterInArns AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#cfn-ec2-networkinsightsanalysis-filterinarns
-	FilterInArns []string `json:"FilterInArns,omitempty"`
+	FilterInArns []T `json:"FilterInArns,omitempty"`
 
 	// NetworkInsightsPathId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#cfn-ec2-networkinsightsanalysis-networkinsightspathid
-	NetworkInsightsPathId string `json:"NetworkInsightsPathId"`
+	NetworkInsightsPathId T `json:"NetworkInsightsPathId"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -13,7 +13,7 @@ type Analysis_GeospatialHeatmapDataColor[T any] struct {
 	// Color AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialheatmapdatacolor.html#cfn-quicksight-analysis-geospatialheatmapdatacolor-color
-	Color string `json:"Color"`
+	Color T `json:"Color"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

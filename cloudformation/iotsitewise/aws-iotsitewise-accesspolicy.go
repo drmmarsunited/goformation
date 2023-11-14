@@ -21,7 +21,7 @@ type AccessPolicy[T any] struct {
 	// AccessPolicyPermission AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-accesspolicy.html#cfn-iotsitewise-accesspolicy-accesspolicypermission
-	AccessPolicyPermission string `json:"AccessPolicyPermission"`
+	AccessPolicyPermission T `json:"AccessPolicyPermission"`
 
 	// AccessPolicyResource AWS CloudFormation Property
 	// Required: true

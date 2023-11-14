@@ -13,7 +13,7 @@ type Template_NumericSeparatorConfiguration[T any] struct {
 	// DecimalSeparator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-numericseparatorconfiguration.html#cfn-quicksight-template-numericseparatorconfiguration-decimalseparator
-	DecimalSeparator *string `json:"DecimalSeparator,omitempty"`
+	DecimalSeparator *T `json:"DecimalSeparator,omitempty"`
 
 	// ThousandsSeparator AWS CloudFormation Property
 	// Required: false

@@ -13,7 +13,7 @@ type Channel_Scte20SourceSettings[T any] struct {
 	// Convert608To708 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte20sourcesettings.html#cfn-medialive-channel-scte20sourcesettings-convert608to708
-	Convert608To708 *string `json:"Convert608To708,omitempty"`
+	Convert608To708 *T `json:"Convert608To708,omitempty"`
 
 	// Source608ChannelNumber AWS CloudFormation Property
 	// Required: false

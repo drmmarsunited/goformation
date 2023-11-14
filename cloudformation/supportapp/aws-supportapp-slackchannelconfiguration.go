@@ -16,17 +16,17 @@ type SlackChannelConfiguration[T any] struct {
 	// ChannelId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-supportapp-slackchannelconfiguration.html#cfn-supportapp-slackchannelconfiguration-channelid
-	ChannelId string `json:"ChannelId"`
+	ChannelId T `json:"ChannelId"`
 
 	// ChannelName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-supportapp-slackchannelconfiguration.html#cfn-supportapp-slackchannelconfiguration-channelname
-	ChannelName *string `json:"ChannelName,omitempty"`
+	ChannelName *T `json:"ChannelName,omitempty"`
 
 	// ChannelRoleArn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-supportapp-slackchannelconfiguration.html#cfn-supportapp-slackchannelconfiguration-channelrolearn
-	ChannelRoleArn string `json:"ChannelRoleArn"`
+	ChannelRoleArn T `json:"ChannelRoleArn"`
 
 	// NotifyOnAddCorrespondenceToCase AWS CloudFormation Property
 	// Required: false
@@ -36,7 +36,7 @@ type SlackChannelConfiguration[T any] struct {
 	// NotifyOnCaseSeverity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-supportapp-slackchannelconfiguration.html#cfn-supportapp-slackchannelconfiguration-notifyoncaseseverity
-	NotifyOnCaseSeverity string `json:"NotifyOnCaseSeverity"`
+	NotifyOnCaseSeverity T `json:"NotifyOnCaseSeverity"`
 
 	// NotifyOnCreateOrReopenCase AWS CloudFormation Property
 	// Required: false
@@ -51,7 +51,7 @@ type SlackChannelConfiguration[T any] struct {
 	// TeamId AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-supportapp-slackchannelconfiguration.html#cfn-supportapp-slackchannelconfiguration-teamid
-	TeamId string `json:"TeamId"`
+	TeamId T `json:"TeamId"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

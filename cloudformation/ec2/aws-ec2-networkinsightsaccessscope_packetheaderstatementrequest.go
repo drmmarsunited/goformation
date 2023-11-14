@@ -13,37 +13,37 @@ type NetworkInsightsAccessScope_PacketHeaderStatementRequest[T any] struct {
 	// DestinationAddresses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-packetheaderstatementrequest.html#cfn-ec2-networkinsightsaccessscope-packetheaderstatementrequest-destinationaddresses
-	DestinationAddresses []string `json:"DestinationAddresses,omitempty"`
+	DestinationAddresses []T `json:"DestinationAddresses,omitempty"`
 
 	// DestinationPorts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-packetheaderstatementrequest.html#cfn-ec2-networkinsightsaccessscope-packetheaderstatementrequest-destinationports
-	DestinationPorts []string `json:"DestinationPorts,omitempty"`
+	DestinationPorts []T `json:"DestinationPorts,omitempty"`
 
 	// DestinationPrefixLists AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-packetheaderstatementrequest.html#cfn-ec2-networkinsightsaccessscope-packetheaderstatementrequest-destinationprefixlists
-	DestinationPrefixLists []string `json:"DestinationPrefixLists,omitempty"`
+	DestinationPrefixLists []T `json:"DestinationPrefixLists,omitempty"`
 
 	// Protocols AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-packetheaderstatementrequest.html#cfn-ec2-networkinsightsaccessscope-packetheaderstatementrequest-protocols
-	Protocols []string `json:"Protocols,omitempty"`
+	Protocols []T `json:"Protocols,omitempty"`
 
 	// SourceAddresses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-packetheaderstatementrequest.html#cfn-ec2-networkinsightsaccessscope-packetheaderstatementrequest-sourceaddresses
-	SourceAddresses []string `json:"SourceAddresses,omitempty"`
+	SourceAddresses []T `json:"SourceAddresses,omitempty"`
 
 	// SourcePorts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-packetheaderstatementrequest.html#cfn-ec2-networkinsightsaccessscope-packetheaderstatementrequest-sourceports
-	SourcePorts []string `json:"SourcePorts,omitempty"`
+	SourcePorts []T `json:"SourcePorts,omitempty"`
 
 	// SourcePrefixLists AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-packetheaderstatementrequest.html#cfn-ec2-networkinsightsaccessscope-packetheaderstatementrequest-sourceprefixlists
-	SourcePrefixLists []string `json:"SourcePrefixLists,omitempty"`
+	SourcePrefixLists []T `json:"SourcePrefixLists,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
