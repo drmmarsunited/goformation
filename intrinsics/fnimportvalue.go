@@ -2,11 +2,12 @@ package intrinsics
 
 import (
 	"context"
+	"fmt"
 	acfn "github.com/aws/aws-sdk-go-v2/service/cloudformation"
 	"github.com/drmmarsunited/goformation/v7/cloudformation/utils"
 )
 
-// FnImportValue is not implemented, and always returns "dummyvalue.
+// FnImportValue is now implemented and will return a value if found, and returns "dummyvalue if not found.
 // See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html
 func FnImportValue(name string, input interface{}, template interface{}) interface{} {
 
@@ -22,8 +23,9 @@ func FnImportValue(name string, input interface{}, template interface{}) interfa
 	cfnClient := acfn.NewFromConfig(awsHelper.Cfg)
 
 	// List CloudFormation exports for region
-	exports, err := cfnClient.ListExports(context.TODO(), &acfn.ListExportsInput{})
+	exports, err := cfnClient.ListExports(context.TODO(), nil)
 	if err != nil {
+		fmt.Printf("Could not get list of CFN exports: %s\n", err.Error())
 		return "dummyvalue"
 	}
 
