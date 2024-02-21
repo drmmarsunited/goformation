@@ -27,7 +27,7 @@ func newPseudoParamHelper() *pseudoParamHelper {
 	// Load the AWS shared config
 	awsHelper, err := utils.NewAwsHelper()
 	if err != nil {
-		fmt.Println("Unable to load shard AWS SDK credentials, using dummy values")
+		fmt.Println("Unable to load shared AWS SDK credentials, using dummy values")
 
 		interimHelper.rawCallerData = nil
 		interimHelper.accountId = "123456789012"
