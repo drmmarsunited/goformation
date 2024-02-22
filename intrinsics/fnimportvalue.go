@@ -23,17 +23,21 @@ func FnImportValue(name string, input interface{}, template interface{}) interfa
 	cfnClient := acfn.NewFromConfig(awsHelper.Cfg)
 
 	// List CloudFormation exports for region
-	exports, err := cfnClient.ListExports(context.TODO(), nil)
-	if err != nil {
-		fmt.Printf("Could not get list of CFN exports: %s\n", err.Error())
-		return "dummyvalue"
-	}
+	paginator := acfn.NewListExportsPaginator(cfnClient, nil)
+	for paginator.HasMorePages() {
+		output, err := paginator.NextPage(context.TODO())
+		if err != nil {
+			fmt.Printf("Could not get list of paged CFN exports: %s\n", err.Error())
+			return "dummyvalue"
+		}
 
-	// Parse through exports for matching name
-	if name, ok := input.(string); ok {
-		for _, e := range exports.Exports {
-			if *e.Name == name {
-				return *e.Value
+		// Parse through exports for matching name
+		if name, ok := input.(string); ok {
+			for _, e := range output.Exports {
+				fmt.Printf("Found export named: ")
+				if *e.Name == name {
+					return *e.Value
+				}
 			}
 		}
 	}
