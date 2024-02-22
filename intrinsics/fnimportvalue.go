@@ -34,7 +34,6 @@ func FnImportValue(name string, input interface{}, template interface{}) interfa
 		// Parse through exports for matching name
 		if name, ok := input.(string); ok {
 			for _, e := range output.Exports {
-				fmt.Printf("Found export named: ")
 				if *e.Name == name {
 					return *e.Value
 				}
