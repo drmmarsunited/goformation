@@ -9,6 +9,7 @@ func FnIf(name string, input interface{}, template interface{}) interface{} {
 	// Check the input is an array
 	if arr, ok := input.([]interface{}); ok {
 		if len(arr) != 3 {
+			//fmt.Printf("If condition %s was not properly formatted\n", name)
 			return nil
 		}
 
