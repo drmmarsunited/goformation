@@ -84,9 +84,12 @@ func ProcessYAML(input []byte, options *ProcessorOptions) ([]byte, error) {
 func ProcessJSON(input []byte, options *ProcessorOptions) ([]byte, error) {
 	// First, unmarshal the JSON to a generic interface{} type
 	var unmarshalled interface{}
+	//fmt.Printf("\n\nintrinsics:processJSON: this is the input: %s\n\n", string(input))
 	if err := json.Unmarshal(input, &unmarshalled); err != nil {
 		return nil, fmt.Errorf("intrinsics: ProcessJSON: error when unmarshaling JSON: %w", err)
 	}
+
+	//fmt.Printf("\n\nintrinsics:processJSON: this is unmarshalled: %s\n\n", unmarshalled)
 
 	var processed interface{}
 
@@ -99,9 +102,11 @@ func ProcessJSON(input []byte, options *ProcessorOptions) ([]byte, error) {
 		if options != nil && options.EvaluateConditions {
 			evaluateConditions(unmarshalled, options)
 		}
+		//fmt.Printf("\n\nintrinsics:processJSON: this is unmarshalled after evaluate conditions: %s\n\n", unmarshalled)
 
 		// Process all the intrinsic functions
 		processed = search(unmarshalled, unmarshalled, options)
+		//fmt.Printf("\n\nintrinsics:processJSON: this is processed: %s\n\n", processed)
 
 	}
 
@@ -151,6 +156,7 @@ func evaluateConditions(input interface{}, options *ProcessorOptions) {
 			if conditions, ok := uconditions.(map[string]interface{}); ok {
 				for name, expr := range conditions {
 					conditions[name] = search(expr, input, options)
+					//fmt.Printf("intrinsics:evaluateConditions: Condition %s now has a value of %t\n", name, conditions[name])
 				}
 			}
 		}
@@ -173,6 +179,8 @@ func search(input interface{}, template interface{}, options *ProcessorOptions) 
 		// to check every key, not just the first.
 		processed := map[string]interface{}{}
 		for key, val := range value {
+			//fmt.Printf("intrinsices:search: now processing key %s\n", key)
+			//fmt.Printf("intrinsices:search: now processing val %s\n", val)
 
 			// See if we have an intrinsic handler function for this object key provided in the
 			if h, ok := handler(key, options); ok {
@@ -183,10 +191,12 @@ func search(input interface{}, template interface{}, options *ProcessorOptions) 
 
 			if key == "Condition" && (options != nil && options.EvaluateConditions) {
 				// This can lead to infinite recursion A -> B; B -> A;
-				// pass state of the conditions that we're evaluating so we can detect cycles
+				// pass state of the conditions that we're evaluating, so we can detect cycles
 				// in case of cycle or not found, do nothing
 				if con := condition(key, search(val, template, options), template, options); con != nil {
-					return con
+					//fmt.Printf("\n\nintrinsics:search:condition block: evaluating value %s\n", val)
+					//fmt.Printf("intrinsics:search:condition block: this is the condition returned %s\n\n", con)
+					processed[key] = con
 				}
 			}
 
