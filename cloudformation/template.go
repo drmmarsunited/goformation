@@ -144,6 +144,7 @@ func UnmarshalParameter(rawJson json.RawMessage) (*Parameter[any], error) {
 func (resources *Resources) UnmarshalJSON(b []byte) error {
 	// Resources
 	var rawResources map[string]*json.RawMessage
+	//fmt.Printf("\n\nThis is resources before unmarshal: %s\n\n", string(b))
 	err := json.Unmarshal(b, &rawResources)
 
 	if err != nil {
@@ -151,6 +152,7 @@ func (resources *Resources) UnmarshalJSON(b []byte) error {
 	}
 
 	newResources := Resources{}
+	//fmt.Printf("\n\nthis is rawResources: %v\n\n", rawResources)
 	for name, raw := range rawResources {
 		res, err := unmarshallResource(name, raw)
 		if err != nil {
@@ -194,8 +196,10 @@ func unmarshallResource(name string, rawJson *json.RawMessage) (Resource, error)
 	}
 
 	var rtype rType
+
+	//fmt.Printf("This is the rawJSON of the %s resource: %s\n", name, string(*rawJson))
 	if err = json.Unmarshal(*rawJson, &rtype); err != nil {
-		return nil, fmt.Errorf("unmarshallResource: error unmarshaling rType: %w", err)
+		return nil, fmt.Errorf("unmarshallResource: error unmarshaling rtype: %w", err)
 	}
 
 	if rtype.Type == "" {
